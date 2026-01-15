@@ -1,0 +1,5 @@
+{
+  "name": "Hospital Registry Observer",
+  "description": "A high-performance analysis tool for historical hospital records. Upload large TSV datasets to browse, filter, search, and visualize clinical and demographic trends with interactive charts and AI-powered insights.",
+  "requestFramePermissions": []
+}
