@@ -7,9 +7,10 @@ interface FilterSidebarProps {
   data: RegistryRecord[];
   filterState: FilterState;
   setFilterState: React.Dispatch<React.SetStateAction<FilterState>>;
+  hideRangeKeys?: string[]; // New prop to hide specific ranges
 }
 
-const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFilterState }) => {
+const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFilterState, hideRangeKeys = [] }) => {
   const [activeModalFacet, setActiveModalFacet] = useState<string | null>(null);
   const [modalSearch, setModalSearch] = useState('');
 
@@ -125,7 +126,9 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
 
         <div className="space-y-6">
           <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Numeric / Date Ranges</h4>
-          {rangeTargets.map(target => {
+          {rangeTargets
+            .filter(t => !hideRangeKeys.includes(t.key))
+            .map(target => {
             const actualKey = actualKeys.ranges[target.key];
             const range = filterState.ranges[actualKey || ''];
             if (!range) return null;
