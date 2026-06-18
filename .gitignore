@@ -8,7 +8,8 @@ venv/
 .claude/
 
 # Private dataset — never commit. Public, redacted artifacts live in data/public/.
-data/private/
+data/private/*
+!data/private/README.md
 
 # Datasette build artifacts
 *.db
