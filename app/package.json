@@ -1,0 +1,27 @@
+{
+  "name": "hospital-registry-observer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/copy-data.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/copy-data.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "lucide-react": "^0.562.0",
+    "recharts": "^3.6.0",
+    "@google/genai": "^1.36.0",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
