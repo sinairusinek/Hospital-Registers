@@ -1,6 +1,6 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, FileSpreadsheet } from 'lucide-react';
+import { Upload, Table, BarChart3 } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import DataBrowser from './components/DataBrowser';
 import StatisticsView from './components/StatisticsView';
@@ -34,10 +34,12 @@ const App: React.FC = () => {
     ranges: {}
   });
 
+  // First alias wins. The published artifact uses the plain names; the older
+  // ones are kept so an uploaded copy of the consolidated TSV still works.
   const rangeColumns = [
-    { key: 'Age', label: 'Age', isDate: false },
-    { key: 'Days in Hospital (Calc)', label: 'Length of Stay', isDate: false },
-    { key: 'Admission Date [ISO]', label: 'Admission Date', isDate: true }
+    { key: 'Age', label: 'Age', isDate: false, aliases: ['age'] },
+    { key: 'Days in Hospital', label: 'Length of Stay', isDate: false, aliases: ['days in hospital', 'days in hospital (calc)'] },
+    { key: 'Admission Date', label: 'Admission Date', isDate: true, aliases: ['admission date', 'admission date [iso]'] }
   ];
 
   const parseSettings = {
@@ -69,14 +71,23 @@ const App: React.FC = () => {
 
         if (rawData.length > 0) {
           const keys = Object.keys(rawData[0]);
+          // The cleaned columns carry the plain names in the published artifact,
+          // so those are what the table shows by default. The verbatim columns
+          // ("Nationality as written") are one click away under Columns.
           const defaultVisibleHeaders = [
             'notebook record id',
             'age',
             'sex',
+            'religion',
+            'nationality',
+            'diagnosis',
+            'admission date',
+            'days in hospital',
+            'result',
+            // Consolidated-TSV names, for an uploaded copy of the source file.
             'standardized religion',
             'standardnationality',
-            'standardprimaryicd9names',
-            'standardprimaryicd9name', // Added singular version
+            'standardprimaryicd9name',
             'admission date [iso]',
             'days in hospital (calc)',
             'standardized result'
@@ -92,7 +103,11 @@ const App: React.FC = () => {
           const newRanges: Record<string, RangeFilter> = {};
           rangeColumns.forEach(col => {
             const isDateCol = col.isDate;
-            const actualKey = keys.find(k => k.toLowerCase().trim() === col.key.toLowerCase().trim());
+            let actualKey: string | undefined;
+            for (const alias of col.aliases) {
+              actualKey = keys.find(k => k.toLowerCase().trim() === alias);
+              if (actualKey) break;
+            }
             if (!actualKey) return;
 
             const values = rawData.map((r: any) => {
@@ -203,11 +218,14 @@ const App: React.FC = () => {
   return (
     <div className="flex flex-col h-screen bg-slate-50">
       <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0 z-20">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-100">
-            <FileSpreadsheet size={24} />
-          </div>
-          <div>
+        <div className="flex items-center gap-4">
+          <img
+            src={`${import.meta.env.BASE_URL}elijah-lab.png`}
+            alt="eLijah-Lab: an Incubator for Digital Humanities, University of Haifa"
+            className="h-9 w-auto shrink-0"
+          />
+          <div className="hidden sm:block h-9 w-px bg-slate-200" aria-hidden="true"></div>
+          <div className="hidden sm:block">
             <h1 className="font-bold text-slate-800 tracking-tight">Hospital Registry</h1>
             <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Observer v1.0</p>
           </div>

@@ -15,23 +15,25 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
   const [modalSearch, setModalSearch] = useState('');
 
   // The requested order: diagnosis, result, sex, religion, nationality, ward.
+  // Aliases are tried in order: the published artifact's plain names first, the
+  // consolidated TSV's names after, so an uploaded source file still facets.
   const facetTargets = [
-    { 
-      label: 'Diagnosis', 
-      internalKey: 'standardprimaryicd9names', 
-      aliases: ['standardprimaryicd9names', 'standardprimaryicd9name', 'diagnosis', 'standardized diagnosis', 'primary-icd9', 'primary diagnosis'] 
+    {
+      label: 'Diagnosis',
+      internalKey: 'diagnosis',
+      aliases: ['standardprimaryicd9names', 'standardprimaryicd9name', 'standardized diagnosis', 'primary diagnosis']
     },
-    { label: 'Result', internalKey: 'standardized result', aliases: ['standardized result', 'result', 'outcome', 'standardized_result'] },
-    { label: 'Sex', internalKey: 'sex', aliases: ['sex', 'gender'] },
-    { label: 'Religion', internalKey: 'standardized religion', aliases: ['standardized religion', 'religion', 'standardized_religion'] },
-    { label: 'Nationality', internalKey: 'standardnationality', aliases: ['standardnationality', 'nationality'] },
-    { label: 'Ward', internalKey: 'standardized ward', aliases: ['standardized ward', 'ward'] }
+    { label: 'Result', internalKey: 'result', aliases: ['standardized result', 'standardized_result', 'outcome'] },
+    { label: 'Sex', internalKey: 'sex', aliases: ['gender'] },
+    { label: 'Religion', internalKey: 'religion', aliases: ['standardized religion', 'standardized_religion'] },
+    { label: 'Nationality', internalKey: 'nationality', aliases: ['standardnationality'] },
+    { label: 'Ward', internalKey: 'ward', aliases: ['standardized ward'] }
   ];
 
   const rangeTargets = [
-    { key: 'Age', label: 'Age', isDate: false },
-    { key: 'Days in Hospital (Calc)', label: 'Length of Stay', isDate: false },
-    { key: 'Admission Date [ISO]', label: 'Admission Date', isDate: true }
+    { key: 'Age', label: 'Age', isDate: false, aliases: ['age'] },
+    { key: 'Days in Hospital', label: 'Length of Stay', isDate: false, aliases: ['days in hospital', 'days in hospital (calc)'] },
+    { key: 'Admission Date', label: 'Admission Date', isDate: true, aliases: ['admission date', 'admission date [iso]'] }
   ];
 
   const actualKeys = useMemo<{
@@ -55,8 +57,10 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
 
     const ranges: Record<string, string> = {};
     rangeTargets.forEach(target => {
-      const found = dataKeys.find(k => k.toLowerCase().trim() === target.key.toLowerCase().trim());
-      if (found) ranges[target.key] = found;
+      for (const alias of target.aliases) {
+        const found = dataKeys.find(k => k.toLowerCase().trim() === alias);
+        if (found) { ranges[target.key] = found; break; }
+      }
     });
 
     return { facets, ranges };

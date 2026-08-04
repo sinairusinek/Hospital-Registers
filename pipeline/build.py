@@ -40,6 +40,40 @@ REPORT = ROOT / "data" / "public" / "normalization-report.tsv"
 # ICD-9 name for the primary diagnosis.
 HEADER_FIXES = {"<info@doctorsonly.co.i": "standardPrimaryICD9Name"}
 
+# Where a field exists twice — once as the clerk wrote it, once cleaned — the
+# plain name goes to the cleaned column and the verbatim one is marked "as
+# written". Applied when writing, so the rules above keep their source names.
+COLUMN_RENAMES = {
+    "Days in Hospital (Rep)": "Days in Hospital as written",
+    "Days in Hospital (Calc)": "Days in Hospital",
+    "Admission Date (Orig)": "Admission Date as written",
+    "Admission Date [ISO]": "Admission Date",
+    "Discharge Date (Orig)": "Discharge Date as written",
+    "Discharge Date (ISO)": "Discharge Date",
+    "Religion": "Religion as written",
+    "standardized Religion": "Religion",
+    "Nationality": "Nationality as written",
+    "StandardNationality": "Nationality",
+    "Ward": "Ward as written",
+    "standardized ward": "Ward",
+    "Class": "Class as written",
+    "Class standard": "Class",
+    "Rate": "Rate as written",
+    "rateStandard": "Rate",
+    "Original Result": "Result as written",
+    "Standardized Result": "Result",
+    # Diagnosis is a three-column case. `Standardized Diagnosis` is not in fact
+    # a normalization — 13,992 distinct values against the original's 13,851 —
+    # so the plain name goes to the ICD-9 label, which is the column that
+    # actually groups (3,860 distinct).
+    "Original Diagnosis": "Diagnosis as written",
+    "Standardized Diagnosis": "Diagnosis as standardized",
+    "standardPrimaryICD9Name": "Diagnosis",
+    "origPrimICD9Name": "Diagnosis as written (ICD-9 name)",
+    "Primary-ICD9": "ICD-9 Code",
+    "StandardICDInteger": "ICD-9 Category",
+}
+
 # ---------------------------------------------------------------- rules
 
 SEX = {
@@ -249,8 +283,14 @@ def main() -> int:
     def cell(value: str) -> str:
         return re.sub(r"[\t\r\n]+", " ", value or "").strip()
 
+    published = [COLUMN_RENAMES.get(name, name) for name in fieldnames]
+    clashes = {name for name in published if published.count(name) > 1}
+    if clashes:
+        print(f"Renames collide on: {', '.join(sorted(clashes))}", file=sys.stderr)
+        return 1
+
     with OUTPUT.open("w", encoding="utf-8", newline="\n") as handle:
-        handle.write("\t".join(fieldnames) + "\n")
+        handle.write("\t".join(published) + "\n")
         for row in out_rows:
             handle.write("\t".join(cell(row.get(name, "")) for name in fieldnames) + "\n")
 

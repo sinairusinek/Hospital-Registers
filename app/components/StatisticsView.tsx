@@ -30,15 +30,17 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     if (fullData.length === 0) return {};
     const dataKeys = Object.keys(fullData[0]);
     const targets = [
+      // Plain names first — those are the cleaned columns in the published
+      // artifact — then the consolidated TSV's names as fallback.
       { id: 'Sex', aliases: ['sex', 'gender'] },
-      { id: 'Result', aliases: ['standardized result', 'result', 'outcome', 'standardized_result'] },
-      { id: 'Religion', aliases: ['standardized religion', 'religion', 'standardized_religion'] },
-      { id: 'Diagnosis', aliases: ['standardprimaryicd9names', 'standardprimaryicd9name', 'diagnosis', 'standardized diagnosis', 'primary-icd9', 'primary diagnosis'] },
-      { id: 'Admission Date', aliases: ['admission date [iso]', 'admission date', 'date'] },
+      { id: 'Result', aliases: ['result', 'standardized result', 'outcome', 'standardized_result'] },
+      { id: 'Religion', aliases: ['religion', 'standardized religion', 'standardized_religion'] },
+      { id: 'Diagnosis', aliases: ['diagnosis', 'standardprimaryicd9names', 'standardprimaryicd9name', 'standardized diagnosis', 'primary diagnosis'] },
+      { id: 'Admission Date', aliases: ['admission date', 'admission date [iso]', 'date'] },
       { id: 'City', aliases: ['city', 'town', 'residence'] },
-      { id: 'Nationality', aliases: ['standardnationality', 'nationality', 'standard_nationality'] },
+      { id: 'Nationality', aliases: ['nationality', 'standardnationality', 'standard_nationality'] },
       { id: 'Age', aliases: ['age'] },
-      { id: 'Stay', aliases: ['days in hospital (calc)', 'length of stay', 'stay duration'] }
+      { id: 'Stay', aliases: ['days in hospital', 'days in hospital (calc)', 'length of stay', 'stay duration'] }
     ];
     const mapping: Record<string, string> = {};
     targets.forEach(target => {
