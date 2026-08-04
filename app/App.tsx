@@ -11,9 +11,12 @@ declare const Papa: any;
 const DEFAULT_DATASET_URL = `${import.meta.env.BASE_URL}data/hospital-registers.tsv`;
 
 // Column 45 of the source spreadsheets carries a corrupted header, an artifact of
-// the original export. Give it a usable name at parse time.
+// the original export. By position and content it is the standardized ICD-9 label
+// for the primary diagnosis: it sits between origPrimICD9Name and Additional-ICD9,
+// holds ICD-9 names, and is filled for 28,107 records against origPrimICD9Name's
+// 18,971. Restoring the name also lets the diagnosis facet find it.
 const HEADER_FIXES: Record<string, string> = {
-  '<info@doctorsonly.co.i': 'additionalPrimICD9Name'
+  '<info@doctorsonly.co.i': 'standardPrimaryICD9Name'
 };
 
 const App: React.FC = () => {

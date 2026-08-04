@@ -42,10 +42,14 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     ];
     const mapping: Record<string, string> = {};
     targets.forEach(target => {
-      const found = dataKeys.find(k => {
-        const lowerK = k.toLowerCase().trim();
-        return target.id.toLowerCase() === lowerK || target.aliases.includes(lowerK);
-      });
+      // Walk the aliases in order and take the first that exists, rather than
+      // scanning the columns: the raw `Nationality` sits before
+      // `StandardNationality` in the TSV and would otherwise win.
+      let found: string | undefined;
+      for (const alias of [...target.aliases, target.id.toLowerCase()]) {
+        found = dataKeys.find(k => k.toLowerCase().trim() === alias);
+        if (found) break;
+      }
       if (found) mapping[target.id] = found;
     });
     return mapping;

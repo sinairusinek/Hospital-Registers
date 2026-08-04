@@ -43,10 +43,13 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
     
     const facets: Record<string, string> = {};
     facetTargets.forEach((target) => {
-      const found = dataKeys.find(k => {
-        const lowerK = k.toLowerCase().trim();
-        return target.internalKey === lowerK || (target.aliases && target.aliases.includes(lowerK));
-      });
+      // Alias order is the priority order: the standardized column must win over
+      // the raw one, which sits earlier in the TSV.
+      let found: string | undefined;
+      for (const alias of [target.internalKey, ...(target.aliases || [])]) {
+        found = dataKeys.find(k => k.toLowerCase().trim() === alias);
+        if (found) break;
+      }
       if (found) facets[target.label] = found;
     });
 
