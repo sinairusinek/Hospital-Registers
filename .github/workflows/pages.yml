@@ -6,6 +6,7 @@ on:
     paths:
       - 'app/**'
       - 'data/public/**'
+      - 'pipeline/build.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -23,6 +24,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # Builds data/public/hospital-registers-normalized.tsv, which is not
+      # committed: it is 15 MB and fully derived from the consolidated TSV.
+      - run: python3 pipeline/build.py
       - uses: actions/setup-node@v4
         with:
           node-version: 20

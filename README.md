@@ -4,7 +4,14 @@ Digitization and analysis of the Haifa Government Hospital admission registers, 
 
 ## PII policy
 
-Patient names were redacted at the image stage before transcription (hence the `Anon_*` source tables). The consolidated dataset in `data/public/` contains no patient names. Street addresses are coarsened in the published artifact — house numbers stripped, neighborhood / street name retained. City and locality fields are kept at full fidelity. The full unredacted master sits in `data/private/` (gitignored, local only).
+Patient names were redacted at the image stage before transcription (hence the `Anon_*` source tables). The consolidated dataset in `data/public/` contains no patient names. The full unredacted master sits in `data/private/` (gitignored, local only).
+
+Street addresses are coarsened by `pipeline/build.py` — house numbers, box numbers and unit numbers stripped, street or neighbourhood retained — in `hospital-registers-normalized.tsv`, which is what the site serves. **The consolidated `hospital-registers-2025-08-10.tsv` in this repo is not coarsened**: 2,017 of its addresses carry a number. It has been committed and public since the first push, so treat it as already disclosed.
+
+Two things the coarsening does not reach, both still open:
+
+- `Next of Kin` holds 2,379 personal names of third parties.
+- Some `Address` and `Occupation` values embed a person's name or a service number ("Mother. Mrs Barr 38 Oakford Road Walthamstow London", "Soldier No. 3127205"). Coarsening removes the digits, not the name.
 
 ## Layout
 
@@ -19,9 +26,10 @@ Built:
 - `app/` — "Hospital Registry Observer", the React + Vite exploration app (browse, facet, filter, chart). Deployed to GitHub Pages at https://sinairusinek.github.io/Hospital-Registers/ by `.github/workflows/pages.yml`. Run locally with `npm install && npm run dev` from `app/`; the dataset is staged out of `data/public/` by `app/scripts/copy-data.mjs`. The AI-synthesis panel asks the visitor for their own Gemini API key — the site is public and static, so none is bundled.
 - `paper/` — Cathedra article materials: chapter template, bibliography TSVs, extract bank, acquired sources. **Gitignored** — local only.
 
+- `pipeline/build.py` — builds the published artifact: a second normalization pass over the `standardized *` columns plus address coarsening, writing `data/public/hospital-registers-normalized.tsv` (gitignored, derived) and `data/public/normalization-report.tsv` (every merge and the low-frequency tail, for review). Run `python3 pipeline/build.py`; the Pages workflow runs it on every deploy.
+
 Planned, still empty:
 
-- `pipeline/build.py` — TSV → SQLite build including address coarsening.
 - `kimatch/` — Kima Historical Gazetteer matching for the `City` column; column-pluggable.
 - `site/` — Datasette database + metadata (build artifact; gitignored).
 - `notebooks/` — analysis notebooks feeding `paper/figures/`.
@@ -36,6 +44,11 @@ Planned, still empty:
 
 ## Known data issues
 
-Column 45 of the public TSV carries a corrupted header (`<info@doctorsonly.co.i`), an artifact of the source spreadsheets. To be cleaned in the build step.
+- Column 45 of the consolidated TSV carries a corrupted header (`<info@doctorsonly.co.i`). By position and content it is the standardized ICD-9 name for the primary diagnosis; `build.py` renames it to `standardPrimaryICD9Name`. Worth confirming against the source spreadsheets.
+- `Standardized Diagnosis` is not a normalization: it holds 13,992 distinct values against `Original Diagnosis`'s 13,851, i.e. more. The column that actually groups diagnoses is `standardPrimaryICD9Name` (3,860 distinct ICD-9 labels), which is what the site facets on.
+- One repeated header line sits inside the data (dropped by `build.py`, leaving 29,879 records). Eight legitimate records carry `Ward = "Ward"` or `Rate = "Rate"`, so it cannot be found by a single self-matching field.
+- The registers contain bare double quotes. Any consumer must disable quote handling — PapaParse's defaults silently merge rows and yield 19,718 records.
+- One admission is dated 1963-05-17, well past the end of the registers.
+- 95 values survive normalization on fewer than 20 records each; see `data/public/normalization-report.tsv` for the list.
 
 See `CFP. Illness Health and Healing. YBZ 2026.pdf` for the conference call.

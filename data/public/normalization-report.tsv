@@ -1,0 +1,166 @@
+kind	column	from	to	records
+merged	standardized Religion	Moslem	Muslim	1194
+merged	Class standard	3rd	3	1194
+merged	Class standard	2nd	2	504
+merged	standardized ward	Infectious	Infectious Diseases	111
+merged	StandardNationality	Poland	Polish	57
+merged	standardized ward	Isolation|Infectious Section	Isolation | Infectious Diseases	52
+merged	standardized ward	Infectious Diseases Section	Infectious Diseases	51
+merged	standardized ward	Infectious Section	Infectious Diseases	44
+merged	Class standard	1st	1	33
+merged	standardized ward	Isolation|Infectious	Isolation | Infectious Diseases	29
+merged	standardized ward	Isolation|Infectious Diseases	Isolation | Infectious Diseases	20
+merged	StandardNationality	Cheko	Czechoslovakian	18
+merged	StandardNationality	Palestinian | Palestinian	Palestinian	13
+merged	StandardNationality	Palst.	Palestinian	10
+merged	standardized Religion	Muh.	Muslim	10
+merged	Sex	male	Male	8
+merged	StandardNationality	Syria	Syrian	8
+merged	StandardNationality	Brit.	British	6
+merged	standardized ward	British Section|Infectious	British Section | Infectious Diseases	5
+merged	standardized ward	Medical/British Section	Medical | British Section	5
+merged	StandardNationality	Pales.	Palestinian	5
+merged	StandardNationality	Palent.	Palestinian	4
+merged	Class standard	3rd class	3	4
+merged	standardized ward	Medical|Infectious	Medical | Infectious Diseases	3
+merged	StandardNationality	Palestinian-Syrian	Palestinian Syrian	3
+merged	StandardNationality	Pale.	Palestinian	3
+merged	StandardNationality	"Palest. ""R"""	Palestinian	3
+merged	standardized ward	Surgical/British Section	Surgical | British Section	2
+merged	standardized ward	Mat	Maternity	2
+merged	standardized ward	Maternity/British Section	Maternity | British Section	2
+merged	StandardNationality	Palestinian T.J.	Palestinian Transjordanian	2
+merged	StandardNationality	T.J.	Transjordanian	2
+merged	StandardNationality	Palest. Transj.	Palestinian Transjordanian	2
+merged	StandardNationality	Lebanon	Lebanese	2
+merged	StandardNationality	Czech	Czechoslovakian	2
+merged	StandardNationality	Transjordan	Transjordanian	2
+merged	StandardNationality	"Palest. ""es"""	Palestinian	2
+merged	standardized ward	Infectious | Infectious Diseases Section	Infectious Diseases	1
+merged	standardized ward	Venereal Diseases|Infectious	Venereal Diseases | Infectious Diseases	1
+merged	StandardNationality	Greece	Greek	1
+merged	StandardNationality	Palestinian | Transjordanian	Palestinian Transjordanian	1
+merged	StandardNationality	Syrian / Egyptian	Syrian Egyptian	1
+merged	StandardNationality	Latevian	Latvian	1
+merged	StandardNationality	Palestinian (T. Jordan)	Palestinian Transjordanian	1
+merged	standardized ward	Mat.	Maternity	1
+merged	StandardNationality	Palestinian / Lebanese	Palestinian Lebanese	1
+merged	standardized ward	Medical|Maternity	Medical | Maternity	1
+merged	Class standard	2nd class	2	1
+merged	StandardNationality	Leban.	Lebanese	1
+merged	Class standard	II	2	1
+merged	StandardNationality	T.J. Muslem	Transjordanian	1
+merged	StandardNationality	Palest'n	Palestinian	1
+merged	StandardNationality	Pals.	Palestinian	1
+merged	StandardNationality	Palist.	Palestinian	1
+merged	StandardNationality	Palest. A 351	Palestinian	1
+merged	StandardNationality	Palest. P	Palestinian	1
+merged	StandardNationality	British 2234	British	1
+merged	StandardNationality	British 3332	British	1
+merged	StandardNationality	Libanian	Lebanese	1
+merged	StandardNationality	"Pal. ""R"""	Palestinian	1
+merged	StandardNationality	Pal (L)	Palestinian	1
+merged	StandardNationality	Palest. Egyptian	Palestinian Egyptian	1
+merged	StandardNationality	Palest. C.R.L.	Palestinian	1
+merged	StandardNationality	Palest. R.C.	Palestinian	1
+merged	standardized ward	Childrens	Children's	1
+merged	Class standard	1st class	1	1
+merged	Class standard	3rd Class	3	1
+merged	StandardNationality	British Subj.	British	1
+merged	StandardNationality	T/Jordanian	Transjordanian	1
+merged	StandardNationality	British C/E	British	1
+tail	Sex	B		1
+tail	Sex	W		1
+tail	Sex	C		1
+tail	standardized Religion	Arab		8
+tail	standardized Religion	Christian/Jewish?		2
+tail	standardized Religion	Ch. Moslem		1
+tail	standardized Religion	S.		1
+tail	standardized Religion	Teh		1
+tail	standardized Religion	Arm.		1
+tail	standardized Religion	Byzage		1
+tail	standardized Religion	[illegible]		1
+tail	StandardNationality	French		18
+tail	StandardNationality	Palestinian Syrian		17
+tail	StandardNationality	Italian		15
+tail	StandardNationality	Dutch		10
+tail	StandardNationality	Persian		10
+tail	StandardNationality	Norwegian		7
+tail	StandardNationality	Palestinian Egyptian		7
+tail	StandardNationality	Palestinian Transjordanian		6
+tail	StandardNationality	Indian		4
+tail	StandardNationality	Israel		4
+tail	StandardNationality	Palestinian Polish		3
+tail	StandardNationality	Palestinian German		3
+tail	StandardNationality	Sudan		3
+tail	StandardNationality	Belgian		2
+tail	StandardNationality	Iraqi		2
+tail	StandardNationality	Palestinian Latvian		2
+tail	StandardNationality	Canadian		2
+tail	StandardNationality	Lithuanian		2
+tail	StandardNationality	Esthonian		1
+tail	StandardNationality	Burmese		1
+tail	StandardNationality	Chinese		1
+tail	StandardNationality	Yemeni		1
+tail	StandardNationality	Syrian Egyptian		1
+tail	StandardNationality	Kurd Palestinian		1
+tail	StandardNationality	German Austrian		1
+tail	StandardNationality	Roman./Yugsl		1
+tail	StandardNationality	'Refugee Palestine?'		1
+tail	StandardNationality	Lybian		1
+tail	StandardNationality	Palestinian/Bedu		1
+tail	StandardNationality	Tripolitanian		1
+tail	StandardNationality	Palestinian Austrian		1
+tail	StandardNationality	Palestinian Druze		1
+tail	StandardNationality	Palestinian Lebanese		1
+tail	StandardNationality	Palestinian Cypriot		1
+tail	StandardNationality	British Polish		1
+tail	StandardNationality	Albanian		1
+tail	StandardNationality	Gruzinian		1
+tail	StandardNationality	Cypriot		1
+tail	StandardNationality	Police 12291		1
+tail	StandardNationality	Jew		1
+tail	StandardNationality	P.J.		1
+tail	StandardNationality	T.O.		1
+tail	StandardNationality	Yujazi		1
+tail	StandardNationality	Jewish		1
+tail	StandardNationality	Lincoln		1
+tail	StandardNationality	Soudian		1
+tail	StandardNationality	Syr.		1
+tail	StandardNationality	Non.		1
+tail	StandardNationality	Swedish		1
+tail	StandardNationality	P.		1
+tail	StandardNationality	Danish		1
+tail	standardized ward	British Section | Infectious Diseases		5
+tail	standardized ward	Medical | British Section		5
+tail	standardized ward	Medical | Infectious Diseases		3
+tail	standardized ward	Palestine Police Force		3
+tail	standardized ward	Surgical | British Section		2
+tail	standardized ward	Maternity | British Section		2
+tail	standardized ward	Venereal Diseases | Infectious Diseases		1
+tail	standardized ward	Medical | Maternity		1
+tail	standardized ward	Obstetrics		1
+tail	standardized ward	Maternity Surgical		1
+tail	standardized ward	Private		1
+tail	standardized ward	Prison Ward		1
+tail	standardized ward	Surgical British Section		1
+tail	standardized ward	Children's		1
+tail	standardized ward	French Carmelite		1
+tail	Class standard	3rd?		12
+tail	Class standard	3rd & 2nd		11
+tail	Class standard	2P		8
+tail	Class standard	BR.		3
+tail	Class standard	2S		3
+tail	Class standard	1/2		1
+tail	Class standard	B.R.		1
+tail	Class standard	B.S.		1
+tail	Class standard	3S?		1
+tail	Class standard	2nd?		1
+tail	Class standard	2 C		1
+tail	Class standard	2 S		1
+tail	Class standard	2S.		1
+tail	Class standard	6.8		1
+tail	Class standard	do		1
+tail	Class standard	P.R.		1
+tail	Class standard	?		1
+tail	Class standard	3rd gratis		1

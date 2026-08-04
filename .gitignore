@@ -17,3 +17,9 @@ site/build/
 
 # Local Google AI Studio export cache
 Hospital Admission Register Sp _ Google AI Studio_files/
+
+# Article + bibliography working files — never commit (private drafts, citations, extracts)
+paper/
+
+# Derived artifact: rebuild with python3 pipeline/build.py
+data/public/hospital-registers-normalized.tsv
