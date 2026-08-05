@@ -494,9 +494,10 @@ merged	StandardNationality	British C/E	British	1
 merged	City	Haifa?Atlit?	Haifa?Atlit	1
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	20
 review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	45
-review	Review Flags	stay-over-by-a-year	Stay exceeds the clerk's own count by exactly a year	18
+review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	17
 review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
 review	Review Flags	date-out-of-span	A date outside 1930-48 with nothing on the record to repair it from	2
+review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	360
 review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
 review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1320
@@ -537,6 +538,10 @@ derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	18
 derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	211
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	20
 derived	ICD-9 Chapter		no readable code	1465
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	20
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -1	251
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +1	77
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +5	12
 date	Admission Date [ISO]	upstream ISO	replaced	2522
 date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	894
 date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	492
@@ -545,7 +550,7 @@ date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the othe
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
 date	Days in Hospital (Calc)	discharge before admission	cleared	45
-unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	left as the register has it	18
+unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	17
 tail	standardized Religion	Arab		8
 tail	standardized Religion	Christian/Jewish?		2
 tail	standardized Religion	Ch. Moslem		1

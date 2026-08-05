@@ -27,7 +27,7 @@ import csv
 import re
 import sys
 from collections import Counter
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -453,9 +453,10 @@ def icd9_chapter(code: str, fallback: str) -> str:
 REVIEW_FLAGS = [
     ("procedure-not-diagnosis", "An operation recorded where a diagnosis belongs"),
     ("impossible-stay", "Discharged before admitted; the stay has been cleared"),
-    ("stay-over-by-a-year", "Stay exceeds the clerk's own count by exactly a year"),
+    ("stay-over-by-a-year", "Discharge year corrected: the stay ran a year over the clerk's own count"),
     ("sex-cleared", "A single stray letter where a sex belongs"),
     ("date-out-of-span", "A date outside 1930-48 with nothing on the record to repair it from"),
+    ("date-year-out-of-sequence", "Year corrected: the admission ran backwards against the register's order"),
     ("date-year-repaired", "A year outside 1930-48, taken from the other date on the record"),
     ("date-unreadable", "A date the clerk's own writing could not be parsed from"),
     ("stay-disagrees", "Computed stay differs from the count written beside it"),
@@ -492,6 +493,12 @@ DATE_WRITTEN = re.compile(r"(\d{1,2})[.\-/](\d{1,2})[.\-/](\d{2,4})")
 # flagged for review instead.
 REGISTER_YEARS = range(1930, 1949)
 
+# A notebook needs enough dated records for its own order to mean anything, and
+# a repaired date is allowed a few days either side of the backbone it rejoins:
+# the register is kept in order, not to the day.
+MIN_NOTEBOOK_RECORDS = 20
+SEQUENCE_SLACK = timedelta(days=3)
+
 # The registers run 1930-48. A two-digit year is read into that century; the
 # cut-off only has to fall somewhere outside the range the registers cover.
 YEAR_PIVOT = 25
@@ -509,6 +516,47 @@ def parse_written_date(value: str) -> str:
         return date(year, month, day).isoformat()
     except ValueError:
         return ""
+
+
+def chronological_backbone(values: list[date]) -> set[int]:
+    """Indices of the longest non-decreasing run through a notebook's dates.
+
+    A register is written in order, so its admission dates should never go
+    backwards. The longest non-decreasing subsequence is the sequence the clerk
+    actually kept; every index outside it is a record that breaks it.
+    """
+    tails: list[date] = []
+    tail_index: list[int] = []
+    previous = [-1] * len(values)
+    for i, value in enumerate(values):
+        lo, hi = 0, len(tails)
+        while lo < hi:
+            mid = (lo + hi) // 2
+            if tails[mid] <= value:
+                lo = mid + 1
+            else:
+                hi = mid
+        if lo == len(tails):
+            tails.append(value)
+            tail_index.append(i)
+        else:
+            tails[lo] = value
+            tail_index[lo] = i
+        previous[i] = tail_index[lo - 1] if lo > 0 else -1
+
+    keep: set[int] = set()
+    i = tail_index[-1] if tail_index else -1
+    while i != -1:
+        keep.add(i)
+        i = previous[i]
+    return keep
+
+
+def shift_years(value: date, years: int) -> date | None:
+    try:
+        return value.replace(year=value.year + years)
+    except ValueError:  # 29 February
+        return None
 
 
 def to_date(value: str) -> date | None:
@@ -680,16 +728,11 @@ def main() -> int:
                     flags.append("impossible-stay")
                 else:
                     row["Days in Hospital (Calc)"] = str(stay)
-                    # 18 of the 20 stays over a year sit exactly 365 days above
-                    # the figure the clerk wrote beside them: the discharge year
-                    # in the register is one too high. That is the register's
-                    # own slip, not the conversion's, and correcting it would
-                    # mean overruling the source rather than restoring it — so
-                    # it is counted here and left standing in the data.
                     reported = row.get("Days in Hospital (Rep)", "").strip()
                     if stay > 365 and reported.isdigit() and stay - int(reported) in (365, 366):
-                        stays_over_a_year += 1
-                        flags.append("stay-over-by-a-year")
+                        # Handled after the sequence pass, where the discharge
+                        # year is corrected against the clerk's own count.
+                        pass
                     elif reported.isdigit() and stay != int(reported):
                         flags.append("stay-disagrees")
             else:
@@ -760,6 +803,100 @@ def main() -> int:
 
         out_rows.append(row)
 
+    # ------------------------------------------------- years out of sequence
+    #
+    # A register is written in order, so a record whose admission runs backwards
+    # against its neighbours is a misread year, not a patient admitted a year
+    # earlier. The errors come in blocks — a page at a time, where the clerk's
+    # year at the head of the page was read once and carried down it: notebook
+    # 24's "9.12.38" sits between backbone entries of 1939-12-09 and 1939-12-11,
+    # notebook 8's page 42 reads 36 for 34, notebook 31's page 55 reads 42 for
+    # 47. So the local median cannot be the test — inside such a block it is the
+    # wrong year that is in the majority. The longest non-decreasing run through
+    # the notebook is used instead, and a record off it is corrected only when
+    # shifting its year by a whole number of years lands it back inside the gap
+    # the run leaves for it.
+    #
+    # Both dates move together, by the same shift, so the length of stay the
+    # clerk wrote beside the record is preserved — which is the corroboration
+    # that the year, and only the year, was misread.
+    sequence_repairs: Counter[int] = Counter()
+    notebooks: dict[str, list[dict[str, str]]] = {}
+    for row in out_rows:
+        notebooks.setdefault(row.get("Notebook_Number", ""), []).append(row)
+
+    for notebook, items in notebooks.items():
+        dated = [(row, to_date(row.get("Admission Date [ISO]", ""))) for row in items]
+        dated = [(row, value) for row, value in dated if value]
+        if len(dated) < MIN_NOTEBOOK_RECORDS:
+            continue
+        keep = chronological_backbone([value for _, value in dated])
+
+        for position, (row, admitted) in enumerate(dated):
+            if position in keep:
+                continue
+            before = next((dated[j][1] for j in range(position - 1, -1, -1) if j in keep), None)
+            after = next((dated[j][1] for j in range(position + 1, len(dated)) if j in keep), None)
+            if not before or not after:
+                continue
+            midpoint = before + (after - before) / 2
+            years = round((midpoint - admitted).days / 365.25)
+            if years == 0:
+                continue
+            corrected = shift_years(admitted, years)
+            if not corrected or corrected.year not in REGISTER_YEARS:
+                continue
+            # Only if the shift actually restores the sequence.
+            if not (before - SEQUENCE_SLACK <= corrected <= after + SEQUENCE_SLACK):
+                continue
+
+            row["Admission Date [ISO]"] = corrected.isoformat()
+            discharged = to_date(row.get("Discharge Date (ISO)", ""))
+            if discharged:
+                moved = shift_years(discharged, years)
+                if moved:
+                    row["Discharge Date (ISO)"] = moved.isoformat()
+            sequence_repairs[years] += 1
+
+            flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+            if "date-year-out-of-sequence" not in flags:
+                flags.append("date-year-out-of-sequence")
+                review_counts["date-year-out-of-sequence"] += 1
+            order = [name for name, _ in REVIEW_FLAGS]
+            row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+
+    # ------------------------------------------- discharge a year too high
+    #
+    # The other half of the same misreading, and the one that produced the
+    # year-long hospitalizations: the admission is where its neighbours are, but
+    # the discharge year is one above it — notebook 24's record 3990, admitted
+    # 4.12.38 and discharged, as read, 4.1.40, for a stay of 396 days against
+    # the 31 the clerk wrote beside it. The clerk's own count is the witness
+    # here, so the correction is applied only where the stay falls to exactly
+    # what he wrote once a year is taken off the discharge.
+    for row in out_rows:
+        admitted = to_date(row.get("Admission Date [ISO]", ""))
+        discharged = to_date(row.get("Discharge Date (ISO)", ""))
+        reported = (row.get("Days in Hospital (Rep)") or "").strip()
+        if not admitted or not discharged or not reported.isdigit():
+            continue
+        stay = (discharged - admitted).days
+        if stay <= 365 or stay - int(reported) not in (365, 366):
+            continue
+        moved = shift_years(discharged, -1)
+        if not moved or (moved - admitted).days != int(reported):
+            continue
+        row["Discharge Date (ISO)"] = moved.isoformat()
+        row["Days in Hospital (Calc)"] = str(int(reported))
+        stays_over_a_year += 1
+
+        flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+        if "stay-over-by-a-year" not in flags:
+            flags.append("stay-over-by-a-year")
+            review_counts["stay-over-by-a-year"] += 1
+        order = [name for name, _ in REVIEW_FLAGS]
+        row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+
     # Written by hand rather than through csv.writer: the registers contain bare
     # double quotes (inches, gershayim) and any escaping of them would have to be
     # undone by every consumer. Tabs and newlines inside a value are the only
@@ -811,6 +948,9 @@ def main() -> int:
             writer.writerow(["derived", "ICD-9 Chapter", "procedure code, not a diagnosis", "left without a chapter", icd9_refused])
         if chapters_unresolved:
             writer.writerow(["derived", "ICD-9 Chapter", "", "no readable code", chapters_unresolved])
+        for years, count in sorted(sequence_repairs.items()):
+            writer.writerow(["date", "Admission Date [ISO]", "ran backwards against the register's order",
+                             f"year shifted by {years:+d}", count])
         for label, count in dates_rebuilt.most_common():
             column, _, what = label.partition(": ")
             writer.writerow(["date", column, "upstream ISO", what, count])
@@ -821,7 +961,7 @@ def main() -> int:
         if stays_over_a_year:
             writer.writerow(
                 ["unresolved", "Discharge Date (ISO)", "stay exceeds the clerk's own count by a year",
-                 "left as the register has it", stays_over_a_year]
+                 "discharge year taken down one, to the clerk's own count", stays_over_a_year]
             )
         for column, counts in final_values.items():
             for value, count in counts.most_common():
@@ -846,9 +986,15 @@ def main() -> int:
     kept = sum(n for k, n in dates_rebuilt.items() if k.endswith("upstream kept"))
     print(f"chapters   {sum(chapters.values()):,} records placed in {len(chapters)} ICD-9 chapters, {chapters_unresolved:,} without a readable code")
     print(f"           {icd9_padded} short code(s) padded, {icd9_refused} procedure code(s) refused a chapter")
+    if sequence_repairs:
+        detail = ", ".join(
+            f"{count} by {years:+d} year" + ("s" if abs(years) > 1 else "")
+            for years, count in sorted(sequence_repairs.items())
+        )
+        print(f"sequence   {sum(sequence_repairs.values()):,} admission(s) that ran backwards, year corrected: {detail}")
     print(f"dates      {replaced:,} ISO date(s) rebuilt from the verbatim column, {kept:,} left as upstream had them")
     print(f"stays      {stays_cleared} impossible length(s) of stay cleared, "
-          f"{stays_over_a_year} left standing a year over the clerk's own count")
+          f"{stays_over_a_year} discharge year(s) a year over the clerk's own count, corrected")
     tail = {
         (col, val): n
         for col, counts in final_values.items()
