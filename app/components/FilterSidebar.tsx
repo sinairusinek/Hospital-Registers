@@ -2,6 +2,7 @@
 import React, { useState, useMemo } from 'react';
 import { ListFilter, X } from 'lucide-react';
 import { RegistryRecord, FilterState } from '../types';
+import { facetValue, UNKNOWN } from '../facets';
 
 interface FilterSidebarProps {
   data: RegistryRecord[];
@@ -71,11 +72,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
     (Object.entries(actualKeys.facets) as [string, string][]).forEach(([displayName, actualKey]) => {
       const facetGroup: Record<string, number> = {};
       data.forEach(row => {
-        const rawValue = row[actualKey];
-        const val = String(rawValue ?? 'Unknown').trim();
-        if (val && val !== 'null' && val !== 'undefined' && val !== 'Unknown') {
-          facetGroup[val] = (facetGroup[val] || 0) + 1;
-        }
+        // Blanks are a finding, not noise: 186 admissions record no sex at all.
+        // They are bucketed as Unknown rather than dropped, using the same rule
+        // App.tsx applies when filtering, so the count and the filter agree.
+        const val = facetValue(row[actualKey]);
+        facetGroup[val] = (facetGroup[val] || 0) + 1;
       });
       results[displayName] = facetGroup;
     });
@@ -168,7 +169,12 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
 
             const allValues = (Object.entries(facetsData[displayName] || {}) as [string, number][]).sort((a, b) => b[1] - a[1]);
             // Show top 10 most frequent diagnoses or items to handle high cardinality
-            const topItems = allValues.slice(0, 10);
+            const known = allValues.filter(([val]) => val !== UNKNOWN);
+            const unknown = allValues.find(([val]) => val === UNKNOWN);
+            // Unknown is pinned below the top 10 rather than competing with them:
+            // for a facet like Diagnosis it would otherwise either dominate the
+            // list or, for a sparse one, never surface at all.
+            const topItems = unknown ? [...known.slice(0, 10), unknown] : known.slice(0, 10);
             const selectedValues = filterState.facets[actualKey] || [];
             const selectedCount = selectedValues.length;
 
@@ -187,13 +193,13 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
                         checked={selectedValues.includes(val)} 
                         onChange={() => toggleFacet(displayName, val)} 
                       />
-                      <span className="ml-2 text-xs text-slate-600 group-hover:text-slate-900 truncate flex-1">{val}</span>
+                      <span className={`ml-2 text-xs group-hover:text-slate-900 truncate flex-1 ${val === UNKNOWN ? 'italic text-slate-400' : 'text-slate-600'}`}>{val}</span>
                       <span className="text-[9px] text-slate-400 font-mono">{count}</span>
                     </label>
                   ))}
-                  {allValues.length > 10 && (
+                  {known.length > 10 && (
                     <button onClick={() => setActiveModalFacet(displayName)} className="text-[10px] text-indigo-600 font-bold hover:underline pt-1 flex items-center gap-1">
-                      + View all {allValues.length}
+                      + View all {known.length}
                     </button>
                   )}
                 </div>
@@ -220,7 +226,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
                 .map(([val, count]) => (
                   <label key={val} className={`flex items-center p-3 rounded-xl cursor-pointer transition-all ${(filterState.facets[actualKeys.facets[activeModalFacet] || ''] || []).includes(val) ? 'bg-indigo-50' : 'hover:bg-slate-50'}`}>
                     <input type="checkbox" className="rounded text-indigo-600 w-4 h-4" checked={(filterState.facets[actualKeys.facets[activeModalFacet] || ''] || []).includes(val)} onChange={() => toggleFacet(activeModalFacet, val)} />
-                    <div className="ml-3 flex-1 min-w-0"><div className="text-sm font-semibold text-slate-700 truncate">{val}</div><div className="text-[10px] text-slate-400 font-mono">{count.toLocaleString()} occurrences</div></div>
+                    <div className="ml-3 flex-1 min-w-0"><div className={`text-sm font-semibold truncate ${val === UNKNOWN ? 'italic text-slate-400' : 'text-slate-700'}`}>{val}</div><div className="text-[10px] text-slate-400 font-mono">{count.toLocaleString()} occurrences</div></div>
                   </label>
                 ))}
             </div>

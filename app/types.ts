@@ -1,6 +1,7 @@
 
 export interface RegistryRecord {
-  [key: string]: string | number | undefined;
+  // null marks a value the app has cleaned away, e.g. a stray Sex letter.
+  [key: string]: string | number | null | undefined;
   'Admission Date [ISO]'?: string;
   'Discharge Date (ISO)'?: string;
   'Days in Hospital (Calc)'?: number;
@@ -20,7 +21,7 @@ export interface RegistryRecord {
   'standardprimaryICD9names'?: string;
 }
 
-export type ViewType = 'browse' | 'statistics';
+export type ViewType = 'about' | 'browse' | 'statistics';
 
 export interface RangeFilter {
   min: number;

@@ -1,13 +1,52 @@
 
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
-import { 
-  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
-  PieChart, Pie, Cell, AreaChart, Area, Legend, Brush, BarChart, Bar
+import {
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  PieChart, Pie, Cell, AreaChart, Area, Brush, BarChart, Bar
 } from 'recharts';
 import { GoogleGenAI } from "@google/genai";
 import { TrendingUp, Users, MapPin, HeartPulse, Globe, CheckCircle2, Sparkles, BrainCircuit, Calendar, Baby, Timer, RotateCcw } from 'lucide-react';
 import { RegistryRecord, FilterState } from '../types';
+import { facetValue, UNKNOWN } from '../facets';
+import { buildColorScale, ColorScale, OTHERS, RESIDUE, DIVERGING } from '../colors';
 import FilterSidebar from './FilterSidebar';
+import HelpPanel, { HelpSection } from './HelpPanel';
+import RepresentationPanel from './RepresentationPanel';
+
+const HELP: HelpSection[] = [
+  {
+    heading: 'Everything here is the selection',
+    body: <p>Every chart describes the records currently selected in the filters on the left, not the whole dataset. Narrow the filters and the charts redraw. Clearing the filters returns the full series.</p>
+  },
+  {
+    heading: 'The charts are filters',
+    body: <p>Clicking a slice adds that value to the filter for its column, and clicking it again removes it — so the charts can be read against each other. The grey <em>Others</em> slice is a residue of many small values and is not clickable.</p>
+  },
+  {
+    heading: 'The diagnosis chart omits blanks',
+    body: <p>Unlike the other charts, the diagnosis chart counts only records with a recorded diagnosis. An unrecorded slice would outweigh every real one and tell you nothing about what patients were treated for. The <em>{UNKNOWN}</em> row in the Diagnosis facet on the left still gives the size of that gap — read the two together, because a diagnosis share is a share of the recorded ones only.</p>
+  },
+  {
+    heading: 'Only eight at a time',
+    body: <p>Each pie shows the eight most frequent values and gathers the rest into <em>Others</em>. A long tail of rare values is therefore invisible here by design; the facet list on the left, under <strong>View all</strong>, is where to look for it.</p>
+  },
+  {
+    heading: 'A colour belongs to a value',
+    body: <p>Colours are fixed to the values themselves, not to their rank in the current selection, so filtering never repaints the survivors and two states of the same chart can be compared. Muslim is green, Christian orange and Jewish blue in every chart that shows them; <em>{UNKNOWN}</em> is always grey, and the pale grey <em>Others</em> is the residue.</p>
+  },
+  {
+    heading: 'A share on its own compares nothing',
+    body: <p>Each legend entry now reads <em>62.4% of 48.1%</em>: the value's share of the current selection, then its share of the whole registry, then the ratio between them. A group can fill most of a diagnosis simply by filling most of the wards, and only the ratio separates the two cases. <strong>×1.00</strong> means the selection mirrors the registry; the ratio appears only once something is filtered, because otherwise it is 1 by construction.</p>
+  },
+  {
+    heading: 'Read the ratio against its interval, and against the year',
+    body: <p>The <em>Representation</em> panel gives the same ratio with a 95% confidence interval. A whisker that crosses ×1 is consistent with no difference at all, however striking the bar looks. It also offers to hold admission year constant, which matters here: the registry spans 1930–48, the communities' shares of admissions move a great deal across it, and a ratio computed over the pooled years can be produced entirely by one epidemic coinciding with one year's admission mix. If the crude and the year-held figures disagree, the year-held one is the one to quote.</p>
+  },
+  {
+    heading: 'What the counts are counts of',
+    body: <p>These are admissions, not people: the registers carry no patient identifier, so a patient admitted three times counts three times. They are also a record of who reached this hospital and what a clerk wrote down, which is not the same as who was ill in Haifa.</p>
+  }
+];
 
 interface StatisticsViewProps {
   fullData: RegistryRecord[];
@@ -16,7 +55,7 @@ interface StatisticsViewProps {
   setFilterState: React.Dispatch<React.SetStateAction<FilterState>>;
 }
 
-const COLORS = ['#4f46e5', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#3b82f6', '#f43f5e', '#84cc16'];
+const TOP_N = 8;
 
 const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterState, setFilterState }) => {
   const [aiInsight, setAiInsight] = useState<string>('');
@@ -57,6 +96,41 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     return mapping;
   }, [fullData]);
 
+  // Built from fullData, so nothing the filters do can repaint a slice.
+  const colorScales = useMemo(() => {
+    const scales: Record<string, ColorScale> = {};
+    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis'].forEach(name => {
+      scales[name] = buildColorScale(fullData, actualKeys[name], name);
+    });
+    return scales;
+  }, [fullData, actualKeys]);
+
+  // The share of the *whole registry* each value carries. Bucketed by exactly
+  // the rules the selection charts use — including the diagnosis chart's
+  // exclusion of unrecorded rows — so that a slice's share and its baseline are
+  // shares of comparable populations and their ratio means something.
+  const baselines = useMemo(() => {
+    const out: Record<string, Record<string, number>> = {};
+    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis'].forEach(dim => {
+      const counts: Record<string, number> = {};
+      let total = 0;
+      fullData.forEach(row => {
+        const v = facetValue(actualKeys[dim] && row[actualKeys[dim]]);
+        if (dim === 'Diagnosis' && v === UNKNOWN) return;
+        counts[v] = (counts[v] || 0) + 1;
+        total++;
+      });
+      const shares: Record<string, number> = {};
+      Object.entries(counts).forEach(([k, n]) => { shares[k] = total > 0 ? n / total : 0; });
+      out[dim] = shares;
+    });
+    return out;
+  }, [fullData, actualKeys]);
+
+  // With nothing filtered every ratio is 1 by construction, and printing a
+  // column of ×1.00 would suggest a finding where there is only arithmetic.
+  const isFiltered = data.length > 0 && data.length < fullData.length;
+
   const timelineStats = useMemo(() => {
     const admissionTimeline: Record<string, number> = {};
     const dateKey = actualKeys['Admission Date'];
@@ -87,24 +161,28 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     };
 
     data.forEach(row => {
-      const sex = String((actualKeys['Sex'] && row[actualKeys['Sex']]) || 'Not Specified');
+      // Same bucketing rule as the sidebar: a pie slice is clickable and sets a
+      // facet filter, so its label has to be a value the filter recognizes.
+      const sex = facetValue(actualKeys['Sex'] && row[actualKeys['Sex']]);
       distributions.sex[sex] = (distributions.sex[sex] || 0) + 1;
 
-      const res = String((actualKeys['Result'] && row[actualKeys['Result']]) || 'Unknown');
+      const res = facetValue(actualKeys['Result'] && row[actualKeys['Result']]);
       distributions.result[res] = (distributions.result[res] || 0) + 1;
 
-      const rel = String((actualKeys['Religion'] && row[actualKeys['Religion']]) || 'Unknown');
+      const rel = facetValue(actualKeys['Religion'] && row[actualKeys['Religion']]);
       distributions.religion[rel] = (distributions.religion[rel] || 0) + 1;
 
-      const city = String((actualKeys['City'] && row[actualKeys['City']]) || 'Unknown');
+      const city = facetValue(actualKeys['City'] && row[actualKeys['City']]);
       distributions.city[city] = (distributions.city[city] || 0) + 1;
 
-      const nat = String((actualKeys['Nationality'] && row[actualKeys['Nationality']]) || 'Unknown');
+      const nat = facetValue(actualKeys['Nationality'] && row[actualKeys['Nationality']]);
       distributions.nationality[nat] = (distributions.nationality[nat] || 0) + 1;
 
-      const diagRaw = (actualKeys['Diagnosis'] && row[actualKeys['Diagnosis']]);
-      const diag = diagRaw ? String(diagRaw).trim() : 'Unknown';
-      if (diag && !['null', 'undefined', 'Unknown', ''].includes(diag)) {
+      // The diagnosis chart stays a distribution of recorded diagnoses only: an
+      // unrecorded slice would outweigh every real one. The sidebar still counts
+      // them, so the size of the gap remains visible there.
+      const diag = facetValue(actualKeys['Diagnosis'] && row[actualKeys['Diagnosis']]);
+      if (diag !== UNKNOWN) {
         distributions.diagnosis[diag] = (distributions.diagnosis[diag] || 0) + 1;
       }
       
@@ -192,7 +270,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
   }, [actualKeys, filterState.ranges, setFilterState]);
 
   const handlePieClick = useCallback((displayName: string, entry: any) => {
-    if (!entry || entry.name === 'Others') return;
+    if (!entry || entry.name === OTHERS) return;
     const actualKey = actualKeys[displayName];
     if (!actualKey) return;
     setFilterState(prev => {
@@ -226,23 +304,87 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     }));
   };
 
-  const renderPie = (chartData: any[], displayName: string, colorOffset: number = 0) => {
+  const renderPie = (chartData: any[], displayName: string) => {
     if (chartData.length === 0) return <div className="h-full flex items-center justify-center text-slate-400 text-sm italic">No data</div>;
-    const top10 = chartData.slice(0, 10);
-    const othersValue = chartData.slice(10).reduce((acc, curr) => acc + curr.value, 0);
-    const finalData = othersValue > 0 ? [...top10, { name: 'Others', value: othersValue }] : top10;
+    const color = colorScales[displayName];
+    const base = baselines[displayName] || {};
+    const top = chartData.slice(0, TOP_N);
+    const othersValue = chartData.slice(TOP_N).reduce((acc, curr) => acc + curr.value, 0);
+    const finalData = othersValue > 0 ? [...top, { name: OTHERS, value: othersValue }] : top;
+    // The share is of this chart's own total: the diagnosis chart drops the
+    // unrecorded rows, so measuring against the whole selection would quietly
+    // shrink every diagnosis.
+    const total = finalData.reduce((acc, curr) => acc + curr.value, 0) || 1;
+    // recharts 3 ignores a custom Legend `payload`, so the legend is rendered
+    // here: in count order, with the share each slice carries, which is what
+    // makes the pies readable at this size.
     return (
+      <div className="h-full flex flex-col">
+        <div className="flex-1 min-h-0">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie data={finalData} innerRadius={50} outerRadius={75} paddingAngle={3} dataKey="value" animationDuration={800} onClick={(entry) => handlePieClick(displayName, entry)} className="cursor-pointer outline-none">
-            {finalData.map((entry, index) => (
-              <Cell key={`cell-${displayName}-${index}`} fill={entry.name === 'Others' ? '#e2e8f0' : COLORS[(index + colorOffset) % COLORS.length]} className="hover:opacity-80 transition-opacity" />
+            {finalData.map((entry) => (
+              <Cell key={`cell-${displayName}-${entry.name}`} fill={color ? color(entry.name) : RESIDUE} className="hover:opacity-80 transition-opacity" />
             ))}
           </Pie>
-          <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }} formatter={(v: number, n: string) => [v.toLocaleString(), n]} />
-          <Legend payload={top10.map((e, i) => ({ id: e.name, type: 'circle', value: `${e.name} (${((e.value / data.length) * 100).toFixed(1)}%)`, color: COLORS[(i + colorOffset) % COLORS.length] }))} wrapperStyle={{ fontSize: '9px', paddingTop: '10px' }} layout="horizontal" verticalAlign="bottom" align="center" />
+          <Tooltip
+            contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }}
+            content={({ active, payload }: any) => {
+              if (!active || !payload?.length) return null;
+              const entry = payload[0].payload;
+              const share = entry.value / total;
+              const baseShare = base[entry.name];
+              return (
+                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-3 text-[11px] space-y-1">
+                  <div className="font-bold text-slate-800">{entry.name}</div>
+                  <div className="text-slate-500">{entry.value.toLocaleString()} records · {(share * 100).toFixed(1)}% of this selection</div>
+                  {entry.name !== OTHERS && baseShare !== undefined && (
+                    <div className="text-slate-500">{(baseShare * 100).toFixed(1)}% of the whole registry</div>
+                  )}
+                  {isFiltered && entry.name !== OTHERS && baseShare ? (
+                    <div className="pt-1 border-t border-slate-100 font-bold text-slate-700">
+                      ×{(share / baseShare).toFixed(2)} representation
+                    </div>
+                  ) : null}
+                </div>
+              );
+            }}
+          />
         </PieChart>
       </ResponsiveContainer>
+        </div>
+        {/* Beside each slice's share of the selection sits its share of the whole
+            registry, because the first number alone answers no comparative
+            question: a group can dominate a diagnosis simply by dominating the
+            wards. The ratio of the two is what a claim would rest on. */}
+        <ul className="flex flex-wrap justify-center gap-x-3 gap-y-1 pt-3 text-[9px] text-slate-600">
+          {finalData.map(entry => {
+            const share = entry.value / total;
+            const baseShare = base[entry.name];
+            const lift = isFiltered && entry.name !== OTHERS && baseShare ? share / baseShare : null;
+            return (
+              <li key={`legend-${displayName}-${entry.name}`} className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: color ? color(entry.name) : RESIDUE }} />
+                <span className={entry.name === OTHERS ? 'italic text-slate-400' : ''}>
+                  {entry.name} ({(share * 100).toFixed(1)}%)
+                  {baseShare !== undefined && entry.name !== OTHERS && (
+                    <span className="text-slate-400"> of {(baseShare * 100).toFixed(1)}%</span>
+                  )}
+                </span>
+                {lift !== null && (
+                  <span
+                    className="font-bold tabular-nums"
+                    style={{ color: lift >= 1 ? DIVERGING.above : DIVERGING.below }}
+                  >
+                    ×{lift.toFixed(2)}
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   };
 
@@ -334,11 +476,18 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
           </div>
         </div>
 
+        <RepresentationPanel
+          fullData={fullData}
+          data={data}
+          actualKeys={actualKeys}
+          filterState={filterState}
+        />
+
         {/* Charts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Categorical Pies */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><HeartPulse size={18} className="text-rose-500" /> Diagnoses</h3><div className="h-[300px]">{renderPie(stats.diagnosisData, "Diagnosis", 0)}</div></div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Clinical Result</h3><div className="h-[300px]">{renderPie(stats.resultData, "Result", 2)}</div></div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><HeartPulse size={18} className="text-rose-500" /> Diagnoses</h3><div className="h-[300px]">{renderPie(stats.diagnosisData, "Diagnosis")}</div></div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Clinical Result</h3><div className="h-[300px]">{renderPie(stats.resultData, "Result")}</div></div>
           
           {/* Age Distribution (Interactive) */}
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col group/card">
@@ -424,10 +573,10 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
             <p className="text-[9px] text-slate-400 text-center mt-2 font-medium italic">Click bars to isolate specific stay durations</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Sparkles size={18} className="text-amber-500" /> Religion</h3><div className="h-[300px]">{renderPie(stats.religionData, "Religion", 4)}</div></div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Globe size={18} className="text-emerald-500" /> Nationality</h3><div className="h-[300px]">{renderPie(stats.nationalityData, "Nationality", 6)}</div></div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Users size={18} className="text-indigo-500" /> Sex Distribution</h3><div className="h-[300px]">{renderPie(stats.sexData, "Sex", 8)}</div></div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><MapPin size={18} className="text-slate-500" /> Origin Cities</h3><div className="h-[300px]">{renderPie(stats.cityData, "City", 1)}</div></div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Sparkles size={18} className="text-amber-500" /> Religion</h3><div className="h-[300px]">{renderPie(stats.religionData, "Religion")}</div></div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Globe size={18} className="text-emerald-500" /> Nationality</h3><div className="h-[300px]">{renderPie(stats.nationalityData, "Nationality")}</div></div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Users size={18} className="text-indigo-500" /> Sex Distribution</h3><div className="h-[300px]">{renderPie(stats.sexData, "Sex")}</div></div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><MapPin size={18} className="text-slate-500" /> Origin Cities</h3><div className="h-[300px]">{renderPie(stats.cityData, "City")}</div></div>
         </div>
 
         {/* AI Analysis Section */}
@@ -460,6 +609,8 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
           </div>
         </div>
       </div>
+
+      <HelpPanel title="How to read this" sections={HELP} storageKey="help.statistics" />
     </div>
   );
 };

@@ -1,10 +1,39 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Filter, Columns, ChevronLeft, ChevronRight, Hash, X, Plus, SlidersHorizontal, Download } from 'lucide-react';
+import { Search, Filter, Columns, ChevronLeft, ChevronRight, Hash, X, Plus, SlidersHorizontal, Download, ArrowUp, ArrowDown, ChevronsUpDown } from 'lucide-react';
 import { RegistryRecord, ColumnConfig, FilterState } from '../types';
 import FilterSidebar from './FilterSidebar';
+import HelpPanel, { HelpSection } from './HelpPanel';
+import { UNKNOWN } from '../facets';
 
 declare const Papa: any;
+
+const HELP: HelpSection[] = [
+  {
+    heading: 'What a row is',
+    body: <p>One row is one admission, in the order the clerk entered it in the register. The same patient readmitted appears as a second row; the registers give no patient identifier, so the table cannot be counted as a count of people.</p>
+  },
+  {
+    heading: 'As written, and standardized',
+    body: <p>Where a field was cleaned, two columns exist: the plain name holds the standardized value, and <em>… as written</em> holds what the clerk actually wrote. The table shows the standardized ones by default; open <strong>Columns</strong> to add the verbatim originals. For any argument that rests on wording, read the “as written” column.</p>
+  },
+  {
+    heading: 'Sorting, and getting back',
+    body: <p>Click a column heading to sort by it — ascending, then descending, then back to register order. Numeric columns such as <em>Age</em> and <em>Days in Hospital</em> sort as numbers; blanks always sink to the bottom, in either direction, so reversing the order never fills the first page with records that say nothing about the column you sorted on. Register order is the default and is worth returning to: it is the sequence the clerk wrote the admissions in, which carries information no sort preserves.</p>
+  },
+  {
+    heading: 'How the filters combine',
+    body: <p>A facet with several values ticked matches any of them. Different facets, the search box, the advanced criteria and the sliders all have to be satisfied at once. The record count at the top right is the size of the current selection.</p>
+  },
+  {
+    heading: `The “${UNKNOWN}” bucket`,
+    body: <p>Each facet lists its ten most frequent values, with <em>{UNKNOWN}</em> pinned below them. It counts the records where the register leaves the field blank — an absence in the source, not a value. Selecting it isolates exactly those records; <strong>View all</strong> lists the recorded values beyond the top ten.</p>
+  },
+  {
+    heading: 'Export',
+    body: <p>Export writes the current selection as CSV, with the columns you have chosen to display. It is the selection, not the whole dataset.</p>
+  }
+];
 
 interface DataBrowserProps {
   data: RegistryRecord[];
@@ -29,18 +58,58 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
   const [showColumnPicker, setShowColumnPicker] = useState(false);
   const [showFacetPanel, setShowFacetPanel] = useState(true);
   const [showAdvancedSearch, setShowAdvancedSearch] = useState(false);
-  
+  // null is register order — the sequence the clerk wrote the admissions in,
+  // which is itself information and so stays the default and stays reachable.
+  const [sort, setSort] = useState<{ key: string; dir: 'asc' | 'desc' } | null>(null);
+
   const pageSize = 50;
 
-  const totalPages = Math.ceil(filteredData.length / pageSize);
+  const sortedData = useMemo(() => {
+    if (!sort) return filteredData;
+    const { key, dir } = sort;
+    const sign = dir === 'asc' ? 1 : -1;
+    // A blank is an absence, not a low value: it sorts to the bottom in both
+    // directions, so that reversing the order never fills the first page with
+    // records that have nothing in the column being sorted on.
+    const rank = (v: unknown): { blank: boolean; num: number | null; str: string } => {
+      if (v === null || v === undefined) return { blank: true, num: null, str: '' };
+      const s = String(v).trim();
+      if (s === '' || s === 'null' || s === 'undefined') return { blank: true, num: null, str: '' };
+      const n = Number(s);
+      return { blank: false, num: s !== '' && Number.isFinite(n) ? n : null, str: s };
+    };
+    // slice() first: filteredData is the parent's memo, and sorting in place
+    // would reorder the array every other view is reading.
+    return filteredData.slice().sort((a, b) => {
+      const x = rank(a[key]);
+      const y = rank(b[key]);
+      if (x.blank || y.blank) return x.blank === y.blank ? 0 : x.blank ? 1 : -1;
+      if (x.num !== null && y.num !== null) return (x.num - y.num) * sign;
+      return x.str.localeCompare(y.str, undefined, { numeric: true }) * sign;
+    });
+  }, [filteredData, sort]);
+
+  const totalPages = Math.ceil(sortedData.length / pageSize);
   const paginatedData = useMemo(() => {
     const start = (currentPage - 1) * pageSize;
-    return filteredData.slice(start, start + pageSize);
-  }, [filteredData, currentPage]);
+    return sortedData.slice(start, start + pageSize);
+  }, [sortedData, currentPage]);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [filterState]);
+  }, [filterState, sort]);
+
+  // Ascending, then descending, then back to register order — so the default is
+  // one more click away rather than something to hunt for.
+  const cycleSort = (key: string) => {
+    setSort(prev =>
+      !prev || prev.key !== key
+        ? { key, dir: 'asc' }
+        : prev.dir === 'asc'
+          ? { key, dir: 'desc' }
+          : null
+    );
+  };
 
   const addAdvancedSearch = () => {
     setFilterState(prev => ({
@@ -50,9 +119,11 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
   };
 
   const handleDownloadCSV = () => {
-    if (filteredData.length === 0) return;
+    if (sortedData.length === 0) return;
     const exportColumns = visibleColumns.map(c => c.key);
-    const exportData = filteredData.map(row => {
+    // In the order on screen, sort included: a file that came out in a different
+    // order from the table it was exported from would be a trap.
+    const exportData = sortedData.map(row => {
       const filteredRow: Record<string, any> = {};
       exportColumns.forEach(col => { filteredRow[col] = row[col]; });
       return filteredRow;
@@ -110,6 +181,17 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
             </div>
 
             <div className="flex items-center gap-4">
+              {sort && (
+                <button
+                  onClick={() => setSort(null)}
+                  className="flex items-center gap-1.5 text-xs font-medium text-indigo-600 bg-indigo-50 border border-indigo-200 rounded-lg px-2.5 py-1.5 hover:bg-indigo-100 transition-colors whitespace-nowrap"
+                  title="Return to the order the clerk entered the admissions in"
+                >
+                  sorted by {columns.find(c => c.key === sort.key)?.label || sort.key}
+                  {sort.dir === 'asc' ? <ArrowUp size={11} /> : <ArrowDown size={11} />}
+                  <X size={12} className="text-indigo-400" />
+                </button>
+              )}
               <div className="text-sm text-slate-500 whitespace-nowrap"><span className="font-bold text-slate-800">{filteredData.length.toLocaleString()}</span> records</div>
               <div className="flex items-center bg-slate-100 rounded-lg p-1">
                 <button disabled={currentPage === 1} onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))} className="p-1.5 rounded-md hover:bg-white disabled:opacity-30"><ChevronLeft size={18} /></button>
@@ -142,7 +224,23 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
             <thead className="sticky top-0 z-10 bg-slate-50/95 backdrop-blur-sm border-b border-slate-200 shadow-sm text-[10px] font-bold text-slate-400 uppercase tracking-wider">
               <tr>
                 <th className="w-12 px-4 py-3 text-center">#</th>
-                {visibleColumns.map(col => <th key={col.key} className="px-4 py-3 min-w-[150px]">{col.label}</th>)}
+                {visibleColumns.map(col => {
+                  const active = sort?.key === col.key;
+                  return (
+                    <th key={col.key} className="px-4 py-3 min-w-[150px]">
+                      <button
+                        onClick={() => cycleSort(col.key)}
+                        title={active && sort?.dir === 'desc' ? 'Return to register order' : `Sort by ${col.label}`}
+                        className={`flex items-center gap-1 uppercase tracking-wider transition-colors ${active ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+                      >
+                        <span className="truncate">{col.label}</span>
+                        {active
+                          ? (sort!.dir === 'asc' ? <ArrowUp size={11} className="shrink-0" /> : <ArrowDown size={11} className="shrink-0" />)
+                          : <ChevronsUpDown size={11} className="shrink-0 opacity-40" />}
+                      </button>
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -162,6 +260,8 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
           )}
         </div>
       </div>
+
+      <HelpPanel title="How to read this" sections={HELP} storageKey="help.browse" />
     </div>
   );
 };

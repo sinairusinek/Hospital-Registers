@@ -1,7 +1,9 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3 } from 'lucide-react';
+import { Upload, Table, BarChart3, Info } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
+import { facetValue } from './facets';
+import AboutView from './components/AboutView';
 import DataBrowser from './components/DataBrowser';
 import StatisticsView from './components/StatisticsView';
 
@@ -19,9 +21,26 @@ const HEADER_FIXES: Record<string, string> = {
   '<info@doctorsonly.co.i': 'standardPrimaryICD9Name'
 };
 
+// Three records carry a stray single letter in the Sex column — B, W and C, one
+// each. They are transcription debris from neighbouring columns, not a recorded
+// sex, so they are blanked at load time and join the Not recorded bucket in both
+// the browser and the statistics view.
+const KNOWN_SEX = ['male', 'female'];
+
+const cleanSex = (rows: RegistryRecord[], keys: string[]) => {
+  const sexKey = keys.find(k => ['sex', 'gender'].includes(k.toLowerCase().trim()));
+  if (!sexKey) return;
+  rows.forEach(row => {
+    if (!KNOWN_SEX.includes(String(row[sexKey] ?? '').trim().toLowerCase())) {
+      row[sexKey] = null;
+    }
+  });
+};
+
 const App: React.FC = () => {
   const [data, setData] = useState<RegistryRecord[]>([]);
-  const [activeView, setActiveView] = useState<ViewType>('browse');
+  // About is the landing view: a visitor meets the project before the table.
+  const [activeView, setActiveView] = useState<ViewType>('about');
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [columns, setColumns] = useState<ColumnConfig[]>([]);
@@ -67,10 +86,10 @@ const App: React.FC = () => {
         const rawData = (results.data as RegistryRecord[]).filter(
           row => Object.entries(row).filter(([k, v]) => v === k).length < 5
         );
-        setData(rawData);
 
         if (rawData.length > 0) {
           const keys = Object.keys(rawData[0]);
+          cleanSex(rawData, keys);
           // The cleaned columns carry the plain names in the published artifact,
           // so those are what the table shows by default. The verbatim columns
           // ("Nationality as written") are one click away under Columns.
@@ -136,6 +155,8 @@ const App: React.FC = () => {
             ranges: newRanges
           });
         }
+        // Set after cleaning, so no view ever renders the raw values.
+        setData(rawData);
         setIsLoading(false);
       },
       error: (error: any) => {
@@ -181,8 +202,7 @@ const App: React.FC = () => {
       // 3. Facet Filtering
       for (const [col, selectedValues] of Object.entries(filterState.facets) as [string, string[]][]) {
         if (selectedValues.length > 0) {
-          const rowValue = String(row[col] || 'Unknown');
-          if (!selectedValues.includes(rowValue)) return false;
+          if (!selectedValues.includes(facetValue(row[col]))) return false;
         }
       }
 
@@ -232,11 +252,22 @@ const App: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {data.length > 0 && (
-            <div className="flex bg-slate-100 p-1 rounded-lg">
+          {/* About stands on its own text, so it is reachable while the dataset
+              is still loading; the two data views are not. */}
+          <div className="flex bg-slate-100 p-1 rounded-lg">
+              <button
+                onClick={() => setActiveView('about')}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  activeView === 'about' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Info size={16} />
+                About
+              </button>
               <button
                 onClick={() => setActiveView('browse')}
-                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
+                disabled={data.length === 0}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
                   activeView === 'browse' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -245,15 +276,15 @@ const App: React.FC = () => {
               </button>
               <button
                 onClick={() => setActiveView('statistics')}
-                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
+                disabled={data.length === 0}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
                   activeView === 'statistics' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <BarChart3 size={16} />
                 Statistics
               </button>
-            </div>
-          )}
+          </div>
           <label className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium cursor-pointer transition-colors shadow-lg shadow-indigo-100">
             <Upload size={18} />
             {data.length > 0 ? 'Replace Dataset' : 'Upload TSV'}
@@ -263,7 +294,9 @@ const App: React.FC = () => {
       </header>
 
       <main className="flex-1 overflow-hidden relative">
-        {isLoading ? (
+        {activeView === 'about' ? (
+          <AboutView recordCount={data.length} onEnter={setActiveView} />
+        ) : isLoading ? (
           <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-50">
             <div className="w-16 h-16 border-4 border-indigo-100 border-t-indigo-600 rounded-full animate-spin mb-4"></div>
             <p className="text-slate-600 font-medium animate-pulse">Loading 29,880 admission records...</p>
