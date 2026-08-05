@@ -18,6 +18,10 @@ const HELP: HelpSection[] = [
     body: <p>Where a field was cleaned, two columns exist: the plain name holds the standardized value, and <em>… as written</em> holds what the clerk actually wrote. The table shows the standardized ones by default; open <strong>Columns</strong> to add the verbatim originals. For any argument that rests on wording, read the “as written” column.</p>
   },
   {
+    heading: 'Reading a cell in full',
+    body: <p>The table truncates long values to stay scannable — diagnoses especially, which are often the longest thing in the register. Hovering a cell shows the whole of it; clicking anywhere in the row opens the record entire, with every column the dataset carries, including the ones hidden from the table and the <em>… as written</em> originals. The text there can be selected and copied. <kbd>Esc</kbd> closes it.</p>
+  },
+  {
     heading: 'Sorting, and getting back',
     body: <p>Click a column heading to sort by it — ascending, then descending, then back to register order. Numeric columns such as <em>Age</em> and <em>Days in Hospital</em> sort as numbers; blanks always sink to the bottom, in either direction, so reversing the order never fills the first page with records that say nothing about the column you sorted on. Register order is the default and is worth returning to: it is the sequence the clerk wrote the admissions in, which carries information no sort preserves.</p>
   },
@@ -61,6 +65,11 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
   // null is register order — the sequence the clerk wrote the admissions in,
   // which is itself information and so stays the default and stays reachable.
   const [sort, setSort] = useState<{ key: string; dir: 'asc' | 'desc' } | null>(null);
+  // A cell is truncated to keep the table scannable, but a diagnosis is often
+  // the longest field in the register and the whole of it is the point. Clicking
+  // any cell opens the record entire — every column, not just the visible ones,
+  // so the "as written" originals are one click away from the standardized value.
+  const [detailRow, setDetailRow] = useState<RegistryRecord | null>(null);
 
   const pageSize = 50;
 
@@ -98,6 +107,13 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
   useEffect(() => {
     setCurrentPage(1);
   }, [filterState, sort]);
+
+  useEffect(() => {
+    if (!detailRow) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setDetailRow(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [detailRow]);
 
   // Ascending, then descending, then back to register order — so the default is
   // one more click away rather than something to hunt for.
@@ -245,9 +261,20 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
             </thead>
             <tbody className="divide-y divide-slate-100">
               {paginatedData.map((row, idx) => (
-                <tr key={idx} className="hover:bg-indigo-50/30 transition-colors">
+                <tr
+                  key={idx}
+                  onClick={() => setDetailRow(row)}
+                  className="hover:bg-indigo-50/30 transition-colors cursor-pointer"
+                  title="Open the whole record"
+                >
                   <td className="px-4 py-3 text-xs text-slate-400 font-mono text-center">{(currentPage - 1) * pageSize + idx + 1}</td>
-                  {visibleColumns.map(col => <td key={col.key} className="px-4 py-3 text-xs text-slate-600 truncate font-medium">{row[col.key] || '-'}</td>)}
+                  {visibleColumns.map(col => (
+                    // title= gives the untruncated value on hover; the click gives
+                    // it somewhere it can be selected and copied.
+                    <td key={col.key} className="px-4 py-3 text-xs text-slate-600 truncate font-medium" title={String(row[col.key] ?? '')}>
+                      {row[col.key] || '-'}
+                    </td>
+                  ))}
                 </tr>
               ))}
             </tbody>
@@ -260,6 +287,59 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
           )}
         </div>
       </div>
+
+      {detailRow && (
+        <div
+          className="fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-6"
+          onClick={() => setDetailRow(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden"
+            onClick={e => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Full record"
+          >
+            <div className="flex items-start justify-between gap-4 p-5 border-b border-slate-200">
+              <div>
+                <h4 className="font-bold text-slate-800">One admission, in full</h4>
+                <p className="text-xs text-slate-500 mt-1">
+                  Every column the dataset carries, blanks included — an empty field is an absence
+                  in the register, not a value.
+                </p>
+              </div>
+              <button
+                onClick={() => setDetailRow(null)}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors shrink-0"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+            </div>
+            <div className="overflow-y-auto p-5">
+              <dl className="divide-y divide-slate-100">
+                {columns.map(col => {
+                  const raw = detailRow[col.key];
+                  const empty = raw === null || raw === undefined || String(raw).trim() === '';
+                  return (
+                    <div key={col.key} className="grid grid-cols-[minmax(0,14rem)_1fr] gap-4 py-2">
+                      <dt className="text-[10px] font-bold uppercase tracking-wider text-slate-400 pt-0.5 break-words">
+                        {col.label}
+                      </dt>
+                      {/* whitespace-pre-wrap + break-words: the long diagnosis strings
+                          wrap here rather than being cut off, which is the whole
+                          reason this panel exists. */}
+                      <dd className={`text-xs whitespace-pre-wrap break-words ${empty ? 'text-slate-300 italic' : 'text-slate-700 font-medium select-text'}`}>
+                        {empty ? `${UNKNOWN}` : String(raw)}
+                      </dd>
+                    </div>
+                  );
+                })}
+              </dl>
+            </div>
+          </div>
+        </div>
+      )}
 
       <HelpPanel title="How to read this" sections={HELP} storageKey="help.browse" />
     </div>

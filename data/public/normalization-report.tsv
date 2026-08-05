@@ -43,6 +43,8 @@ merged	StandardNationality	Palestinian | Transjordanian	Palestinian Transjordani
 merged	StandardNationality	Syrian / Egyptian	Syrian Egyptian	1
 merged	StandardNationality	Latevian	Latvian	1
 merged	StandardNationality	Palestinian (T. Jordan)	Palestinian Transjordanian	1
+cleared	Sex	B		1
+cleared	Sex	W		1
 merged	standardized ward	Mat.	Maternity	1
 merged	StandardNationality	Palestinian / Lebanese	Palestinian Lebanese	1
 merged	standardized ward	Medical|Maternity	Medical | Maternity	1
@@ -57,6 +59,7 @@ merged	StandardNationality	Palest. A 351	Palestinian	1
 merged	StandardNationality	Palest. P	Palestinian	1
 merged	StandardNationality	British 2234	British	1
 merged	StandardNationality	British 3332	British	1
+cleared	Sex	C		1
 merged	StandardNationality	Libanian	Lebanese	1
 merged	StandardNationality	"Pal. ""R"""	Palestinian	1
 merged	StandardNationality	Pal (L)	Palestinian	1
@@ -69,9 +72,6 @@ merged	Class standard	3rd Class	3	1
 merged	StandardNationality	British Subj.	British	1
 merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
-tail	Sex	B		1
-tail	Sex	W		1
-tail	Sex	C		1
 tail	standardized Religion	Arab		8
 tail	standardized Religion	Christian/Jewish?		2
 tail	standardized Religion	Ch. Moslem		1

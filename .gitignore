@@ -23,3 +23,6 @@ paper/
 
 # Derived artifact: rebuild with python3 pipeline/build.py
 data/public/hospital-registers-normalized.tsv
+
+# Evaluation runs — working output, kept out of the public repo
+data/eval/

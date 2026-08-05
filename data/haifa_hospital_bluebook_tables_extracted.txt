@@ -1,0 +1,492 @@
+================ 1936 hospital table ================
+
+
+
+
+
+
+
+Nominal bed strength Admissions i 
+<< Daily 
+| | | | Dis- | average 
+Location of hospital | | gc Mt | | ed Deaths | charges} in 
+| General! Isola- | British | Mater- Moslems’ Christ- | Jews | Other Total | hospital 
+tion | | nity ' jans | religions : 
+| | | | 
+eee | (eae acai Came | ! | 
+Jerusalem Government. . 73 | zr 16 | 16 1,633 | 1,015 | 207 | 1 25856 | 143 2,687 84.8 
+| | | | 
+Haifa Ef me 74 | Jo 9 | 18 1,586 | 805 | 605 123 3,119 | 180 2,914 117.4 
+Jaffe. # a 67 | 73 7| 3! 1,813 | 360 | 174 | 2| 2,349) 136 2,217 2 
+i | | 
+Nablus 3 ue 59 19 4) 3! 15465 | 64 | 3) —| 1,652 | 147 1,358 63.9 
+| | i | ! 
+Safad 3 ae — 28 —! _— 524 | 98 | 106 | 3] 731 40: 682 22.1 
+Beersheba ve 8 = — — 200 20 | = = 220 | 14 206 78 
+Tel-Aviv Municipality. . 211 — — 23 I 6 i 7,216 —! 4,223 H 562 | 6,666 303.1 
+; | | 
+Gaza is ua 24 4 2 2 502 41 | I —| 544 | 36 | 514 15.3 
+| | 
+Bnei-Brak Government. . _— 20 : 240 | —! 240 5 218 14.6 
+| | | 
+1936... thes oe 516 225) | 38 65 724 2,409 | 8,552 | 129 | 18,814 | 1,263 | 17,462 707.2 
+1 
+1935. ss rt ae 508 | 175 43 55 8,023 } 2,073 72434 78 | 17,608 | I,II2 | 16,398 618.1 
+1934... sc ig 407 169 34 53: 6,880 | 2,001 6,216 | 20 | I5s117 | 941 | 14,096 §05.4 
+| | | 
+1933... ee oa 360 139 22 62, 5,565 | 1,757 | 99534 | 17 | 13,873 , 683 | 13.145 | 452.3 
+FO32. as nee eae 333 129 | 22 54 4,831 1,511 6,532 © 36 | 12,910 1 625 | 12,250 416.8 
+: \ 1 | } 
+PRISON SICK DETENTION WARDS 
+: | i ! 1 i 
+Jerusalem 6. 0. ee! 12 | S07 31 94 | me) = 637 9.1 
+| 
+Acre, General ward as 26 482 39 43) 13 577 _ 568 18.5 
+Acre, Tuberculosis ward .. | 20 10 cal | 2, _ 12 _ 15 11.8 
+Acre, Criminal lunatic ward 14 4 —| 3 | _ 7 I 4 24.6 
+| esl j 
+1936 Pe ae sel 72 | 1,003 7o 142 | 13 1,228 I 1,224 64.0 
+| H 
+1935 ae aie. ii 72 757 87 | 165 | 10 | 1,019 6 1,017 60.0 
+| | 
+1934. ba ii 72 800 60 uss | 5 | 1,023 10 | 1,009 56.1 
+1933. oe se on 72 846 57 14 4 981 6 966 56.8 
+1932 is or ae 68 932 45 128 | 8 1,113 I 1,110 50.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================ 1936 hospital expenditure / location ================
+
+
+
+
+
+
+| | n 7 
+Admissions | 
+. 4 Nominal \ | | Daily 
+Name and location of hospital bed Unclas- Deaths | Dis- | average 
+' strength Christ- sified | charges in 
+| Moslems} ians Jews jandother Totals | | | hospital 
+ean | | 
+_| 1 | | 
+| | | | | 
+JERUSALEM : | | | 
+Ophthalmic Hospital of the Order of St. John i | { 
+of Jerusalem ., aig | 45 593 83 3; — 679 _- | 662 27-2 
+St. Louis (French) Hospital oe ae | 150 728 656 20 _ | 1,404 45 | 1,351 42.2 
+Ttalian Hospital . . | 60 283 574 29 — | 886 31 | 850 25.6 
+Rothschild (Hadassah) Hospital qd ell 190 I I 45756 — | 4,758 | 242 | 4,490 167.1 
+English (British Mission to Jews) Hospital | 70 4 56 1,057 — | 43117] 15 | 1,121 49.2 
+Shaare Zedek Hospital | 53 6 7 1,145 — | 1,158 | 52 | 1,096 31-5 
+Misgab Ladach Hospital ica os . | 34 _ _ 2I1 | 211 17 | 197 10.6 
+New Bicur Cholim Hospital .. oe 120 - _— 1,169) — | 1,169 | 108 | 1,096 64.2 
+Old Bicur Cholim Hospital .. aa 20 - _ 3/ — | 13 | 7| 19.7 
+Lepers (International Moravian Society) | j 
+Hospital ms ey 60 2 _ I =_ 3 3) I 26.4 
+Deaconess (German) Hospital” oe 80 932 791 20 | I 1,744 | 80 1,657 | 56.6 
+Convalescent Home (Kupat Cholim) Motza real 84 - I,ISt _ 15st | — ! 13,5174 58.5 
+BETHLEHEM : | | | | 
+French Hospital. . id én oe 3 80 305 | 551 I — | 857 | 21 828 29.6 
+| | 
+HEBRON : q | | | | | 
+St. Luke’s (Jerusalem & The East Hospital). . 32 606 | I — | — | 607 | 54) 548 | 16.6 
+| | : | 
+JAFFA: | | | | 
+French Hospital. a ae os 90 732 | 235 32 =— 999 si | 960 | 36.2 
+German Hospital 5 20 44 141 3; — | 188 | 10; 385 | 4.2 
+Kupat Cholim Hospital, Petah’ Tigva. 66 _ _ 477 — | 477 | 13: 384 | 51.8 
+Church Missionary Society Hospital . 58 _ _ - | 670 670 | 30 641 | 18.7 
+| | j | 
+GAZA: : | | 
+Church Missionary Society Hospital . . “| 60 - l= _— 1,035 | 1,035 49 988 25.7 
+H | 
+HAIFA : | | | | 
+Jewish Community Hospital's 46 ee 9573) SS. |) E575 | 89 | 1,484 53-8 
+Italian Hospital . . we 50 175 | 185 | 114 | 14 | 483 16 488 24.0 
+German Hospital 40 348 300 657 | 6 | 1,311 | 41 1,269 | 40.5 
+NAZARETH : | \ | 
+Edinburgh Medical Mission Society ‘Hospital 70 1,202 | 264 - |) = 1,466 | 81 1,372 | 42.6 
+French Hospital a6 56 547 | 339 —- | - 886 | 25 864 | 20.3. 
+' | | | 
+AFULE : | } | | | 
+Kupat Cholim Hospital a seal 72 _ 2| 1,963 — | 1965 | 31 1,934 » 53.6 
+| | | | 1 | 
+NABLUS : | | j 
+Church Missionary Society Hospital . . 45 570 59 _ 2 631 22 | 604 | 16.6 
+‘TIBERIAS : 
+United Free Church of Scotland Hospital 60 8or | 141 Is4 I 1,097 50 | 1,067 | 32.6 
+Jewish Rural Sick Benefit Fund Hospital 26 12 | 2 800 _ 814 21 | 786 25.6 
+SAFAD : | | 
+Hadassah Hospital for tuberculous patients .. ' 58 I= 19! — 120 10 | 116 53-2 
+1936 1,895 | 7,894 | 4,388 | 15,468 | 1,729 | 29,479 | 1,214 | 28,219 | 1124.4 
+1935 1,839 | 9,935 4,763 | 16,605 | 2,514 | 33,817 | 1,223 | 32,585 | 1281.6 
+1934 .- 1,665 | 8,735 | 45335 | 13,242 | 2,402 | 28,714 | 1,195 | 27,460 | 1088.1 
+1933). cc 1,629 | 8,430 | 4,050 | 13,312 1,954 | 27,746 1,155 | 26,478 | 998.9 
+1932... 1,584 7156 3.549 | 12,448 2,508 | 25,661 1,082 | 24,548 | 948.8 
+MENTAL HOSPITALS 
+| Is Number of attendants Discharged sg) Average stay of those 
+se) B Bo | 
+================ 1937 hospital table ================
+HOSPITALS 
+
+
+GOVERNMENT AND MUNICIPAL HOSPITALS 
+
+
+GENERAL AND INFECTIOUS 
+
+
+
+
+
+Nominal bed strength | Admissions 
+— 
+Location of hospital \ F \ | 
+General Isola- | British | Mater- Moslems, Christ- | Jews ' Other 
+\ tion nity | jans religions! 
+—— ! 
+Jerusalem, Government . | 73 II 16 . 16 | 1,806 1,030 194 | 2 ' 
+Haifa 33 + | 14 7o 9 18 1,836 847 541 67 \ 
+Safad is iMyse 28 = —' 58 115 6; = | 
+Jaffa ” 67 B 7 3 1,935 432 24° - 
+Nablus 33 59 19 | 4 3 | 2,311 54 I —| 
+Beersheba ‘sn 8 aaa _ —_ | 241 3 _ _ 
+Gaza >» ul 24 Aer 2 2! 508 | 21 I rl 
+Tel-Aviv, Municipality. . 211 _ -_ 23 3 4 6,947 ; _ 
+Bnei-Brak, Government . _—. 36 - - - -_ 605 - 
+1937 . 516 241 38 65 9,226 2,506 8,389 , 7o | 
+1936 . Se 516 225 38 65 7:724 23409 8,552 129 | 
+1935 - +1 $08 175 43 55 8,023 2,073 75434 78 | 
+1934 ij 407 169 | 34 53 6,880 2,001 6,216 20 
+1933 - 360 139 | 22 62; 55565 13757) 6,534 17 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jerusalem Me bc 12 | 423 22 | 
+Acre, General ward el 26 | 485° 31 
+Acre, Tuberculosis ward .. 20 | 19 -| 
+Acre, Criminal lunatic ward | 14 | 4 r | 
+1937 . i R 931 | 54 | 
+1936 | 72 1,003 { 70 
+1935 soe R 787 | 87 | 
+1934 a | 72 800 | 60 ' 
+1933 7 72 846 | 57 | 
+
+
+
+
+
+
+
+
+19 
+13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Daily 
+
+Deaths ' Pend oa 
+" hospital 
+
+143 | 2,900 93.1 
+================ 1937 hospital location ================
+
+
+
+
+
+
+| Admissions ; 
+A ‘Nominal Daily 
+Name and location of hospital bed | Unclas- Deaths | Dis- average 
+strength | Christ- sified charges in 
+‘Moslems: ians Jews |and other| Totals ; hospital 
+| religions 
+| | 
+| i 
+- 1 1 
+atualmic Hospital of the Order of St John ! ! ‘ 
+f Jerusalem oa : 45 | 730 166 Ir ie 907 = 915 34.5 
+Louis (French) Hospital on ae ae 150 1,054 750 30 _ 1,834 54 1,774 53-2 
+ian Hospital .. oI ee 60 | 378 761 36 _ 1,175 34 | 1,142 31.1 
+hschild (Hadassah) Hospital at Ror 190 —_ 2 4,807 _ 4,809 248 45564 170.0 
+‘lish (British Mission to Jews) Hospital .. 70 | 12 46 871) — 929 14 | 909 50.0 
+are Zedek Hospital oa a aie 53 | 3 10 1,229 - 1,242 52 1,201 35.8 
+‘gab Ladach Hospital ‘sf Sy aise! 34° _ 241 - 241 15! 225 12.7 
+wy Bicur Cholim Hospital .. oe os 120 4 I 1,447 - 1,452 115! 1,354 59.8 
+Bicur Cholim Hospital .. eel 20); — _ 22 _- 22 16 6 19.6 
+xers (International Moravian Society) | 
+{ospital = a 60 3 _— I _ 4 6 21.5 
+woness (German) Hospital” ape 80 1213 3034 29 _ 25276 93 25223 72.5 
+walescent Home (Kupat Cholim) Mota |: | 8) — 173 _ 15773 - 1,828 76.9 
+‘HLEHEM : if 
+ach Hospital. . . a . ! 80 262 553 - — | 815 16 795 32.2 
+BON : iay A 
+Luke’s (Jerusalem & The East Hospital). . 32 628 2 _ _ 630 54 580 | 16.1 
+FA: 
+noch Hospital. ar ss oe “| go 1,155 322 23 _ 1,500 68 1,423 c 
+man Hospital oe 20 35 165 4 _- 204 I 201 5.0 
+pat Cholim Hospital, ‘Petah Tiqva.: ae 57 _ _ _ 656 656 17 602 17.4 
+arch Missionary Society Hospital .. a 66 I I 3,309 _ 3,311 69 3,221 94.7 
+TA: i 
+urch Missionary Society Hospital . . a 63 _- - - 1,416 1,416 52 1,356 33-7 
+IFA: 
+rish Community Hospitals. eA a 53 | 2 4 3647 _- 1,653 61 1,597 53. 
+ian Hospital .. as a oe oe 50 | 223 203 | 125) 6 557 10 ' 537 23.5 
+rman Hospital oa: es a oon 40 496 385 Isr! 7 1,039 33 1,011 28. 
+inburgh * Medical Mission Society Haspital: 72 3380 253 5 _ 1,638 85 | 1,550 SI.I 
+ach Hospital F os = 56 | 678 365 _- _ 1,043 23 1,004 24.4 
+ULE: 4 | ' 
+pat Cholim Hospital is a0 ae 72 I I 1,853, — 1,855 32, 1,823 52.4 
+BLUS : 7 , ' i | 
+urch Missionary Society Hospital . . oe 45 | 741 58 ae —_- 799 23 77 | 17.5 
+BERIAS : . | | ! 
+ited Free Church of Scotland Hospital .. 60 814 100 162 ; 7 1,083 59 1,008 50.9 
+vish Rural Sick Benefit Fund Hospital .. 32 | 6 4 874; — 884 33 859 | 27.3 
+PAD : : i } 
+dassah Hospital for tuberculous patients .. 58 | I 3 350 — 117 8 105 55.4 
+(937... 2 aS am en ++! 1,912 | 9,820 | 5,189 | 18,763 | 2,092 | 35,864} 1,291 34,589 | 1270.0 
+1936 .. ee oe a0 ma oe 1,895 7;894 45388 | 15,468 13729 | 293479 1,214 | 28,219 1124.4 
+1935 .. os oo oo oo -+| 1,839 | 9,935 | 43763 | 16,605 2514 | 33,817 | 1,223 | 32,585 | 1281.6 
+1934 .. a S a as: Be 3665 8,735 45335 | 13,242 | 2,402 | 28,714 1,195 | 27,460 1088.1 
+1933. - oe 2629 | 8,430 4,050 13,312 2954 | 27,746 1,155 26,478 998.9 
+
+
+
+
+
+
+
+
+
+
+
+================ 1938 hospital table ================
+
+
+
+
+
+Nominal Bed-Strength Admissions Ff 
+Di Daily 
+is- 
+Location of Hospital Pd charges eae 
+i 
+at General | Isola- | British | Mater- | Moslems| Christ- | Jews | Other Totals hospital 
+a tion nity ians religions 
+é z Jerusalem, Government 73 1 16 16 1,790 1,074 17 3 3,038 134 2,897 90.8 
+t 
+oe Haifa ” ued 88 76 30 26 1,769 853 509 44 35175 188 3,028 133.5 
+Safad is ae _ 28 _— - 484 163 go 5 738 39 703 24.5 
+Jaffa ” oy 67 73 7 3 2,198 480 5 _ 2,683 173 2,515 91.0 
+at Nablus aa 59 19 4 3 2,223 49 — 1 2273 171 2,117 97.6 
+Beersheba * 8 _ - _ 207 4 1 — 212 27 190 8.7 
+3 Gaza os 24 4 2 2 505 23 - 1 529 42 482 17.6 
+
+
+
+
+
+Bnei Beraq " we _ 36 - _ _ 8 493 _ sor 27 484 17.3 
+
+
+
+
+
+Tel Aviv, Municipal... amr == bad 23 Bel 35 | 7,335 = 2377 485 6,873 290.5 
+
+
+
+
+
+| 
+ht 1938 Ded, gets alee aed 530 247 59 73 9,183 2,689 8,604 50 20,526 1,286 19,289 715 
+1937 Wet Words weet « #18 516 241 38 65 9,226 2,506 8,389 Jo 20,191 1,233 18,859 756.6 
+1936 Mee cele Margene 516 225 38 65 1124 2,409 8,552 129 18,814 1,263 17,462 707.2 | 
+
+
+1935 Sokpesete: ee 508 175 43 55 8,023 2,073 1434 78 17,608 1,112 16,398 618.1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRISON SICK DETENTION WARDS 
+
+
+================ 1938 hospital location ================
+
+
+
+
+
+
+Admissions | ; 
+Nominal . a Uncl 2 - Di Daily 
+Name and Location of Hospital Bed- Christ- ari Deaths eee |e eee 
+‘ Mosl oF sified Totals charges in 
+Strength | Moslems) jons WS | andother| ° Hospital 
+
+- _ _ 7 religions — 
+
+JERUSALEM : | 
+
+Ophthalmic Hospital of the Order of St. John | 
+of Jerusalem : 45 614 149 5 -- 768 — 782 30.7 
+
+St. Louis (French) “Hospital| Be egy, Many Taee. 150 737 595 12 —_ 1,344 47 1313 43-3 
+
+Italian Hospital de aie ies “eas 60 352 568 27 — 947 | 23 914 | 24.2 
+
+Rothschild *( Hadassah) “Hospital ye 190 3) 10 5,286 —- 5,299 252 5,033 | 181.2 
+
+English (British Mission to Jews) Hospital « 7o 3 51 113 — 767 5 810 | 43-4 
+
+Shaare Zedek Hospital as : 53 4 12 1,079 _ 1,095 44 1,046 27.8 
+
+Misgab Ladach Hospital .. ater isith ite 34 — ae 270 _— 270 13 250 13.3 
+
+New Bicur Cholim Hospital 2. se a 120 — 2 1,316 — 1,318 143 | 1,181 50.3 
+
+Old Bicur Cholim Hospital .. 20 — — 12 — 12 10 6 19.5 
+
+Lepers (International Moravian Society) ‘Hosp. 60 6 _ 2 — 8 4 6 23.6 
+
+Deaconness (German) Hospital a 80 696 843 13 _— 1,552 62 1503 51.2 
+
+Convalescent Home (Kupat Cholim) Motza 84 — = 1,217 _ 1,217 — | 4,156 73-3 
+
+BETHLEHEM : 
+
+French Hospital .. .. .. .. .. we ee 80 400 614 _— — 1,014 22 997 41.9 
+
+HEBRON : 
+
+St. Luke’s (J’lem & the East Mission) Hosp. 32 659 9 =e — 668 41 630 18.4 
+
+JAFFA: 
+
+French Hospital joe be GU EU la a 110 828 277 13 — 1,118 53 1,079 34.2 
+
+German Hospital .. ie 18 20 48 153 2 — 203 3 200 5.2 
+
+Church Missionary Society Hospital hae Ane 57 474 74 1 = 549 21 539 16.2 
+
+Jewish Federation of Labour i Hospital 
+Petah Tiqva ae eee 66 I 15 3,480 — | 3,496 86 3,400 102.2 
+
+Gaza: 
+
+Church Missionary Society Hospital .. .. 63 1126 42 I _ 1,169 57 1,114 28.2 
+
+Hara: 
+
+Jewish Community Hospital: hig ka on GP Mee 53 t 9 1,797 _ 1,807 82 1,703 67.5 
+
+Italian Hospital Se a ee 50 201 225 96 6 528 17 496 21.0 
+
+German Hospital «. i. 6s 2 a0 oe 4o 337 306 89 15 747 43 715 23-5 
+
+NAZARETH : 
+
+Edinburgh Medical Mission k'Soclety Moenttel 72 1136 215 — _— 1,351 64 1,308 46.2 
+
+French Hospital... 56 663 282 - _ 945 37 go2 26.4 
+
+AFULE: 
+
+Jewish Federation of Labour Hospital .. .. 72 3 3 1,901 - 1,907 40 1,862 64.2 

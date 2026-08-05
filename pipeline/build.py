@@ -82,8 +82,15 @@ SEX = {
     "m": "Male",
     "f": "Female",
 }
-# "B", "W", "C" (one record each) are left alone: they are not abbreviations of
-# Male or Female in any reading we can support.
+# Sex is the one closed vocabulary here, so it is also the one column where a
+# value that resolves to neither term is cleared rather than passed through.
+# In the 2025-08-10 source that is "B", "W" and "C", one record each: single
+# letters that are not abbreviations of Male or Female in any reading we can
+# support, and read as debris from a neighbouring column. Clearing them puts
+# those records in the same unrecorded bucket as the 186 blanks instead of
+# inventing three one-member categories. Every clearance is listed in the
+# report, and the source file still holds the letter.
+CLOSED_VOCABULARIES = {"Sex": {"Male", "Female"}}
 
 RELIGION = {
     "moslem": "Muslim",
@@ -220,7 +227,11 @@ def normalize(column: str, value: str) -> str:
             if part not in seen:
                 seen.append(part)
         return " | ".join(seen)
-    return rules.get(stripped.lower(), stripped)
+    resolved = rules.get(stripped.lower(), stripped)
+    permitted = CLOSED_VOCABULARIES.get(column)
+    if permitted is not None and resolved not in permitted:
+        return ""
+    return resolved
 
 
 def is_repeated_header(row: dict[str, str]) -> bool:
@@ -298,7 +309,7 @@ def main() -> int:
         writer = csv.writer(handle, delimiter="\t")
         writer.writerow(["kind", "column", "from", "to", "records"])
         for (column, before, after), count in changes.most_common():
-            writer.writerow(["merged", column, before, after, count])
+            writer.writerow(["cleared" if not after else "merged", column, before, after, count])
         for column, counts in final_values.items():
             for value, count in counts.most_common():
                 if count < TAIL_THRESHOLD:
@@ -307,7 +318,9 @@ def main() -> int:
     print(f"read       {len(rows):,} rows")
     print(f"dropped    {dropped} repeated header row(s)")
     print(f"wrote      {len(out_rows):,} rows -> {OUTPUT.relative_to(ROOT)}")
-    print(f"merged     {sum(changes.values()):,} values across {len(changes)} rules")
+    cleared = sum(n for (_, _, after), n in changes.items() if not after)
+    print(f"merged     {sum(changes.values()) - cleared:,} values across {len(changes)} rules")
+    print(f"cleared    {cleared} value(s) outside a closed vocabulary")
     print(f"coarsened  {coarsened:,} addresses")
     tail = {
         (col, val): n
