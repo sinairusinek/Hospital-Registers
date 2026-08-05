@@ -247,9 +247,12 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
                       <button
                         onClick={() => cycleSort(col.key)}
                         title={active && sort?.dir === 'desc' ? 'Return to register order' : `Sort by ${col.label}`}
-                        className={`flex items-center gap-1 uppercase tracking-wider transition-colors ${active ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+                        // w-full + min-w-0 on both: without them the flex child
+                        // refuses to shrink below its text and a long header
+                        // runs out over the next column.
+                        className={`flex w-full min-w-0 items-center gap-1 uppercase tracking-wider transition-colors ${active ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
                       >
-                        <span className="truncate">{col.label}</span>
+                        <span className="truncate min-w-0">{col.label}</span>
                         {active
                           ? (sort!.dir === 'asc' ? <ArrowUp size={11} className="shrink-0" /> : <ArrowDown size={11} className="shrink-0" />)
                           : <ChevronsUpDown size={11} className="shrink-0 opacity-40" />}

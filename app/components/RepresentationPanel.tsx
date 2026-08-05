@@ -14,7 +14,7 @@ import { computeLift, log2, LiftRow } from '../stats';
 // nothing is silently dropped from a chart someone may cite.
 const MIN_N = 20;
 
-const DIMENSIONS = ['Religion', 'Nationality', 'Sex', 'City', 'Result'] as const;
+const DIMENSIONS = ['Religion', 'Nationality', 'Sex', 'Chapter', 'City', 'Result'] as const;
 type Dimension = typeof DIMENSIONS[number];
 
 interface Props {
@@ -127,7 +127,7 @@ const RepresentationPanel: React.FC<Props> = ({ fullData, data, actualKeys, filt
             className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 outline-none"
           >
             {DIMENSIONS.filter(d => actualKeys[d]).map(d => (
-              <option key={d} value={d}>{d}</option>
+              <option key={d} value={d}>{d === 'Chapter' ? 'Diagnosis (ICD-9 chapter)' : d}</option>
             ))}
           </select>
           <label className="flex items-center gap-2 text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 cursor-pointer">

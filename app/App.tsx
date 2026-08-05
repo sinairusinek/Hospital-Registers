@@ -99,6 +99,7 @@ const App: React.FC = () => {
             'sex',
             'religion',
             'nationality',
+            'icd-9 chapter',
             'diagnosis',
             'admission date',
             'days in hospital',

@@ -35,6 +35,10 @@ const HELP: HelpSection[] = [
     body: <p>Colours are fixed to the values themselves, not to their rank in the current selection, so filtering never repaints the survivors and two states of the same chart can be compared. Muslim is green, Christian orange and Jewish blue in every chart that shows them; <em>{UNKNOWN}</em> is always grey, and the pale grey <em>Others</em> is the residue.</p>
   },
   {
+    heading: 'Diagnosis is grouped by ICD-9 chapter',
+    body: <p>The specific diagnosis column holds 3,860 distinct labels and its ICD-9 code 2,514 — far more than eight slices or a ten-value facet list can represent, so a chart of them would be mostly <em>Others</em>. The default grouping everywhere is therefore the ICD-9 chapter, the classification's own top level: nineteen headings, of which <em>Infectious and parasitic diseases</em> alone accounts for 8,754 admissions. Switch the chart to <strong>Specific</strong>, or use the <em>Diagnosis (specific)</em> facet on the left, when the argument needs a named disease. 1,445 records carry no readable code and sit outside the chapter grouping entirely.</p>
+  },
+  {
     heading: 'A share on its own compares nothing',
     body: <p>Each legend entry now reads <em>62.4% of 48.1%</em>: the value's share of the current selection, then its share of the whole registry, then the ratio between them. A group can fill most of a diagnosis simply by filling most of the wards, and only the ratio separates the two cases. <strong>×1.00</strong> means the selection mirrors the registry; the ratio appears only once something is filtered, because otherwise it is 1 by construction.</p>
   },
@@ -63,6 +67,9 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
   // The site is static and public, so no key can be baked into the bundle.
   // Visitors supply their own; it stays in this browser only.
   const [apiKey, setApiKey] = useState<string>(() => localStorage.getItem('gemini_api_key') || '');
+  // The ICD-9 chapter is the default grouping for diagnosis everywhere: it is
+  // the level of the classification that a top-eight chart can represent.
+  const [diagnosisMode, setDiagnosisMode] = useState<'Chapter' | 'Diagnosis'>('Chapter');
 
   // Robust key mapping
   const actualKeys = useMemo(() => {
@@ -75,6 +82,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
       { id: 'Result', aliases: ['result', 'standardized result', 'outcome', 'standardized_result'] },
       { id: 'Religion', aliases: ['religion', 'standardized religion', 'standardized_religion'] },
       { id: 'Diagnosis', aliases: ['diagnosis', 'standardprimaryicd9names', 'standardprimaryicd9name', 'standardized diagnosis', 'primary diagnosis'] },
+      { id: 'Chapter', aliases: ['icd-9 chapter', 'icd9 chapter'] },
       { id: 'Admission Date', aliases: ['admission date', 'admission date [iso]', 'date'] },
       { id: 'City', aliases: ['city', 'town', 'residence'] },
       { id: 'Nationality', aliases: ['nationality', 'standardnationality', 'standard_nationality'] },
@@ -99,7 +107,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
   // Built from fullData, so nothing the filters do can repaint a slice.
   const colorScales = useMemo(() => {
     const scales: Record<string, ColorScale> = {};
-    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis'].forEach(name => {
+    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis', 'Chapter'].forEach(name => {
       scales[name] = buildColorScale(fullData, actualKeys[name], name);
     });
     return scales;
@@ -111,12 +119,12 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
   // shares of comparable populations and their ratio means something.
   const baselines = useMemo(() => {
     const out: Record<string, Record<string, number>> = {};
-    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis'].forEach(dim => {
+    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis', 'Chapter'].forEach(dim => {
       const counts: Record<string, number> = {};
       let total = 0;
       fullData.forEach(row => {
         const v = facetValue(actualKeys[dim] && row[actualKeys[dim]]);
-        if (dim === 'Diagnosis' && v === UNKNOWN) return;
+        if ((dim === 'Diagnosis' || dim === 'Chapter') && v === UNKNOWN) return;
         counts[v] = (counts[v] || 0) + 1;
         total++;
       });
@@ -157,7 +165,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
 
   const stats = useMemo(() => {
     const distributions: Record<string, Record<string, number>> = {
-      sex: {}, result: {}, religion: {}, city: {}, nationality: {}, diagnosis: {}, age: {}, stay: {}
+      sex: {}, result: {}, religion: {}, city: {}, nationality: {}, diagnosis: {}, chapter: {}, age: {}, stay: {}
     };
 
     data.forEach(row => {
@@ -184,6 +192,13 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
       const diag = facetValue(actualKeys['Diagnosis'] && row[actualKeys['Diagnosis']]);
       if (diag !== UNKNOWN) {
         distributions.diagnosis[diag] = (distributions.diagnosis[diag] || 0) + 1;
+      }
+
+      // The chapter follows the same rule as the specific diagnosis: an
+      // unrecorded slice would outweigh every real one.
+      const chap = facetValue(actualKeys['Chapter'] && row[actualKeys['Chapter']]);
+      if (chap !== UNKNOWN) {
+        distributions.chapter[chap] = (distributions.chapter[chap] || 0) + 1;
       }
       
       const ageRaw = actualKeys['Age'] && row[actualKeys['Age']];
@@ -226,6 +241,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
       religionData: formatCategorical(distributions.religion),
       cityData: formatCategorical(distributions.city),
       diagnosisData: formatCategorical(distributions.diagnosis),
+      chapterData: formatCategorical(distributions.chapter),
       nationalityData: formatCategorical(distributions.nationality),
       ageData: formatNumeric(distributions.age),
       stayData: formatNumeric(distributions.stay)
@@ -486,7 +502,31 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
         {/* Charts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Categorical Pies */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><HeartPulse size={18} className="text-rose-500" /> Diagnoses</h3><div className="h-[300px]">{renderPie(stats.diagnosisData, "Diagnosis")}</div></div>
+          {/* The chapter leads: eight slices out of nineteen chapters describe
+              the file, where eight out of 3,860 specific diagnoses leave most
+              of it in the Others residue. The specific view is one click away
+              for anything that needs naming a disease. */}
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="flex items-center justify-between mb-4 gap-2">
+              <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                <HeartPulse size={18} className="text-rose-500" /> Diagnoses
+              </h3>
+              <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-[10px] font-bold">
+                {(['Chapter', 'Diagnosis'] as const).map(mode => (
+                  <button
+                    key={mode}
+                    onClick={() => setDiagnosisMode(mode)}
+                    className={`px-2 py-1 rounded-md transition-colors ${diagnosisMode === mode ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                  >
+                    {mode === 'Chapter' ? 'ICD-9 chapter' : 'Specific'}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="h-[300px]">
+              {renderPie(diagnosisMode === 'Chapter' ? stats.chapterData : stats.diagnosisData, diagnosisMode)}
+            </div>
+          </div>
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Clinical Result</h3><div className="h-[300px]">{renderPie(stats.resultData, "Result")}</div></div>
           
           {/* Age Distribution (Interactive) */}

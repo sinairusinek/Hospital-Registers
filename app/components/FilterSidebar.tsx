@@ -19,8 +19,18 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
   // Aliases are tried in order: the published artifact's plain names first, the
   // consolidated TSV's names after, so an uploaded source file still facets.
   const facetTargets = [
+    // The ICD-9 chapter leads, because it is the only level of the
+    // classification a ten-value facet list can actually represent: the code
+    // column holds 2,514 distinct values and its three-digit category 821,
+    // against nineteen chapters. The specific diagnosis follows it, so
+    // narrowing to one disease is still a click away.
     {
-      label: 'Diagnosis',
+      label: 'Diagnosis (ICD-9 chapter)',
+      internalKey: 'icd-9 chapter',
+      aliases: ['icd9 chapter', 'icd-9 chapter']
+    },
+    {
+      label: 'Diagnosis (specific)',
       internalKey: 'diagnosis',
       aliases: ['standardprimaryicd9names', 'standardprimaryicd9name', 'standardized diagnosis', 'primary diagnosis']
     },
