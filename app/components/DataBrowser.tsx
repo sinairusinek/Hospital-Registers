@@ -108,6 +108,20 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
     setCurrentPage(1);
   }, [filterState, sort]);
 
+  // The page box is free text while being typed, so a half-typed "1" on the way
+  // to "120" does not jump the table. It commits on Enter or blur, clamped to
+  // the range; anything unreadable falls back to the page already shown.
+  const [pageInput, setPageInput] = useState('1');
+  useEffect(() => { setPageInput(String(currentPage)); }, [currentPage]);
+
+  const commitPage = () => {
+    const wanted = parseInt(pageInput, 10);
+    if (!Number.isFinite(wanted)) return setPageInput(String(currentPage));
+    const clamped = Math.min(Math.max(wanted, 1), Math.max(totalPages, 1));
+    setCurrentPage(clamped);
+    setPageInput(String(clamped));
+  };
+
   useEffect(() => {
     if (!detailRow) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setDetailRow(null); };
@@ -211,7 +225,24 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
               <div className="text-sm text-slate-500 whitespace-nowrap"><span className="font-bold text-slate-800">{filteredData.length.toLocaleString()}</span> records</div>
               <div className="flex items-center bg-slate-100 rounded-lg p-1">
                 <button disabled={currentPage === 1} onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))} className="p-1.5 rounded-md hover:bg-white disabled:opacity-30"><ChevronLeft size={18} /></button>
-                <span className="px-3 text-xs font-bold text-slate-600 font-mono">{currentPage} / {totalPages || 1}</span>
+                <div className="px-2 flex items-center gap-1 text-xs font-bold text-slate-600 font-mono">
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    aria-label="Page number"
+                    value={pageInput}
+                    onChange={(e) => setPageInput(e.target.value.replace(/[^0-9]/g, ''))}
+                    onFocus={(e) => e.target.select()}
+                    onBlur={commitPage}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') (e.target as HTMLInputElement).blur();
+                      if (e.key === 'Escape') { setPageInput(String(currentPage)); (e.target as HTMLInputElement).blur(); }
+                    }}
+                    style={{ width: `${Math.max(2, String(totalPages || 1).length) + 1}ch` }}
+                    className="bg-transparent text-center text-slate-800 outline-none focus:bg-white rounded px-1 py-0.5 focus:ring-1 focus:ring-indigo-400"
+                  />
+                  <span className="text-slate-400">/ {totalPages || 1}</span>
+                </div>
                 <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))} className="p-1.5 rounded-md hover:bg-white disabled:opacity-30"><ChevronRight size={18} /></button>
               </div>
             </div>

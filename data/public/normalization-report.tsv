@@ -2,82 +2,504 @@ kind	column	from	to	records
 merged	standardized Religion	Moslem	Muslim	1194
 merged	Class standard	3rd	3	1194
 merged	Class standard	2nd	2	504
+merged	City	Hedera	Hadera	204
 merged	standardized ward	Infectious	Infectious Diseases	111
+merged	City	Atlit	Athlit	83
+merged	City	Shefa Amr	Shafa Amr	81
+merged	City	Tulkarm	Tulkarem	77
 merged	StandardNationality	Poland	Polish	57
 merged	standardized ward	Isolation|Infectious Section	Isolation | Infectious Diseases	52
 merged	standardized ward	Infectious Diseases Section	Infectious Diseases	51
+merged	City	Shefa-'Amr	Shafa Amr	46
 merged	standardized ward	Infectious Section	Infectious Diseases	44
 merged	Class standard	1st	1	33
 merged	standardized ward	Isolation|Infectious	Isolation | Infectious Diseases	29
+merged	City	Haifa?	Haifa	29
+merged	City	Yajur	Yajour	25
+merged	City	Tantura	Tantoura	24
+merged	City	Beissan	Beisan	24
+merged	City	Affuleh	Afula	21
 merged	standardized ward	Isolation|Infectious Diseases	Isolation | Infectious Diseases	20
+merged	City	Ijzim	Igzim	19
+merged	City	Balad el Sheikh	Balad al-Sheikh	18
 merged	StandardNationality	Cheko	Czechoslovakian	18
+merged	City	Ara	Arara	17
+merged	City	Irbid	Irbed	16
+merged	City	Affula	Afula	15
+merged	City	Tel-Aviv	Tel Aviv	14
+merged	City	Shefa-Amr	Shafa Amr	14
+merged	City	Balad Sheikh	Balad al-Sheikh	14
 merged	StandardNationality	Palestinian | Palestinian	Palestinian	13
+merged	City	Herzliya	Herzlia	13
+merged	City	Zichron Yakov	Zichron Yaakov	13
+merged	City	Khedera	Hadera	13
+merged	City	Kiryat Bialek	Kiryat Bialik	13
+merged	City	Majdel Krum	Majd al-Krum	12
+merged	City	Balad al-Shaykh	Balad al-Sheikh	12
+merged	City	Tul-Karm	Tulkarem	12
+merged	City	Binyamina	Benyamina	11
+merged	City	Kiriat Haim	Kiryat Haim	11
+merged	City	Bisan	Beisan	11
+merged	City	Shafa 'Amr	Shafa Amr	11
+merged	City	Ain Ghazal	Ein Ghazal	10
+merged	City	Shafa-Amr	Shafa Amr	10
+merged	City	Bath Galim	Bat Galim	10
+merged	City	Yagur	Yajour	10
+merged	City	Yerka	Yarka	10
+merged	City	Ar'ara	Arara	10
+merged	City	Shefa'amr	Shafa Amr	10
 merged	StandardNationality	Palst.	Palestinian	10
 merged	standardized Religion	Muh.	Muslim	10
+merged	City	Safed	Safad	9
+merged	City	Zikhron Ya'akov	Zichron Yaakov	9
+merged	City	Tul Karm	Tulkarem	9
+merged	City	Shafa'amr	Shafa Amr	8
 merged	Sex	male	Male	8
 merged	StandardNationality	Syria	Syrian	8
+merged	City	Jaba'a	Jaba'	7
+merged	City	Majdel Kroum	Majd al-Krum	7
+merged	City	Shafa Amer	Shafa Amr	6
+merged	City	Yirka	Yarka	6
+merged	City	Akko	Akka	6
+merged	City	Pardes Hanna	Pardess Hanna	6
 merged	StandardNationality	Brit.	British	6
+merged	City	Had. Hac.	Had. Hac	5
+merged	City	Tul-Karem	Tulkarem	5
+merged	City	Ramah	Rameh	5
+merged	City	Is.	Is	5
+merged	City	Kiryat Hayim	Kiryat Haim	5
 merged	standardized ward	British Section|Infectious	British Section | Infectious Diseases	5
+merged	City	Al-Bassa	Bassa	5
+merged	City	Maghar	Mughar	5
+merged	City	Jaba	Jaba'	5
+merged	City	Shefa'amer	Shafa Amr	5
+merged	City	Arrara	Arara	5
+merged	City	Nazareth?	Nazareth	5
+merged	City	Balad el-Sheikh	Balad al-Sheikh	5
 merged	standardized ward	Medical/British Section	Medical | British Section	5
 merged	StandardNationality	Pales.	Palestinian	5
+merged	City	Wadi Salub	Wadi Salib	5
+merged	City	Haifa.	Haifa	4
+merged	City	Herzelia	Herzlia	4
+merged	City	Kufr Yasif	Kafr Yasif	4
+merged	City	Abu Sinan	Abu Snan	4
+merged	City	Tirah	Tireh	4
+merged	City	Moghar	Mughar	4
+merged	City	Yammoun	Yamoun	4
+merged	City	Ara'ra	Arara	4
+merged	City	Haifa|Haifa Nazareth St.	Haifa|Haifa Nazareth St	4
+merged	City	Shefa'mer	Shafa Amr	4
+merged	City	Afikim	Affikim	4
+merged	City	Transj.	Transj	4
+merged	City	Erbed	Irbed	4
 merged	StandardNationality	Palent.	Palestinian	4
+merged	City	Wadi Saleeb	Wadi Salib	4
 merged	Class standard	3rd class	3	4
+merged	City	El Zib	Zib	3
+merged	City	Wadi es Salib	Wadi Salib	3
 merged	standardized ward	Medical|Infectious	Medical | Infectious Diseases	3
+merged	City	Yamun	Yamoun	3
+merged	City	Sachnin	Sakhnin	3
+merged	City	Tul Karem	Tulkarem	3
+merged	City	Karkour	Karkur	3
+merged	City	Shefa 'Amr	Shafa Amr	3
+merged	City	Khadera	Hadera	3
+merged	City	Sakhneen	Sakhnin	3
+merged	City	Belad el Sheikh	Balad al-Sheikh	3
+merged	City	Shefa 'amer	Shafa Amr	3
+merged	City	Al-Zeeb	Zeeb	3
+merged	City	Kefar Vitkin	Kfar Vitkin	3
+merged	City	Shifa Amr	Shafa Amr	3
+merged	City	Iggzim	Igzim	3
 merged	StandardNationality	Palestinian-Syrian	Palestinian Syrian	3
 merged	StandardNationality	Pale.	Palestinian	3
 merged	StandardNationality	"Palest. ""R"""	Palestinian	3
+merged	City	El Zeeb	Zeeb	2
+merged	City	Affulah	Afula	2
+merged	City	Had. Stac.	Had. Stac	2
+merged	City	Wadi en Nisnas	Wadi Nisnas	2
+merged	City	El Ghbayya	Ghbayya	2
+merged	City	Beisan|Beisan P.P.	Beisan|Beisan P.P	2
+merged	City	Acre S/Dist.	Acre S/Dist	2
+merged	City	Afuleh	Afula	2
+merged	City	Yagour	Yajour	2
+merged	City	Kfar Yassif	Kafr Yasif	2
+merged	City	El Yajur	Yajour	2
+merged	City	Hadar HaCarmel	Hadar Hacarmel	2
+merged	City	El Bassa	Bassa	2
+merged	City	Hfa.	Hfa	2
+merged	City	Arameh	Rameh	2
+merged	City	Allenby St.	Allenby St	2
+merged	City	El Mansi	Mansi	2
+merged	City	Ard al-Yahud	Ardel Yahud	2
+merged	City	Bessa	Bassa	2
+merged	City	Bessan	Beisan	2
+merged	City	Hadera|Hadera P. & P.	Hadera|Hadera P. & P	2
+merged	City	Arra	Arara	2
+merged	City	Shafa'mer	Shafa Amr	2
+merged	City	Shafa'amer	Shafa Amr	2
+merged	City	Kufr Yassif	Kafr Yasif	2
+merged	City	Shafa 'amr	Shafa Amr	2
+merged	City	Mghar	Mughar	2
+merged	City	Tyreh	Tireh	2
+merged	City	Tarsheeha	Tarshiha	2
+merged	City	Kafr Yassif	Kafr Yasif	2
+merged	City	Bassa Acre sp.	Bassa Acre sp	2
+merged	City	|Im El Fahem	Im El Fahem	2
+merged	City	Jenin|Jenin G.	Jenin|Jenin G	2
+merged	City	Kufer Yasif	Kafr Yasif	2
+merged	City	Bissan	Beisan	2
+merged	City	Sid el Arab.	Sid el Arab	2
+merged	City	Kufer Yassif	Kafr Yasif	2
 merged	standardized ward	Surgical/British Section	Surgical | British Section	2
+merged	City	Jabaa	Jaba'	2
 merged	standardized ward	Mat	Maternity	2
+merged	City	Igzem	Igzim	2
+merged	City	Jeni	Jenin	2
+merged	City	Meghar	Mughar	2
 merged	standardized ward	Maternity/British Section	Maternity | British Section	2
 merged	StandardNationality	Palestinian T.J.	Palestinian Transjordanian	2
+merged	City	Baisan	Beisan	2
+merged	City	Shefa Amr Haifa F.	Shefa Amr Haifa F	2
+merged	City	Jenin F.	Jenin F	2
+merged	City	Irbed S/D.	Irbed S/D	2
 merged	StandardNationality	T.J.	Transjordanian	2
 merged	StandardNationality	Palest. Transj.	Palestinian Transjordanian	2
 merged	StandardNationality	Lebanon	Lebanese	2
 merged	StandardNationality	Czech	Czechoslovakian	2
 merged	StandardNationality	Transjordan	Transjordanian	2
 merged	StandardNationality	"Palest. ""es"""	Palestinian	2
+merged	City	Igzeim	Igzim	1
+merged	City	Baarij Qrt.	Baarij Qrt	1
+merged	City	El-Zeeb	Zeeb	1
+merged	City	el Staifa	Staifa	1
+merged	City	Kafar Yasif	Kafr Yasif	1
+merged	City	Haifa|Had. Hac.	Haifa|Had. Hac	1
+merged	City	Hadar Hacarmel|Had. Hac.	Hadar Hacarmel|Had. Hac	1
+merged	City	Abou Snan	Abu Snan	1
+merged	City	Kafr-Yasif	Kafr Yasif	1
+merged	City	Shefamer	Shafa Amr	1
+merged	City	Darieh village.	Darieh village	1
+merged	City	Ain Hod.	Ain Hod	1
+merged	City	Beisan|Beisan F.J.F.F.	Beisan|Beisan F.J.F.F	1
+merged	City	El bilin	bilin	1
+merged	City	Arab el Ramel.	Arab el Ramel	1
+merged	City	Arab el Barrak.	Arab el Barrak	1
+merged	City	Hayfa	Haifa	1
+merged	City	Nazareth|B.S.P. Police Nazareth.	Nazareth|B.S.P. Police Nazareth	1
+merged	City	Zikhron Yaaqov	Zichron Yaakov	1
+merged	City	Zikhron Ya'aqov	Zichron Yaakov	1
+merged	City	Kefar Yasif	Kafr Yasif	1
+merged	City	Kfar yassif	Kafr Yasif	1
+merged	City	Al-Zeeb?	Zeeb	1
+merged	City	Abo Snan	Abu Snan	1
+merged	City	Bath Galim|Bath Galim K. H. Bldg.	Bath Galim|Bath Galim K. H. Bldg	1
+merged	City	Atlit|Atlit. House of Ofman.	Atlit|Atlit. House of Ofman	1
+merged	City	Haifa|British Police Mt Carmel.	Haifa|British Police Mt Carmel	1
+merged	City	Haifa|Churches Ant.	Haifa|Churches Ant	1
+merged	City	Chuache. Ort. Dar Bishara el Jirjis.	Chuache. Ort. Dar Bishara el Jirjis	1
+merged	City	Abbasch Art.	Abbasch Art	1
+merged	City	El Nahr	Nahr	1
+merged	City	Mughrar	Mughar	1
+merged	City	Wadi el Salib	Wadi Salib	1
+merged	City	El Mujeidil	Mujeidil	1
+merged	City	Haifa|Churches Ort.	Haifa|Churches Ort	1
 merged	standardized ward	Infectious | Infectious Diseases Section	Infectious Diseases	1
+merged	City	Wad en Nisnas	Wadi Nisnas	1
+merged	City	El Biriwi	Biriwi	1
+merged	City	El Lile	Lile	1
+merged	City	Es Salt	Salt	1
+merged	City	Haifa|Had. Stac.	Haifa|Had. Stac	1
+merged	City	El Bireh	Bireh	1
+merged	City	Emek R.	Emek R	1
+merged	City	Haifa S/Dist.	Haifa S/Dist	1
+merged	City	El Abbasieh	Abbasieh	1
+merged	City	Acre|Acre S/Dist.	Acre|Acre S/Dist	1
+merged	City	El Husn	Husn	1
+merged	City	Fassouta|Acre S/Dist.	Fassouta|Acre S/Dist	1
+merged	City	Makr|Acre S/Dist.	Makr|Acre S/Dist	1
+merged	City	El Rameh|Acre S/Dist.	Rameh|Acre S/Dist	1
+merged	City	Baasa	Bassa	1
+merged	City	El Ramel (Haifa)	Ramel (Haifa)	1
+merged	City	Shafr 'Amr.	Shafr 'Amr	1
+merged	City	El Zababdeh	Zababdeh	1
+merged	City	Hadera (area)	Hadera	1
+merged	City	Kfar Yusif	Kafr Yasif	1
+merged	City	Araara	Arara	1
+merged	City	Affule	Afula	1
+merged	City	Samach	Samakh	1
+merged	City	Kafar Vitkeen	Kfar Vitkin	1
+merged	City	El Sich	Sich	1
+merged	City	El Bi'neh	Bi'neh	1
+merged	City	Jerusalem?	Jerusalem	1
+merged	City	Afula|Affula P.P.	Afula|Affula P.P	1
+merged	City	Arab Sweitat?	Arab Sweitat	1
+merged	City	El Kabary	Kabary	1
+merged	City	Churches Quarter?	Churches Quarter	1
+merged	City	Jenin S/Dist.	Jenin S/Dist	1
+merged	City	Chuaches Qts.	Chuaches Qts	1
+merged	City	Adel Yahud.	Adel Yahud	1
+merged	City	Al-Tira	Tira	1
+merged	City	Boury Billet?	Boury Billet	1
+merged	City	Kafr Yousif	Kafr Yasif	1
 merged	standardized ward	Venereal Diseases|Infectious	Venereal Diseases | Infectious Diseases	1
+merged	City	Rameleh	Ramleh	1
+merged	City	Majdal Krum	Majd al-Krum	1
+merged	City	Arabeh	Arrabeh	1
+merged	City	A'ara	Arara	1
+merged	City	Drachla Tabor St.	Drachla Tabor St	1
 merged	StandardNationality	Greece	Greek	1
 merged	StandardNationality	Palestinian | Transjordanian	Palestinian Transjordanian	1
+merged	City	Acre|Dare ll Kasy Acre/Dist.	Acre|Dare ll Kasy Acre/Dist	1
+merged	City	Afula|Affuleh Carea st.	Afula|Affuleh Carea st	1
+merged	City	Um al-Fahm?	Um al-Fahm	1
+merged	City	Al-Damun	Damun	1
+merged	City	Megdal El Kroum	Majd al-Krum	1
+merged	City	Birweta Acre Sub/Dist.	Birweta Acre Sub/Dist	1
+merged	City	El Tireh	Tireh	1
+merged	City	Al-Mughar	Mughar	1
+merged	City	Shafa 'mer	Shafa Amr	1
+merged	City	Hattux District?	Hattux District	1
+merged	City	Kufar Yassif	Kafr Yasif	1
+merged	City	Ra'anana?	Ra'anana	1
+merged	City	El Rameh	Rameh	1
+merged	City	Shafa 'amer	Shafa Amr	1
+merged	City	Wad El Salib	Wadi Salib	1
+merged	City	El Birweh	Birweh	1
+merged	City	Al-Bassa / Acre	Bassa / Acre	1
+merged	City	Al-Khalisa?	Khalisa	1
+merged	City	Rosh Pinna? Safad?	Rosh Pinna? Safad	1
+merged	City	Kafr Youssef	Kafr Yasif	1
+merged	City	Belad el-Sheikh	Balad al-Sheikh	1
+merged	City	Ara'ara	Arara	1
+merged	City	El Mughar	Mughar	1
+merged	City	Bi'ina?	Bi'ina	1
+merged	City	El Maughar	Mughar	1
+merged	City	El Imghar	Mughar	1
+merged	City	Jinin	Jenin	1
+merged	City	El Binch	Binch	1
 merged	StandardNationality	Syrian / Egyptian	Syrian Egyptian	1
+merged	City	Kiriat Motzkin	Kiryat Motzkin	1
+merged	City	Balad el Sheikh Haifa Sp.	Balad el Sheikh Haifa Sp	1
+merged	City	Tantouria	Tantoura	1
+merged	City	Acre s/o.	Acre s/o	1
+merged	City	El Bika'	Bika'	1
+merged	City	Haffa	Haifa	1
+merged	City	|Sabbarine	Sabbarine	1
+merged	City	|Hallissa	Hallissa	1
+merged	City	|Tireh	Tireh	1
+merged	City	|Jenin	Jenin	1
+merged	City	|Sileh	Sileh	1
+merged	City	Shefa'amer Haifa sp.	Shefa'amer Haifa sp	1
+merged	City	|Zichron Jacob|Zichron Yaakov	Zichron Jacob|Zichron Yaakov	1
+merged	City	|-', Jaba'a Jenin Dist.	-', Jaba'a Jenin Dist	1
+merged	City	|Kala-azar	Kala-azar	1
+merged	City	Richon Jacob|Rishon LeZion?	Richon Jacob|Rishon LeZion	1
+merged	City	Arrabah	Arrabeh	1
+merged	City	|Arrabeh|Arraba	Arrabeh|Arraba	1
+merged	City	Acre|Birweh - Acre s/d.	Acre|Birweh - Acre s/d	1
+merged	City	|Lajjun	Lajjun	1
+merged	City	|Arrabeh. Jenin s/o.|Arrabeh / Jenin	Arrabeh. Jenin s/o.|Arrabeh / Jenin	1
+merged	City	|Tel Yosef	Tel Yosef	1
 merged	StandardNationality	Latevian	Latvian	1
+merged	City	Ardel yahad	Ardel Yahud	1
+merged	City	El Safad	Safad	1
+merged	City	Beisan|Beisan S/D.	Beisan|Beisan S/D	1
+merged	City	|Wad El Salib	Wadi Salib	1
+merged	City	El Huleh	Huleh	1
+merged	City	Haifa|Deir El Mukhalis Qt.	Haifa|Deir El Mukhalis Qt	1
+merged	City	Acre|Assira El Shamalieh Acre.	Acre|Assira El Shamalieh Acre	1
+merged	City	|-', Beit Nekh'd Yabad	-', Beit Nekh'd Yabad	1
+merged	City	Jene	Jenin	1
+merged	City	Kiryat Haim|Kiryat-Haim Tribune Amal.	Kiryat Haim|Kiryat-Haim Tribune Amal	1
+merged	City	Kiryat-Haim Tribune Amal.	Kiryat-Haim Tribune Amal	1
+merged	City	Haifa - S/D.	Haifa - S/D	1
+merged	City	Haifa - B/S W.	Haifa - B/S W	1
+merged	City	Inn El Zinat.	Inn El Zinat	1
+merged	City	Khidera	Hadera	1
+merged	City	Tulkarem|Tulkarem S/D.	Tulkarem|Tulkarem S/D	1
+merged	City	Al-Mansi	Mansi	1
+merged	City	El Roy	Roy	1
+merged	City	Bassa No1 N.F.G.	Bassa No1 N.F.G	1
+merged	City	Athlit|Athlit. P. J. & Co.?	Athlit|Athlit. P. J. & Co	1
+merged	City	Adam Afula?	Adam Afula	1
+merged	City	Bassa N.1 N.F.D.	Bassa N.1 N.F.D	1
+merged	City	Bassa|Bassa N:1.	Bassa|Bassa N:1	1
+merged	City	Bassa|Bassa II. N.F.D.	Bassa|Bassa II. N.F.D	1
+merged	City	Khdeira	Hadera	1
+merged	City	El Nazli El Sharhieh	Nazli El Sharhieh	1
+merged	City	El Naqoura	Naqoura	1
+merged	City	Al-Ghabisiyya	Ghabisiyya	1
+merged	City	Athlit|Athlit J.L.Co. 2.	Athlit|Athlit J.L.Co. 2	1
+merged	City	Khedēra	Hadera	1
+merged	City	Bireh|Bireh Roche(?)eh Qad. Har(?) Coj.(?) Nasty?	Bireh|Bireh Roche(?)eh Qad. Har(?) Coj.(?) Nasty	1
+merged	City	Affula|Affula Nugst?	Affula|Affula Nugst	1
+merged	City	Kanayes Cht.	Kanayes Cht	1
+merged	City	Humeirpet?	Humeirpet	1
+merged	City	Tulkarm?	Tulkarem	1
+merged	City	Allenby R? Haifa?	Allenby R? Haifa	1
+merged	City	Dallieh el Carmel Nr. Ramallah?	Dallieh el Carmel Nr. Ramallah	1
+merged	City	Baissan	Beisan	1
+merged	City	Dahyat al-Manshiyya?	Dahyat al-Manshiyya	1
+merged	City	Al-Nahr?	Nahr	1
+merged	City	Tirreh	Tireh	1
+merged	City	Magdel Kouroum	Majd al-Krum	1
+merged	City	Jerusalem / Safad?	Jerusalem / Safad	1
+merged	City	Ashkelon?	Ashkelon	1
+merged	City	Beersheba?	Beersheba	1
+merged	City	Nallieh?	Nallieh	1
+merged	City	Zeitoun?	Zeitoun	1
+merged	City	Haifa? Nazareth?	Haifa? Nazareth	1
+merged	City	Amman Street?	Amman Street	1
+merged	City	Katonin?	Katonin	1
+merged	City	Must Ajoung?	Must Ajoung	1
+merged	City	Souk Shwam?	Souk Shwam	1
+merged	City	Al-Mughayyir	Mughayyir	1
+merged	City	Zikhron Yaakov	Zichron Yaakov	1
+merged	City	Arabel Manawat.	Arabel Manawat	1
+merged	City	Haifa|Balad Sheikh Haifa H.Q.	Haifa|Balad Sheikh Haifa H.Q	1
+merged	City	Jenin Dt.	Jenin Dt	1
+merged	City	Bethlehem|Beth Lehm. Int. Camp.	Bethlehem|Beth Lehm. Int. Camp	1
+merged	City	Acre|Bassa Acre P/B.	Acre|Bassa Acre P/B	1
+merged	City	Bethlehem|Beth Lehm.	Bethlehem|Beth Lehm	1
+merged	City	Coastal Watch Bath-Jalim.	Coastal Watch Bath-Jalim	1
+merged	City	Janin	Jenin	1
+merged	City	Deir El Qasi?	Deir El Qasi	1
+merged	City	Deir Jheoon.	Deir Jheoon	1
+merged	City	Acre|Bassa. Acre. own Father Bwgr.	Acre|Bassa. Acre. own Father Bwgr	1
+merged	City	Kar Kur	Karkur	1
+merged	City	Jaffa|Bassa str?	Jaffa|Bassa str	1
+merged	City	Abu que K.	Abu que K	1
+merged	City	Al-Khalisa	Khalisa	1
 merged	StandardNationality	Palestinian (T. Jordan)	Palestinian Transjordanian	1
+merged	City	Wadi el Nisnas	Wadi Nisnas	1
+merged	City	Balad Esh Chiekh	Balad al-Sheikh	1
+merged	City	Athlith	Athlit	1
+merged	City	Majdel Kroom	Majd al-Krum	1
+merged	City	Jenin S/D?.	Jenin S/D	1
+merged	City	Jab'a	Jaba'	1
+merged	City	Tirih	Tireh	1
+merged	City	Sefad	Safad	1
+merged	City	Jenin G.	Jenin G	1
+merged	City	Acre D.C.	Acre D.C	1
+merged	City	P.T.	P.T	1
+merged	City	DaiJa Kingsway Khan Abu Deeb Jussy.	DaiJa Kingsway Khan Abu Deeb Jussy	1
+merged	City	Balad El Shaikh	Balad al-Sheikh	1
 cleared	Sex	B		1
+merged	City	Acre S/P.	Acre S/P	1
+merged	City	Haifa S/P.	Haifa S/P	1
 cleared	Sex	W		1
+merged	City	Arrabih	Arrabeh	1
 merged	standardized ward	Mat.	Maternity	1
+merged	City	Shifa Amir	Shafa Amr	1
+merged	City	Erbid	Irbed	1
+merged	City	Wadi Salieb	Wadi Salib	1
+merged	City	Balad El Sheikh	Balad al-Sheikh	1
+merged	City	Shafa'mr	Shafa Amr	1
+merged	City	Wady Sh.	Wady Sh	1
+merged	City	Athlit|Athlit Ol. Camp.	Athlit|Athlit Ol. Camp	1
+merged	City	Balad Sheik', Hse Hassan Khaleel. Nja't?, 'Surg.	Balad Sheik', Hse Hassan Khaleel. Nja't?, 'Surg	1
+merged	City	Arrabeh Battouf Acre F.	Arrabeh Battouf Acre F	1
+merged	City	Acre?	Acre	1
+merged	City	Jenin?	Jenin	1
+merged	City	Rosh Pinna?	Rosh Pinna	1
+merged	City	Kafar Vitkin	Kfar Vitkin	1
 merged	StandardNationality	Palestinian / Lebanese	Palestinian Lebanese	1
+merged	City	Balad al-Sheikh?	Balad al-Sheikh	1
+merged	City	Bawabel Club?	Bawabel Club	1
+merged	City	Ben Yehuda St.	Ben Yehuda St	1
+merged	City	Nablus|Bab el C.	Nablus|Bab el C	1
 merged	standardized ward	Medical|Maternity	Medical | Maternity	1
+merged	City	Tul Kerim	Tulkarem	1
+merged	City	Banks St.	Banks St	1
+merged	City	Haifa Dist.	Haifa Dist	1
+merged	City	Kiryat Hayem	Kiryat Haim	1
+merged	City	Deir Delah Art.	Deir Delah Art	1
+merged	City	Hart El B.D.	Hart El B.D	1
+merged	City	bourg.|Hart El B.D.	bourg.|Hart El B.D	1
+merged	City	Balad Shekh.	Balad al-Sheikh	1
+merged	City	Berkin|Jenin F.	Berkin|Jenin F	1
+merged	City	Carmel Stn.	Carmel Stn	1
+merged	City	Tiberias F.	Tiberias F	1
+merged	City	Wady Saleeb	Wadi Salib	1
+merged	City	Shfa Amr	Shafa Amr	1
+merged	City	Ramleh|Jaffa St.	Ramleh|Jaffa St	1
+merged	City	Birkin|Jenin F.	Birkin|Jenin F	1
+merged	City	Athleith	Athlit	1
+merged	City	Shafe Amr	Shafa Amr	1
+merged	City	Atlith	Athlit	1
+merged	City	Arab Caesaria.	Arab Caesaria	1
+merged	City	Abbassie St. M. of S.|Abbassie St.	Abbassie St. M. of S.|Abbassie St	1
+merged	City	Jenin D.	Jenin D	1
+merged	City	Tulkarem S/D.	Tulkarem S/D	1
+merged	City	Jerusalm	Jerusalem	1
+merged	City	Athlit|Athlith Camp.	Athlit|Athlith Camp	1
+merged	City	Beisan|Beisan P.L.	Beisan|Beisan P.L	1
+merged	City	Doris St.	Doris St	1
+merged	City	Irbed|Irbed S/D.	Irbed|Irbed S/D	1
+merged	City	B. Shiekh C.	B. Shiekh C	1
+merged	City	Deir D.	Deir D	1
+merged	City	Sha Ja.	Sha Ja	1
+merged	City	Kufr Yasseef	Kafr Yasif	1
+merged	City	Jaffa|Carmel Ahu K.bert.	Jaffa|Carmel Ahu K.bert	1
+merged	City	Bawabete L. Beer Beit Verics Assay.	Bawabete L. Beer Beit Verics Assay	1
+merged	City	Afule|Afule C.R.	Afule|Afule C.R	1
+merged	City	Ajja|Jenin S/D.	Ajja|Jenin S/D	1
+merged	City	Neblus	Nablus	1
+merged	City	Beit Iskandar Barghash.	Beit Iskandar Barghash	1
+merged	City	P. of T.	P. of T	1
 merged	Class standard	2nd class	2	1
+merged	City	El-Maghar Village	Maghar Village	1
+merged	City	El Maghar Village	Maghar Village	1
+merged	City	Samekh	Samakh	1
 merged	StandardNationality	Leban.	Lebanese	1
 merged	Class standard	II	2	1
 merged	StandardNationality	T.J. Muslem	Transjordanian	1
+merged	City	Church Str.	Church Str	1
+merged	City	al-Sandil	Sandil	1
+merged	City	Akstan Div.	Akstan Div	1
+merged	City	Wadi Salab	Wadi Salib	1
 merged	StandardNationality	Palest'n	Palestinian	1
+merged	City	Shafaamer	Shafa Amr	1
 merged	StandardNationality	Pals.	Palestinian	1
+merged	City	Toulkarem	Tulkarem	1
+merged	City	Tulk-Karm	Tulkarem	1
+merged	City	Bat-Galim	Bat Galim	1
 merged	StandardNationality	Palist.	Palestinian	1
 merged	StandardNationality	Palest. A 351	Palestinian	1
+merged	City	Nej. Rd.	Nej. Rd	1
 merged	StandardNationality	Palest. P	Palestinian	1
 merged	StandardNationality	British 2234	British	1
 merged	StandardNationality	British 3332	British	1
 cleared	Sex	C		1
 merged	StandardNationality	Libanian	Lebanese	1
+merged	City	Toul-Karem	Tulkarem	1
 merged	StandardNationality	"Pal. ""R"""	Palestinian	1
+merged	standardized Religion	Byzage	Druze	1
 merged	StandardNationality	Pal (L)	Palestinian	1
+merged	City	Sakhnien	Sakhnin	1
 merged	StandardNationality	Palest. Egyptian	Palestinian Egyptian	1
 merged	StandardNationality	Palest. C.R.L.	Palestinian	1
 merged	StandardNationality	Palest. R.C.	Palestinian	1
+merged	City	Wadi Nisnass	Wadi Nisnas	1
+merged	City	C.P. St.	C.P. St	1
+merged	City	Carmel station	Carmel Station	1
 merged	standardized ward	Childrens	Children's	1
+merged	City	Haifa P.O.	Haifa P.O	1
 merged	Class standard	1st class	1	1
 merged	Class standard	3rd Class	3	1
 merged	StandardNationality	British Subj.	British	1
 merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
+merged	City	Haifa?Atlit?	Haifa?Atlit	1
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	20
-review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	50
+review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	45
 review	Review Flags	stay-over-by-a-year	Stay exceeds the clerk's own count by exactly a year	18
 review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
+review	Review Flags	date-out-of-span	A date outside 1930-48 with nothing on the record to repair it from	2
+review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
-review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1319
+review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1320
 review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1465
 withheld	Next of Kin			29879
 withheld	discarded_values			29879
@@ -119,7 +541,10 @@ date	Admission Date [ISO]	upstream ISO	replaced	2522
 date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	894
 date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	492
 date	Discharge Date (ISO)	upstream ISO	replaced	34
-date	Days in Hospital (Calc)	discharge before admission	cleared	50
+date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the other date	4
+date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
+date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
+date	Days in Hospital (Calc)	discharge before admission	cleared	45
 unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	left as the register has it	18
 tail	standardized Religion	Arab		8
 tail	standardized Religion	Christian/Jewish?		2
@@ -127,7 +552,6 @@ tail	standardized Religion	Ch. Moslem		1
 tail	standardized Religion	S.		1
 tail	standardized Religion	Teh		1
 tail	standardized Religion	Arm.		1
-tail	standardized Religion	Byzage		1
 tail	standardized Religion	[illegible]		1
 tail	StandardNationality	French		18
 tail	StandardNationality	Palestinian Syrian		17
