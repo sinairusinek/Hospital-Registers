@@ -68,7 +68,7 @@ const App: React.FC = () => {
     delimiter: '\t',
     // The registers contain bare double quotes (inches, gershayim). Left to its
     // default quote handling PapaParse swallows them and silently merges rows —
-    // 19,718 records instead of 29,880. Disabling quoting parses all of them.
+    // 19,718 records instead of 29,879. Disabling quoting parses all of them.
     quoteChar: '',
     transformHeader: (h: string) => HEADER_FIXES[h.trim()] || h.trim()
   };
@@ -300,7 +300,10 @@ const App: React.FC = () => {
         ) : isLoading ? (
           <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-50">
             <div className="w-16 h-16 border-4 border-indigo-100 border-t-indigo-600 rounded-full animate-spin mb-4"></div>
-            <p className="text-slate-600 font-medium animate-pulse">Loading 29,880 admission records...</p>
+            {/* No count here: it is not known until the file is parsed, and the
+                one that used to stand here counted the source file's rows,
+                including the repeated header the parser drops. */}
+            <p className="text-slate-600 font-medium animate-pulse">Loading admission records...</p>
           </div>
         ) : data.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center p-8 text-center">

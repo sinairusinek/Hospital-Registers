@@ -268,11 +268,34 @@ ICD9_CHAPTERS = [
 # The first code in a pipe-separated list is the primary diagnosis.
 ICD9_FIRST = re.compile(r"^\s*([EVev]?)(\d{1,3})")
 
+# A one- or two-digit code has lost a leading zero somewhere in extraction, and
+# zero-padding recovers it: "32.9" is diphtheria, "11.9" pulmonary tuberculosis,
+# "84.9" malaria. That holds for 211 of the 231 records with a short code, every
+# one confirmed by the ICD-9 name standing beside it in the row.
+#
+# It does not hold for these. They are ICD-9-CM *procedure* codes, or codes the
+# accompanying name flatly contradicts, and padding them would file an operation
+# under a disease — "72.1", a forceps delivery, landing among the infectious
+# admissions next to the mumps cases that "72" and "72.9" correctly are. A
+# procedure is not a diagnosis and has no diagnosis chapter, so these are left
+# without one rather than placed in the wrong one. Each is listed with the name
+# that identifies it.
+ICD9_NOT_DIAGNOSES = {
+    "72.1":  "Other specified forceps delivery",       # obstetric procedure
+    "69.09": "",                                       # D&C; no name in the row
+    "73.09": "",                                       # rupture of membranes
+    "83.19": "Other tenotomy",                         # musculoskeletal procedure
+    "43.0":  "Hydrocele, traumatic",                   # 043 is not a hydrocele
+}
+
 
 def icd9_chapter(code: str, fallback: str) -> str:
     """The chapter a primary ICD-9 code belongs to, or "" if it cannot be read."""
     for candidate in (code, fallback):
-        match = ICD9_FIRST.match(candidate or "")
+        first = (candidate or "").split("|")[0].strip()
+        if first in ICD9_NOT_DIAGNOSES:
+            return ""
+        match = ICD9_FIRST.match(first)
         if not match:
             continue
         prefix, digits = match.group(1).upper(), match.group(2)
@@ -370,6 +393,8 @@ def main() -> int:
     stays_over_a_year = 0
     chapters: Counter[str] = Counter()
     chapters_unresolved = 0
+    icd9_padded = 0
+    icd9_refused = 0
     out_rows = []
 
     for row in rows:
@@ -390,6 +415,12 @@ def main() -> int:
 
         # The derived chapter rides in a column of its own; the source's code
         # and three-digit category are both left exactly as they are.
+        first_code = (row.get("Primary-ICD9", "") or "").split("|")[0].strip()
+        if first_code in ICD9_NOT_DIAGNOSES:
+            icd9_refused += 1
+        elif re.fullmatch(r"\d{1,2}(\.\d{1,2})?", first_code):
+            icd9_padded += 1
+
         row["ICD-9 Chapter"] = icd9_chapter(
             row.get("Primary-ICD9", ""), row.get("StandardICDInteger", "")
         )
@@ -480,6 +511,10 @@ def main() -> int:
             writer.writerow(["cleared" if not after else "merged", column, before, after, count])
         for label, count in chapters.most_common():
             writer.writerow(["derived", "ICD-9 Chapter", "", label, count])
+        if icd9_padded:
+            writer.writerow(["derived", "ICD-9 Chapter", "code missing a leading zero", "padded to three digits", icd9_padded])
+        if icd9_refused:
+            writer.writerow(["derived", "ICD-9 Chapter", "procedure code, not a diagnosis", "left without a chapter", icd9_refused])
         if chapters_unresolved:
             writer.writerow(["derived", "ICD-9 Chapter", "", "no readable code", chapters_unresolved])
         for label, count in dates_rebuilt.most_common():
@@ -509,6 +544,7 @@ def main() -> int:
     replaced = sum(n for k, n in dates_rebuilt.items() if k.endswith("replaced"))
     kept = sum(n for k, n in dates_rebuilt.items() if k.endswith("upstream kept"))
     print(f"chapters   {sum(chapters.values()):,} records placed in {len(chapters)} ICD-9 chapters, {chapters_unresolved:,} without a readable code")
+    print(f"           {icd9_padded} short code(s) padded, {icd9_refused} procedure code(s) refused a chapter")
     print(f"dates      {replaced:,} ISO date(s) rebuilt from the verbatim column, {kept:,} left as upstream had them")
     print(f"stays      {stays_cleared} impossible length(s) of stay cleared, "
           f"{stays_over_a_year} left standing a year over the clerk's own count")
