@@ -1,11 +1,12 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, Info } from 'lucide-react';
+import { Upload, Table, BarChart3, Info, ClipboardCheck } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import { facetValue } from './facets';
 import AboutView from './components/AboutView';
 import DataBrowser from './components/DataBrowser';
 import StatisticsView from './components/StatisticsView';
+import ReviewView from './components/ReviewView';
 
 declare const Papa: any;
 
@@ -285,6 +286,16 @@ const App: React.FC = () => {
                 <BarChart3 size={16} />
                 Statistics
               </button>
+              <button
+                onClick={() => setActiveView('review')}
+                disabled={data.length === 0}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
+                  activeView === 'review' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <ClipboardCheck size={16} />
+                Review
+              </button>
           </div>
           <label className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium cursor-pointer transition-colors shadow-lg shadow-indigo-100">
             <Upload size={18} />
@@ -327,6 +338,11 @@ const App: React.FC = () => {
                 visibleColumns={visibleColumns} 
                 onToggleColumn={toggleColumn}
               />
+            ) : activeView === 'review' ? (
+              // The review queues are of the whole dataset, not the current
+              // selection: a filter that happened to exclude a flagged record
+              // would quietly shrink the work left to do.
+              <ReviewView data={data} />
             ) : (
               <StatisticsView 
                 fullData={data} 

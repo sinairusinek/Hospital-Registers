@@ -21,7 +21,7 @@ export interface RegistryRecord {
   'standardprimaryICD9names'?: string;
 }
 
-export type ViewType = 'about' | 'browse' | 'statistics';
+export type ViewType = 'about' | 'browse' | 'statistics' | 'review';
 
 export interface RangeFilter {
   min: number;

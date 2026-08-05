@@ -72,6 +72,16 @@ merged	Class standard	3rd Class	3	1
 merged	StandardNationality	British Subj.	British	1
 merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
+review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	20
+review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	50
+review	Review Flags	stay-over-by-a-year	Stay exceeds the clerk's own count by exactly a year	18
+review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
+review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
+review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1319
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1465
+withheld	Next of Kin			29879
+withheld	discarded_values			29879
+withheld	splitDiscValues			29879
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8734
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4583
 derived	ICD-9 Chapter		520-579 Digestive system	3234

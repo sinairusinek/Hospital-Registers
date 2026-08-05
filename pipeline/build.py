@@ -41,6 +41,16 @@ REPORT = ROOT / "data" / "public" / "normalization-report.tsv"
 # ICD-9 name for the primary diagnosis.
 HEADER_FIXES = {"<info@doctorsonly.co.i": "standardPrimaryICD9Name"}
 
+# Withheld from the published artifact. `Next of Kin` holds 2,379 personal names
+# of third parties — people who never were the subject of the record — which the
+# PII policy's redaction of patient names did not cover. The column stays in the
+# consolidated TSV and in data/private/.
+#
+# `discarded_values` and `splitDiscValues` go with it: they are extraction
+# debris that echo the raw cells of a record verbatim, next-of-kin names
+# included, so withholding the column alone would not have withheld the names.
+DROP_COLUMNS = {"Next of Kin", "discarded_values", "splitDiscValues"}
+
 # Where a field exists twice — once as the clerk wrote it, once cleaned — the
 # plain name goes to the cleaned column and the verbatim one is marked "as
 # written". Applied when writing, so the rules above keep their source names.
@@ -315,6 +325,26 @@ def icd9_chapter(code: str, fallback: str) -> str:
     return ""
 
 
+# ------------------------------------------------------------- review
+#
+# Everything the pipeline could not settle on its own, named so that the app can
+# group by it and a person can work through it against the scans. A flag is not
+# an error: it marks a record where the machine's reading is uncertain and the
+# page is the only authority. Each is documented for the reviewer in the app.
+#
+# Order is the order they are worth working through: the smallest and most
+# clearly wrong first, the large diffuse ones last.
+REVIEW_FLAGS = [
+    ("procedure-not-diagnosis", "An operation recorded where a diagnosis belongs"),
+    ("impossible-stay", "Discharged before admitted; the stay has been cleared"),
+    ("stay-over-by-a-year", "Stay exceeds the clerk's own count by exactly a year"),
+    ("sex-cleared", "A single stray letter where a sex belongs"),
+    ("date-unreadable", "A date the clerk's own writing could not be parsed from"),
+    ("stay-disagrees", "Computed stay differs from the count written beside it"),
+    ("no-icd9-chapter", "No ICD-9 code the classification could place"),
+]
+
+
 # ------------------------------------------------------------- dates
 #
 # The source's ISO admission column cannot be trusted per record. Its values
@@ -395,12 +425,15 @@ def main() -> int:
     chapters_unresolved = 0
     icd9_padded = 0
     icd9_refused = 0
+    review_counts: Counter[str] = Counter()
     out_rows = []
 
     for row in rows:
         if is_repeated_header(row):
             dropped += 1
             continue
+
+        flags: list[str] = []
 
         for column in RULES:
             if column not in row:
@@ -409,6 +442,8 @@ def main() -> int:
             after = normalize(column, before)
             if after != before:
                 changes[(column, before, after)] += 1
+                if column == "Sex" and before and not after:
+                    flags.append("sex-cleared")
             row[column] = after
             if after:
                 final_values[column][after] += 1
@@ -418,6 +453,7 @@ def main() -> int:
         first_code = (row.get("Primary-ICD9", "") or "").split("|")[0].strip()
         if first_code in ICD9_NOT_DIAGNOSES:
             icd9_refused += 1
+            flags.append("procedure-not-diagnosis")
         elif re.fullmatch(r"\d{1,2}(\.\d{1,2})?", first_code):
             icd9_padded += 1
 
@@ -440,6 +476,8 @@ def main() -> int:
             rebuilt = parse_written_date(row[written_col])
             if not rebuilt:
                 dates_rebuilt[f"{iso_col}: verbatim unreadable, upstream kept"] += 1
+                if "date-unreadable" not in flags:
+                    flags.append("date-unreadable")
                 continue
             if rebuilt != (row[iso_col] or "").strip()[:10]:
                 dates_rebuilt[f"{iso_col}: replaced"] += 1
@@ -459,6 +497,7 @@ def main() -> int:
                 if stay < 0:
                     row["Days in Hospital (Calc)"] = ""
                     stays_cleared += 1
+                    flags.append("impossible-stay")
                 else:
                     row["Days in Hospital (Calc)"] = str(stay)
                     # 18 of the 20 stays over a year sit exactly 365 days above
@@ -470,8 +509,21 @@ def main() -> int:
                     reported = row.get("Days in Hospital (Rep)", "").strip()
                     if stay > 365 and reported.isdigit() and stay - int(reported) in (365, 366):
                         stays_over_a_year += 1
+                        flags.append("stay-over-by-a-year")
+                    elif reported.isdigit() and stay != int(reported):
+                        flags.append("stay-disagrees")
             else:
                 row["Days in Hospital (Calc)"] = ""
+
+        if not row.get("ICD-9 Chapter"):
+            flags.append("no-icd9-chapter")
+
+        # Written in the documented order, so the app can rank without knowing
+        # anything about what the flags mean.
+        order = [name for name, _ in REVIEW_FLAGS]
+        row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+        for flag in set(flags):
+            review_counts[flag] += 1
 
         if "Address" in row:
             before = row["Address"] or ""
@@ -489,9 +541,13 @@ def main() -> int:
     def cell(value: str) -> str:
         return re.sub(r"[\t\r\n]+", " ", value or "").strip()
 
+    if "Review Flags" not in fieldnames:
+        fieldnames.append("Review Flags")
     if "ICD-9 Chapter" not in fieldnames:
         at = fieldnames.index("StandardICDInteger") + 1 if "StandardICDInteger" in fieldnames else len(fieldnames)
         fieldnames.insert(at, "ICD-9 Chapter")
+
+    fieldnames = [name for name in fieldnames if name not in DROP_COLUMNS]
 
     published = [COLUMN_RENAMES.get(name, name) for name in fieldnames]
     clashes = {name for name in published if published.count(name) > 1}
@@ -509,6 +565,11 @@ def main() -> int:
         writer.writerow(["kind", "column", "from", "to", "records"])
         for (column, before, after), count in changes.most_common():
             writer.writerow(["cleared" if not after else "merged", column, before, after, count])
+        for name, description in REVIEW_FLAGS:
+            if review_counts[name]:
+                writer.writerow(["review", "Review Flags", name, description, review_counts[name]])
+        for name in sorted(DROP_COLUMNS):
+            writer.writerow(["withheld", name, "", "", len(out_rows)])
         for label, count in chapters.most_common():
             writer.writerow(["derived", "ICD-9 Chapter", "", label, count])
         if icd9_padded:
@@ -541,6 +602,7 @@ def main() -> int:
     print(f"merged     {sum(changes.values()) - cleared:,} values across {len(changes)} rules")
     print(f"cleared    {cleared} value(s) outside a closed vocabulary")
     print(f"coarsened  {coarsened:,} addresses")
+    print(f"withheld   {', '.join(sorted(DROP_COLUMNS))}")
     replaced = sum(n for k, n in dates_rebuilt.items() if k.endswith("replaced"))
     kept = sum(n for k, n in dates_rebuilt.items() if k.endswith("upstream kept"))
     print(f"chapters   {sum(chapters.values()):,} records placed in {len(chapters)} ICD-9 chapters, {chapters_unresolved:,} without a readable code")
@@ -555,6 +617,11 @@ def main() -> int:
         if n < TAIL_THRESHOLD
     }
     print(f"tail       {len(tail)} value(s) left standing on fewer than {TAIL_THRESHOLD} records")
+    flagged = sum(1 for row in out_rows if row.get("Review Flags"))
+    print(f"review     {flagged:,} record(s) flagged for a human eye across {len(review_counts)} kinds")
+    for name, _ in REVIEW_FLAGS:
+        if review_counts[name]:
+            print(f"           {review_counts[name]:>6,}  {name}")
     print(f"report     {REPORT.relative_to(ROOT)}")
     return 0
 
