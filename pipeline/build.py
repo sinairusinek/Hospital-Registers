@@ -194,6 +194,13 @@ RULES = {
 # not an error, but the place to look when a rule is missing.
 TAIL_THRESHOLD = 20
 
+# A value repeating its record's next of kin is cleared only if it appears on
+# fewer than this many records in its column — see the note in main().
+KIN_RARITY = 5
+
+# Fields with no controlled vocabulary, where a name can sit unnoticed.
+FREE_TEXT_FIELDS = {"Address", "City", "Occupation"}
+
 # Wards are recorded as combinations when a patient moved between them.
 WARD_SPLIT = re.compile(r"\s*[|/]\s*")
 
@@ -418,6 +425,29 @@ def main() -> int:
     final_values: dict[str, Counter[str]] = {col: Counter() for col in RULES}
     dropped = 0
     coarsened = 0
+    kin_in_place: Counter[str] = Counter()
+    kin_elsewhere: Counter[str] = Counter()
+    column_values: dict[str, Counter[str]] = {}
+    for row in rows:
+        for field, value in row.items():
+            if value:
+                column_values.setdefault(field, Counter())[value.strip()] += 1
+    # The City column is the registers' own gazetteer: a value that appears
+    # there repeatedly is a place, whatever field it turns up in.
+    place_vocabulary = column_values.get("City", Counter())
+
+    # Names also turn up in a free-text field of a record whose own next-of-kin
+    # cell is empty, which per-record matching cannot see. So the kin column is
+    # read across the whole file as a list of names to remove: name-shaped
+    # entries only (two or more words, no digits), minus anything the gazetteer
+    # says is a place — "Arab el Turkman" is both a kin entry and a village.
+    kin_names = {
+        value.strip().lower()
+        for value in column_values.get("Next of Kin", Counter())
+        if len(value.split()) >= 2
+        and not any(ch.isdigit() for ch in value)
+        and place_vocabulary[value.strip()] < KIN_RARITY
+    }
     dates_rebuilt = Counter()
     stays_cleared = 0
     stays_over_a_year = 0
@@ -525,6 +555,42 @@ def main() -> int:
         for flag in set(flags):
             review_counts[flag] += 1
 
+        # The extraction sometimes filed the next of kin's name into another
+        # field. Withholding the column would leave those names in place, so any
+        # field that simply repeats this record's next of kin is cleared.
+        #
+        # Two guards, because the confusion runs both ways — some records carry
+        # "Isolation" or "Haifa" as next of kin, and clearing every field that
+        # matched would destroy good data:
+        #
+        #   * in the free-text fields, a value is kept only if it works as a
+        #     place elsewhere in the registers (Haifa stays, Abdel Yahud goes);
+        #   * in the coded columns, a value is kept if it is an established
+        #     value of its column (Isolation stays).
+        kin = (row.get("Next of Kin") or "").strip().lower()
+        if kin:
+            for field, value in list(row.items()):
+                if field == "Next of Kin" or not value:
+                    continue
+                stripped = value.strip()
+                if stripped.lower() != kin:
+                    continue
+                common = (
+                    place_vocabulary[stripped] if field in FREE_TEXT_FIELDS
+                    else column_values[field][stripped]
+                )
+                if common < KIN_RARITY:
+                    row[field] = ""
+                    kin_in_place[field] += 1
+
+        # Second pass: a known kin name sitting in a free-text field of any
+        # record, whether or not that record names a next of kin itself.
+        for field in FREE_TEXT_FIELDS:
+            value = (row.get(field) or "").strip()
+            if value and value.lower() in kin_names:
+                row[field] = ""
+                kin_elsewhere[field] += 1
+
         if "Address" in row:
             before = row["Address"] or ""
             after = coarsen_address(before)
@@ -570,6 +636,10 @@ def main() -> int:
                 writer.writerow(["review", "Review Flags", name, description, review_counts[name]])
         for name in sorted(DROP_COLUMNS):
             writer.writerow(["withheld", name, "", "", len(out_rows)])
+        for field, count in sorted(kin_in_place.items()):
+            writer.writerow(["withheld", field, "value repeated the next of kin", "", count])
+        for field, count in sorted(kin_elsewhere.items()):
+            writer.writerow(["withheld", field, "value is a name known from the kin column", "", count])
         for label, count in chapters.most_common():
             writer.writerow(["derived", "ICD-9 Chapter", "", label, count])
         if icd9_padded:
@@ -603,6 +673,12 @@ def main() -> int:
     print(f"cleared    {cleared} value(s) outside a closed vocabulary")
     print(f"coarsened  {coarsened:,} addresses")
     print(f"withheld   {', '.join(sorted(DROP_COLUMNS))}")
+    if kin_in_place:
+        detail = ", ".join(f"{field} {count}" for field, count in sorted(kin_in_place.items()))
+        print(f"           plus a next-of-kin name standing in another field: {detail}")
+    if kin_elsewhere:
+        detail = ", ".join(f"{field} {count}" for field, count in sorted(kin_elsewhere.items()))
+        print(f"           and a name known from the kin column elsewhere: {detail}")
     replaced = sum(n for k, n in dates_rebuilt.items() if k.endswith("replaced"))
     kept = sum(n for k, n in dates_rebuilt.items() if k.endswith("upstream kept"))
     print(f"chapters   {sum(chapters.values()):,} records placed in {len(chapters)} ICD-9 chapters, {chapters_unresolved:,} without a readable code")

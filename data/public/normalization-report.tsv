@@ -82,6 +82,17 @@ review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place
 withheld	Next of Kin			29879
 withheld	discarded_values			29879
 withheld	splitDiscValues			29879
+withheld	Address	value repeated the next of kin		243
+withheld	City	value repeated the next of kin		3
+withheld	Occupation	value repeated the next of kin		37
+withheld	Original Diagnosis	value repeated the next of kin		1
+withheld	Original Result	value repeated the next of kin		1
+withheld	Payment Status	value repeated the next of kin		1
+withheld	Standardized Diagnosis	value repeated the next of kin		1
+withheld	splitDiscValues	value repeated the next of kin		4
+withheld	Address	value is a name known from the kin column		254
+withheld	City	value is a name known from the kin column		17
+withheld	Occupation	value is a name known from the kin column		10
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8734
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4583
 derived	ICD-9 Chapter		520-579 Digestive system	3234
