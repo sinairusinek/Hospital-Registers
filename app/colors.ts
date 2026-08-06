@@ -30,6 +30,18 @@ export const NEUTRAL = '#898781';
 export const RESIDUE = '#dcdbd5';
 export const OTHERS = 'Others';
 
+// Whether a diagnosis was recorded at all is a statement about the register,
+// not about a patient, so it takes no categorical hue. The classified majority
+// is the pale residue grey — it is the ground the other two are read against —
+// and the absence keeps the neutral grey a blank has everywhere else. Only the
+// middle state, a diagnosis the clerk wrote and the coding never reached, is
+// coloured, because it is the one that names work still to do.
+export const RECORDING: Record<string, string> = {
+  'Classified': RESIDUE,
+  'Recorded, not classified': SERIES[3], // yellow
+  'Not recorded': NEUTRAL
+};
+
 // One measure with a meaningful midpoint — a representation ratio, where 1 is
 // parity — is a diverging scale, not a categorical one: two hues from a neutral
 // centre. Deliberately darker and more saturated than anything in SERIES, since

@@ -431,6 +431,8 @@ def icd9_chapter(code: str, fallback: str) -> str:
         first = (candidate or "").split("|")[0].strip()
         if first in ICD9_NOT_DIAGNOSES:
             return ""
+        if first.upper() in ICD10_CHAPTER:
+            return ICD10_CHAPTER[first.upper()]
         match = ICD9_FIRST.match(first)
         if not match:
             continue
@@ -449,6 +451,50 @@ def icd9_chapter(code: str, fallback: str) -> str:
             if low <= number <= high:
                 return f"{low:03d}-{high:03d} {label}"
     return ""
+
+
+# --------------------------------------------------------- procedures
+#
+# 524 records name an operation in the diagnosis column. Most are not an error:
+# "Normal Delivery" is ICD-9 650, a diagnosis code in its own right, and 476 of
+# the 524 carry a chapter already. The distinction worth drawing is whether an
+# operation stands *instead of* a diagnosis — a forceps delivery with the
+# condition that called for it left unstated — or alongside one.
+#
+# This gets a column of its own rather than a value in the chapter column: the
+# 476 are correctly chaptered and must stay so. As a facet it answers a question
+# the chapter cannot, which is how often these clerks recorded the intervention
+# rather than the illness.
+PROCEDURE = re.compile(
+    r"\b(forceps|caesar|cesar|curettage|curetage|craniotomy|tenotomy|circumcision"
+    r"|version and extraction|laparotomy|append(?:ic)?ectomy|herniotomy|hysterectomy"
+    r"|amputation|trephin\w*|nephrectomy|tonsillectomy|delivery"
+    r"|\w+ectomy|\w+otomy|\w+ostomy|\w+plasty|\w+rraphy|\w+centesis)\b",
+    re.IGNORECASE,
+)
+
+# ICD-10 codes that leaked into an ICD-9 column. Mapped at chapter level only,
+# where the correspondence is not in doubt — an obstructed labour belongs to the
+# obstetric chapter under either revision. No ICD-9 code is invented for them.
+ICD10_CHAPTER = {
+    "O66.9": "630-679 Pregnancy, childbirth and the puerperium",  # obstructed labour
+    "R29.89": "780-799 Symptoms, signs and ill-defined conditions",
+    "R50.9": "780-799 Symptoms, signs and ill-defined conditions",  # fever, unspecified
+}
+
+# Values from the Result column that ended up in a diagnosis or code field. They
+# are a column misalignment, not a diagnosis, and are never classified — the
+# record is flagged so the page can be checked.
+RESULT_IN_WRONG_COLUMN = re.compile(
+    r"^(cured|died|recovered|improved|relieved|unimproved|discharged|transferred"
+    r"|dead|not improved|escaped)\W*$",
+    re.IGNORECASE,
+)
+
+# The original classification pass ran on GPT-4o and hit a rate limit; on five
+# records the error text was written into the diagnosis field instead of a
+# diagnosis. Those, the stray header line and bare punctuation are debris.
+CLASSIFIER_DEBRIS = re.compile(r"validation error|error code:|^diagnosis$|^[-?.\s]*$", re.IGNORECASE)
 
 
 # ------------------------------------------------------------- review
@@ -470,8 +516,12 @@ REVIEW_FLAGS = [
     ("date-month-out-of-sequence", "Month corrected: the admission ran backwards against the register's order"),
     ("date-day-out-of-sequence", "Day corrected: one digit from what was read, and back in the register's order"),
     ("date-year-repaired", "A year outside 1930-48, taken from the other date on the record"),
+    ("date-seated-by-order", "A date outside 1930-48, taken whole from identical dates either side of it"),
     ("date-unreadable", "A date the clerk's own writing could not be parsed from"),
     ("stay-disagrees", "Computed stay differs from the count written beside it"),
+    ("result-in-diagnosis", "A Result value standing in a diagnosis or code field"),
+    ("classifier-debris", "Classifier error text where a diagnosis belongs"),
+    ("procedure-only", "An operation named with no diagnosis behind it"),
     ("no-icd9-chapter", "No ICD-9 code the classification could place"),
 ]
 
@@ -778,6 +828,7 @@ def main() -> int:
     icd9_padded = 0
     icd9_refused = 0
     review_counts: Counter[str] = Counter()
+    procedures: Counter[str] = Counter()
     out_rows = []
 
     for row in rows:
@@ -918,7 +969,26 @@ def main() -> int:
             else:
                 row["Days in Hospital (Calc)"] = ""
 
-        if not row.get("ICD-9 Chapter"):
+        written_diag = (row.get("Original Diagnosis", "") or "").strip()
+        chapter = row.get("ICD-9 Chapter", "")
+        if PROCEDURE.search(written_diag):
+            row["Procedure"] = "Procedure and diagnosis" if chapter else "Procedure only"
+            procedures[row["Procedure"]] += 1
+            if not chapter:
+                flags.append("procedure-only")
+        else:
+            row["Procedure"] = ""
+
+        # A Result value or a classifier error in a diagnosis field is neither a
+        # diagnosis nor a missing one: it is the wrong column's content, and
+        # saying so is more use than filing it with the genuinely unrecorded.
+        code_field = (row.get("Primary-ICD9", "") or "").strip()
+        if RESULT_IN_WRONG_COLUMN.match(written_diag) or RESULT_IN_WRONG_COLUMN.match(code_field):
+            flags.append("result-in-diagnosis")
+        elif written_diag and CLASSIFIER_DEBRIS.search(written_diag):
+            flags.append("classifier-debris")
+
+        if not chapter:
             flags.append("no-icd9-chapter")
 
         # Written in the documented order, so the app can rank without knowing
@@ -1001,6 +1071,63 @@ def main() -> int:
     notebooks: dict[str, list[dict[str, str]]] = {}
     for row in out_rows:
         notebooks.setdefault(row.get("Notebook_Number", ""), []).append(row)
+
+    # ------------------------------------- out of span, seated by the order
+    #
+    # Two records in notebook 8 read "17/5/63", fifteen years past the last
+    # register, and neither carries a discharge for the pass above to take a
+    # year from — so all it could do was flag them. The register's own order
+    # answers instead: they sit between record 406 and record 408, and both of
+    # those read 17.3.34. A date outside 1930-48 whose nearest in-span
+    # neighbours on either side carry the same date is that date. The day
+    # survives the misreading intact in both, which is the corroboration that
+    # what went wrong was the rest of it.
+    #
+    # Nothing less than exact agreement on both sides will do. A date taken
+    # from the order rather than from the page is a reconstruction, and it is
+    # only worth making where the order leaves no room for a second answer;
+    # anywhere else the flag, and a person with the scan, is the right outcome.
+    span_seated = 0
+    for items in notebooks.values():
+        if len(items) < MIN_NOTEBOOK_RECORDS:
+            continue
+        values = [to_date(row.get("Admission Date [ISO]", "")) for row in items]
+        in_span = [v if v and v.year in REGISTER_YEARS else None for v in values]
+
+        for position, value in enumerate(values):
+            if not value or in_span[position]:
+                continue
+            before = next((v for v in reversed(in_span[:position]) if v), None)
+            after = next((v for v in in_span[position + 1:] if v), None)
+            if before is None or before != after:
+                continue
+
+            row = items[position]
+            row["Admission Date [ISO]"] = before.isoformat()
+            in_span[position] = before
+            span_seated += 1
+
+            # The discharge, if there is one, is left exactly as it was: this
+            # rule reads the admission column's order and has nothing to say
+            # about the other date. Only the stay is recomputed, and only where
+            # both ends are now readable.
+            discharged = to_date(row.get("Discharge Date (ISO)", ""))
+            if "Days in Hospital (Calc)" in row and discharged:
+                stay = (discharged - before).days
+                row["Days in Hospital (Calc)"] = str(stay) if stay >= 0 else ""
+
+            flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+            # The flag said there was nothing on the record to repair the date
+            # from, and for the admission that is no longer true. It stays if
+            # the discharge is the one out of span.
+            if "date-out-of-span" in flags and not (discharged and discharged.year not in REGISTER_YEARS):
+                flags.remove("date-out-of-span")
+                review_counts["date-out-of-span"] -= 1
+            if "date-seated-by-order" not in flags:
+                flags.append("date-seated-by-order")
+                review_counts["date-seated-by-order"] += 1
+            order = [name for name, _ in REVIEW_FLAGS]
+            row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
 
     for notebook, items in notebooks.items():
         dated = [(row, to_date(row.get("Admission Date [ISO]", ""))) for row in items]
@@ -1172,6 +1299,9 @@ def main() -> int:
     def cell(value: str) -> str:
         return re.sub(r"[\t\r\n]+", " ", value or "").strip()
 
+    if "Procedure" not in fieldnames:
+        at = fieldnames.index("StandardICDInteger") + 1 if "StandardICDInteger" in fieldnames else len(fieldnames)
+        fieldnames.insert(at, "Procedure")
     if "Review Flags" not in fieldnames:
         fieldnames.append("Review Flags")
     if "City as written" not in fieldnames and "City" in fieldnames:
@@ -1203,6 +1333,8 @@ def main() -> int:
         writer.writerow(["kind", "column", "from", "to", "records"])
         for (column, before, after), count in changes.most_common():
             writer.writerow(["cleared" if not after else "merged", column, before, after, count])
+        for value, count in procedures.most_common():
+            writer.writerow(["derived", "Procedure", "operation named in the diagnosis column", value, count])
         for name, description in REVIEW_FLAGS:
             if review_counts[name]:
                 writer.writerow(["review", "Review Flags", name, description, review_counts[name]])
@@ -1234,6 +1366,11 @@ def main() -> int:
         if stays_cleared:
             writer.writerow(
                 ["date", "Days in Hospital (Calc)", "discharge before admission", "cleared", stays_cleared]
+            )
+        if span_seated:
+            writer.writerow(
+                ["date", "Admission Date [ISO]", "year outside 1930-48, nothing on the record to repair it from",
+                 "taken whole from the identical dates either side of it in the register", span_seated]
             )
         if stays_over_a_year:
             writer.writerow(
@@ -1268,6 +1405,8 @@ def main() -> int:
     if component_repairs:
         detail = ", ".join(f"{count} by {name}" for name, count in sorted(component_repairs.items()))
         print(f"component  {sum(component_repairs.values()):,} admission(s) mended one component: {detail}")
+    if span_seated:
+        print(f"out-of-span {span_seated} admission(s) outside 1930-48, seated on the register's own order")
     if sequence_repairs:
         detail = ", ".join(
             f"{count} by {years:+d} year" + ("s" if abs(years) > 1 else "")
@@ -1284,6 +1423,8 @@ def main() -> int:
         if n < TAIL_THRESHOLD
     }
     print(f"tail       {len(tail)} value(s) left standing on fewer than {TAIL_THRESHOLD} records")
+    print(f"procedures {sum(procedures.values()):,} record(s) name an operation: "
+          + ", ".join(f"{n:,} {v.lower()}" for v, n in procedures.most_common()))
     flagged = sum(1 for row in out_rows if row.get("Review Flags"))
     print(f"review     {flagged:,} record(s) flagged for a human eye across {len(review_counts)} kinds")
     for name, _ in REVIEW_FLAGS:

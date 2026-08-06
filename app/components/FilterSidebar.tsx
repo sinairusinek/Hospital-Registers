@@ -34,6 +34,19 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
       internalKey: 'diagnosis',
       aliases: ['standardprimaryicd9names', 'standardprimaryicd9name', 'standardized diagnosis', 'primary diagnosis']
     },
+    // Third, because it is the one facet that describes the register rather
+    // than the patient: whether a diagnosis was written down at all, and if it
+    // was, whether the classification reached it. Selecting "Not recorded"
+    // gives the 729 admissions the diagnosis charts cannot describe.
+    {
+      label: 'Diagnosis recorded?',
+      internalKey: 'diagnosis recording',
+      aliases: ['diagnosis recording']
+    },
+    // Fourth, and also about the register rather than the patient: how often
+    // these clerks wrote down the operation instead of the illness. "Procedure
+    // only" is the case where nothing but the operation was recorded.
+    { label: 'Procedure named?', internalKey: 'procedure', aliases: ['procedure'] },
     { label: 'Result', internalKey: 'result', aliases: ['standardized result', 'standardized_result', 'outcome'] },
     { label: 'Sex', internalKey: 'sex', aliases: ['gender'] },
     { label: 'Religion', internalKey: 'religion', aliases: ['standardized religion', 'standardized_religion'] },
@@ -191,7 +204,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
             return (
               <div key={displayName} className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] truncate mr-2">{displayName}</h4>
+                  <h4 title={displayName} className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] truncate mr-2">{displayName}</h4>
                   {selectedCount > 0 && <span className="bg-indigo-600 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">{selectedCount}</span>}
                 </div>
                 <div className="space-y-1">
@@ -203,7 +216,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
                         checked={selectedValues.includes(val)} 
                         onChange={() => toggleFacet(displayName, val)} 
                       />
-                      <span className={`ml-2 text-xs group-hover:text-slate-900 truncate flex-1 ${val === UNKNOWN ? 'italic text-slate-400' : 'text-slate-600'}`}>{val}</span>
+                      <span title={val} className={`ml-2 text-xs group-hover:text-slate-900 truncate flex-1 ${val === UNKNOWN ? 'italic text-slate-400' : 'text-slate-600'}`}>{val}</span>
                       <span className="text-[9px] text-slate-400 font-mono">{count}</span>
                     </label>
                   ))}
@@ -236,7 +249,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
                 .map(([val, count]) => (
                   <label key={val} className={`flex items-center p-3 rounded-xl cursor-pointer transition-all ${(filterState.facets[actualKeys.facets[activeModalFacet] || ''] || []).includes(val) ? 'bg-indigo-50' : 'hover:bg-slate-50'}`}>
                     <input type="checkbox" className="rounded text-indigo-600 w-4 h-4" checked={(filterState.facets[actualKeys.facets[activeModalFacet] || ''] || []).includes(val)} onChange={() => toggleFacet(activeModalFacet, val)} />
-                    <div className="ml-3 flex-1 min-w-0"><div className={`text-sm font-semibold truncate ${val === UNKNOWN ? 'italic text-slate-400' : 'text-slate-700'}`}>{val}</div><div className="text-[10px] text-slate-400 font-mono">{count.toLocaleString()} occurrences</div></div>
+                    <div className="ml-3 flex-1 min-w-0"><div title={val} className={`text-sm font-semibold truncate ${val === UNKNOWN ? 'italic text-slate-400' : 'text-slate-700'}`}>{val}</div><div className="text-[10px] text-slate-400 font-mono">{count.toLocaleString()} occurrences</div></div>
                   </label>
                 ))}
             </div>

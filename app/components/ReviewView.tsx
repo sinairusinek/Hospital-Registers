@@ -67,9 +67,27 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Admission Date as written', 'Admission Date', 'Discharge Date as written', 'Discharge Date', 'Days in Hospital as written', 'Days in Hospital']
   },
   {
+    flag: 'result-in-diagnosis',
+    title: 'A Result value in the diagnosis column',
+    question: 'The diagnosis or code field holds "Cured", "Died" or another outcome — the Result column\'s content one field to the left. This is a column misalignment in the source, not a missing diagnosis, so nothing has been classified from it. What does the page have in the diagnosis column?',
+    fields: ['Diagnosis as written', 'Diagnosis', 'ICD-9 Code', 'Result as written', 'Result']
+  },
+  {
+    flag: 'classifier-debris',
+    title: 'Classifier error text where a diagnosis belongs',
+    question: 'The original classification pass ran on GPT-4o and hit a rate limit; on these records the 429 error text was written into the diagnosis field instead of a diagnosis. The register almost certainly carries a legible diagnosis here — it was simply never read. These are the clearest candidates for re-running the classification.',
+    fields: ['Diagnosis as written', 'Diagnosis as standardized', 'Diagnosis', 'ICD-9 Code']
+  },
+  {
+    flag: 'procedure-only',
+    title: 'An operation with no diagnosis behind it',
+    question: 'The diagnosis column names an operation — a forceps delivery, a curettage, a tonsillectomy — and no diagnosis was placed behind it. The condition that called for the operation is what the chapter would need. Note that 476 further records name an operation *and* carry a diagnosis; those are in the "Procedure named?" facet, not here.',
+    fields: ['Diagnosis as written', 'Diagnosis', 'ICD-9 Code', 'Procedure', 'Ward', 'Result']
+  },
+  {
     flag: 'no-icd9-chapter',
     title: 'No ICD-9 code that could be placed',
-    question: 'No code the classification could place, so the record sits outside every chapter and outside every diagnosis chart. Is the diagnosis legible on the page, and does it correspond to a code?',
+    question: 'No code the classification could place, so the record sits outside every chapter and outside every diagnosis chart. Of these, 729 carry no diagnosis at all — the register\'s own silence, and nothing a classifier could reach. The rest carry a diagnosis the coding never got to. Is the diagnosis legible on the page, and does it correspond to a code?',
     fields: ['Diagnosis as written', 'Diagnosis as standardized', 'Diagnosis', 'ICD-9 Code', 'ICD-9 Category']
   }
 ];

@@ -1,0 +1,438 @@
+city,name1,name2,n_records,_match_status,_match_method,_grade,_confidence,_sound_match,_flags,_kima_id,_kima_name_rom,_kima_name_heb,_distance_km,_candidates
+Haifa,Haifa,,1999,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Athlit,Athlit,,1021,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Hadera,Hadera,,267,fuzzy,fuzzy,C_review,1.0,,,,,,,858|27009|13633|83919|13804
+Tiberias,Tiberias,,142,fuzzy,fuzzy,C_review,1.0,,,,,,,807|7437|17277|5277
+Acre,Acre,,90,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,6678|9635
+Hadar Hacarmel,Hadar Hacarmel,,88,fuzzy,fuzzy,C_review,0.667,,,,,,,21150
+Kiryat Haim,Kiryat Haim,,82,fuzzy,fuzzy,C_review,0.62,,,,,,,476|480
+Afula,Afula,,53,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Jaffa,Jaffa,,44,name_exact,name_exact,A_autolink,0.95,True,,629,"Jaffa (Tel Aviv-Yafo, Israel)","יפו (תל אביב-יפו, ישראל)",,629
+Zichron Yaakov,Zichron Yaakov,,41,fuzzy,fuzzy,C_review,0.6,,,,,,,8254
+Kiryat Bialik,Kiryat Bialik,,41,fuzzy,fuzzy,C_review,1.0,,,,,,,866|82858
+Yajour,Yajour,,35,no_match,,C_review,0.0,,,,,,,
+Affikim,Affikim,,31,fuzzy,fuzzy,C_review,0.62,,,,,,,554
+Tel Aviv,Tel Aviv,,30,name_exact,name_exact,A_autolink,0.95,True,,15820,Tel Aviv (Israel : District),תל אביב (ישראל : מחוז),,15820
+Karkur,Karkur,,28,name_exact,name_exact,A_autolink,0.95,True,,19149,Karkur (Israel),כרכור (ישראל),,19149
+Bat Galim,Bat Galim,,27,name_exact,name_exact,A_autolink,0.95,True,,21063,"Bat Galim (Haifa, Israel)","בת גלים (חיפה, ישראל)",,21063
+Safad,Safad,,27,name_exact,name_exact,A_autolink,0.95,True,,377,Tsefat (Israel),צפת (ישראל),,377
+Benyamina,Benyamina,,27,fuzzy,fuzzy,C_review,1.0,,,,,,,21551
+Tel Amal,Tel Amal,,27,no_match,,C_review,0.0,,,,,,,
+Herzlia,Herzlia,,26,name_exact,name_exact,A_autolink,0.95,True,,700,Herzeliyya (Israel),הרצליה (ישראל),,700
+Pardess Hanna,Pardess Hanna,,25,no_match,,C_review,0.0,,,,,,,
+Kiryat Motzkin,Kiryat Motzkin,,25,fuzzy,fuzzy,C_review,1.0,,,,,,,481|77346
+Nahalal,Nahalal,,24,fuzzy,fuzzy,C_review,1.0,,,,,,,38|72113|22919|23061
+Nazareth,Nazareth,,23,name_exact,name_exact,A_autolink,0.95,True,,18,Nazareth (Israel),נצרת (ישראל),,18
+Jerusalem,Jerusalem,,22,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,13560|21725|23674
+Kfar Vitkin,Kfar Vitkin,,20,fuzzy,fuzzy,C_review,1.0,,,,,,,825|84431
+Tulkarem,Tulkarem,,16,fuzzy,fuzzy,C_review,1.0,,,,,,,73472|81810
+Yavniel,Yavniel,,15,name_exact,name_exact,A_autolink,0.95,True,,18477,Yavne'el (Israel),יבנאל (ישראל),,18477
+Zichron Jacob,Zichron Jacob,,15,fuzzy,fuzzy,C_review,0.62,,,,,,,8254
+Ardel Yahud,Ardel Yahud,,14,no_match,,C_review,0.0,,,,,,,
+Bethania,Bethania,,13,name_exact,name_exact,A_autolink,0.95,True,,6871,Beuthen (Germany),בויטן (גרמניה),,6871
+Ein Harod,Ein Harod,,11,name_exact,name_exact,A_autolink,0.95,True,,12370,En Harod (Israel),עין חרוד (ישראל),,12370
+Kfar Ata,Kfar Ata,,11,fuzzy,fuzzy,C_review,1.0,,,,,,,477|78926|81712
+Nesher,Nesher,,10,fuzzy,fuzzy,C_review,1.0,,,,,,,20|87833|885
+Yokneam,Yokneam,,10,name_exact,name_exact,A_autolink,0.95,True,,18301,Yokne'am (Israel),יקנעם (מושבה) (ישראל),,18301
+Kibutz Affikim,Kibutz Affikim,,10,fuzzy,fuzzy,C_review,0.6,,,,,,,554
+Ain Harod,Ain Harod,,8,fuzzy,fuzzy,C_review,1.0,,,,,,,65|66|12370
+Kfar Hassidim,Kfar Hassidim,,8,fuzzy,fuzzy,C_review,1.0,,,,,,,830|23042|24291
+Dejania,Dejania,,8,no_match,,C_review,0.0,,,,,,,
+Ahuza,Ahuza,,8,name_exact,name_exact,A_autolink,0.95,True,,21015,"Ahuza (Haifa, Israel)","אחוזה (חיפה, ישראל)",,21015
+Neveh Shaanan,Neveh Shaanan,,7,fuzzy,fuzzy,C_review,1.0,,,,,,,22339|21469|21497
+Kineret,Kineret,,7,fuzzy,fuzzy,C_review,1.0,,,,,,,21918|22403|2268|5152|1669
+Nahariya,Nahariya,,7,name_exact,name_exact,A_autolink,0.95,True,,39,Nahariyya (Israel),נהריה (ישראל),,39
+Emek,Emek,,6,no_match,,C_review,0.0,,,,,,,
+Netanya,Netanya,,6,fuzzy,fuzzy,C_review,1.0,,,,,,,24|16157
+Benjamina,Benjamina,,6,no_match,,C_review,0.0,,,,,,,
+Kinereth,Kinereth,,6,fuzzy,fuzzy,C_review,1.0,,,,,,,22403|21918|5152|1669|1670
+Haifa|Hadar Hacarmel,Haifa,Hadar Hacarmel,6,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Rosh Pina,Rosh Pina,,6,name_exact,name_exact,A_autolink,0.95,True,,14873,Rosh Pina (Israel),ראש פינה (ישראל),,14873
+Kinneret,Kinneret,,6,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,1669|1670|2268|21917|25484
+Kiryat Haroshet,Kiryat Haroshet,,6,name_exact,name_exact,A_autolink,0.95,True,,21920,Kiryat Haroshet (Israel),קרית חרושת (ישראל),,21920
+Kfar Atta,Kfar Atta,,6,fuzzy,fuzzy,C_review,0.667,,,,,,,78926|81712|477
+Waldheim,Waldheim,,6,name_exact,name_exact,A_autolink,0.95,True,,19561,"Waldheim (Saxony, Germany)","וולדהיים (סקסוניה, גרמניה)",,19561
+Mount Carmel,Mount Carmel,,5,name_exact,name_exact,A_autolink,0.95,True,,1156,"Karmel, Mount (Israel)",הר הכרמל (ישראל),,1156
+Akka,Akka,,5,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,71|23975
+Kibutz,Kibutz,,5,no_match,,C_review,0.0,,,,,,,
+Mishmar HaEmek,Mishmar HaEmek,,5,name_exact,name_exact,A_autolink,0.95,True,,214,Mishmar Ha'emek (Israel),משמר העמק (ישראל),,214
+Zammarin,Zammarin,,5,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+Kfar Tabor,Kfar Tabor,,5,name_exact,name_exact,A_autolink,0.95,True,,1666,Kefar Tavor (Israel),כפר תבור (ישראל),,1666
+Nathania,Nathania,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,24
+Zikhron Yacov,Zikhron Yacov,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,8254|71774
+Bassa,Bassa,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,4981|72377|86754|21539|6149
+Nathanya,Nathanya,,5,name_exact,name_exact,A_autolink,0.95,True,,24,Netanya (Israel),נתניה (ישראל),,24
+Had. Hac,Had. Hac,,4,no_match,,C_review,0.0,,,,,,,
+Gan Shmuel,Gan Shmuel,,4,name_exact,name_exact,A_autolink,0.95,True,,904,Gan Shemu'el (Israel),גן שמואל (ישראל),,904
+Rishon LeZion,Rishon LeZion,,4,name_exact,name_exact,A_autolink,0.95,True,,493,Rishon Letsiyon (Israel),ראשון לציון (ישראל),,493
+Migdal,Migdal,,4,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,6904|21101
+Mt. Carmel,Mt. Carmel,,4,no_match,,C_review,0.0,,,,,,,
+Wadi el Hawareth,Wadi el Hawareth,,4,no_match,,C_review,0.0,,,,,,,
+Sdedera,Sdedera,,4,no_match,,C_review,0.0,,,,,,,
+Gedera,Gedera,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,341|9525|17591|72523|858
+Is,Is,,4,no_match,,C_review,0.0,,,,,,,
+Degania,Degania,,4,name_exact,name_exact,A_autolink,0.95,True,,892,Deganya Alef (Israel),דגניה א' (ישראל),,892
+Tabor Street,Tabor Street,,4,fuzzy,fuzzy,C_review,0.62,,,,,,,1117
+Kishon,Kishon,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,14899|399|23060|984
+Naharia,Naharia,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,39|16865|70548|37
+Beit Galim,Beit Galim,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,21063
+Mitzpa,Mitzpa,,3,no_match,,C_review,0.0,,,,,,,
+Had. Hac.|Hadar Hacarmel,Had. Hac.,Hadar Hacarmel,3,fuzzy,fuzzy,C_review,0.667,,,,,,,21150
+Samakh,Samakh,,3,name_exact,name_exact,A_autolink,0.95,True,,16228,Tsemah (Israel),צמח (ישראל),,16228
+Beit Gan,Beit Gan,,3,fuzzy,fuzzy,C_review,0.62,,,,,,,9783
+Kfar Hasidim,Kfar Hasidim,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,830|23042|24291
+Yavne'el,Yavne'el,,3,name_exact,name_exact,A_autolink,0.95,True,,18477,Yavne'el (Israel),יבנאל (ישראל),,18477
+Jenin,Jenin,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,79775|10532|10559|71563|7069
+Meshek Yagur,Meshek Yagur,,3,no_match,,C_review,0.0,,,,,,,
+Tel Yosef,Tel Yosef,,3,name_exact,name_exact,A_autolink,0.95,True,,186,Tel-Yosef (Israel),תל יוסף (ישראל),,186
+Kirjat Hayim,Kirjat Hayim,,3,fuzzy,fuzzy,C_review,0.62,,,,,,,479
+[ambiguous_city],[ambiguous_city],,3,no_match,,C_review,0.0,,,,,,,
+Athlit|Atlit,Athlit,Atlit,3,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Kefutz Mizra,Kefutz Mizra,,3,no_match,,C_review,0.0,,,,,,,
+Kiryat Kharoshet,Kiryat Kharoshet,,3,fuzzy,fuzzy,C_review,0.688,,,,,,,21920
+Hedera|Hadera,Hedera,Hadera,3,name_exact,name_exact,A_autolink,0.95,True,,858,Hadera (Israel),חדרה (ישראל),,858
+Kibutz Affikim|Affikim,Kibutz Affikim,Affikim,3,fuzzy,fuzzy,C_review,0.62,,,,,,,554
+Kfar Kharoshet,Kfar Kharoshet,,3,fuzzy,fuzzy,C_review,0.62,,,,,,,21749
+Kiryat Naim,Kiryat Naim,,3,no_match,,C_review,0.0,,,,,,,
+Sh.Khunat Oadim,Sh.Khunat Oadim,,2,no_match,,C_review,0.0,,,,,,,
+Ginjar,Ginjar,,2,fuzzy,fuzzy,C_review,0.6,,,,,,,14337|929
+Mishmar Haemek,Mishmar Haemek,,2,name_exact,name_exact,A_autolink,0.95,True,,214,Mishmar Ha'emek (Israel),משמר העמק (ישראל),,214
+Kineret|Kinneret,Kineret,Kinneret,2,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,1669|1670|2268|21917|25484
+Carmel,Carmel,,2,name_exact,name_exact,A_autolink,0.95,True,,24545,Carmel (N.J.),כרמל (ניו ג'רזי),,24545
+Had. Stac,Had. Stac,,2,no_match,,C_review,0.0,,,,,,,
+Sdedead,Sdedead,,2,no_match,,C_review,0.0,,,,,,,
+Ghedera,Ghedera,,2,fuzzy,fuzzy,C_review,0.8,,,,,,,858|341
+Yajouj,Yajouj,,2,no_match,,C_review,0.0,,,,,,,
+Kfar Yehezkiel,Kfar Yehezkiel,,2,fuzzy,fuzzy,C_review,1.0,,,,,,,832|78311
+Kibbutz Hashomer,Kibbutz Hashomer,,2,no_match,,C_review,0.0,,,,,,,
+Balfuria,Balfuria,,2,fuzzy,fuzzy,C_review,1.0,,,,,,,20640
+Ness Ziona,Ness Ziona,,2,fuzzy,fuzzy,C_review,0.667,,,,,,,15
+Degania B,Degania B,,2,fuzzy,fuzzy,C_review,0.714,,,,,,,892|893
+Rosh Pinna,Rosh Pinna,,2,fuzzy,fuzzy,C_review,0.889,,,,,,,14873|375|4509|84577
+Neve Shaanan,Neve Shaanan,,2,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,21469|21497|22339
+Nachla,Nachla,,2,no_match,,C_review,0.0,,,,,,,
+Hacarmel,Hacarmel,,2,fuzzy,fuzzy,C_review,0.667,,,,,,,88400|74435|89219|72971|24545
+Ardel Yahud|Ard al-Yahud,Ardel Yahud,Ard al-Yahud,2,no_match,,C_review,0.0,,,,,,,
+Benyamina|Binyamina,Benyamina,Binyamina,2,name_exact,name_exact,A_autolink,0.95,True,,21551,Binyamina (Israel),בנימינה (ישראל),,21551
+Rehovot,Rehovot,,2,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,562|3497
+Shafa Amr,Shafa Amr,,2,fuzzy,fuzzy,C_review,0.62,,,,,,,261
+Had Stae,Had Stae,,2,no_match,,C_review,0.0,,,,,,,
+German Colony,German Colony,,2,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,629|21139|21140
+Hadar HaCarmel (Haifa),Hadar HaCarmel (Haifa),,2,fuzzy,fuzzy,C_review,0.62,,,,,,,21150
+Herzl Street,Herzl Street,,2,no_match,,C_review,0.0,,,,,,,
+Bethlehem,Bethlehem,,2,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,556|10969|15436
+Khalisa,Khalisa,,2,name_exact,name_exact,A_autolink,0.95,True,,485,Kiryat Shemona (Israel),קרית שמונה (ישראל),,485
+P. & P. Zichron Yacob,P. & P. Zichron Yacob,,2,no_match,,C_review,0.0,,,,,,,
+Bat Shlomo,Bat Shlomo,,2,fuzzy,fuzzy,C_review,1.0,,,,,,,20962|587
+Hadar Hacarmel / Haifa,Hadar Hacarmel / Haifa,,2,fuzzy,fuzzy,C_review,0.62,,,,,,,21150
+Kfar Tavor,Kfar Tavor,,2,name_exact,name_exact,A_autolink,0.95,True,,1666,Kefar Tavor (Israel),כפר תבור (ישראל),,1666
+Yajour|Yajur,Yajour,Yajur,2,no_match,,C_review,0.0,,,,,,,
+Givat Brenner,Givat Brenner,,2,name_exact,name_exact,A_autolink,0.95,True,,751,Giv'at Brener (Israel),גבעת ברנר (ישראל),,751
+Beisan,Beisan,,2,name_exact,name_exact,A_autolink,0.95,True,,613,Bet She'an (Israel),בית שאן (ישראל),,613
+Kiryat Gesher,Kiryat Gesher,,2,no_match,,C_review,0.0,,,,,,,
+Kurdaneh,Kurdaneh,,2,no_match,,C_review,0.0,,,,,,,
+Givat Haim,Givat Haim,,2,fuzzy,fuzzy,C_review,0.62,,,,,,,77975
+Zichron Jacob|Zichron Yaakov,Zichron Jacob,Zichron Yaakov,2,fuzzy,fuzzy,C_review,0.62,,,,,,,8254
+Affikin,Affikin,,2,no_match,,C_review,0.0,,,,,,,
+Kibutz Affiking|Kibutz Affikim,Kibutz Affiking,Kibutz Affikim,2,fuzzy,fuzzy,C_review,0.6,,,,,,,554
+Tantoura,Tantoura,,2,fuzzy,fuzzy,C_review,1.0,,,,,,,22251|21005
+Huleh,Huleh,,2,name_exact,name_exact,A_autolink,0.95,True,,3327,Hula Valley (Israel),עמק החולה (ישראל),,3327
+Nur El Shams|Nur Shams,Nur El Shams,Nur Shams,2,fuzzy,fuzzy,C_review,0.667,,,,,,,76253
+Athlit|Athlit Camp,Athlit,Athlit Camp,2,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Athlit|Athlit Police station,Athlit,Athlit Police station,2,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Givat Ada,Givat Ada,,2,name_exact,name_exact,A_autolink,0.95,True,,18292,Giv'at Ada (Israel),גבעת עדה (ישראל),,18292
+Jaffa|Co. C.I.D. Jaffa,Jaffa,Co. C.I.D. Jaffa,2,name_exact,name_exact,A_autolink,0.95,True,,629,"Jaffa (Tel Aviv-Yafo, Israel)","יפו (תל אביב-יפו, ישראל)",,629
+Nablus,Nablus,,2,name_exact,name_exact,A_autolink,0.95,True,,310,Nablus (West Bank),שכם (גדה מערבית),,310
+Ekron,Ekron,,2,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,5592|21515
+Mount Tabor,Mount Tabor,,1,name_exact,name_exact,A_autolink,0.95,True,,5765,"Tabor, Mount (Israel)",הר תבור (ישראל),,5765
+Shenglia,Shenglia,,1,no_match,,C_review,0.0,,,,,,,
+Dejani,Dejani,,1,no_match,,C_review,0.0,,,,,,,
+Kiriat Kinzet,Kiriat Kinzet,,1,no_match,,C_review,0.0,,,,,,,
+Abu Shousheh,Abu Shousheh,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,18940
+Kufr Ata,Kufr Ata,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,78926|81712|477
+Hadar Hacarmel|Had. Hac,Hadar Hacarmel,Had. Hac,1,fuzzy,fuzzy,C_review,0.667,,,,,,,21150
+Kfar Hasharon,Kfar Hasharon,,1,fuzzy,fuzzy,C_review,0.625,,,,,,,78835
+Kenereth,Kenereth,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,22403|21918|2268
+Kibbutz Kinneret,Kibbutz Kinneret,,1,name_exact,name_exact,A_autolink,0.95,True,,1669,Kinneret (Kevutsa) (Israel),כינרת (קבוצה) (ישראל),,1669
+Nahlat Yacob,Nahlat Yacob,,1,no_match,,C_review,0.0,,,,,,,
+Naffuleh,Naffuleh,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,18417
+Benjaminia,Benjaminia,,1,no_match,,C_review,0.0,,,,,,,
+Ramleh,Ramleh,,1,fuzzy,fuzzy,C_review,0.75,,,,,,,456
+Nes Ziona,Nes Ziona,,1,name_exact,name_exact,A_autolink,0.95,True,,15,Nes Tsiyyona (Israel),נס ציונה (ישראל),,15
+Smillel,Smillel,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,13796|13893
+Menahemia Colony,Menahemia Colony,,1,no_match,,C_review,0.0,,,,,,,
+Sedjerah,Sedjerah,,1,no_match,,C_review,0.0,,,,,,,
+Hartel Yahud,Hartel Yahud,,1,no_match,,C_review,0.0,,,,,,,
+Majamil,Majamil,,1,no_match,,C_review,0.0,,,,,,,
+"Beisan|Dept. of Police, Beisan",Beisan,"Dept. of Police, Beisan",1,name_exact,name_exact,A_autolink,0.95,True,,613,Bet She'an (Israel),בית שאן (ישראל),,613
+Yavniel Colony,Yavniel Colony,,1,no_match,,C_review,0.0,,,,,,,
+"Bersan|Dept. of Police, Bersan",Bersan,"Dept. of Police, Bersan",1,fuzzy,fuzzy,C_review,1.0,,,,,,,19332|21644|73447|18919
+Vilhelma,Vilhelma,,1,fuzzy,fuzzy,C_review,0.714,,,,,,,26771
+Yavneel Colony,Yavneel Colony,,1,no_match,,C_review,0.0,,,,,,,
+W. el Nisnass,W. el Nisnass,,1,no_match,,C_review,0.0,,,,,,,
+Kafr Hittim,Kafr Hittim,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,21908
+Haifa|Hedera,Haifa,Hedera,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834|858
+Tiberias|Tiberia,Tiberias,Tiberia,1,fuzzy,fuzzy,C_review,1.0,,,,,,,807|7437|5765|27205|74649
+Zicron,Zicron,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,8254
+Hadera|Hedera,Hadera,Hedera,1,name_exact,name_exact,A_autolink,0.95,True,,858,Hadera (Israel),חדרה (ישראל),,858
+Jarit Nahalal,Jarit Nahalal,,1,no_match,,C_review,0.0,,,,,,,
+Zichron Yaacov,Zichron Yaacov,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+002.2,002.2,,1,no_match,,C_review,0.0,,,,,,,
+Bet Alfa,Bet Alfa,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,563|25401
+Zeeb,Zeeb,,1,no_match,,C_review,0.0,,,,,,,
+Bath Galim|Bath Galim K. H. Bldg,Bath Galim,Bath Galim K. H. Bldg,1,fuzzy,fuzzy,C_review,0.62,,,,,,,21063
+Atlit|Atlit. House of Ofman,Atlit,Atlit. House of Ofman,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Kfar Saba,Kfar Saba,,1,name_exact,name_exact,A_autolink,0.95,True,,839,Kefar Sava (Israel),כפר סבא (ישראל),,839
+Kinnereth,Kinnereth,,1,fuzzy,fuzzy,C_review,0.857,,,,,,,25484|1669|1670|2268|5152
+Haifa|Nesher,Haifa,Nesher,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Ein Shemer,Ein Shemer,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,69|3518
+Kfar Jeladim,Kfar Jeladim,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,21910
+Kfar Yeshua,Kfar Yeshua,,1,no_match,,C_review,0.0,,,,,,,
+Salem,Salem,,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,7213|7835|14059|17308
+Kefa Tabor,Kefa Tabor,,1,no_match,,C_review,0.0,,,,,,,
+Kfar Brandice,Kfar Brandice,,1,fuzzy,fuzzy,C_review,0.714,,,,,,,21588|581
+Beth Shearim,Beth Shearim,,1,fuzzy,fuzzy,C_review,0.636,,,,,,,613|616
+Mes-hah,Mes-hah,,1,no_match,,C_review,0.0,,,,,,,
+Bar Galim,Bar Galim,,1,fuzzy,fuzzy,C_review,0.6,,,,,,,23038
+Merchavia,Merchavia,,1,name_exact,name_exact,A_autolink,0.95,True,,205,Merhavya (Israel),מרחביה (ישראל),,205
+Staerneck,Staerneck,,1,no_match,,C_review,0.0,,,,,,,
+Haifa|Hadar Hacarmel Haifa,Haifa,Hadar Hacarmel Haifa,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Kfar Jeshuah,Kfar Jeshuah,,1,no_match,,C_review,0.0,,,,,,,
+Abu Khalil,Abu Khalil,,1,no_match,,C_review,0.0,,,,,,,
+Haifa|Churches Ort,Haifa,Churches Ort,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Hallissa,Hallissa,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,15946|8822|19039|89590
+Brene Shaanan,Brene Shaanan,,1,no_match,,C_review,0.0,,,,,,,
+Alliance Scool,Alliance Scool,,1,no_match,,C_review,0.0,,,,,,,
+Dar Awwaj,Dar Awwaj,,1,no_match,,C_review,0.0,,,,,,,
+Rehovoth,Rehovoth,,1,fuzzy,fuzzy,C_review,0.833,,,,,,,562|3497
+Giv'at Ada,Giv'at Ada,,1,name_exact,name_exact,A_autolink,0.95,True,,18292,Giv'at Ada (Israel),גבעת עדה (ישראל),,18292
+Dantel Yahud,Dantel Yahud,,1,no_match,,C_review,0.0,,,,,,,
+Buriq,Buriq,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,76717|80063|77534|89058|79597
+Haifa|Had. Stac,Haifa,Had. Stac,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Heazelia,Heazelia,,1,no_match,,C_review,0.0,,,,,,,
+Emek R,Emek R,,1,no_match,,C_review,0.0,,,,,,,
+Tel-Yusef,Tel-Yusef,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,186
+Shunat Zarefin,Shunat Zarefin,,1,no_match,,C_review,0.0,,,,,,,
+Hallisa Qrt,Hallisa Qrt,,1,no_match,,C_review,0.0,,,,,,,
+Kfar Secta,Kfar Secta,,1,no_match,,C_review,0.0,,,,,,,
+Kfar Nacharish / Nazareth,Kfar Nacharish / Nazareth,,1,no_match,,C_review,0.0,,,,,,,
+Mizpa,Mizpa,,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,21700|21902
+En Dor,En Dor,,1,name_exact,name_exact,A_autolink,0.95,True,,19136,En Dor (Israel),עין דור (ישראל),,19136
+Beit Alpha,Beit Alpha,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,563
+Shatel Yahud,Shatel Yahud,,1,no_match,,C_review,0.0,,,,,,,
+Hallesa,Hallesa,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,15946|8822|21610|15505|89590
+Kiryat Ata,Kiryat Ata,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,477|27198|71518
+Shezlia,Shezlia,,1,no_match,,C_review,0.0,,,,,,,
+Nve Shaanan (Haifa),Nve Shaanan (Haifa),,1,no_match,,C_review,0.0,,,,,,,
+Nahliel Yahud,Nahliel Yahud,,1,no_match,,C_review,0.0,,,,,,,
+Carmel Ahuza,Carmel Ahuza,,1,no_match,,C_review,0.0,,,,,,,
+Nahla,Nahla,,1,fuzzy,fuzzy,C_review,0.6,,,,,,,18490
+Petah Tikvah,Petah Tikvah,,1,name_exact,name_exact,A_autolink,0.95,True,,426,Petah Tikva (Israel),פתח תקווה (ישראל),,426
+Beit Anya,Beit Anya,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,6925|16157|88377|8510|85584
+Kvutzat Kinereth,Kvutzat Kinereth,,1,fuzzy,fuzzy,C_review,0.75,,,,,,,1669
+Kfar Hahoresh,Kfar Hahoresh,,1,name_exact,name_exact,A_autolink,0.95,True,,820,Kefar Hahoresh (Israel),כפר החורש (ישראל),,820
+Kfar Nachanesh,Kfar Nachanesh,,1,no_match,,C_review,0.0,,,,,,,
+Sakhnin,Sakhnin,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,95
+Binjamina|Binyamina,Binjamina,Binyamina,1,name_exact,name_exact,A_autolink,0.95,True,,21551,Binyamina (Israel),בנימינה (ישראל),,21551
+Emek Zevouloun,Emek Zevouloun,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,86676
+Beit Alfa,Beit Alfa,,1,name_exact,name_exact,A_autolink,0.95,True,,563,Bet Alfa (Israel),בית אלפא (ישראל),,563
+Hadeira (Hadera),Hadeira (Hadera),,1,no_match,,C_review,0.0,,,,,,,
+Churipat Hayim,Churipat Hayim,,1,no_match,,C_review,0.0,,,,,,,
+"Haifa|Ardel Jahud, Haifa",Haifa,"Ardel Jahud, Haifa",1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Emek R.|Emek,Emek R.,Emek,1,no_match,,C_review,0.0,,,,,,,
+Kfar Horesh,Kfar Horesh,,1,fuzzy,fuzzy,C_review,0.833,,,,,,,21749|22055|820
+Tiberias / Kinneret,Tiberias / Kinneret,,1,no_match,,C_review,0.0,,,,,,,
+Kiryat Eliyahu,Kiryat Eliyahu,,1,no_match,,C_review,0.0,,,,,,,
+Haifa / Mount Carmel,Haifa / Mount Carmel,,1,no_match,,C_review,0.0,,,,,,,
+Carmel Station,Carmel Station,,1,no_match,,C_review,0.0,,,,,,,
+Hadar Hacarmel (Haifa),Hadar Hacarmel (Haifa),,1,fuzzy,fuzzy,C_review,0.62,,,,,,,21150
+Kafr Branch,Kafr Branch,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,581
+Wadi Nisnas,Wadi Nisnas,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,85346
+Tiberias|P. & P. Tiberias,Tiberias,P. & P. Tiberias,1,fuzzy,fuzzy,C_review,1.0,,,,,,,807|7437|17277|5277
+Neve Sha'anan,Neve Sha'anan,,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,21469|21497|22339
+Halisa,Halisa,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,485|1794|23392|3427|21610
+Afula|Afuleh,Afula,Afuleh,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Khamra,Khamra,,1,fuzzy,fuzzy,C_review,0.75,,,,,,,75424|4107|21220
+Kufr 'Ata,Kufr 'Ata,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,78926|81712|477
+Adel Yahud,Adel Yahud,,1,no_match,,C_review,0.0,,,,,,,
+Balad al-Sheikh,Balad al-Sheikh,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,21670|26853
+Hart el Yahud,Hart el Yahud,,1,no_match,,C_review,0.0,,,,,,,
+Majdal,Majdal,,1,name_exact,name_exact,A_autolink,0.95,True,,6904,Migdal (Israel),מגדל (ישראל),,6904
+Ata village,Ata village,,1,no_match,,C_review,0.0,,,,,,,
+Beit Alfa / Beisan,Beit Alfa / Beisan,,1,no_match,,C_review,0.0,,,,,,,
+Ein Haron,Ein Haron,,1,fuzzy,fuzzy,C_review,0.75,,,,,,,12370
+Biniamina|Binyamina,Biniamina,Binyamina,1,name_exact,name_exact,A_autolink,0.95,True,,21551,Binyamina (Israel),בנימינה (ישראל),,21551
+Beit Olim,Beit Olim,,1,no_match,,C_review,0.0,,,,,,,
+Bithania|Bethania,Bithania,Bethania,1,name_exact,name_exact,A_autolink,0.95,True,,6871,Beuthen (Germany),בויטן (גרמניה),,6871
+Hammeh,Hammeh,,1,name_exact,name_exact,A_autolink,0.95,True,,4414,Hammat Gader Site (Israel),אתר חמת גדר (ישראל),,4414
+Kfar Yehoshua,Kfar Yehoshua,,1,name_exact,name_exact,A_autolink,0.95,True,,19294,Kefar Yehoshu'a (Israel),כפר יהושוע (ישראל),,19294
+Carmiel,Carmiel,,1,name_exact,name_exact,A_autolink,0.95,True,,162,Karmi'el (Israel),כרמיאל (ישראל),,162
+Wadi Kavara,Wadi Kavara,,1,no_match,,C_review,0.0,,,,,,,
+Zichron Yaacob,Zichron Yaacob,,1,fuzzy,fuzzy,C_review,0.846,,,,,,,8254
+Kfar Baroukh,Kfar Baroukh,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,815
+Tel Yousef,Tel Yousef,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,186
+Kufretta,Kufretta,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,78926|81712|477
+Kfar Kasidim,Kfar Kasidim,,1,no_match,,C_review,0.0,,,,,,,
+Hadera|Hadera P. & P,Hadera,Hadera P. & P,1,fuzzy,fuzzy,C_review,1.0,,,,,,,858|27009|13633|83919|13804
+Kharwa,Kharwa,,1,no_match,,C_review,0.0,,,,,,,
+Kfar Baruch,Kfar Baruch,,1,name_exact,name_exact,A_autolink,0.95,True,,815,Kefar Barukh (Israel),כפר ברוך (ישראל),,815
+Ben Yehuda,Ben Yehuda,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,13937|14001|732|87984|18957
+Ben Yehuda Street,Ben Yehuda Street,,1,fuzzy,fuzzy,C_review,0.733,,,,,,,72096
+Drachla Tabor St,Drachla Tabor St,,1,no_match,,C_review,0.0,,,,,,,
+Bat Shlomo near Zammaren|Bat Shlomo,Bat Shlomo near Zammaren,Bat Shlomo,1,fuzzy,fuzzy,C_review,1.0,,,,,,,20962|587
+Afula|Affuleh Carea st,Afula,Affuleh Carea st,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Galil,Galil,,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,1475|22094
+Tirch,Tirch,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,22136|9685|6904
+Affuleh|Afula,Affuleh,Afula,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Rumat Neshanan,Rumat Neshanan,,1,no_match,,C_review,0.0,,,,,,,
+Tell Addashume,Tell Addashume,,1,no_match,,C_review,0.0,,,,,,,
+Mizra,Mizra,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,224|21881|21645|3607|16166
+Kinneret (Kibbutz),Kinneret (Kibbutz),,1,no_match,,C_review,0.0,,,,,,,
+Petah Tikva,Petah Tikva,,1,name_exact,name_exact,A_autolink,0.95,True,,426,Petah Tikva (Israel),פתח תקווה (ישראל),,426
+Beit Jann,Beit Jann,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,21856|90226
+Gisr El Majami,Gisr El Majami,,1,no_match,,C_review,0.0,,,,,,,
+Yavne'el / Tiberias,Yavne'el / Tiberias,,1,no_match,,C_review,0.0,,,,,,,
+Beit Jan,Beit Jan,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,90226
+Aten Village,Aten Village,,1,no_match,,C_review,0.0,,,,,,,
+Haifa|Bassa,Haifa,Bassa,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Zichron Yacov,Zichron Yacov,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,8254
+Kafr Yasin,Kafr Yasin,,1,fuzzy,fuzzy,C_review,0.778,,,,,,,88951|21807
+Tel Joseph,Tel Joseph,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,186
+Tel Chai,Tel Chai,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,782
+Netanya|Nathania,Netanya,Nathania,1,fuzzy,fuzzy,C_review,1.0,,,,,,,24|16157
+Givat Adam,Givat Adam,,1,fuzzy,fuzzy,C_review,0.875,,,,,,,18292|23198
+Kibbutz Hamarking,Kibbutz Hamarking,,1,no_match,,C_review,0.0,,,,,,,
+Kafaratta,Kafaratta,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,78926|81712|477
+Kfar Yideyah,Kfar Yideyah,,1,no_match,,C_review,0.0,,,,,,,
+Massada,Massada,,1,name_exact,name_exact,A_autolink,0.95,True,,219,Masada (Israel),מסדה (ישראל),,219
+Tirat Zvi,Tirat Zvi,,1,name_exact,name_exact,A_autolink,0.95,True,,757,Tirat Tsvi (Israel),טירת צבי (ישראל),,757
+Kiriat Haroshet,Kiriat Haroshet,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,21920
+Kfar Yadidia,Kfar Yadidia,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,831
+Mt. Tabor,Mt. Tabor,,1,no_match,,C_review,0.0,,,,,,,
+Jokneam,Jokneam,,1,name_exact,name_exact,A_autolink,0.95,True,,18301,Yokne'am (Israel),יקנעם (מושבה) (ישראל),,18301
+Zekra Yacov,Zekra Yacov,,1,no_match,,C_review,0.0,,,,,,,
+Daganya,Daganya,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,15003|15142|892
+Yavneel,Yavneel,,1,name_exact,name_exact,A_autolink,0.95,True,,18477,Yavne'el (Israel),יבנאל (ישראל),,18477
+Zichron Yaakov|Bat shlomo - Zichron Jacob,Zichron Yaakov,Bat shlomo - Zichron Jacob,1,fuzzy,fuzzy,C_review,0.6,,,,,,,8254
+Zichron Yakov|Zichron Yaakov,Zichron Yakov,Zichron Yaakov,1,fuzzy,fuzzy,C_review,0.62,,,,,,,8254
+Majd al-Krum,Majd al-Krum,,1,name_exact,name_exact,A_autolink,0.95,True,,19615,Majd al-Kurum (Israel),מג'ד אל-כרום (ישראל),,19615
+Meshek Yagour,Meshek Yagour,,1,no_match,,C_review,0.0,,,,,,,
+Bet Alpha Huleh S/D.|Bet Alpha,Bet Alpha Huleh S/D.,Bet Alpha,1,fuzzy,fuzzy,C_review,0.62,,,,,,,563
+Hadar,Hadar,,1,name_exact,name_exact,A_autolink,0.95,True,,27009,"Kefar Hadar (Hod Hasharon, Israel)","כפר הדר (הוד השרון, ישראל)",,27009
+Kibbutz Affikim,Kibbutz Affikim,,1,fuzzy,fuzzy,C_review,0.786,,,,,,,554
+Haifa|Mt. Carmel,Haifa,Mt. Carmel,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Kibutz Affiking,Kibutz Affiking,,1,no_match,,C_review,0.0,,,,,,,
+Kfar Joshua,Kfar Joshua,,1,no_match,,C_review,0.0,,,,,,,
+Haifa|Dar el Kadkany,Haifa,Dar el Kadkany,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Kiryat Haim|Kiryat-Haim Tribune Amal,Kiryat Haim,Kiryat-Haim Tribune Amal,1,fuzzy,fuzzy,C_review,0.62,,,,,,,476|480
+Kiryat-Haim Tribune Amal,Kiryat-Haim Tribune Amal,,1,no_match,,C_review,0.0,,,,,,,
+Sajour,Sajour,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,75033|733
+Bassa No 1|Bassa,Bassa No 1,Bassa,1,fuzzy,fuzzy,C_review,1.0,,,,,,,4981|72377|86754|21539|6149
+Geda,Geda,,1,no_match,,C_review,0.0,,,,,,,
+Benyamina. & Beit-Sacaross,Benyamina. & Beit-Sacaross,,1,no_match,,C_review,0.0,,,,,,,
+Shavei Zion,Shavei Zion,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,21799
+Deganya,Deganya,,1,name_exact,name_exact,A_autolink,0.95,True,,892,Deganya Alef (Israel),דגניה א' (ישראל),,892
+Ashadot Yakov,Ashadot Yakov,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,21733|69927|76088|83561|26521
+Kfar Yehoshoua,Kfar Yehoshoua,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,19294|6098
+Ahava,Ahava,,1,fuzzy,fuzzy,C_review,0.75,,,,,,,74524
+Kiryat Kamal,Kiryat Kamal,,1,no_match,,C_review,0.0,,,,,,,
+Beit-Zerah,Beit-Zerah,,1,no_match,,C_review,0.0,,,,,,,
+Emek Hayarden,Emek Hayarden,,1,fuzzy,fuzzy,C_review,0.643,,,,,,,1660|87167
+Nur Shams,Nur Shams,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,76253
+Hadar Hacarmel Haifa,Hadar Hacarmel Haifa,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,21150
+Na'an,Na'an,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,16
+Kfar Khassidim,Kfar Khassidim,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,830
+Haifa / Tel Amal,Haifa / Tel Amal,,1,no_match,,C_review,0.0,,,,,,,
+Roy,Roy,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,87492|81495
+Zichron,Zichron,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+Defna,Defna,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,974
+Affula (Afula),Affula (Afula),,1,no_match,,C_review,0.0,,,,,,,
+Degania|Tiberias S/D,Degania,Tiberias S/D,1,name_exact,name_exact,A_autolink,0.95,True,,892,Deganya Alef (Israel),דגניה א' (ישראל),,892
+Benjamina|Benyamina,Benjamina,Benyamina,1,fuzzy,fuzzy,C_review,1.0,,,,,,,21551
+Haifa|Bourj Billet,Haifa,Bourj Billet,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,791|15834
+Bet Gan,Bet Gan,,1,no_match,,C_review,0.0,,,,,,,
+Haifa s/d,Haifa s/d,,1,no_match,,C_review,0.0,,,,,,,
+Joknan,Joknan,,1,no_match,,C_review,0.0,,,,,,,
+Acre S/D,Acre S/D,,1,no_match,,C_review,0.0,,,,,,,
+Hanita,Hanita,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,799|14529|9799|19932|9590
+Ras El Ein,Ras El Ein,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,73305|26622|73680
+Hazorea,Hazorea,,1,name_exact,name_exact,A_autolink,0.95,True,,986,Hazore'a (Israel),הזורע (ישראל),,986
+Nur El Shams,Nur El Shams,,1,no_match,,C_review,0.0,,,,,,,
+Petach Tikva,Petach Tikva,,1,name_exact,name_exact,A_autolink,0.95,True,,426,Petah Tikva (Israel),פתח תקווה (ישראל),,426
+Kibutz Dalia,Kibutz Dalia,,1,no_match,,C_review,0.0,,,,,,,
+Kefar Bireim,Kefar Bireim,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,581|21588
+Haifa (Nesher),Haifa (Nesher),,1,no_match,,C_review,0.0,,,,,,,
+Tiberias (Kibbutz Afikim?),Tiberias (Kibbutz Afikim?),,1,no_match,,C_review,0.0,,,,,,,
+Bassa N.1 N.F.D,Bassa N.1 N.F.D,,1,no_match,,C_review,0.0,,,,,,,
+Bet Olim,Bet Olim,,1,no_match,,C_review,0.0,,,,,,,
+Benjamin,Benjamin,,1,no_match,,C_review,0.0,,,,,,,
+Shavei Tzion / Nahariya,Shavei Tzion / Nahariya,,1,no_match,,C_review,0.0,,,,,,,
+Beit tatikva,Beit tatikva,,1,no_match,,C_review,0.0,,,,,,,
+Kiryat Shmuel,Kiryat Shmuel,,1,name_exact,name_exact,A_autolink,0.95,True,,22902,"Kiryat Shemuel (Jerusalem, Israel)","קרית שמואל (ירושלים, ישראל)",,22902
+Kfar Hasidim / Kfar Hanoar,Kfar Hasidim / Kfar Hanoar,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,23042|830
+Kiryat Haim / Kibbutz Amal,Kiryat Haim / Kibbutz Amal,,1,no_match,,C_review,0.0,,,,,,,
+Zikron Yaacov,Zikron Yaacov,,1,fuzzy,fuzzy,C_review,0.643,,,,,,,8254
+Tira,Tira,,1,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,756|925|23423
+Bassa I.|Bassa,Bassa I.,Bassa,1,fuzzy,fuzzy,C_review,1.0,,,,,,,4981|72377|86754|21539|6149
+Natamia,Natamia,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,57|9338|8964
+Bassa No 2|Al-Bassa,Bassa No 2,Al-Bassa,1,name_exact,name_exact,A_autolink,0.95,True,,6885,Shelomi (Israel),שלומי (ישראל),,6885
+Beni Brak,Beni Brak,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,594|12767|79711
+Lydda,Lydda,,1,name_exact,name_exact,A_autolink,0.95,True,,178,Lod (Israel),לוד (ישראל),,178
+Shar Amakim,Shar Amakim,,1,no_match,,C_review,0.0,,,,,,,
+Ayesdin,Ayesdin,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,17672
+Athlit|Athlit Prison,Athlit,Athlit Prison,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Kibbutz Dalia,Kibbutz Dalia,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,886
+Ein Hashofet,Ein Hashofet,,1,name_exact,name_exact,A_autolink,0.95,True,,91,En Hashofet (Israel),עין השופט (ישראל),,91
+Bathelim K.butz|Bathelim,Bathelim K.butz,Bathelim,1,fuzzy,fuzzy,C_review,1.0,,,,,,,556
+Hittin,Hittin,,1,name_exact,name_exact,A_autolink,0.95,True,,21331,Hittin (Israel),חיטין (ישראל),,21331
+Athlit|Athlit J.L.Co. 2,Athlit,Athlit J.L.Co. 2,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Tiberias S/D,Tiberias S/D,,1,fuzzy,fuzzy,C_review,0.6,,,,,,,807
+Qiryat Ata,Qiryat Ata,,1,name_exact,name_exact,A_autolink,0.95,True,,477,Kiryat Ata (Israel),קרית אתא (ישראל),,477
+Rechavia,Rechavia,,1,name_exact,name_exact,A_autolink,0.95,True,,21723,"Rehavya (Jerusalem, Israel)","רחביה (ירושלים, ישראל)",,21723
+Hadar [Haifa],Hadar [Haifa],,1,no_match,,C_review,0.0,,,,,,,
+Haifa [Hadar HaCarmel],Haifa [Hadar HaCarmel],,1,no_match,,C_review,0.0,,,,,,,
+Blys,Blys,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,1800|9511|75140|16864
+Affula|Affula Nugst,Affula,Affula Nugst,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Atlit|Athlit C.R. Camp,Atlit,Athlit C.R. Camp,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Athlit|Athlit C. Camps,Athlit,Athlit C. Camps,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Athlit|Cl. Camp - Athlit,Athlit,Cl. Camp - Athlit,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Atlit|Cl. Camp - Athlit,Atlit,Cl. Camp - Athlit,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Nabi Sha'man Hagelil,Nabi Sha'man Hagelil,,1,no_match,,C_review,0.0,,,,,,,
+Ramat Gan,Ramat Gan,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,777|27025|21964
+Beit Dagan,Beit Dagan,,1,name_exact,name_exact,A_autolink,0.95,True,,9783,Bet Dagan (Israel),בית דגן (ישראל),,9783
+Kiryat Eliahu,Kiryat Eliahu,,1,no_match,,C_review,0.0,,,,,,,
+Zikhron Yacob,Zikhron Yacob,,1,fuzzy,fuzzy,C_review,0.667,,,,,,,8254|71774
+Natsera (Nazareth),Natsera (Nazareth),,1,no_match,,C_review,0.0,,,,,,,
+Natseria,Natseria,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,17|18
+St. Hashomer,St. Hashomer,,1,no_match,,C_review,0.0,,,,,,,
+Coastal Watch Bath-Jalim,Coastal Watch Bath-Jalim,,1,no_match,,C_review,0.0,,,,,,,
+Zikhron Yaacov,Zikhron Yaacov,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+Port Mason,Port Mason,,1,no_match,,C_review,0.0,,,,,,,
+Kuryat el Yahu,Kuryat el Yahu,,1,no_match,,C_review,0.0,,,,,,,
+Haddar Carmel,Haddar Carmel,,1,no_match,,C_review,0.0,,,,,,,
+Natania,Natania,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,24|69762|7532
+Kiryat Amal,Kiryat Amal,,1,no_match,,C_review,0.0,,,,,,,
+Maagan,Maagan,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,189|23944|144|79712
+P.T,P.T,,1,fuzzy,fuzzy,C_review,0.62,,,,,,,426
+Haifa S/P,Haifa S/P,,1,no_match,,C_review,0.0,,,,,,,
+Ramallah,Ramallah,,1,name_exact,name_exact,A_autolink,0.95,True,,453,Ramalla (West Bank),רמאללה (גדה מערבית),,453
+Tel Mond,Tel Mond,,1,name_exact,name_exact,A_autolink,0.95,True,,21757,Tel Mond (Israel),תל מונד (ישראל),,21757
+Ben Yehuda St,Ben Yehuda St,,1,no_match,,C_review,0.0,,,,,,,
+Ramatby,Ramatby,,1,no_match,,C_review,0.0,,,,,,,
+Banks St,Banks St,,1,no_match,,C_review,0.0,,,,,,,
+Haim,Haim,,1,no_match,,C_review,0.0,,,,,,,
+Kiryat Yam,Kiryat Yam,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,480|7211|74910|586|476
+Nebertz,Nebertz,,1,no_match,,C_review,0.0,,,,,,,
+Mashmar Hyam,Mashmar Hyam,,1,fuzzy,fuzzy,C_review,0.833,,,,,,,214|22621
+Halershert,Halershert,,1,no_match,,C_review,0.0,,,,,,,
+Turaan,Turaan,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,12295|17160|21000|23562|779
+Doris St,Doris St,,1,no_match,,C_review,0.0,,,,,,,
+Atlit|Athlit,Atlit,Athlit,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Jaffa|Carmel Ahu K.bert,Jaffa,Carmel Ahu K.bert,1,name_exact,name_exact,A_autolink,0.95,True,,629,"Jaffa (Tel Aviv-Yafo, Israel)","יפו (תל אביב-יפו, ישראל)",,629
+Fot Luq,Fot Luq,,1,no_match,,C_review,0.0,,,,,,,
+Irbed,Irbed,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,5842|13138|78353
+Bat Yalem,Bat Yalem,,1,no_match,,C_review,0.0,,,,,,,
+Alya Street,Alya Street,,1,no_match,,C_review,0.0,,,,,,,
+Kefar Ata,Kefar Ata,,1,name_exact,name_exact,A_autolink,0.95,True,,477,Kiryat Ata (Israel),קרית אתא (ישראל),,477
+Kafata,Kafata,,1,fuzzy,fuzzy,C_review,1.0,,,,,,,13312|72698
+Zamarin,Zamarin,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254

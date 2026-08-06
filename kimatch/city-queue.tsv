@@ -1,0 +1,438 @@
+city	name1	name2	n_records
+Haifa	Haifa		1999
+Athlit	Athlit		1021
+Hadera	Hadera		267
+Tiberias	Tiberias		142
+Acre	Acre		90
+Hadar Hacarmel	Hadar Hacarmel		88
+Kiryat Haim	Kiryat Haim		82
+Afula	Afula		53
+Jaffa	Jaffa		44
+Zichron Yaakov	Zichron Yaakov		41
+Kiryat Bialik	Kiryat Bialik		41
+Yajour	Yajour		35
+Affikim	Affikim		31
+Tel Aviv	Tel Aviv		30
+Karkur	Karkur		28
+Bat Galim	Bat Galim		27
+Safad	Safad		27
+Benyamina	Benyamina		27
+Tel Amal	Tel Amal		27
+Herzlia	Herzlia		26
+Pardess Hanna	Pardess Hanna		25
+Kiryat Motzkin	Kiryat Motzkin		25
+Nahalal	Nahalal		24
+Nazareth	Nazareth		23
+Jerusalem	Jerusalem		22
+Kfar Vitkin	Kfar Vitkin		20
+Tulkarem	Tulkarem		16
+Yavniel	Yavniel		15
+Zichron Jacob	Zichron Jacob		15
+Ardel Yahud	Ardel Yahud		14
+Bethania	Bethania		13
+Ein Harod	Ein Harod		11
+Kfar Ata	Kfar Ata		11
+Nesher	Nesher		10
+Yokneam	Yokneam		10
+Kibutz Affikim	Kibutz Affikim		10
+Ain Harod	Ain Harod		8
+Kfar Hassidim	Kfar Hassidim		8
+Dejania	Dejania		8
+Ahuza	Ahuza		8
+Neveh Shaanan	Neveh Shaanan		7
+Kineret	Kineret		7
+Nahariya	Nahariya		7
+Emek	Emek		6
+Netanya	Netanya		6
+Benjamina	Benjamina		6
+Kinereth	Kinereth		6
+Haifa|Hadar Hacarmel	Haifa	Hadar Hacarmel	6
+Rosh Pina	Rosh Pina		6
+Kinneret	Kinneret		6
+Kiryat Haroshet	Kiryat Haroshet		6
+Kfar Atta	Kfar Atta		6
+Waldheim	Waldheim		6
+Mount Carmel	Mount Carmel		5
+Akka	Akka		5
+Kibutz	Kibutz		5
+Mishmar HaEmek	Mishmar HaEmek		5
+Zammarin	Zammarin		5
+Kfar Tabor	Kfar Tabor		5
+Nathania	Nathania		5
+Zikhron Yacov	Zikhron Yacov		5
+Bassa	Bassa		5
+Nathanya	Nathanya		5
+Had. Hac	Had. Hac		4
+Gan Shmuel	Gan Shmuel		4
+Rishon LeZion	Rishon LeZion		4
+Migdal	Migdal		4
+Mt. Carmel	Mt. Carmel		4
+Wadi el Hawareth	Wadi el Hawareth		4
+Sdedera	Sdedera		4
+Gedera	Gedera		4
+Is	Is		4
+Degania	Degania		4
+Tabor Street	Tabor Street		4
+Kishon	Kishon		4
+Naharia	Naharia		4
+Beit Galim	Beit Galim		3
+Mitzpa	Mitzpa		3
+Had. Hac.|Hadar Hacarmel	Had. Hac.	Hadar Hacarmel	3
+Samakh	Samakh		3
+Beit Gan	Beit Gan		3
+Kfar Hasidim	Kfar Hasidim		3
+Yavne'el	Yavne'el		3
+Jenin	Jenin		3
+Meshek Yagur	Meshek Yagur		3
+Tel Yosef	Tel Yosef		3
+Kirjat Hayim	Kirjat Hayim		3
+[ambiguous_city]	[ambiguous_city]		3
+Athlit|Atlit	Athlit	Atlit	3
+Kefutz Mizra	Kefutz Mizra		3
+Kiryat Kharoshet	Kiryat Kharoshet		3
+Hedera|Hadera	Hedera	Hadera	3
+Kibutz Affikim|Affikim	Kibutz Affikim	Affikim	3
+Kfar Kharoshet	Kfar Kharoshet		3
+Kiryat Naim	Kiryat Naim		3
+Sh.Khunat Oadim	Sh.Khunat Oadim		2
+Ginjar	Ginjar		2
+Mishmar Haemek	Mishmar Haemek		2
+Kineret|Kinneret	Kineret	Kinneret	2
+Carmel	Carmel		2
+Had. Stac	Had. Stac		2
+Sdedead	Sdedead		2
+Ghedera	Ghedera		2
+Yajouj	Yajouj		2
+Kfar Yehezkiel	Kfar Yehezkiel		2
+Kibbutz Hashomer	Kibbutz Hashomer		2
+Balfuria	Balfuria		2
+Ness Ziona	Ness Ziona		2
+Degania B	Degania B		2
+Rosh Pinna	Rosh Pinna		2
+Neve Shaanan	Neve Shaanan		2
+Nachla	Nachla		2
+Hacarmel	Hacarmel		2
+Ardel Yahud|Ard al-Yahud	Ardel Yahud	Ard al-Yahud	2
+Benyamina|Binyamina	Benyamina	Binyamina	2
+Rehovot	Rehovot		2
+Shafa Amr	Shafa Amr		2
+Had Stae	Had Stae		2
+German Colony	German Colony		2
+Hadar HaCarmel (Haifa)	Hadar HaCarmel (Haifa)		2
+Herzl Street	Herzl Street		2
+Bethlehem	Bethlehem		2
+Khalisa	Khalisa		2
+P. & P. Zichron Yacob	P. & P. Zichron Yacob		2
+Bat Shlomo	Bat Shlomo		2
+Hadar Hacarmel / Haifa	Hadar Hacarmel / Haifa		2
+Kfar Tavor	Kfar Tavor		2
+Yajour|Yajur	Yajour	Yajur	2
+Givat Brenner	Givat Brenner		2
+Beisan	Beisan		2
+Kiryat Gesher	Kiryat Gesher		2
+Kurdaneh	Kurdaneh		2
+Givat Haim	Givat Haim		2
+Zichron Jacob|Zichron Yaakov	Zichron Jacob	Zichron Yaakov	2
+Affikin	Affikin		2
+Kibutz Affiking|Kibutz Affikim	Kibutz Affiking	Kibutz Affikim	2
+Tantoura	Tantoura		2
+Huleh	Huleh		2
+Nur El Shams|Nur Shams	Nur El Shams	Nur Shams	2
+Athlit|Athlit Camp	Athlit	Athlit Camp	2
+Athlit|Athlit Police station	Athlit	Athlit Police station	2
+Givat Ada	Givat Ada		2
+Jaffa|Co. C.I.D. Jaffa	Jaffa	Co. C.I.D. Jaffa	2
+Nablus	Nablus		2
+Ekron	Ekron		2
+Mount Tabor	Mount Tabor		1
+Shenglia	Shenglia		1
+Dejani	Dejani		1
+Kiriat Kinzet	Kiriat Kinzet		1
+Abu Shousheh	Abu Shousheh		1
+Kufr Ata	Kufr Ata		1
+Hadar Hacarmel|Had. Hac	Hadar Hacarmel	Had. Hac	1
+Kfar Hasharon	Kfar Hasharon		1
+Kenereth	Kenereth		1
+Kibbutz Kinneret	Kibbutz Kinneret		1
+Nahlat Yacob	Nahlat Yacob		1
+Naffuleh	Naffuleh		1
+Benjaminia	Benjaminia		1
+Ramleh	Ramleh		1
+Nes Ziona	Nes Ziona		1
+Smillel	Smillel		1
+Menahemia Colony	Menahemia Colony		1
+Sedjerah	Sedjerah		1
+Hartel Yahud	Hartel Yahud		1
+Majamil	Majamil		1
+Beisan|Dept. of Police, Beisan	Beisan	Dept. of Police, Beisan	1
+Yavniel Colony	Yavniel Colony		1
+Bersan|Dept. of Police, Bersan	Bersan	Dept. of Police, Bersan	1
+Vilhelma	Vilhelma		1
+Yavneel Colony	Yavneel Colony		1
+W. el Nisnass	W. el Nisnass		1
+Kafr Hittim	Kafr Hittim		1
+Haifa|Hedera	Haifa	Hedera	1
+Tiberias|Tiberia	Tiberias	Tiberia	1
+Zicron	Zicron		1
+Hadera|Hedera	Hadera	Hedera	1
+Jarit Nahalal	Jarit Nahalal		1
+Zichron Yaacov	Zichron Yaacov		1
+002.2	002.2		1
+Bet Alfa	Bet Alfa		1
+Zeeb	Zeeb		1
+Bath Galim|Bath Galim K. H. Bldg	Bath Galim	Bath Galim K. H. Bldg	1
+Atlit|Atlit. House of Ofman	Atlit	Atlit. House of Ofman	1
+Kfar Saba	Kfar Saba		1
+Kinnereth	Kinnereth		1
+Haifa|Nesher	Haifa	Nesher	1
+Ein Shemer	Ein Shemer		1
+Kfar Jeladim	Kfar Jeladim		1
+Kfar Yeshua	Kfar Yeshua		1
+Salem	Salem		1
+Kefa Tabor	Kefa Tabor		1
+Kfar Brandice	Kfar Brandice		1
+Beth Shearim	Beth Shearim		1
+Mes-hah	Mes-hah		1
+Bar Galim	Bar Galim		1
+Merchavia	Merchavia		1
+Staerneck	Staerneck		1
+Haifa|Hadar Hacarmel Haifa	Haifa	Hadar Hacarmel Haifa	1
+Kfar Jeshuah	Kfar Jeshuah		1
+Abu Khalil	Abu Khalil		1
+Haifa|Churches Ort	Haifa	Churches Ort	1
+Hallissa	Hallissa		1
+Brene Shaanan	Brene Shaanan		1
+Alliance Scool	Alliance Scool		1
+Dar Awwaj	Dar Awwaj		1
+Rehovoth	Rehovoth		1
+Giv'at Ada	Giv'at Ada		1
+Dantel Yahud	Dantel Yahud		1
+Buriq	Buriq		1
+Haifa|Had. Stac	Haifa	Had. Stac	1
+Heazelia	Heazelia		1
+Emek R	Emek R		1
+Tel-Yusef	Tel-Yusef		1
+Shunat Zarefin	Shunat Zarefin		1
+Hallisa Qrt	Hallisa Qrt		1
+Kfar Secta	Kfar Secta		1
+Kfar Nacharish / Nazareth	Kfar Nacharish / Nazareth		1
+Mizpa	Mizpa		1
+En Dor	En Dor		1
+Beit Alpha	Beit Alpha		1
+Shatel Yahud	Shatel Yahud		1
+Hallesa	Hallesa		1
+Kiryat Ata	Kiryat Ata		1
+Shezlia	Shezlia		1
+Nve Shaanan (Haifa)	Nve Shaanan (Haifa)		1
+Nahliel Yahud	Nahliel Yahud		1
+Carmel Ahuza	Carmel Ahuza		1
+Nahla	Nahla		1
+Petah Tikvah	Petah Tikvah		1
+Beit Anya	Beit Anya		1
+Kvutzat Kinereth	Kvutzat Kinereth		1
+Kfar Hahoresh	Kfar Hahoresh		1
+Kfar Nachanesh	Kfar Nachanesh		1
+Sakhnin	Sakhnin		1
+Binjamina|Binyamina	Binjamina	Binyamina	1
+Emek Zevouloun	Emek Zevouloun		1
+Beit Alfa	Beit Alfa		1
+Hadeira (Hadera)	Hadeira (Hadera)		1
+Churipat Hayim	Churipat Hayim		1
+Haifa|Ardel Jahud, Haifa	Haifa	Ardel Jahud, Haifa	1
+Emek R.|Emek	Emek R.	Emek	1
+Kfar Horesh	Kfar Horesh		1
+Tiberias / Kinneret	Tiberias / Kinneret		1
+Kiryat Eliyahu	Kiryat Eliyahu		1
+Haifa / Mount Carmel	Haifa / Mount Carmel		1
+Carmel Station	Carmel Station		1
+Hadar Hacarmel (Haifa)	Hadar Hacarmel (Haifa)		1
+Kafr Branch	Kafr Branch		1
+Wadi Nisnas	Wadi Nisnas		1
+Tiberias|P. & P. Tiberias	Tiberias	P. & P. Tiberias	1
+Neve Sha'anan	Neve Sha'anan		1
+Halisa	Halisa		1
+Afula|Afuleh	Afula	Afuleh	1
+Khamra	Khamra		1
+Kufr 'Ata	Kufr 'Ata		1
+Adel Yahud	Adel Yahud		1
+Balad al-Sheikh	Balad al-Sheikh		1
+Hart el Yahud	Hart el Yahud		1
+Majdal	Majdal		1
+Ata village	Ata village		1
+Beit Alfa / Beisan	Beit Alfa / Beisan		1
+Ein Haron	Ein Haron		1
+Biniamina|Binyamina	Biniamina	Binyamina	1
+Beit Olim	Beit Olim		1
+Bithania|Bethania	Bithania	Bethania	1
+Hammeh	Hammeh		1
+Kfar Yehoshua	Kfar Yehoshua		1
+Carmiel	Carmiel		1
+Wadi Kavara	Wadi Kavara		1
+Zichron Yaacob	Zichron Yaacob		1
+Kfar Baroukh	Kfar Baroukh		1
+Tel Yousef	Tel Yousef		1
+Kufretta	Kufretta		1
+Kfar Kasidim	Kfar Kasidim		1
+Hadera|Hadera P. & P	Hadera	Hadera P. & P	1
+Kharwa	Kharwa		1
+Kfar Baruch	Kfar Baruch		1
+Ben Yehuda	Ben Yehuda		1
+Ben Yehuda Street	Ben Yehuda Street		1
+Drachla Tabor St	Drachla Tabor St		1
+Bat Shlomo near Zammaren|Bat Shlomo	Bat Shlomo near Zammaren	Bat Shlomo	1
+Afula|Affuleh Carea st	Afula	Affuleh Carea st	1
+Galil	Galil		1
+Tirch	Tirch		1
+Affuleh|Afula	Affuleh	Afula	1
+Rumat Neshanan	Rumat Neshanan		1
+Tell Addashume	Tell Addashume		1
+Mizra	Mizra		1
+Kinneret (Kibbutz)	Kinneret (Kibbutz)		1
+Petah Tikva	Petah Tikva		1
+Beit Jann	Beit Jann		1
+Gisr El Majami	Gisr El Majami		1
+Yavne'el / Tiberias	Yavne'el / Tiberias		1
+Beit Jan	Beit Jan		1
+Aten Village	Aten Village		1
+Haifa|Bassa	Haifa	Bassa	1
+Zichron Yacov	Zichron Yacov		1
+Kafr Yasin	Kafr Yasin		1
+Tel Joseph	Tel Joseph		1
+Tel Chai	Tel Chai		1
+Netanya|Nathania	Netanya	Nathania	1
+Givat Adam	Givat Adam		1
+Kibbutz Hamarking	Kibbutz Hamarking		1
+Kafaratta	Kafaratta		1
+Kfar Yideyah	Kfar Yideyah		1
+Massada	Massada		1
+Tirat Zvi	Tirat Zvi		1
+Kiriat Haroshet	Kiriat Haroshet		1
+Kfar Yadidia	Kfar Yadidia		1
+Mt. Tabor	Mt. Tabor		1
+Jokneam	Jokneam		1
+Zekra Yacov	Zekra Yacov		1
+Daganya	Daganya		1
+Yavneel	Yavneel		1
+Zichron Yaakov|Bat shlomo - Zichron Jacob	Zichron Yaakov	Bat shlomo - Zichron Jacob	1
+Zichron Yakov|Zichron Yaakov	Zichron Yakov	Zichron Yaakov	1
+Majd al-Krum	Majd al-Krum		1
+Meshek Yagour	Meshek Yagour		1
+Bet Alpha Huleh S/D.|Bet Alpha	Bet Alpha Huleh S/D.	Bet Alpha	1
+Hadar	Hadar		1
+Kibbutz Affikim	Kibbutz Affikim		1
+Haifa|Mt. Carmel	Haifa	Mt. Carmel	1
+Kibutz Affiking	Kibutz Affiking		1
+Kfar Joshua	Kfar Joshua		1
+Haifa|Dar el Kadkany	Haifa	Dar el Kadkany	1
+Kiryat Haim|Kiryat-Haim Tribune Amal	Kiryat Haim	Kiryat-Haim Tribune Amal	1
+Kiryat-Haim Tribune Amal	Kiryat-Haim Tribune Amal		1
+Sajour	Sajour		1
+Bassa No 1|Bassa	Bassa No 1	Bassa	1
+Geda	Geda		1
+Benyamina. & Beit-Sacaross	Benyamina. & Beit-Sacaross		1
+Shavei Zion	Shavei Zion		1
+Deganya	Deganya		1
+Ashadot Yakov	Ashadot Yakov		1
+Kfar Yehoshoua	Kfar Yehoshoua		1
+Ahava	Ahava		1
+Kiryat Kamal	Kiryat Kamal		1
+Beit-Zerah	Beit-Zerah		1
+Emek Hayarden	Emek Hayarden		1
+Nur Shams	Nur Shams		1
+Hadar Hacarmel Haifa	Hadar Hacarmel Haifa		1
+Na'an	Na'an		1
+Kfar Khassidim	Kfar Khassidim		1
+Haifa / Tel Amal	Haifa / Tel Amal		1
+Roy	Roy		1
+Zichron	Zichron		1
+Defna	Defna		1
+Affula (Afula)	Affula (Afula)		1
+Degania|Tiberias S/D	Degania	Tiberias S/D	1
+Benjamina|Benyamina	Benjamina	Benyamina	1
+Haifa|Bourj Billet	Haifa	Bourj Billet	1
+Bet Gan	Bet Gan		1
+Haifa s/d	Haifa s/d		1
+Joknan	Joknan		1
+Acre S/D	Acre S/D		1
+Hanita	Hanita		1
+Ras El Ein	Ras El Ein		1
+Hazorea	Hazorea		1
+Nur El Shams	Nur El Shams		1
+Petach Tikva	Petach Tikva		1
+Kibutz Dalia	Kibutz Dalia		1
+Kefar Bireim	Kefar Bireim		1
+Haifa (Nesher)	Haifa (Nesher)		1
+Tiberias (Kibbutz Afikim?)	Tiberias (Kibbutz Afikim?)		1
+Bassa N.1 N.F.D	Bassa N.1 N.F.D		1
+Bet Olim	Bet Olim		1
+Benjamin	Benjamin		1
+Shavei Tzion / Nahariya	Shavei Tzion / Nahariya		1
+Beit tatikva	Beit tatikva		1
+Kiryat Shmuel	Kiryat Shmuel		1
+Kfar Hasidim / Kfar Hanoar	Kfar Hasidim / Kfar Hanoar		1
+Kiryat Haim / Kibbutz Amal	Kiryat Haim / Kibbutz Amal		1
+Zikron Yaacov	Zikron Yaacov		1
+Tira	Tira		1
+Bassa I.|Bassa	Bassa I.	Bassa	1
+Natamia	Natamia		1
+Bassa No 2|Al-Bassa	Bassa No 2	Al-Bassa	1
+Beni Brak	Beni Brak		1
+Lydda	Lydda		1
+Shar Amakim	Shar Amakim		1
+Ayesdin	Ayesdin		1
+Athlit|Athlit Prison	Athlit	Athlit Prison	1
+Kibbutz Dalia	Kibbutz Dalia		1
+Ein Hashofet	Ein Hashofet		1
+Bathelim K.butz|Bathelim	Bathelim K.butz	Bathelim	1
+Hittin	Hittin		1
+Athlit|Athlit J.L.Co. 2	Athlit	Athlit J.L.Co. 2	1
+Tiberias S/D	Tiberias S/D		1
+Qiryat Ata	Qiryat Ata		1
+Rechavia	Rechavia		1
+Hadar [Haifa]	Hadar [Haifa]		1
+Haifa [Hadar HaCarmel]	Haifa [Hadar HaCarmel]		1
+Blys	Blys		1
+Affula|Affula Nugst	Affula	Affula Nugst	1
+Atlit|Athlit C.R. Camp	Atlit	Athlit C.R. Camp	1
+Athlit|Athlit C. Camps	Athlit	Athlit C. Camps	1
+Athlit|Cl. Camp - Athlit	Athlit	Cl. Camp - Athlit	1
+Atlit|Cl. Camp - Athlit	Atlit	Cl. Camp - Athlit	1
+Nabi Sha'man Hagelil	Nabi Sha'man Hagelil		1
+Ramat Gan	Ramat Gan		1
+Beit Dagan	Beit Dagan		1
+Kiryat Eliahu	Kiryat Eliahu		1
+Zikhron Yacob	Zikhron Yacob		1
+Natsera (Nazareth)	Natsera (Nazareth)		1
+Natseria	Natseria		1
+St. Hashomer	St. Hashomer		1
+Coastal Watch Bath-Jalim	Coastal Watch Bath-Jalim		1
+Zikhron Yaacov	Zikhron Yaacov		1
+Port Mason	Port Mason		1
+Kuryat el Yahu	Kuryat el Yahu		1
+Haddar Carmel	Haddar Carmel		1
+Natania	Natania		1
+Kiryat Amal	Kiryat Amal		1
+Maagan	Maagan		1
+P.T	P.T		1
+Haifa S/P	Haifa S/P		1
+Ramallah	Ramallah		1
+Tel Mond	Tel Mond		1
+Ben Yehuda St	Ben Yehuda St		1
+Ramatby	Ramatby		1
+Banks St	Banks St		1
+Haim	Haim		1
+Kiryat Yam	Kiryat Yam		1
+Nebertz	Nebertz		1
+Mashmar Hyam	Mashmar Hyam		1
+Halershert	Halershert		1
+Turaan	Turaan		1
+Doris St	Doris St		1
+Atlit|Athlit	Atlit	Athlit	1
+Jaffa|Carmel Ahu K.bert	Jaffa	Carmel Ahu K.bert	1
+Fot Luq	Fot Luq		1
+Irbed	Irbed		1
+Bat Yalem	Bat Yalem		1
+Alya Street	Alya Street		1
+Kefar Ata	Kefar Ata		1
+Kafata	Kafata		1
+Zamarin	Zamarin		1

@@ -1,0 +1,104 @@
+city,name1,name2,n_records,_match_status,_match_method,_grade,_confidence,_sound_match,_flags,_kima_id,_kima_name_rom,_kima_name_heb,_distance_km,_candidates
+Athlit,Athlit,,1021,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Afula,Afula,,53,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Jaffa,Jaffa,,44,name_exact,name_exact,A_autolink,0.95,True,,629,"Jaffa (Tel Aviv-Yafo, Israel)","יפו (תל אביב-יפו, ישראל)",,629
+Tel Aviv,Tel Aviv,,30,name_exact,name_exact,A_autolink,0.95,True,,15820,Tel Aviv (Israel : District),תל אביב (ישראל : מחוז),,15820
+Karkur,Karkur,,28,name_exact,name_exact,A_autolink,0.95,True,,19149,Karkur (Israel),כרכור (ישראל),,19149
+Bat Galim,Bat Galim,,27,name_exact,name_exact,A_autolink,0.95,True,,21063,"Bat Galim (Haifa, Israel)","בת גלים (חיפה, ישראל)",,21063
+Safad,Safad,,27,name_exact,name_exact,A_autolink,0.95,True,,377,Tsefat (Israel),צפת (ישראל),,377
+Herzlia,Herzlia,,26,name_exact,name_exact,A_autolink,0.95,True,,700,Herzeliyya (Israel),הרצליה (ישראל),,700
+Nazareth,Nazareth,,23,name_exact,name_exact,A_autolink,0.95,True,,18,Nazareth (Israel),נצרת (ישראל),,18
+Yavniel,Yavniel,,15,name_exact,name_exact,A_autolink,0.95,True,,18477,Yavne'el (Israel),יבנאל (ישראל),,18477
+Bethania,Bethania,,13,name_exact,name_exact,A_autolink,0.95,True,,6871,Beuthen (Germany),בויטן (גרמניה),,6871
+Ein Harod,Ein Harod,,11,name_exact,name_exact,A_autolink,0.95,True,,12370,En Harod (Israel),עין חרוד (ישראל),,12370
+Yokneam,Yokneam,,10,name_exact,name_exact,A_autolink,0.95,True,,18301,Yokne'am (Israel),יקנעם (מושבה) (ישראל),,18301
+Ahuza,Ahuza,,8,name_exact,name_exact,A_autolink,0.95,True,,21015,"Ahuza (Haifa, Israel)","אחוזה (חיפה, ישראל)",,21015
+Nahariya,Nahariya,,7,name_exact,name_exact,A_autolink,0.95,True,,39,Nahariyya (Israel),נהריה (ישראל),,39
+Rosh Pina,Rosh Pina,,6,name_exact,name_exact,A_autolink,0.95,True,,14873,Rosh Pina (Israel),ראש פינה (ישראל),,14873
+Kiryat Haroshet,Kiryat Haroshet,,6,name_exact,name_exact,A_autolink,0.95,True,,21920,Kiryat Haroshet (Israel),קרית חרושת (ישראל),,21920
+Waldheim,Waldheim,,6,name_exact,name_exact,A_autolink,0.95,True,,19561,"Waldheim (Saxony, Germany)","וולדהיים (סקסוניה, גרמניה)",,19561
+Mount Carmel,Mount Carmel,,5,name_exact,name_exact,A_autolink,0.95,True,,1156,"Karmel, Mount (Israel)",הר הכרמל (ישראל),,1156
+Mishmar HaEmek,Mishmar HaEmek,,5,name_exact,name_exact,A_autolink,0.95,True,,214,Mishmar Ha'emek (Israel),משמר העמק (ישראל),,214
+Zammarin,Zammarin,,5,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+Kfar Tabor,Kfar Tabor,,5,name_exact,name_exact,A_autolink,0.95,True,,1666,Kefar Tavor (Israel),כפר תבור (ישראל),,1666
+Nathanya,Nathanya,,5,name_exact,name_exact,A_autolink,0.95,True,,24,Netanya (Israel),נתניה (ישראל),,24
+Gan Shmuel,Gan Shmuel,,4,name_exact,name_exact,A_autolink,0.95,True,,904,Gan Shemu'el (Israel),גן שמואל (ישראל),,904
+Rishon LeZion,Rishon LeZion,,4,name_exact,name_exact,A_autolink,0.95,True,,493,Rishon Letsiyon (Israel),ראשון לציון (ישראל),,493
+Degania,Degania,,4,name_exact,name_exact,A_autolink,0.95,True,,892,Deganya Alef (Israel),דגניה א' (ישראל),,892
+Samakh,Samakh,,3,name_exact,name_exact,A_autolink,0.95,True,,16228,Tsemah (Israel),צמח (ישראל),,16228
+Yavne'el,Yavne'el,,3,name_exact,name_exact,A_autolink,0.95,True,,18477,Yavne'el (Israel),יבנאל (ישראל),,18477
+Tel Yosef,Tel Yosef,,3,name_exact,name_exact,A_autolink,0.95,True,,186,Tel-Yosef (Israel),תל יוסף (ישראל),,186
+Athlit|Atlit,Athlit,Atlit,3,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Hedera|Hadera,Hedera,Hadera,3,name_exact,name_exact,A_autolink,0.95,True,,858,Hadera (Israel),חדרה (ישראל),,858
+Mishmar Haemek,Mishmar Haemek,,2,name_exact,name_exact,A_autolink,0.95,True,,214,Mishmar Ha'emek (Israel),משמר העמק (ישראל),,214
+Carmel,Carmel,,2,name_exact,name_exact,A_autolink,0.95,True,,24545,Carmel (N.J.),כרמל (ניו ג'רזי),,24545
+Benyamina|Binyamina,Benyamina,Binyamina,2,name_exact,name_exact,A_autolink,0.95,True,,21551,Binyamina (Israel),בנימינה (ישראל),,21551
+Khalisa,Khalisa,,2,name_exact,name_exact,A_autolink,0.95,True,,485,Kiryat Shemona (Israel),קרית שמונה (ישראל),,485
+Kfar Tavor,Kfar Tavor,,2,name_exact,name_exact,A_autolink,0.95,True,,1666,Kefar Tavor (Israel),כפר תבור (ישראל),,1666
+Givat Brenner,Givat Brenner,,2,name_exact,name_exact,A_autolink,0.95,True,,751,Giv'at Brener (Israel),גבעת ברנר (ישראל),,751
+Beisan,Beisan,,2,name_exact,name_exact,A_autolink,0.95,True,,613,Bet She'an (Israel),בית שאן (ישראל),,613
+Huleh,Huleh,,2,name_exact,name_exact,A_autolink,0.95,True,,3327,Hula Valley (Israel),עמק החולה (ישראל),,3327
+Athlit|Athlit Camp,Athlit,Athlit Camp,2,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Athlit|Athlit Police station,Athlit,Athlit Police station,2,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Givat Ada,Givat Ada,,2,name_exact,name_exact,A_autolink,0.95,True,,18292,Giv'at Ada (Israel),גבעת עדה (ישראל),,18292
+Jaffa|Co. C.I.D. Jaffa,Jaffa,Co. C.I.D. Jaffa,2,name_exact,name_exact,A_autolink,0.95,True,,629,"Jaffa (Tel Aviv-Yafo, Israel)","יפו (תל אביב-יפו, ישראל)",,629
+Nablus,Nablus,,2,name_exact,name_exact,A_autolink,0.95,True,,310,Nablus (West Bank),שכם (גדה מערבית),,310
+Mount Tabor,Mount Tabor,,1,name_exact,name_exact,A_autolink,0.95,True,,5765,"Tabor, Mount (Israel)",הר תבור (ישראל),,5765
+Kibbutz Kinneret,Kibbutz Kinneret,,1,name_exact,name_exact,A_autolink,0.95,True,,1669,Kinneret (Kevutsa) (Israel),כינרת (קבוצה) (ישראל),,1669
+Nes Ziona,Nes Ziona,,1,name_exact,name_exact,A_autolink,0.95,True,,15,Nes Tsiyyona (Israel),נס ציונה (ישראל),,15
+"Beisan|Dept. of Police, Beisan",Beisan,"Dept. of Police, Beisan",1,name_exact,name_exact,A_autolink,0.95,True,,613,Bet She'an (Israel),בית שאן (ישראל),,613
+Hadera|Hedera,Hadera,Hedera,1,name_exact,name_exact,A_autolink,0.95,True,,858,Hadera (Israel),חדרה (ישראל),,858
+Zichron Yaacov,Zichron Yaacov,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+Atlit|Atlit. House of Ofman,Atlit,Atlit. House of Ofman,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Kfar Saba,Kfar Saba,,1,name_exact,name_exact,A_autolink,0.95,True,,839,Kefar Sava (Israel),כפר סבא (ישראל),,839
+Merchavia,Merchavia,,1,name_exact,name_exact,A_autolink,0.95,True,,205,Merhavya (Israel),מרחביה (ישראל),,205
+Giv'at Ada,Giv'at Ada,,1,name_exact,name_exact,A_autolink,0.95,True,,18292,Giv'at Ada (Israel),גבעת עדה (ישראל),,18292
+En Dor,En Dor,,1,name_exact,name_exact,A_autolink,0.95,True,,19136,En Dor (Israel),עין דור (ישראל),,19136
+Petah Tikvah,Petah Tikvah,,1,name_exact,name_exact,A_autolink,0.95,True,,426,Petah Tikva (Israel),פתח תקווה (ישראל),,426
+Kfar Hahoresh,Kfar Hahoresh,,1,name_exact,name_exact,A_autolink,0.95,True,,820,Kefar Hahoresh (Israel),כפר החורש (ישראל),,820
+Binjamina|Binyamina,Binjamina,Binyamina,1,name_exact,name_exact,A_autolink,0.95,True,,21551,Binyamina (Israel),בנימינה (ישראל),,21551
+Beit Alfa,Beit Alfa,,1,name_exact,name_exact,A_autolink,0.95,True,,563,Bet Alfa (Israel),בית אלפא (ישראל),,563
+Afula|Afuleh,Afula,Afuleh,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Majdal,Majdal,,1,name_exact,name_exact,A_autolink,0.95,True,,6904,Migdal (Israel),מגדל (ישראל),,6904
+Biniamina|Binyamina,Biniamina,Binyamina,1,name_exact,name_exact,A_autolink,0.95,True,,21551,Binyamina (Israel),בנימינה (ישראל),,21551
+Bithania|Bethania,Bithania,Bethania,1,name_exact,name_exact,A_autolink,0.95,True,,6871,Beuthen (Germany),בויטן (גרמניה),,6871
+Hammeh,Hammeh,,1,name_exact,name_exact,A_autolink,0.95,True,,4414,Hammat Gader Site (Israel),אתר חמת גדר (ישראל),,4414
+Kfar Yehoshua,Kfar Yehoshua,,1,name_exact,name_exact,A_autolink,0.95,True,,19294,Kefar Yehoshu'a (Israel),כפר יהושוע (ישראל),,19294
+Carmiel,Carmiel,,1,name_exact,name_exact,A_autolink,0.95,True,,162,Karmi'el (Israel),כרמיאל (ישראל),,162
+Kfar Baruch,Kfar Baruch,,1,name_exact,name_exact,A_autolink,0.95,True,,815,Kefar Barukh (Israel),כפר ברוך (ישראל),,815
+Afula|Affuleh Carea st,Afula,Affuleh Carea st,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Affuleh|Afula,Affuleh,Afula,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Petah Tikva,Petah Tikva,,1,name_exact,name_exact,A_autolink,0.95,True,,426,Petah Tikva (Israel),פתח תקווה (ישראל),,426
+Massada,Massada,,1,name_exact,name_exact,A_autolink,0.95,True,,219,Masada (Israel),מסדה (ישראל),,219
+Tirat Zvi,Tirat Zvi,,1,name_exact,name_exact,A_autolink,0.95,True,,757,Tirat Tsvi (Israel),טירת צבי (ישראל),,757
+Jokneam,Jokneam,,1,name_exact,name_exact,A_autolink,0.95,True,,18301,Yokne'am (Israel),יקנעם (מושבה) (ישראל),,18301
+Yavneel,Yavneel,,1,name_exact,name_exact,A_autolink,0.95,True,,18477,Yavne'el (Israel),יבנאל (ישראל),,18477
+Majd al-Krum,Majd al-Krum,,1,name_exact,name_exact,A_autolink,0.95,True,,19615,Majd al-Kurum (Israel),מג'ד אל-כרום (ישראל),,19615
+Hadar,Hadar,,1,name_exact,name_exact,A_autolink,0.95,True,,27009,"Kefar Hadar (Hod Hasharon, Israel)","כפר הדר (הוד השרון, ישראל)",,27009
+Deganya,Deganya,,1,name_exact,name_exact,A_autolink,0.95,True,,892,Deganya Alef (Israel),דגניה א' (ישראל),,892
+Zichron,Zichron,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+Degania|Tiberias S/D,Degania,Tiberias S/D,1,name_exact,name_exact,A_autolink,0.95,True,,892,Deganya Alef (Israel),דגניה א' (ישראל),,892
+Hazorea,Hazorea,,1,name_exact,name_exact,A_autolink,0.95,True,,986,Hazore'a (Israel),הזורע (ישראל),,986
+Petach Tikva,Petach Tikva,,1,name_exact,name_exact,A_autolink,0.95,True,,426,Petah Tikva (Israel),פתח תקווה (ישראל),,426
+Kiryat Shmuel,Kiryat Shmuel,,1,name_exact,name_exact,A_autolink,0.95,True,,22902,"Kiryat Shemuel (Jerusalem, Israel)","קרית שמואל (ירושלים, ישראל)",,22902
+Bassa No 2|Al-Bassa,Bassa No 2,Al-Bassa,1,name_exact,name_exact,A_autolink,0.95,True,,6885,Shelomi (Israel),שלומי (ישראל),,6885
+Lydda,Lydda,,1,name_exact,name_exact,A_autolink,0.95,True,,178,Lod (Israel),לוד (ישראל),,178
+Athlit|Athlit Prison,Athlit,Athlit Prison,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Ein Hashofet,Ein Hashofet,,1,name_exact,name_exact,A_autolink,0.95,True,,91,En Hashofet (Israel),עין השופט (ישראל),,91
+Hittin,Hittin,,1,name_exact,name_exact,A_autolink,0.95,True,,21331,Hittin (Israel),חיטין (ישראל),,21331
+Athlit|Athlit J.L.Co. 2,Athlit,Athlit J.L.Co. 2,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Qiryat Ata,Qiryat Ata,,1,name_exact,name_exact,A_autolink,0.95,True,,477,Kiryat Ata (Israel),קרית אתא (ישראל),,477
+Rechavia,Rechavia,,1,name_exact,name_exact,A_autolink,0.95,True,,21723,"Rehavya (Jerusalem, Israel)","רחביה (ירושלים, ישראל)",,21723
+Affula|Affula Nugst,Affula,Affula Nugst,1,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Atlit|Athlit C.R. Camp,Atlit,Athlit C.R. Camp,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Athlit|Athlit C. Camps,Athlit,Athlit C. Camps,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Athlit|Cl. Camp - Athlit,Athlit,Cl. Camp - Athlit,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Atlit|Cl. Camp - Athlit,Atlit,Cl. Camp - Athlit,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Beit Dagan,Beit Dagan,,1,name_exact,name_exact,A_autolink,0.95,True,,9783,Bet Dagan (Israel),בית דגן (ישראל),,9783
+Zikhron Yaacov,Zikhron Yaacov,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254
+Ramallah,Ramallah,,1,name_exact,name_exact,A_autolink,0.95,True,,453,Ramalla (West Bank),רמאללה (גדה מערבית),,453
+Tel Mond,Tel Mond,,1,name_exact,name_exact,A_autolink,0.95,True,,21757,Tel Mond (Israel),תל מונד (ישראל),,21757
+Atlit|Athlit,Atlit,Athlit,1,name_exact,name_exact,A_autolink,0.95,True,,16036,Atlit (Israel),עתלית (ישראל),,16036
+Jaffa|Carmel Ahu K.bert,Jaffa,Carmel Ahu K.bert,1,name_exact,name_exact,A_autolink,0.95,True,,629,"Jaffa (Tel Aviv-Yafo, Israel)","יפו (תל אביב-יפו, ישראל)",,629
+Kefar Ata,Kefar Ata,,1,name_exact,name_exact,A_autolink,0.95,True,,477,Kiryat Ata (Israel),קרית אתא (ישראל),,477
+Zamarin,Zamarin,,1,name_exact,name_exact,A_autolink,0.95,True,,8254,Zikhron Ya'akov (Israel),זכרון יעקב (ישראל),,8254

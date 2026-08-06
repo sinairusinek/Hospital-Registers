@@ -492,18 +492,23 @@ merged	StandardNationality	British Subj.	British	1
 merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
 merged	City	Haifa?Atlit?	Haifa?Atlit	1
+derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	476
+derived	Procedure	operation named in the diagnosis column	Procedure only	48
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	51
 review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	38
 review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	2
 review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
-review	Review Flags	date-out-of-span	A date outside 1930-48 with nothing on the record to repair it from	2
 review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	697
 review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	25
 review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	10
 review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
+review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole from identical dates either side of it	2
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
 review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1320
-review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1465
+review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	39
+review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	10
+review	Review Flags	procedure-only	An operation named with no diagnosis behind it	48
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1464
 withheld	Next of Kin			29879
 withheld	discarded_values			29879
 withheld	splitDiscValues			29879
@@ -523,7 +528,7 @@ derived	ICD-9 Chapter		800-999 Injury and poisoning	4583
 derived	ICD-9 Chapter		520-579 Digestive system	3234
 derived	ICD-9 Chapter		460-519 Respiratory system	2648
 derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1683
-derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1330
+derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1331
 derived	ICD-9 Chapter		580-629 Genitourinary system	1273
 derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1130
 derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	825
@@ -539,9 +544,9 @@ derived	ICD-9 Chapter		E800-E999 External causes of injury	24
 derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	18
 derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	211
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	51
-derived	ICD-9 Chapter		no readable code	1465
-derived	Diagnosis Recording		Classified	28414
-derived	Diagnosis Recording		Recorded, not classified	736
+derived	ICD-9 Chapter		no readable code	1464
+derived	Diagnosis Recording		Classified	28415
+derived	Diagnosis Recording		Recorded, not classified	735
 derived	Diagnosis Recording		Not recorded	729
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
 date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
@@ -557,6 +562,7 @@ date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the othe
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
 date	Days in Hospital (Calc)	discharge before admission	cleared	38
+date	Admission Date [ISO]	year outside 1930-48, nothing on the record to repair it from	taken whole from the identical dates either side of it in the register	2
 unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	2
 tail	standardized Religion	Arab		8
 tail	standardized Religion	Christian/Jewish?		2

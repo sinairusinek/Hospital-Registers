@@ -1,0 +1,17 @@
+{
+  "input_file": "/Users/sinairusinek/Documents/GitHub/Hospital-Registers/kimatch/city-queue.tsv",
+  "format": "tsv",
+  "kima_places_csv": "/Users/sinairusinek/Documents/GitHub/Kimatch/20250126KimaPlacesCSVx.csv",
+  "kima_variants_tsv": "/Users/sinairusinek/Documents/GitHub/Kimatch/Kima-Variants-20250929.tsv",
+
+  "script": "latin",
+  "language": "",
+
+  "fields": {
+    "id": "city",
+    "names": ["name1", "name2"],
+    "name_scripts": { "name1": "latin", "name2": "latin" }
+  },
+
+  "thresholds": { "fuzzy": 0.6, "phonetic": 0.55 }
+}
