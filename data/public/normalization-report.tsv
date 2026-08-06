@@ -493,11 +493,13 @@ merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
 merged	City	Haifa?Atlit?	Haifa?Atlit	1
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	51
-review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	45
+review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	38
 review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	2
 review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
 review	Review Flags	date-out-of-span	A date outside 1930-48 with nothing on the record to repair it from	2
 review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	697
+review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	25
+review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	10
 review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
 review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1320
@@ -541,6 +543,8 @@ derived	ICD-9 Chapter		no readable code	1465
 derived	Diagnosis Recording		Classified	28414
 derived	Diagnosis Recording		Recorded, not classified	736
 derived	Diagnosis Recording		Not recorded	729
+date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
+date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -1	212
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +1	452
@@ -552,7 +556,7 @@ date	Discharge Date (ISO)	upstream ISO	replaced	34
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the other date	4
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
-date	Days in Hospital (Calc)	discharge before admission	cleared	45
+date	Days in Hospital (Calc)	discharge before admission	cleared	38
 unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	2
 tail	standardized Religion	Arab		8
 tail	standardized Religion	Christian/Jewish?		2

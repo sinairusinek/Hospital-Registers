@@ -467,6 +467,8 @@ REVIEW_FLAGS = [
     ("sex-cleared", "A single stray letter where a sex belongs"),
     ("date-out-of-span", "A date outside 1930-48 with nothing on the record to repair it from"),
     ("date-year-out-of-sequence", "Year corrected: the admission ran backwards against the register's order"),
+    ("date-month-out-of-sequence", "Month corrected: the admission ran backwards against the register's order"),
+    ("date-day-out-of-sequence", "Day corrected: one digit from what was read, and back in the register's order"),
     ("date-year-repaired", "A year outside 1930-48, taken from the other date on the record"),
     ("date-unreadable", "A date the clerk's own writing could not be parsed from"),
     ("stay-disagrees", "Computed stay differs from the count written beside it"),
@@ -516,7 +518,11 @@ NEIGHBOURHOOD = 80
 MIN_NEIGHBOURS = 20
 # Passes over a notebook; misread pages in a row resolve from the outside in.
 # What changing one record's year costs against the days of disorder it saves.
-CHANGE_COST = 1.0
+# The page-level witness: how many pages either side are asked, how many must
+# agree, and how many pages a notebook needs before its pagination is trusted.
+PAGE_NEIGHBOURHOOD = 8
+MIN_PAGE_NEIGHBOURS = 4
+MIN_PAGES = 10
 
 # The registers run 1930-48. A two-digit year is read into that century; the
 # cut-off only has to fall somewhere outside the range the registers cover.
@@ -557,7 +563,55 @@ def year_runs(values: list[date]) -> list[tuple[int, int, int]]:
     return runs
 
 
-def resolve_year_shifts(values: list[date], runs: list[tuple[int, int, int]]) -> list[int]:
+def one_digit_apart(left: int, right: int) -> bool:
+    """True if two small numbers differ in exactly one written digit.
+
+    3 and 8, 13 and 18, 21 and 24 — the shapes a reader confuses. 16 and 22 are
+    not, which is what keeps a late entry from being rewritten as an error.
+    """
+    a, b = f"{left:02d}", f"{right:02d}"
+    return sum(1 for x, y in zip(a, b) if x != y) == 1
+
+
+def repair_component(previous: date, value: date, following: date) -> tuple[date, str] | None:
+    """A date out of order, mended by one component taken from its neighbours.
+
+    Only the month and the day are tried here; the year is handled in blocks,
+    where a whole page moves at once. A candidate has to seat the record back
+    between its neighbours, and the day may only take a value one digit from
+    the one written — otherwise a record entered late, which registers are full
+    of, would be rewritten into tidy order and the lateness lost.
+    """
+    candidates: list[tuple[int, int, date, str]] = []
+    for month in {previous.month, following.month}:
+        try:
+            candidates.append((0, abs(month - value.month), value.replace(month=month), "month"))
+        except ValueError:
+            continue
+    for day in {previous.day, following.day}:
+        if not one_digit_apart(day, value.day):
+            continue
+        try:
+            candidates.append((1, abs(day - value.day), value.replace(day=day), "day"))
+        except ValueError:
+            continue
+
+    seated = [
+        candidate for candidate in candidates
+        if previous - SEQUENCE_SLACK <= candidate[2] <= following + SEQUENCE_SLACK
+    ]
+    if not seated:
+        return None
+    _, _, mended, component = min(seated)
+    return mended, component
+
+
+def resolve_year_shifts(
+    values: list[date],
+    runs: list[tuple[int, int, int]],
+    neighbourhood: int = NEIGHBOURHOOD,
+    min_support: int = MIN_NEIGHBOURS,
+) -> list[int]:
     """Per run of one year, the shift that puts it back in the notebook's order.
 
     Three things have to hold before a run of records moves.
@@ -596,12 +650,12 @@ def resolve_year_shifts(values: list[date], runs: list[tuple[int, int, int]]) ->
 
         witness = Counter(
             value.year for value in
-            values[max(0, start - NEIGHBOURHOOD):start] + values[end:end + NEIGHBOURHOOD]
+            values[max(0, start - neighbourhood):start] + values[end:end + neighbourhood]
         )
         if not witness:
             continue
         expected, support = witness.most_common(1)[0]
-        if expected == year or support < MIN_NEIGHBOURS:
+        if expected == year or support < min_support:
             continue
         years = expected - year
         if abs(years) > MAX_YEAR_SHIFT:
@@ -955,10 +1009,9 @@ def main() -> int:
             continue
 
         values = [value for _, value in dated]
-        runs = year_runs(values)
-        run_shifts = resolve_year_shifts(values, runs)
         shifts = [0] * len(values)
-        for (start, end, _), years in zip(runs, run_shifts):
+        runs = year_runs(values)
+        for (start, end, _), years in zip(runs, resolve_year_shifts(values, runs)):
             for position in range(start, end):
                 shifts[position] = years
 
@@ -993,6 +1046,90 @@ def main() -> int:
             if "date-year-out-of-sequence" not in flags:
                 flags.append("date-year-out-of-sequence")
                 review_counts["date-year-out-of-sequence"] += 1
+            order = [name for name, _ in REVIEW_FLAGS]
+            row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+
+    # ------------------------------------------------ months, and some days
+    #
+    # The same argument one component down. A record sitting between 9.7.33 and
+    # 10.7.33 but reading 9.6.33 has a month misread, not a patient admitted a
+    # month early, and taking the month from its neighbours seats it exactly.
+    #
+    # Days are held to a stricter test: only a day one written digit from the
+    # one recorded is entertained. Registers are full of admissions entered a
+    # few days late — a record reading 16.2 among 22.2 entries is a late entry,
+    # and 16 is no misreading of 22 — so without that test the pass would tidy
+    # the register's own working habits out of the record.
+    component_repairs: Counter[str] = Counter()
+    for notebook, items in notebooks.items():
+        dated = [(row, to_date(row.get("Admission Date [ISO]", ""))) for row in items]
+        dated = [(row, value) for row, value in dated if value]
+        if len(dated) < MIN_NOTEBOOK_RECORDS:
+            continue
+
+        for position in range(1, len(dated) - 1):
+            row, value = dated[position]
+            previous = dated[position - 1][1]
+            following = dated[position + 1][1]
+            if previous - SEQUENCE_SLACK <= value <= following + SEQUENCE_SLACK:
+                continue
+            if previous > following:  # the neighbours disagree; no seat to take
+                continue
+            mended = repair_component(previous, value, following)
+            if mended is None:
+                continue
+            admitted, component = mended
+
+            # The clerk's own count decides. Ordering alone was not enough
+            # here: on its own it produced repairs that seated the record
+            # tidily and disagreed with the days he wrote beside it — a 16-day
+            # stay turned into 10 — and agreement with his counts fell across
+            # the file. A component only moves where his figure comes out
+            # right, or, where he wrote none, where the stay stays possible.
+            discharged = to_date(row.get("Discharge Date (ISO)", ""))
+            reported = (row.get("Days in Hospital (Rep)") or "").strip()
+            moved = discharged
+            if discharged:
+                try:
+                    same = discharged.replace(**{component: getattr(admitted, component)})
+                except ValueError:
+                    same = discharged
+                candidates = [discharged, same]
+                if reported.isdigit():
+                    moved = min(candidates, key=lambda option: abs((option - admitted).days - int(reported)))
+                    if (moved - admitted).days != int(reported):
+                        continue
+                else:
+                    moved = min(candidates, key=lambda option: (option - admitted).days < 0)
+                    if (moved - admitted).days < 0 or component == "day":
+                        continue
+            elif component == "day":
+                # Nothing at all to check a day against.
+                continue
+
+            row["Admission Date [ISO]"] = admitted.isoformat()
+            if moved:
+                row["Discharge Date (ISO)"] = moved.isoformat()
+                row["Days in Hospital (Calc)"] = str((moved - admitted).days)
+
+            dated[position] = (row, admitted)
+            component_repairs[component] += 1
+
+            # The record no longer discharges before it admits, so the flag
+            # raised for that earlier no longer describes it.
+            stale = [f for f in (row.get("Review Flags") or "").split("|") if f == "impossible-stay"]
+            if stale and row.get("Days in Hospital (Calc)"):
+                review_counts["impossible-stay"] -= 1
+                stays_cleared -= 1
+                row["Review Flags"] = "|".join(
+                    f for f in row["Review Flags"].split("|") if f and f != "impossible-stay"
+                )
+
+            flag = f"date-{component}-out-of-sequence"
+            flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+            if flag not in flags:
+                flags.append(flag)
+                review_counts[flag] += 1
             order = [name for name, _ in REVIEW_FLAGS]
             row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
 
@@ -1085,6 +1222,9 @@ def main() -> int:
             writer.writerow(["derived", "ICD-9 Chapter", "", "no readable code", chapters_unresolved])
         for label, count in recording.most_common():
             writer.writerow(["derived", "Diagnosis Recording", "", label, count])
+        for name, count in sorted(component_repairs.items()):
+            writer.writerow(["date", "Admission Date [ISO]", "ran backwards against the register's order",
+                             f"{name} taken from the neighbouring records", count])
         for years, count in sorted(sequence_repairs.items()):
             writer.writerow(["date", "Admission Date [ISO]", "ran backwards against the register's order",
                              f"year shifted by {years:+d}", count])
@@ -1125,6 +1265,9 @@ def main() -> int:
     print(f"           {icd9_padded} short code(s) padded, {icd9_refused} procedure code(s) refused a chapter")
     print(f"recording  of the unclassified: {recording['Recorded, not classified']:,} carry a diagnosis "
           f"the coding never reached, {recording['Not recorded']:,} carry none at all")
+    if component_repairs:
+        detail = ", ".join(f"{count} by {name}" for name, count in sorted(component_repairs.items()))
+        print(f"component  {sum(component_repairs.values()):,} admission(s) mended one component: {detail}")
     if sequence_repairs:
         detail = ", ".join(
             f"{count} by {years:+d} year" + ("s" if abs(years) > 1 else "")
