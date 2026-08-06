@@ -406,12 +406,22 @@ ICD9_FIRST = re.compile(r"^\s*([EVev]?)(\d{1,3})")
 # procedure is not a diagnosis and has no diagnosis chapter, so these are left
 # without one rather than placed in the wrong one. Each is listed with the name
 # that identifies it.
+#
+# The last two are not ICD-9 at all: upstream coding reached for ICD-10 on a
+# handful of rows, and those codes cannot match a chapter here whatever we do.
+# Left alone they would have fallen out of the classification silently, refused
+# by accident rather than by rule and carrying no flag to say so. Both name an
+# operation in the row beside them — the thirty "O66.9" are every one of them a
+# forceps delivery, the same admission as the "72.1" records above — so they
+# are refused on the same ground and counted with the procedures.
 ICD9_NOT_DIAGNOSES = {
     "72.1":  "Other specified forceps delivery",       # obstetric procedure
     "69.09": "",                                       # D&C; no name in the row
     "73.09": "",                                       # rupture of membranes
     "83.19": "Other tenotomy",                         # musculoskeletal procedure
     "43.0":  "Hydrocele, traumatic",                   # 043 is not a hydrocele
+    "O66.9": "Forceps Delivery",                       # ICD-10; obstetric procedure
+    "R29.89": "Sent in for Lumbar Puncture",           # ICD-10; procedure admission
 }
 
 
@@ -498,6 +508,15 @@ REGISTER_YEARS = range(1930, 1949)
 # the register is kept in order, not to the day.
 MIN_NOTEBOOK_RECORDS = 20
 SEQUENCE_SLACK = timedelta(days=3)
+# Beyond this a shift is not a misread digit but a different date.
+MAX_YEAR_SHIFT = 10
+# How many records either side of a run are asked what year it should be, and
+# how many of them have to agree before the run is moved.
+NEIGHBOURHOOD = 80
+MIN_NEIGHBOURS = 20
+# Passes over a notebook; misread pages in a row resolve from the outside in.
+# What changing one record's year costs against the days of disorder it saves.
+CHANGE_COST = 1.0
 
 # The registers run 1930-48. A two-digit year is read into that century; the
 # cut-off only has to fall somewhere outside the range the registers cover.
@@ -518,12 +537,93 @@ def parse_written_date(value: str) -> str:
         return ""
 
 
+def year_runs(values: list[date]) -> list[tuple[int, int, int]]:
+    """Contiguous stretches of one year: (start, end exclusive, year).
+
+    The misreadings come a page at a time — a year read once at the head of a
+    page and carried down it — so a wrong year arrives as a block sitting
+    between two blocks of the right one. Splitting the notebook into runs of a
+    single year finds those blocks whatever their size, which a longest
+    non-decreasing subsequence cannot: choosing notebook 24's 33 misread
+    records or the 34 correct ones before them gives a subsequence of exactly
+    the same length, so the tie breaks arbitrarily.
+    """
+    runs: list[tuple[int, int, int]] = []
+    start = 0
+    for i in range(1, len(values) + 1):
+        if i == len(values) or values[i].year != values[start].year:
+            runs.append((start, i, values[start].year))
+            start = i
+    return runs
+
+
+def resolve_year_shifts(values: list[date], runs: list[tuple[int, int, int]]) -> list[int]:
+    """Per run of one year, the shift that puts it back in the notebook's order.
+
+    Three things have to hold before a run of records moves.
+
+    It has to be out of order to begin with — running backwards against the
+    records above it, or past the records below. A run that sits in order where
+    it is stays there however its neighbours read, which is what leaves a
+    notebook's genuine turn of the year alone.
+
+    The records on either side of the run, but not in it, have to agree on a
+    year. Excluding the run from its own witness is the point: inside a misread
+    page the wrong year is the local majority, so any window that includes the
+    page agrees with the page. Once it is out of the vote a wide neighbourhood
+    is safe and the block stands out however large it is.
+
+    And the shift has to seat the run in order between the records above and
+    below it. Anything that does not is left for a reader.
+
+    Judging blocks one at a time, against the reading around them, is a
+    deliberate choice over solving the notebook as a whole. A global optimum
+    has to be told what to minimise, and every objective tried here — fewest
+    records changed, fewest days out of order — buys one notebook's correctness
+    with another's, because pulling a page of correct records back a year and
+    pushing a misread page forward cost almost exactly the same. Local evidence
+    is weaker but it is evidence, and where there is none this leaves the
+    record alone and flags it.
+    """
+    shifts = [0] * len(runs)
+    for index, (start, end, year) in enumerate(runs):
+        before = values[start - 1] if start else None
+        after = values[end] if end < len(values) else None
+        jumps_back = before is not None and values[start] < before - SEQUENCE_SLACK
+        jumps_forward = after is not None and values[end - 1] > after + SEQUENCE_SLACK
+        if not (jumps_back or jumps_forward):
+            continue
+
+        witness = Counter(
+            value.year for value in
+            values[max(0, start - NEIGHBOURHOOD):start] + values[end:end + NEIGHBOURHOOD]
+        )
+        if not witness:
+            continue
+        expected, support = witness.most_common(1)[0]
+        if expected == year or support < MIN_NEIGHBOURS:
+            continue
+        years = expected - year
+        if abs(years) > MAX_YEAR_SHIFT:
+            continue
+
+        first = shift_years(values[start], years)
+        last = shift_years(values[end - 1], years)
+        if first is None or last is None or first.year not in REGISTER_YEARS:
+            continue
+        if before is not None and first + SEQUENCE_SLACK < before:
+            continue
+        if after is not None and last - SEQUENCE_SLACK > after:
+            continue
+        shifts[index] = years
+    return shifts
+
+
 def chronological_backbone(values: list[date]) -> set[int]:
     """Indices of the longest non-decreasing run through a notebook's dates.
 
-    A register is written in order, so its admission dates should never go
-    backwards. The longest non-decreasing subsequence is the sequence the clerk
-    actually kept; every index outside it is a record that breaks it.
+    Used only to report how far a notebook departs from its own order; the
+    repair works on year runs, for the reason given above.
     """
     tails: list[date] = []
     tail_index: list[int] = []
@@ -620,6 +720,7 @@ def main() -> int:
     stays_over_a_year = 0
     chapters: Counter[str] = Counter()
     chapters_unresolved = 0
+    recording: Counter[str] = Counter()
     icd9_padded = 0
     icd9_refused = 0
     review_counts: Counter[str] = Counter()
@@ -661,6 +762,31 @@ def main() -> int:
             chapters[row["ICD-9 Chapter"]] += 1
         else:
             chapters_unresolved += 1
+
+        # Why a record has no chapter matters more than that it has none, and
+        # the two reasons are not the same kind of fact. A record carrying
+        # "Suppurative Adenitis Bursae" and no code is a coding job left undone:
+        # the clerk wrote a diagnosis and the classification never reached it.
+        # A record carrying nothing at all is the register itself falling
+        # silent, and that silence is not evenly spread — it runs under 1% in
+        # notebooks 1-9, 6.7% in notebook 32, 19.1% in notebook 33, and 66% of
+        # the admissions of April 1948, alongside the same collapse in
+        # the result and length-of-stay columns. What survives on those last
+        # pages is the intake side of the record: date, age, sex, religion,
+        # city. What is gone is everything a clerk fills in once a stay has
+        # concluded. Pooled into a single "unrecorded" bucket the two read as
+        # one gap in the data; kept apart, the second reads as evidence.
+        row["Diagnosis Recording"] = (
+            "Classified"
+            if row["ICD-9 Chapter"]
+            else "Recorded, not classified"
+            if any(
+                (row.get(col) or "").strip()
+                for col in ("Original Diagnosis", "Standardized Diagnosis", "Primary-ICD9")
+            )
+            else "Not recorded"
+        )
+        recording[row["Diagnosis Recording"]] += 1
 
         # Dates before addresses: the stay is recomputed from whatever the two
         # date columns end up holding.
@@ -805,20 +931,17 @@ def main() -> int:
 
     # ------------------------------------------------- years out of sequence
     #
-    # A register is written in order, so a record whose admission runs backwards
-    # against its neighbours is a misread year, not a patient admitted a year
-    # earlier. The errors come in blocks — a page at a time, where the clerk's
-    # year at the head of the page was read once and carried down it: notebook
-    # 24's "9.12.38" sits between backbone entries of 1939-12-09 and 1939-12-11,
-    # notebook 8's page 42 reads 36 for 34, notebook 31's page 55 reads 42 for
-    # 47. So the local median cannot be the test — inside such a block it is the
-    # wrong year that is in the majority. The longest non-decreasing run through
-    # the notebook is used instead, and a record off it is corrected only when
-    # shifting its year by a whole number of years lands it back inside the gap
-    # the run leaves for it.
+    # A register is written in order, so a stretch of records whose admissions
+    # run backwards against what surrounds them is a misread year, not patients
+    # admitted a year earlier. The misreadings arrive a page at a time — the
+    # year read once at the head of a page and carried down it — so the notebook
+    # is split into runs of a single year and a whole run is judged at once:
+    # notebook 24 reads 1.12.39 for 34 records, then 33 records of "38", then
+    # 5.12.39 onwards. The middle run is the page. Shifting it by a year seats
+    # it exactly between the two runs around it, so the whole run moves.
     #
     # Both dates move together, by the same shift, so the length of stay the
-    # clerk wrote beside the record is preserved — which is the corroboration
+    # clerk wrote beside each record is preserved — which is the corroboration
     # that the year, and only the year, was misread.
     sequence_repairs: Counter[int] = Counter()
     notebooks: dict[str, list[dict[str, str]]] = {}
@@ -830,32 +953,40 @@ def main() -> int:
         dated = [(row, value) for row, value in dated if value]
         if len(dated) < MIN_NOTEBOOK_RECORDS:
             continue
-        keep = chronological_backbone([value for _, value in dated])
 
-        for position, (row, admitted) in enumerate(dated):
-            if position in keep:
-                continue
-            before = next((dated[j][1] for j in range(position - 1, -1, -1) if j in keep), None)
-            after = next((dated[j][1] for j in range(position + 1, len(dated)) if j in keep), None)
-            if not before or not after:
-                continue
-            midpoint = before + (after - before) / 2
-            years = round((midpoint - admitted).days / 365.25)
+        values = [value for _, value in dated]
+        runs = year_runs(values)
+        run_shifts = resolve_year_shifts(values, runs)
+        shifts = [0] * len(values)
+        for (start, end, _), years in zip(runs, run_shifts):
+            for position in range(start, end):
+                shifts[position] = years
+
+        for (row, value), years in zip(dated, shifts):
             if years == 0:
                 continue
-            corrected = shift_years(admitted, years)
-            if not corrected or corrected.year not in REGISTER_YEARS:
+            admitted = shift_years(value, years)
+            if admitted is None:
                 continue
-            # Only if the shift actually restores the sequence.
-            if not (before - SEQUENCE_SLACK <= corrected <= after + SEQUENCE_SLACK):
-                continue
+            row["Admission Date [ISO]"] = admitted.isoformat()
 
-            row["Admission Date [ISO]"] = corrected.isoformat()
+            # The discharge does not always carry the same misreading: in
+            # notebook 23 the clerk's "7.10.38" was read a year low while the
+            # discharge beside it, "21.10.39", was read correctly. So the
+            # discharge follows the admission only where that is what
+            # reproduces the length of stay written beside the record.
             discharged = to_date(row.get("Discharge Date (ISO)", ""))
             if discharged:
-                moved = shift_years(discharged, years)
-                if moved:
-                    row["Discharge Date (ISO)"] = moved.isoformat()
+                reported = (row.get("Days in Hospital (Rep)") or "").strip()
+                options = [option for option in (shift_years(discharged, years), discharged) if option]
+                if reported.isdigit():
+                    options.sort(key=lambda option: abs((option - admitted).days - int(reported)))
+                else:
+                    options.sort(key=lambda option: (option - admitted).days < 0)
+                if options:
+                    row["Discharge Date (ISO)"] = options[0].isoformat()
+                    stay = (options[0] - admitted).days
+                    row["Days in Hospital (Calc)"] = str(stay) if stay >= 0 else ""
             sequence_repairs[years] += 1
 
             flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
@@ -913,6 +1044,10 @@ def main() -> int:
         at = fieldnames.index("StandardICDInteger") + 1 if "StandardICDInteger" in fieldnames else len(fieldnames)
         fieldnames.insert(at, "ICD-9 Chapter")
 
+    if "Diagnosis Recording" not in fieldnames:
+        at = fieldnames.index("ICD-9 Chapter") + 1
+        fieldnames.insert(at, "Diagnosis Recording")
+
     fieldnames = [name for name in fieldnames if name not in DROP_COLUMNS]
 
     published = [COLUMN_RENAMES.get(name, name) for name in fieldnames]
@@ -948,6 +1083,8 @@ def main() -> int:
             writer.writerow(["derived", "ICD-9 Chapter", "procedure code, not a diagnosis", "left without a chapter", icd9_refused])
         if chapters_unresolved:
             writer.writerow(["derived", "ICD-9 Chapter", "", "no readable code", chapters_unresolved])
+        for label, count in recording.most_common():
+            writer.writerow(["derived", "Diagnosis Recording", "", label, count])
         for years, count in sorted(sequence_repairs.items()):
             writer.writerow(["date", "Admission Date [ISO]", "ran backwards against the register's order",
                              f"year shifted by {years:+d}", count])
@@ -986,6 +1123,8 @@ def main() -> int:
     kept = sum(n for k, n in dates_rebuilt.items() if k.endswith("upstream kept"))
     print(f"chapters   {sum(chapters.values()):,} records placed in {len(chapters)} ICD-9 chapters, {chapters_unresolved:,} without a readable code")
     print(f"           {icd9_padded} short code(s) padded, {icd9_refused} procedure code(s) refused a chapter")
+    print(f"recording  of the unclassified: {recording['Recorded, not classified']:,} carry a diagnosis "
+          f"the coding never reached, {recording['Not recorded']:,} carry none at all")
     if sequence_repairs:
         detail = ", ".join(
             f"{count} by {years:+d} year" + ("s" if abs(years) > 1 else "")
