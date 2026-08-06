@@ -434,6 +434,7 @@ EXTRA = {
     "Tireh-Hayark": (M, 756, "human", "garbled suffix", 1),
     "Tireh/Athlit": (AMB, None, "agent", "alternation across two different places", 1),
     "Tirat Zvi": (M, 757, "agent", "kibbutz Tirat Zvi, Bet Shean valley - not al-Tira", 1),
+    "Rameh": (M, 77979, "human", "user ruling: Rameh village (al-Rama, Galilee) is not Ramleh", 69),
 }
 
 WD_ONLY = {"Roy": "Q11878352"}

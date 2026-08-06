@@ -241,7 +241,11 @@ CITY = {
     "tarsheeha": "Tarshiha",
     "ara": "Arara", "ar'ara": "Arara", "arrara": "Arara", "ara'ra": "Arara",
     "arra": "Arara", "araara": "Arara", "a'ara": "Arara", "ara'ara": "Arara",
-    "rameleh": "Ramleh", "ramah": "Rameh", "arameh": "Rameh",
+    # "Rameleh" looks like Ramleh but the one record carrying it says "of
+    # Acre": it is Rameh (al-Rama) in the Galilee, as are Rami and the
+    # unstripped "Rameh. Acre".
+    "rameleh": "Rameh", "ramah": "Rameh", "arameh": "Rameh",
+    "rami": "Rameh", "rameh. acre": "Rameh",
     "kufr yasif": "Kafr Yasif", "kfar yassif": "Kafr Yasif", "kufr yassif": "Kafr Yasif",
     "kafr yassif": "Kafr Yasif", "kufer yasif": "Kafr Yasif", "kufer yassif": "Kafr Yasif",
     "kafar yasif": "Kafr Yasif", "kafr-yasif": "Kafr Yasif", "kefar yasif": "Kafr Yasif",
@@ -602,6 +606,8 @@ REVIEW_FLAGS = [
     ("date-seated-by-order", "A date outside 1930-48, taken whole from identical dates either side of it"),
     ("date-unreadable", "A date the clerk's own writing could not be parsed from"),
     ("stay-disagrees", "Computed stay differs from the count written beside it"),
+    ("serial-repaired", "Record number repaired: a digit slip against the register's own run"),
+    ("serial-out-of-sequence", "Record number breaks the register's run and no safe repair exists"),
     ("icd9-low-confidence", "A second-pass code the classifier itself called speculative"),
     ("icd9-second-pass", "Coded by the second classification pass, not the first"),
     ("result-in-diagnosis", "A Result value standing in a diagnosis or code field"),
@@ -1214,6 +1220,13 @@ def main() -> int:
                 cleaned = "Haifa"
                 row["City"] = cleaned
                 street_reseated += 1
+            # "Ramleh Village" is Rameh (al-Rama), not the town of Ramleh: the
+            # village qualifier, or an Acre-district address, marks the Galilee
+            # village whichever way the clerk spelled it.
+            if cleaned == "Ramleh" and re.search(r"village|acre", row.get("Address") or "", re.IGNORECASE):
+                changes[("City", "Ramleh (the address says village / Acre district)", "Rameh")] += 1
+                cleaned = "Rameh"
+                row["City"] = cleaned
             kima_id, qid = kima_links.get(cleaned, ("", ""))
             row["City Kima ID"] = kima_id
             row["City Wikidata"] = qid
@@ -1468,6 +1481,90 @@ def main() -> int:
         order = [name for name, _ in REVIEW_FLAGS]
         row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
 
+    # --------------------------------------------- record numbers out of run
+    #
+    # The clerk's running serial is as ordered as his dates, and the same
+    # argument applies: a block of numbers that leaves the run and hands back
+    # to it afterwards is a misreading, not a renumbering. Notebook 11's page
+    # 61 carries 645-649 read as 6445-6449 (one "4" doubled; 6447 = 647,
+    # verified on the scan), page 14 carries 146-150 read with a leading "1".
+    # A block is repaired only when one constant shift seats every member
+    # strictly inside the gap AND the shift is mechanical - a whole number of
+    # hundreds (a dropped or added prefix), or the same single digit slipped
+    # into the same position in every member. Genuine restarts of the
+    # numbering never hand back to the old run, so they are left alone;
+    # blocks that hand back but fail the safety test (duplicated pages,
+    # stray values from another column) are flagged, never guessed at.
+    def one_digit_slip(raw: str, fixed: str) -> "tuple[int, str] | None":
+        # fixed -> raw by inserting one digit; returns (position, digit).
+        if len(raw) != len(fixed) + 1:
+            return None
+        for i in range(len(raw)):
+            if raw[:i] + raw[i + 1:] == fixed:
+                return (i, raw[i])
+        return None
+
+    serial_blocks: list[tuple[str, str, str, int, bool]] = []
+    by_notebook: dict[str, list] = {}
+    for row in out_rows:
+        by_notebook.setdefault(row.get("Notebook_Number") or "", []).append(row)
+    for notebook, items in by_notebook.items():
+        seq = [(row, int(v)) for row in items
+               if (v := (row.get("Notebook Record ID") or "").strip()).isdigit()]
+        j = 0
+        while j < len(seq) - 1:
+            value = seq[j][1]
+            if -2 <= seq[j + 1][1] - value <= 6:
+                j += 1
+                continue
+            resume = next((k for k in range(j + 2, min(j + 18, len(seq)))
+                           if 0 < seq[k][1] - value <= (k - j) + 6), None)
+            if resume is None:
+                j += 1
+                continue
+            block = seq[j + 1:resume]
+            # The block's true position inside the gap is not known (a blank
+            # id may hold one of the seats), so every placement is tried and a
+            # repair is accepted only when exactly one of them is mechanical.
+            workable = []
+            for start in range(value + 1, seq[resume][1] - len(block) + 1):
+                offset = block[0][1] - start
+                shifted = [raw - offset for _, raw in block]
+                if not (all(b > a for a, b in zip(shifted, shifted[1:]))
+                        and shifted[0] > value and shifted[-1] < seq[resume][1]):
+                    continue
+                slips = {one_digit_slip(str(raw), str(raw - offset)) for _, raw in block}
+                # Mechanical means a prefix dropped or added whole (the raw
+                # and repaired numbers are suffixes of one another), or the
+                # same single digit slipped into the same position throughout.
+                prefix_slip = all(str(raw).endswith(str(raw - offset))
+                                  or str(raw - offset).endswith(str(raw))
+                                  for _, raw in block)
+                if prefix_slip or (None not in slips and len(slips) == 1):
+                    workable.append(offset)
+            label = f"notebook {notebook}: {block[0][1]}-{block[-1][1]} between {value} and {seq[resume][1]}"
+            if len(block) >= 2 and len(workable) == 1:
+                offset = workable[0]
+                for row, raw in block:
+                    row["Notebook Record ID"] = str(raw - offset)
+                    flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+                    if "serial-repaired" not in flags:
+                        flags.append("serial-repaired")
+                        review_counts["serial-repaired"] += 1
+                    order = [name for name, _ in REVIEW_FLAGS]
+                    row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+                serial_blocks.append((label, str(block[0][1] - offset), str(block[-1][1] - offset), len(block), True))
+            else:
+                for row, _ in block:
+                    flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+                    if "serial-out-of-sequence" not in flags:
+                        flags.append("serial-out-of-sequence")
+                        review_counts["serial-out-of-sequence"] += 1
+                    order = [name for name, _ in REVIEW_FLAGS]
+                    row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+                serial_blocks.append((label, "", "", len(block), False))
+            j = resume
+
     # Written by hand rather than through csv.writer: the registers contain bare
     # double quotes (inches, gershayim) and any escaping of them would have to be
     # undone by every consumer. Tabs and newlines inside a value are the only
@@ -1553,6 +1650,11 @@ def main() -> int:
         for years, count in sorted(sequence_repairs.items()):
             writer.writerow(["date", "Admission Date [ISO]", "ran backwards against the register's order",
                              f"year shifted by {years:+d}", count])
+        for label, first, last, count, repaired in serial_blocks:
+            if repaired:
+                writer.writerow(["serial", "Notebook Record ID", label, f"repaired to {first}-{last}", count])
+            else:
+                writer.writerow(["serial", "Notebook Record ID", label, "no safe repair; flagged for review", count])
         for label, count in dates_rebuilt.most_common():
             column, _, what = label.partition(": ")
             writer.writerow(["date", column, "upstream ISO", what, count])

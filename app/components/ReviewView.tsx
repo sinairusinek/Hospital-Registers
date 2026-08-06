@@ -85,6 +85,18 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Diagnosis as written', 'Diagnosis', 'ICD-9 Code', 'Primary-Confidence', 'ICD-9 Chapter', 'Ward']
   },
   {
+    flag: 'serial-repaired',
+    title: 'A record number repaired against the run',
+    question: 'The clerk\'s running serial left the register\'s own sequence and handed back to it a few records later — a doubled digit or a dropped prefix in the transcription, not a renumbering. The repair seats the block back into the run (notebook 11\'s 6447 = 647, verified on the scan). Does the page bear out the repaired numbers?',
+    fields: ['Notebook Record ID', 'Admission Date', 'Discharge Date', 'Sex', 'Age', 'Religion', 'City']
+  },
+  {
+    flag: 'serial-out-of-sequence',
+    title: 'A record number that breaks the run',
+    question: 'The serial leaves the register\'s sequence and returns to it, but no single mechanical slip explains the block — some are pages transcribed twice (potential duplicate records), some are values copied from another column. The numbers are left as read; the page is the only authority on what they should be.',
+    fields: ['Notebook Record ID', 'Admission Date', 'Discharge Date', 'Sex', 'Age', 'Religion', 'City']
+  },
+  {
     flag: 'result-in-diagnosis',
     title: 'A Result value in the diagnosis column',
     question: 'The diagnosis or code field holds "Cured", "Died" or another outcome — the Result column\'s content one field to the left. This is a column misalignment in the source, not a missing diagnosis, so nothing has been classified from it. What does the page have in the diagnosis column?',

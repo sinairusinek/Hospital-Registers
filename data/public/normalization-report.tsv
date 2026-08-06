@@ -69,6 +69,7 @@ merged	City	Had. Hac.	Had. Hac	5
 merged	City	Tul-Karem	Tulkarem	5
 merged	City	Acre (the address is Haifa's Acre-named street)	Haifa	5
 merged	City	Ramah	Rameh	5
+merged	City	Ramleh (the address says village / Acre district)	Rameh	5
 merged	City	Is.	Is	5
 merged	City	Kiryat Hayim	Kiryat Haim	5
 merged	standardized ward	British Section|Infectious	British Section | Infectious Diseases	5
@@ -247,7 +248,7 @@ merged	City	Al-Tira	Tira	1
 merged	City	Boury Billet?	Boury Billet	1
 merged	City	Kafr Yousif	Kafr Yasif	1
 merged	standardized ward	Venereal Diseases|Infectious	Venereal Diseases | Infectious Diseases	1
-merged	City	Rameleh	Ramleh	1
+merged	City	Rameleh	Rameh	1
 merged	City	Majdal Krum	Majd al-Krum	1
 merged	City	Arabeh	Arrabeh	1
 merged	City	A'ara	Arara	1
@@ -322,6 +323,8 @@ merged	City	Haifa - B/S W.	Haifa - B/S W	1
 merged	City	Inn El Zinat.	Inn El Zinat	1
 merged	City	Khidera	Hadera	1
 merged	City	Tulkarem|Tulkarem S/D.	Tulkarem|Tulkarem S/D	1
+merged	City	Rameh. Acre	Rameh	1
+merged	City	Rami	Rameh	1
 merged	City	Al-Mansi	Mansi	1
 merged	City	El Roy	Roy	1
 merged	City	Bassa No1 N.F.G.	Bassa No1 N.F.G	1
@@ -525,6 +528,8 @@ review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the ot
 review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole from identical dates either side of it	2
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
 review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1320
+review	Review Flags	serial-repaired	Record number repaired: a digit slip against the register's own run	40
+review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	220
 review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	15
 review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	315
 review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	39
@@ -545,7 +550,7 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		254
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	20471
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	20534
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8771
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4654
 derived	ICD-9 Chapter		520-579 Digestive system	3260
@@ -577,6 +582,40 @@ date	Admission Date [ISO]	ran backwards against the register's order	year shifte
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -1	212
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +1	452
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +5	12
+serial	Notebook Record ID	notebook 11: 1146-1150 between 144 and 151	repaired to 146-150	5
+serial	Notebook Record ID	notebook 11: 6445-6449 between 643 and 651	repaired to 645-649	5
+serial	Notebook Record ID	notebook 1: 2-11 between 99 and 112	repaired to 102-111	10
+serial	Notebook Record ID	notebook 6: 3-11 between 1401 and 1414	repaired to 1403-1411	9
+serial	Notebook Record ID	notebook 7: 13-1772 between 1772 and 1773	no safe repair; flagged for review	2
+serial	Notebook Record ID	notebook 8: 5-5 between 407 and 408	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 9: 2-12 between 1058 and 1071	no safe repair; flagged for review	11
+serial	Notebook Record ID	notebook 10: 2-2 between 2063 and 2066	no safe repair; flagged for review	2
+serial	Notebook Record ID	notebook 10: 2010-2010 between 2108 and 2111	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 10: 2-2 between 2280 and 2282	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 12: 1969-1969 between 1368 and 1370	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 12: 2-12 between 1652 and 1664	no safe repair; flagged for review	11
+serial	Notebook Record ID	notebook 15: 261-261 between 210 and 212	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 18: 2760-2769 between 2769 and 2770	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 18: 1-10 between 2791 and 2804	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 18: 1-10 between 2858 and 2869	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 21: 3325-3335 between 423 and 436	no safe repair; flagged for review	11
+serial	Notebook Record ID	notebook 21: 5511-5601 between 550 and 563	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 24: 179-189 between 78 and 90	repaired to 79-89	11
+serial	Notebook Record ID	notebook 25: 2-5 between 5 and 6	no safe repair; flagged for review	4
+serial	Notebook Record ID	notebook 25: 731-740 between 740 and 741	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 26: 1-12 between 2442 and 2455	no safe repair; flagged for review	12
+serial	Notebook Record ID	notebook 26: 2-13 between 2514 and 2527	no safe repair; flagged for review	12
+serial	Notebook Record ID	notebook 26: 2-13 between 2659 and 2672	no safe repair; flagged for review	12
+serial	Notebook Record ID	notebook 27: 3309-3318 between 3319 and 3320	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 27: 3867-3875 between 3920 and 3922	no safe repair; flagged for review	9
+serial	Notebook Record ID	notebook 27: 4223-4223 between 4227 and 4231	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 28: 7771-7780 between 4472 and 4482	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 28: 2-8 between 5317 and 5324	no safe repair; flagged for review	7
+serial	Notebook Record ID	notebook 30: 2-13 between 1591 and 1604	no safe repair; flagged for review	12
+serial	Notebook Record ID	notebook 30: 3-13 between 2215 and 2229	no safe repair; flagged for review	11
+serial	Notebook Record ID	notebook 31: 2-13 between 2515 and 2529	no safe repair; flagged for review	12
+serial	Notebook Record ID	notebook 31: 3-13 between 2755 and 2769	no safe repair; flagged for review	11
+serial	Notebook Record ID	notebook 32: 6245-6249 between 6249 and 6250	no safe repair; flagged for review	5
 date	Admission Date [ISO]	upstream ISO	replaced	2522
 date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	894
 date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	492
