@@ -309,6 +309,32 @@ WARD = {
     "childrens": "Children's",
 }
 
+# The wards of the hospital, as they read once standardized. An Occupation
+# holding exactly one of these — a 7-year-old "Gynecology" among them — is the
+# ward column's content misfiled by the extraction, not a trade.
+WARD_NAMES = {
+    "Surgical", "Medical", "British Section", "Isolation", "Gynecology",
+    "General", "Maternity", "Infectious Diseases", "Venereal Diseases",
+}
+
+# The clerk's abbreviations, for reading the written ward on those records.
+# "Gen." is General, not Gynecology: record 86 of notebook 11 reads "Gen."
+# on the page beside a misfiled "Gynecology", confirmed against the scan.
+WARD_WRITTEN = {name.lower(): name for name in WARD_NAMES} | WARD | {
+    "surg": "Surgical",
+    "surg.": "Surgical",
+    "gen": "General",
+    "gen.": "General",
+}
+
+# Record-level ward corrections, keyed (Notebook_Number, Notebook Record ID),
+# for readings that survive only in a column the pipeline drops. Notebook 11
+# record 86: the written ward reached the source file only as a discarded
+# value, "Gen.", and the scan confirms General.
+WARD_CORRECTIONS = {
+    ("11", "86"): "General",
+}
+
 CLASS = {
     "1st": "1",
     "2nd": "2",
@@ -508,9 +534,13 @@ PROCEDURE = re.compile(
 # ICD-10 codes that leaked into an ICD-9 column. Mapped at chapter level only,
 # where the correspondence is not in doubt — an obstructed labour belongs to the
 # obstetric chapter under either revision. No ICD-9 code is invented for them.
+# O66.9 and R29.89 look like candidates for this table and are not: all 30 of
+# the O66.9 records read "Forceps Delivery" in the register, and obstructed
+# labour is the classifier's inference about why forceps were used rather than
+# anything the clerk wrote. They belong in ICD9_NOT_DIAGNOSES above, with the
+# other procedures. What is left is the one code whose record carries a symptom
+# and no operation.
 ICD10_CHAPTER = {
-    "O66.9": "630-679 Pregnancy, childbirth and the puerperium",  # obstructed labour
-    "R29.89": "780-799 Symptoms, signs and ill-defined conditions",
     "R50.9": "780-799 Symptoms, signs and ill-defined conditions",  # fever, unspecified
 }
 
@@ -868,6 +898,8 @@ def main() -> int:
         and not any(ch.isdigit() for ch in value)
         and place_vocabulary[value.strip()] < KIN_RARITY
     }
+    ward_rehomed: Counter[tuple[str, str, str]] = Counter()
+    ward_corrected = 0
     dates_rebuilt = Counter()
     stays_cleared = 0
     stays_over_a_year = 0
@@ -901,6 +933,46 @@ def main() -> int:
             row[column] = after
             if after:
                 final_values[column][after] += 1
+
+        # A hand correction first, so the pass below finds the ward in place.
+        key = (
+            (row.get("Notebook_Number") or "").strip(),
+            (row.get("Notebook Record ID") or "").strip(),
+        )
+        corrected = WARD_CORRECTIONS.get(key)
+        if corrected:
+            previous = (row.get("standardized ward") or "").strip()
+            if previous != corrected:
+                row["standardized ward"] = corrected
+                if previous:
+                    final_values["standardized ward"][previous] -= 1
+                final_values["standardized ward"][corrected] += 1
+                ward_corrected += 1
+
+        # The extraction sometimes filed the ward as the patient's occupation:
+        # 49 records carry a bare ward name in Occupation, most of them beside
+        # the very same value in the ward column. The name is taken out of
+        # Occupation; where the ward column is empty it is completed, trusting
+        # the clerk's own written ward over the misfiled value where the two
+        # disagree.
+        occupation = (row.get("Occupation") or "").strip()
+        if occupation in WARD_NAMES:
+            current = (row.get("standardized ward") or "").strip()
+            written = (row.get("Ward") or "").strip()
+            resolved = WARD_WRITTEN.get(written.lower(), "")
+            if resolved and current in ("", occupation) and resolved != current:
+                target, source = resolved, "written"
+            elif current:
+                target, source = current, "duplicate"
+            else:
+                target, source = occupation, "occupation"
+            row["Occupation"] = ""
+            if target != current:
+                row["standardized ward"] = target
+                if current:
+                    final_values["standardized ward"][current] -= 1
+                final_values["standardized ward"][target] += 1
+            ward_rehomed[(occupation, target, source)] += 1
 
         # The derived chapter rides in a column of its own; the source's code
         # and three-digit category are both left exactly as they are.
@@ -1414,6 +1486,16 @@ def main() -> int:
         writer.writerow(["kind", "column", "from", "to", "records"])
         for (column, before, after), count in changes.most_common():
             writer.writerow(["cleared" if not after else "merged", column, before, after, count])
+        for (occupation, ward, source), count in sorted(ward_rehomed.items()):
+            what = {
+                "written": f"Ward: {ward}, read from the clerk's written ward",
+                "occupation": f"Ward: {ward}",
+                "duplicate": f"cleared; the ward column already carries {ward}",
+            }[source]
+            writer.writerow(["moved", "Occupation", occupation, what, count])
+        if ward_corrected:
+            writer.writerow(["corrected", "standardized ward", "Gynecology",
+                             "General — the page reads Gen., notebook 11 record 86", ward_corrected])
         for value, count in procedures.most_common():
             writer.writerow(["derived", "Procedure", "operation named in the diagnosis column", value, count])
         for name, description in REVIEW_FLAGS:
@@ -1473,6 +1555,11 @@ def main() -> int:
     print(f"merged     {sum(changes.values()) - cleared:,} values across {len(changes)} rules")
     print(f"cleared    {cleared} value(s) outside a closed vocabulary")
     print(f"coarsened  {coarsened:,} addresses")
+    if ward_rehomed:
+        seated = sum(c for (_, _, source), c in ward_rehomed.items() if source != "duplicate")
+        print(f"wards      {sum(ward_rehomed.values())} ward name(s) taken out of Occupation, "
+              f"{seated} seated in an empty ward column"
+              + (f", {ward_corrected} corrected by hand against the scan" if ward_corrected else ""))
     print(f"withheld   {', '.join(sorted(DROP_COLUMNS))}")
     if kin_in_place:
         detail = ", ".join(f"{field} {count}" for field, count in sorted(kin_in_place.items()))

@@ -1,0 +1,369 @@
+Original-Diagnosis	Primary-ICD9	Primary-ICD9-Name	Primary-Confidence	Additional-ICD9	Additional-ICD9-Name	Additional-Confidence	Frequency
+Blasting Accident	959.9	Injury, other and unspecified	0.7	E921.0	Accident caused by explosion of pressure vessel	0.9	3
+Car accident	959.9	Injury, other and unspecified	0.7	E819.9	Motor vehicle traffic accident of unspecified nature, unspecified person	1.0	3
+Exposure	991.9	Effects of reduced temperature, unspecified	0.6	E901.9	Unspecified effect of excessive cold	0.6	3
+Hysterography	V72.85	Other specified examination	0.8			2	
+ChlBith N.	574.20	Calculus of gallbladder without cholecystitis, without mention of obstruction	0.9			2	
+Dislocation Fingus Corp? Brach.	834.00	Dislocation of unspecified finger	0.5			2	
+Contusion Scalp. Extra dural haemorrhage	852.20	Extradural hemorrhage without mention of open intracranial wound	1.0	920	Contusion of face, scalp, and neck	1.0	1
+Tuberculasis Ext. Epicondyle of Rt. Tibia	015.50	Tuberculosis of knee	0.8			1	
+"Cold" Grippe	487.1	Influenza with other respiratory manifestations	0.9			1	
+Maine Eczema	692.9	Contact dermatitis and other eczema, unspecified cause	0.7			1	
+I.B. of Elbow Lf.	726.31	Olecranon bursitis	0.4	682.3	Other cellulitis and abscess, upper arm and forearm	0.4	1
+Suppurative Adenitis Bursae	683	Acute lymphadenitis	0.8	727.3	Other bursitis	0.5	1
+Ulcerating J.B.	707.9	Chronic ulcer of unspecified site	0.3			1	
+Lacerated wound of Lt. San S.	873.0	Open wound of scalp, without complication	0.4			1	
+Plastica Post anetras	V58.42	Aftercare following surgery of skin and subcutaneous tissue	0.5			1	
+Comp. Fracture of Rt. Teleia	823.10	Open fracture of shaft of tibia	0.9			1	
+Impaired terminal phalanx of Rt. hand	719.53	Stiffness of joint, hand	0.6			1	
+Bones of Lt. Chest						1	
+Courio						1	
+In observation	V71.9	Unspecified observation	1.0			1	
+Tendency to R. Inguinal Hernia	550.90	Unilateral or unspecified inguinal hernia, without mention of obstruction or gangrene	0.8			1	
+Haematuria R. Arm	599.70	Hematuria, unspecified	0.9			1	
+Tendency to Hernia.	553.9	Unspecified hernia of abdominal cavity without mention of obstruction or gangrene	0.8			1	
+Refused to stay in Hospital.	V64.2	Refused treatment	1.0			1	
+Eczema fut	692.9	Contact dermatitis and other eczema, unspecified cause	0.7			1	
+Strum Bladder.	239.4	Neoplasm of unspecified nature, bladder	0.3			1	
+Indiscolitis	722.90	Other and unspecified disc disorder, site unspecified	0.6			1	
+Fact. of foot Jaw Comp.	826.1	Open fracture of one or more tarsal and metatarsal bones	0.7	802.30	Open fracture of mandible, unspecified site	0.7	1
+Demaas (operation Curettage)	634.91	Spontaneous abortion, incomplete, without mention of complication	0.6			1	
+Fracture of J.S.Q. leg?	823.80	Closed fracture of unspecified part of tibia	0.7			1	
+Pleuritis Tibia	511.0	Pleurisy without mention of effusion or current tuberculosis	0.8			1	
+Dysentery aspects	009.2	Infectious colitis, enteritis, and gastroenteritis	0.8			1	
+Refused to stay in Hospital. No chart made.	V64.2	Refused treatment	1.0			1	
+Initial Regurgitation	785.2	Undiagnosed cardiac murmurs	0.6			1	
+Mental Fusunche	780.09	Other alteration of consciousness	0.4			1	
+Confinement Multiple H.K.	651.91	Unspecified multiple gestation, delivered	0.9			1	
+Old Tract Pelvis	905.1	Late effect of fracture of spine and trunk	0.6			1	
+Gangreneme Uth.	785.4	Gangrene	0.9			1	
+Deranged baby condition						1	
+Fall from a horse.	959.9	Injury, other and unspecified	0.7	E828.0	Fall from animal or animal-drawn vehicle	1.0	1
+Ovalaria Chronic	620.8	Other noninflammatory disorders of ovary, fallopian tube, and broad ligament	0.8			1	
+Buano Trunk	785.6	Enlargement of lymph nodes	0.4			1	
+Pneumo Colitis	486	Pneumonia, organism unspecified	0.7	558.9	Other and unspecified noninfectious gastroenteritis and colitis	0.7	1
+Child birth + Eyelids of Pregnancy.	650	Normal delivery	0.9	642.41	Mild or unspecified pre-eclampsia, delivered	0.6	1
+Gas.Accident of several miles on Rt. side Lt. knee Wound of Rt.	891.1	Open wound of knee, leg [except thigh], and ankle, complicated	0.8	E819.9	Motor vehicle traffic accident of unspecified nature, unspecified person injured	0.9	1
+Haemorrhoids bodies in Lt. knee.	455.6	Hemorrhoids, unspecified	0.8	718.16	Loose body in joint, lower leg	0.8	1
+"Shiga" Bacillary Dysentery	004.0	Shigellosis due to Shigella dysenteriae	1.0			1	
+"Shiga" Bac. Dysentry	004.0	Shigellosis due to Shigella dysenteriae	1.0			1	
+Tansillictomy	474.00	Chronic tonsillitis, unspecified	0.9			1	
+Eclampsia Delirium Normal	642.61	Eclampsia, delivered	1.0	780.09	Other alteration of consciousness	0.8	1
+Laceration Left Elbow	881.01	Open wound of elbow, without mention of complication	1.0	E928.9	Unspecified accident	0.7	1
+Duar[?] of Chest						1	
+Laparotomy (Exploration)	789.00	Abdominal pain, unspecified site	0.6			1	
+Infections	136.9	Unspecified infectious and parasitic diseases	0.5			1	
+Foundling child nurs...	V30.00	Single liveborn, in hospital, without mention of caesarean delivery	0.7	V62.89	Other psychosocial circumstances	0.8	1
+Clinically						1	
+Caesarean operation	669.71	Caesarean delivery, without mention of indication, delivered	1.0			1	
+Anchr? of Face	091.0	Primary syphilis	0.3			1	
+Gastrophlasis	537.5	Gastroptosis	0.8			1	
+Burn of back?	942.04	Burn of unspecified degree, back	0.7	E924.9	Accident caused by hot substance or object, caustic or corrosive material, and steam, of unspecified nature	0.6	1
+Lousessis of the Uterus Exthermitics						1	
+Spinal anaesthesia of Lancea of Rt. Tibia	730.06	Acute osteomyelitis, lower leg	0.7			1	
+Suppurating Obesan Busa	727.3	Other bursitis	0.7			1	
+Paget's Disease Rt. Lung	731.0	Osteitis deformans [Paget's disease of bone]	0.8			1	
+M Confinement (? Papelitis)	650	Normal delivery	0.9	646.61	Infections of genitourinary tract in pregnancy, delivered	0.7	1
+Pripelitis	590.10	Acute pyelonephritis without lesion of renal medullary necrosis	0.9			1	
+Cystoscopy of bladder	V72.5	Radiological and other examination of genitourinary system	0.8			1	
+Patho disease						1	
+Metro insury insu fficiency						1	
+I.D.	136.9	Unspecified infectious and parasitic diseases	0.5			1	
+Contusio Colitis	558.9	Other and unspecified noninfectious gastroenteritis and colitis	0.6	922.2	Contusion of abdominal wall	0.7	1
+Study gastr. Heart Condition	V71.8	Observation for other specified suspected conditions	0.8			1	
+Pregnancy S.Q.	V22.1	Supervision of other normal pregnancy	0.9			1	
+Otitis media Lt. middle finger	382.9	Unspecified otitis media	0.9	729.5	Pain in limb	0.4	1
+Gastropelosis S.Q.	537.5	Gastroptosis	0.8			1	
+Fract of Lt. Asco						1	
+Comp. fract. of Ing. bone	808.1	Fracture of pubis, open	0.8			1	
+Venereal Diseases Section	099.9	Unspecified venereal disease	0.9			1	
+Longitudinal tract of append. & numerous						1	
+Mixed lesion? of compensation						1	
+Unchanged.						1	
+T.B. Rt Busae (?)	015.85	Tuberculosis of other specified bones and joints, specified site	0.9			1	
+Bronchitis of Kidneys	583.9	Nephritis, not specified as acute or chronic, with unspecified pathological lesion in kidney	0.4			1	
+Fracture of Cally I.S.Q. & Rt leg	827.0	Multiple fractures of leg	0.7			1	
+Hepatic appendicitis?	541	Appendicitis, unqualified	0.7			1	
+T.B.(?) Adenitis	017.2	Tuberculous peripheral lymphadenopathy	0.9			1	
+Bruised Wound of St. jero.	879.8	Open wound(s) of other and unspecified sites, without mention of complication	0.6			1	
+Observed for Clinical Malaria. Negative	V71.8	Observation for other specified suspected conditions	1.0			1	
+Hypertrophied T.	474.11	Hypertrophy of tonsils	0.9			1	
+Chrori Trauma J.L.t /? 26 ride?	959.9	Injury, other and unspecified	0.3			1	
+Penetrating wound of Lt.	879.8	Open wound(s) of other and unspecified sites, without mention of complication	0.6			1	
+? Path.. Cais..						1	
+Coridial Cranions						1	
+Tenta[...] haemorrhage	431	Intracerebral hemorrhage	0.4			1	
+Isolation	V07.0	Isolation	1.0			1	
+Septic finger of rt. leg	681.11	Cellulitis and abscess of toe	0.8			1	
+Dysentery Baccy & bey	004.9	Bacillary dysentery, unspecified	0.9			1	
+?alm Salu?[?]						1	
+T.B Colico Myelitis of St.f...	013.6	Tuberculous myelitis	0.7			1	
+Haematids	287.9	Unspecified hemorrhagic conditions	0.4			1	
+Threatened I.S.Q. Knee	719.46	Pain in joint, lower leg	0.5			1	
+Pneumatic J.S.G. joint of leg	716.96	Arthropathy, unspecified, involving lower leg	0.4			1	
+Fracture of the lower jaw	802.20	Fracture of mandible, site unspecified, closed	1.0			1	
+Sickness	780.99	Other general symptoms	0.8			1	
+hemali replia Medica ?amentia						1	
+Cyst & Ab. Hyst.	620.2	Other and unspecified ovarian cyst	0.7			1	
+Gaslman Sfare Infected	040.0	Gas gangrene	0.6			1	
+Arich Miser						1	
+Septic arm & ? ?	682.3	Other cellulitis and abscess, upper arm and forearm	0.9			1	
+No Signs of Tuberculosis.	V71.1	Observation for suspected tuberculosis	1.0			1	
+Caesarean Section	669.71	Cesarean delivery, without mention of indication, delivered	1.0	V27.0	Single liveborn	0.9	1
+Linea Auricularia(d)						1	
+Hunger Strike	994.2	Effects of starvation	0.9	E958.1	Suicide and self-inflicted injury by starvation	0.9	1
+Labanacu Sinthesis of chest						1	
+Inguinga	550.90	Inguinal hernia, without mention of obstruction or gangrene, unilateral or unspecified	0.9			1	
+Varieaile Left. Operation	456.4	Varicocele	0.8			1	
+Taxis Anaemia	285.9	Anemia, unspecified	0.7			1	
+Lymphoid Cembait						1	
+Customs						1	
+Seniasis	696.1	Other psoriasis	0.3			1	
+Caeserian Section Operation	669.71	Cesarean delivery, without mention of indication, delivered, with or without mention of antepartum condition	1.0			1	
+Sent as for Lumbar puncture	V71.89	Observation and evaluation for other specified suspected conditions	0.8			1	
+Cancelled See No. 139/38					1		
+Is.					1		
+Puerperium	V24.0	Postpartum care and examination immediately after delivery	1.0			1	
+Polyoirosity [?] I.S.Q.	136.1	Behcet's syndrome	0.3			1	
+Abscess of cavity?	682.9	Cellulitis and abscess, unspecified	0.5			1	
+Fracture of lower of R? leg.	823.80	Fracture of unspecified part of tibia and fibula, closed	0.9			1	
+Malignant ? of abdomen (Probably ?)	195.2	Malignant neoplasm of abdomen	0.9			1	
+Salpingitis?	614.2	Salpingitis and oophoritis, unspecified	1.0			1	
+Compound Fracture Middle Femur Tibia	821.11	Fracture of shaft of femur, open	1.0	823.10	Fracture of shaft of tibia, open	1.0	1
+Bruised Testicle	922.4	Contusion of genital organs	1.0			1	
+Tract of occipital bone	730.28	Unspecified osteomyelitis, other specified sites	0.5			1	
+Internal Podalic Version. Operation	652.31	Transverse or oblique presentation, delivered, with or without mention of antepartum condition	0.8			1	
+Small wound front of L. Carly	891.0	Open wound of lower leg, without mention of complication	0.7			1	
+Chr.? Phalanx thumb.	730.17	Chronic osteomyelitis, wrist and hand	0.5			1	
+T.B.C.P.? J.S.Q.?	011.90	Pulmonary tuberculosis, unspecified	0.8			1	
+Extraction Impacted Teeth Molar	520.6	Disturbances in tooth eruption	1.0			1	
+Scrak Bite. Warse of L. leg.	989.5	Toxic effect of venom	0.9	E905.0	Accident caused by venomous snakes and lizards	0.9	1
+Undetermined pt. removed by request	799.9	Other unknown and unspecified causes of morbidity and mortality	0.8			1	
+Plica Polonica in the Rt leg.	686.9	Unspecified local infection of skin and subcutaneous tissue	0.4			1	
+Acute Entero - Myelitis R. Fever.	045.90	Acute poliomyelitis, unspecified type	0.8			1	
+Bilabia. olitis. Khedia					1		
+Salvarsan Injection?	097.9	Syphilis, unspecified	0.9			1	
+Observation for Typhus Fever|Sent for observation as to Typhus fever.	V71.89	Observation and evaluation for other specified suspected conditions	1.0			1	
+Clinical Ewes?					1		
+Osteoma of Chest	213.3	Benign neoplasm of ribs, sternum, and clavicle	1.0			1	
+Left Hormonal Hernia	553.00	Unilateral femoral hernia, without mention of obstruction or gangrene, not specified as recurrent	0.8			1	
+Suspected multiple Syphilitic ?	V71.89	Observation and evaluation for other specified suspected conditions	0.9			1	
+Fracture St. James					1		
+Toxic lite of Foot	682.7	Cellulitis and abscess of foot, except toes	0.6			1	
+Stiri. & I.S.Q					1		
+Zymaund cured					1		
+Schandias Disease					1		
+Lumencolosis					1		
+Antinatal Astoria Observation	V22.1	Supervision of other high-risk pregnancy	0.7			1	
+Sigmoidoscopy	V71.89	Observation and evaluation for other specified suspected conditions	0.8			1	
+Uterine Metric. Calculus	218.9	Leiomyoma of uterus, unspecified	0.6			1	
+Chronic Cunebiasis	006.2	Chronic intestinal amebiasis without mention of abscess	0.5			1	
+Observation, Typhoid Fever ruled out|Sent for Observation as No Typhoid	V71.89	Observation and evaluation for other specified suspected conditions	1.0			1	
+Abscess of ? Cavity	682.9	Cellulitis and abscess, unspecified	0.7				1
+Old Age	797	Senility without mention of psychosis	1.0				1
+Stenosis to bloway due head	786.09	Other dyspnea and respiratory abnormalities	0.4				1
+Wittes Crisis						1	
+Ostemyelitis of rt. Sec. phule.	730.04	Acute osteomyelitis of bones of forearm, wrist, and hand	0.9				1
+Mastoid Operation	383.9	Mastoiditis, unspecified	0.8	V45.89	Other specified postprocedural states	0.7	1
+Under Observation	V71.9	Observation for suspected condition, not found	1.0				1
+Dysexn	009.2	Infectious colitis, enteritis, and gastroenteritis	0.5				1
+Transferred to Govt Hosp. Haifa						1	
+Nonbanchs Stab W S Abs.?	879.9	Open wound(s) of other and unspecified sites, complicated	0.8	E966	Assault by cutting and piercing instrument	0.7	1
+Gastrilis of Skin						1	
+Vitalds Sclir losis	440.9	Generalized and unspecified atherosclerosis	0.4				1
+Neuro Atropine ht. lf	972.3	Poisoning by parasympatholytics [anticholinergics and antimuscarinics] and spasmolytics	0.4				1
+Poisoning much? Bronxy? tis Imp.	989.9	Toxic effect of unspecified substance	0.8	490	Bronchitis, not specified as acute or chronic	0.7	1
+Comp. Back oper.? & Sarc... ill.?	998.9	Other and unspecified complications of procedures, not elsewhere classified	0.7				1
+Nervous Relentin? Urine & Stool	788.20	Retention of urine, unspecified	0.9	564.00	Constipation, unspecified	0.8	1
+Asca...? Trich...?	127.0	Ascariasis	0.9	127.3	Trichuriasis	0.9	1
+Pysaria? much better	696.1	Other psoriasis	0.5				1
+Nephlogen? Leuttaemia	208.90	Leukemia of unspecified cell type without remission	0.9	583.9	Nephritis and nephropathy, not specified as acute or chronic, with unspecified pathological lesion in kidney	0.4	1
+T.B. Mellitus of Vague(?)	011.90	Pulmonary tuberculosis, unspecified	0.8	250.00	Diabetes mellitus without complication, type II or unspecified, not uncontrolled	0.8	1
+Stomps.						1	
+Drug Infusion? WS Infant. Zymoticin? P.	136.9	Unspecified infectious and parasitic diseases	0.6				1
+Luc Scabies? Rectal Ne...s?	133.0	Scabies	0.8	154.1	Malignant neoplasm of rectum	0.5	1
+Comp Depres Psuchu Skull.	803.10	Open fracture of skull vault with intracranial injury, unspecified	0.9				1
+Tacs Ulcer	707.9	Chronic ulcer of unspecified site	0.5				1
+Pyrexia Pulfe Rock	780.60	Fever, unspecified	0.8				1
+Nephrexie	583.9	Nephritis and nephropathy, not specified as acute or chronic, with unspecified pathological lesion in kidney	0.9				1
+Enlargitis						1	
+Deep Bursa / menal plexus	727.3	Other bursitis	0.8				1
+Ulcerated / Plan Is / Neck	707.19	Chronic ulcer of other specified sites	0.8				1
+Infection ? Depositis	136.9	Unspecified infectious and parasitic diseases	0.7				1
+Ist.& 2d T Fall & Exh.	780.79	Other malaise and fatigue	0.5	E888.9	Other and unspecified fall	0.9	1
+Pneumonia kind	486	Pneumonia, organism unspecified	1.0				1
+Chr. C. C. Ulitis?	558.9	Other and unspecified noninfectious gastroenteritis and colitis	0.8				1
+Bladder issue?	788.99	Other symptoms involving urinary system	0.7				1
+Den?? Empy? Colitis	558.9	Other and unspecified noninfectious gastroenteritis and colitis	0.4				1
+Obst Rt-Leg	444.22	Arterial embolism and thrombosis of lower extremity	0.6				1
+Paraly tic Prof. H. Plesia	342.90	Hemiplegia, unspecified	0.9				1
+Fracture base of Marshall	825.21	Fracture of metatarsal bone(s), closed	0.7				1
+Imp. C.T.						1	
+Fract. leg externity Parietal Wall	823.80	Fracture of tibia and fibula, unspecified part, closed	0.7			0	
+Varicose Angina of throat	462	Acute pharyngitis	0.5			0	
+√ Tooth Extraction + Repair	V58.42	Aftercare following surgery of teeth, oral cavity, and jaw	0.9			0	
+Pyesis (?)	682.9	Cellulitis and abscess, unspecified	0.6			0	
+Rech. Stung? Umbilical + Bronchitis Hernia?	553.1	Umbilical hernia without mention of obstruction or gangrene	0.3	490	Bronchitis, not specified as acute or chronic	0.3	1
+Vacan. Injection	V06.9	Need for prophylactic vaccination and inoculation against unspecified single disease	0.8			0	
+Xa 3002						1	
+Vulvario Clinical	616.10	Vaginitis and vulvovaginitis, unspecified	0.4			0	
+Dissica Toxicaemia	038.9	Unspecified septicemia	0.5			0	
+Urticaria GRS-181 + Scabies + Father.	708.9	Urticaria, unspecified	1.0	133.0	Scabies	1.0	1
+Malinated tract. Nerve	192.9	Malignant neoplasm of other and unspecified parts of nervous system	0.7			0	
+Eczema des wets T.F.	692.9	Contact dermatitis and other eczema, unspecified cause	0.9			0	
+Left Ischio rectal Colculus	566	Anal and rectal abscess	0.6			0	
+In Observation.	V71.9	Observation and evaluation for unspecified suspected condition	1.0			0	
+Pleurotomy & L. Lung	V58.73	Aftercare following surgery of respiratory system	0.6			0	
+Infectious						1	
+Rect S of Bull.						1	
+Contusion of PleaS.	922.2	Contusion of chest wall	0.8			0	
+Pilaque						1	
+No Cas Plewaitis sent to French Hosp. Nazareth	511.0	Pleurisy without mention of effusion or current tuberculosis	0.8			0	
+Dermato / Phylosis / Jees.	110.9	Dermatophytosis, site unspecified	0.3			0	
+Naemorrhice operation Recovery	V58.75	Aftercare following surgery of the digestive system	0.9			0	
+Cyrexia	780.60	Fever, unspecified	1.0			0	
+Strep Local Anaemia. Sep Licin	035	Erysipelas	0.4			0	
+Haemorrh & Saperation	682.9	Cellulitis and abscess, unspecified	0.6	459.0	Hemorrhage, unspecified	0.6	1
+Caral. O.B.	680.9	Carbuncle and furuncle, unspecified site	0.3			0	
+Painful Cks.	724.79	Other disorders of coccyx	0.5			0	
+NO BEDS AVAILABLE.						1	
+Tumor of the Petren?	239.89	Neoplasm of unspecified nature, other specified sites	0.3			0	
+Typhus Recov.	081.9	Typhus fever, unspecified	1.0			0	
+Left Before M.O. Round						1	
+Congestion Near Kra? fracture.	804.90	Unspecified intracranial and skull injury without mention of open wound, consciousness state unspecified	0.3			0	
+Chronic PelHoran S. en Aie T.	614.4	Chronic or unspecified pelvic inflammatory disease (PID)	0.4			0	
+Expatration Dermatitis	695.89	Other specified erythematous conditions	0.6			0	
+Double Urethral much Ceisure failure	752.6	Congenital anomalies of urethra and urinary meatus	0.4	780.39	Other convulsions	0.4	1
+AnaBiDis of the Colon.	006.9	Amebiasis, unspecified	0.6			0	
+Hypodermic Injection	V58.89	Other specified aftercare	0.8			0	
+Acute Ing. Hepatitis	070.1	Viral hepatitis A with hepatic coma	0.9			0	
+Abscess in glebal region	682.5	Cellulitis and abscess of buttock	0.9			0	
+Intestinal Obstomy	560.9	Unspecified intestinal obstruction	1.0			0	
+Submersion	994.1	Drowning and nonfatal submersion	1.0	E910.9	Unspecified accidental drowning and submersion	0.9	1
+Tinea versicolor	111.0	Pityriasis versicolor	1.0			1	
+No advanced of Lung Pathology	V71.2	Observation for suspected tuberculosis	0.7			1	
+Ducumpler Abortion	637.91	Unspecified abortion, without mention of complication, incomplete	0.9			1	
+Encephalitis Venus	323.9	Unspecified cause of encephalitis, myelitis and encephalomyelitis	0.8			1	
+[uncertain_diagnosis]							1
+Tumor of Biopay	239.9	Neoplasms of unspecified nature, site unspecified	0.4			1	
+Transferred to Lazarette	V07.0	Prophylactic isolation	0.8			1	
+Cond. W. Scalp Drunk?	873.0	Open wound of scalp, without mention of complication	0.8	305.00	Alcohol abuse, unspecified	0.7	1
+Bite of Culm. TB.	011.90	Pulmonary tuberculosis, unspecified	0.6			1	
+Scrotiozio	608.89	Other specified disorders of male genital organs	0.5			1	
+Nonbehaling Swelly P of wall Rt	707.9	Chronic ulcer of unspecified site	0.6			1	
+Const. Wound of ?knee?	891.0	Open wound of knee, leg [except thigh], and ankle, without mention of complication	0.7			1	
+Venial Corporis	110.5	Dermatophytosis of the body	0.9			1	
+Left Contusion	924.9	Contusion of unspecified site	0.8			1	
+Cellulagra?	682.9	Other cellulitis and abscess, site unspecified	0.6			1	
+Ulcers Osleno? R. Bids.	707.9	Chronic ulcer of unspecified site	0.4			1	
+Pseudo Leukemia treatment|Typhoid Refusal	075	Infectious mononucleosis	0.6	V64.2	No medical care given because of patient's decision for other and unspecified reasons	0.9	1
+Contused ?Dea?	924.9	Contusion of unspecified site	0.5			1	
+Italmitis Imperson?							1
+Stabsy Embolism further treat.	444.9	Arterial embolism and thrombosis of unspecified site	0.6			1	
+Fracture of Rt. Ins. Metat? Lateral	825.20	Fracture of metatarsal bone(s), closed	0.7			1	
+Oka Pains. Impr.	780.96	Generalized pain	0.4			1	
+Eczema Pjan	692.9	Contact dermatitis and other eczema, unspecified cause	0.8			1	
+Died Before Admission	799.9	Other unknown and unspecified causes of morbidity and mortality	0.9			1	
+Diebeales Elbow joint Typhus	080	Louse-borne [epidemic] typhus	0.7	250.00	Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled	0.7	1
+Laryngitis regat	464.00	Acute laryngitis without mention of obstruction	0.9			1	
+Phlebitis? Proctalgia? Right leg?	451.2	Thrombophlebitis of lower extremities, unspecified	0.6	569.42	Proctalgia fugax	0.6	1
+Lymphatic Cervical Doubt.	289.3	Lymphadenitis, unspecified, except mesenteric	0.7			1	
+N A D	V71.9	Observation for unspecified suspected condition	0.9			1	
+D&T (?) + Clot	453.40	Acute venous thrombosis of unspecified deep vessels of lower extremity	0.7			1	
+Em[?]oe[?]a rt subphrenic abs	567.22	Subphrenic abscess	0.9	510.9	Empyema without fistula	0.7	1
+Puep. Phom(?)	670.00	Major puerperal infection, unspecified as to episode of care	0.6			1	
+Fracture Rt femur? I.S.A?	821.00	Fracture of femur, shaft or unspecified part, closed	0.8			1	
+N.A.D.	V71.9	Observation for unspecified suspected condition	0.9			1	
+Pen Pleurisy & Cong. Lt. Lower Lobe Rt.	486	Pneumonia, organism unspecified	0.8	511.0	Pleurisy without mention of effusion or current tuberculosis	0.8	1
+Endocare para metritis	615.9	Unspecified inflammatory disease of uterus, except cervix	0.9	614.4	Acute parametritis and pelvic cellulitis	0.9	1
+Seive Rt. Oper.							1
+Refused Treatment (Balan...)	V64.2	No medical care given because of patient's decision for other and unspecified reasons	0.9	607.1	Balanoposthitis	0.7	1
+Acute S. C.							1
+Chronic EmStoma	510.9	Empyema without fistula	0.9			0.0	1
+Prol. Tibiae Totale	823.20	Fracture of shaft of tibia, closed	0.5			0.0	1
+COPSI C Jakt Sa + Elbow.					0.0		
+Begining Band's disease	568.0	Peritoneal adhesions	0.3			0.0	1
+Transf. of Wrist Rt. P.	813.40	Fracture of distal end of radius, unspecified part, closed	0.7			0.0	1
+Bilateral Salpingitis [highly speculative]	614.2	Salpingitis and oophoritis, unspecified	1.0			0.0	1
+Postic Regurgitation Decomposed	424.1	Aortic valve disorders	0.9	428.0	Congestive heart failure, unspecified	0.9	1
+Cond. U.S.S of Bladder					0.0		
+Compl. fract. of S. In Bl.	594.1	Calculus in bladder	0.4			0.0	1
+Chr. Adenophleg. Lt.	289.1	Chronic lymphadenitis	0.9			0.0	1
+Pleurisy & Lhis	012.00	Tuberculous pleurisy, unspecified	0.6			0.0	1
+Cystitis Sand Fl.F.?	595.9	Cystitis, unspecified	1.0	594.1	Calculus in bladder	0.6	1
+Subc. B...					0.0		
+Peripheral Senile	440.20	Atherosclerosis of native arteries of the extremities, unspecified	0.6			0.0	1
+Pyrexia Schwart.	780.60	Fever of unknown origin	1.0			0.0	1
+Ilyon Thio-Cod Satis					0.0		
+Excisive Jissue of Skull	733.99	Other and unspecified disorder of bone and cartilage	0.4			0.0	1
+Penetrating Wound Abd. Brain	854.10	Intracranial injury of other and unspecified nature, with open intracranial wound, unspecified state of consciousness	0.4			0.0	1
+Brucie / of Buck	922.31	Contusion of back	0.6			0.0	1
+Inflt. / Rt Sea / Region	540.9	Acute appendicitis without mention of peritonitis	0.4			0.0	1
+Neco. Lp. Congenital	749.10	Cleft lip, unspecified	0.2			0.0	1
+Bladder Irrigation & Catheter.					0.0		
+Iyelitis	590.10	Acute pyelonephritis without lesion of renal medullary necrosis	0.9			0.0	1
+Chol. Neph. With Bilk	582.9	Chronic glomerulonephritis with unspecified pathological lesion in kidney	0.7			0.0	1
+Clinical B.Py.					0.0		
+Diorebitis Surg.	997.2	Peripheral vascular complications	0.4			0.0	1
+Duosh Amot Pneum					0.0		
+Acu Le Chesti?	786.50	Chest pain, unspecified	0.6			0.0	1
+Photophobia Lt. Illeo Sac. Bone.	846.9	Sprains and strains of sacroiliac region, unspecified site	0.7	368.13	Photophobia	0.7	1
+Cricum + Cauterization Papil.	219.0	Benign neoplasm of cervix uteri	0.6			0.0	1
+Refused Op. Pilon.	685.1	Pilonidal cyst with abscess	0.9			0.0	1
+Iner. Bite	919.4	Insect bite, nonvenomous, of unspecified site	0.9	E906.9	Bite of other and unspecified arthropod	0.9	1
+Corgs' Corsion	922.31	Contusion of back	0.4			0.0	1
+V.D.G. J.U.S. / S.H.	098.0	Gonococcal infections, acute, of lower genitourinary tract	0.7			0.0	1
+Lung					0.0		
+Inguin. Oster	550.90	Inguinal hernia, without mention of obstruction or gangrene, unilateral or unspecified	0.4			0.0	1
+Amicr S. Congin. Chistes Eyelids & Daily	743.63	Other specified congenital anomalies of eyelid	0.8			0.0	1
+Gebangitis L.S.O.					0.0		
+W.D. Append.	540.9	Acute appendicitis without mention of peritonitis	0.9			0.0	1
+Pleba Pyor	451.9	Phlebitis and thrombophlebitis of unspecified site	0.7			0.0	1
+Phot. W.S. Both Thighs.	890.1	Open wound of thigh, complicated	0.9	E922.9	Injury by other and unspecified firearm missile	0.9	1
+Phot.W.S.Abdomen Lt. Shoulder Rt. Forearm Lt. Wrist Lt. Buttock	879.9	Open wound(s) of other and unspecified sites, without mention of complication	0.9	E922.9	Injury by other and unspecified firearm missile	0.9	1
+Phot. W.S. Rt. Buttock Lt. Forearm.	879.9	Open wound(s) of other and unspecified sites, without mention of complication	0.9	E922.9	Injury by other and unspecified firearm missile	0.9	1
+Phot. W.S. Lt. Leg & Rt. Thighs.	894.1	Multiple and unspecified open wound of lower limb, complicated	0.9	E922.9	Injury by other and unspecified firearm missile	0.9	1
+Phot. W.S. Rt. Thigh.	890.1	Open wound of thigh, complicated	0.9	E922.9	Injury by other and unspecified firearm missile	0.9	1
+NAD							1
+Chest N.O.S.	786.50	Chest pain, unspecified	0.5			1	
+Epitheliod fit-Nevrotic	216.9	Benign neoplasm of skin of unspecified site	0.3			1	
+Infect. T.N.T	790.7	Bacteremia	0.4			1	
+Furuncl K ve	680.9	Carbuncle and furuncle of unspecified site	0.9			1	
+Cep. Ulcer.	533.90	Peptic ulcer, site unspecified, without mention of hemorrhage or perforation, without mention of obstruction	0.6			1	
+Deby Sro P St. Ingestion	989.9	Toxic effect of other and unspecified substances	0.5	E865.9	Accidental poisoning by other and unspecified solid and liquid substances	0.5	1
+Depres. Pneu. ebor.	486	Pneumonia, organism unspecified	0.6			1	
+Commo. Ca Secr. Lt arm	198.2	Secondary malignant neoplasm of skin	0.8			1	
+Ankle Urethritis	597.80	Urethritis, unspecified	0.6			1	
+Pan M. Fel.	681.11	Felon	0.3			1	
+N.A.D							1
+Fenehe Rx Phot. Chest							1
+Graco J Pelvis.	808.8	Fracture of unspecified part of pelvis	0.7			1	
+Rheumatic Imp.	390	Rheumatic fever without mention of heart involvement	0.9			1	
+VSH + Z Burns of Body.	949.0	Burn, unspecified site	0.9			1	
+Prote. Bile.	576.9	Unspecified disorder of biliary tract	0.6			1	
+Paraintestinal	789.00	Abdominal pain, unspecified site	0.4			1	
+Opst true Rhell Jaw S.	526.4	Inflammatory conditions of jaws	0.4			1	
+Brain U.Q.							1
+Blee Sinus Cephie Iller.	473.9	Chronic sinusitis, unspecified	0.6			1	
+Bleeding Per Demonitis	459.0	Hemorrhage, unspecified	0.4			1	
+Frels Lobe							1
+[duration_calc_impossible]							1
+Refused Op.	V64.1	Surgical or other procedure not carried out because of patient's decision	1.0			1	
+Complic. Inc.	998.89	Other specified complications of procedures, not elsewhere classified	0.6			1	
+X Epis Severely Infected	604.90	Orchitis and epididymitis, without mention of abscess	0.5			1	
+Traps. Primaria Laceration	879.4	Open wound of back, without mention of complication	0.7			1	
+Cond. of Thorax	922.1	Contusion of chest wall	0.6			1	
+Congs. L. Lt. Hand? C.L.	755.59	Other anomalies of upper limb, including shoulder girdle	0.4			1	
+Pneubron	485	Bronchopneumonia, organism unspecified	0.9			1	
+Quinsy N.A.D. Apello	475	Peritonsillar abscess	1.0			1	
+Chilblirth R	991.5	Chilblains	0.9			1	
+Lee.W? of Scalp	873.0	Open wound of scalp, without mention of complication	0.8			1	
+Adenitis U. Metrache	289.3	Lymphadenitis, unspecified, except mesenteric	0.7			1	
+Erosio In Utero Vig Salpi.	622.0	Erosion and ectropion of cervix	0.9	614.2	Salpingitis and oophoritis, unspecified	0.9	1
+DMT Colic & SFL							
+Depygh. & C.Vaginitis	616.10	Vaginitis and vulvovaginitis, unspecified	0.8				1
+Non Cen. Probable Ul.	533.90	Peptic ulcer of unspecified site, without hemorrhage or perforation	0.8				1
+Postritis & cul.	601.9	Prostatitis, unspecified	0.8	602.0	Calculus of prostate	0.5	1
+Trach. Ribs.	807.09	Multiple closed fractures of ribs	0.6				1
+Inf. Bursitis Rt. Rect.	727.83	Abscess of bursa	0.7				1
+Mal. Abd. Peristalsis	560.1	Paralytic ileus	0.9				1

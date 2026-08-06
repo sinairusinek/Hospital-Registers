@@ -73,6 +73,18 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Admission Date as written', 'Admission Date', 'Discharge Date as written', 'Discharge Date', 'Days in Hospital as written', 'Days in Hospital']
   },
   {
+    flag: 'icd9-low-confidence',
+    title: 'A code the classifier called speculative',
+    question: 'The second classification pass gave this diagnosis a code but scored its own certainty below 0.4 — on the prompt\'s scale, a speculative guess from partial text. The code is in the data and counts in every chart; whether it should is the question. Compare it with what the page actually says.',
+    fields: ['Diagnosis as written', 'Diagnosis', 'ICD-9 Code', 'Primary-Confidence', 'ICD-9 Chapter']
+  },
+  {
+    flag: 'icd9-second-pass',
+    title: 'Coded by the second pass, not the first',
+    question: 'These diagnoses carried no code because the original classification never reached them, and were coded afterwards by pipeline/classify_diagnoses.py using the same prompt. Every proposed code sits beside the string it came from in data/public/diagnosis-classification.tsv, which is where to strike one out. This queue exists so the second pass stays visible rather than blending into the first.',
+    fields: ['Diagnosis as written', 'Diagnosis', 'ICD-9 Code', 'Primary-Confidence', 'ICD-9 Chapter', 'Ward']
+  },
+  {
     flag: 'result-in-diagnosis',
     title: 'A Result value in the diagnosis column',
     question: 'The diagnosis or code field holds "Cured", "Died" or another outcome — the Result column\'s content one field to the left. This is a column misalignment in the source, not a missing diagnosis, so nothing has been classified from it. What does the page have in the diagnosis column?',
