@@ -300,6 +300,27 @@ def normalize_city(value: str) -> str:
     return CITY.get(cleaned.lower(), cleaned)
 
 
+# Haifa's arteries are named for the towns they lead to — Nazareth Road, Jaffa
+# Road, Acre Street — and the upstream extraction sometimes read the street's
+# namesake as the patient's city. When the address is such a street and the
+# City column holds its namesake (or the street name itself), the record is a
+# Haifa one: the many records writing "Nazareth Street, Haifa" in full carry
+# the proof. A bare street with an empty City is left empty — the repair only
+# corrects a wrong city, it never invents one.
+STREET_NAMESAKE = re.compile(
+    r"^\s*(?:Haifa[\s.,-]+)?(Nazareth|Naz\.?|Jaffa|Acre)\s*(?:St|Str|Street|Rd|Road)\b",
+    re.IGNORECASE,
+)
+
+
+def city_from_street(address: str, city: str) -> bool:
+    m = STREET_NAMESAKE.match(address or "")
+    if not m:
+        return False
+    namesake = {"naz": "Nazareth", "naz.": "Nazareth"}.get(m.group(1).lower(), m.group(1).title())
+    return city == namesake or city.lower() in (f"{namesake.lower()} road", f"{namesake.lower()} st.")
+
+
 WARD = {
     "mat": "Maternity",
     "mat.": "Maternity",
@@ -872,6 +893,7 @@ def main() -> int:
     changes: Counter[tuple[str, str, str]] = Counter()
     kima_links = load_kima_decisions()
     kima_linked = 0
+    street_reseated = 0
     final_values: dict[str, Counter[str]] = {col: Counter() for col in RULES}
     dropped = 0
     coarsened = 0
@@ -1187,6 +1209,11 @@ def main() -> int:
             if cleaned != written:
                 changes[("City", written, cleaned)] += 1
             row["City"] = cleaned
+            if city_from_street(coarsen_address(row.get("Address") or ""), cleaned):
+                changes[("City", f"{cleaned} (the address is Haifa's {cleaned}-named street)", "Haifa")] += 1
+                cleaned = "Haifa"
+                row["City"] = cleaned
+                street_reseated += 1
             kima_id, qid = kima_links.get(cleaned, ("", ""))
             row["City Kima ID"] = kima_id
             row["City Wikidata"] = qid

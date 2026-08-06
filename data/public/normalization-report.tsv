@@ -4,6 +4,7 @@ merged	Class standard	3rd	3	1194
 merged	Class standard	2nd	2	504
 merged	City	Hedera	Hadera	204
 merged	standardized ward	Infectious	Infectious Diseases	111
+merged	City	Nazareth (the address is Haifa's Nazareth-named street)	Haifa	85
 merged	City	Atlit	Athlit	83
 merged	City	Shefa Amr	Shafa Amr	81
 merged	City	Tulkarm	Tulkarem	77
@@ -12,6 +13,7 @@ merged	standardized ward	Isolation|Infectious Section	Isolation | Infectious Dis
 merged	standardized ward	Infectious Diseases Section	Infectious Diseases	51
 merged	City	Shefa-'Amr	Shafa Amr	46
 merged	standardized ward	Infectious Section	Infectious Diseases	44
+merged	City	Jaffa (the address is Haifa's Jaffa-named street)	Haifa	43
 merged	Class standard	1st	1	33
 merged	standardized ward	Isolation|Infectious	Isolation | Infectious Diseases	29
 merged	City	Haifa?	Haifa	29
@@ -65,6 +67,7 @@ merged	City	Pardes Hanna	Pardess Hanna	6
 merged	StandardNationality	Brit.	British	6
 merged	City	Had. Hac.	Had. Hac	5
 merged	City	Tul-Karem	Tulkarem	5
+merged	City	Acre (the address is Haifa's Acre-named street)	Haifa	5
 merged	City	Ramah	Rameh	5
 merged	City	Is.	Is	5
 merged	City	Kiryat Hayim	Kiryat Haim	5
@@ -124,6 +127,7 @@ merged	City	Acre S/Dist.	Acre S/Dist	2
 merged	City	Afuleh	Afula	2
 merged	City	Yagour	Yajour	2
 merged	City	Kfar Yassif	Kafr Yasif	2
+merged	City	Nazareth Road (the address is Haifa's Nazareth Road-named street)	Haifa	2
 merged	City	El Yajur	Yajour	2
 merged	City	Hadar HaCarmel	Hadar Hacarmel	2
 merged	City	El Bassa	Bassa	2
@@ -478,6 +482,7 @@ merged	StandardNationality	"Pal. ""R"""	Palestinian	1
 merged	standardized Religion	Byzage	Druze	1
 merged	StandardNationality	Pal (L)	Palestinian	1
 merged	City	Sakhnien	Sakhnin	1
+merged	City	Jaffa Road (the address is Haifa's Jaffa Road-named street)	Haifa	1
 merged	StandardNationality	Palest. Egyptian	Palestinian Egyptian	1
 merged	StandardNationality	Palest. C.R.L.	Palestinian	1
 merged	StandardNationality	Palest. R.C.	Palestinian	1
@@ -540,7 +545,7 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		254
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	20468
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	20471
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8771
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4654
 derived	ICD-9 Chapter		520-579 Digestive system	3260
