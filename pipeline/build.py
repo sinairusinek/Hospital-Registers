@@ -63,8 +63,8 @@ def load_kima_decisions() -> dict[str, tuple[str, str]]:
         return links
     with KIMA_DECISIONS.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle, delimiter="\t"):
-            if row.get("decision") == "matched" and row.get("kima_id"):
-                links[row["city"]] = (row["kima_id"], row.get("wikidata_qid", ""))
+            if row.get("decision") == "matched" and (row.get("kima_id") or row.get("wikidata_qid")):
+                links[row["city"]] = (row.get("kima_id", ""), row.get("wikidata_qid", ""))
     return links
 
 # Column 45 lost its header in the source spreadsheets. By position (between

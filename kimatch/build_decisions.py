@@ -290,15 +290,15 @@ MANUAL = {
     "Beit Jan": (M, 90226, "human", ""),
     "Beit Gan": (NKE, None, "human", "Beit Gan by Yavne'el; no Kima entry"),
     "Bet Gan": (NKE, None, "human", ""),
-    "Sdedera": (AMB, None, "human", "garbled; held for archival re-check"),
-    "Sdedead": (AMB, None, "human", ""),
+    "Sdedera": (M, 858, "human", "user ruling: garbled Hadera"),
+    "Sdedead": (M, 858, "human", "user ruling: garbled Hadera"),
     "Emek": (AMB, None, "human", "region nickname without clean referent"),
     "Emek R": (AMB, None, "human", ""),
     "Emek R.|Emek": (AMB, None, "human", ""),
     "Kishon": (NKE, None, "human", "Kishon harbour area; river entity rejected"),
 
     # --- pipe alternations across different towns: ambiguous ---
-    "Haifa|Nesher": (AMB, None, "agent", "two different towns"),
+    "Haifa|Nesher": (M, 20, "human", "user ruling: Nesher"),
     "Haifa|Hedera": (AMB, None, "agent", "two different towns"),
     "Haifa|Ardel Jahud, Haifa": (NKE, None, "human", "finer reading Ard el-Yahud; no Kima entry"),
     "Haifa|Churches Ort": (AMB, None, "agent", "second reading unidentifiable"),
@@ -371,7 +371,7 @@ MANUAL = {
     "Ras El Ein": (AMB, None, "agent", ""),
     "Kefar Bireim": (AMB, None, "agent", "Bir'im? kibbutz Bar'am is post-1948"),
     "Salem": (AMB, None, "agent", ""),
-    "Tira": (AMB, None, "agent", "Tirat Karmel vs other Tiras"),
+    "Tira": (M, 756, "human", "user ruling: Tira/Tireh in this dataset = al-Tira (Tirat Karmel)"),
     "Buriq": (AMB, None, "agent", ""),
     "Khamra": (AMB, None, "agent", ""),
     "Majamil": (AMB, None, "agent", ""),
@@ -387,7 +387,7 @@ MANUAL = {
     "Nabi Sha'man Hagelil": (AMB, None, "agent", ""),
     "Carmel Station": (AMB, None, "agent", ""),
     "Kharwa": (AMB, None, "agent", ""),
-    "Shezlia": (AMB, None, "agent", "Herzlia?"),
+    "Shezlia": (M, 700, "agent", "by analogy with the Shenglia ruling"),
     "Huleh": (AMB, None, "human", "held for human review: Hula Valley region entity; suggested #3327"),
     "Hammeh": (AMB, None, "human", "held for human review: el-Hamme spa, but Kima entity is the Hammat Gader archaeological site; suggested #4414"),
     "Mount Tabor": (AMB, None, "human", "held for human review: Mount Tabor entity; suggested #5765"),
@@ -398,7 +398,7 @@ MANUAL = {
     "002.2": (JUNK, None, "agent", ""),
     "Is": (JUNK, None, "agent", ""),
     "Kibutz": (JUNK, None, "agent", "generic word"),
-    "Shenglia": (JUNK, None, "agent", ""),
+    "Shenglia": (M, 700, "human", "user ruling: Shenglia Qrt = Herzliya"),
     "Kiriat Kinzet": (JUNK, None, "agent", ""),
     "Smillel": (JUNK, None, "agent", ""),
     "Staerneck": (JUNK, None, "agent", ""),
@@ -408,12 +408,35 @@ MANUAL = {
     "Nebertz": (JUNK, None, "agent", ""),
     "Halershert": (JUNK, None, "agent", ""),
     "Port Mason": (JUNK, None, "agent", ""),
-    "Roy": (JUNK, None, "agent", ""),
+    "Roy": (M, None, "human", "El-Ro'i by Kiryat Haroshet; no Kima entry, Wikidata only"),
     "Kibbutz Hamarking": (JUNK, None, "agent", ""),
     "Geda": (JUNK, None, "agent", ""),
     "Ramatby": (JUNK, None, "agent", ""),
     "Haim": (JUNK, None, "agent", "fragment"),
 }
+
+# City values outside the Jewish-patient queue (they occur only among other
+# communities' records) that the historian has ruled on. n_records here counts
+# the whole dataset, not the Jewish subset.
+# city value -> (decision, kima_id, decided_by, note, n_records_all)
+EXTRA = {
+    "Tireh": (M, 756, "human", "user ruling: Tira/Tireh in this dataset = al-Tira (Tirat Karmel)", 268),
+    "Tire": (M, 756, "human", "user ruling: Tira/Tireh = al-Tira", 5),
+    "Tirat Carmel": (M, 756, "human", "", 3),
+    "Tireh (Acre Sub District)": (M, 756, "human", "linked per ruling; note the clerk's Acre Sub District qualifier", 2),
+    "Tireh Village": (M, 756, "human", "", 1),
+    "Tireh-Haifa": (M, 756, "human", "", 1),
+    "Tireh, Haifa": (M, 756, "human", "", 1),
+    "Haifa|Tireh": (M, 756, "human", "pipe policy: finer reading", 1),
+    "Tires": (M, 756, "human", "garbled Tireh", 1),
+    "Tires|Tireh": (M, 756, "human", "", 1),
+    "Tirat Carmel / Haifa": (M, 756, "human", "", 1),
+    "Tireh-Hayark": (M, 756, "human", "garbled suffix", 1),
+    "Tireh/Athlit": (AMB, None, "agent", "alternation across two different places", 1),
+    "Tirat Zvi": (M, 757, "agent", "kibbutz Tirat Zvi, Bet Shean valley - not al-Tira", 1),
+}
+
+WD_ONLY = {"Roy": "Q11878352"}
 
 QID_RE = re.compile(r"^Q\d+$")
 
@@ -443,6 +466,28 @@ def main() -> None:
             continue
 
         kima_name = qid = qid_source = ""
+        if decision == M and kima_id:
+            p = places.get(str(kima_id))
+            if p is None:
+                raise SystemExit(f"kima id {kima_id} for {city!r} not in dump")
+            kima_name = p["primary_rom_full"]
+            raw_qid = (p["WikiData_Id"] or "").strip()
+            if QID_RE.match(raw_qid):
+                qid, qid_source = raw_qid, "kima-dump"
+        elif decision == M:
+            qid, qid_source = WD_ONLY.get(city, ""), "human"
+        out_rows.append({
+            "city": city, "spelling": city, "n_records": n,
+            "kima_id": kima_id if decision == M else "",
+            "kima_name_rom": kima_name,
+            "wikidata_qid": qid, "qid_source": qid_source, "wikidata_direct": "",
+            "decision": decision, "grade": r["_grade"],
+            "confidence": r["_confidence"] if decided_by == "auto" else "",
+            "decided_by": decided_by, "note": note, "date": DATE,
+        })
+
+    for city, (decision, kima_id, decided_by, note, n_all) in EXTRA.items():
+        kima_name = qid = qid_source = ""
         if decision == M:
             p = places.get(str(kima_id))
             if p is None:
@@ -452,13 +497,12 @@ def main() -> None:
             if QID_RE.match(raw_qid):
                 qid, qid_source = raw_qid, "kima-dump"
         out_rows.append({
-            "city": city, "spelling": city, "n_records": n,
+            "city": city, "spelling": city, "n_records": n_all,
             "kima_id": kima_id if decision == M else "",
             "kima_name_rom": kima_name,
-            "wikidata_qid": qid, "qid_source": qid_source,
-            "decision": decision, "grade": r["_grade"],
-            "confidence": r["_confidence"] if decided_by == "auto" else "",
-            "decided_by": decided_by, "note": note, "date": DATE,
+            "wikidata_qid": qid, "qid_source": qid_source, "wikidata_direct": "",
+            "decision": decision, "grade": "outside-queue",
+            "confidence": "", "decided_by": decided_by, "note": note, "date": DATE,
         })
 
     if missing:
@@ -484,6 +528,48 @@ def main() -> None:
                     row["wikidata_qid"] = hit.qid
                     row["qid_source"] = "wikidata-reconciled"
                 print(f"  {name} -> {hit.qid} ({hit.label}: {hit.description})", file=sys.stderr)
+
+    # Independent Wikidata reconciliation of every City value, separate from
+    # the QIDs Kima carries. Results are cached so reruns cost nothing; a
+    # disagreement with the Kima-derived QID sends the value to review.
+    if resolve or "--wikidata" in sys.argv:
+        import json
+        import time
+        sys.path.insert(0, "/Users/sinairusinek/Documents/GitHub/Kimatch")
+        from kimatch.data.wikidata import resolve_place
+        cache_path = ROOT / "kimatch" / "wikidata-direct-cache.json"
+        cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
+        pending = [r for r in out_rows if r["city"] not in cache]
+        for i, row in enumerate(pending):
+            query = row["city"].split("|")[0].strip()
+            try:
+                hit = resolve_place(query)
+                cache[row["city"]] = hit.qid if hit else ""
+            except Exception as exc:
+                print(f"  direct lookup failed for {query}: {exc}", file=sys.stderr)
+                continue
+            time.sleep(0.15)
+            if (i + 1) % 50 == 0:
+                print(f"  direct wikidata: {i+1}/{len(pending)}", file=sys.stderr)
+                cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=0))
+        cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=0))
+        conflicts = 0
+        for row in out_rows:
+            direct = cache.get(row["city"], "")
+            row["wikidata_direct"] = direct
+            if row["decision"] != M or not direct:
+                continue
+            if "|" in row["city"] or " / " in row["city"]:
+                # The direct query used the first reading of an alternation; a
+                # mismatch against the finer-reading match is an artifact.
+                continue
+            if row["wikidata_qid"] and direct != row["wikidata_qid"]:
+                conflicts += 1
+                flag = f"held for human review: QID conflict - {row['qid_source']} {row['wikidata_qid']} vs direct Wikidata {direct}"
+                row["note"] = f"{row['note']}; {flag}" if row["note"] else flag
+            elif not row["wikidata_qid"]:
+                row["wikidata_qid"], row["qid_source"] = direct, "wikidata-direct"
+        print(f"direct wikidata: {sum(1 for r in out_rows if r['wikidata_direct'])} values resolved, {conflicts} conflicts flagged for review")
 
     out_rows.sort(key=lambda r: (-r["n_records"], r["city"]))
     with DECISIONS.open("w", encoding="utf-8", newline="") as fh:
