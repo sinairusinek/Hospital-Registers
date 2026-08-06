@@ -61,6 +61,12 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Admission Date as written', 'Admission Date', 'Discharge Date as written', 'Discharge Date', 'Days in Hospital as written', 'Days in Hospital']
   },
   {
+    flag: 'date-seated-by-order',
+    title: 'A date taken from the register\'s order',
+    question: 'The date as written falls outside 1930–48 and the record carries no second date to repair it from, so the admission has been taken whole from the records either side of it, which carry the same date as each other. The day survives the misreading in both. This is a reconstruction from the order, not a reading of the page: does the page bear it out?',
+    fields: ['Admission Date as written', 'Admission Date', 'Discharge Date as written', 'Discharge Date', 'Days in Hospital as written', 'Days in Hospital']
+  },
+  {
     flag: 'stay-disagrees',
     title: 'The stay disagrees with the count beside it',
     question: 'The stay computed from the two dates differs from the number the clerk wrote in the register. Usually one date is off by a day or two. Which does the page support — and is the discrepancy a transcription slip or the clerk\'s own arithmetic?',
