@@ -18,6 +18,16 @@ mkdirSync(dirname(dest), { recursive: true });
 copyFileSync(src, dest);
 console.log(`Staged dataset → ${dest}`);
 
+// Notebook + page -> IIIF image service, so a record can be pointed at the
+// scan of its own page. Built by pipeline/iiif_pages.py; optional, because a
+// site without it falls back to the whole-notebook links.
+const pagesSrc = resolve(here, '../../data/public/iiif-pages.tsv');
+const pagesDest = resolve(here, '../public/data/iiif-pages.tsv');
+if (existsSync(pagesSrc)) {
+  copyFileSync(pagesSrc, pagesDest);
+  console.log(`Staged IIIF page index → ${pagesDest}`);
+}
+
 // The Places panel joins each record's City onto the reviewed gazetteer
 // decisions; the file is optional so the app still runs without it.
 const decisionsSrc = resolve(here, '../../kimatch/city-kima-decisions.tsv');

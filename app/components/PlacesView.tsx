@@ -1,9 +1,10 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
-import { MapPin, ExternalLink, ChevronLeft, ChevronRight, Download, BookOpen } from 'lucide-react';
+import { MapPin, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { RegistryRecord } from '../types';
 import { UNKNOWN, facetValue } from '../facets';
 import HelpPanel, { HelpSection } from './HelpPanel';
+import ScanLink, { usePageScans } from './ScanLink';
 
 declare const Papa: any;
 
@@ -100,6 +101,7 @@ interface Props {
 
 const PlacesView: React.FC<Props> = ({ data }) => {
   const [decisions, setDecisions] = useState<Record<string, Decision> | null>(null);
+  const scans = usePageScans();
   const [active, setActive] = useState<string>('held');
   const [page, setPage] = useState(1);
   const [religion, setReligion] = useState<string>('All');
@@ -313,18 +315,7 @@ const PlacesView: React.FC<Props> = ({ data }) => {
                       {val(row, 'Notebook Record ID') && <span>record {val(row, 'Notebook Record ID')}</span>}
                       <span>{facetValue(row['Religion'])}{val(row, 'Nationality') ? ` · ${val(row, 'Nationality')}` : ''}</span>
                     </div>
-                    {link ? (
-                      <a
-                        href={link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
-                      >
-                        <BookOpen size={13} /> Open the notebook scan <ExternalLink size={11} />
-                      </a>
-                    ) : (
-                      <span className="text-xs text-slate-400 italic">no scan link for this notebook</span>
-                    )}
+                    <ScanLink scans={scans} notebook={notebook} page={pageNo} notebookUrl={link} />
                   </div>
                   <dl className="px-5 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
                     {FIELDS.map(field => {

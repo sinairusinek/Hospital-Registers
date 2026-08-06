@@ -1,9 +1,10 @@
 
 import React, { useMemo, useState } from 'react';
-import { ClipboardCheck, ExternalLink, ChevronLeft, ChevronRight, Download, BookOpen } from 'lucide-react';
+import { ClipboardCheck, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { RegistryRecord } from '../types';
 import { UNKNOWN } from '../facets';
 import HelpPanel, { HelpSection } from './HelpPanel';
+import ScanLink, { usePageScans } from './ScanLink';
 
 declare const Papa: any;
 
@@ -17,8 +18,8 @@ const HELP: HelpSection[] = [
     body: <p>The queues are ordered by how tractable they are, not by size. Twenty records where an operation was entered in the diagnosis column can be settled in an afternoon and will change how that column is read; the 1,465 with no placeable ICD-9 code are a long project. Start at the top.</p>
   },
   {
-    heading: 'What the scan link gives you',
-    body: <p>The link opens the notebook in the Haifa library's viewer — the whole volume, not the single page, because that is the granularity the dataset records. The notebook and page numbers beside it are what to navigate to. Records whose notebook carries no link show the numbers alone.</p>
+    heading: 'What the scan links give you',
+    body: <p><em>Open page N</em> goes straight to the image of that page, served by the Haifa library over IIIF. <em>Whole notebook</em> opens the library's own viewer, which cannot be opened at a page — its build reads no page parameter — so it always starts at the front of the volume. Pages resolve for 20,794 of the 29,726 records: notebooks 6 to 9 have no scan at all, notebook 29 is only partly digitized, and some records carry no page number to resolve.</p>
   },
   {
     heading: 'Corrections go to the source',
@@ -137,6 +138,7 @@ const val = (row: RegistryRecord, key: string): string => {
 
 const ReviewView: React.FC<Props> = ({ data }) => {
   const [active, setActive] = useState<string>(QUEUES[0].flag);
+  const scans = usePageScans();
   const [page, setPage] = useState(1);
 
   // The flag column is written by pipeline/build.py. If an older file is
@@ -282,18 +284,7 @@ const ReviewView: React.FC<Props> = ({ data }) => {
                       <span><span className="font-bold text-slate-700">Notebook {notebook || '—'}</span>, page {pageNo || '—'}</span>
                       {val(row, 'Notebook Record ID') && <span>record {val(row, 'Notebook Record ID')}</span>}
                     </div>
-                    {link ? (
-                      <a
-                        href={link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
-                      >
-                        <BookOpen size={13} /> Open the notebook scan <ExternalLink size={11} />
-                      </a>
-                    ) : (
-                      <span className="text-xs text-slate-400 italic">no scan link for this notebook</span>
-                    )}
+                    <ScanLink scans={scans} notebook={notebook} page={pageNo} notebookUrl={link} />
                   </div>
                   <dl className="px-5 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
                     {queue.fields.map(field => {
