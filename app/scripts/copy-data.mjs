@@ -17,3 +17,12 @@ if (!existsSync(src)) {
 mkdirSync(dirname(dest), { recursive: true });
 copyFileSync(src, dest);
 console.log(`Staged dataset → ${dest}`);
+
+// The Places panel joins each record's City onto the reviewed gazetteer
+// decisions; the file is optional so the app still runs without it.
+const decisionsSrc = resolve(here, '../../kimatch/city-kima-decisions.tsv');
+const decisionsDest = resolve(here, '../public/data/city-kima-decisions.tsv');
+if (existsSync(decisionsSrc)) {
+  copyFileSync(decisionsSrc, decisionsDest);
+  console.log(`Staged Kima decisions → ${decisionsDest}`);
+}

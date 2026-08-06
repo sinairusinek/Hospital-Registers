@@ -1,0 +1,438 @@
+city	spelling	n_records	kima_id	kima_name_rom	wikidata_qid	qid_source	decision	grade	confidence	decided_by	note	date
+Haifa	Haifa	1999	791	Haifa (Israel)	Q41621	kima-dump	matched	C_review		agent	city, not the district entity	2026-08-06
+Athlit	Athlit	1021	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Hadera	Hadera	267	858	Hadera (Israel)	Q471886	kima-dump	matched	C_review		agent		2026-08-06
+Tiberias	Tiberias	142	807	Tiberias (Israel)	Q151920	kima-dump	matched	C_review		agent		2026-08-06
+Acre	Acre	90	71	Acre (Israel)	Q126084	kima-dump	matched	C_review		agent		2026-08-06
+Hadar Hacarmel	Hadar Hacarmel	88	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Kiryat Haim	Kiryat Haim	82	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	matched	C_review		agent		2026-08-06
+Afula	Afula	53	18417	Afula (Israel)	Q152462	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Jaffa	Jaffa	44	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	matched	A_autolink		agent		2026-08-06
+Kiryat Bialik	Kiryat Bialik	41	866	Kiryat Bialik (Israel)	Q152374	kima-dump	matched	C_review		agent		2026-08-06
+Zichron Yaakov	Zichron Yaakov	41	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Yajour	Yajour	35	771	Yagur (Israel)	Q586687	kima-dump	matched	C_review		agent	Yagur; Mandate romanization	2026-08-06
+Affikim	Affikim	31	554	Afikim (Israel)	Q383280	kima-dump	matched	C_review		agent		2026-08-06
+Tel Aviv	Tel Aviv	30	272	Tel Aviv-Yafo (Israel)	Q33935	kima-dump	matched	A_autolink		agent	Tel Aviv-Yafo city, not the district entity	2026-08-06
+Karkur	Karkur	28	19149	Karkur (Israel)	Q2475182	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Bat Galim	Bat Galim	27	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Benyamina	Benyamina	27	21551	Binyamina (Israel)	Q863886	kima-dump	matched	C_review		agent		2026-08-06
+Safad	Safad	27	377	Tsefat (Israel)	Q188336	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Tel Amal	Tel Amal	27	7	Nir David (Israel)	Q943058	kima-dump	matched	C_review		human	kibbutz Tel Amal = Nir David (split from Kiryat Amal)	2026-08-06
+Herzlia	Herzlia	26	700	Herzeliyya (Israel)	Q152491	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kiryat Motzkin	Kiryat Motzkin	25	481	Kiryat Motzkin (Israel)	Q152567	kima-dump	matched	C_review		agent		2026-08-06
+Pardess Hanna	Pardess Hanna	25	160	Pardes Hanna-Karkur (Israel)	Q2475182	kima-dump	matched	C_review		agent	Kima has only the merged Pardes Hanna-Karkur entity	2026-08-06
+Nahalal	Nahalal	24	38	Nahalal (Israel)	Q1724338	kima-dump	matched	C_review		agent		2026-08-06
+Nazareth	Nazareth	23	18	Nazareth (Israel)	Q430776	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Jerusalem	Jerusalem	22	691	Jerusalem (Israel)	Q1218	kima-dump	matched	C_review		agent	city entry, not sancak/East	2026-08-06
+Kfar Vitkin	Kfar Vitkin	20	825	Kefar Vitkin (Israel)	Q2495402	kima-dump	matched	C_review		agent		2026-08-06
+Tulkarem	Tulkarem	16	73472	Tulkarem (West Bank)	Q985531	kima-dump	matched	C_review		agent		2026-08-06
+Yavniel	Yavniel	15	18477	Yavne'el (Israel)	Q1676894	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Zichron Jacob	Zichron Jacob	15	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Ardel Yahud	Ardel Yahud	14					unmatched-no-kima-entry	C_review		agent	Ard el-Yahud, Haifa's old Jewish quarter	2026-08-06
+Bethania	Bethania	13	16157	Betanyah (Israel)			matched	A_autolink		human	Bitanya above Lake Kinneret	2026-08-06
+Ein Harod	Ein Harod	11	12370	En Harod (Israel)	Q1339887	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kfar Ata	Kfar Ata	11	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent	Kfar Ata = pre-1965 name of Kiryat Ata	2026-08-06
+Kibutz Affikim	Kibutz Affikim	10	554	Afikim (Israel)	Q383280	kima-dump	matched	C_review		agent		2026-08-06
+Nesher	Nesher	10	20	Nesher (Israel)	Q135432	kima-dump	matched	C_review		agent		2026-08-06
+Yokneam	Yokneam	10	18301	Yokne'am (Israel)	Q2890709	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Ahuza	Ahuza	8	21015	Ahuza (Haifa, Israel)	Q4159159	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Ain Harod	Ain Harod	8	12370	En Harod (Israel)	Q1339887	kima-dump	matched	C_review		agent	generic En Harod; Ihud/Me'uhad split is post-1948	2026-08-06
+Dejania	Dejania	8	892	Deganya Alef (Israel)	Q2371396	kima-dump	matched	C_review		human	unqualified Degania read as Alef	2026-08-06
+Kfar Hassidim	Kfar Hassidim	8	830	Kefar Hasidim (Israel)	Q135425	kima-dump	matched	C_review		agent		2026-08-06
+Kineret	Kineret	7					unmatched-ambiguous	C_review		human		2026-08-06
+Nahariya	Nahariya	7	39	Nahariyya (Israel)	Q167749	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Neveh Shaanan	Neveh Shaanan	7	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump	matched	C_review		agent	Haifa's Neve Sha'anan (catchment)	2026-08-06
+Benjamina	Benjamina	6	21551	Binyamina (Israel)	Q863886	kima-dump	matched	C_review		agent		2026-08-06
+Emek	Emek	6					unmatched-ambiguous	C_review		human	region nickname without clean referent	2026-08-06
+Haifa|Hadar Hacarmel	Haifa|Hadar Hacarmel	6	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		human	pipe policy: prefer the finer reading	2026-08-06
+Kfar Atta	Kfar Atta	6	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent		2026-08-06
+Kinereth	Kinereth	6					unmatched-ambiguous	C_review		human		2026-08-06
+Kinneret	Kinneret	6					unmatched-ambiguous	C_review		human	Kevutsa vs Moshava undecidable	2026-08-06
+Kiryat Haroshet	Kiryat Haroshet	6	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Netanya	Netanya	6	24	Netanya (Israel)	Q192225	kima-dump	matched	C_review		agent		2026-08-06
+Rosh Pina	Rosh Pina	6	14873	Rosh Pina (Israel)	Q525649	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Waldheim	Waldheim	6					unmatched-no-kima-entry	A_autolink		agent	Galilee Templer colony; Kima has only the Saxony Waldheim	2026-08-06
+Akka	Akka	5	71	Acre (Israel)	Q126084	kima-dump	matched	C_review		agent	Arabic naming tradition of Acre; value kept distinct	2026-08-06
+Bassa	Bassa	5	21539	Bassah (Israel)			matched	C_review		human	al-Bassa, western Galilee	2026-08-06
+Kfar Tabor	Kfar Tabor	5	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kibutz	Kibutz	5					unmatched-junk	C_review		agent	generic word	2026-08-06
+Mishmar HaEmek	Mishmar HaEmek	5	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Mount Carmel	Mount Carmel	5					unmatched-ambiguous	A_autolink		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Nathania	Nathania	5	24	Netanya (Israel)	Q192225	kima-dump	matched	C_review		agent		2026-08-06
+Nathanya	Nathanya	5	24	Netanya (Israel)	Q192225	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Zammarin	Zammarin	5	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Zikhron Yacov	Zikhron Yacov	5	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Degania	Degania	4	892	Deganya Alef (Israel)	Q2371396	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Gan Shmuel	Gan Shmuel	4	904	Gan Shemu'el (Israel)	Q166857	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Gedera	Gedera	4	341	Gedera (Israel)	Q921505	kima-dump	matched	C_review		agent		2026-08-06
+Had. Hac	Had. Hac	4	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Is	Is	4					unmatched-junk	C_review		agent		2026-08-06
+Kishon	Kishon	4					unmatched-no-kima-entry	C_review		human	Kishon harbour area; river entity rejected	2026-08-06
+Migdal	Migdal	4	6904	Migdal (Israel)	Q2916182	kima-dump	matched	C_review		agent	Galilee Migdal (catchment), not Ashkelon's	2026-08-06
+Mt. Carmel	Mt. Carmel	4					unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Naharia	Naharia	4	39	Nahariyya (Israel)	Q167749	kima-dump	matched	C_review		agent		2026-08-06
+Rishon LeZion	Rishon LeZion	4	493	Rishon Letsiyon (Israel)	Q201051	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Sdedera	Sdedera	4					unmatched-ambiguous	C_review		human	garbled; held for archival re-check	2026-08-06
+Tabor Street	Tabor Street	4					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Wadi el Hawareth	Wadi el Hawareth	4					unmatched-ambiguous	C_review		human	held for human review: Hefer Valley region entity; suggested #4986	2026-08-06
+Athlit|Atlit	Athlit|Atlit	3	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Beit Galim	Beit Galim	3	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	matched	C_review		agent	Bat Galim	2026-08-06
+Beit Gan	Beit Gan	3					unmatched-no-kima-entry	C_review		human	Beit Gan by Yavne'el; no Kima entry	2026-08-06
+Had. Hac.|Hadar Hacarmel	Had. Hac.|Hadar Hacarmel	3	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Hedera|Hadera	Hedera|Hadera	3	858	Hadera (Israel)	Q471886	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Jenin	Jenin	3	79775	Jenin (West Bank)	Q374748	kima-dump	matched	C_review		agent		2026-08-06
+Kefutz Mizra	Kefutz Mizra	3	224	Mizra (Israel)	Q2889536	kima-dump	matched	C_review		agent	kibbutz Mizra	2026-08-06
+Kfar Hasidim	Kfar Hasidim	3	830	Kefar Hasidim (Israel)	Q135425	kima-dump	matched	C_review		agent		2026-08-06
+Kfar Kharoshet	Kfar Kharoshet	3	21749	Kefar Haroshet (Israel)			matched	C_review		agent	Kefar Haroshet, distinct from Kiryat Haroshet	2026-08-06
+Kibutz Affikim|Affikim	Kibutz Affikim|Affikim	3	554	Afikim (Israel)	Q383280	kima-dump	matched	C_review		agent		2026-08-06
+Kirjat Hayim	Kirjat Hayim	3	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	matched	C_review		agent		2026-08-06
+Kiryat Kharoshet	Kiryat Kharoshet	3	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump	matched	C_review		agent		2026-08-06
+Kiryat Naim	Kiryat Naim	3	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	matched	C_review		human	read as Kiryat Haim (H/N misreading)	2026-08-06
+Meshek Yagur	Meshek Yagur	3	771	Yagur (Israel)	Q586687	kima-dump	matched	C_review		agent		2026-08-06
+Mitzpa	Mitzpa	3	21700	Mitspa (Israel)	Q2776808	kima-dump	matched	C_review		agent	Mitzpa near Tiberias	2026-08-06
+Samakh	Samakh	3	16228	Tsemah (Israel)	Q2908710	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Tel Yosef	Tel Yosef	3	186	Tel-Yosef (Israel)	Q2917286	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Yavne'el	Yavne'el	3	18477	Yavne'el (Israel)	Q1676894	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+[ambiguous_city]	[ambiguous_city]	3					unmatched-junk	C_review		agent	pipeline marker	2026-08-06
+Affikin	Affikin	2	554	Afikim (Israel)	Q383280	kima-dump	matched	C_review		agent		2026-08-06
+Ardel Yahud|Ard al-Yahud	Ardel Yahud|Ard al-Yahud	2					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Athlit|Athlit Camp	Athlit|Athlit Camp	2	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Athlit|Athlit Police station	Athlit|Athlit Police station	2	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Balfuria	Balfuria	2	20640	Balfuriyya (Israel)	Q2479614	kima-dump	matched	C_review		agent		2026-08-06
+Bat Shlomo	Bat Shlomo	2	587	Bat Shelomo (Israel)	Q2889218	kima-dump	matched	C_review		agent		2026-08-06
+Beisan	Beisan	2	613	Bet She'an (Israel)	Q152368	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Benyamina|Binyamina	Benyamina|Binyamina	2	21551	Binyamina (Israel)	Q863886	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Bethlehem	Bethlehem	2					unmatched-ambiguous	C_review		agent	likely Bethlehem of Galilee (absent from Kima)	2026-08-06
+Carmel	Carmel	2					unmatched-ambiguous	A_autolink		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Degania B	Degania B	2	893	Deganya Bet (Israel)	Q1022506	kima-dump	matched	C_review		agent	explicit Bet	2026-08-06
+Ekron	Ekron	2	21515	Ekron (Israel)	Q1914736	wikidata-reconciled	matched	C_review		agent	modern Ekron village	2026-08-06
+German Colony	German Colony	2	21139	German Colony (Haifa, Israel)	Q2413425	wikidata-reconciled	matched	C_review		agent	Haifa's German Colony (catchment)	2026-08-06
+Ghedera	Ghedera	2					unmatched-ambiguous	C_review		human	held for human review: Hadera vs Gedera	2026-08-06
+Ginjar	Ginjar	2	929	Ginnegar (Israel)	Q2776845	kima-dump	matched	C_review		agent	Ginegar	2026-08-06
+Givat Ada	Givat Ada	2	18292	Giv'at Ada (Israel)	Q7189221	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Givat Brenner	Givat Brenner	2	751	Giv'at Brener (Israel)	Q476835	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Givat Haim	Givat Haim	2	910	Giv'at Hayyim (Israel)	Q2776930	kima-dump	matched	C_review		agent	pre-split Giv'at Hayyim	2026-08-06
+Hacarmel	Hacarmel	2					unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Had Stae	Had Stae	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent	read as Had. Hac. (Hadar Hacarmel)	2026-08-06
+Had. Stac	Had. Stac	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent	read as Had. Hac. (Hadar Hacarmel)	2026-08-06
+Hadar HaCarmel (Haifa)	Hadar HaCarmel (Haifa)	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Hadar Hacarmel / Haifa	Hadar Hacarmel / Haifa	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Herzl Street	Herzl Street	2					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Huleh	Huleh	2					unmatched-ambiguous	A_autolink		human	held for human review: Hula Valley region entity; suggested #3327	2026-08-06
+Jaffa|Co. C.I.D. Jaffa	Jaffa|Co. C.I.D. Jaffa	2	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kfar Tavor	Kfar Tavor	2	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kfar Yehezkiel	Kfar Yehezkiel	2	832	Kefar Yehezkel (Israel)	Q2890846	kima-dump	matched	C_review		agent		2026-08-06
+Khalisa	Khalisa	2	485	Kiryat Shemona (Israel)	Q327413	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kibbutz Hashomer	Kibbutz Hashomer	2					unmatched-ambiguous	C_review		agent		2026-08-06
+Kibutz Affiking|Kibutz Affikim	Kibutz Affiking|Kibutz Affikim	2	554	Afikim (Israel)	Q383280	kima-dump	matched	C_review		agent		2026-08-06
+Kineret|Kinneret	Kineret|Kinneret	2					unmatched-ambiguous	C_review		human		2026-08-06
+Kiryat Gesher	Kiryat Gesher	2					unmatched-ambiguous	C_review		agent		2026-08-06
+Kurdaneh	Kurdaneh	2					unmatched-no-kima-entry	C_review		agent	Kurdani, by the Na'aman springs	2026-08-06
+Mishmar Haemek	Mishmar Haemek	2	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Nablus	Nablus	2	310	Nablus (West Bank)	Q214178	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Nachla	Nachla	2					unmatched-ambiguous	C_review		agent		2026-08-06
+Ness Ziona	Ness Ziona	2	15	Nes Tsiyyona (Israel)	Q168162	kima-dump	matched	C_review		agent		2026-08-06
+Neve Shaanan	Neve Shaanan	2	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump	matched	C_review		agent		2026-08-06
+Nur El Shams|Nur Shams	Nur El Shams|Nur Shams	2	76253	Nur Shams Camp (West Bank)	Q7069998	kima-dump	matched	C_review		agent	Nur Shams detention camp	2026-08-06
+P. & P. Zichron Yacob	P. & P. Zichron Yacob	2	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Rehovot	Rehovot	2	562	Rehovot (Israel)	Q207350	kima-dump	matched	C_review		agent		2026-08-06
+Rosh Pinna	Rosh Pinna	2	14873	Rosh Pina (Israel)	Q525649	kima-dump	matched	C_review		agent		2026-08-06
+Sdedead	Sdedead	2					unmatched-ambiguous	C_review		human		2026-08-06
+Sh.Khunat Oadim	Sh.Khunat Oadim	2					unmatched-no-kima-entry	C_review		agent	Shkhunat Ovdim	2026-08-06
+Shafa Amr	Shafa Amr	2	261	Shefar'am (Israel)	Q990657	kima-dump	matched	C_review		agent	Shefa-Amr	2026-08-06
+Tantoura	Tantoura	2	21005	Tantura (Israel)	Q2100836	kima-dump	matched	C_review		agent	Tantura on the Carmel coast	2026-08-06
+Yajouj	Yajouj	2	771	Yagur (Israel)	Q586687	kima-dump	matched	C_review		agent	garbled Yajour	2026-08-06
+Yajour|Yajur	Yajour|Yajur	2	771	Yagur (Israel)	Q586687	kima-dump	matched	C_review		agent		2026-08-06
+Zichron Jacob|Zichron Yaakov	Zichron Jacob|Zichron Yaakov	2	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+002.2	002.2	1					unmatched-junk	C_review		agent		2026-08-06
+Abu Khalil	Abu Khalil	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Abu Shousheh	Abu Shousheh	1					unmatched-ambiguous	C_review		agent	Kima's Abu Shusha is the Gezer one; the Mishmar Haemek village is absent	2026-08-06
+Acre S/D	Acre S/D	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Adel Yahud	Adel Yahud	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Affula (Afula)	Affula (Afula)	1	18417	Afula (Israel)	Q152462	kima-dump	matched	C_review		agent		2026-08-06
+Affula|Affula Nugst	Affula|Affula Nugst	1	18417	Afula (Israel)	Q152462	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Affuleh|Afula	Affuleh|Afula	1	18417	Afula (Israel)	Q152462	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Afula|Affuleh Carea st	Afula|Affuleh Carea st	1	18417	Afula (Israel)	Q152462	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Afula|Afuleh	Afula|Afuleh	1	18417	Afula (Israel)	Q152462	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Ahava	Ahava	1					unmatched-ambiguous	C_review		agent	the Ahava children's home?	2026-08-06
+Alliance Scool	Alliance Scool	1					unmatched-no-kima-entry	C_review		agent	institution	2026-08-06
+Alya Street	Alya Street	1					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Ashadot Yakov	Ashadot Yakov	1	26521	Ashdot Yaakov (Israel)	Q2891543	kima-dump	matched	C_review		agent	generic Ashdot Ya'akov; Ihud/Me'uhad split post-1948	2026-08-06
+Ata village	Ata village	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent		2026-08-06
+Aten Village	Aten Village	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent	garbled Ata village	2026-08-06
+Athlit|Athlit C. Camps	Athlit|Athlit C. Camps	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Athlit|Athlit J.L.Co. 2	Athlit|Athlit J.L.Co. 2	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Athlit|Athlit Prison	Athlit|Athlit Prison	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Athlit|Cl. Camp - Athlit	Athlit|Cl. Camp - Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Atlit|Athlit	Atlit|Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Atlit|Athlit C.R. Camp	Atlit|Athlit C.R. Camp	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Atlit|Atlit. House of Ofman	Atlit|Atlit. House of Ofman	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Atlit|Cl. Camp - Athlit	Atlit|Cl. Camp - Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Ayesdin	Ayesdin	1					unmatched-junk	C_review		agent		2026-08-06
+Balad al-Sheikh	Balad al-Sheikh	1	21670	Balad al-Shaykh (Israel)			matched	C_review		agent	own entry; kept distinct from Nesher per project policy	2026-08-06
+Banks St	Banks St	1					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Bar Galim	Bar Galim	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	matched	C_review		agent	or Kfar Gallim; Bat Galim more likely	2026-08-06
+Bassa I.|Bassa	Bassa I.|Bassa	1	21539	Bassah (Israel)			matched	C_review		human		2026-08-06
+Bassa N.1 N.F.D	Bassa N.1 N.F.D	1	21539	Bassah (Israel)			matched	C_review		human		2026-08-06
+Bassa No 1|Bassa	Bassa No 1|Bassa	1	21539	Bassah (Israel)			matched	C_review		human	al-Bassa / Bassa Camp	2026-08-06
+Bassa No 2|Al-Bassa	Bassa No 2|Al-Bassa	1	6885	Shelomi (Israel)	Q135421	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Bat Shlomo near Zammaren|Bat Shlomo	Bat Shlomo near Zammaren|Bat Shlomo	1	587	Bat Shelomo (Israel)	Q2889218	kima-dump	matched	C_review		agent	Zammaren = Zummarin (Zichron)	2026-08-06
+Bat Yalem	Bat Yalem	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	matched	C_review		agent	garbled Bat Galim	2026-08-06
+Bath Galim|Bath Galim K. H. Bldg	Bath Galim|Bath Galim K. H. Bldg	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	matched	C_review		agent		2026-08-06
+Bathelim K.butz|Bathelim	Bathelim K.butz|Bathelim	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Beisan|Dept. of Police, Beisan	Beisan|Dept. of Police, Beisan	1	613	Bet She'an (Israel)	Q152368	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Beit Alfa	Beit Alfa	1	563	Bet Alfa (Israel)	Q2900562	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Beit Alfa / Beisan	Beit Alfa / Beisan	1	563	Bet Alfa (Israel)	Q2900562	kima-dump	matched	C_review		agent	Beit Alfa lies in the Beisan sub-district	2026-08-06
+Beit Alpha	Beit Alpha	1	563	Bet Alfa (Israel)	Q2900562	kima-dump	matched	C_review		agent		2026-08-06
+Beit Anya	Beit Anya	1	16157	Betanyah (Israel)			matched	C_review		human		2026-08-06
+Beit Dagan	Beit Dagan	1	9783	Bet Dagan (Israel)	Q2920214	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Beit Jan	Beit Jan	1	90226	Bait Jan (Israel)	Q814900	kima-dump	matched	C_review		human		2026-08-06
+Beit Jann	Beit Jann	1	90226	Bait Jan (Israel)	Q814900	kima-dump	matched	C_review		human	Druze village, Upper Galilee	2026-08-06
+Beit Olim	Beit Olim	1					unmatched-no-kima-entry	C_review		agent	immigrants' hostel	2026-08-06
+Beit tatikva	Beit tatikva	1					unmatched-no-kima-entry	C_review		agent	institution	2026-08-06
+Beit-Zerah	Beit-Zerah	1	599	Bet Zera (Israel)	Q2573500	kima-dump	matched	C_review		agent	Bet Zera	2026-08-06
+Ben Yehuda	Ben Yehuda	1					unmatched-ambiguous	C_review		agent	street vs Even Yehuda	2026-08-06
+Ben Yehuda St	Ben Yehuda St	1					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Ben Yehuda Street	Ben Yehuda Street	1					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Beni Brak	Beni Brak	1	594	Bene Brak (Israel)	Q152467	kima-dump	matched	C_review		agent		2026-08-06
+Benjamin	Benjamin	1					unmatched-ambiguous	C_review		agent	Benyamina? surname?	2026-08-06
+Benjamina|Benyamina	Benjamina|Benyamina	1	21551	Binyamina (Israel)	Q863886	kima-dump	matched	C_review		agent		2026-08-06
+Benjaminia	Benjaminia	1	21551	Binyamina (Israel)	Q863886	kima-dump	matched	C_review		agent		2026-08-06
+Benyamina. & Beit-Sacaross	Benyamina. & Beit-Sacaross	1	21551	Binyamina (Israel)	Q863886	kima-dump	matched	C_review		agent	first reading Benyamina	2026-08-06
+Bersan|Dept. of Police, Bersan	Bersan|Dept. of Police, Bersan	1	613	Bet She'an (Israel)	Q152368	kima-dump	matched	C_review		agent	Bersan = Beisan (Bet She'an)	2026-08-06
+Bet Alfa	Bet Alfa	1	563	Bet Alfa (Israel)	Q2900562	kima-dump	matched	C_review		agent		2026-08-06
+Bet Alpha Huleh S/D.|Bet Alpha	Bet Alpha Huleh S/D.|Bet Alpha	1	563	Bet Alfa (Israel)	Q2900562	kima-dump	matched	C_review		agent		2026-08-06
+Bet Gan	Bet Gan	1					unmatched-no-kima-entry	C_review		human		2026-08-06
+Bet Olim	Bet Olim	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Beth Shearim	Beth Shearim	1	616	Bet She'arim (Israel)	Q1269256	kima-dump	matched	C_review		agent	the moshav (f. 1936)	2026-08-06
+Biniamina|Binyamina	Biniamina|Binyamina	1	21551	Binyamina (Israel)	Q863886	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Binjamina|Binyamina	Binjamina|Binyamina	1	21551	Binyamina (Israel)	Q863886	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Bithania|Bethania	Bithania|Bethania	1	16157	Betanyah (Israel)			matched	A_autolink		human		2026-08-06
+Blys	Blys	1					unmatched-junk	C_review		agent		2026-08-06
+Brene Shaanan	Brene Shaanan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump	matched	C_review		agent	garbled Neve Shaanan	2026-08-06
+Buriq	Buriq	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Carmel Ahuza	Carmel Ahuza	1	21015	Ahuza (Haifa, Israel)	Q4159159	kima-dump	matched	C_review		agent	Ahuza on the Carmel	2026-08-06
+Carmel Station	Carmel Station	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Carmiel	Carmiel	1	162	Karmi'el (Israel)	Q152418	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Churipat Hayim	Churipat Hayim	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	matched	C_review		agent	garbled Kiryat Haim	2026-08-06
+Coastal Watch Bath-Jalim	Coastal Watch Bath-Jalim	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	matched	C_review		agent	coastal-watch post at Bat Galim	2026-08-06
+Daganya	Daganya	1	892	Deganya Alef (Israel)	Q2371396	kima-dump	matched	C_review		human		2026-08-06
+Dantel Yahud	Dantel Yahud	1					unmatched-no-kima-entry	C_review		agent	garbled Ard/Harat el-Yahud	2026-08-06
+Dar Awwaj	Dar Awwaj	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Defna	Defna	1	974	Dafna (Israel)	Q545232	kima-dump	matched	C_review		agent	Dafna	2026-08-06
+Degania|Tiberias S/D	Degania|Tiberias S/D	1	892	Deganya Alef (Israel)	Q2371396	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Deganya	Deganya	1	892	Deganya Alef (Israel)	Q2371396	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Dejani	Dejani	1	892	Deganya Alef (Israel)	Q2371396	kima-dump	matched	C_review		human		2026-08-06
+Doris St	Doris St	1					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Drachla Tabor St	Drachla Tabor St	1					unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Ein Haron	Ein Haron	1	12370	En Harod (Israel)	Q1339887	kima-dump	matched	C_review		agent	garbled Ein Harod	2026-08-06
+Ein Hashofet	Ein Hashofet	1	91	En Hashofet (Israel)	Q2890213	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Ein Shemer	Ein Shemer	1	69	En Shemer (Israel)	Q166865	kima-dump	matched	C_review		agent		2026-08-06
+Emek Hayarden	Emek Hayarden	1					unmatched-ambiguous	C_review		human	held for human review: Emek ha-Yarden regional entity; suggested #87167	2026-08-06
+Emek R	Emek R	1					unmatched-ambiguous	C_review		human		2026-08-06
+Emek R.|Emek	Emek R.|Emek	1					unmatched-ambiguous	C_review		human		2026-08-06
+Emek Zevouloun	Emek Zevouloun	1					unmatched-ambiguous	C_review		human	held for human review: Emek Zevulun region entity; suggested #86676	2026-08-06
+En Dor	En Dor	1	19136	En Dor (Israel)	Q2916646	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Fot Luq	Fot Luq	1					unmatched-junk	C_review		agent		2026-08-06
+Galil	Galil	1					unmatched-ambiguous	C_review		human	held for human review: Galilee region entity; suggested #1475	2026-08-06
+Geda	Geda	1					unmatched-junk	C_review		agent		2026-08-06
+Gisr El Majami	Gisr El Majami	1					unmatched-ambiguous	C_review		agent	Jisr al-Majami / Gesher area	2026-08-06
+Giv'at Ada	Giv'at Ada	1	18292	Giv'at Ada (Israel)	Q7189221	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Givat Adam	Givat Adam	1	18292	Giv'at Ada (Israel)	Q7189221	kima-dump	matched	C_review		agent	read as Giv'at Ada	2026-08-06
+Hadar	Hadar	1	27009	Kefar Hadar (Hod Hasharon, Israel)			matched	A_autolink	0.95	auto		2026-08-06
+Hadar Hacarmel (Haifa)	Hadar Hacarmel (Haifa)	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Hadar Hacarmel Haifa	Hadar Hacarmel Haifa	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Hadar Hacarmel|Had. Hac	Hadar Hacarmel|Had. Hac	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Hadar [Haifa]	Hadar [Haifa]	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Haddar Carmel	Haddar Carmel	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Hadeira (Hadera)	Hadeira (Hadera)	1	858	Hadera (Israel)	Q471886	kima-dump	matched	C_review		agent		2026-08-06
+Hadera|Hadera P. & P	Hadera|Hadera P. & P	1	858	Hadera (Israel)	Q471886	kima-dump	matched	C_review		agent		2026-08-06
+Hadera|Hedera	Hadera|Hedera	1	858	Hadera (Israel)	Q471886	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Haifa (Nesher)	Haifa (Nesher)	1	20	Nesher (Israel)	Q135432	kima-dump	matched	C_review		agent	parenthetical = finer reading	2026-08-06
+Haifa / Mount Carmel	Haifa / Mount Carmel	1					unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Haifa / Tel Amal	Haifa / Tel Amal	1					unmatched-ambiguous	C_review		agent	two different places	2026-08-06
+Haifa S/P	Haifa S/P	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Haifa [Hadar HaCarmel]	Haifa [Hadar HaCarmel]	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		agent		2026-08-06
+Haifa s/d	Haifa s/d	1					unmatched-ambiguous	C_review		agent	sub-district, not the city	2026-08-06
+Haifa|Ardel Jahud, Haifa	Haifa|Ardel Jahud, Haifa	1					unmatched-no-kima-entry	C_review		human	finer reading Ard el-Yahud; no Kima entry	2026-08-06
+Haifa|Bassa	Haifa|Bassa	1					unmatched-ambiguous	C_review		human	held for human review: Haifa's Bassa area vs al-Bassa	2026-08-06
+Haifa|Bourj Billet	Haifa|Bourj Billet	1					unmatched-ambiguous	C_review		agent	second reading unidentifiable	2026-08-06
+Haifa|Churches Ort	Haifa|Churches Ort	1					unmatched-ambiguous	C_review		agent	second reading unidentifiable	2026-08-06
+Haifa|Dar el Kadkany	Haifa|Dar el Kadkany	1					unmatched-ambiguous	C_review		agent	second reading unidentifiable	2026-08-06
+Haifa|Had. Stac	Haifa|Had. Stac	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		human	pipe policy; Had. Stac read as Hadar Hac.	2026-08-06
+Haifa|Hadar Hacarmel Haifa	Haifa|Hadar Hacarmel Haifa	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	matched	C_review		human	pipe policy: prefer the finer reading	2026-08-06
+Haifa|Hedera	Haifa|Hedera	1					unmatched-ambiguous	C_review		agent	two different towns	2026-08-06
+Haifa|Mt. Carmel	Haifa|Mt. Carmel	1					unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Haifa|Nesher	Haifa|Nesher	1					unmatched-ambiguous	C_review		agent	two different towns	2026-08-06
+Haim	Haim	1					unmatched-junk	C_review		agent	fragment	2026-08-06
+Halershert	Halershert	1					unmatched-junk	C_review		agent		2026-08-06
+Halisa	Halisa	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Hallesa	Hallesa	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Hallisa Qrt	Hallisa Qrt	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Hallissa	Hallissa	1					unmatched-no-kima-entry	C_review		agent	Halisa neighborhood	2026-08-06
+Hammeh	Hammeh	1					unmatched-ambiguous	A_autolink		human	held for human review: el-Hamme spa, but Kima entity is the Hammat Gader archaeological site; suggested #4414	2026-08-06
+Hanita	Hanita	1	799	Hanita (Israel)	Q2890402	kima-dump	matched	C_review		agent		2026-08-06
+Hart el Yahud	Hart el Yahud	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Hartel Yahud	Hartel Yahud	1					unmatched-no-kima-entry	C_review		agent	Harat el-Yahud	2026-08-06
+Hazorea	Hazorea	1	986	Hazore'a (Israel)	Q1000893	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Heazelia	Heazelia	1	700	Herzeliyya (Israel)	Q152491	kima-dump	matched	C_review		agent	garbled Herzlia	2026-08-06
+Hittin	Hittin	1	21331	Hittin (Israel)	Q1246960	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Irbed	Irbed	1					unmatched-ambiguous	C_review		agent	Irbid, Transjordan plausible; foreign location held for human review	2026-08-06
+Jaffa|Carmel Ahu K.bert	Jaffa|Carmel Ahu K.bert	1	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Jarit Nahalal	Jarit Nahalal	1	38	Nahalal (Israel)	Q1724338	kima-dump	matched	C_review		agent	garbled; Nahalal	2026-08-06
+Joknan	Joknan	1	18301	Yokne'am (Israel)	Q2890709	kima-dump	matched	C_review		agent	garbled Yokneam	2026-08-06
+Jokneam	Jokneam	1	18301	Yokne'am (Israel)	Q2890709	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kafaratta	Kafaratta	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent		2026-08-06
+Kafata	Kafata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent	garbled Kfar Ata	2026-08-06
+Kafr Branch	Kafr Branch	1					unmatched-ambiguous	C_review		agent	Kfar Baruch? Kfar Brandeis?	2026-08-06
+Kafr Hittim	Kafr Hittim	1	21908	Kefar Hittim (Israel)	Q2916642	kima-dump	matched	C_review		agent		2026-08-06
+Kafr Yasin	Kafr Yasin	1	88951	Kafr Yasif (Israel)	Q2632879	kima-dump	matched	C_review		agent	read as Kafr Yasif	2026-08-06
+Kefa Tabor	Kefa Tabor	1	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	matched	C_review		agent	Kfar Tavor	2026-08-06
+Kefar Ata	Kefar Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kefar Bireim	Kefar Bireim	1					unmatched-ambiguous	C_review		agent	Bir'im? kibbutz Bar'am is post-1948	2026-08-06
+Kenereth	Kenereth	1					unmatched-ambiguous	C_review		human		2026-08-06
+Kfar Baroukh	Kfar Baroukh	1	815	Kefar Barukh (Israel)	Q2777518	kima-dump	matched	C_review		agent		2026-08-06
+Kfar Baruch	Kfar Baruch	1	815	Kefar Barukh (Israel)	Q2777518	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kfar Brandice	Kfar Brandice	1	21588	Kefar Brandeis (Israel)	Q2903275	kima-dump	matched	C_review		agent	Kfar Brandeis	2026-08-06
+Kfar Hahoresh	Kfar Hahoresh	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kfar Hasharon	Kfar Hasharon	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Kfar Hasidim / Kfar Hanoar	Kfar Hasidim / Kfar Hanoar	1	830	Kefar Hasidim (Israel)	Q135425	kima-dump	matched	C_review		agent	Kfar Hanoar is the youth village at Kfar Hasidim	2026-08-06
+Kfar Horesh	Kfar Horesh	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump	matched	C_review		agent	Kefar Hahoresh near Nazareth	2026-08-06
+Kfar Jeladim	Kfar Jeladim	1	21910	Kefar Yeladim (Israel)			matched	C_review		agent	Kfar Yeladim	2026-08-06
+Kfar Jeshuah	Kfar Jeshuah	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump	matched	C_review		agent		2026-08-06
+Kfar Joshua	Kfar Joshua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump	matched	C_review		agent		2026-08-06
+Kfar Kasidim	Kfar Kasidim	1	830	Kefar Hasidim (Israel)	Q135425	kima-dump	matched	C_review		agent		2026-08-06
+Kfar Khassidim	Kfar Khassidim	1	830	Kefar Hasidim (Israel)	Q135425	kima-dump	matched	C_review		agent		2026-08-06
+Kfar Nachanesh	Kfar Nachanesh	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump	matched	C_review		agent	garbled Kfar Hahoresh	2026-08-06
+Kfar Nacharish / Nazareth	Kfar Nacharish / Nazareth	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump	matched	C_review		agent	garbled Kfar Hahoresh	2026-08-06
+Kfar Saba	Kfar Saba	1	839	Kefar Sava (Israel)	Q152436	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kfar Secta	Kfar Secta	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Kfar Yadidia	Kfar Yadidia	1	831	Kefar Yedidya (Israel)	Q2920134	kima-dump	matched	C_review		agent	Kfar Yedidya	2026-08-06
+Kfar Yehoshoua	Kfar Yehoshoua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump	matched	C_review		agent		2026-08-06
+Kfar Yehoshua	Kfar Yehoshua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kfar Yeshua	Kfar Yeshua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump	matched	C_review		agent	Kfar Yehoshua	2026-08-06
+Kfar Yideyah	Kfar Yideyah	1	831	Kefar Yedidya (Israel)	Q2920134	kima-dump	matched	C_review		agent	garbled Kfar Yedidya	2026-08-06
+Khamra	Khamra	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Kharwa	Kharwa	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Kibbutz Affikim	Kibbutz Affikim	1	554	Afikim (Israel)	Q383280	kima-dump	matched	C_review		agent		2026-08-06
+Kibbutz Dalia	Kibbutz Dalia	1	886	Daliyya (Israel)	Q1000997	kima-dump	matched	C_review		agent		2026-08-06
+Kibbutz Hamarking	Kibbutz Hamarking	1					unmatched-junk	C_review		agent		2026-08-06
+Kibbutz Kinneret	Kibbutz Kinneret	1	1669	Kinneret (Kevutsa) (Israel)	Q2296107	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Kibutz Affiking	Kibutz Affiking	1	554	Afikim (Israel)	Q383280	kima-dump	matched	C_review		agent		2026-08-06
+Kibutz Dalia	Kibutz Dalia	1	886	Daliyya (Israel)	Q1000997	kima-dump	matched	C_review		agent		2026-08-06
+Kinneret (Kibbutz)	Kinneret (Kibbutz)	1	1669	Kinneret (Kevutsa) (Israel)	Q2296107	kima-dump	matched	C_review		agent	explicit kibbutz	2026-08-06
+Kinnereth	Kinnereth	1					unmatched-ambiguous	C_review		human		2026-08-06
+Kiriat Haroshet	Kiriat Haroshet	1	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump	matched	C_review		agent		2026-08-06
+Kiriat Kinzet	Kiriat Kinzet	1					unmatched-junk	C_review		agent		2026-08-06
+Kiryat Amal	Kiryat Amal	1					unmatched-no-kima-entry	C_review		human	Kiryat Amal near Tivon; no Kima entry	2026-08-06
+Kiryat Ata	Kiryat Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent		2026-08-06
+Kiryat Eliahu	Kiryat Eliahu	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Kiryat Eliyahu	Kiryat Eliyahu	1					unmatched-no-kima-entry	C_review		agent	Haifa neighborhood	2026-08-06
+Kiryat Haim / Kibbutz Amal	Kiryat Haim / Kibbutz Amal	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Kiryat Haim|Kiryat-Haim Tribune Amal	Kiryat Haim|Kiryat-Haim Tribune Amal	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	matched	C_review		agent		2026-08-06
+Kiryat Kamal	Kiryat Kamal	1					unmatched-no-kima-entry	C_review		human	garbled Kiryat Amal (Tivon)	2026-08-06
+Kiryat Shmuel	Kiryat Shmuel	1	22902	Kiryat Shemuel (Jerusalem, Israel)			matched	A_autolink	0.95	auto		2026-08-06
+Kiryat Yam	Kiryat Yam	1	480	Kiryat Yam (Israel)	Q152387	kima-dump	matched	C_review		agent		2026-08-06
+Kiryat-Haim Tribune Amal	Kiryat-Haim Tribune Amal	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	matched	C_review		agent		2026-08-06
+Kufr 'Ata	Kufr 'Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent		2026-08-06
+Kufr Ata	Kufr Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent		2026-08-06
+Kufretta	Kufretta	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	C_review		agent		2026-08-06
+Kuryat el Yahu	Kuryat el Yahu	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Kvutzat Kinereth	Kvutzat Kinereth	1	1669	Kinneret (Kevutsa) (Israel)	Q2296107	kima-dump	matched	C_review		agent	explicit kevutsa	2026-08-06
+Lydda	Lydda	1	178	Lod (Israel)	Q207540	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Maagan	Maagan	1	189	Ma'agan (Israel)	Q2916656	kima-dump	matched	C_review		agent		2026-08-06
+Majamil	Majamil	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Majd al-Krum	Majd al-Krum	1	19615	Majd al-Kurum (Israel)	Q2777868	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Majdal	Majdal	1	6904	Migdal (Israel)	Q2916182	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Mashmar Hyam	Mashmar Hyam	1					unmatched-ambiguous	C_review		agent	Mishmar HaYam vs Mishmar Haemek	2026-08-06
+Massada	Massada	1	219	Masada (Israel)	Q2888546	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Menahemia Colony	Menahemia Colony	1	18297	Menahemya (Israel)	Q2917281	kima-dump	matched	C_review		agent	Menahemya	2026-08-06
+Merchavia	Merchavia	1	205	Merhavya (Israel)	Q2920170	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Mes-hah	Mes-hah	1	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	matched	C_review		agent	Mesha = old name of Kfar Tavor	2026-08-06
+Meshek Yagour	Meshek Yagour	1	771	Yagur (Israel)	Q586687	kima-dump	matched	C_review		agent		2026-08-06
+Mizpa	Mizpa	1	21700	Mitspa (Israel)	Q2776808	kima-dump	matched	C_review		agent		2026-08-06
+Mizra	Mizra	1	224	Mizra (Israel)	Q2889536	kima-dump	matched	C_review		agent		2026-08-06
+Mount Tabor	Mount Tabor	1					unmatched-ambiguous	A_autolink		human	held for human review: Mount Tabor entity; suggested #5765	2026-08-06
+Mt. Tabor	Mt. Tabor	1					unmatched-ambiguous	C_review		human	held for human review: Mount Tabor entity; suggested #5765	2026-08-06
+Na'an	Na'an	1	16	Na'an (Israel)	Q1026840	kima-dump	matched	C_review		agent		2026-08-06
+Nabi Sha'man Hagelil	Nabi Sha'man Hagelil	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Naffuleh	Naffuleh	1	18417	Afula (Israel)	Q152462	kima-dump	matched	C_review		agent	garbled Affuleh (Afula)	2026-08-06
+Nahla	Nahla	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Nahlat Yacob	Nahlat Yacob	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Nahliel Yahud	Nahliel Yahud	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Natamia	Natamia	1	24	Netanya (Israel)	Q192225	kima-dump	matched	C_review		agent	garbled Natania	2026-08-06
+Natania	Natania	1	24	Netanya (Israel)	Q192225	kima-dump	matched	C_review		agent		2026-08-06
+Natsera (Nazareth)	Natsera (Nazareth)	1	18	Nazareth (Israel)	Q430776	kima-dump	matched	C_review		agent		2026-08-06
+Natseria	Natseria	1	18	Nazareth (Israel)	Q430776	kima-dump	matched	C_review		agent	read as Nazareth	2026-08-06
+Nebertz	Nebertz	1					unmatched-junk	C_review		agent		2026-08-06
+Nes Ziona	Nes Ziona	1	15	Nes Tsiyyona (Israel)	Q168162	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Netanya|Nathania	Netanya|Nathania	1	24	Netanya (Israel)	Q192225	kima-dump	matched	C_review		agent		2026-08-06
+Neve Sha'anan	Neve Sha'anan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump	matched	C_review		agent		2026-08-06
+Nur El Shams	Nur El Shams	1	76253	Nur Shams Camp (West Bank)	Q7069998	kima-dump	matched	C_review		agent		2026-08-06
+Nur Shams	Nur Shams	1	76253	Nur Shams Camp (West Bank)	Q7069998	kima-dump	matched	C_review		agent		2026-08-06
+Nve Shaanan (Haifa)	Nve Shaanan (Haifa)	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump	matched	C_review		agent		2026-08-06
+P.T	P.T	1	426	Petah Tikva (Israel)	Q190828	kima-dump	matched	C_review		agent	read as Petah Tikva	2026-08-06
+Petach Tikva	Petach Tikva	1	426	Petah Tikva (Israel)	Q190828	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Petah Tikva	Petah Tikva	1	426	Petah Tikva (Israel)	Q190828	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Petah Tikvah	Petah Tikvah	1	426	Petah Tikva (Israel)	Q190828	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Port Mason	Port Mason	1					unmatched-junk	C_review		agent		2026-08-06
+Qiryat Ata	Qiryat Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Ramallah	Ramallah	1	453	Ramalla (West Bank)	Q158119	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Ramat Gan	Ramat Gan	1	777	Ramat Gan (Israel)	Q192807	kima-dump	matched	C_review		agent		2026-08-06
+Ramatby	Ramatby	1					unmatched-junk	C_review		agent		2026-08-06
+Ramleh	Ramleh	1	456	Ramla (Israel)	Q221447	kima-dump	matched	C_review		agent		2026-08-06
+Ras El Ein	Ras El Ein	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Rechavia	Rechavia	1	21723	Rehavya (Jerusalem, Israel)	Q654128	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Rehovoth	Rehovoth	1	562	Rehovot (Israel)	Q207350	kima-dump	matched	C_review		agent		2026-08-06
+Roy	Roy	1					unmatched-junk	C_review		agent		2026-08-06
+Rumat Neshanan	Rumat Neshanan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump	matched	C_review		agent	read as Ramat/Neve Shaanan	2026-08-06
+Sajour	Sajour	1					unmatched-ambiguous	C_review		agent	Sajur vs Sejera	2026-08-06
+Sakhnin	Sakhnin	1	95	Sakhnin (Israel)	Q168330	kima-dump	matched	C_review		agent		2026-08-06
+Salem	Salem	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Sedjerah	Sedjerah	1	733	Ilaniyya (Israel)	Q2916589	kima-dump	matched	C_review		agent	Sejera = Ilaniyya	2026-08-06
+Shar Amakim	Shar Amakim	1	258	Sha'ar Ha'amakim (Israel)	Q135484	kima-dump	matched	C_review		agent	Sha'ar Ha'amakim	2026-08-06
+Shatel Yahud	Shatel Yahud	1					unmatched-no-kima-entry	C_review		agent		2026-08-06
+Shavei Tzion / Nahariya	Shavei Tzion / Nahariya	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Shavei Zion	Shavei Zion	1	21799	Shave Tsiyyon (Israel)	Q571191	kima-dump	matched	C_review		agent		2026-08-06
+Shenglia	Shenglia	1					unmatched-junk	C_review		agent		2026-08-06
+Shezlia	Shezlia	1					unmatched-ambiguous	C_review		agent	Herzlia?	2026-08-06
+Shunat Zarefin	Shunat Zarefin	1					unmatched-ambiguous	C_review		agent	Sarafand?	2026-08-06
+Smillel	Smillel	1					unmatched-junk	C_review		agent		2026-08-06
+St. Hashomer	St. Hashomer	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Staerneck	Staerneck	1					unmatched-junk	C_review		agent		2026-08-06
+Tel Chai	Tel Chai	1	16154	Tel Hai (Israel)	Q2094886	kima-dump	matched	C_review		agent	Tel Hai	2026-08-06
+Tel Joseph	Tel Joseph	1	186	Tel-Yosef (Israel)	Q2917286	kima-dump	matched	C_review		agent		2026-08-06
+Tel Mond	Tel Mond	1	21757	Tel Mond (Israel)	Q2304754	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Tel Yousef	Tel Yousef	1	186	Tel-Yosef (Israel)	Q2917286	kima-dump	matched	C_review		agent		2026-08-06
+Tel-Yusef	Tel-Yusef	1	186	Tel-Yosef (Israel)	Q2917286	kima-dump	matched	C_review		agent		2026-08-06
+Tell Addashume	Tell Addashume	1	280	Tel Adashim (Israel)	Q2916649	kima-dump	matched	C_review		agent	Tel Adashim	2026-08-06
+Tiberias (Kibbutz Afikim?)	Tiberias (Kibbutz Afikim?)	1					unmatched-ambiguous	C_review		agent	editor's guess in source	2026-08-06
+Tiberias / Kinneret	Tiberias / Kinneret	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Tiberias S/D	Tiberias S/D	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Tiberias|P. & P. Tiberias	Tiberias|P. & P. Tiberias	1	807	Tiberias (Israel)	Q151920	kima-dump	matched	C_review		agent		2026-08-06
+Tiberias|Tiberia	Tiberias|Tiberia	1	807	Tiberias (Israel)	Q151920	kima-dump	matched	C_review		agent		2026-08-06
+Tira	Tira	1					unmatched-ambiguous	C_review		agent	Tirat Karmel vs other Tiras	2026-08-06
+Tirat Zvi	Tirat Zvi	1	757	Tirat Tsvi (Israel)	Q550025	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Tirch	Tirch	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Turaan	Turaan	1					unmatched-no-kima-entry	C_review		agent	Tur'an village absent from Kima	2026-08-06
+Vilhelma	Vilhelma	1	26771	Wilhelma (Israel)	Q2906526	kima-dump	matched	C_review		agent	Wilhelma Templer colony	2026-08-06
+W. el Nisnass	W. el Nisnass	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled	matched	C_review		agent	Wadi Nisnas	2026-08-06
+Wadi Kavara	Wadi Kavara	1					unmatched-no-kima-entry	C_review		agent	Kabara marshes	2026-08-06
+Wadi Nisnas	Wadi Nisnas	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled	matched	C_review		agent		2026-08-06
+Yavne'el / Tiberias	Yavne'el / Tiberias	1					unmatched-ambiguous	C_review		agent		2026-08-06
+Yavneel	Yavneel	1	18477	Yavne'el (Israel)	Q1676894	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Yavneel Colony	Yavneel Colony	1	18477	Yavne'el (Israel)	Q1676894	kima-dump	matched	C_review		agent		2026-08-06
+Yavniel Colony	Yavniel Colony	1	18477	Yavne'el (Israel)	Q1676894	kima-dump	matched	C_review		agent		2026-08-06
+Zamarin	Zamarin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Zeeb	Zeeb	1					unmatched-no-kima-entry	C_review		agent	al-Zib; only Tel Akhziv site in Kima	2026-08-06
+Zekra Yacov	Zekra Yacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent	garbled Zichron Yaakov	2026-08-06
+Zichron	Zichron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Zichron Yaacob	Zichron Yaacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Zichron Yaacov	Zichron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Zichron Yaakov|Bat shlomo - Zichron Jacob	Zichron Yaakov|Bat shlomo - Zichron Jacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent	first reading	2026-08-06
+Zichron Yacov	Zichron Yacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Zichron Yakov|Zichron Yaakov	Zichron Yakov|Zichron Yaakov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Zicron	Zicron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Zikhron Yaacov	Zikhron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	A_autolink	0.95	auto		2026-08-06
+Zikhron Yacob	Zikhron Yacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06
+Zikron Yaacov	Zikron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	matched	C_review		agent		2026-08-06

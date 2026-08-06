@@ -364,7 +364,12 @@ const DataBrowser: React.FC<DataBrowserProps> = ({
                           wrap here rather than being cut off, which is the whole
                           reason this panel exists. */}
                       <dd className={`text-xs whitespace-pre-wrap break-words ${empty ? 'text-slate-300 italic' : 'text-slate-700 font-medium select-text'}`}>
-                        {empty ? `${UNKNOWN}` : String(raw)}
+                        {empty ? `${UNKNOWN}`
+                          : col.key === 'City Wikidata' ? (
+                            <a href={`https://www.wikidata.org/wiki/${String(raw)}`} target="_blank" rel="noreferrer" className="text-indigo-600 underline">{String(raw)}</a>
+                          ) : col.key === 'City Kima ID' ? (
+                            <a href={`https://data.geo-kima.org/Places/Details/${String(raw)}`} target="_blank" rel="noreferrer" className="text-indigo-600 underline">{String(raw)}</a>
+                          ) : String(raw)}
                       </dd>
                     </div>
                   );

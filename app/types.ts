@@ -18,10 +18,12 @@ export interface RegistryRecord {
   'Infectious / Non-infectious'?: string;
   'Class'?: string;
   'City'?: string;
+  'City Kima ID'?: string;
+  'City Wikidata'?: string;
   'standardprimaryICD9names'?: string;
 }
 
-export type ViewType = 'about' | 'browse' | 'statistics' | 'review';
+export type ViewType = 'about' | 'browse' | 'statistics' | 'review' | 'places';
 
 export interface RangeFilter {
   min: number;

@@ -492,8 +492,8 @@ merged	StandardNationality	British Subj.	British	1
 merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
 merged	City	Haifa?Atlit?	Haifa?Atlit	1
-derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	476
-derived	Procedure	operation named in the diagnosis column	Procedure only	48
+derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	477
+derived	Procedure	operation named in the diagnosis column	Procedure only	47
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	51
 review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	38
 review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	2
@@ -505,10 +505,11 @@ review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the ot
 review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole from identical dates either side of it	2
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
 review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1320
+review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	41
 review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	39
 review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	10
-review	Review Flags	procedure-only	An operation named with no diagnosis behind it	48
-review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1464
+review	Review Flags	procedure-only	An operation named with no diagnosis behind it	47
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1423
 withheld	Next of Kin			29879
 withheld	discarded_values			29879
 withheld	splitDiscValues			29879
@@ -523,17 +524,18 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		254
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8734
-derived	ICD-9 Chapter		800-999 Injury and poisoning	4583
-derived	ICD-9 Chapter		520-579 Digestive system	3234
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	20144
+derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8736
+derived	ICD-9 Chapter		800-999 Injury and poisoning	4599
+derived	ICD-9 Chapter		520-579 Digestive system	3238
 derived	ICD-9 Chapter		460-519 Respiratory system	2648
-derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1683
-derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1331
-derived	ICD-9 Chapter		580-629 Genitourinary system	1273
-derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1130
-derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	825
-derived	ICD-9 Chapter		390-459 Circulatory system	755
-derived	ICD-9 Chapter		710-739 Musculoskeletal system and connective tissue	688
+derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1684
+derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1332
+derived	ICD-9 Chapter		580-629 Genitourinary system	1276
+derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1133
+derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	831
+derived	ICD-9 Chapter		390-459 Circulatory system	756
+derived	ICD-9 Chapter		710-739 Musculoskeletal system and connective tissue	692
 derived	ICD-9 Chapter		320-389 Nervous system and sense organs	548
 derived	ICD-9 Chapter		140-239 Neoplasms	343
 derived	ICD-9 Chapter		240-279 Endocrine, nutritional and metabolic diseases	167
@@ -544,10 +546,10 @@ derived	ICD-9 Chapter		E800-E999 External causes of injury	24
 derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	18
 derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	211
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	51
-derived	ICD-9 Chapter		no readable code	1464
-derived	Diagnosis Recording		Classified	28415
-derived	Diagnosis Recording		Recorded, not classified	735
+derived	ICD-9 Chapter		no readable code	1423
+derived	Diagnosis Recording		Classified	28456
 derived	Diagnosis Recording		Not recorded	729
+derived	Diagnosis Recording		Recorded, not classified	694
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
 date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21

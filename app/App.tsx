@@ -1,12 +1,13 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, Info, ClipboardCheck } from 'lucide-react';
+import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import { facetValue } from './facets';
 import AboutView from './components/AboutView';
 import DataBrowser from './components/DataBrowser';
 import StatisticsView from './components/StatisticsView';
 import ReviewView from './components/ReviewView';
+import PlacesView from './components/PlacesView';
 
 declare const Papa: any;
 
@@ -173,7 +174,7 @@ const App: React.FC = () => {
     });
   };
 
-  // Load the bundled dataset on first paint; the upload button replaces it.
+  // Load the bundled dataset on first paint; the upload button only appears if this fails.
   useEffect(() => {
     parseInto(DEFAULT_DATASET_URL, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -296,12 +297,24 @@ const App: React.FC = () => {
                 <ClipboardCheck size={16} />
                 Review
               </button>
+              <button
+                onClick={() => setActiveView('places')}
+                disabled={data.length === 0}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
+                  activeView === 'places' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <MapPin size={16} />
+                Places
+              </button>
           </div>
-          <label className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium cursor-pointer transition-colors shadow-lg shadow-indigo-100">
-            <Upload size={18} />
-            {data.length > 0 ? 'Replace Dataset' : 'Upload TSV'}
-            <input type="file" accept=".tsv,.txt,.csv" onChange={handleFileUpload} className="hidden" />
-          </label>
+          {data.length === 0 && (
+            <label className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium cursor-pointer transition-colors shadow-lg shadow-indigo-100">
+              <Upload size={18} />
+              Upload TSV
+              <input type="file" accept=".tsv,.txt,.csv" onChange={handleFileUpload} className="hidden" />
+            </label>
+          )}
         </div>
       </header>
 
@@ -343,6 +356,10 @@ const App: React.FC = () => {
               // selection: a filter that happened to exclude a flagged record
               // would quietly shrink the work left to do.
               <ReviewView data={data} />
+            ) : activeView === 'places' ? (
+              // Same principle: the gazetteer queues cover the whole dataset,
+              // with the view's own religion and nationality facets.
+              <PlacesView data={data} />
             ) : (
               <StatisticsView 
                 fullData={data} 

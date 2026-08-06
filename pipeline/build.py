@@ -35,6 +35,38 @@ SOURCE = ROOT / "data" / "public" / "hospital-registers-2025-08-10.tsv"
 OUTPUT = ROOT / "data" / "public" / "hospital-registers-normalized.tsv"
 REPORT = ROOT / "data" / "public" / "normalization-report.tsv"
 
+# A second classification pass over the diagnoses the first one never reached,
+# produced by pipeline/classify_diagnoses.py with the same prompt. Kept as its
+# own reviewable file rather than folded into the source: every code it proposed
+# can be read beside the string it came from, a wrong one is struck out by
+# editing a line, and the build stays reproducible without an API key. Optional —
+# absent, the build simply leaves those diagnoses uncoded.
+CLASSIFICATION = ROOT / "data" / "public" / "diagnosis-classification.tsv"
+
+# Below this the prompt's own scale calls the code a speculative guess from
+# partial text. Those are written in like the rest, but flagged, so a reader can
+# exclude them and a reviewer knows where to look first.
+LOW_CONFIDENCE = 0.4
+KIMA_DECISIONS = ROOT / "kimatch" / "city-kima-decisions.tsv"
+
+
+def load_kima_decisions() -> dict[str, tuple[str, str]]:
+    """City value -> (Kima place id, Wikidata QID) for human-confirmed matches.
+
+    The decisions file is the reviewed City-to-gazetteer mapping produced by the
+    kimatch workflow (see kimatch/README.md). Only rows whose decision is
+    `matched` link; the build tolerates the file's absence so the pipeline can
+    run on a fresh checkout.
+    """
+    links: dict[str, tuple[str, str]] = {}
+    if not KIMA_DECISIONS.exists():
+        return links
+    with KIMA_DECISIONS.open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle, delimiter="\t"):
+            if row.get("decision") == "matched" and row.get("kima_id"):
+                links[row["city"]] = (row["kima_id"], row.get("wikidata_qid", ""))
+    return links
+
 # Column 45 lost its header in the source spreadsheets. By position (between
 # origPrimICD9Name and Additional-ICD9) and content (ICD-9 labels, filled for
 # 28,107 records against origPrimICD9Name's 18,971) it is the standardized
@@ -519,6 +551,8 @@ REVIEW_FLAGS = [
     ("date-seated-by-order", "A date outside 1930-48, taken whole from identical dates either side of it"),
     ("date-unreadable", "A date the clerk's own writing could not be parsed from"),
     ("stay-disagrees", "Computed stay differs from the count written beside it"),
+    ("icd9-low-confidence", "A second-pass code the classifier itself called speculative"),
+    ("icd9-second-pass", "Coded by the second classification pass, not the first"),
     ("result-in-diagnosis", "A Result value standing in a diagnosis or code field"),
     ("classifier-debris", "Classifier error text where a diagnosis belongs"),
     ("procedure-only", "An operation named with no diagnosis behind it"),
@@ -770,6 +804,19 @@ def to_date(value: str) -> date | None:
         return None
 
 
+def load_classification() -> dict[str, dict[str, str]]:
+    """The second pass's codes, keyed by the diagnosis string as written."""
+    if not CLASSIFICATION.exists():
+        return {}
+    with CLASSIFICATION.open(newline="", encoding="utf-8") as handle:
+        return {
+            (row["Original-Diagnosis"] or "").strip(): row
+            for row in csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)
+            if (row.get("Original-Diagnosis") or "").strip()
+            and (row.get("Primary-ICD9") or "").strip()
+        }
+
+
 def is_repeated_header(row: dict[str, str]) -> bool:
     """The source spreadsheets carry one header line inside the data.
 
@@ -793,6 +840,8 @@ def main() -> int:
         ]
 
     changes: Counter[tuple[str, str, str]] = Counter()
+    kima_links = load_kima_decisions()
+    kima_linked = 0
     final_values: dict[str, Counter[str]] = {col: Counter() for col in RULES}
     dropped = 0
     coarsened = 0
@@ -828,6 +877,8 @@ def main() -> int:
     icd9_padded = 0
     icd9_refused = 0
     review_counts: Counter[str] = Counter()
+    classification = load_classification()
+    second_pass = 0
     procedures: Counter[str] = Counter()
     out_rows = []
 
@@ -853,6 +904,28 @@ def main() -> int:
 
         # The derived chapter rides in a column of its own; the source's code
         # and three-digit category are both left exactly as they are.
+        #
+        # The second pass runs first, so a code it supplies is padded, refused
+        # and chaptered by exactly the same rules as one from the original pass.
+        # It fills only what the first left empty, and only for the exact string
+        # it was asked about: it never overwrites a code.
+        written_diag = (row.get("Original Diagnosis", "") or "").strip()
+        if written_diag and not (row.get("Primary-ICD9") or "").strip():
+            proposed = classification.get(written_diag)
+            if proposed:
+                row["Primary-ICD9"] = proposed.get("Primary-ICD9", "")
+                row["standardPrimaryICD9Name"] = proposed.get("Primary-ICD9-Name", "")
+                row["Primary-Confidence"] = proposed.get("Primary-Confidence", "")
+                if not (row.get("Additional-ICD9") or "").strip():
+                    row["Additional-ICD9"] = proposed.get("Additional-ICD9", "")
+                second_pass += 1
+                flags.append("icd9-second-pass")
+                try:
+                    if float(proposed.get("Primary-Confidence") or 0) < LOW_CONFIDENCE:
+                        flags.append("icd9-low-confidence")
+                except ValueError:
+                    pass
+
         first_code = (row.get("Primary-ICD9", "") or "").split("|")[0].strip()
         if first_code in ICD9_NOT_DIAGNOSES:
             icd9_refused += 1
@@ -969,7 +1042,6 @@ def main() -> int:
             else:
                 row["Days in Hospital (Calc)"] = ""
 
-        written_diag = (row.get("Original Diagnosis", "") or "").strip()
         chapter = row.get("ICD-9 Chapter", "")
         if PROCEDURE.search(written_diag):
             row["Procedure"] = "Procedure and diagnosis" if chapter else "Procedure only"
@@ -1043,6 +1115,11 @@ def main() -> int:
             if cleaned != written:
                 changes[("City", written, cleaned)] += 1
             row["City"] = cleaned
+            kima_id, qid = kima_links.get(cleaned, ("", ""))
+            row["City Kima ID"] = kima_id
+            row["City Wikidata"] = qid
+            if kima_id:
+                kima_linked += 1
 
         if "Address" in row:
             before = row["Address"] or ""
@@ -1306,6 +1383,10 @@ def main() -> int:
         fieldnames.append("Review Flags")
     if "City as written" not in fieldnames and "City" in fieldnames:
         fieldnames.insert(fieldnames.index("City"), "City as written")
+    if "City Kima ID" not in fieldnames and "City" in fieldnames:
+        at = fieldnames.index("City") + 1
+        fieldnames.insert(at, "City Kima ID")
+        fieldnames.insert(at + 1, "City Wikidata")
 
     if "ICD-9 Chapter" not in fieldnames:
         at = fieldnames.index("StandardICDInteger") + 1 if "StandardICDInteger" in fieldnames else len(fieldnames)
@@ -1344,6 +1425,9 @@ def main() -> int:
             writer.writerow(["withheld", field, "value repeated the next of kin", "", count])
         for field, count in sorted(kin_elsewhere.items()):
             writer.writerow(["withheld", field, "value is a name known from the kin column", "", count])
+        if kima_linked:
+            writer.writerow(["derived", "City Kima ID", "reviewed match in kimatch/city-kima-decisions.tsv",
+                             "Kima place id and Wikidata QID attached", kima_linked])
         for label, count in chapters.most_common():
             writer.writerow(["derived", "ICD-9 Chapter", "", label, count])
         if icd9_padded:
@@ -1423,6 +1507,9 @@ def main() -> int:
         if n < TAIL_THRESHOLD
     }
     print(f"tail       {len(tail)} value(s) left standing on fewer than {TAIL_THRESHOLD} records")
+    if classification:
+        print(f"secondpass {second_pass:,} record(s) coded from {len(classification)} reviewed strings "
+              f"in {CLASSIFICATION.name}")
     print(f"procedures {sum(procedures.values()):,} record(s) name an operation: "
           + ", ".join(f"{n:,} {v.lower()}" for v, n in procedures.most_common()))
     flagged = sum(1 for row in out_rows if row.get("Review Flags"))
