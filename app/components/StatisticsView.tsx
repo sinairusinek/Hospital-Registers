@@ -8,7 +8,7 @@ import { GoogleGenAI } from "@google/genai";
 import { TrendingUp, Users, MapPin, HeartPulse, Globe, CheckCircle2, Sparkles, BrainCircuit, Calendar, Baby, Timer, RotateCcw } from 'lucide-react';
 import { RegistryRecord, FilterState } from '../types';
 import { facetValue, UNKNOWN } from '../facets';
-import { buildColorScale, ColorScale, OTHERS, RESIDUE, DIVERGING, RECORDING } from '../colors';
+import { buildColorScale, ColorScale, OTHERS, RESIDUE, DIVERGING } from '../colors';
 import FilterSidebar from './FilterSidebar';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import RepresentationPanel from './RepresentationPanel';
@@ -28,7 +28,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'The blanks are two different things',
-    body: <p>1,465 admissions sit outside the chapter grouping, and they divide in two. 736 carry a diagnosis the clerk wrote and the ICD-9 coding never reached — <em>Suppurative Adenitis Bursae</em>, <em>Ulcerating J.B.</em> — which is work outstanding on this dataset. The other 729 carry no diagnosis at all, and those are not distributed like an error: under 1% of notebooks 1–9, 6.7% of notebook 32, 19.1% of notebook 33, and 66% of the admissions of April 1948, alongside the same emptying of the result and length-of-stay columns. That is the register recording less as Haifa's last months run out, and the <em>Was a diagnosis recorded at all?</em> chart above is where to read it. The <em>Diagnosis recorded?</em> facet on the left selects either group.</p>
+    body: <p>1,149 admissions sit outside the chapter grouping, and they divide in two. 420 carry a diagnosis the clerk wrote and the ICD-9 coding has not reached — which is work outstanding on this dataset. The other 729 carry no diagnosis at all, and those are not distributed like an error: under 1% of notebooks 1–9, 6.7% of notebook 32, 19.1% of notebook 33, and 66% of the admissions of April 1948, alongside the same emptying of the result and length-of-stay columns. That is the register recording less as Haifa's last months run out, rather than a gap in the data. The <em>Diagnosis recorded?</em> facet on the left selects either group.</p>
   },
   {
     heading: 'Only eight at a time',
@@ -40,7 +40,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'Diagnosis is grouped by ICD-9 chapter',
-    body: <p>The specific diagnosis column holds 3,860 distinct labels and its ICD-9 code 2,515 — far more than eight slices or a ten-value facet list can represent, so a chart of them would be mostly <em>Others</em>. The default grouping everywhere is therefore the ICD-9 chapter, the classification's own top level: nineteen headings, of which <em>Infectious and parasitic diseases</em> alone accounts for 8,734 admissions. Switch the chart to <strong>Specific</strong>, or use the <em>Diagnosis (specific)</em> facet on the left, when the argument needs a named disease. 1,465 records carry no readable code and sit outside the chapter grouping entirely.</p>
+    body: <p>The specific diagnosis column holds 4,004 distinct labels and its ICD-9 code 2,581 — far more than eight slices or a ten-value facet list can represent, so a chart of them would be mostly <em>Others</em>. The default grouping everywhere is therefore the ICD-9 chapter, the classification's own top level: nineteen headings, of which <em>Infectious and parasitic diseases</em> alone accounts for 8,771 admissions. Switch the chart to <strong>Specific</strong>, or use the <em>Diagnosis (specific)</em> facet on the left, when the argument needs a named disease. 1,149 records carry no readable code and sit outside the chapter grouping entirely.</p>
   },
   {
     heading: 'A share on its own compares nothing',
@@ -64,9 +64,6 @@ interface StatisticsViewProps {
 }
 
 const TOP_N = 8;
-
-// The fewest admissions a month must hold before its recording rate is drawn.
-const MIN_MONTH = 20;
 
 // The fewest admissions a month must hold to anchor the *end* of the timeline's
 // axis. Two records carry an admission date of May 1963 — misread years the
@@ -144,7 +141,6 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
       { id: 'Religion', aliases: ['religion', 'standardized religion', 'standardized_religion'] },
       { id: 'Diagnosis', aliases: ['diagnosis', 'standardprimaryicd9names', 'standardprimaryicd9name', 'standardized diagnosis', 'primary diagnosis'] },
       { id: 'Chapter', aliases: ['icd-9 chapter', 'icd9 chapter'] },
-      { id: 'Recording', aliases: ['diagnosis recording'] },
       { id: 'Admission Date', aliases: ['admission date', 'admission date [iso]', 'date'] },
       { id: 'City', aliases: ['city', 'town', 'residence'] },
       { id: 'Nationality', aliases: ['nationality', 'standardnationality', 'standard_nationality'] },
@@ -250,94 +246,6 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     const present = new Set<string>(timelineStats.filter(m => !m.absent).map(m => m.name));
     return absentRuns(timelineStats.map(m => m.name), present);
   }, [timelineStats]);
-
-  // The diagnosis charts drop the unrecorded rows, which is right for a chart
-  // of what patients were treated for and wrong for the question of when the
-  // register stopped answering. Here that residue is the subject: the share of
-  // each month's admissions carrying a classified diagnosis, one the coding
-  // never reached, or none at all. Read left to right it is not a flat gap in
-  // the data — the grey band is thin for eighteen years and then takes most of
-  // April 1948, the same weeks in which the result and length-of-stay columns
-  // empty out and the register keeps only what is written on admission.
-  const recordingTimeline = useMemo(() => {
-    const dateKey = actualKeys['Admission Date'];
-    const recKey = actualKeys['Recording'];
-    if (!dateKey || !recKey) return [];
-
-    const months: Record<string, Record<string, number>> = {};
-    data.forEach(row => {
-      const date = String(row[dateKey] || '');
-      if (date.length < 7 || !date.includes('-')) return;
-      const month = date.slice(0, 7);
-      const bucket = months[month] || (months[month] = {});
-      const state = facetValue(row[recKey]);
-      bucket[state] = (bucket[state] || 0) + 1;
-    });
-
-    const drawn: Record<string, ReturnType<typeof describe>> = {};
-    function describe(name: string, counts: Record<string, number>) {
-      const total = Object.values(counts).reduce((a, b) => a + b, 0);
-      // Shares, not counts: admissions per month move by an order of
-      // magnitude across the span, and on counts the 1948 collapse would be
-      // a shrinking sliver at the right-hand edge rather than the thing it is.
-      const share = (state: string) => (total > 0 ? (100 * (counts[state] || 0)) / total : 0);
-      return {
-        name,
-        total,
-        'Classified': share('Classified'),
-        'Recorded, not classified': share('Recorded, not classified'),
-        'Not recorded': share('Not recorded'),
-        notRecordedCount: counts['Not recorded'] || 0
-      };
-    }
-
-    Object.entries(months)
-      // A share computed on two admissions is not a share. Eight months of the
-      // 134 hold fewer than twenty records between them — 44 in all, most of
-      // them the stray dates the review flags already mark — and on a chart of
-      // percentages each one draws a full-height spike from noise. The worst
-      // sits at the right-hand edge: two records dated 1963, both without a
-      // diagnosis, rendering as a 100% column past the end of the register and
-      // stealing the very collapse this chart exists to show. They are dropped
-      // here rather than smoothed, and the count in the tooltip is what says
-      // how much weight any month can carry.
-      .filter(([, counts]) => Object.values(counts).reduce((a, b) => a + b, 0) >= MIN_MONTH)
-      .forEach(([name, counts]) => { drawn[name] = describe(name, counts); });
-
-    const present = Object.keys(drawn).sort();
-    if (present.length === 0) return [];
-
-    // Every month between the first and the last gets a slot, drawn or not, so
-    // this chart's x-axis and the admission timeline's above it describe the
-    // same eighteen years at the same spacing and can be read against each
-    // other. A month with no slice is either a month the register does not
-    // cover or one holding too few records to carry a percentage; the tooltip
-    // says which.
-    return monthKeys(present[0], present[present.length - 1]).map(name =>
-      drawn[name] || {
-        name,
-        total: 0,
-        'Classified': null,
-        'Recorded, not classified': null,
-        'Not recorded': null,
-        notRecordedCount: 0
-      });
-  }, [data, actualKeys]);
-
-  // The chart follows the selection, as everything on this page does, but the
-  // sentence beside it is a statement about the register and has to hold
-  // whatever is filtered. Selecting the unrecorded records alone would
-  // otherwise make it announce that 100% of April 1948 went unrecorded, which
-  // is true of the selection and false of the month.
-  const aprilCollapse = useMemo(() => {
-    const dateKey = actualKeys['Admission Date'];
-    const recKey = actualKeys['Recording'];
-    if (!dateKey || !recKey) return null;
-    const month = fullData.filter(row => String(row[dateKey] || '').startsWith('1948-04'));
-    if (month.length === 0) return null;
-    const absent = month.filter(row => facetValue(row[recKey]) === 'Not recorded').length;
-    return Math.round((100 * absent) / month.length);
-  }, [fullData, actualKeys]);
 
   const stats = useMemo(() => {
     const distributions: Record<string, Record<string, number>> = {
@@ -688,80 +596,6 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
             </ResponsiveContainer>
           </div>
         </div>
-
-        {/* What the diagnosis charts leave out, over time. */}
-        {recordingTimeline.length > 0 && (
-          <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-            <div>
-              <h3 className="font-bold text-slate-800 flex items-center gap-2">
-                <HeartPulse size={20} className="text-slate-500" /> Was a diagnosis recorded at all?
-              </h3>
-              <p className="text-xs text-slate-500 mt-2 max-w-3xl leading-relaxed">
-                The share of each month's admissions whose diagnosis the ICD-9 classification could place,
-                against those carrying a diagnosis the coding never reached, and those carrying none.
-                The last band is not evenly spread across the register: it runs under a per cent
-                through the 1930s and takes {aprilCollapse}% of April 1948, the month Haifa fell —
-                alongside the same emptying of the result and length-of-stay columns. What those
-                last pages still carry is the intake side of the record: date, age, sex, religion,
-                city. Months holding fewer than {MIN_MONTH} admissions are left blank,
-                since a share of two records is not a share, and so are the months the
-                register does not cover — shaded here as they are on the timeline above.
-              </p>
-            </div>
-            <div className="h-[260px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={recordingTimeline} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                  <XAxis dataKey="name" fontSize={10} axisLine={false} tickLine={false} minTickGap={40} />
-                  <YAxis fontSize={10} axisLine={false} tickLine={false} domain={[0, 100]} unit="%" />
-                  <Tooltip
-                    contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)' }}
-                    formatter={(value: number, name: string) => [`${value.toFixed(1)}%`, name]}
-                    labelFormatter={(label: string) => {
-                      const month = recordingTimeline.find(m => m.name === label);
-                      if (!month) return label;
-                      if (month.total === 0) {
-                        return `${label} — ${registerGaps.some(([a, b]) => label >= a && label <= b)
-                          ? 'no register survives'
-                          : 'too few admissions to draw a share'}`;
-                      }
-                      return `${label} — ${month.total} admission${month.total === 1 ? '' : 's'}`;
-                    }}
-                  />
-                  {registerGaps.map(([from, to]) => (
-                    <React.Fragment key={from}>
-                    <ReferenceArea x1={from} x2={to} {...GAP_SHADING} />
-                  </React.Fragment>
-                  ))}
-                  {/* Stacked bottom-up, so the absence sits on the baseline and
-                      its thickness is read against the axis rather than against
-                      a moving band above it. */}
-                  {(['Not recorded', 'Recorded, not classified', 'Classified'] as const).map(state => (
-                    <Area
-                      key={state}
-                      type="monotone"
-                      dataKey={state}
-                      name={state}
-                      stackId="recording"
-                      stroke={RECORDING[state]}
-                      fill={RECORDING[state]}
-                      fillOpacity={0.85}
-                    />
-                  ))}
-                  <Brush dataKey="name" height={30} stroke="#94a3b8" fill="#f8fafc" />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-600">
-              {(['Classified', 'Recorded, not classified', 'Not recorded'] as const).map(state => (
-                <span key={state} className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: RECORDING[state] }} />
-                  {state}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
 
         <RepresentationPanel
           fullData={fullData}
