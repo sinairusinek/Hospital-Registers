@@ -325,6 +325,30 @@ def city_from_street(address: str, city: str) -> bool:
     return city == namesake or city.lower() in (f"{namesake.lower()} road", f"{namesake.lower()} st.")
 
 
+# The hospital had no gynaecology ward. Every gynaecological reading of the
+# ward column is the extraction expanding the clerk's "Gen." — General — and
+# the register itself is unambiguous wherever it has been read: notebook 3
+# page 40, notebook 11 page 34 and notebook 18 page 65 all write "Gen." on
+# every row the source calls Gynecology.
+#
+# The internal evidence says the same without the scans. 1,279 of the 2,224
+# are men, against a Maternity ward that is 96% women — the shape of a real
+# women's ward. The men admitted to this "Gynecology" carry fractures, stab
+# wounds, sandfly fever, electrical shock. And a general hospital's General
+# ward cannot be the 889 records left once these are taken out of it.
+GYNECOLOGY_IS_GENERAL = {
+    "gyn": "General",
+    "gyn.": "General",
+    "gynae": "General",
+    "gynecology": "General",
+    "gynaecology": "General",
+    "gynecology ward": "General",
+    "gynecological": "General",
+}
+
+# The same reading, as a word inside a longer value.
+GYNECOLOGY_WORD = re.compile(r"\bgyn(?:ae|e)?(?:cology|cological)?\.?", re.IGNORECASE)
+
 WARD = {
     "mat": "Maternity",
     "mat.": "Maternity",
@@ -332,19 +356,19 @@ WARD = {
     "infectious section": "Infectious Diseases",
     "infectious diseases section": "Infectious Diseases",
     "childrens": "Children's",
-}
+} | GYNECOLOGY_IS_GENERAL
 
 # The wards of the hospital, as they read once standardized. An Occupation
 # holding exactly one of these — a 7-year-old "Gynecology" among them — is the
-# ward column's content misfiled by the extraction, not a trade.
+# ward column's content misfiled by the extraction, not a trade. The spurious
+# gynaecology stays in this set because it is still a misfiled ward name; what
+# it resolves to is settled by WARD_WRITTEN, not by the set.
 WARD_NAMES = {
     "Surgical", "Medical", "British Section", "Isolation", "Gynecology",
     "General", "Maternity", "Infectious Diseases", "Venereal Diseases",
 }
 
 # The clerk's abbreviations, for reading the written ward on those records.
-# "Gen." is General, not Gynecology: record 86 of notebook 11 reads "Gen."
-# on the page beside a misfiled "Gynecology", confirmed against the scan.
 WARD_WRITTEN = {name.lower(): name for name in WARD_NAMES} | WARD | {
     "surg": "Surgical",
     "surg.": "Surgical",
@@ -928,6 +952,7 @@ def main() -> int:
     }
     ward_rehomed: Counter[tuple[str, str, str]] = Counter()
     ward_corrected = 0
+    ward_degynecologised: Counter[tuple[str, str]] = Counter()
     dates_rebuilt = Counter()
     stays_cleared = 0
     stays_over_a_year = 0
@@ -962,6 +987,27 @@ def main() -> int:
             if after:
                 final_values[column][after] += 1
 
+        # The written ward carries the same spurious gynaecology as the
+        # standardized one, and in combinations besides ("Gyn|Gynecology",
+        # "-|Gynecology"). Only the gynaecological part of the value is
+        # rewritten; the rest of the combination, and its order, stand.
+        written_ward = (row.get("Ward") or "").strip()
+        if written_ward and "gyn" in written_ward.lower():
+            parts = [p.strip() for p in WARD_SPLIT.split(written_ward) if p.strip()]
+            rebuilt: list[str] = []
+            for part in parts:
+                # The word wherever it stands, so the compounds the splitter
+                # cannot reach — "Med. & Gyn.", "Gynecology VII" — are caught
+                # too. Their qualifiers survive; only the ward name changes.
+                part = GYNECOLOGY_WORD.sub("General", part)
+                part = re.sub(r"\bGeneral(\s+General\b)+", "General", part)
+                if part not in rebuilt:
+                    rebuilt.append(part)
+            replacement = " | ".join(rebuilt)
+            if replacement != written_ward:
+                row["Ward"] = replacement
+                ward_degynecologised[(written_ward, replacement)] += 1
+
         # A hand correction first, so the pass below finds the ward in place.
         key = (
             (row.get("Notebook_Number") or "").strip(),
@@ -993,7 +1039,10 @@ def main() -> int:
             elif current:
                 target, source = current, "duplicate"
             else:
-                target, source = occupation, "occupation"
+                # The misfiled name is read by the same rules as a written
+                # ward, so a "Gynecology" arriving through Occupation lands
+                # on General like every other one.
+                target, source = WARD_WRITTEN.get(occupation.lower(), occupation), "occupation"
             row["Occupation"] = ""
             if target != current:
                 row["standardized ward"] = target
@@ -1617,6 +1666,9 @@ def main() -> int:
                 "duplicate": f"cleared; the ward column already carries {ward}",
             }[source]
             writer.writerow(["moved", "Occupation", occupation, what, count])
+        for (before, after), count in sorted(ward_degynecologised.items()):
+            writer.writerow(["corrected", "Ward as written", before,
+                             f"{after} — the register writes Gen., not Gyn.", count])
         if ward_corrected:
             writer.writerow(["corrected", "standardized ward", "Gynecology",
                              "General — the page reads Gen., notebook 11 record 86", ward_corrected])
