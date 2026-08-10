@@ -1,4 +1,5 @@
 kind	column	from	to	records
+merged	standardized ward	Gynecology	General	1862
 merged	standardized Religion	Moslem	Muslim	1194
 merged	Class standard	3rd	3	1194
 merged	Class standard	2nd	2	504
@@ -501,10 +502,9 @@ merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
 merged	City	Haifa?Atlit?	Haifa?Atlit	1
 moved	Occupation	General	cleared; the ward column already carries General	1
-moved	Occupation	Gynecology	cleared; the ward column already carries General	4
-moved	Occupation	Gynecology	Ward: General, read from the clerk's written ward	2
-moved	Occupation	Gynecology	cleared; the ward column already carries Gynecology	20
-moved	Occupation	Gynecology	Ward: Gynecology	1
+moved	Occupation	Gynecology	cleared; the ward column already carries General	25
+moved	Occupation	Gynecology	Ward: General	1
+moved	Occupation	Gynecology	Ward: General, read from the clerk's written ward	1
 moved	Occupation	Isolation	Ward: Isolation, read from the clerk's written ward	1
 moved	Occupation	Maternity	cleared; the ward column already carries Maternity	2
 moved	Occupation	Maternity	Ward: Maternity, read from the clerk's written ward	2
@@ -514,7 +514,36 @@ moved	Occupation	Medical	Ward: Medical	2
 moved	Occupation	Surgical	cleared; the ward column already carries Surgical	3
 moved	Occupation	Surgical	Ward: Surgical	1
 moved	Occupation	Surgical	Ward: Surgical, read from the clerk's written ward	7
-corrected	standardized ward	Gynecology	General — the page reads Gen., notebook 11 record 86	1
+corrected	Ward as written	-|Gynecology	- | General — the register writes Gen., not Gyn.	85
+corrected	Ward as written	2nd|Gynecology	2nd | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	3erd|Gynecology	3erd | General — the register writes Gen., not Gyn.	4
+corrected	Ward as written	3rd|Gynecology	3rd | General — the register writes Gen., not Gyn.	2
+corrected	Ward as written	Assira|Gynecology	Assira | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gen.|Gynecology	Gen. | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gen|Gynecology	Gen | General — the register writes Gen., not Gyn.	4
+corrected	Ward as written	Gey|Gynecology	Gey | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gyn	General — the register writes Gen., not Gyn.	33
+corrected	Ward as written	Gyn.	General — the register writes Gen., not Gyn.	10
+corrected	Ward as written	Gyn.|Gynecology	General — the register writes Gen., not Gyn.	3
+corrected	Ward as written	Gyn/Surg? | General Surgery/Medical	General | Surg? | General Surgery | Medical — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gynaecology	General — the register writes Gen., not Gyn.	44
+corrected	Ward as written	Gynae|Gynecology	General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gynecological	General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gynecology	General — the register writes Gen., not Gyn.	2224
+corrected	Ward as written	Gynecology VII	General VII — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gynecology Ward	General Ward — the register writes Gen., not Gyn.	5
+corrected	Ward as written	Gynecology, British Section	General, British Section — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gyn|Gynecology	General — the register writes Gen., not Gyn.	14
+corrected	Ward as written	Isolation Gynecology	Isolation General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Isolation Gynecology?	Isolation General? — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Isolation|Gynecology	Isolation | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Kazaneh|Gynecology	Kazaneh | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Med Gyn	Med General — the register writes Gen., not Gyn.	2
+corrected	Ward as written	Med. & Gyn.	Med. & General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Nablus|Gynecology	Nablus | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	R.A.S.C.|Gynecology	R.A.S.C. | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Surg / Gen | Surgical / Gynaecology	Surg | Gen | Surgical | General — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Wadi Nisnas|Gynecology	Wadi Nisnas | General — the register writes Gen., not Gyn.	1
 derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	479
 derived	Procedure	operation named in the diagnosis column	Procedure only	45
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	51
@@ -539,7 +568,7 @@ review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place
 withheld	Next of Kin			29879
 withheld	discarded_values			29879
 withheld	splitDiscValues			29879
-withheld	Address	value repeated the next of kin		243
+withheld	Address	value repeated the next of kin		236
 withheld	City	value repeated the next of kin		3
 withheld	Occupation	value repeated the next of kin		37
 withheld	Original Diagnosis	value repeated the next of kin		1
@@ -547,7 +576,7 @@ withheld	Original Result	value repeated the next of kin		1
 withheld	Payment Status	value repeated the next of kin		1
 withheld	Standardized Diagnosis	value repeated the next of kin		1
 withheld	splitDiscValues	value repeated the next of kin		4
-withheld	Address	value is a name known from the kin column		254
+withheld	Address	value is a name known from the kin column		251
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
 derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	20534
