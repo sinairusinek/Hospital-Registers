@@ -1,0 +1,89 @@
+serial,village,moslems,jews,christians,others,total,note
+1,Abu Shusha,720,0,0,0,720,
+2,Abu Zureiq,550,0,0,0,550,
+3,'Ar'ara,2290,0,0,0,2290,"Moslems figure includes Ar'ara 1,490 and Ara 800"
+4,'Arab el Fuqara,310,0,0,0,310,
+5,'Arab el Ghawarina (Jisr Zerqa),620,0,0,0,620,
+6,'Arab en Nufei'at,820,0,0,0,820,
+7,'Atlit,90,510,60,0,660,"Jews figure includes 'Atlit 280, Ein Hay Yam 140, Ma'apelim 90"
+8,Balad esh Sheikh,4120,0,0,0,4120,
+9,Bat Shelomo,0,90,0,0,90,
+10,Beit Lahm,210,0,160,0,370,
+11,Beit She'arim,0,330,0,0,330,
+12,Binyamina,270,1250,0,0,1520,
+13,Bureika,290,0,0,0,290,
+14,Buteimat El,110,0,0,0,110,
+15,Daliyat el Karmil,0,0,20,2040,2060,
+16,Daliyat er Ruha,280,0,0,0,280,two rows printed under serial 16
+16,Dalia,0,320,0,0,320,two rows printed under serial 16
+17,Dumeira Ed (Dumeiri),620,0,0,0,620,
+18,'Ein Ghazal,2170,0,0,0,2170,
+19,'Ein Haud,650,0,0,0,650,
+20,'Ein hash Shofet (previously Ji'ara),0,320,0,0,320,
+21,El Ro-i (previously part of Esh Sheikh Bureik),0,360,0,0,360,
+22,'Emeq Zevulun (Jidru Ghawarina),790,0,0,0,790,three rows printed under serial 22
+22,Kefar Masaryk,0,270,0,0,270,three rows printed under serial 22
+22,'Ein ham Mifrats,0,260,0,0,260,three rows printed under serial 22
+23,Fureidis El,780,0,0,0,780,
+24,Ghubaiyat,1130,0,0,0,1130,"includes El Ghubaiya el Fauqa, El Ghubaiya et Tahta and En Naghnagiya"
+25,Giv'at 'Ada (El Marah),0,160,0,0,160,
+26,Giv'ot Zeid (previously part of Esh Sheikh Bureik),0,110,0,0,110,
+27,Hadera (Urban),0,7810,20,0,7830,"Jews figure includes Hadera 7,500 and Gan Shmuel 310"
+28,Hadera (Rural),0,0,0,0,0,printed as all-nil row
+29,Haifa (Urban),35940,75500,26570,290,138300,"includes Ahuzzat Sir Herbert Samuel; Jews figure includes Tor Gannim 300, Kfar Bialik 170, Qiryat Bialik 900, Qiryat Hayim 5,230, Qiryat Motzkin 2,740, Qiryat Shmuel 160"
+30,Haz Zorea' (previously part of Qira wa Qamun),0,290,0,0,290,
+31,Heftsi Bah,0,20,0,0,20,
+32,I'billin,600,0,1060,0,1660,
+33,Ijzim,2830,0,140,0,2970,printed Moslems figure garbled (28.30); 2830 restored from row total
+34,'Isfiya,180,0,300,1310,1790,
+35,Jaba',1140,0,0,0,1140,
+36,Kabara,120,0,0,0,120,
+37,Kafrin El,920,0,0,0,920,
+38,Kafr Lam,340,0,0,0,340,
+39,Kafr Qari',1510,0,0,0,1510,
+40,Karkur,0,2380,0,0,2380,"Jews figure includes Karkur 900, Ein Shemer 310, Yan Hash Shomron 160, Ein Iron 40, Kefar Pines 280, Mishmarot 270, Ma'anit Narbata 220 (printed components sum to 2,180, not 2,380)"
+41,Kefar 'Atta (Kufritta),0,1690,0,0,1690,
+42,Kefar Brandeis,0,150,0,0,150,
+43,Kefar ham Maccabi,0,210,0,0,210,
+44,Kefar Hasidim,0,980,0,0,980,"Jews figure includes Kefar Hasidim 740, Kefar haNoar haDati 240"
+45,Kefar Yehoshua',0,620,0,0,620,
+46,Khirbat el Burj,0,0,0,0,0,printed as all-nil row
+47,Khirbat ed Damum,340,0,0,0,340,
+48,Khirbat Lid (El 'Awadim),640,0,0,0,640,
+49,Khubbeiza,290,0,0,0,290,
+50,Khureiba El,0,0,0,0,0,printed as all-nil row
+51,Mansi El ('Arab Baniha),1180,0,20,0,1200,
+52,Mazar El,210,0,0,0,210,
+53,Meir Shefeiya,0,330,0,0,330,
+54,Mesheq Yagur (includes Mesheq),0,1220,0,0,1220,
+55,Mishmar ha 'Emeq,0,390,0,0,390,
+56,Nesher,1430,1400,0,0,2830,"Moslems figure includes Arab Abu Junieh or Tawtha 680, Arab Awadien 750"
+57,Pardes Hanna,670,2300,0,0,2970,"Jews figure includes Pardes Hanna 1,860, Meged 250, Kefar Glickson 190"
+58,Qannir,750,0,0,0,750,
+59,Qiryat 'Amal (previously part of Esh Sheikh Bureik),0,530,0,0,530,
+60,Qiryat Harosheth (previously part of Esh Sheikh Bureik),0,240,0,0,240,
+61,Qisarya (Caesarea),930,160,30,0,1120,
+62,Ramat hash Shofet,0,240,0,0,240,
+63,Ramat Yissai (previously Jeida),0,50,0,0,50,
+64,Ramat Yohanan,0,420,0,0,420,Jews figure includes Ramat Yohanan 260 and Shamir 160
+65,Rihaniya Er,240,0,0,0,240,
+66,Sabbarin,1670,0,30,0,1700,
+67,Sarafand es,290,0,0,0,290,
+68,Sede Ya'aqov (previously part of Esh Sheikh Bureik),0,350,0,0,350,
+69,Sh'ar ha 'Amaqim (previously part of Esh Sheikh Bureik),0,360,0,0,360,
+70,Shafa 'Amr (Urban),1380,10,1560,690,3640,
+71,Shafa 'Amr (Rural),3560,0,0,0,3560,"Moslems figure includes Arab el Zubeidat 410, Arab el Ameriya 410, Ibtan Farm 260, Sasa 130, Ras 'Ali 80, Wa'rit Sarris 190, Arab el Khawalid 80, Arab es Sawa'id 190, Arab el Ka'biya 260, Hosha 400, Arab es Sufsafe 450, Arab el Janali 130, Kh. Kasayir 290, Arab el Hilf 280"
+72,Sindiyana Es,1250,0,0,0,1250,
+73,Tantura,1470,0,20,0,1490,
+74,Tira Et,5240,0,30,0,5270,
+75,Tiv'on (Alonim) (previously Qusqus-Tab'un),370,320,0,0,690,
+76,Umm esh Shauf,480,0,0,0,480,
+77,Umm ez Zinat,1450,0,20,0,1470,
+78,Usha,0,180,0,0,180,
+79,Wadi 'Ara,230,0,0,0,230,
+80,Waldheim (Umm el 'Amad),150,0,110,0,260,
+81,Ya'arot hak Karmel (previously Khirbat Shallala),0,360,0,0,360,"Jews figure includes Ya'arot haKarmel 150, Beit Oren 210"
+82,Yajur,560,0,50,0,610,
+83,Yoqne'am (previously part of Qira wa Qamun),410,280,0,0,690,"Jews figure includes Yoqne'am 260, Qedem 20; total note: Yoqne'am 280 Jews, Qira wa Qamun 410 Arabs"
+84,Zikhron Ya'aqov,0,1740,0,0,1740,"Jews figure includes Zikhron Ya'aqov 1,510, Maayan Tzvi 130, Tel Tzur 100"
+,TOTAL,85590,104510,30200,4330,224630,

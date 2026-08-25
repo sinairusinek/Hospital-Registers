@@ -1,0 +1,251 @@
+scope,district,name,religion,persons,males,females
+total,Palestine,Palestine,all,757182,387118,370064
+total,Palestine,Palestine,moslems,590890,301108,289782
+total,Palestine,Palestine,jews,83794,43860,39934
+total,Palestine,Palestine,christians,73024,36491,36533
+total,Palestine,Palestine,others,9474,5659,3815
+urban,Palestine,Palestine,all,264317,136931,127386
+urban,Palestine,Palestine,moslems,139074,73424,65650
+urban,Palestine,Palestine,jews,68622,35174,33448
+urban,Palestine,Palestine,christians,55043,27166,27877
+urban,Palestine,Palestine,others,1578,1167,411
+urban,Southern,Southern District,all,91947,48627,43320
+urban,Southern,Southern District,moslems,61366,32142,29224
+urban,Southern,Southern District,jews,20351,11211,9140
+urban,Southern,Southern District,christians,10208,5255,4953
+urban,Southern,Southern District,others,22,19,3
+urban,Southern,Khan Yunis,all,3890,1839,2051
+urban,Southern,Khan Yunis,moslems,3866,1826,2040
+urban,Southern,Khan Yunis,jews,1,1,0
+urban,Southern,Khan Yunis,christians,23,12,11
+urban,Southern,Khan Yunis,others,0,0,0
+urban,Southern,Gaza,all,17480,9036,8444
+urban,Southern,Gaza,moslems,16722,8636,8086
+urban,Southern,Gaza,jews,54,38,16
+urban,Southern,Gaza,christians,701,359,342
+urban,Southern,Gaza,others,3,3,0
+urban,Southern,Majdal,all,5097,2563,2534
+urban,Southern,Majdal,moslems,5064,2545,2519
+urban,Southern,Majdal,jews,0,0,0
+urban,Southern,Majdal,christians,33,18,15
+urban,Southern,Majdal,others,0,0,0
+urban,Southern,Beersheba,all,2356,1348,1008
+urban,Southern,Beersheba,moslems,2012,1126,886
+urban,Southern,Beersheba,jews,98,65,33
+urban,Southern,Beersheba,christians,235,146,89
+urban,Southern,Beersheba,others,11,11,0
+urban,Southern,Jaffa,all,32524,17359,15165
+urban,Southern,Jaffa,moslems,20621,11110,9511
+urban,Southern,Jaffa,jews,5087,2803,2284
+urban,Southern,Jaffa,christians,6808,3441,3367
+urban,Southern,Jaffa,others,8,5,3
+urban,Southern,Tel Aviv,all,15185,8326,6859
+urban,Southern,Tel Aviv,moslems,78,44,34
+urban,Southern,Tel Aviv,jews,15065,8272,6793
+urban,Southern,Tel Aviv,christians,42,10,32
+urban,Southern,Tel Aviv,others,0,0,0
+urban,Southern,Ramle,all,7312,3882,3430
+urban,Southern,Ramle,moslems,5837,3104,2733
+urban,Southern,Ramle,jews,35,23,12
+urban,Southern,Ramle,christians,1440,755,685
+urban,Southern,Ramle,others,0,0,0
+urban,Southern,Lydda,all,8103,4274,3829
+urban,Southern,Lydda,moslems,7166,3751,3415
+urban,Southern,Lydda,jews,11,9,2
+urban,Southern,Lydda,christians,926,514,412
+urban,Southern,Lydda,others,0,0,0
+urban,Jerusalem,Jerusalem District,all,92018,47043,44975
+urban,Jerusalem,Jerusalem District,moslems,30471,16651,13820
+urban,Jerusalem,Jerusalem District,jews,34410,16892,17518
+urban,Jerusalem,Jerusalem District,christians,26642,13007,13635
+urban,Jerusalem,Jerusalem District,others,495,493,2
+urban,Jerusalem,Hebron,all,16577,8490,8087
+urban,Jerusalem,Hebron,moslems,16074,8278,7796
+urban,Jerusalem,Hebron,jews,430,175,255
+urban,Jerusalem,Hebron,christians,73,37,36
+urban,Jerusalem,Hebron,others,0,0,0
+urban,Jerusalem,Beit Jala,all,3101,1380,1721
+urban,Jerusalem,Beit Jala,moslems,41,27,14
+urban,Jerusalem,Beit Jala,jews,0,0,0
+urban,Jerusalem,Beit Jala,christians,3060,1353,1707
+urban,Jerusalem,Beit Jala,others,0,0,0
+urban,Jerusalem,Bethlehem,all,6658,3077,3581
+urban,Jerusalem,Bethlehem,moslems,818,445,373
+urban,Jerusalem,Bethlehem,jews,2,0,2
+urban,Jerusalem,Bethlehem,christians,5838,2632,3206
+urban,Jerusalem,Bethlehem,others,0,0,0
+urban,Jerusalem,Jerusalem,all,62578,32611,29967
+urban,Jerusalem,Jerusalem,moslems,13413,7804,5609
+urban,Jerusalem,Jerusalem,jews,33971,16713,17258
+urban,Jerusalem,Jerusalem,christians,14699,7601,7098
+urban,Jerusalem,Jerusalem,others,495,493,2
+urban,Jerusalem,Ramallah,all,3104,1485,1619
+urban,Jerusalem,Ramallah,moslems,125,97,28
+urban,Jerusalem,Ramallah,jews,7,4,3
+urban,Jerusalem,Ramallah,christians,2972,1384,1588
+urban,Jerusalem,Ramallah,others,0,0,0
+urban,Northern,Northern District,all,80352,41261,39091
+urban,Northern,Northern District,moslems,47237,24631,22606
+urban,Northern,Northern District,jews,13861,7071,6790
+urban,Northern,Northern District,christians,18193,8904,9289
+urban,Northern,Northern District,others,1061,655,406
+urban,Northern,Tulkarm,all,3350,1754,1596
+urban,Northern,Tulkarm,moslems,3109,1621,1488
+urban,Northern,Tulkarm,jews,23,23,0
+urban,Northern,Tulkarm,christians,208,104,104
+urban,Northern,Tulkarm,others,10,6,4
+urban,Northern,Nablus,all,15947,8116,7831
+urban,Northern,Nablus,moslems,15238,7733,7505
+urban,Northern,Nablus,jews,16,16,0
+urban,Northern,Nablus,christians,544,291,253
+urban,Northern,Nablus,others,149,76,73
+urban,Northern,Jenin,all,2637,1504,1133
+urban,Northern,Jenin,moslems,2307,1195,1112
+urban,Northern,Jenin,jews,7,7,0
+urban,Northern,Jenin,christians,108,87,21
+urban,Northern,Jenin,others,215,215,0
+urban,Northern,Nazareth,all,7424,3592,3832
+urban,Northern,Nazareth,moslems,2486,1234,1252
+urban,Northern,Nazareth,jews,53,37,16
+urban,Northern,Nazareth,christians,4885,2321,2564
+urban,Northern,Nazareth,others,0,0,0
+urban,Northern,Beisan,all,1941,1052,889
+urban,Northern,Beisan,moslems,1687,900,787
+urban,Northern,Beisan,jews,41,35,6
+urban,Northern,Beisan,christians,213,117,96
+urban,Northern,Beisan,others,0,0,0
+urban,Northern,Tiberias,all,6950,3411,3539
+urban,Northern,Tiberias,moslems,2096,1065,1031
+urban,Northern,Tiberias,jews,4427,2143,2284
+urban,Northern,Tiberias,christians,422,200,222
+urban,Northern,Tiberias,others,5,3,2
+urban,Northern,Haifa,all,24634,13293,11341
+urban,Northern,Haifa,moslems,9377,5372,4005
+urban,Northern,Haifa,jews,6230,3426,2804
+urban,Northern,Haifa,christians,8863,4406,4457
+urban,Northern,Haifa,others,164,89,75
+urban,Northern,Acre,all,6420,3236,3184
+urban,Northern,Acre,moslems,4883,2523,2360
+urban,Northern,Acre,jews,78,39,39
+urban,Northern,Acre,christians,1344,608,736
+urban,Northern,Acre,others,115,66,49
+urban,Northern,Shafa Amr,all,2288,1154,1134
+urban,Northern,Shafa Amr,moslems,623,347,276
+urban,Northern,Shafa Amr,jews,0,0,0
+urban,Northern,Shafa Amr,christians,1263,608,655
+urban,Northern,Shafa Amr,others,402,199,203
+urban,Northern,Safad,all,8761,4149,4612
+urban,Northern,Safad,moslems,5431,2641,2790
+urban,Northern,Safad,jews,2986,1345,1641
+urban,Northern,Safad,christians,343,162,181
+urban,Northern,Safad,others,1,1,0
+rural,Palestine,Palestine,all,492865,250187,242678
+rural,Palestine,Palestine,moslems,451816,227684,224132
+rural,Palestine,Palestine,jews,15172,8686,6486
+rural,Palestine,Palestine,christians,17981,9325,8656
+rural,Palestine,Palestine,others,7896,4492,3404
+rural,Southern,Southern District,all,169791,88097,81694
+rural,Southern,Southern District,moslems,158612,80940,77672
+rural,Southern,Southern District,jews,8148,4490,3658
+rural,Southern,Southern District,christians,1871,1507,364
+rural,Southern,Southern District,others,1160,1160,0
+rural,Southern,Gaza,all,47418,23717,23701
+rural,Southern,Gaza,moslems,47088,23524,23564
+rural,Southern,Gaza,jews,275,156,119
+rural,Southern,Gaza,christians,55,37,18
+rural,Southern,Gaza,others,0,0,0
+rural,Southern,Beersheba,all,71108,36195,34913
+rural,Southern,Beersheba,moslems,71108,36195,34913
+rural,Southern,Beersheba,jews,0,0,0
+rural,Southern,Beersheba,christians,0,0,0
+rural,Southern,Beersheba,others,0,0,0
+rural,Southern,Jaffa,all,17605,9196,8409
+rural,Southern,Jaffa,moslems,13194,6726,6468
+rural,Southern,Jaffa,jews,3986,2258,1728
+rural,Southern,Jaffa,christians,425,212,213
+rural,Southern,Jaffa,others,0,0,0
+rural,Southern,Ramle,all,33660,18989,14671
+rural,Southern,Ramle,moslems,27222,14495,12727
+rural,Southern,Ramle,jews,3887,2076,1811
+rural,Southern,Ramle,christians,1391,1258,133
+rural,Southern,Ramle,others,1160,1160,0
+rural,Jerusalem,Jerusalem District,all,109362,54498,54864
+rural,Jerusalem,Jerusalem District,moslems,103812,51917,51895
+rural,Jerusalem,Jerusalem District,jews,466,238,228
+rural,Jerusalem,Jerusalem District,christians,5084,2343,2741
+rural,Jerusalem,Jerusalem District,others,0,0,0
+rural,Jerusalem,Hebron,all,36994,18867,18127
+rural,Jerusalem,Hebron,moslems,36994,18867,18127
+rural,Jerusalem,Hebron,jews,0,0,0
+rural,Jerusalem,Hebron,christians,0,0,0
+rural,Jerusalem,Hebron,others,0,0,0
+rural,Jerusalem,Bethlehem,all,14854,6909,7945
+rural,Jerusalem,Bethlehem,moslems,13569,6304,7265
+rural,Jerusalem,Bethlehem,jews,0,0,0
+rural,Jerusalem,Bethlehem,christians,1285,605,680
+rural,Jerusalem,Bethlehem,others,0,0,0
+rural,Jerusalem,Jerusalem,all,28694,14309,14385
+rural,Jerusalem,Jerusalem,moslems,27437,13777,13660
+rural,Jerusalem,Jerusalem,jews,460,235,225
+rural,Jerusalem,Jerusalem,christians,797,297,500
+rural,Jerusalem,Jerusalem,others,0,0,0
+rural,Jerusalem,Jericho,all,1919,1077,842
+rural,Jerusalem,Jericho,moslems,1769,986,783
+rural,Jerusalem,Jericho,jews,6,3,3
+rural,Jerusalem,Jericho,christians,144,88,56
+rural,Jerusalem,Jericho,others,0,0,0
+rural,Jerusalem,Ramallah,all,26901,13336,13565
+rural,Jerusalem,Ramallah,moslems,24043,11983,12060
+rural,Jerusalem,Ramallah,jews,0,0,0
+rural,Jerusalem,Ramallah,christians,2858,1353,1505
+rural,Jerusalem,Ramallah,others,0,0,0
+rural,Northern,Northern District,all,213712,107592,106120
+rural,Northern,Northern District,moslems,189392,94827,94565
+rural,Northern,Northern District,jews,6558,3958,2600
+rural,Northern,Northern District,christians,11026,5475,5551
+rural,Northern,Northern District,others,6736,3332,3404
+rural,Northern,Tulkarm,all,31622,15965,15657
+rural,Northern,Tulkarm,moslems,31567,15922,15645
+rural,Northern,Tulkarm,jews,0,0,0
+rural,Northern,Tulkarm,christians,55,43,12
+rural,Northern,Tulkarm,others,0,0,0
+rural,Northern,Nablus,all,40748,20349,20399
+rural,Northern,Nablus,moslems,40206,20102,20104
+rural,Northern,Nablus,jews,1,1,0
+rural,Northern,Nablus,christians,541,246,295
+rural,Northern,Nablus,others,0,0,0
+rural,Northern,Jenin,all,30897,15193,15704
+rural,Northern,Jenin,moslems,30344,14904,15440
+rural,Northern,Jenin,jews,0,0,0
+rural,Northern,Jenin,christians,553,289,264
+rural,Northern,Jenin,others,0,0,0
+rural,Northern,Nazareth,all,15257,7721,7536
+rural,Northern,Nazareth,moslems,12450,6229,6221
+rural,Northern,Nazareth,jews,647,447,200
+rural,Northern,Nazareth,christians,2158,1044,1114
+rural,Northern,Nazareth,others,2,1,1
+rural,Northern,Beisan,all,8738,4628,4110
+rural,Northern,Beisan,moslems,7995,4160,3835
+rural,Northern,Beisan,jews,659,419,240
+rural,Northern,Beisan,christians,84,49,35
+rural,Northern,Beisan,others,0,0,0
+rural,Northern,Tiberias,all,13771,7027,6744
+rural,Northern,Tiberias,moslems,10385,5181,5204
+rural,Northern,Tiberias,jews,1812,1026,786
+rural,Northern,Tiberias,christians,894,465,429
+rural,Northern,Tiberias,others,680,355,325
+rural,Northern,Haifa,all,29535,15226,14309
+rural,Northern,Haifa,moslems,24528,12415,12113
+rural,Northern,Haifa,jews,2515,1551,964
+rural,Northern,Haifa,christians,981,517,464
+rural,Northern,Haifa,others,1511,743,768
+rural,Northern,Acre,all,29115,14566,14549
+rural,Northern,Acre,moslems,20042,10074,9968
+rural,Northern,Acre,jews,66,33,33
+rural,Northern,Acre,christians,4850,2408,2442
+rural,Northern,Acre,others,4157,2051,2106
+rural,Northern,Safad,all,14029,6917,7112
+rural,Northern,Safad,moslems,11875,5840,6035
+rural,Northern,Safad,jews,858,481,377
+rural,Northern,Safad,christians,910,414,496
+rural,Northern,Safad,others,386,182,204

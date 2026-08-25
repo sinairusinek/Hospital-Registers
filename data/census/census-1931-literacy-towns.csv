@@ -1,0 +1,253 @@
+district,town,religion,age_group,total_p,total_m,total_f,literate_p,literate_m,literate_f,illiterate_p,illiterate_m,illiterate_f
+Southern,ALL,all,total,149680,76513,73167,58459,33743,24716,91221,42770,48451
+Southern,ALL,all,0-7,32858,16843,16015,1591,900,691,31267,15943,15324
+Southern,ALL,all,7-14,21416,11583,9833,10264,5948,4316,11152,5635,5517
+Southern,ALL,all,14-21,17851,8766,9085,8907,4803,4104,8944,3963,4981
+Southern,ALL,all,21+,77307,39159,38148,37616,22026,15590,39691,17133,22558
+Southern,ALL,all,not_recorded,248,162,86,81,66,15,167,96,71
+Southern,Khan Yunis,all,total,3811,1865,1946,377,302,75,3434,1563,1871
+Southern,Khan Yunis,all,0-7,1105,542,563,7,4,3,1098,538,560
+Southern,Khan Yunis,all,7-14,662,357,305,138,88,50,524,269,255
+Southern,Khan Yunis,all,14-21,317,159,158,70,53,17,247,106,141
+Southern,Khan Yunis,all,21+,1726,807,919,162,157,5,1564,650,914
+Southern,Khan Yunis,all,not_recorded,1,0,1,0,0,0,1,0,1
+Southern,Gaza,all,total,17046,8418,8628,1801,1410,391,15245,7008,8237
+Southern,Gaza,all,0-7,4689,2365,2324,10,8,2,4679,2357,2322
+Southern,Gaza,all,7-14,2579,1403,1176,369,265,104,2210,1138,1072
+Southern,Gaza,all,14-21,1790,868,922,389,264,125,1401,604,797
+Southern,Gaza,all,21+,7987,3782,4205,1033,873,160,6954,2909,4045
+Southern,Gaza,all,not_recorded,1,0,1,0,0,0,1,0,1
+Southern,Beersheba,all,total,2959,1568,1391,530,415,115,2429,1153,1276
+Southern,Beersheba,all,0-7,825,428,397,4,3,1,821,425,396
+Southern,Beersheba,all,7-14,561,337,224,143,97,46,418,240,178
+Southern,Beersheba,all,14-21,323,164,159,87,62,25,236,102,134
+Southern,Beersheba,all,21+,1248,637,611,296,253,43,952,384,568
+Southern,Beersheba,all,not_recorded,2,2,0,0,0,0,2,2,0
+Southern,Majdal,all,total,6226,3089,3137,548,508,40,5678,2581,3097
+Southern,Majdal,all,0-7,1635,820,815,1,1,0,1634,819,815
+Southern,Majdal,all,7-14,837,465,372,111,92,19,726,373,353
+Southern,Majdal,all,14-21,607,291,316,110,102,8,497,189,308
+Southern,Majdal,all,21+,3146,1512,1634,326,313,13,2820,1199,1621
+Southern,Majdal,all,not_recorded,1,1,0,0,0,0,1,1,0
+Southern,Jaffa,all,total,51866,27728,24138,14575,9621,4954,37291,18107,19184
+Southern,Jaffa,all,0-7,11731,6095,5636,609,356,253,11122,5739,5383
+Southern,Jaffa,all,7-14,7977,4391,3586,3282,2028,1254,4695,2363,2332
+Southern,Jaffa,all,14-21,7037,3665,3372,2666,1604,1062,4371,2061,2310
+Southern,Jaffa,all,21+,25110,13569,11541,8016,5633,2383,17094,7936,9158
+Southern,Jaffa,all,not_recorded,11,8,3,2,0,2,9,8,1
+Southern,Tel Aviv,all,total,46101,22433,23668,36833,18588,18245,9268,3845,5423
+Southern,Tel Aviv,all,0-7,7056,3548,3508,749,383,366,6307,3165,3142
+Southern,Tel Aviv,all,7-14,5438,2717,2721,5104,2584,2520,334,133,201
+Southern,Tel Aviv,all,14-21,5127,2322,2805,4953,2279,2674,174,43,131
+Southern,Tel Aviv,all,21+,28251,13695,14556,25948,13276,12672,2303,419,1884
+Southern,Tel Aviv,all,not_recorded,229,151,78,79,66,13,150,85,65
+Southern,Ramle,all,total,10421,5636,4785,2110,1550,560,8311,4086,4225
+Southern,Ramle,all,0-7,2633,1395,1238,119,75,44,2514,1320,1194
+Southern,Ramle,all,7-14,1584,919,665,599,401,198,985,518,467
+Southern,Ramle,all,14-21,1310,650,660,354,226,128,956,424,532
+Southern,Ramle,all,21+,4893,2672,2221,1038,848,190,3855,1824,2031
+Southern,Ramle,all,not_recorded,1,0,1,0,0,0,1,0,1
+Southern,Lydda,all,total,11250,5776,5474,1685,1349,336,9565,4427,5138
+Southern,Lydda,all,0-7,3184,1650,1534,92,70,22,3092,1580,1512
+Southern,Lydda,all,7-14,1778,994,784,518,393,125,1260,601,659
+Southern,Lydda,all,14-21,1340,647,693,278,213,65,1062,434,628
+Southern,Lydda,all,21+,4946,2485,2461,797,673,124,4149,1812,2337
+Southern,Lydda,all,not_recorded,2,0,2,0,0,0,2,0,2
+Jerusalem,ALL,all,total,121866,60673,61193,58174,33912,24262,63692,26761,36931
+Jerusalem,ALL,all,0-7,25715,13227,12488,1506,780,726,24209,12447,11762
+Jerusalem,ALL,all,7-14,18896,10031,8865,11926,6494,5432,6970,3537,3433
+Jerusalem,ALL,all,14-21,15587,7611,7976,10841,5843,4998,4746,1768,2978
+Jerusalem,ALL,all,21+,61630,29783,31847,33896,20790,13106,27734,8993,18741
+Jerusalem,ALL,all,not_recorded,38,21,17,5,5,0,33,16,17
+Jerusalem,Hebron,all,total,17531,8561,8970,2315,1842,473,15216,6719,8497
+Jerusalem,Hebron,all,0-7,5165,2662,2503,41,30,11,5124,2632,2492
+Jerusalem,Hebron,all,7-14,2883,1598,1285,661,479,182,2222,1119,1103
+Jerusalem,Hebron,all,14-21,1798,740,1058,346,241,105,1452,499,953
+Jerusalem,Hebron,all,21+,7685,3561,4124,1267,1092,175,6418,2469,3949
+Jerusalem,Hebron,all,not_recorded,0,0,0,0,0,0,0,0,0
+Jerusalem,Beit Jala,all,total,2730,1202,1528,722,382,340,2008,820,1188
+Jerusalem,Beit Jala,all,0-7,588,306,282,1,0,1,587,306,281
+Jerusalem,Beit Jala,all,7-14,409,215,194,104,54,50,305,161,144
+Jerusalem,Beit Jala,all,14-21,331,145,186,198,91,107,133,54,79
+Jerusalem,Beit Jala,all,21+,1402,536,866,419,237,182,983,299,684
+Jerusalem,Beit Jala,all,not_recorded,0,0,0,0,0,0,0,0,0
+Jerusalem,Bethlehem,all,total,6815,3192,3623,2581,1500,1081,4234,1692,2542
+Jerusalem,Bethlehem,all,0-7,1309,658,651,23,13,10,1286,645,641
+Jerusalem,Bethlehem,all,7-14,1068,582,486,626,355,271,442,227,215
+Jerusalem,Bethlehem,all,14-21,1005,496,509,656,350,306,349,146,203
+Jerusalem,Bethlehem,all,21+,3427,1453,1974,1276,782,494,2151,671,1480
+Jerusalem,Bethlehem,all,not_recorded,6,3,3,0,0,0,6,3,3
+Jerusalem,Jerusalem,all,total,90503,45776,44727,51170,29379,21791,39333,16397,22936
+Jerusalem,Jerusalem,all,0-7,17619,9076,8543,1427,730,697,16192,8346,7846
+Jerusalem,Jerusalem,all,7-14,13776,7248,6528,10157,5403,4754,3619,1845,1774
+Jerusalem,Jerusalem,all,14-21,11987,6059,5928,9346,5039,4307,2641,1020,1621
+Jerusalem,Jerusalem,all,21+,47090,23375,23715,30235,18202,12033,16855,5173,11682
+Jerusalem,Jerusalem,all,not_recorded,31,18,13,5,5,0,26,13,13
+Jerusalem,Ramallah,all,total,4287,1942,2345,1386,809,577,2901,1133,1768
+Jerusalem,Ramallah,all,0-7,1024,525,499,14,7,7,1010,518,492
+Jerusalem,Ramallah,all,7-14,760,388,372,378,203,175,382,185,197
+Jerusalem,Ramallah,all,14-21,466,171,295,295,122,173,171,49,122
+Jerusalem,Ramallah,all,21+,2036,858,1178,699,477,222,1337,381,956
+Jerusalem,Ramallah,all,not_recorded,1,0,1,0,0,0,1,0,1
+Northern,ALL,all,total,115745,59817,55928,44689,28573,16116,71056,31244,39812
+Northern,ALL,all,0-7,24645,12759,11886,1424,758,666,23221,12001,11220
+Northern,ALL,all,7-14,17360,9159,8201,8801,5178,3623,8559,3981,4578
+Northern,ALL,all,14-21,14868,7654,7214,7674,4724,2950,7194,2930,4264
+Northern,ALL,all,21+,58831,30214,28617,26790,17913,8877,32041,12301,19740
+Northern,ALL,all,not_recorded,41,31,10,0,0,0,41,31,10
+Northern,Tulkarm,all,total,4827,2478,2349,1070,876,194,3757,1602,2155
+Northern,Tulkarm,all,0-7,1237,612,625,12,7,5,1225,605,620
+Northern,Tulkarm,all,7-14,710,389,321,240,179,61,470,210,260
+Northern,Tulkarm,all,14-21,707,394,313,282,225,57,425,169,256
+Northern,Tulkarm,all,21+,2173,1083,1090,536,465,71,1637,618,1019
+Northern,Tulkarm,all,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Nablus,all,total,17189,8487,8702,4823,3529,1294,12366,4958,7408
+Northern,Nablus,all,0-7,4018,2004,2014,57,19,38,3961,1985,1976
+Northern,Nablus,all,7-14,3118,1699,1419,1429,920,509,1689,779,910
+Northern,Nablus,all,14-21,2164,1054,1110,975,668,307,1189,386,803
+Northern,Nablus,all,21+,7888,3729,4159,2362,1922,440,5526,1807,3719
+Northern,Nablus,all,not_recorded,1,1,0,0,0,0,1,1,0
+Northern,Jenin,all,total,2706,1361,1345,773,519,254,1933,842,1091
+Northern,Jenin,all,0-7,582,313,269,17,4,13,565,309,256
+Northern,Jenin,all,7-14,424,220,204,212,116,96,212,104,108
+Northern,Jenin,all,14-21,328,164,164,144,87,57,184,77,107
+Northern,Jenin,all,21+,1372,664,708,400,312,88,972,352,620
+Northern,Jenin,all,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Nazareth,all,total,8756,4421,4335,3442,2154,1288,5314,2267,3047
+Northern,Nazareth,all,0-7,1918,1009,909,69,34,35,1849,975,874
+Northern,Nazareth,all,7-14,1470,760,710,806,443,363,664,317,347
+Northern,Nazareth,all,14-21,1074,563,511,635,409,226,439,154,285
+Northern,Nazareth,all,21+,4294,2089,2205,1932,1268,664,2362,821,1541
+Northern,Nazareth,all,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Beisan,all,total,3101,1673,1428,680,542,138,2421,1131,1290
+Northern,Beisan,all,0-7,652,344,308,20,8,12,632,336,296
+Northern,Beisan,all,7-14,401,222,179,131,91,40,270,131,139
+Northern,Beisan,all,14-21,429,233,196,116,87,29,313,146,167
+Northern,Beisan,all,21+,1619,874,745,413,356,57,1206,518,688
+Northern,Beisan,all,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Tiberias,all,total,8601,4163,4438,3386,2060,1326,5215,2103,3112
+Northern,Tiberias,all,0-7,2021,1053,968,116,63,53,1905,990,915
+Northern,Tiberias,all,7-14,1388,718,670,787,445,342,601,273,328
+Northern,Tiberias,all,14-21,1034,482,552,611,335,276,423,147,276
+Northern,Tiberias,all,21+,4158,1910,2248,1872,1217,655,2286,693,1593
+Northern,Tiberias,all,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Haifa,all,total,50403,27043,23360,24019,14597,9422,26384,12446,13938
+Northern,Haifa,all,0-7,9819,5136,4683,919,509,410,8900,4627,4273
+Northern,Haifa,all,7-14,6630,3415,3215,3590,2036,1554,3040,1379,1661
+Northern,Haifa,all,14-21,6592,3487,3105,3695,2161,1534,2897,1326,1571
+Northern,Haifa,all,21+,27332,14980,12352,15815,9891,5924,11517,5089,6428
+Northern,Haifa,all,not_recorded,30,25,5,0,0,0,30,25,5
+Northern,Acre,all,total,7897,4188,3709,2645,1685,960,5252,2503,2749
+Northern,Acre,all,0-7,1518,777,741,92,46,46,1426,731,695
+Northern,Acre,all,7-14,1180,588,592,647,345,302,533,243,290
+Northern,Acre,all,14-21,1074,556,518,484,289,195,590,267,323
+Northern,Acre,all,21+,4125,2267,1858,1422,1005,417,2703,1262,1441
+Northern,Acre,all,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Shafa Amr,all,total,2824,1416,1408,763,558,205,2061,858,1203
+Northern,Shafa Amr,all,0-7,686,370,316,30,18,12,656,352,304
+Northern,Shafa Amr,all,7-14,445,258,187,231,164,67,214,94,120
+Northern,Shafa Amr,all,14-21,312,164,148,141,91,50,171,73,98
+Northern,Shafa Amr,all,21+,1381,624,757,361,285,76,1020,339,681
+Northern,Shafa Amr,all,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Safad,all,total,9441,4587,4854,3088,2053,1035,6353,2534,3819
+Northern,Safad,all,0-7,2194,1141,1053,92,50,42,2102,1091,1011
+Northern,Safad,all,7-14,1594,890,704,728,439,289,866,451,415
+Northern,Safad,all,14-21,1154,557,597,591,372,219,563,185,378
+Northern,Safad,all,21+,4489,1994,2495,1677,1192,485,2812,802,2010
+Northern,Safad,all,not_recorded,10,5,5,0,0,0,10,5,5
+Southern,Jaffa,moslems,total,35506,19443,16063,5933,4592,1341,29573,14851,14722
+Southern,Jaffa,moslems,0-7,8488,4411,4077,255,169,86,8233,4242,3991
+Southern,Jaffa,moslems,7-14,5592,3164,2428,1593,1125,468,3999,2039,1960
+Southern,Jaffa,moslems,14-21,4823,2620,2203,1080,777,303,3743,1843,1900
+Southern,Jaffa,moslems,21+,16593,9240,7353,3005,2521,484,13588,6719,6869
+Southern,Jaffa,moslems,not_recorded,10,8,2,0,0,0,10,8,2
+Southern,Jaffa,jews,total,7209,3630,3579,3989,2335,1654,3220,1295,1925
+Southern,Jaffa,jews,0-7,1454,767,687,140,83,57,1314,684,630
+Southern,Jaffa,jews,7-14,1195,582,613,850,446,404,345,136,209
+Southern,Jaffa,jews,14-21,1015,489,526,745,401,344,270,88,182
+Southern,Jaffa,jews,21+,3545,1792,1753,2254,1405,849,1291,387,904
+Southern,Jaffa,jews,not_recorded,0,0,0,0,0,0,0,0,0
+Southern,Jaffa,christians,total,9132,4643,4489,4641,2686,1955,4491,1957,2534
+Southern,Jaffa,christians,0-7,1786,916,870,214,104,110,1572,812,760
+Southern,Jaffa,christians,7-14,1188,644,544,838,457,381,350,187,163
+Southern,Jaffa,christians,14-21,1197,555,642,840,426,414,357,129,228
+Southern,Jaffa,christians,21+,4960,2528,2432,2749,1699,1050,2211,829,1382
+Southern,Jaffa,christians,not_recorded,1,0,1,0,0,0,1,0,1
+Southern,Jaffa,others,total,19,12,7,10,8,2,9,4,5
+Southern,Jaffa,others,0-7,3,1,2,0,0,0,3,1,2
+Southern,Jaffa,others,7-14,2,1,1,1,0,1,1,1,0
+Southern,Jaffa,others,14-21,2,1,1,1,0,1,1,1,0
+Southern,Jaffa,others,21+,12,9,3,8,8,0,4,1,3
+Southern,Jaffa,others,not_recorded,0,0,0,0,0,0,0,0,0
+Southern,Tel Aviv,moslems,total,106,63,43,26,20,6,80,43,37
+Southern,Tel Aviv,moslems,0-7,24,11,13,1,1,0,23,10,13
+Southern,Tel Aviv,moslems,7-14,12,7,5,2,1,1,10,6,4
+Southern,Tel Aviv,moslems,14-21,21,12,9,8,5,3,13,7,6
+Southern,Tel Aviv,moslems,21+,49,33,16,15,13,2,34,20,14
+Southern,Tel Aviv,moslems,not_recorded,0,0,0,0,0,0,0,0,0
+Southern,Tel Aviv,jews,total,45564,22147,23417,36437,18375,18062,9127,3772,5355
+Southern,Tel Aviv,jews,0-7,6984,3513,3471,744,380,364,6240,3133,3107
+Southern,Tel Aviv,jews,7-14,5406,2702,2704,5083,2576,2507,323,126,197
+Southern,Tel Aviv,jews,14-21,5079,2299,2780,4918,2263,2655,161,36,125
+Southern,Tel Aviv,jews,21+,27867,13483,14384,25613,13090,12523,2254,393,1861
+Southern,Tel Aviv,jews,not_recorded,228,150,78,79,66,13,149,84,65
+Southern,Tel Aviv,christians,total,143,86,57,115,71,44,28,15,13
+Southern,Tel Aviv,christians,0-7,12,8,4,1,1,0,11,7,4
+Southern,Tel Aviv,christians,7-14,3,2,1,2,1,1,1,1,0
+Southern,Tel Aviv,christians,14-21,8,2,6,8,2,6,0,0,0
+Southern,Tel Aviv,christians,21+,119,73,46,104,67,37,15,6,9
+Southern,Tel Aviv,christians,not_recorded,1,1,0,0,0,0,1,1,0
+Southern,Tel Aviv,others,total,288,137,151,255,122,133,33,15,18
+Southern,Tel Aviv,others,0-7,36,16,20,3,1,2,33,15,18
+Southern,Tel Aviv,others,7-14,17,6,11,17,6,11,0,0,0
+Southern,Tel Aviv,others,14-21,19,9,10,19,9,10,0,0,0
+Southern,Tel Aviv,others,21+,216,106,110,216,106,110,0,0,0
+Southern,Tel Aviv,others,not_recorded,0,0,0,0,0,0,0,0,0
+Jerusalem,Jerusalem,moslems,total,19894,11111,8783,5819,4182,1637,14075,6929,7146
+Jerusalem,Jerusalem,moslems,0-7,4265,2267,1998,93,47,46,4172,2220,1952
+Jerusalem,Jerusalem,moslems,7-14,3298,1893,1405,1446,906,540,1852,987,865
+Jerusalem,Jerusalem,moslems,14-21,2896,1676,1220,1328,895,433,1568,781,787
+Jerusalem,Jerusalem,moslems,21+,9430,5271,4159,2948,2330,618,6482,2941,3541
+Jerusalem,Jerusalem,moslems,not_recorded,5,4,1,4,4,0,1,0,1
+Jerusalem,Jerusalem,jews,total,51222,24795,26427,32703,17967,14736,18519,6828,11691
+Jerusalem,Jerusalem,jews,0-7,10437,5332,5105,1078,561,517,9359,4771,4588
+Jerusalem,Jerusalem,jews,7-14,7916,4005,3911,6660,3406,3254,1256,599,657
+Jerusalem,Jerusalem,jews,14-21,6181,2818,3363,5508,2709,2799,673,109,564
+Jerusalem,Jerusalem,jews,21+,26669,12629,14040,19457,11291,8166,7212,1338,5874
+Jerusalem,Jerusalem,jews,not_recorded,19,11,8,0,0,0,19,11,8
+Jerusalem,Jerusalem,christians,total,19335,9834,9501,12602,7196,5406,6733,2638,4095
+Jerusalem,Jerusalem,christians,0-7,2912,1475,1437,256,122,134,2656,1353,1303
+Jerusalem,Jerusalem,christians,7-14,2561,1350,1211,2051,1091,960,510,259,251
+Jerusalem,Jerusalem,christians,14-21,2904,1560,1344,2504,1430,1074,400,130,270
+Jerusalem,Jerusalem,christians,21+,10951,5446,5505,7790,4552,3238,3161,894,2267
+Jerusalem,Jerusalem,christians,not_recorded,7,3,4,1,1,0,6,2,4
+Jerusalem,Jerusalem,others,total,52,36,16,46,34,12,6,2,4
+Jerusalem,Jerusalem,others,0-7,5,2,3,0,0,0,5,2,3
+Jerusalem,Jerusalem,others,7-14,1,0,1,0,0,0,1,0,1
+Jerusalem,Jerusalem,others,14-21,6,5,1,6,5,1,0,0,0
+Jerusalem,Jerusalem,others,21+,40,29,11,40,29,11,0,0,0
+Jerusalem,Jerusalem,others,not_recorded,0,0,0,0,0,0,0,0,0
+Northern,Haifa,moslems,total,20324,11324,9000,3899,3135,764,16425,8189,8236
+Northern,Haifa,moslems,0-7,4451,2290,2161,113,74,39,4338,2216,2122
+Northern,Haifa,moslems,7-14,3031,1606,1425,822,579,243,2209,1027,1182
+Northern,Haifa,moslems,14-21,2998,1709,1289,817,616,201,2181,1093,1088
+Northern,Haifa,moslems,21+,9838,5715,4123,2147,1866,281,7691,3849,3842
+Northern,Haifa,moslems,not_recorded,6,4,2,0,0,0,6,4,2
+Northern,Haifa,jews,total,15923,8232,7691,12515,6706,5809,3408,1526,1882
+Northern,Haifa,jews,0-7,2864,1525,1339,633,348,285,2231,1177,1054
+Northern,Haifa,jews,7-14,1820,930,890,1645,862,783,175,68,107
+Northern,Haifa,jews,14-21,1556,772,784,1455,725,730,101,47,54
+Northern,Haifa,jews,21+,9660,4985,4675,8782,4771,4011,878,214,664
+Northern,Haifa,jews,not_recorded,23,20,3,0,0,0,23,20,3
+Northern,Haifa,christians,total,13824,7297,6527,7440,4646,2794,6384,2651,3733
+Northern,Haifa,christians,0-7,2440,1289,1151,170,85,85,2270,1204,1066
+Northern,Haifa,christians,7-14,1743,860,883,1100,580,520,643,280,363
+Northern,Haifa,christians,14-21,1997,986,1011,1405,809,596,592,177,415
+Northern,Haifa,christians,21+,7643,4161,3482,4765,3172,1593,2878,989,1889
+Northern,Haifa,christians,not_recorded,1,1,0,0,0,0,1,1,0
+Northern,Haifa,others,total,332,190,142,165,110,55,167,80,87
+Northern,Haifa,others,0-7,64,32,32,3,2,1,61,30,31
+Northern,Haifa,others,7-14,36,19,17,23,15,8,13,4,9
+Northern,Haifa,others,14-21,41,20,21,18,11,7,23,9,14
+Northern,Haifa,others,21+,191,119,72,121,82,39,70,37,33
+Northern,Haifa,others,not_recorded,0,0,0,0,0,0,0,0,0
