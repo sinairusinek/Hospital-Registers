@@ -16,41 +16,25 @@ Nations reports established a capacity discontinuity *inside* our series:
 steps precisely and name the medical staff. Any admissions or occupancy trend
 is unreadable until the bed-count steps are pinned down.
 
-## 3. German-Jewish immigrant press — partly in Compact Memory
-**Correction to an earlier note:** the *Mitteilungsblatt* is NOT unavailable.
-Frankfurt's Compact Memory (sammlungen.ub.uni-frankfurt.de/cm) holds
-**MB / Irgûn ʿÔlê Merkaz Êrôpā (Tel Aviv), vols 7.1943–16.1952, full text** —
-covering 1943–48 of the register — and **Jüdische Weltrundschau (Jerusalem),
-March 1939 – May 1940, weekly, full text**. Also *Bericht an den
-Zionistenkongress* (Jerusalem, Central Bureau for the Settlement of German
-Jews, 1935), reports rather than press. Those four (plus Erez Israel 1923, too
-early, and La-Ḳore ha-tsaʿir 1950, campus-network only) are the *entire*
-Palestine-published holding; the rest of Compact Memory is German- and
-European-published.
+## 3. German-Jewish immigrant press — DONE for the *Mitteilungsblatt* (2026-08-26)
 
-*Jedioth Chadashoth*, *Blumenthal's Neueste Nachrichten* and *Orient* (Haifa,
-1942–43) are still not located anywhere.
+**Superseded.** The endpoint was found and the queries were run; see
+"Session E" in `README.md` and the client at `pipeline/compactmemory.py`.
+Three things this item used to say are wrong and are corrected there: the
+search *is* full text (via `/cm/sru`, not the walled HTML form); the MB run
+in Compact Memory starts in **1932/33**, not 1943, and so covers essentially
+the whole register span; and the Fraktur ſ is folded by this index (the ſ-trap
+is a JPress property).
 
-**Access notes.** The HTML interface sits behind a browser-verification wall
-that `curl` and WebFetch cannot pass — drive it through the dedicated Chrome,
-exactly as with Cloudflare. Two doors are open without it: the **OAI-PMH
-endpoint** (`/cm/oai`, sets incl. `ubffmcm`, `journal`; 481 journal records via
-`ListRecords&metadataPrefix=oai_dc`) and a JSON API root at `/cm/api`.
-Caution: `oai_dc` `publisher` usually names the *digitizing partner* (RWTH, the
-Frankfurt library), not the place of publication — use the Places cloud
-(`/cm/nav/cloud/place`) for provenance instead.
+The hold pending the diasporic memory project no longer blocks anything — the
+open SRU endpoint made the harvest cheap. If Yiftach's access turns out to
+carry **OCR text**, it is still worth having: Compact Memory serves page
+images openly but no text, so our stage 2 is reading images.
 
-**The search is article/metadata level, not full text.** `Haifa` returns 47
-article *titles*, overwhelmingly from *Palästina* and *Die Welt* (Berlin and
-Vienna Zionist journals) on the harbour, the Technion and economics;
-`Regierungskrankenhaus` returns 5, none Palestine-published. No hospital
-material surfaced — but that is a property of the index, not proof of absence.
-Using MB 1943–48 would need page-level harvesting, the same two-stage design as
-Jrayed and JPress.
-
-**ON HOLD (2026-08-26):** do not start the MB harvest. Sinai is checking
-whether access already exists through the diasporic memory project (Yiftach
-worked on MB there). Wait for that before harvesting from Compact Memory.
+**Still open here:** the 187 Mandate-era `Krankenhaus`×`Haifa` issues in
+`cm_kh_and_haifa.tsv` have not been read page by page. *Jedioth Chadashoth*,
+*Blumenthal's Neueste Nachrichten* and *Orient* (Haifa, 1942–43) remain
+unlocated in any archive.
 
 **Worth fetching regardless:** Fritz Lorch, "Die deutsche Kolonie Haifa in
 Palästina" (*Palästina*, two articles) — the German Colony is where the
