@@ -212,6 +212,12 @@ class Client:
             body = self._eval(
                 f"fetch({json.dumps(self._url(params))},"
                 "{credentials:'include'}).then(r=>r.text())", True)
+            if body is None:
+                # CDP occasionally returns no value for a large body; the
+                # request itself is fine, so simply ask again.
+                print("  empty CDP result - retrying", file=sys.stderr)
+                time.sleep(2)
+                continue
             if not is_challenge(body):
                 return body
             self._resolve_challenge()
@@ -222,9 +228,13 @@ class Client:
         try:
             root = ET.fromstring(body)
         except ET.ParseError:
-            # Veridian emits OCR snippets with bare & and control characters
-            # that are not well-formed; repair those two classes and retry.
-            body = re.sub(r"&(?!(?:#\d+|#x[0-9a-fA-F]+|\w+);)", "&amp;", body)
+            # Veridian emits OCR snippets with bare &, HTML-only named
+            # entities (&nbsp; and friends, undefined in XML) and control
+            # characters. Escape every & that does not open one of XML's own
+            # five entities or a numeric reference, then strip the controls.
+            body = re.sub(
+                r"&(?!(?:#\d+|#x[0-9a-fA-F]+|amp|lt|gt|quot|apos);)",
+                "&amp;", body)
             body = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", " ", body)
             root = ET.fromstring(body)
         err = root.findtext(".//Error")
@@ -321,7 +331,21 @@ def cmd_search(c: Client, args) -> None:
 
     got, total, r = 0, None, 1
     while total is None or (got < total and got < args.max):
-        block = c.xml({**params, "r": str(r), "o": str(min(100, args.max - got))})
+        # A few blocks in the larger Hebrew harvests make the server hang up
+        # ("Failed to fetch"). The results are fine either side of them, so
+        # step the block size down rather than losing the run.
+        want = min(100, args.max - got)
+        for size in (want, want // 2, want // 4, 10):
+            if size < 1:
+                continue
+            try:
+                block = c.xml({**params, "r": str(r), "o": str(size)})
+                break
+            except RuntimeError as exc:
+                print(f"  block r={r} o={size} failed ({exc}); backing off",
+                      file=sys.stderr)
+        else:
+            raise RuntimeError(f"block r={r} unrecoverable")
         total = int(block.findtext(".//TotalNumberOfSearchResults") or 0)
         hits = list(block.iter(hit_tag))
         if not hits:

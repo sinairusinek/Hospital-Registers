@@ -101,13 +101,18 @@ def main() -> None:
                          "a town name (default 150, matching the Arabic pass)")
     ap.add_argument("--in", dest="src", default=IN)
     ap.add_argument("--out", dest="dst", default=OUT)
+    ap.add_argument("--union", default=UNION,
+                    help="hit list supplying the found_by provenance column; "
+                         "pass heb_art_qualified_union.tsv for stage 3")
     args = ap.parse_args()
     src = args.src if os.path.sep in args.src else os.path.join(NEWS, args.src)
     dst = args.dst if os.path.sep in args.dst else os.path.join(NEWS, args.dst)
 
+    union = (args.union if os.path.sep in args.union
+             else os.path.join(NEWS, args.union))
     forms = {}
-    if os.path.exists(UNION):
-        with open(UNION, newline="") as f:
+    if os.path.exists(union):
+        with open(union, newline="") as f:
             for row in csv.DictReader(f, delimiter="\t"):
                 forms[row["id"]] = row.get("forms", "")
 

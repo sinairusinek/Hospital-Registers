@@ -21,6 +21,7 @@ jrayed.py search output, so jrayed_text_harvest.py can read it directly:
 
 from __future__ import annotations
 
+import argparse
 import csv
 import os
 
@@ -43,11 +44,29 @@ SOURCES = [
     ("indefinite",  "heb_indef.tsv"),
 ]
 
+# Stage 3 asked the same qualified questions at --level Logical, so the union
+# has an article-level twin. Same forms, different unit; see the stage-3
+# section of hebrew_query_plan.md for why the two are not interchangeable.
+ART_SOURCES = [
+    ("spelled",     "heb_art_govhosp.tsv"),
+    ("abbreviated", "heb_art_abbrev.tsv"),
+    ("maqaf",       "heb_art_maqaf.tsv"),
+    ("indefinite",  "heb_art_indef.tsv"),
+    ("abbrev_short", "heb_art_abbrev_short.tsv"),
+]
+ART_OUT = os.path.join(HITS, "heb_art_qualified_union.tsv")
+
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--articles", action="store_true",
+                    help="union the stage-3 --level Logical harvests instead")
+    args = ap.parse_args()
+    sources, out = (ART_SOURCES, ART_OUT) if args.articles else (SOURCES, OUT)
+
     rows: dict[str, dict] = {}
     forms: dict[str, set] = {}
-    for form, name in SOURCES:
+    for form, name in sources:
         path = os.path.join(HITS, name)
         if not os.path.exists(path):
             print(f"  missing, skipped: {name}")
@@ -62,7 +81,7 @@ def main() -> None:
                 forms.setdefault(row["id"], set()).add(form)
         print(f"  {name:32s} {n:5,d}")
 
-    with open(OUT, "w", newline="") as f:
+    with open(out, "w", newline="") as f:
         w = csv.writer(f, delimiter="\t")
         w.writerow(["n", "id", "date", "publication", "title", "snippet", "forms"])
         for i, (pid, row) in enumerate(sorted(rows.items()), 1):
@@ -70,11 +89,12 @@ def main() -> None:
                         row.get("title", ""), row.get("snippet", ""),
                         ",".join(sorted(forms[pid]))])
 
-    print(f"\nunion: {len(rows):,d} pages -> {os.path.relpath(OUT, ROOT)}")
+    unit = "articles" if args.articles else "pages"
+    print(f"\nunion: {len(rows):,d} {unit} -> {os.path.relpath(out, ROOT)}")
     tally: dict[str, int] = {}
     for s in forms.values():
         tally[",".join(sorted(s))] = tally.get(",".join(sorted(s)), 0) + 1
-    print("pages by which form(s) found them:")
+    print(f"{unit} by which form(s) found them:")
     for k, v in sorted(tally.items(), key=lambda x: -x[1]):
         print(f"  {v:5,d}  {k}")
 

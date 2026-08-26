@@ -1,8 +1,10 @@
 # Hebrew query plan: raising the recall floor
 
-**Stage D (diagnostics) was executed on 2026-08-26 and its results are below.**
-Stage H (harvests) has not been run. Every command here is meant to be run
-unmodified. Nothing here touches `app/` or `pipeline/build.py`.
+**All stages have now been run, all on 2026-08-26.** Stage D (diagnostics) and
+stage H (harvests) in session D, stage 2 (the local pass) in the same session,
+and stage 3 (the article-level sweep) in session E. Results follow each stage.
+Every command here is meant to be run unmodified. Nothing here touches `app/`
+or `pipeline/build.py`.
 
 ## The premise this plan started from was wrong
 
@@ -439,9 +441,9 @@ term. 1.6% combined, recorded rather than dropped.
 
 ---
 
-# Stage 3 — the article-level sweep (NOT YET RUN)
+# Stage 3 — the article-level sweep (RUN 2026-08-26, session E)
 
-This is the next step, and it is deliberately *not* the obvious one.
+This was the next step, and it was deliberately *not* the obvious one.
 
 **Do not bulk-mine the unqualified pages.** It was priced first:
 `pipeline/heb_sample_unqualified.py` drew 200 of the 7,692 at random (seed
@@ -506,3 +508,131 @@ python3 pipeline/jrayed_concordance.py --lang he \
 **Why bother at all**, given stage 2 already produced 475 pages: those 475 are
 haystacks with a needle located somewhere in them. The article-level equivalents
 are the reports themselves, with headlines, which is what the write-up needs.
+
+---
+
+## Stage 3 results
+
+Seven queries, not five: `"בית חולים ממשלתי"` (60) and `"בי״ח הממשלתי"` (6)
+were added once the first comparison showed 11 of the apparent losses were
+simply forms with no article-level twin. Their page-level counterparts were in
+the stage-2 union, so leaving them out made article scoping look worse than it
+is.
+
+| query | pages | articles | page-only issues | article-only issues |
+|---|---:|---:|---:|---:|
+| `"בית החולים הממשלתי"` | 694 | 702 | 1 | 0 |
+| `"ביה״ח הממשלתי"` | 224 | 228 | 0 | 0 |
+| `"בית־החולים הממשלתי"` | 220 | 221 | 0 | 0 |
+| `"בית חולים ממשלתי"` | 59 | 60 | 0 | 0 |
+| `"בי״ח הממשלתי"` | 6 | 6 | 0 | 0 |
+| `ביה״ח בחיפה` | 2,258 | **819** | 1,379 | 9 |
+| `"בית החולים" בחיפה` | 5,796 | **1,875** | 3,486 | 29 |
+
+An article id carries no page number, so page and article sets can only be
+joined on the issue prefix (`dav19380417-01`). `pipeline/heb_article_compare.py`
+reproduces every number below.
+
+**Single phrases are unaffected, exactly as trap 4 implied.** The five phrase
+queries return the identical issues in both units; the count differences are
+pages holding two matching articles. All the movement is in the two
+phrase-AND-token queries, and it is the movement stage 2 was built to produce:
+two thirds of their issues drop out, server-side, in one request.
+
+**The 38 article-only issues are the genuinely new thing.** 14 of the 29 in the
+unqualified sweep are `haolam`, whose long weekly surveys (`שבוע הימים בארץ`)
+run over several pages — the hospital on one, Haifa on another, so *no page*
+holds both and page scoping cannot see them at any window width. `ytlv`,
+`hador` and `bustenai`, all periodicals with long pieces, supply most of the
+rest. This is the one recall gain that is structural rather than a matter of
+filter tuning.
+
+### Article scoping against stage 2
+
+| | |
+|---|---:|
+| qualified article union (`heb_union.py --articles`) | 1,194 articles |
+| …naming Haifa inside the article | **572** |
+| page-level stage 2 (proximity ≤150 chars) | 475 pages |
+| issues in both | 366 |
+| issues article-only — **gained** | **187** |
+| issues page-only — **lost** | 98 |
+| …of those, absent from every harvested article | 79 |
+
+**Where the gain comes from: the window was the wrong shape.** Of the 572, 341
+hold both terms within 150 characters and page stage 2 already had 337 of them.
+The remaining 231 hold both in one article but further apart, and 187 of those
+are new. Sampled, they are real reports: *HaBoker*, 14 August 1939, an
+air-defence exercise listing casualty stations at "the new and old Government
+Hospital" — independent corroboration of the October 1938 move — and *HaYom*,
+4 March 1948, the Stanton Street car bomb answered by the Government Hospital's
+ambulances.
+
+**But do not count them as findings.** Beyond 150 characters the article
+boundary is the only evidence, and `heb_disambiguate.py`'s verdict column
+cannot adjudicate them: it uses the same ±150 window, so it returns `other` or
+`untowned` by construction. Measuring the nearest town to a hospital mention
+*article-wide* instead:
+
+| | n | nearest town |
+|---|---:|---|
+| within 150 chars, page stage 2 had it | 337 | **haifa 281**, telaviv 15, jaffa 15 |
+| within 150 chars, new | 4 | haifa 3, jaffa 1 |
+| beyond 150 chars, new | 187 | jaffa 60, **haifa 55**, jerusalem 28 |
+| beyond 150 chars, page stage 2 had it | 44 | jaffa 20, haifa 9, jerusalem 4 |
+
+Haifa leads in 84% of the near pairs and 29% of the far ones. The gain is
+therefore ~55 strong new candidates plus a tail that has to be read.
+
+**The losses are largely stage 2's own false positives.** 79 of the 98 appear
+in no harvested article holding both terms — the page text stream runs adjacent
+column items together, so a 150-character window crosses boundaries the OCR
+does not mark. Checked by hand: `dav19380417` is a report on Vienna;
+`dav19480109` is a leader on a doctor murdered in a government hospital with no
+Haifa anywhere in the article.
+
+### The unqualified decision stands
+
+The sample was not wrong and was not re-tested. Stage 3 is the cheaper seam it
+pointed to: 1,875 articles for one request, against ~2,650 candidate pages for
+2.4 hours of the shared browser. Harvesting and filtering those 1,875 articles
+is not the same act as bulk-mining the 7,692 pages, and the 7,692 remain
+unmined.
+
+### Three fixes to `jrayed.py`
+
+None of these show at session D's harvest sizes; all three were forced by the
+1,875-article run.
+
+- The XML repair escaped bare `&` but spared anything shaped like an entity,
+  including HTML-only `&nbsp;`. XML defines five entities and `nbsp` is not one
+  of them, so the retry died on an undefined entity instead. Only the five,
+  plus numeric references, are spared now.
+- CDP sometimes returns no value for a large body, which surfaced as
+  `'NoneType' object is not subscriptable` inside the challenge detector. The
+  request is reissued.
+- One block near `r=1501` made the server hang up repeatedly. `cmd_search`
+  steps the block size down 100 → 50 → 25 → 10 rather than losing a run
+  nineteen requests deep.
+
+### Outputs
+
+`heb_article_texts.jsonl` is 24 MB and **not committed**; it regenerates in
+about an hour at 0.9 articles/sec.
+
+```sh
+python3 pipeline/heb_union.py --articles            # heb_art_qualified_union.tsv (1,194)
+python3 pipeline/jrayed_text_harvest.py --site nli \
+    --glob 'heb_art_*.tsv' --out heb_article_texts.jsonl
+python3 pipeline/heb_disambiguate.py --in heb_article_texts.jsonl \
+    --union heb_art_qualified_union.tsv --out heb_article_disambiguation.tsv
+python3 pipeline/jrayed_concordance.py --lang he \
+    --in heb_article_texts.jsonl --out heb_article_concordance.tsv
+python3 pipeline/heb_article_compare.py
+```
+
+### What stage 4 should be
+
+`jrayed_articles.py` for headlines over the ~55 strong candidates and the near
+set, and a read of the 231 far pairs. That is the reader the write-up needs,
+and it no longer requires any new querying.

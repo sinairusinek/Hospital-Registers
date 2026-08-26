@@ -221,6 +221,97 @@ reached the XML parser, and surfaced 400 results into a harvest as a
 mismatched-tag `ParseError` — a confusing way to be told the clearance had
 expired. `is_challenge()` now recognises both.
 
+### Stage 3 — the same questions, asked of articles (session E, 2026-08-26)
+
+Stage 2's dominant noise was cross-article contamination: 436 of the 878
+Haifa-naming pages held the hospital and the town in *different articles*. At
+`--level Logical` the engine enforces the article boundary itself, so the same
+five queries were re-run as articles.
+
+**Article counts are a different unit, not a correction.** 694 / 878 / 475 stay
+the page-level figures comparable to the Arabic 2,322 and 1,593.
+
+| query | pages | articles | page-only issues | article-only issues |
+|---|---:|---:|---:|---:|
+| `"בית החולים הממשלתי"` | 694 | 702 | 1 | 0 |
+| `"ביה״ח הממשלתי"` | 224 | 228 | 0 | 0 |
+| `"בית־החולים הממשלתי"` | 220 | 221 | 0 | 0 |
+| `"בית חולים ממשלתי"` | 59 | 60 | 0 | 0 |
+| `"בי״ח הממשלתי"` | 6 | 6 | 0 | 0 |
+| `ביה״ח בחיפה` | 2,258 | **819** | 1,379 | 9 |
+| `"בית החולים" בחיפה` | 5,796 | **1,875** | 3,486 | 29 |
+
+Page and article ids share only the issue prefix, so the two sets are compared
+at issue level; `pipeline/heb_article_compare.py` does it.
+
+**A phrase never straddles an article boundary.** The five single-phrase
+queries return the identical issues in both units — the small count differences
+are pages carrying two matching articles. All the movement is in the two
+phrase-AND-token queries, which shed about two thirds of their issues. That
+discard is the cross-article contamination, now removed server-side in one
+request instead of by a local pass over 46 MB of page text.
+
+**What article scoping recovers.** The article-level qualified union is 1,194
+articles, of which **572 name Haifa inside the article itself** — the
+article-level analogue of a page surviving proximity. Against stage 2's 475
+pages: 366 issues in both, **187 gained, 98 lost**.
+
+The gain is entirely the proximity window being the wrong shape. Of the 572,
+341 hold the two terms within 150 characters and page-level stage 2 already had
+337 of them. The other 231 hold both terms in one article but further apart —
+the hospital named at the top of a report, Haifa four hundred characters
+later — and 187 of those were invisible to a character window. Two read
+cleanly: a 14 August 1939 air-defence exercise in *HaBoker* listing casualty
+stations at "the new **and old** Government Hospital", which is independent
+corroboration of the October 1938 move, and *HaYom*'s report of the 4 March
+1948 Stanton Street car bomb, where the Government Hospital's ambulances
+answer the blast.
+
+**But the recovered set needs reading, not counting.** Beyond 150 characters
+the article boundary is the only evidence, so the adjudicator has to change:
+measuring the nearest town to a hospital mention article-wide, Haifa leads in
+only **55 of the 187**, against Jaffa's 60 and Jerusalem's 28. Within 150
+characters Haifa leads 281 of 337. The far pairs are candidates; the near ones
+are close to findings.
+
+**What it loses is mostly stage 2's own false positives.** 79 of the 98 lost
+issues appear in *no* harvested article carrying both terms — the page-level
+text stream runs adjacent column items together, so a 150-character window
+crosses item boundaries that are invisible in the OCR. Two checked by hand:
+`dav19380417` is a report on Vienna, and `dav19480109` is a leader about a
+doctor murdered in a government hospital with no Haifa in the article at all.
+Neither was ever a Haifa page.
+
+**Outputs** (`heb_article_texts.jsonl`, 24 MB, **not committed**, ~60 minutes
+to regenerate at 0.9 articles/sec):
+
+| file | rows |
+|---|---|
+| `heb_art_*.tsv` | the seven article-level hit lists |
+| `heb_art_qualified_union.tsv` | 1,194 — `heb_union.py --articles` |
+| `heb_article_disambiguation.tsv` | 3,408 |
+| `heb_article_concordance.tsv` | 1,725 windows over 1,428 articles |
+
+**The unqualified pages were still not bulk-mined.** The decision recorded in
+`hebrew_query_plan.md` stands, and stage 3 is the cheaper seam it pointed to:
+1,875 articles for one request against ~2,650 pages for 2.4 hours of shared
+browser. Its 1,875 articles were harvested and filtered, which is a different
+thing from mining the 7,692 pages.
+
+**Three fixes to `jrayed.py`**, all forced by the 1,875-article run and none
+visible at the smaller sizes session D worked at:
+
+- The XML repair pass escaped bare `&` but let HTML-only named entities
+  through, because `&nbsp;` matches its "looks like an entity" guard. XML
+  defines five entities and `nbsp` is not among them, so the retry died on an
+  undefined entity. Only the five, plus numeric references, are spared now.
+- Chrome DevTools Protocol (CDP) occasionally returns no value at all for a
+  large body. That surfaced as `'NoneType' object is not subscriptable` inside
+  the challenge detector; the request is simply reissued.
+- One block near `r=1501` made the server hang up outright ("Failed to fetch")
+  and did so repeatedly. `cmd_search` now steps the block size down 100 → 50 →
+  25 → 10 rather than losing a run that is nineteen requests deep.
+
 ## Session D — the German press, re-measured (2026-08-26)
 
 An earlier survey recorded "German negligible" on the strength of a single
