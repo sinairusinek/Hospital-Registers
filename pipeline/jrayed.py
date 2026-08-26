@@ -72,6 +72,7 @@ import base64
 import csv
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -218,7 +219,14 @@ class Client:
 
     def xml(self, params: dict) -> ET.Element:
         body = self.raw({**params, "f": "XML"})
-        root = ET.fromstring(body)
+        try:
+            root = ET.fromstring(body)
+        except ET.ParseError:
+            # Veridian emits OCR snippets with bare & and control characters
+            # that are not well-formed; repair those two classes and retry.
+            body = re.sub(r"&(?!(?:#\d+|#x[0-9a-fA-F]+|\w+);)", "&amp;", body)
+            body = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", " ", body)
+            root = ET.fromstring(body)
         err = root.findtext(".//Error")
         if err:
             raise RuntimeError(f"Veridian error: {err}")

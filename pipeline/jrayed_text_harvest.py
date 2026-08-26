@@ -26,7 +26,7 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from jrayed import Client, text  # noqa: E402
+from jrayed import Client, site, text  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HITS = os.path.join(ROOT, "data", "newspapers")
@@ -34,12 +34,21 @@ OUT = os.path.join(HITS, "page_texts.jsonl")
 
 
 def main() -> None:
+    global OUT
     ap = argparse.ArgumentParser()
     ap.add_argument("--delay", type=float, default=1.0)
+    ap.add_argument("--glob", default="*_gov_hospital_haifa*.tsv",
+                    help="hit-list TSVs to read, relative to data/newspapers/")
+    ap.add_argument("--site", default="jrayed", choices=["jrayed", "nli"],
+                    help="which Veridian front door the hit-list ids belong to")
+    ap.add_argument("--out", default=OUT,
+                    help="output jsonl (default data/newspapers/page_texts.jsonl)")
     args = ap.parse_args()
+    site(args.site)
+    OUT = args.out if os.path.isabs(args.out) else os.path.join(HITS, args.out)
 
     todo: dict[str, dict] = {}
-    for path in sorted(glob.glob(os.path.join(HITS, "*_gov_hospital_haifa*.tsv"))):
+    for path in sorted(glob.glob(os.path.join(HITS, args.glob))):
         with open(path, newline="") as f:
             for row in csv.DictReader(f, delimiter="\t"):
                 if row.get("id"):
@@ -73,7 +82,8 @@ def main() -> None:
                 # regex, not an XML parse: Veridian serves the OCR text with
                 # unescaped characters that break well-formedness
                 body = c.raw({"a": "d", "d": pid, "f": "XML"})
-                m = re.search(r"<PageTextHTML>(.*?)</PageTextHTML>", body, re.S)
+                m = re.search(r"<(?:Page|LogicalSection)TextHTML>(.*?)"
+                              r"</(?:Page|LogicalSection)TextHTML>", body, re.S)
                 if m is None and "<Error>" in body:
                     raise RuntimeError(re.search(r"<Error>(.*?)</Error>", body, re.S).group(1))
                 rec["text"] = m.group(1) if m else ""

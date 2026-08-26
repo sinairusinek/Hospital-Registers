@@ -66,3 +66,32 @@ Two cautions carried from that document:
   before transcription). The newspapers *do* name people. Any linkage between
   the two therefore reconstructs what the redaction removed, and should be
   handled as a deliberate decision rather than a side effect.
+
+## Session C — St. Luke's and the pre-Bat-Galim premises (2026-08-26)
+
+JPress (`--site nli`) alongside the Arabic Jrayed collection. Hit lists:
+
+| file | query | scope |
+|---|---|---|
+| `stluke_en.tsv` | `"St. Luke"` | all titles 1918–1948, 1,010 hits |
+| `stluke_luqa.tsv` | `لوقا` | Jrayed 1925–1948, 148 pages |
+| `govhosp_haifa_pls.tsv` / `_plb.tsv` | `"Government Hospital" Haifa` | Post 1926–1940 (640), Bulletin 1926–1935 (99) |
+| `govhosp_batgalim.tsv` | `"Government Hospital at Bat Galim"` | 4 exact-phrase hits |
+| `mountainroad.tsv` | `Mountain Road hospital Haifa` | 35 hits |
+
+Texts: `govhosp_texts.jsonl` (739), `stluke_page_texts.jsonl` (148),
+`mountainroad_texts.jsonl` (35). Concordance: `stluke_luqa_concordance.tsv`.
+
+**Findings.** The Haifa Government Hospital stood on **Mountain Road** before
+Bat Galim; ~150 patients moved in October 1938 and the High Commissioner
+opened Bat Galim on 22 December 1938. The old building stayed in use as an
+ARP casualty post into 1939. A separate Government Isolation Hospital stood
+on Mountain Street between Khury and Catoni Streets.
+
+**Two query traps.** Arabic `مار لوقا` is St. Luke's Hospital in **Hebron**,
+not Haifa (Haifa's St. Luke's is a *school* after 1937). English `Luke`
+matches **Harry Charles Luke**, Chief Secretary, throughout 1928–29.
+
+**Method note.** Search snippets are useless for premises filtering — they
+centre on whichever token the engine chose. Every finding here came from the
+full-text harvest plus a local regex, which is why stage 2 is not optional.
