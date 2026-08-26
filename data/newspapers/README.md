@@ -19,6 +19,7 @@ access route and what the collection holds.
 | `*_adj.tsv` | 144 / 205 | same, for the adjectival form المستشفى الحكومي |
 | `hospital_haifa_concordance.tsv` | 568 | Stage 3: windows where مستشف\* falls within 150 characters of حيفا, with ±120 characters of context |
 | `press_register_candidates.tsv` | 385 | per-report candidate matches to register admissions — **leads, not identifications** |
+| `epidemic_concordance.tsv` | 1,957 | disease mentions with Haifa evidence graded by dateline, and the register's series beside each — **leads, not identifications** |
 | `casualty_spikes.tsv` | 12 | days whose injury admissions far exceed the surrounding baseline, with the press coverage that explains them |
 | `articles.jsonl` | 185 | Whole articles with headlines, for the days in `casualty_spikes.tsv` |
 | `page_texts.jsonl` | 4,150 | **not committed** (122 MB). Full OCR text of every stage-1 page |
@@ -166,3 +167,142 @@ Files: hit lists `de_krankenhaus_*.tsv` (4 titles) and
 - **Negative kept.** `Regierungskrankenhaus von Safed` (Warte, 15 Oct 1935,
   a German settler's death) — the dateline trap applies in German exactly as
   in Arabic. Check the town before counting a hit.
+
+## Session B — epidemics: does the press lead or lag the register? (2026-08-26)
+
+One Cathedra finding prompted this. *al-Difa'* of 21 October 1947 reported four
+children admitted to the Government Hospital with diphtheria and called the
+disease "returning" to Haifa. The register had been admitting diphtheria since
+10 September: 33 admissions to 25 October and seven dead children, all seven
+aged twelve or under. The paper announced a return that the ward had been
+recording for six weeks. This section asks how often that holds.
+
+### What was built
+
+```
+epidemic_concordance.py     →  epidemic_concordance.tsv   (press side)
+epidemic_register_match.py  →  same file, register columns appended
+```
+
+`epidemic_concordance.tsv` — 1,957 windows, one per disease mention, ±150
+characters of context. Eleven diseases: typhoid (with paratyphoid), typhus,
+malaria, smallpox, cholera, diphtheria, measles, dysentery, trachoma, plague,
+influenza, each with definite-article and Optical Character Recognition (OCR)
+variants. Stage 2 appends `reg_before` / `reg_after` (register admissions of
+that disease within 60 days), `reg_coverage`, the nearest register `surge`, and
+`lead_lag`. Every register figure excludes Notebook 25, the Atlit camp register.
+
+**Haifa is established by dateline, not by proximity.** Both papers were
+published in Jaffa and ran local news town by town, so the concordance keeps
+the paragraph structure and grades the evidence in a `haifa` column:
+`dateline` (the item's own حيفا في ١٩ ايلول or قال مراسلنا في حيفا, 135 rows),
+`window` (249), `paragraph` (208), `other:<town>` (175 — a dateline naming
+Jaffa, Hebron, Jerusalem and the rest), `page` (1,305 — co-occurrence only, not
+a Haifa report). The aggregates below use the **strict set**: dateline or
+in-window evidence, no ambiguous term, register open. That is 102 windows on 87
+distinct report-days out of 1,957.
+
+### The aggregate finding
+
+Of the 102 strict Haifa reports, **73 were printed while the register was
+already admitting that disease** — a median of 16 admissions already on the
+books in the preceding 60 days. Where the register's own series defines a surge
+(a trailing 30-day count crossing that disease's 90th percentile), the press
+spoke a **median 45 days after it began**; the interquartile spread runs from
+30 to 83 days. The al-Difa' diphtheria report sits at 36 days, close to
+the middle of its own distribution rather than at the extreme.
+
+The negative side of the same measure: across the eight diseases whose register
+series produces surges at all, **60 register surges, 6 of them reported** in the
+Haifa press within 60 days either way — typhoid 1/8, typhus 2/7, malaria 1/7,
+diphtheria 1/11, measles 0/6, dysentery 0/12, influenza 0/8, plague 1/1.
+
+The 29 strict reports printed when the register held no cases at all are not
+counter-examples: 19 are cholera, 5 plague, 5 smallpox, and only 4 were followed
+by any admission within 60 days. They are quarantine and vaccination stories,
+not case reports.
+
+### Per disease
+
+| disease | register (died) | strict Haifa report-days | surges reported | verdict |
+|---|---|---|---|---|
+| typhoid | 2,355 (156) | 6 | 1/8 | lags; led the 1935 peak, never the onset |
+| typhus | 578 (15) | 13 | 2/7 | lags 5–103 days |
+| malaria | 1,196 (20) | 4 | 1/7 | near-silent |
+| dysentery | 629 (13) | 1 | 0/12 | **silent** |
+| influenza | 369 (0) | 1 | 0/8 | **silent** |
+| diphtheria | 374 (43) | 4 | 1/11 | lags 36–44 days |
+| measles | 72 (3) | 0 | 0/6 | **silent** |
+| plague | 34 (7) | 33 | 1/1 | **leads** |
+| smallpox | 8 (3) | 10 | — | reports precautions, not cases |
+| cholera | 2 (0) | 15 | — | reports a fear that never arrived |
+| trachoma | 6 (0) | 0 | — | both sources silent |
+
+**Plague is the exception that shows the rule.** It is the one disease the press
+led. *Filastin* of 5 July 1944 reported a death at the Government Hospital of a
+man who had recovered from "the single plague infection recorded in Haifa";
+*al-Difa'* of 11 July reported a second suspected case moved to the infectious
+diseases hospital. The register's first plague admission is 16 July 1944, and
+its surge dates to 9 August. Plague was notifiable, quarantinable and
+newsworthy — the High Commissioner proclaimed Haifa port at risk under the
+Public Health Ordinance — so the reporting ran ahead of the ward.
+
+**Cholera is the mirror image.** It is the most-reported disease in the strict
+Haifa set for 1947 (72 Haifa-attributed windows that year), and the register
+holds two cholera admissions in nineteen years. The press was reporting the
+Egyptian epidemic and the vaccination certificates demanded of travellers. Press
+volume measures alarm; the register measures cases; for cholera the two have
+almost no relation.
+
+**The silences are the result, not a gap in the method.** Dysentery: 629
+admissions, 12 register surges, one strict Haifa mention in nineteen years.
+Influenza: 369 admissions, 8 surges, one mention — and that a complaint about
+bedding in a camp. Measles: 72 admissions, 6 surges, none. These were the
+diseases the hospital dealt with continuously and the papers never treated as
+news. What made a disease printable was not how many it killed but whether it
+carried a quarantine.
+
+### Reading the file
+
+- Rows are **leads, not identifications**. A `lags 36d` is a statement about two
+  series, not a claim that the paper is describing the admissions in the row.
+  Nothing here links a named person to a record; the `press_register_candidates`
+  caution about redaction applies here too.
+- The aggregate claims above are computed only over the strict set with the
+  register open. The per-row `lead_lag` column is a per-row guess and includes
+  weaker tiers; do not aggregate the file without filtering it first.
+- **The register is not continuous.** It is missing 1940-04 to 1944-01, the
+  whole of 1945, and shorter stretches — 303 of the 477 Haifa-attributed
+  windows fall in months the register does not cover and are marked
+  `no-register-coverage`. For those the press is the only witness, including the
+  whole diphtheria story of August and November–December 1947 and the Haifa
+  plague scare of 1941–43. "Register silent" and "register absent" are different
+  claims and are kept apart in the file.
+- **The corpus is not the run of the papers.** `page_texts.jsonl` is the 4,150
+  pages that already matched مستشفى الحكومة (or المستشفى الحكومي) together with
+  حيفا. A disease absent here is absent from the pages that mention the
+  government hospital, not necessarily from the newspaper. The silences above
+  should be re-tested against an unrestricted harvest before they are put in
+  print.
+- Diphtheria counts here (33 admissions, 7 child deaths, 10 Sep – 25 Oct 1947)
+  are slightly above the figures in the Cathedra draft (27 and 6) because the
+  match is by ICD-9 code and takes in laryngeal diphtheria (032.0) as well as
+  032.9.
+
+### Lexical traps, recorded because they are facts about the corpus
+
+- **الكريب** looks like the obvious word for *la grippe* and is the commonest
+  influenza-shaped string in the corpus — 382 windows, of which 351 are
+  كريب فروت, grapefruit, in the citrus shipping columns, and the rest crêpe, the
+  fabric, in auction notices. Dropped entirely; influenza is matched on
+  الانفلونزا, النزلة الوافدة and الزكام.
+- **البرداء**, the classical word for malaria, produced only رداءة and a
+  magistrate's surname through the OCR. Dropped.
+- **الرمد الحبيبي** is trachoma, but حبيبي alone is "my beloved" (110 hits), so
+  the term is matched only with رمد attached.
+- **الخناق** is diphtheria in medical copy and "tightening the noose" in
+  political copy; **الزكام** is a head cold as often as influenza. Both are kept
+  and flagged in `soft_term` rather than dropped — unflagged they supplied half
+  of diphtheria's apparent leads.
+- **الجدري المائي** is chickenpox and **طاعون الدجاج** is fowl plague; the 1940
+  and 1944 poultry quarantines ran in the same columns as the human ones.
