@@ -539,3 +539,65 @@ an unrelated defect in this column, so the percentages may shift slightly; the
   of diphtheria's apparent leads.
 - **الجدري المائي** is chickenpox and **طاعون الدجاج** is fowl plague; the 1940
   and 1944 poultry quarantines ran in the same columns as the human ones.
+
+## Session E — the Palestine Post 1941–1948 (2026-08-26)
+
+The Post hit list had only ever covered 1926–1940. The missing years are
+**bigger than everything harvested before them**: `"Government Hospital" Haifa`
+on `--pub pls` for 1941–48 returns **1,085 pages**, against 640 for 1926–40.
+
+| 1941 | 1942 | 1943 | 1944 | 1945 | 1946 | 1947 | 1948 |
+|---|---|---|---|---|---|---|---|
+| 89 | 102 | 115 | 146 | 171 | 208 | 188 | 66 |
+
+1946 (208) and 1947 (188) are the heaviest years of the whole Post run — above
+1938 (194), the previous peak. 1948 stops at 66 because the Mandate run ends in
+May. Files: `govhosp_haifa_pls_1941_48.tsv`, `govhosp_pls4148_texts.jsonl`
+(1,085 pages, 39.7M chars, **gitignored — regenerable** via the resumable
+harvest), `govhosp_pls4148_concordance.tsv` (337 windows on 321 pages).
+
+**English precision is far higher than Arabic.** 321 of 1,085 pages survive the
+±150-char window filter — **30%**, against ~7% on the Arabic side. Better
+Optical Character Recognition (OCR) on English print, and no prefix-attachment
+problem.
+
+`pipeline/jrayed_concordance.py` now takes `--lang {ar,en,de}`, `--in` and
+`--out` (bare filenames resolve under `data/newspapers/`), and folds the Fraktur
+long s (ſ→s) before matching. The Arabic default path is unchanged and was
+regression-checked: byte-identical output on all 4,150 pages.
+
+### Institutional history — first results
+
+**The dateline trap is worse here than in Arabic.** "Government Hospital"
+unqualified is most often *Jerusalem's*, and the Post's birth and death
+announcements are full of it. Several windows that mention Haifa elsewhere on
+the page are Jerusalem, Safad or Jaffa stories. Check every one.
+
+**Staff, named at last** — the registers name no one:
+- **Dr Naif Amin Hamzeh**, Medical Officer, Government Hospital Haifa —
+  in the honours list, 2 June 1943 (pls19430602-01.1.1).
+- **Dr M. K. M. Mishalany**, Acting Senior Medical Officer, with the Matron,
+  showed Field Marshal Lord Gort round the hospital on 1 February 1945
+  (pls19450201-01.1.3). The same item places the **District offices of the
+  Department of Health inside the hospital building**.
+
+**Departments.** A **plague unit** at the Haifa Government Hospital appears in
+the Public Works Department's report for 1943–44 (13 July 1945,
+pls19450713-01.1.6), alongside "a 20-bed ward for the Haifa Hospital" — but
+note that second phrase may mean the Rothschild, not ours; it is not safe to
+count as our bed step without confirmation. An **Isolation Section** of the
+Government Hospital admitted the season's first human plague case in August
+1945 (pls19450822-01.1.3, Kurt Seidler, an internee of the Waldheim camp).
+Bears directly on the lazaret question — see the note that the register is not
+the denominator for plague, cholera and smallpox.
+
+**Capacity.** No firm post-1938 bed figure yet. The Director of Health, 24
+August 1945 (pls19450824-01.1.3), said only that "The Haifa Government Hospital
+**may soon be enlarged**" — a plan, not a step, in a survey that gives hard
+numbers for Jaffa, Jerusalem and Tel Aviv. Recorded as an open thread, not a
+timeline entry.
+
+**Plague corroboration.** 10 July 1944 (pls19440710-01.1.2): a second suspected
+bubonic plague case in a fortnight admitted to the Government Hospital, the
+first having "died of heart failure" after being cured. This independently
+supports the one disease Session B found the press *leading* the register on.
