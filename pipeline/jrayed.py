@@ -85,9 +85,25 @@ try:
 except ImportError:
     sys.exit("websocket-client is required:  python3 -m pip install --user websocket-client")
 
-BASE = "https://jrayed.org/en/newspapers/"
+# The same Veridian instance serves two front doors. jrayed.org carries the
+# Arabic collection (108 titles); www.nli.org.il carries everything else
+# (2,356 titles, the English and Hebrew press among them). The API is
+# identical; only the host differs. Requests are same-origin fetches from the
+# Chrome tab, so the tab must be on the host being queried - switching sites
+# means renavigating, which `site()` below handles.
+SITES = {
+    "jrayed": "https://jrayed.org/en/newspapers/",
+    "nli": "https://www.nli.org.il/en/newspapers/",
+}
+BASE = SITES["jrayed"]
 CDP = "http://127.0.0.1:9222"
 PROFILE = os.path.expanduser("~/Library/Caches/jrayed-chrome")
+
+
+def site(name: str) -> None:
+    """Point every subsequent request at one of the two front doors."""
+    global BASE
+    BASE = SITES[name]
 
 
 class Client:
@@ -111,13 +127,25 @@ class Client:
             time.sleep(2)
         sys.exit("Chrome is stuck on the Cloudflare challenge - check the window.")
 
+    def _host(self) -> str:
+        return urllib.parse.urlsplit(BASE).netloc
+
     def _find_tab(self) -> dict | None:
+        """A tab already on the active host, or any tab we can renavigate."""
         try:
             tabs = json.load(urllib.request.urlopen(f"{CDP}/json", timeout=3))
         except (urllib.error.URLError, OSError):
             return None
-        return next((t for t in tabs
-                     if t["type"] == "page" and "jrayed.org" in t.get("url", "")), None)
+        pages = [t for t in tabs if t["type"] == "page"]
+        onsite = next((t for t in pages if self._host() in t.get("url", "")), None)
+        if onsite or not pages:
+            return onsite
+        # Chrome is up but pointed elsewhere. Requests are same-origin fetches,
+        # so take the tab over rather than opening a second window.
+        self.ws = websocket.create_connection(
+            pages[0]["webSocketDebuggerUrl"], timeout=120, suppress_origin=True)
+        self._resolve_challenge()
+        return pages[0]
 
     def _launch(self) -> dict:
         print("launching dedicated Chrome (leave its window open) ...", file=sys.stderr)
@@ -364,6 +392,9 @@ def cmd_page(c: Client, args) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between requests")
+    ap.add_argument("--site", choices=sorted(SITES), default="jrayed",
+                    help="jrayed = the Arabic collection; nli = everything else "
+                         "(English and Hebrew press, 2,356 titles)")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     sub.add_parser("publications", help="list all titles in the collection")
@@ -401,6 +432,7 @@ def main() -> None:
     p.add_argument("--out")
 
     args = ap.parse_args()
+    site(args.site)
     c = Client(delay=args.delay)
     {
         "publications": cmd_publications,
