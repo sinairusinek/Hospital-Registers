@@ -1,0 +1,1171 @@
+date	pub	page_id	verdict	hospital_mentions	towns_in_range	other_haifa_hospitals	found_by
+1930-01-17	dav	dav19300117-01.1.4	other	2	telaviv		spelled
+1930-01-31	dav	dav19300131-01.1.1	other	3	jaffa		abbreviated
+1930-03-06	dav	dav19300306-01.1.6	other	5	jaffa,jerusalem		spelled
+1930-03-27	dav	dav19300327-01.1.3	untowned	3			abbreviated
+1930-04-11	hhr	hhr19300411-01.1.3	other	1	jerusalem		spelled
+1930-04-17	dhy	dhy19300417-01.1.1	other	2	jerusalem	hadassah	spelled
+1930-07-24	dav	dav19300724-01.1.3	other	3	jaffa,jerusalem		spelled
+1931-01-21	dav	dav19310121-01.1.1	untowned	1			spelled
+1931-03-01	dhy	dhy19310301-01.1.4	mixed	2	haifa,jerusalem		abbreviated
+1931-03-08	dhy	dhy19310308-01.1.4	other	3	jaffa		abbreviated
+1931-04-07	haretz	haretz19310407-01.1.2	untowned	4			spelled
+1931-04-17	dhy	dhy19310417-01.1.1	untowned	3			spelled
+1931-04-23	dav	dav19310423-01.1.4	mixed	5	haifa,jaffa,jerusalem,tiberias		abbrev_short
+1931-06-05	haam	haam19310605-01.1.1	other	1	nablus		spelled
+1931-09-09	dav	dav19310909-01.1.1	other	1	nablus		spelled
+1931-10-08	dav	dav19311008-01.1.4	haifa	1	haifa		spelled
+1931-12-06	haretz	haretz19311206-01.1.2	other	1	jerusalem		indefinite
+1932-04-20	bustenai	bustenai19320420-01.1.5	other	4	jaffa,jerusalem,telaviv	hadassah	maqaf
+1932-05-25	dav	dav19320525-01.1.4	other	5	jerusalem		spelled
+1932-06-06	dhy	dhy19320606-01.1.4	other	2	jerusalem	english	spelled
+1932-06-12	dhy	dhy19320612-01.1.4	other	2	jaffa,jerusalem		abbreviated
+1932-06-22	dav	dav19320622-01.1.5	other	8	jaffa,jerusalem		abbrev_short
+1932-06-23	dhy	dhy19320623-01.1.4	untowned	1			spelled
+1932-07-14	dav	dav19320714-01.1.3	mixed	9	gaza,haifa,jaffa,ramleh,tiberias		spelled
+1932-07-25	dhy	dhy19320725-01.1.1	untowned	3			spelled
+1932-08-08	dav	dav19320808-01.1.4	untowned	2			abbreviated
+1932-08-12	dav	dav19320812-01.1.1	other	2	acre,jaffa,nablus		spelled
+1932-10-16	dhy	dhy19321016-01.1.1	untowned	1			abbreviated
+1932-12-08	dav	dav19321208-01.1.3	untowned	1			spelled
+1932-12-16	dav	dav19321216-01.1.6	other	3	jaffa	hadassah	spelled
+1933-01-18	dav	dav19330118-01.1.4	mixed	4	haifa,tiberias	hadassah	abbreviated
+1933-03-13	dav	dav19330313-01.1.3	no_hospital_term	0			abbrev_short
+1933-05-04	haretz	haretz19330504-01.1.4	other	2	acre,telaviv		spelled
+1933-05-04	kolisraeljlm	kolisraeljlm19330504-01.1.4	other	1	acre,jaffa,nablus		spelled
+1933-05-12	dav	dav19330512-01.1.4	other	24	jaffa,jerusalem,telaviv		maqaf
+1933-06-21	haretz	haretz19330621-01.1.4	other	3	jerusalem,telaviv	hadassah	abbreviated
+1933-06-23	dhy	dhy19330623-01.1.1	other	1	jerusalem		spelled
+1933-06-23	haretz	haretz19330623-01.1.1	other	1	jerusalem		spelled
+1933-07-03	haretz	haretz19330703-01.1.2	mixed	3	haifa,jerusalem,nablus,tiberias		spelled
+1933-07-11	haretz	haretz19330711-01.1.1	other	3	jaffa,jerusalem		abbreviated
+1933-07-20	dav	dav19330720-01.1.4	other	9	telaviv	hadassah	indefinite
+1933-08-02	haretz	haretz19330802-01.1.4	untowned	1			spelled
+1933-08-08	dhy	dhy19330808-01.1.4	other	4	jerusalem,safed		spelled
+1933-10-10	haretz	haretz19331010-01.1.4	mixed	2	acre,haifa,ramleh		abbreviated
+1933-10-20	dav	dav19331020-01.1.5	mixed	6	haifa,jerusalem,safed,telaviv		spelled
+1933-10-29	haretz	haretz19331029-01.1.4	other	8	jaffa,telaviv	english,hadassah	spelled
+1933-10-30	haretz	haretz19331030-01.1.1	other	3	jaffa		spelled
+1933-11-01	haretz	haretz19331101-01.1.1	untowned	1			spelled
+1933-11-22	haretz	haretz19331122-01.1.6	mixed	10	haifa,jaffa,jerusalem,ramleh		spelled
+1933-11-29	haretz	haretz19331129-01.1.5	other	20	gaza,jaffa,telaviv		abbreviated
+1933-12-17	haretz	haretz19331217-01.1.2	untowned	3			spelled
+1933-12-19	haretz	haretz19331219-01.1.1	untowned	1			abbreviated
+1934-01-14	itonmeyuhad	itonmeyuhad19340114-01.1.4	other	2	telaviv		abbreviated
+1934-01-25	haretz	haretz19340125-01.1.4	mixed	3	haifa,telaviv		abbreviated
+1934-02-12	haretz	haretz19340212-01.1.3	other	2	jaffa		abbreviated
+1934-02-14	dav	dav19340214-01.1.4	untowned	2			spelled
+1934-03-04	haretz	haretz19340304-01.1.3	other	1	jaffa		spelled
+1934-03-21	dav	dav19340321-01.1.4	untowned	3			abbreviated
+1934-04-12	itonmeyuhad	itonmeyuhad19340412-01.1.1	untowned	1			abbreviated
+1934-05-09	dav	dav19340509-01.1.4	other	2	jaffa,jerusalem		spelled
+1934-06-17	haretz	haretz19340617-01.1.1	other	3	jaffa		abbreviated
+1934-06-18	dav	dav19340618-01.1.5	haifa	4	haifa		spelled
+1934-07-11	dav	dav19340711-01.1.2	other	1	jaffa		indefinite
+1934-07-28	itonmeyuhad	itonmeyuhad19340728-01.1.2	other	3	jaffa	hadassah	maqaf
+1934-08-12	dav	dav19340812-01.1.3	other	18	jaffa	hadassah	spelled
+1934-08-14	itonmeyuhad	itonmeyuhad19340814-01.1.1	untowned	2			maqaf,spelled
+1934-08-19	dav	dav19340819-01.1.1	other	3	nablus		spelled
+1934-08-21	dav	dav19340821-01.1.3	other	18	jaffa,jerusalem	hadassah	spelled
+1934-08-30	yarden	yarden19340830-01.1.4	other	2	jaffa		spelled
+1934-09-03	dav	dav19340903-01.1.4	mixed	8	haifa,jaffa,telaviv		spelled
+1934-09-22	itonmeyuhad	itonmeyuhad19340922-01.1.1	other	11	jaffa		spelled
+1934-10-03	haretz	haretz19341003-01.1.2	other	3	hebron,jaffa,safed,tiberias	hadassah	indefinite
+1934-10-18	dhy	dhy19341018-01.1.5	other	3	jerusalem,ramleh	hadassah,rothschild	spelled
+1934-10-23	dhy	dhy19341023-01.1.1	other	1	jaffa		spelled
+1934-11-07	dav	dav19341107-01.1.2	other	10	jerusalem,telaviv		spelled
+1934-11-24	dav	dav19341124-01.1.2	other	1	jaffa		abbreviated
+1935-01-14	dav	dav19350114-01.1.2	untowned	2			indefinite
+1935-02-06	dav	dav19350206-01.1.5	other	4	jerusalem		spelled
+1935-02-08	yarden	yarden19350208-01.1.4	other	1	jerusalem		indefinite
+1935-02-11	dav	dav19350211-01.1.4	other	3	jaffa		spelled
+1935-03-04	yarden	yarden19350304-01.1.1	other	9	acre,jaffa,jerusalem,telaviv	hadassah	indefinite
+1935-03-07	dav	dav19350307-01.1.3	other	36	jaffa		spelled
+1935-03-08	dhy	dhy19350308-01.1.4	other	1	jerusalem		spelled
+1935-03-12	haretz	haretz19350312-01.1.1	other	3	jerusalem,telaviv		indefinite
+1935-03-22	dhy	dhy19350322-01.1.6	other	1	jerusalem		spelled
+1935-04-04	dhy	dhy19350404-01.1.6	other	1	jaffa		abbreviated
+1935-04-17	dav	dav19350417-01.1.4	other	1	jaffa		spelled
+1935-04-19	haretz	haretz19350419-01.1.9	other	2	jaffa		spelled
+1935-04-21	dav	dav19350421-01.1.6	mixed	4	haifa,jaffa		spelled
+1935-05-09	dhy	dhy19350509-01.1.6	mixed	2	haifa,jaffa		spelled
+1935-06-13	haretz	haretz19350613-01.1.6	untowned	2			spelled
+1935-08-12	dav	dav19350812-01.1.6	untowned	2			spelled
+1935-08-18	dav	dav19350818-01.1.6	other	5	jaffa,jerusalem,telaviv	hadassah	maqaf
+1935-09-12	dhy	dhy19350912-01.1.8	haifa	4	haifa		indefinite
+1935-09-26	dav	dav19350926-01.1.6	mixed	6	haifa,tiberias	hadassah	indefinite
+1935-09-26	yarden	yarden19350926-01.1.6	other	3	jaffa,telaviv		spelled
+1935-10-02	haretz	haretz19351002-01.1.8	untowned	1			indefinite
+1935-10-08	dhy	dhy19351008-01.1.7	other	2	jaffa		indefinite
+1935-10-21	dhy	dhy19351021-01.1.5	other	3	jaffa,jerusalem		abbreviated
+1935-10-21	hbkr	hbkr19351021-01.1.6	untowned	1			abbreviated
+1935-10-28	yarden	yarden19351028-01.1.6	other	4	jaffa,jerusalem,ramleh		indefinite
+1935-11-05	hbkr	hbkr19351105-01.1.2	other	13	jaffa,safed,telaviv	hadassah	maqaf
+1935-11-05	hbkr	hbkr19351105-01.1.5	mixed	1	acre,haifa		maqaf
+1935-11-10	dav	dav19351110-01.1.1	other	1	safed		spelled
+1935-11-13	dav	dav19351113-01.1.1	other	1	jerusalem		spelled
+1935-11-14	dav	dav19351114-01.1.1	untowned	4		english	spelled
+1935-11-19	hbkr	hbkr19351119-01.1.5	untowned	1			spelled
+1935-12-13	haretz	haretz19351213-01.1.6	other	3	jerusalem	hadassah	spelled
+1935-12-16	dav	dav19351216-01.1.6	other	2	jaffa,jerusalem		spelled
+1935-12-26	dav	dav19351226-01.1.7	untowned	2			indefinite
+1936-01-19	dav	dav19360119-01.1.7	other	8	jerusalem		spelled
+1936-01-20	dav	dav19360120-01.1.10	other	4	jerusalem		spelled
+1936-02-17	dav	dav19360217-01.1.1	haifa	3	haifa		spelled
+1936-02-24	dav	dav19360224-01.1.7	other	3	jaffa		spelled
+1936-04-15	dhy	dhy19360415-01.1.8	mixed	6	gaza,haifa,jerusalem		spelled
+1936-04-20	haretz	haretz19360420-01.1.5	other	10	jaffa,telaviv	hadassah	spelled
+1936-04-21	dav	dav19360421-01.1.7	untowned	3			spelled
+1936-05-14	haretz	haretz19360514-01.1.9	untowned	2			spelled
+1936-05-20	dav	dav19360520-01.1.6	other	2	jaffa,jerusalem,telaviv		spelled
+1936-06-08	haretz	haretz19360608-01.1.7	haifa	3	haifa		abbreviated
+1936-06-14	dhy	dhy19360614-01.1.4	other	5	jaffa,nablus,telaviv	hadassah	spelled
+1936-06-15	dav	dav19360615-01.1.1	other	1	nablus		spelled
+1936-06-15	ytlv	ytlv19360615-01.1.24	other	12	jaffa,telaviv		abbreviated,maqaf,spelled
+1936-06-16	dav	dav19360616-01.1.4	haifa	1	haifa		maqaf
+1936-06-21	dav	dav19360621-01.1.6	untowned	2			spelled
+1936-07-05	dav	dav19360705-01.1.7	untowned	1			spelled
+1936-07-05	haretz	haretz19360705-01.1.5	untowned	5			spelled
+1936-07-08	dav	dav19360708-01.1.8	no_hospital_term	0			spelled
+1936-07-26	dav	dav19360726-01.1.1	other	2	jaffa		spelled
+1936-07-27	dav	dav19360727-01.1.10	other	3	telaviv		indefinite
+1936-07-29	haretz	haretz19360729-01.1.5	other	3	jaffa,telaviv		spelled
+1936-08-02	dav	dav19360802-01.1.3	other	3	jaffa		spelled
+1936-08-18	dav	dav19360818-01.1.7	other	21	jaffa,telaviv	hadassah	maqaf
+1936-08-19	dav	dav19360819-01.1.7	other	3	jaffa		spelled
+1936-08-20	dav	dav19360820-01.1.3	other	2	jerusalem		spelled
+1936-08-20	haolam	haolam19360820-01.1.5	other	4	jaffa,safed		maqaf
+1936-08-21	dav	dav19360821-01.1.18	other	3	jaffa,jerusalem,telaviv		spelled
+1936-08-21	dav	dav19360821-01.1.7	other	1	jerusalem		spelled
+1936-08-21	dav	dav19360821-01.1.8	other	3	jaffa,jerusalem		spelled
+1936-08-23	dav	dav19360823-01.1.6	mixed	4	haifa,jaffa,jerusalem,tiberias		spelled
+1936-08-24	dav	dav19360824-01.1.10	other	1	acre,telaviv		maqaf
+1936-08-26	dav	dav19360826-01.1.9	other	2	jerusalem		maqaf
+1936-09-05	dav	dav19360905-01.1.2	mixed	6	haifa,jaffa,jerusalem,nazareth,telaviv		maqaf
+1936-09-12	dav	dav19360912-01.1.1	other	4	jaffa,telaviv		spelled
+1936-09-16	haretz	haretz19360916-01.1.8	mixed	4	haifa,telaviv		abbreviated
+1936-09-23	dav	dav19360923-01.1.1	mixed	3	haifa,jaffa,safed	rothschild	abbreviated
+1936-09-23	haretz	haretz19360923-01.1.2	mixed	6	haifa,jaffa,safed,tiberias		spelled
+1936-09-25	dav	dav19360925-01.1.3	other	2	jaffa		spelled
+1936-09-25	haretz	haretz19360925-01.1.1	mixed	6	haifa,jaffa,jerusalem,telaviv	hadassah	spelled
+1936-10-05	dav	dav19361005-01.1.6	other	3	jaffa		spelled
+1936-10-06	haretz	haretz19361006-01.1.1	other	2	jaffa,telaviv		spelled
+1936-10-09	haretz	haretz19361009-01.1.14	other	1	jerusalem		spelled
+1936-10-15	dav	dav19361015-01.1.1	untowned	3			spelled
+1936-10-16	haretz	haretz19361016-01.1.8	haifa	2	haifa	hadassah	spelled
+1936-10-18	haretz	haretz19361018-01.1.2	other	1	jaffa		spelled
+1936-10-18	haretz	haretz19361018-01.1.4	untowned	2			spelled
+1936-10-21	haretz	haretz19361021-01.1.1	untowned	1			spelled
+1936-10-23	haretz	haretz19361023-01.1.7	haifa	1	haifa		spelled
+1936-10-29	haretz	haretz19361029-01.1.1	other	4	jaffa		spelled
+1936-11-12	dav	dav19361112-01.1.4	untowned	2			spelled
+1937-01-08	haretz	haretz19370108-01.1.6	other	3	jaffa	hadassah	spelled
+1937-02-14	haretz	haretz19370214-01.1.1	haifa	2	haifa		maqaf
+1937-02-25	haretz	haretz19370225-01.1.8	untowned	1			spelled
+1937-03-02	haretz	haretz19370302-01.1.6	other	2	jaffa	hadassah	maqaf
+1937-03-07	dav	dav19370307-01.1.1	mixed	8	haifa,jerusalem,telaviv	hadassah	spelled
+1937-03-18	haretz	haretz19370318-01.1.9	other	6	jaffa,jerusalem		spelled
+1937-03-30	dav	dav19370330-01.1.1	other	3	jaffa,nablus,telaviv	hadassah	spelled
+1937-04-04	haretz	haretz19370404-01.1.1	other	5	jerusalem,nablus,safed		spelled
+1937-04-08	haretz	haretz19370408-01.1.7	other	3	acre,jerusalem		spelled
+1937-04-11	kolisraeljlm	kolisraeljlm19370411-01.1.2	no_hospital_term	0			spelled
+1937-04-12	dav	dav19370412-01.1.5	mixed	4	haifa,jerusalem,telaviv	hadassah	spelled
+1937-04-25	haretz	haretz19370425-01.1.4	mixed	4	haifa,jaffa,jerusalem,ramleh		abbreviated
+1937-06-09	dav	dav19370609-01.1.1	mixed	1	haifa,jerusalem		spelled
+1937-06-17	haolam	haolam19370617-01.1.9	haifa	1	haifa		maqaf
+1937-06-18	dav	dav19370618-01.1.19	haifa	2	haifa		maqaf
+1937-06-21	dav	dav19370621-01.1.3	mixed	9	acre,haifa,jerusalem,telaviv	hadassah	spelled
+1937-06-25	dav	dav19370625-01.1.2	other	1	jaffa		spelled
+1937-06-27	itonmeyuhad	itonmeyuhad19370627-01.1.5	other	7	jaffa	hadassah	spelled
+1937-07-15	haolam	haolam19370715-01.1.19	other	3	jerusalem,telaviv		maqaf
+1937-07-29	dav	dav19370729-01.1.8	mixed	6	haifa,jaffa,jerusalem,nablus	english	maqaf
+1937-08-04	haretz	haretz19370804-01.1.8	mixed	3	haifa,jaffa,jerusalem		spelled
+1937-08-30	haretz	haretz19370830-01.1.5	untowned	3		hadassah	spelled
+1937-09-05	dav	dav19370905-01.1.20	mixed	1	haifa,jaffa		spelled
+1937-09-05	dav	dav19370905-01.1.41	haifa	2	haifa	hadassah	spelled
+1937-09-10	dav	dav19370910-01.1.9	other	4	jerusalem		spelled
+1937-09-16	haretz	haretz19370916-01.1.1	other	1	safed		spelled
+1937-09-30	dav	dav19370930-01.1.6	other	5	jaffa,nablus		spelled
+1937-10-03	dav	dav19371003-01.1.3	other	2	acre		spelled
+1937-10-19	dav	dav19371019-01.1.4	untowned	1			spelled
+1937-11-11	haolam	haolam19371111-01.1.7	mixed	3	haifa,jaffa,jerusalem,telaviv		maqaf
+1937-11-15	ytlv	ytlv19371115-01.1.39	other	21	jaffa,telaviv	hadassah	abbreviated
+1937-11-17	dav	dav19371117-01.1.5	haifa	1	haifa		abbreviated
+1937-11-30	dav	dav19371130-01.1.1	mixed	7	haifa,jaffa,jerusalem,safed	hadassah	spelled
+1938-01-20	haretz	haretz19380120-01.1.10	haifa	2	haifa		spelled
+1938-01-27	hbkr	hbkr19380127-01.1.1	other	2	jerusalem,safed		abbreviated
+1938-01-28	hzh	hzh19380128-01.1.1	other	2	jerusalem		spelled
+1938-02-02	dav	dav19380202-01.1.4	other	5	jaffa,telaviv		maqaf
+1938-02-03	dav	dav19380203-01.1.5	haifa	3	haifa		spelled
+1938-02-09	dav	dav19380209-01.1.6	haifa	10	haifa		spelled
+1938-02-10	haolam	haolam19380210-01.1.12	other	3	jaffa		spelled
+1938-02-20	dav	dav19380220-01.1.6	other	4	acre,jerusalem		indefinite
+1938-02-21	dav	dav19380221-01.1.4	haifa	3	haifa		spelled
+1938-02-25	hbkr	hbkr19380225-01.1.6	haifa	1	haifa		spelled
+1938-02-27	hbkr	hbkr19380227-01.1.6	untowned	4			spelled
+1938-03-15	hbkr	hbkr19380315-01.1.3	untowned	2			spelled
+1938-03-23	dav	dav19380323-01.1.8	other	3	jerusalem		spelled
+1938-03-27	dav	dav19380327-01.1.6	other	1	jaffa		spelled
+1938-03-29	dav	dav19380329-01.1.1	mixed	3	haifa,jerusalem,safed	hadassah	spelled
+1938-03-29	dav	dav19380329-01.1.7	other	1	safed		spelled
+1938-03-29	haretz	haretz19380329-01.1.5	untowned	1			spelled
+1938-04-13	dav	dav19380413-01.1.4	mixed	18	haifa,jaffa,safed		spelled
+1938-04-17	dav	dav19380417-01.1.1	mixed	5	haifa,jaffa	hadassah	indefinite
+1938-04-19	hbkr	hbkr19380419-01.1.4	other	1	acre,jaffa		maqaf
+1938-04-25	hbkr	hbkr19380425-01.1.5	other	2	telaviv		spelled
+1938-05-08	haretz	haretz19380508-01.1.3	untowned	1			spelled
+1938-05-11	hbkr	hbkr19380511-01.1.6	other	5	jerusalem		abbreviated
+1938-05-11	hzh	hzh19380511-01.1.4	other	5	jaffa	hadassah	spelled
+1938-06-07	dav	dav19380607-01.1.1	other	5	jerusalem		spelled
+1938-06-14	hzh	hzh19380614-01.1.4	other	4	jaffa,jerusalem		spelled
+1938-06-27	dav	dav19380627-01.1.1	mixed	1	haifa,jaffa		spelled
+1938-06-27	haretz	haretz19380627-01.1.1	mixed	2	haifa,nablus	hadassah	maqaf
+1938-07-04	dav	dav19380704-01.1.1	haifa	3	haifa		spelled
+1938-07-17	haretz	haretz19380717-01.1.1	other	5	jerusalem	hadassah	spelled
+1938-07-19	haretz	haretz19380719-01.1.1	mixed	5	haifa,safed	hadassah	spelled
+1938-08-03	haretz	haretz19380803-01.1.1	haifa	2	haifa		spelled
+1938-08-08	dav	dav19380808-01.1.3	untowned	2			spelled
+1938-08-08	hzh	hzh19380808-01.1.3	mixed	5	acre,haifa,jaffa,safed,tiberias	hadassah	spelled
+1938-08-12	dav	dav19380812-01.1.9	other	3	jaffa		spelled
+1938-08-14	dav	dav19380814-01.1.6	other	3	jaffa,nablus		spelled
+1938-08-16	hbkr	hbkr19380816-01.1.6	mixed	6	haifa,jerusalem,telaviv	hadassah	abbreviated
+1938-08-18	kolisraeljlm	kolisraeljlm19380818-01.1.4	other	4	jaffa,nablus,telaviv		abbreviated
+1938-08-19	hzh	hzh19380819-01.1.1	other	1	jaffa		spelled
+1938-08-22	haretz	haretz19380822-01.1.4	other	4	jaffa,jerusalem		spelled
+1938-08-30	dav	dav19380830-01.1.8	other	3	safed,telaviv		spelled
+1938-09-08	dav	dav19380908-01.1.1	other	1	jerusalem		spelled
+1938-09-15	ytlv	ytlv19380915-01.1.5	other	1	jaffa,tiberias		spelled
+1938-09-25	dav	dav19380925-01.1.12	haifa	1	haifa		spelled
+1938-10-03	haretz	haretz19381003-01.1.6	other	5	jerusalem,telaviv	hadassah	abbreviated
+1938-10-07	dav	dav19381007-01.1.4	other	3	tiberias		spelled
+1938-10-09	haretz	haretz19381009-01.1.7	other	4	jaffa,jerusalem,telaviv		spelled
+1938-10-12	hzh	hzh19381012-01.1.3	other	3	jaffa		spelled
+1938-10-18	hbkr	hbkr19381018-01.1.1	other	1	jaffa,jerusalem,telaviv		spelled
+1938-10-18	hbkr	hbkr19381018-01.1.6	other	6	jaffa,jerusalem	hadassah	spelled
+1938-10-25	hzh	hzh19381025-01.1.1	untowned	1			maqaf
+1938-10-30	hzh	hzh19381030-01.1.1	other	3	jerusalem,telaviv,tiberias	hadassah	spelled
+1938-11-01	dav	dav19381101-01.1.8	other	3	nablus,telaviv		spelled
+1938-11-04	hbkr	hbkr19381104-01.1.8	mixed	3	haifa,safed,telaviv		maqaf
+1938-11-08	haretz	haretz19381108-01.1.1	other	3	gaza,jerusalem		spelled
+1938-11-12	hashaah	hashaah19381112-01.1.2	other	4	nablus		spelled
+1938-11-13	hzh	hzh19381113-01.1.5	haifa	5	haifa		spelled
+1938-11-16	dav	dav19381116-01.1.1	mixed	3	haifa,jaffa,jerusalem		spelled
+1938-11-16	dav	dav19381116-01.1.3	mixed	6	haifa,jaffa,jerusalem		spelled
+1938-11-16	haretz	haretz19381116-01.1.6	mixed	10	haifa,jaffa,jerusalem		maqaf,spelled
+1938-11-18	hbkr	hbkr19381118-01.1.4	mixed	6	haifa,jerusalem		spelled
+1938-12-08	dav	dav19381208-01.1.4	mixed	11	haifa,jaffa		spelled
+1938-12-19	hzh	hzh19381219-01.1.1	other	2	jaffa,telaviv	hadassah	maqaf
+1938-12-20	dav	dav19381220-01.1.7	mixed	3	acre,haifa		spelled
+1938-12-22	dav	dav19381222-01.1.6	haifa	2	haifa		spelled
+1938-12-22	haretz	haretz19381222-01.1.6	untowned	2			spelled
+1938-12-23	dav	dav19381223-01.1.8	haifa	11	haifa		spelled
+1938-12-23	haretz	haretz19381223-01.1.1	mixed	4	acre,haifa		maqaf
+1938-12-23	haretz	haretz19381223-01.1.2	mixed	7	haifa,jaffa		spelled
+1938-12-23	hbkr	hbkr19381223-01.1.7	haifa	6	haifa		spelled
+1938-12-25	dav	dav19381225-01.1.8	other	4	gaza,jaffa,nablus,telaviv		spelled
+1938-12-26	dav	dav19381226-01.1.1	mixed	3	haifa,jaffa,tiberias		spelled
+1938-12-27	dav	dav19381227-01.1.1	mixed	3	haifa,jaffa	hadassah	spelled
+1938-12-27	hbkr	hbkr19381227-01.1.1	mixed	3	haifa,jaffa	english,hadassah	abbreviated
+1938-12-27	hzh	hzh19381227-01.1.1	mixed	3	haifa,jaffa,safed,telaviv	hadassah	spelled
+1938-12-28	dav	dav19381228-01.1.1	other	1	jaffa,nablus		spelled
+1938-12-28	hbkr	hbkr19381228-01.1.1	other	1	jaffa,nablus		spelled
+1938-12-28	hzh	hzh19381228-01.1.1	other	1	jaffa		spelled
+1939-01-02	hzh	hzh19390102-01.1.4	untowned	1			spelled
+1939-01-05	haolam	haolam19390105-01.1.5	untowned	1			spelled
+1939-01-06	dav	dav19390106-01.1.6	other	4	jaffa,telaviv		spelled
+1939-01-06	haretz	haretz19390106-01.1.5	other	1	jaffa		spelled
+1939-01-15	haretz	haretz19390115-01.1.3	other	12	jaffa	hadassah	spelled
+1939-01-15	ytlv	ytlv19390115-01.1.13	mixed	5	haifa,jaffa		spelled
+1939-01-24	hzh	hzh19390124-01.1.4	untowned	1			spelled
+1939-02-09	haretz	haretz19390209-01.1.2	untowned	2			maqaf
+1939-02-19	hzh	hzh19390219-01.1.3	other	1	jerusalem		spelled
+1939-02-27	hmf	hmf19390227-01.1.1	untowned	1			spelled
+1939-03-07	dav	dav19390307-01.1.1	other	6	jaffa,jerusalem,safed,telaviv	hadassah	spelled
+1939-03-07	hbkr	hbkr19390307-01.1.1	other	4	safed		spelled
+1939-03-13	hzh	hzh19390313-01.1.1	haifa	2	haifa	hadassah	spelled
+1939-03-16	haolam	haolam19390316-01.1.11	other	2	safed		abbreviated
+1939-03-23	hmf	hmf19390323-01.1.1	other	3	nablus,ramleh,telaviv		indefinite
+1939-03-23	hzh	hzh19390323-01.1.1	other	13	ramleh,telaviv	hadassah	indefinite
+1939-03-24	hbkr	hbkr19390324-01.1.8	other	1	jaffa		abbreviated
+1939-04-17	hmf	hmf19390417-01.1.3	other	2	jerusalem,safed		spelled
+1939-04-23	hmf	hmf19390423-01.1.4	mixed	3	haifa,jaffa,jerusalem,telaviv	hadassah	maqaf
+1939-04-30	itonmeyuhad	itonmeyuhad19390430-01.1.6	other	4	jerusalem		spelled
+1939-05-11	hbkr	hbkr19390511-01.1.6	mixed	4	acre,haifa,jaffa	hadassah	abbreviated
+1939-05-26	hbkr	hbkr19390526-01.1.6	other	3	safed	elisha,hadassah	spelled
+1939-06-20	dav	dav19390620-01.1.1	mixed	5	haifa,safed	hadassah	spelled
+1939-06-20	dav	dav19390620-01.1.5	mixed	2	haifa,jaffa		spelled
+1939-06-20	haretz	haretz19390620-01.1.5	untowned	4			spelled
+1939-06-20	hbkr	hbkr19390620-01.1.1	untowned	2			spelled
+1939-06-20	hzh	hzh19390620-01.1.1	mixed	6	haifa,telaviv	hadassah	spelled
+1939-06-22	hbkr	hbkr19390622-01.1.6	untowned	3		hadassah	spelled
+1939-06-25	omer	omer19390625-01.1.1	untowned	1			spelled
+1939-06-30	dav	dav19390630-01.1.6	other	3	jerusalem,nazareth,safed		maqaf
+1939-07-04	hashaah	hashaah19390704-01.1.1	other	2	jaffa,jerusalem		spelled
+1939-07-05	haretz	haretz19390705-01.1.5	untowned	2			spelled
+1939-07-11	dav	dav19390711-01.1.7	haifa	4	haifa		spelled
+1939-07-13	hbkr	hbkr19390713-01.1.6	mixed	1	haifa,safed		abbreviated
+1939-08-14	hbkr	hbkr19390814-01.1.4	other	1	jaffa		spelled
+1939-08-23	hbkr	hbkr19390823-01.1.6	other	2	gaza,jerusalem	hadassah	abbreviated
+1939-09-01	dav	dav19390901-01.1.4	mixed	2	acre,haifa		spelled
+1939-09-01	hzh	hzh19390901-01.1.4	mixed	1	acre,haifa		spelled
+1939-09-12	haretz	haretz19390912-01.1.4	untowned	1			maqaf
+1939-09-25	hbkr	hbkr19390925-01.1.3	untowned	1			maqaf
+1939-10-12	hbkr	hbkr19391012-01.1.5	untowned	1			maqaf
+1939-10-15	hbkr	hbkr19391015-01.1.4	no_hospital_term	0			maqaf
+1939-10-18	hbkr	hbkr19391018-01.1.5	other	1	telaviv		spelled
+1939-10-25	hbkr	hbkr19391025-01.1.5	other	2	telaviv		spelled
+1939-10-27	hbkr	hbkr19391027-01.1.4	untowned	1			spelled
+1939-11-15	ytlv	ytlv19391115-01.1.50	other	8	jaffa		abbreviated
+1939-11-16	haretz	haretz19391116-01.1.1	mixed	3	haifa,jerusalem		spelled
+1939-11-16	hbkr	hbkr19391116-01.1.1	other	1	jerusalem		spelled
+1939-11-23	hzh	hzh19391123-01.1.4	mixed	1	haifa,jerusalem		spelled
+1940-01-01	hbkr	hbkr19400101-01.1.6	mixed	8	gaza,haifa,jaffa,jerusalem,nablus,safed,telaviv,tiberias	hadassah	spelled
+1940-01-02	haretz	haretz19400102-01.1.6	mixed	3	haifa,jaffa,jerusalem,telaviv		spelled
+1940-01-10	hbkr	hbkr19400110-01.1.2	mixed	2	haifa,jerusalem		spelled
+1940-01-15	hadashott	hadashott19400115-01.1.2	mixed	17	haifa,jaffa,jerusalem		indefinite
+1940-01-15	hmf	hmf19400115-01.1.4	mixed	5	haifa,jerusalem,telaviv	hadassah	indefinite
+1940-01-24	hzh	hzh19400124-01.1.3	haifa	3	haifa	hadassah	spelled
+1940-03-04	hashaah	hashaah19400304-01.1.3	untowned	1			spelled
+1940-05-28	hbkr	hbkr19400528-01.1.8	other	2	jerusalem,safed		abbreviated
+1940-06-02	dav	dav19400602-01.1.6	mixed	4	haifa,jerusalem		spelled
+1940-06-25	hzh	hzh19400625-01.1.4	other	3	gaza,jaffa	english,hadassah	spelled
+1940-07-07	hbkr	hbkr19400707-01.1.3	mixed	3	haifa,jaffa,jerusalem	hadassah	abbreviated
+1940-08-07	hbkr	hbkr19400807-01.1.1	haifa	2	haifa	hadassah	spelled
+1940-08-20	hbkr	hbkr19400820-01.1.3	haifa	1	haifa		maqaf
+1940-09-22	hbkr	hbkr19400922-01.1.4	untowned	2			spelled
+1940-09-23	hashaah	hashaah19400923-01.1.1	untowned	1			spelled
+1940-10-08	dav	dav19401008-01.1.4	other	6	jerusalem	hadassah	spelled
+1940-11-27	hbkr	hbkr19401127-01.1.2	untowned	2			abbreviated
+1940-12-03	hbkr	hbkr19401203-01.1.4	untowned	2			spelled
+1940-12-05	hmf	hmf19401205-01.1.1	untowned	1			spelled
+1940-12-27	hashaharerev	hashaharerev19401227-01.1.1	haifa	2	haifa		maqaf
+1940-12-29	hbkr	hbkr19401229-01.1.4	haifa	3	haifa		spelled
+1941-01-13	dav	dav19410113-01.1.4	untowned	4			spelled
+1941-02-20	dav	dav19410220-01.1.4	other	2	jerusalem		indefinite
+1941-02-20	hbkr	hbkr19410220-01.1.3	other	9	jaffa		indefinite
+1941-02-23	dav	dav19410223-01.1.4	other	1	jerusalem		spelled
+1941-02-23	hzh	hzh19410223-01.1.1	other	1	telaviv		spelled
+1941-03-06	dav	dav19410306-01.1.2	other	22	jaffa,telaviv		spelled
+1941-03-25	hbkr	hbkr19410325-01.1.3	haifa	2	haifa	hadassah	abbreviated
+1941-05-09	hbkr	hbkr19410509-01.1.7	untowned	1			spelled
+1941-06-08	hzh	hzh19410608-01.1.3	untowned	3			spelled
+1941-06-13	haretz	haretz19410613-01.1.8	haifa	3	haifa	hadassah	spelled
+1941-06-20	hbkr	hbkr19410620-01.1.7	other	2	jaffa		spelled
+1941-08-05	hbkr	hbkr19410805-01.1.3	other	2	jerusalem		abbreviated
+1941-08-25	hbkr	hbkr19410825-01.1.3	haifa	1	haifa		abbreviated
+1941-08-29	hbkr	hbkr19410829-01.1.7	haifa	1	haifa		abbreviated
+1941-09-02	haretz	haretz19410902-01.1.4	untowned	5			spelled
+1941-09-03	hbkr	hbkr19410903-01.1.3	haifa	1	haifa		abbreviated
+1941-09-11	hbkr	hbkr19410911-01.1.3	other	4	jerusalem	hadassah	abbreviated
+1941-09-14	dav	dav19410914-01.1.4	other	6	jerusalem,nablus		spelled
+1941-09-15	dav	dav19410915-01.1.4	other	4	jaffa	hadassah	spelled
+1941-09-26	hbkr	hbkr19410926-01.1.6	mixed	5	acre,haifa,jerusalem	hadassah	spelled
+1941-10-07	hmf	hmf19411007-01.1.4	mixed	1	haifa,telaviv		spelled
+1941-10-19	hbkr	hbkr19411019-01.1.4	other	2	telaviv		abbreviated
+1941-10-28	hmf	hmf19411028-01.1.2	other	5	jaffa	hadassah	indefinite
+1941-11-03	hbkr	hbkr19411103-01.1.3	other	5	acre,jerusalem		spelled
+1941-11-06	hmf	hmf19411106-01.1.3	other	2	jerusalem		spelled
+1941-12-15	ytlv	ytlv19411215-01.1.1	other	5	telaviv		indefinite
+1942-01-08	hzh	hzh19420108-01.1.2	other	3	jaffa		spelled
+1942-01-12	hzh	hzh19420112-01.1.4	other	2	jaffa		spelled
+1942-01-18	dav	dav19420118-01.1.4	other	6	jaffa	hadassah	maqaf
+1942-01-27	hmf	hmf19420127-01.1.4	mixed	6	haifa,telaviv	hadassah	indefinite,spelled
+1942-02-16	hzh	hzh19420216-01.1.2	untowned	1			spelled
+1942-03-17	hzh	hzh19420317-01.1.3	no_hospital_term	0			indefinite
+1942-03-19	haolam	haolam19420319-01.1.4	untowned	1			indefinite
+1942-04-14	dav	dav19420414-01.1.1	other	2	jerusalem		spelled
+1942-05-21	haretz	haretz19420521-01.1.8	other	6	jaffa,jerusalem,telaviv	hadassah	spelled
+1942-06-08	dav	dav19420608-01.1.2	other	8	jerusalem	hadassah	spelled
+1942-06-08	hmf	hmf19420608-01.1.4	other	1	jerusalem,telaviv		spelled
+1942-06-16	hmf	hmf19420616-01.1.2	mixed	3	haifa,jaffa	hadassah	spelled
+1942-06-23	hmf	hmf19420623-01.1.4	untowned	5			indefinite
+1942-06-24	hbkr	hbkr19420624-01.1.4	haifa	4	haifa		spelled
+1942-06-25	hbkr	hbkr19420625-01.1.5	untowned	1			abbreviated
+1942-06-26	haretz	haretz19420626-01.1.6	untowned	4			maqaf
+1942-06-26	hbkr	hbkr19420626-01.1.6	untowned	2			abbreviated
+1942-07-01	haretz	haretz19420701-01.1.2	other	6	jaffa,jerusalem,telaviv		maqaf
+1942-07-09	haretz	haretz19420709-01.1.3	other	2	jaffa,jerusalem,safed		indefinite
+1942-07-16	dav	dav19420716-01.1.4	no_hospital_term	0			abbreviated
+1942-07-17	dav	dav19420717-01.1.6	other	2	jaffa		spelled
+1942-07-19	haretz	haretz19420719-01.1.4	other	5	jaffa,jerusalem		indefinite,maqaf
+1942-07-30	hbkr	hbkr19420730-01.1.4	mixed	4	haifa,jerusalem	hadassah	spelled
+1942-08-02	hmf	hmf19420802-01.1.4	other	5	jaffa,jerusalem,telaviv	hadassah	spelled
+1942-08-05	hmf	hmf19420805-01.1.3	other	3	jaffa,jerusalem		indefinite
+1942-08-05	hzh	hzh19420805-01.1.1	untowned	1			spelled
+1942-08-07	dav	dav19420807-01.1.4	other	3	jaffa,safed		indefinite
+1942-09-17	haolam	haolam19420917-01.1.2	untowned	6			spelled
+1942-09-25	hzh	hzh19420925-01.1.4	other	3	jaffa		spelled
+1942-10-23	hbkr	hbkr19421023-01.1.6	other	6	jerusalem,telaviv		maqaf
+1942-10-29	hbkr	hbkr19421029-01.1.2	haifa	6	haifa	rothschild	abbreviated
+1942-11-05	kolisraeljlm	kolisraeljlm19421105-01.1.2	mixed	9	haifa,jaffa	hadassah	spelled
+1942-12-18	dav	dav19421218-01.1.6	untowned	3			spelled
+1942-12-28	hmf	hmf19421228-01.1.4	mixed	1	haifa,jaffa		spelled
+1943-01-07	dav	dav19430107-01.1.4	untowned	3		hadassah	spelled
+1943-03-10	dav	dav19430310-01.1.4	other	3	jaffa		spelled
+1943-03-15	ytlv	ytlv19430315-01.1.11	other	2	telaviv		spelled
+1943-03-30	hzh	hzh19430330-01.1.4	other	9	jerusalem,telaviv	rothschild	spelled
+1943-04-05	hbkr	hbkr19430405-01.1.4	other	2	telaviv		maqaf,spelled
+1943-04-19	hegeh	hegeh19430419-01.1.4	other	2	jaffa		indefinite
+1943-05-07	hmf	hmf19430507-01.1.6	other	1	telaviv		indefinite
+1943-05-12	dav	dav19430512-01.1.4	untowned	5			indefinite
+1943-05-16	ytlv	ytlv19430516-01.1.5	other	2	jaffa		spelled
+1943-05-27	haretz	haretz19430527-01.1.2	other	3	jaffa		spelled
+1943-06-01	dav	dav19430601-01.1.4	untowned	3			spelled
+1943-06-04	haretz	haretz19430604-01.1.6	mixed	5	haifa,jerusalem,ramleh		spelled
+1943-06-16	hmf	hmf19430616-01.1.4	other	3	jaffa,jerusalem		abbreviated
+1943-06-24	hzh	hzh19430624-01.1.5	untowned	1			spelled
+1943-07-08	haretz	haretz19430708-01.1.1	other	1	telaviv		maqaf
+1943-07-08	haretz	haretz19430708-01.1.3	other	9	jaffa,nazareth,telaviv		maqaf
+1943-07-13	hzh	hzh19430713-01.1.6	other	1	telaviv		spelled
+1943-07-29	haretz	haretz19430729-01.1.3	other	9	jaffa,jerusalem,telaviv	rothschild	spelled
+1943-08-12	hazmantlv	hazmantlv19430812-01.1.4	mixed	5	haifa,jaffa		abbreviated
+1943-08-17	ahr	ahr19430817-01.1.3	mixed	3	haifa,telaviv		maqaf
+1943-08-17	hazmantlv	hazmantlv19430817-01.1.4	mixed	4	acre,haifa		abbreviated
+1943-08-20	haretz	haretz19430820-01.1.5	mixed	7	haifa,jaffa,jerusalem,tiberias		maqaf
+1943-08-30	hazmantlv	hazmantlv19430830-01.1.4	mixed	3	haifa,jaffa,jerusalem	rothschild	abbreviated
+1943-09-01	haretz	haretz19430901-01.1.2	other	4	jaffa,jerusalem	hadassah	maqaf,spelled
+1943-09-03	ahr	ahr19430903-01.1.7	haifa	3	haifa		maqaf
+1943-09-03	hazmantlv	hazmantlv19430903-01.1.3	haifa	1	haifa		abbreviated
+1943-09-13	dav	dav19430913-01.1.1	other	5	jaffa,telaviv		spelled
+1943-09-13	haretz	haretz19430913-01.1.3	mixed	10	haifa,jerusalem,telaviv		maqaf
+1943-09-19	ahr	ahr19430919-01.1.2	untowned	5			abbreviated
+1943-09-21	hzh	hzh19430921-01.1.2	other	2	jaffa,telaviv		indefinite
+1943-09-29	hbkr	hbkr19430929-01.1.8	mixed	4	haifa,nablus,telaviv		spelled
+1943-10-11	ahr	ahr19431011-01.1.3	other	3	jaffa		maqaf
+1943-10-12	haretz	haretz19431012-01.1.3	mixed	5	haifa,jerusalem,nazareth,telaviv	rothschild	spelled
+1943-10-28	haretz	haretz19431028-01.1.4	other	3	telaviv		spelled
+1943-10-28	hazmantlv	hazmantlv19431028-01.1.6	mixed	3	haifa,telaviv	rothschild	abbreviated
+1943-10-28	hbkr	hbkr19431028-01.1.4	untowned	1			abbreviated
+1943-10-29	hmf	hmf19431029-01.1.6	untowned	4			abbreviated
+1943-11-07	hzh	hzh19431107-01.1.3	other	1	telaviv		maqaf
+1943-11-14	hmf	hmf19431114-01.1.2	other	7	jaffa	hadassah	spelled
+1943-11-17	haretz	haretz19431117-01.1.2	mixed	11	haifa,jaffa,jerusalem,telaviv	hadassah	spelled
+1943-11-18	hazmantlv	hazmantlv19431118-01.1.4	mixed	6	haifa,jerusalem,nablus,nazareth	english	spelled
+1943-11-18	hmf	hmf19431118-01.1.3	other	3	jerusalem	rothschild	abbreviated
+1943-12-08	hazmantlv	hazmantlv19431208-01.1.4	mixed	3	haifa,telaviv		abbreviated
+1943-12-09	haretz	haretz19431209-01.1.3	mixed	6	haifa,jerusalem,telaviv		spelled
+1943-12-10	hmf	hmf19431210-01.1.6	other	1	jerusalem		spelled
+1943-12-23	hmf	hmf19431223-01.1.4	other	5	jerusalem		maqaf
+1943-12-26	haretz	haretz19431226-01.1.4	other	6	jaffa,jerusalem,telaviv		abbreviated
+1943-12-29	hazmantlv	hazmantlv19431229-01.1.4	haifa	1	haifa		spelled
+1944-01-04	haretz	haretz19440104-01.1.4	untowned	3			spelled
+1944-01-16	hazmantlv	hazmantlv19440116-01.1.4	haifa	2	haifa		abbreviated
+1944-01-17	haretz	haretz19440117-01.1.2	other	5	jaffa,jerusalem		spelled
+1944-01-19	hazmantlv	hazmantlv19440119-01.1.4	mixed	3	haifa,jaffa	rothschild	abbreviated
+1944-01-24	hazmantlv	hazmantlv19440124-01.1.4	mixed	2	acre,haifa		abbreviated
+1944-01-25	hazmantlv	hazmantlv19440125-01.1.4	mixed	10	haifa,jaffa	hadassah	spelled
+1944-01-25	hbkr	hbkr19440125-01.1.4	mixed	9	haifa,jaffa,jerusalem,telaviv		spelled
+1944-01-26	hbkr	hbkr19440126-01.1.4	untowned	2			spelled
+1944-01-27	hbkr	hbkr19440127-01.1.4	other	6	telaviv		spelled
+1944-01-31	hazmantlv	hazmantlv19440131-01.1.4	mixed	4	haifa,jerusalem	rothschild	spelled
+1944-02-14	hazmantlv	hazmantlv19440214-01.1.4	untowned	1			abbrev_short
+1944-02-20	hmf	hmf19440220-01.1.4	haifa	3	haifa	rothschild	spelled
+1944-02-23	hbkr	hbkr19440223-01.1.4	untowned	1			abbreviated
+1944-02-23	hmf	hmf19440223-01.1.4	other	1	jerusalem		abbreviated
+1944-02-23	hzh	hzh19440223-01.1.4	other	4	jerusalem,telaviv		abbreviated
+1944-03-01	hbkr	hbkr19440301-01.1.4	mixed	7	haifa,jaffa,telaviv		indefinite
+1944-03-22	haretz	haretz19440322-01.1.4	other	3	jaffa		spelled
+1944-03-24	hazmantlv	hazmantlv19440324-01.1.8	other	4	jerusalem	hadassah	abbreviated
+1944-03-27	haretz	haretz19440327-01.1.2	other	8	jerusalem,telaviv		indefinite
+1944-03-27	hazmantlv	hazmantlv19440327-01.1.4	other	4	acre,telaviv		abbreviated
+1944-04-06	ahr	ahr19440406-01.1.4	haifa	4	haifa		maqaf
+1944-04-16	haretz	haretz19440416-01.1.4	mixed	2	haifa,jerusalem,tiberias		spelled
+1944-04-16	ytlv	ytlv19440416-01.1.10	mixed	26	haifa,jaffa,telaviv		spelled
+1944-04-16	ytlv	ytlv19440416-01.1.17	other	7	jaffa,telaviv	hadassah	spelled
+1944-04-21	haretz	haretz19440421-01.1.1	other	3	jaffa		spelled
+1944-04-27	dav	dav19440427-01.1.3	haifa	1	haifa		spelled
+1944-04-27	hazmantlv	hazmantlv19440427-01.1.3	mixed	9	haifa,jaffa,telaviv	english,rothschild	spelled
+1944-04-27	hegeh	hegeh19440427-01.1.3	mixed	1	haifa,jaffa		spelled
+1944-04-27	hzh	hzh19440427-01.1.4	no_hospital_term	0			spelled
+1944-05-04	dav	dav19440504-01.1.4	other	7	jerusalem		spelled
+1944-05-07	hzh	hzh19440507-01.1.3	other	5	jerusalem		spelled
+1944-05-12	hbkr	hbkr19440512-01.1.6	other	7	jerusalem,telaviv		spelled
+1944-05-15	haretz	haretz19440515-01.1.1	other	14	jaffa,telaviv	hadassah	indefinite,spelled
+1944-05-15	hazmantlv	hazmantlv19440515-01.1.1	other	12	jaffa	hadassah	indefinite,spelled
+1944-05-21	haretz	haretz19440521-01.1.4	other	2	jaffa		indefinite
+1944-05-25	hazmantlv	hazmantlv19440525-01.1.3	haifa	9	haifa	hadassah,rothschild	indefinite
+1944-06-01	hbkr	hbkr19440601-01.1.3	haifa	3	haifa		spelled
+1944-06-06	ahr	ahr19440606-01.1.4	haifa	2	haifa		maqaf
+1944-06-23	haretz	haretz19440623-01.1.6	mixed	5	haifa,telaviv		abbreviated
+1944-06-27	ahr	ahr19440627-01.1.4	other	2	jerusalem,telaviv		maqaf
+1944-06-30	dav	dav19440630-01.1.6	untowned	2			spelled
+1944-06-30	itonmeyuhad	itonmeyuhad19440630-01.1.7	other	1	telaviv		spelled
+1944-07-11	haretz	haretz19440711-01.1.4	other	1	jaffa		maqaf
+1944-07-17	hmf	hmf19440717-01.1.4	other	3	jaffa,jerusalem,telaviv	hadassah,rothschild	abbreviated
+1944-08-04	hzh	hzh19440804-01.1.6	other	16	jaffa,jerusalem		abbreviated
+1944-08-07	haretz	haretz19440807-01.1.2	other	2	jaffa	rothschild	abbreviated
+1944-08-16	hazmantlv	hazmantlv19440816-01.1.4	untowned	4			abbreviated
+1944-08-20	dav	dav19440820-01.1.7	untowned	1			spelled
+1944-08-21	hzh	hzh19440821-01.1.4	mixed	5	haifa,jaffa	rothschild	spelled
+1944-08-29	hzh	hzh19440829-01.1.4	untowned	3		rothschild	spelled
+1944-09-06	hegeh	hegeh19440906-01.1.4	haifa	1	haifa		spelled
+1944-09-13	haretz	haretz19440913-01.1.2	mixed	5	haifa,jaffa,jerusalem,telaviv		spelled
+1944-09-14	hazmantlv	hazmantlv19440914-01.1.2	mixed	5	haifa,nazareth		abbreviated
+1944-09-15	ytlv	ytlv19440915-01.1.4	other	6	telaviv		indefinite
+1944-09-20	ahr	ahr19440920-01.1.4	haifa	2	haifa		maqaf
+1944-09-29	hazmantlv	hazmantlv19440929-01.1.6	haifa	3	haifa	hadassah	abbreviated
+1944-10-03	ahr	ahr19441003-01.1.4	mixed	4	haifa,jerusalem		maqaf
+1944-10-03	haretz	haretz19441003-01.1.3	mixed	8	haifa,jaffa,jerusalem	hadassah	spelled
+1944-10-13	ahr	ahr19441013-01.1.8	other	1	jaffa		maqaf
+1944-10-16	hzh	hzh19441016-01.1.4	haifa	3	haifa		abbreviated
+1944-10-26	hzh	hzh19441026-01.1.3	haifa	3	haifa		spelled
+1944-11-05	haretz	haretz19441105-01.1.3	mixed	7	haifa,jaffa,jerusalem,telaviv		maqaf
+1944-11-07	haretz	haretz19441107-01.1.4	untowned	1			abbreviated
+1944-11-08	haretz	haretz19441108-01.1.2	other	4	jaffa,telaviv		maqaf
+1944-11-17	haretz	haretz19441117-01.1.8	mixed	6	haifa,jaffa,jerusalem	hadassah,rothschild	spelled
+1944-11-27	hbkr	hbkr19441127-01.1.2	other	5	jaffa,telaviv		maqaf
+1944-12-24	hbkr	hbkr19441224-01.1.1	other	3	hebron	hadassah	abbreviated
+1944-12-29	amudimaliya	amudimaliya19441229-01.1.8	other	2	telaviv		spelled
+1945-01-02	dav	dav19450102-01.1.1	other	2	jaffa		spelled
+1945-01-04	dav	dav19450104-01.1.2	other	3	jerusalem,safed,telaviv		spelled
+1945-01-05	ahr	ahr19450105-01.1.8	mixed	3	haifa,jaffa		maqaf
+1945-01-10	hayal	hayal19450110-01.1.2	other	3	jaffa		spelled
+1945-01-23	haretz	haretz19450123-01.1.3	mixed	5	haifa,jaffa,telaviv	rothschild	spelled
+1945-01-23	hmf	hmf19450123-01.1.4	other	2	gaza,jaffa,jerusalem	hadassah	spelled
+1945-01-30	dav	dav19450130-01.1.2	haifa	1	haifa		maqaf
+1945-02-05	haretz	haretz19450205-01.1.1	other	3	jaffa,jerusalem,telaviv	hadassah	spelled
+1945-02-13	hmf	hmf19450213-01.1.4	untowned	2			abbreviated
+1945-02-14	hbkr	hbkr19450214-01.1.4	other	3	jaffa,telaviv	rothschild	indefinite
+1945-02-19	haretz	haretz19450219-01.1.2	untowned	3			maqaf
+1945-02-20	haretz	haretz19450220-01.1.1	mixed	9	haifa,jaffa,safed,telaviv	hadassah	spelled
+1945-02-25	dav	dav19450225-01.1.4	untowned	3			spelled
+1945-02-27	hzh	hzh19450227-01.1.3	other	1	jaffa,telaviv		indefinite
+1945-03-15	haretz	haretz19450315-01.1.2	other	8	jaffa,jerusalem,telaviv		maqaf
+1945-03-30	hzh	hzh19450330-01.1.6	no_hospital_term	0			spelled
+1945-04-01	haretz	haretz19450401-01.1.4	mixed	4	haifa,jaffa,telaviv	hadassah	spelled
+1945-04-17	hzh	hzh19450417-01.1.4	other	2	jaffa		spelled
+1945-04-25	hbkr	hbkr19450425-01.1.3	other	5	jerusalem,telaviv		spelled
+1945-04-29	dav	dav19450429-01.1.6	other	4	jerusalem,telaviv	hadassah,rothschild	spelled
+1945-05-10	haretz	haretz19450510-01.1.2	mixed	4	haifa,jaffa	hadassah	abbreviated
+1945-05-15	ytlv	ytlv19450515-01.1.20	other	3	telaviv		maqaf
+1945-05-16	hegeh	hegeh19450516-01.1.3	other	1	jerusalem		spelled
+1945-05-23	haretz	haretz19450523-01.1.1	other	3	jaffa,telaviv	hadassah	abbreviated
+1945-05-27	ahr	ahr19450527-01.1.4	other	1	jaffa		maqaf
+1945-06-18	hbkr	hbkr19450618-01.1.4	other	5	jerusalem		spelled
+1945-06-26	dav	dav19450626-01.1.4	untowned	1			spelled
+1945-06-26	haretz	haretz19450626-01.1.3	other	6	jerusalem,telaviv		spelled
+1945-06-27	haretz	haretz19450627-01.1.2	mixed	6	haifa,jaffa,nablus,telaviv		spelled
+1945-07-10	haretz	haretz19450710-01.1.2	mixed	6	acre,haifa,jerusalem		spelled
+1945-07-16	haretz	haretz19450716-01.1.2	mixed	5	haifa,jaffa,jerusalem	hadassah	spelled
+1945-07-18	haretz	haretz19450718-01.1.4	other	4	jaffa,telaviv		spelled
+1945-07-19	hmf	hmf19450719-01.1.3	haifa	1	haifa		abbreviated
+1945-08-12	ahr	ahr19450812-01.1.4	mixed	7	haifa,jaffa,telaviv	hadassah	maqaf
+1945-08-13	haretz	haretz19450813-01.1.1	mixed	5	haifa,jerusalem		maqaf
+1945-08-17	dav	dav19450817-01.1.7	other	6	telaviv	rothschild	spelled
+1945-08-17	hegeh	hegeh19450817-01.1.6	untowned	1			maqaf
+1945-08-19	haretz	haretz19450819-01.1.4	other	2	telaviv		spelled
+1945-08-19	hbkr	hbkr19450819-01.1.4	mixed	3	haifa,jaffa,jerusalem,telaviv		maqaf
+1945-08-21	hmf	hmf19450821-01.1.4	untowned	2		hadassah	spelled
+1945-08-24	amudimaliya	amudimaliya19450824-01.1.12	mixed	5	haifa,jerusalem,telaviv	hadassah	spelled
+1945-08-26	haretz	haretz19450826-01.1.3	other	2	jerusalem,telaviv		spelled
+1945-08-27	haretz	haretz19450827-01.1.1	other	8	jaffa,jerusalem,telaviv	rothschild	maqaf
+1945-08-29	haretz	haretz19450829-01.1.2	other	15	jaffa,jerusalem,telaviv	hadassah	spelled
+1945-08-31	hbkr	hbkr19450831-01.1.2	untowned	2			spelled
+1945-09-06	haretz	haretz19450906-01.1.4	mixed	2	haifa,telaviv,tiberias		spelled
+1945-09-11	dav	dav19450911-01.1.1	mixed	1	acre,haifa		spelled
+1945-09-16	ytlv	ytlv19450916-01.1.4	untowned	1			maqaf
+1945-10-03	hbkr	hbkr19451003-01.1.4	other	4	gaza,hebron,jaffa	rothschild	maqaf
+1945-10-23	haretz	haretz19451023-01.1.2	mixed	2	haifa,jaffa		maqaf
+1945-10-28	dav	dav19451028-01.1.4	mixed	5	haifa,jaffa,jerusalem	hadassah	spelled
+1945-11-02	ahr	ahr19451102-01.1.8	haifa	4	haifa	hadassah	maqaf
+1945-11-02	haretz	haretz19451102-01.1.1	mixed	4	haifa,ramleh,telaviv		maqaf
+1945-11-11	hzh	hzh19451111-01.1.4	untowned	4		hadassah	spelled
+1945-11-15	ytlv	ytlv19451115-01.1.13	other	12	telaviv		maqaf
+1945-11-18	haretz	haretz19451118-01.1.3	haifa	5	haifa	rothschild	spelled
+1945-11-30	haretz	haretz19451130-01.1.7	other	3	jerusalem	rothschild	spelled
+1945-12-02	ahr	ahr19451202-01.1.4	mixed	4	haifa,jaffa,telaviv		maqaf
+1945-12-11	haretz	haretz19451211-01.1.4	mixed	2	haifa,jerusalem,nablus		maqaf
+1945-12-11	hmf	hmf19451211-01.1.4	untowned	2		rothschild	abbreviated
+1945-12-17	haretz	haretz19451217-01.1.4	other	3	jaffa	english	spelled
+1945-12-17	hbkr	hbkr19451217-01.1.4	mixed	2	haifa,telaviv		spelled
+1945-12-19	haretz	haretz19451219-01.1.5	mixed	4	haifa,jaffa,ramleh		spelled
+1945-12-25	haretz	haretz19451225-01.1.4	untowned	4			maqaf
+1945-12-25	hmf	hmf19451225-01.1.4	other	4	jaffa		abbreviated
+1945-12-31	hmf	hmf19451231-01.1.4	other	3	jaffa,jerusalem		abbreviated
+1946-01-01	hbkr	hbkr19460101-01.1.4	other	2	jaffa,telaviv		spelled
+1946-01-01	tsohorayimhaifa	tsohorayimhaifa19460101-01.1.4	mixed	4	haifa,jaffa,telaviv	rothschild	maqaf
+1946-01-09	tsohorayimhaifa	tsohorayimhaifa19460109-01.1.1	mixed	2	acre,haifa		abbreviated
+1946-01-10	haretz	haretz19460110-01.1.3	other	2	jerusalem,safed		maqaf
+1946-01-21	haretz	haretz19460121-01.1.1	other	3	jaffa,jerusalem,telaviv		maqaf
+1946-01-21	haretz	haretz19460121-01.1.3	other	5	acre	hadassah,rothschild	maqaf
+1946-01-22	dav	dav19460122-01.1.3	untowned	3			maqaf
+1946-01-22	hzh	hzh19460122-01.1.1	other	3	jaffa,jerusalem	hadassah	spelled
+1946-01-23	dav	dav19460123-01.1.3	mixed	2	haifa,jerusalem,telaviv		spelled
+1946-01-24	kolisraeljlm	kolisraeljlm19460124-01.1.3	other	1	safed		abbreviated
+1946-01-27	dav	dav19460127-01.1.4	mixed	7	acre,haifa,jerusalem	rothschild	spelled
+1946-01-27	haretz	haretz19460127-01.1.4	other	6	jaffa,jerusalem	hadassah	spelled
+1946-01-28	dav	dav19460128-01.1.4	mixed	1	haifa,jaffa		spelled
+1946-02-01	hmf	hmf19460201-01.1.8	mixed	9	haifa,jaffa,jerusalem,telaviv	hadassah	indefinite
+1946-02-07	dav	dav19460207-01.1.1	other	3	jaffa,telaviv		spelled
+1946-02-08	haretz	haretz19460208-01.1.8	other	3	jerusalem,telaviv		spelled
+1946-02-10	dav	dav19460210-01.1.3	other	7	jaffa		spelled
+1946-02-11	haretz	haretz19460211-01.1.4	other	3	jaffa,jerusalem		spelled
+1946-02-12	tsohorayimhaifa	tsohorayimhaifa19460212-01.1.1	untowned	2			spelled
+1946-02-13	haretz	haretz19460213-01.1.4	mixed	5	haifa,jaffa,jerusalem,telaviv		spelled
+1946-02-13	hmf	hmf19460213-01.1.4	other	4	jaffa	rothschild	spelled
+1946-02-15	hed	hed19460215-01.1.11	other	1	telaviv		spelled
+1946-02-17	hbkr	hbkr19460217-01.1.2	other	1	jerusalem		spelled
+1946-02-20	dav	dav19460220-01.1.3	untowned	2			spelled
+1946-02-21	haretz	haretz19460221-01.1.3	other	2	tiberias		spelled
+1946-02-21	tsohorayimhaifa	tsohorayimhaifa19460221-01.1.1	untowned	1			spelled
+1946-02-22	hmf	hmf19460222-01.1.8	mixed	3	haifa,jaffa,telaviv		abbreviated
+1946-02-27	ahr	ahr19460227-01.1.2	untowned	1			maqaf
+1946-03-07	ahr	ahr19460307-01.1.4	haifa	3	haifa		abbreviated
+1946-03-10	ahr	ahr19460310-01.1.4	other	5	jaffa	hadassah	maqaf
+1946-03-10	dav	dav19460310-01.1.2	untowned	3		hadassah	spelled
+1946-03-14	haretz	haretz19460314-01.1.4	other	5	jaffa,telaviv		indefinite
+1946-03-14	hbkr	hbkr19460314-01.1.2	no_hospital_term	0			maqaf
+1946-03-24	haretz	haretz19460324-01.1.4	other	5	jaffa,jerusalem		spelled
+1946-03-31	hbkr	hbkr19460331-01.1.1	other	2	telaviv		abbreviated
+1946-04-09	hmf	hmf19460409-01.1.4	mixed	10	haifa,jaffa,jerusalem,telaviv	elisha,hadassah	spelled
+1946-04-11	hbkr	hbkr19460411-01.1.2	other	3	jaffa,jerusalem		spelled
+1946-04-24	dav	dav19460424-01.1.1	mixed	13	haifa,jaffa,jerusalem,telaviv	english,hadassah	spelled
+1946-04-26	haretz	haretz19460426-01.1.7	other	1	jaffa,telaviv		spelled
+1946-04-26	hmf	hmf19460426-01.1.1	mixed	4	haifa,jaffa,jerusalem,telaviv	hadassah	abbreviated
+1946-04-28	dav	dav19460428-01.1.1	other	2	jaffa	hadassah	spelled
+1946-05-02	tsohorayimhaifa	tsohorayimhaifa19460502-01.1.1	mixed	5	haifa,jaffa	rothschild	abbreviated,maqaf
+1946-05-15	hmf	hmf19460515-01.1.4	mixed	10	haifa,jaffa,jerusalem,telaviv	elisha,hadassah	abbreviated
+1946-05-15	hzh	hzh19460515-01.1.3	other	2	jaffa		abbreviated
+1946-05-27	haretz	haretz19460527-01.1.4	other	2	jaffa		maqaf
+1946-06-06	hbkr	hbkr19460606-01.1.4	other	9	jaffa,jerusalem	hadassah	spelled
+1946-06-09	ahr	ahr19460609-01.1.4	other	4	jaffa,jerusalem		maqaf
+1946-06-09	dav	dav19460609-01.1.3	other	5	jaffa	hadassah	spelled
+1946-06-16	ahr	ahr19460616-01.1.4	mixed	2	haifa,telaviv,tiberias		maqaf
+1946-06-19	ahr	ahr19460619-01.1.1	mixed	7	acre,haifa,jaffa,jerusalem,telaviv	hadassah	spelled
+1946-06-19	hbkr	hbkr19460619-01.1.1	mixed	4	haifa,jaffa		spelled
+1946-06-19	hmf	hmf19460619-01.1.1	mixed	13	acre,haifa,jaffa,jerusalem,telaviv	rothschild	abbreviated
+1946-06-26	hmf	hmf19460626-01.1.4	haifa	4	haifa	hadassah	abbreviated
+1946-07-01	hmf	hmf19460701-01.1.4	mixed	6	acre,haifa,jaffa,nablus	hadassah	spelled
+1946-07-01	hzh	hzh19460701-01.1.3	mixed	2	acre,haifa,jaffa		spelled
+1946-07-03	dav	dav19460703-01.1.1	other	2	telaviv	hadassah	spelled
+1946-07-03	hbkr	hbkr19460703-01.1.1	mixed	2	haifa,jerusalem		spelled
+1946-07-05	hzh	hzh19460705-01.1.1	mixed	3	haifa,jaffa		spelled
+1946-07-14	hbkr	hbkr19460714-01.1.1	mixed	2	acre,haifa		maqaf
+1946-07-16	hmf	hmf19460716-01.1.4	haifa	4	haifa	hadassah	spelled
+1946-07-18	haretz	haretz19460718-01.1.3	other	1	jerusalem		spelled
+1946-07-23	haretz	haretz19460723-01.1.1	other	6	jaffa		spelled
+1946-07-26	ahr	ahr19460726-01.1.8	mixed	10	haifa,jerusalem		maqaf
+1946-07-26	hbkr	hbkr19460726-01.1.8	other	4	jerusalem		spelled
+1946-08-04	hmf	hmf19460804-01.1.4	other	7	jaffa,jerusalem		abbreviated
+1946-08-11	hzh	hzh19460811-01.1.4	other	12	jaffa,jerusalem,telaviv	hadassah	spelled
+1946-08-12	haretz	haretz19460812-01.1.4	mixed	11	haifa,jaffa	hadassah	maqaf
+1946-08-12	hbkr	hbkr19460812-01.1.4	other	18	gaza,jaffa,telaviv	hadassah	spelled
+1946-08-12	hegeh	hegeh19460812-01.1.1	other	4	jaffa,telaviv		spelled
+1946-08-12	hmf	hmf19460812-01.1.4	mixed	25	haifa,jaffa,jerusalem,nablus,telaviv	hadassah	spelled
+1946-08-12	hzh	hzh19460812-01.1.4	other	9	jaffa,jerusalem	hadassah	spelled
+1946-08-13	dav	dav19460813-01.1.3	untowned	5			spelled
+1946-08-13	haretz	haretz19460813-01.1.4	other	2	jaffa,telaviv		spelled
+1946-08-13	hegeh	hegeh19460813-01.1.1	mixed	4	gaza,haifa,jerusalem	hadassah	spelled
+1946-08-14	haretz	haretz19460814-01.1.6	other	1	jaffa		spelled
+1946-08-14	hbkr	hbkr19460814-01.1.4	other	4	jaffa,jerusalem,telaviv		abbreviated
+1946-08-14	hmf	hmf19460814-01.1.4	other	7	jaffa,jerusalem	elisha,hadassah,rothschild	spelled
+1946-08-15	dav	dav19460815-01.1.4	other	3	jaffa		spelled
+1946-08-15	haretz	haretz19460815-01.1.4	mixed	4	haifa,jaffa,telaviv	hadassah	spelled
+1946-08-15	hbkr	hbkr19460815-01.1.4	other	10	jaffa,jerusalem		spelled
+1946-08-15	hzh	hzh19460815-01.1.1	mixed	5	haifa,telaviv	hadassah	spelled
+1946-08-15	hzh	hzh19460815-01.1.4	other	6	jaffa,jerusalem,telaviv	hadassah	spelled
+1946-08-18	dav	dav19460818-01.1.4	other	1	telaviv		maqaf
+1946-08-19	hegeh	hegeh19460819-01.1.1	haifa	5	haifa		spelled
+1946-08-23	hegeh	hegeh19460823-01.1.1	mixed	7	haifa,jerusalem,safed,telaviv		spelled
+1946-08-23	hmf	hmf19460823-01.1.8	haifa	1	haifa		abbreviated
+1946-08-23	hzh	hzh19460823-01.1.8	mixed	5	haifa,jerusalem	rothschild	spelled
+1946-08-30	hmf	hmf19460830-01.1.8	other	6	jerusalem		abbreviated
+1946-09-01	hbkr	hbkr19460901-01.1.3	mixed	5	haifa,jaffa,jerusalem,telaviv		abbreviated
+1946-09-02	hbkr	hbkr19460902-01.1.4	other	3	jaffa,jerusalem	rothschild	spelled
+1946-09-04	hzh	hzh19460904-01.1.4	mixed	3	haifa,telaviv	hadassah	spelled
+1946-09-05	haretz	haretz19460905-01.1.1	mixed	5	haifa,telaviv		abbreviated
+1946-09-10	ahr	ahr19460910-01.1.1	mixed	4	haifa,jaffa,telaviv	hadassah	spelled
+1946-09-11	haretz	haretz19460911-01.1.2	mixed	6	haifa,jaffa,jerusalem,telaviv	hadassah	maqaf
+1946-09-11	hbkr	hbkr19460911-01.1.4	mixed	16	acre,haifa,jerusalem	hadassah	abbreviated
+1946-09-11	hmf	hmf19460911-01.1.4	mixed	13	acre,haifa,jaffa,jerusalem,telaviv	hadassah	abbreviated
+1946-09-12	ahr	ahr19460912-01.1.4	mixed	5	haifa,jaffa	rothschild	spelled
+1946-09-16	hbkr	hbkr19460916-01.1.4	other	5	jaffa,jerusalem,ramleh		spelled
+1946-09-16	hegeh	hegeh19460916-01.1.1	other	2	jaffa		maqaf,spelled
+1946-09-16	hmf	hmf19460916-01.1.4	other	4	jaffa,jerusalem,ramleh		abbreviated,spelled
+1946-09-17	dav	dav19460917-01.1.1	other	8	jerusalem,telaviv	hadassah	maqaf
+1946-09-19	haretz	haretz19460919-01.1.4	other	6	jerusalem,nablus		spelled
+1946-09-19	hbkr	hbkr19460919-01.1.4	other	10	jaffa,jerusalem	hadassah	maqaf
+1946-09-19	hmf	hmf19460919-01.1.1	other	4	jaffa,jerusalem,telaviv	hadassah,rothschild	abbreviated
+1946-09-19	hzh	hzh19460919-01.1.1	other	2	jerusalem		spelled
+1946-09-22	hbkr	hbkr19460922-01.1.3	mixed	3	haifa,jaffa,telaviv	rothschild	abbreviated
+1946-09-25	haretz	haretz19460925-01.1.8	mixed	12	haifa,jaffa,telaviv,tiberias		maqaf
+1946-10-03	hmf	hmf19461003-01.1.4	mixed	4	haifa,jerusalem	hadassah	spelled
+1946-10-03	hzh	hzh19461003-01.1.3	untowned	2		hadassah	spelled
+1946-10-11	ahr	ahr19461011-01.1.7	mixed	3	haifa,jaffa,jerusalem,nablus	rothschild	maqaf
+1946-10-16	dav	dav19461016-01.1.7	untowned	3			spelled
+1946-10-18	ahr	ahr19461018-01.1.7	mixed	4	haifa,safed		maqaf
+1946-10-18	hbkr	hbkr19461018-01.1.6	other	3	jaffa		spelled
+1946-10-23	ahr	ahr19461023-01.1.4	mixed	6	haifa,jaffa		maqaf
+1946-10-23	dav	dav19461023-01.1.1	mixed	5	haifa,jerusalem,telaviv		abbrev_short
+1946-11-01	ahr	ahr19461101-01.1.8	mixed	3	haifa,jaffa,jerusalem		maqaf
+1946-11-01	haretz	haretz19461101-01.1.6	mixed	7	gaza,haifa,jaffa,jerusalem,telaviv		maqaf
+1946-11-01	hegeh	hegeh19461101-01.1.1	other	4	jaffa,jerusalem,telaviv		spelled
+1946-11-05	dav	dav19461105-01.1.1	untowned	1			spelled
+1946-11-10	haretz	haretz19461110-01.1.1	other	4	jaffa	hadassah	spelled
+1946-11-14	hmf	hmf19461114-01.1.4	other	6	telaviv	hadassah	spelled
+1946-11-15	hzh	hzh19461115-01.1.8	other	1	jaffa		spelled
+1946-11-17	dav	dav19461117-01.1.4	other	5	jaffa	hadassah	spelled
+1946-11-19	dav	dav19461119-01.1.4	other	4	jaffa,ramleh,telaviv		spelled
+1946-11-20	dav	dav19461120-01.1.2	untowned	1			spelled
+1946-11-21	hzh	hzh19461121-01.1.4	other	2	jerusalem		spelled
+1946-11-24	ahr	ahr19461124-01.1.4	other	3	telaviv		maqaf
+1946-11-24	hmf	hmf19461124-01.1.1	other	2	jaffa		abbreviated
+1946-11-26	haretz	haretz19461126-01.1.4	untowned	3			spelled
+1946-11-26	hzh	hzh19461126-01.1.4	other	5	jerusalem	rothschild	maqaf
+1946-11-27	hzh	hzh19461127-01.1.1	haifa	4	haifa		spelled
+1946-11-28	ahr	ahr19461128-01.1.4	untowned	2			maqaf
+1946-11-29	haretz	haretz19461129-01.1.9	mixed	3	haifa,jerusalem	hadassah	abbreviated
+1946-12-02	haretz	haretz19461202-01.1.4	mixed	6	haifa,jaffa,jerusalem	hadassah	maqaf
+1946-12-06	haretz	haretz19461206-01.1.8	other	11	jaffa,jerusalem,safed,telaviv		spelled
+1946-12-11	dav	dav19461211-01.1.6	untowned	1			spelled
+1946-12-12	hegeh	hegeh19461212-01.1.2	untowned	1			spelled
+1946-12-19	hmf	hmf19461219-01.1.3	other	9	jaffa,jerusalem		spelled
+1946-12-20	haretz	haretz19461220-01.1.8	other	4	ramleh,telaviv	hadassah	spelled
+1946-12-20	hmf	hmf19461220-01.1.3	untowned	5			maqaf
+1946-12-25	dav	dav19461225-01.1.6	other	2	jaffa		spelled
+1946-12-25	hbkr	hbkr19461225-01.1.4	other	7	jerusalem		maqaf
+1946-12-25	hmf	hmf19461225-01.1.4	other	7	jaffa,jerusalem	hadassah	spelled
+1947-01-01	dav	dav19470101-01.1.5	haifa	1	haifa		maqaf
+1947-01-05	ahr	ahr19470105-01.1.4	mixed	11	haifa,jerusalem,telaviv	hadassah,rothschild	maqaf
+1947-01-09	itim	itim19470109-01.1.1	untowned	1			maqaf
+1947-01-17	hbkr	hbkr19470117-01.1.2	other	3	jerusalem		spelled
+1947-01-17	hzh	hzh19470117-01.1.8	haifa	2	haifa	rothschild	spelled
+1947-01-19	haretz	haretz19470119-01.1.3	mixed	6	haifa,safed	rothschild	spelled
+1947-01-19	hzh	hzh19470119-01.1.4	mixed	3	haifa,jerusalem	rothschild	spelled
+1947-01-21	ahr	ahr19470121-01.1.3	haifa	6	haifa		spelled
+1947-01-22	ahr	ahr19470122-01.1.3	mixed	4	haifa,telaviv		maqaf
+1947-01-22	ahr	ahr19470122-01.1.4	mixed	3	haifa,jaffa,jerusalem,telaviv		maqaf
+1947-01-22	haretz	haretz19470122-01.1.5	mixed	5	acre,haifa,jaffa,telaviv		spelled
+1947-01-22	hbkr	hbkr19470122-01.1.3	mixed	2	haifa,telaviv		maqaf
+1947-01-22	hbkr	hbkr19470122-01.1.4	other	2	jerusalem,telaviv		spelled
+1947-01-23	ahr	ahr19470123-01.1.4	mixed	6	gaza,haifa,jaffa,jerusalem,telaviv,tiberias	rothschild	maqaf
+1947-01-27	ahr	ahr19470127-01.1.4	untowned	2			maqaf
+1947-01-30	dav	dav19470130-01.1.1	other	3	jerusalem,telaviv		spelled
+1947-01-31	hbkr	hbkr19470131-01.1.8	other	6	jaffa,jerusalem,tiberias		spelled
+1947-02-02	ahr	ahr19470202-01.1.4	mixed	4	haifa,nablus,telaviv		spelled
+1947-02-02	haretz	haretz19470202-01.1.3	mixed	4	haifa,jaffa,jerusalem	english	maqaf
+1947-02-02	hbkr	hbkr19470202-01.1.3	other	4	jaffa,telaviv		spelled
+1947-02-09	ahr	ahr19470209-01.1.4	mixed	9	haifa,jaffa,jerusalem	hadassah	maqaf
+1947-02-10	hzh	hzh19470210-01.1.3	other	2	jaffa		spelled
+1947-02-12	dav	dav19470212-01.1.1	mixed	4	haifa,telaviv		maqaf
+1947-02-12	hegeh	hegeh19470212-01.1.1	haifa	3	haifa		maqaf
+1947-02-12	hzh	hzh19470212-01.1.1	untowned	1			spelled
+1947-02-13	haretz	haretz19470213-01.1.2	no_hospital_term	0			spelled
+1947-02-14	ahr	ahr19470214-01.1.5	haifa	8	haifa	rothschild	spelled
+1947-02-14	ahr	ahr19470214-01.1.8	mixed	5	haifa,jerusalem,telaviv,tiberias		abbreviated
+1947-02-14	dav	dav19470214-01.1.10	other	3	jerusalem,telaviv		spelled
+1947-02-14	haretz	haretz19470214-01.1.10	other	6	jaffa		indefinite
+1947-02-16	ahr	ahr19470216-01.1.3	haifa	2	haifa		maqaf
+1947-02-16	ahr	ahr19470216-01.1.4	other	9	jaffa,jerusalem,safed,telaviv		maqaf
+1947-02-18	hegeh	hegeh19470218-01.1.1	haifa	2	haifa		spelled
+1947-02-19	dav	dav19470219-01.1.6	haifa	3	haifa	hadassah,rothschild	spelled
+1947-02-19	haretz	haretz19470219-01.1.6	other	2	telaviv		maqaf
+1947-02-24	hbkr	hbkr19470224-01.1.4	other	9	gaza,jaffa,jerusalem,telaviv		spelled
+1947-03-04	haretz	haretz19470304-01.1.2	mixed	14	haifa,jaffa,telaviv	hadassah,rothschild	abbreviated
+1947-03-05	hzh	hzh19470305-01.1.3	untowned	1		hadassah	spelled
+1947-03-18	ahr	ahr19470318-01.1.3	mixed	5	acre,haifa,jaffa,nazareth		maqaf
+1947-03-18	hegeh	hegeh19470318-01.1.1	mixed	4	gaza,haifa,jerusalem,tiberias	hadassah	spelled
+1947-03-20	ahr	ahr19470320-01.1.3	other	4	jerusalem		maqaf
+1947-03-20	hbkr	hbkr19470320-01.1.4	mixed	3	gaza,haifa,ramleh	rothschild	maqaf
+1947-03-21	ahr	ahr19470321-01.1.10	mixed	4	gaza,haifa,jerusalem		maqaf
+1947-03-23	ahr	ahr19470323-01.1.3	other	8	jaffa		maqaf
+1947-03-24	ahr	ahr19470324-01.1.3	mixed	4	acre,haifa		maqaf
+1947-03-26	ahr	ahr19470326-01.1.3	mixed	7	haifa,jaffa,jerusalem	rothschild	abbreviated
+1947-03-26	haretz	haretz19470326-01.1.5	untowned	2			spelled
+1947-03-26	haretz	haretz19470326-01.1.6	other	7	jaffa		spelled
+1947-03-27	ahr	ahr19470327-01.1.3	mixed	3	haifa,jerusalem		spelled
+1947-03-27	ahr	ahr19470327-01.1.4	haifa	3	haifa		abbreviated
+1947-03-30	ahr	ahr19470330-01.1.3	untowned	1			spelled
+1947-03-30	ahr	ahr19470330-01.1.4	haifa	5	haifa	hadassah,rothschild	spelled
+1947-03-30	dav	dav19470330-01.1.4	other	4	jaffa,telaviv	hadassah	spelled
+1947-04-06	ahr	ahr19470406-01.1.4	untowned	2			abbreviated
+1947-04-14	haretz	haretz19470414-01.1.4	other	12	jaffa,jerusalem,nazareth,telaviv	hadassah	maqaf
+1947-04-15	ahr	ahr19470415-01.1.3	haifa	6	haifa	rothschild	maqaf
+1947-04-16	ahr	ahr19470416-01.1.1	haifa	8	haifa		maqaf
+1947-04-16	ahr	ahr19470416-01.1.3	no_hospital_term	0			maqaf
+1947-04-20	ahr	ahr19470420-01.1.3	untowned	1			spelled
+1947-04-21	ahr	ahr19470421-01.1.3	mixed	2	acre,haifa		spelled
+1947-04-22	ahr	ahr19470422-01.1.3	mixed	5	haifa,jaffa,nazareth		maqaf
+1947-04-22	haretz	haretz19470422-01.1.1	mixed	10	haifa,jerusalem,telaviv	hadassah	spelled
+1947-04-23	haretz	haretz19470423-01.1.6	other	8	hebron,jerusalem,telaviv		maqaf
+1947-04-25	haretz	haretz19470425-01.1.6	other	2	jerusalem		indefinite
+1947-05-01	hzh	hzh19470501-01.1.4	other	3	acre,nazareth		spelled
+1947-05-05	hmf	hmf19470505-01.1.4	mixed	17	acre,haifa,jaffa,telaviv,tiberias	hadassah	spelled
+1947-05-07	ahr	ahr19470507-01.1.4	mixed	6	acre,haifa		abbreviated
+1947-05-08	haretz	haretz19470508-01.1.3	mixed	6	haifa,telaviv	rothschild	abbreviated
+1947-05-08	hbkr	hbkr19470508-01.1.4	mixed	3	acre,haifa		spelled
+1947-05-08	hmf	hmf19470508-01.1.4	mixed	6	haifa,jaffa,jerusalem	hadassah	maqaf
+1947-05-11	hmf	hmf19470511-01.1.4	mixed	10	acre,haifa,jaffa,telaviv	hadassah	abbreviated
+1947-05-12	ahr	ahr19470512-01.1.3	mixed	7	acre,haifa,telaviv		maqaf
+1947-05-12	hmf	hmf19470512-01.1.4	haifa	7	haifa	hadassah	abbreviated
+1947-05-14	hmf	hmf19470514-01.1.4	mixed	6	haifa,jerusalem,nazareth,telaviv	hadassah	abbreviated
+1947-05-14	hzh	hzh19470514-01.1.4	other	1	jaffa		spelled
+1947-05-16	ahr	ahr19470516-01.1.10	other	2	jaffa		abbreviated
+1947-05-16	hmf	hmf19470516-01.1.7	other	3	jaffa,telaviv	hadassah	maqaf
+1947-05-16	hzh	hzh19470516-01.1.1	other	2	jaffa,jerusalem		spelled
+1947-05-18	ahr	ahr19470518-01.1.4	untowned	2		english	maqaf
+1947-05-18	hbkr	hbkr19470518-01.1.4	mixed	7	acre,haifa,jaffa,jerusalem,telaviv	english	spelled
+1947-05-18	hmf	hmf19470518-01.1.4	mixed	11	acre,haifa,jaffa,jerusalem	hadassah,rothschild	abbreviated
+1947-05-19	dav	dav19470519-01.1.4	haifa	3	haifa	rothschild	maqaf
+1947-05-19	haretz	haretz19470519-01.1.4	other	5	jaffa	hadassah,rothschild	spelled
+1947-05-21	haretz	haretz19470521-01.1.5	untowned	1			spelled
+1947-05-26	ahr	ahr19470526-01.1.3	mixed	3	haifa,jaffa		maqaf
+1947-05-26	hmf	hmf19470526-01.1.4	mixed	12	acre,haifa,jaffa,jerusalem	hadassah,rothschild	maqaf
+1947-05-27	hmf	hmf19470527-01.1.4	mixed	10	acre,haifa,telaviv,tiberias	hadassah,rothschild	abbreviated
+1947-05-28	ahr	ahr19470528-01.1.3	haifa	5	haifa		maqaf
+1947-05-28	haretz	haretz19470528-01.1.1	other	5	jaffa,ramleh,telaviv	hadassah	spelled
+1947-05-28	hbkr	hbkr19470528-01.1.2	other	1	jaffa		spelled
+1947-06-01	hmf	hmf19470601-01.1.4	other	5	gaza,jaffa,jerusalem,ramleh,telaviv	hadassah	abbreviated
+1947-06-03	dav	dav19470603-01.1.1	other	4	acre,jaffa	hadassah	spelled
+1947-06-06	hmf	hmf19470606-01.1.2	mixed	3	haifa,jerusalem		abbreviated
+1947-06-08	ahr	ahr19470608-01.1.3	mixed	4	acre,haifa,telaviv		maqaf
+1947-06-10	hzh	hzh19470610-01.1.4	haifa	4	haifa	rothschild	abbreviated
+1947-06-11	dav	dav19470611-01.1.6	mixed	1	haifa,jaffa		abbreviated
+1947-06-11	hmf	hmf19470611-01.1.4	mixed	8	haifa,jaffa	rothschild	abbreviated
+1947-06-12	haretz	haretz19470612-01.1.4	haifa	2	haifa		spelled
+1947-06-15	hbkr	hbkr19470615-01.1.2	other	3	jaffa,jerusalem,safed		spelled
+1947-06-18	hmf	hmf19470618-01.1.4	mixed	10	haifa,jaffa,jerusalem		abbreviated
+1947-06-19	haretz	haretz19470619-01.1.3	mixed	4	gaza,haifa	hadassah,rothschild	spelled
+1947-06-20	hmf	hmf19470620-01.1.8	mixed	6	acre,gaza,haifa,jaffa,jerusalem,telaviv		abbreviated
+1947-06-24	ahr	ahr19470624-01.1.2	untowned	1			indefinite
+1947-06-25	haretz	haretz19470625-01.1.5	untowned	4		hadassah	spelled
+1947-06-25	khm	khm19470625-01.1.4	untowned	3		english,hadassah	spelled
+1947-06-27	itonmeyuhad	itonmeyuhad19470627-01.1.6	untowned	2			abbreviated,spelled
+1947-07-01	haretz	haretz19470701-01.1.3	mixed	4	haifa,jaffa,jerusalem	hadassah	abbreviated
+1947-07-13	ahr	ahr19470713-01.1.3	mixed	4	acre,haifa,jaffa		spelled
+1947-07-13	haretz	haretz19470713-01.1.3	mixed	10	acre,haifa,jaffa,telaviv,tiberias	hadassah	maqaf
+1947-07-14	haretz	haretz19470714-01.1.3	mixed	7	haifa,jaffa,nazareth,safed,tiberias	rothschild	maqaf
+1947-07-15	ahr	ahr19470715-01.1.3	mixed	3	acre,haifa		maqaf
+1947-07-16	ahr	ahr19470716-01.1.3	other	4	acre,safed		spelled
+1947-07-16	hmf	hmf19470716-01.1.4	mixed	6	haifa,hebron,jerusalem	hadassah	abbreviated
+1947-07-20	ahr	ahr19470720-01.1.1	mixed	10	haifa,jaffa,jerusalem,safed		maqaf
+1947-07-20	hzh	hzh19470720-01.1.1	mixed	8	haifa,jaffa		spelled
+1947-07-21	hmf	hmf19470721-01.1.1	mixed	2	haifa,telaviv		abbreviated
+1947-07-22	ahr	ahr19470722-01.1.4	other	6	jaffa,jerusalem	rothschild	maqaf
+1947-07-23	ahr	ahr19470723-01.1.4	mixed	11	haifa,jaffa	hadassah	spelled
+1947-07-24	hbkr	hbkr19470724-01.1.3	mixed	7	haifa,jerusalem	rothschild	spelled
+1947-07-24	hzh	hzh19470724-01.1.4	other	3	acre	rothschild	spelled
+1947-07-25	ahr	ahr19470725-01.1.9	mixed	4	acre,haifa,nablus		maqaf,spelled
+1947-07-31	dav	dav19470731-01.1.3	other	3	jerusalem,telaviv		spelled
+1947-08-01	ahr	ahr19470801-01.1.11	mixed	9	acre,haifa,nazareth,telaviv		spelled
+1947-08-01	dav	dav19470801-01.1.9	mixed	7	haifa,jaffa,nazareth		spelled
+1947-08-01	hmf	hmf19470801-01.1.7	mixed	2	acre,haifa	hadassah	abbreviated
+1947-08-07	ahr	ahr19470807-01.1.4	other	4	jaffa		maqaf
+1947-08-07	haretz	haretz19470807-01.1.4	mixed	2	haifa,jaffa		spelled
+1947-08-12	dav	dav19470812-01.1.1	other	5	jaffa,jerusalem,telaviv	hadassah,rothschild	spelled
+1947-08-12	hmf	hmf19470812-01.1.4	mixed	7	acre,gaza,haifa,jaffa	hadassah,rothschild	abbreviated
+1947-08-13	dav	dav19470813-01.1.10	other	15	jaffa,jerusalem,telaviv	hadassah	spelled
+1947-08-13	dav	dav19470813-01.1.5	mixed	4	haifa,jaffa,jerusalem		maqaf,spelled
+1947-08-13	dav	dav19470813-01.1.7	other	6	jaffa,telaviv		spelled
+1947-08-13	khm	khm19470813-01.1.4	mixed	9	haifa,jaffa,jerusalem	hadassah	abbreviated
+1947-08-14	haretz	haretz19470814-01.1.3	mixed	15	haifa,jaffa,telaviv	hadassah	spelled
+1947-08-15	ahr	ahr19470815-01.1.1	mixed	7	acre,haifa,jaffa,jerusalem	hadassah,rothschild	maqaf
+1947-08-15	dav	dav19470815-01.1.8	untowned	1			abbrev_short
+1947-08-17	haretz	haretz19470817-01.1.1	other	6	jaffa,jerusalem,telaviv	hadassah	maqaf
+1947-08-18	haretz	haretz19470818-01.1.3	mixed	11	haifa,jaffa,jerusalem,telaviv	hadassah,rothschild	spelled
+1947-08-18	khm	khm19470818-01.1.4	mixed	3	haifa,jaffa		abbreviated
+1947-08-22	itonmeyuhad	itonmeyuhad19470822-01.1.3	other	3	jaffa	hadassah	abbreviated
+1947-08-27	dav	dav19470827-01.1.6	mixed	3	acre,haifa,nazareth		spelled
+1947-09-01	ahr	ahr19470901-01.1.3	mixed	3	haifa,telaviv		spelled
+1947-09-02	dav	dav19470902-01.1.3	haifa	2	haifa		abbreviated
+1947-09-04	dav	dav19470904-01.1.1	untowned	1			maqaf
+1947-09-10	dav	dav19470910-01.1.6	mixed	4	haifa,telaviv	hadassah	spelled
+1947-09-11	dav	dav19470911-01.1.1	no_hospital_term	0			spelled
+1947-09-18	ahr	ahr19470918-01.1.3	haifa	1	haifa		maqaf
+1947-09-18	ahr	ahr19470918-01.1.4	mixed	3	acre,haifa		maqaf
+1947-09-19	haretz	haretz19470919-01.1.7	untowned	3			abbreviated
+1947-09-21	hzh	hzh19470921-01.1.4	untowned	1		rothschild	spelled
+1947-09-28	hmf	hmf19470928-01.1.8	other	5	jaffa,jerusalem,tiberias	rothschild	abbreviated
+1947-09-28	itonamami	itonamami19470928-01.1.1	other	4	jerusalem,tiberias		abbreviated
+1947-09-30	ahr	ahr19470930-01.1.4	haifa	5	haifa		maqaf
+1947-10-02	hzh	hzh19471002-01.1.3	other	8	jaffa	english,hadassah	spelled
+1947-10-05	ahr	ahr19471005-01.1.8	mixed	5	acre,gaza,haifa		abbreviated
+1947-10-07	ahr	ahr19471007-01.1.3	untowned	2		hadassah	maqaf
+1947-10-07	ahr	ahr19471007-01.1.4	mixed	7	haifa,jaffa,jerusalem		spelled
+1947-10-08	hmf	hmf19471008-01.1.4	haifa	5	haifa		spelled
+1947-10-09	hmf	hmf19471009-01.1.3	mixed	3	haifa,jaffa,telaviv,tiberias		spelled
+1947-10-10	itonmeyuhad	itonmeyuhad19471010-01.1.3	other	3	jerusalem	hadassah	spelled
+1947-10-14	dav	dav19471014-01.1.1	untowned	2			spelled
+1947-10-16	haolam	haolam19471016-01.1.16	other	3	jaffa		spelled
+1947-10-17	dav	dav19471017-01.1.10	mixed	3	haifa,jaffa,jerusalem		spelled
+1947-10-17	dav	dav19471017-01.1.17	haifa	1	haifa		maqaf
+1947-10-19	ahr	ahr19471019-01.1.3	mixed	3	haifa,jaffa		spelled
+1947-10-20	ahr	ahr19471020-01.1.3	haifa	1	haifa		abbreviated
+1947-10-20	hmf	hmf19471020-01.1.4	mixed	6	haifa,hebron,jaffa,jerusalem,nablus		abbreviated
+1947-10-22	haretz	haretz19471022-01.1.5	mixed	4	haifa,jerusalem,telaviv	rothschild	spelled
+1947-10-23	dav	dav19471023-01.1.1	other	2	jaffa		spelled
+1947-10-24	ahr	ahr19471024-01.1.9	mixed	3	acre,haifa		abbreviated
+1947-10-26	hmf	hmf19471026-01.1.4	other	6	jaffa,jerusalem,telaviv	hadassah	abbreviated
+1947-10-28	ahr	ahr19471028-01.1.4	other	5	jerusalem		maqaf
+1947-10-28	itonamami	itonamami19471028-01.1.2	other	3	jaffa,jerusalem	english	abbreviated
+1947-10-29	hzh	hzh19471029-01.1.4	untowned	1			spelled
+1947-11-02	ahr	ahr19471102-01.1.4	mixed	3	haifa,jaffa,safed		abbreviated
+1947-11-03	ahr	ahr19471103-01.1.4	mixed	6	haifa,jaffa,jerusalem	rothschild	abbreviated
+1947-11-03	hmf	hmf19471103-01.1.4	mixed	14	haifa,jaffa,jerusalem,telaviv	hadassah,rothschild	abbreviated
+1947-11-03	hzh	hzh19471103-01.1.1	untowned	3		rothschild	spelled
+1947-11-05	khm	khm19471105-01.1.3	mixed	1	acre,haifa,jerusalem		abbreviated
+1947-11-06	ahr	ahr19471106-01.1.3	haifa	5	haifa		maqaf
+1947-11-06	ahr	ahr19471106-01.1.4	mixed	10	haifa,jaffa,jerusalem,safed	rothschild	abbreviated
+1947-11-07	ahr	ahr19471107-01.1.12	mixed	4	haifa,nablus		maqaf
+1947-11-11	ahr	ahr19471111-01.1.4	haifa	4	haifa	rothschild	spelled
+1947-11-13	hmf	hmf19471113-01.1.1	other	3	jaffa		abbreviated,spelled
+1947-11-16	hmf	hmf19471116-01.1.4	mixed	10	haifa,jaffa,jerusalem,telaviv	hadassah,rothschild	abbreviated
+1947-11-16	hzh	hzh19471116-01.1.4	haifa	9	haifa	hadassah,rothschild	spelled
+1947-11-17	ahr	ahr19471117-01.1.4	mixed	4	haifa,jaffa	rothschild	abbreviated
+1947-11-20	ahr	ahr19471120-01.1.4	haifa	1	haifa		abbreviated
+1947-11-24	dav	dav19471124-01.1.4	untowned	4		hadassah	spelled
+1947-11-25	haretz	haretz19471125-01.1.3	mixed	6	haifa,jerusalem,telaviv	hadassah,rothschild	spelled
+1947-11-26	hzh	hzh19471126-01.1.4	mixed	2	haifa,jaffa		spelled
+1947-11-30	hbkr	hbkr19471130-01.1.3	mixed	2	haifa,jerusalem,tiberias		spelled
+1947-12-07	ahr	ahr19471207-01.1.4	mixed	14	acre,haifa,jaffa	hadassah,rothschild	abbreviated
+1947-12-07	hzh	hzh19471207-01.1.1	mixed	7	acre,haifa,jaffa,telaviv	english,hadassah,rothschild	spelled
+1947-12-09	dav	dav19471209-01.1.3	haifa	3	haifa		spelled
+1947-12-10	ahr	ahr19471210-01.1.4	untowned	3			maqaf,spelled
+1947-12-10	hmf	hmf19471210-01.1.1	mixed	7	haifa,jaffa,telaviv	rothschild	abbreviated,maqaf
+1947-12-12	ahr	ahr19471212-01.1.10	mixed	7	haifa,jaffa,jerusalem,nablus,telaviv		abbreviated
+1947-12-12	hmf	hmf19471212-01.1.8	other	6	jerusalem	hadassah,rothschild	abbreviated
+1947-12-14	ahr	ahr19471214-01.1.4	mixed	10	gaza,haifa,ramleh	rothschild	abbreviated
+1947-12-14	hzh	hzh19471214-01.1.1	other	2	jaffa		spelled
+1947-12-15	dav	dav19471215-01.1.1	other	7	jaffa,nazareth,safed		spelled
+1947-12-15	hzh	hzh19471215-01.1.1	other	6	jaffa,jerusalem,telaviv		spelled
+1947-12-16	haretz	haretz19471216-01.1.2	mixed	5	haifa,jaffa,nablus		spelled
+1947-12-17	ahr	ahr19471217-01.1.4	mixed	6	haifa,jaffa,telaviv	hadassah	abbreviated
+1947-12-17	dav	dav19471217-01.1.4	mixed	2	haifa,telaviv		spelled
+1947-12-18	hbkr	hbkr19471218-01.1.4	other	9	jaffa,jerusalem,ramleh,telaviv	hadassah	indefinite
+1947-12-19	haretz	haretz19471219-01.1.4	other	4	telaviv		spelled
+1947-12-19	hzh	hzh19471219-01.1.1	mixed	7	haifa,hebron,jaffa,jerusalem,telaviv	rothschild	spelled
+1947-12-21	ahr	ahr19471221-01.1.4	mixed	9	acre,haifa		abbreviated,spelled
+1947-12-22	haretz	haretz19471222-01.1.3	untowned	3			spelled
+1947-12-23	hzh	hzh19471223-01.1.1	other	2	jaffa,safed		spelled
+1947-12-24	ahr	ahr19471224-01.1.4	mixed	9	haifa,jerusalem	hadassah,rothschild	spelled
+1947-12-25	ahr	ahr19471225-01.1.1	other	4	jaffa,tiberias		maqaf
+1947-12-26	hmf	hmf19471226-01.1.8	other	9	jerusalem,telaviv	hadassah	abbreviated
+1947-12-26	itonamami	itonamami19471226-01.1.1	mixed	5	haifa,jaffa,telaviv	rothschild	spelled
+1947-12-28	ahr	ahr19471228-01.1.1	mixed	8	haifa,nablus,nazareth	rothschild	abbreviated,maqaf
+1947-12-28	hmf	hmf19471228-01.1.1	mixed	6	haifa,jerusalem,tiberias		abbreviated
+1947-12-28	mivrak	mivrak19471228-01.1.1	other	2	jerusalem		maqaf
+1947-12-29	dav	dav19471229-01.1.1	other	12	jaffa,jerusalem,telaviv	hadassah	maqaf
+1947-12-29	itonamami	itonamami19471229-01.1.2	mixed	4	haifa,jaffa,jerusalem,telaviv	hadassah	spelled
+1947-12-29	mivrak	mivrak19471229-01.1.1	other	3	jerusalem	hadassah	spelled
+1947-12-30	haretz	haretz19471230-01.1.3	mixed	5	haifa,jerusalem	hadassah	abbreviated
+1947-12-30	khm	khm19471230-01.1.4	other	3	jerusalem		spelled
+1947-12-31	haretz	haretz19471231-01.1.5	mixed	7	haifa,jerusalem		abbreviated
+1947-12-31	itonamami	itonamami19471231-01.1.2	other	8	jaffa,jerusalem	hadassah	spelled
+1948-01-01	dav	dav19480101-01.1.1	mixed	13	haifa,jaffa,jerusalem,telaviv	hadassah,rothschild	spelled
+1948-01-01	haretz	haretz19480101-01.1.4	mixed	12	haifa,jerusalem,nazareth,telaviv	hadassah,rothschild	spelled
+1948-01-01	hzh	hzh19480101-01.1.4	no_hospital_term	0			spelled
+1948-01-02	ahr	ahr19480102-01.1.4	haifa	3	haifa	rothschild	abbreviated
+1948-01-02	khm	khm19480102-01.1.6	haifa	2	haifa		abbreviated
+1948-01-04	ahr	ahr19480104-01.1.1	mixed	5	gaza,haifa,nablus	rothschild	abbreviated
+1948-01-05	ahr	ahr19480105-01.1.4	mixed	16	haifa,jaffa,jerusalem	hadassah	maqaf
+1948-01-06	haretz	haretz19480106-01.1.4	mixed	10	gaza,haifa,jerusalem,nazareth,safed		spelled
+1948-01-06	hbkr	hbkr19480106-01.1.2	other	11	jaffa,jerusalem,nazareth,safed,telaviv	hadassah	spelled
+1948-01-06	hzh	hzh19480106-01.1.1	other	2	jerusalem		spelled
+1948-01-07	dav	dav19480107-01.1.1	other	7	jaffa,jerusalem,telaviv		spelled
+1948-01-07	hbkr	hbkr19480107-01.1.4	mixed	8	haifa,jaffa,jerusalem		spelled
+1948-01-08	haolam	haolam19480108-01.1.13	other	1	jerusalem,nablus		maqaf
+1948-01-08	hmf	hmf19480108-01.1.1	other	9	jaffa		abbreviated
+1948-01-08	hzh	hzh19480108-01.1.3	untowned	7			spelled
+1948-01-09	dav	dav19480109-01.1.1	mixed	10	haifa,jerusalem,telaviv	rothschild	indefinite
+1948-01-09	hbkr	hbkr19480109-01.1.1	other	11	jaffa,jerusalem,telaviv	hadassah,rothschild	maqaf
+1948-01-09	itonamami	itonamami19480109-01.1.2	other	8	jaffa,jerusalem,telaviv	hadassah	indefinite
+1948-01-11	ahr	ahr19480111-01.1.4	mixed	12	acre,haifa,jaffa,jerusalem,tiberias	english,hadassah,rothschild	spelled
+1948-01-12	ahr	ahr19480112-01.1.1	other	3	jaffa		spelled
+1948-01-12	hbkr	hbkr19480112-01.1.4	other	6	jerusalem,telaviv		spelled
+1948-01-12	hmf	hmf19480112-01.1.4	other	7	jaffa,telaviv	hadassah	spelled
+1948-01-13	hbkr	hbkr19480113-01.1.2	other	4	jaffa		spelled
+1948-01-14	ahr	ahr19480114-01.1.4	mixed	11	haifa,jaffa,jerusalem	hadassah	maqaf
+1948-01-14	dav	dav19480114-01.1.1	mixed	9	haifa,jaffa,jerusalem	hadassah	spelled
+1948-01-14	hbkr	hbkr19480114-01.1.1	mixed	7	haifa,jaffa,nablus,ramleh,telaviv	rothschild	spelled
+1948-01-14	hzh	hzh19480114-01.1.1	mixed	12	haifa,jaffa,jerusalem	elisha,hadassah,rothschild	spelled
+1948-01-14	itonamami	itonamami19480114-01.1.1	other	5	jaffa,telaviv	hadassah	spelled
+1948-01-14	khm	khm19480114-01.1.4	other	6	acre	hadassah,rothschild	abbreviated
+1948-01-15	ahr	ahr19480115-01.1.3	other	8	jerusalem	rothschild	maqaf
+1948-01-15	ahr	ahr19480115-01.1.4	other	9	jaffa,telaviv	hadassah	maqaf
+1948-01-15	haolam	haolam19480115-01.1.13	other	1	jaffa		maqaf
+1948-01-15	hzh	hzh19480115-01.1.1	other	5	jaffa,jerusalem,telaviv		spelled
+1948-01-16	ahr	ahr19480116-01.1.1	haifa	3	haifa	rothschild	abbreviated
+1948-01-16	haretz	haretz19480116-01.1.7	other	10	jerusalem	hadassah	spelled
+1948-01-19	dav	dav19480119-01.1.3	other	7	jaffa	hadassah	spelled
+1948-01-19	hayomjlm	hayomjlm19480119-01.1.3	other	2	jaffa		spelled
+1948-01-19	hmf	hmf19480119-01.1.4	mixed	10	haifa,jaffa,jerusalem	hadassah,rothschild	abbreviated
+1948-01-19	hzh	hzh19480119-01.1.4	other	5	jaffa,telaviv		abbreviated
+1948-01-20	dav	dav19480120-01.1.5	untowned	3			spelled
+1948-01-22	dav	dav19480122-01.1.1	mixed	6	haifa,jerusalem,nablus		maqaf
+1948-01-22	haolam	haolam19480122-01.1.1	untowned	1			indefinite
+1948-01-22	haolam	haolam19480122-01.1.12	untowned	3			indefinite,spelled
+1948-01-22	haretz	haretz19480122-01.1.4	mixed	8	acre,haifa,jerusalem		maqaf
+1948-01-23	ahr	ahr19480123-01.1.1	untowned	3			abbreviated
+1948-01-23	ahr	ahr19480123-01.1.8	mixed	5	acre,haifa,jaffa,jerusalem		abbreviated
+1948-01-23	haretz	haretz19480123-01.1.8	mixed	11	haifa,jaffa,jerusalem,telaviv	hadassah	spelled
+1948-01-23	hmf	hmf19480123-01.1.8	other	7	jaffa,jerusalem,telaviv,tiberias	hadassah	abbreviated
+1948-01-25	dav	dav19480125-01.1.4	haifa	11	haifa	rothschild	maqaf
+1948-01-26	hbkr	hbkr19480126-01.1.1	other	2	jaffa		spelled
+1948-01-26	hmf	hmf19480126-01.1.3	mixed	31	haifa,jaffa,telaviv	hadassah	spelled
+1948-01-26	khm	khm19480126-01.1.4	mixed	10	haifa,jaffa,jerusalem		abbreviated
+1948-01-28	dav	dav19480128-01.1.1	mixed	10	gaza,haifa,jerusalem,telaviv	hadassah	abbreviated
+1948-01-28	hbkr	hbkr19480128-01.1.1	mixed	3	haifa,hebron,jaffa,jerusalem,telaviv		spelled
+1948-01-28	hmf	hmf19480128-01.1.4	other	14	jaffa,jerusalem,telaviv	english,hadassah	abbreviated
+1948-01-29	hbkr	hbkr19480129-01.1.4	mixed	10	haifa,ramleh,telaviv	hadassah	maqaf,spelled
+1948-01-30	hbkr	hbkr19480130-01.1.8	other	3	jaffa	hadassah	spelled
+1948-01-30	hrte	hrte19480130-01.1.2	other	4	jaffa,jerusalem		indefinite
+1948-01-30	hzh	hzh19480130-01.1.1	untowned	2			spelled
+1948-02-02	ahr	ahr19480202-01.1.4	mixed	7	acre,haifa,hebron,jaffa,telaviv	hadassah	maqaf
+1948-02-05	dav	dav19480205-01.1.1	haifa	4	haifa	hadassah,rothschild	spelled
+1948-02-05	haretz	haretz19480205-01.1.3	mixed	13	haifa,jaffa,jerusalem,telaviv	english	spelled
+1948-02-05	hmf	hmf19480205-01.1.2	other	3	jerusalem		indefinite,maqaf
+1948-02-05	hmf	hmf19480205-01.1.3	other	9	jerusalem,telaviv	hadassah	abbreviated
+1948-02-06	haretz	haretz19480206-01.1.8	other	10	jerusalem,safed,telaviv	hadassah	spelled
+1948-02-06	hmf	hmf19480206-01.1.8	other	4	nablus,safed,telaviv		abbreviated
+1948-02-08	ahr	ahr19480208-01.1.4	mixed	7	haifa,jaffa	hadassah,rothschild	maqaf
+1948-02-09	ahr	ahr19480209-01.1.4	mixed	9	haifa,jerusalem,safed,tiberias	rothschild	abbreviated
+1948-02-09	haretz	haretz19480209-01.1.3	mixed	10	haifa,jerusalem	hadassah,rothschild	abbreviated,spelled
+1948-02-09	hzh	hzh19480209-01.1.1	mixed	5	haifa,safed,telaviv,tiberias	hadassah	spelled
+1948-02-09	hzh	hzh19480209-01.1.4	mixed	2	haifa,jaffa		spelled
+1948-02-10	hmf	hmf19480210-01.1.2	other	6	jerusalem	hadassah	spelled
+1948-02-10	hzh	hzh19480210-01.1.4	other	7	jerusalem,telaviv	hadassah	abbreviated
+1948-02-12	dav	dav19480212-01.1.3	other	2	jerusalem,telaviv		spelled
+1948-02-12	haretz	haretz19480212-01.1.1	other	3	jaffa,jerusalem		spelled
+1948-02-13	itonmeyuhad	itonmeyuhad19480213-01.1.2	other	6	jaffa,jerusalem	hadassah	spelled
+1948-02-15	dav	dav19480215-01.1.2	mixed	8	acre,haifa,jaffa,ramleh,safed,telaviv	hadassah,rothschild	spelled
+1948-02-15	hbkr	hbkr19480215-01.1.1	other	5	jerusalem		spelled
+1948-02-16	dav	dav19480216-01.1.4	untowned	1			spelled
+1948-02-16	hbkr	hbkr19480216-01.1.2	other	3	jaffa		spelled
+1948-02-18	hmf	hmf19480218-01.1.3	other	6	safed	hadassah	abbreviated
+1948-02-19	haolam	haolam19480219-01.1.12	mixed	4	haifa,jaffa,jerusalem		abbreviated
+1948-02-22	hbkr	hbkr19480222-01.1.4	other	4	jaffa,safed		spelled
+1948-02-24	haretz	haretz19480224-01.1.4	mixed	4	gaza,haifa,jaffa,jerusalem,nablus,telaviv		spelled
+1948-02-25	ahr	ahr19480225-01.1.2	untowned	1			maqaf
+1948-02-25	dav	dav19480225-01.1.2	mixed	7	haifa,jaffa,tiberias	hadassah	spelled
+1948-02-26	hayomjlm	hayomjlm19480226-01.1.4	mixed	6	haifa,jerusalem,nazareth	hadassah	spelled
+1948-02-27	ahr	ahr19480227-01.1.12	mixed	11	haifa,jaffa,jerusalem,safed,telaviv	hadassah,rothschild	abbreviated
+1948-02-27	hmf	hmf19480227-01.1.8	mixed	9	haifa,jaffa,jerusalem,safed	hadassah	abbreviated
+1948-03-01	ahr	ahr19480301-01.1.3	other	3	nablus	rothschild	abbreviated
+1948-03-02	dav	dav19480302-01.1.6	other	4	telaviv	english,rothschild	maqaf
+1948-03-04	hayomjlm	hayomjlm19480304-01.1.4	other	5	jaffa,jerusalem,nablus,telaviv	hadassah	spelled
+1948-03-04	hbkr	hbkr19480304-01.1.4	other	4	jaffa,nablus		spelled
+1948-03-09	dav	dav19480309-01.1.6	untowned	2			spelled
+1948-03-09	mar	mar19480309-01.1.4	mixed	4	haifa,telaviv	rothschild	spelled
+1948-03-10	ahr	ahr19480310-01.1.6	untowned	3		rothschild	maqaf
+1948-03-10	hbkr	hbkr19480310-01.1.4	other	3	jaffa		spelled
+1948-03-10	mar	mar19480310-01.1.4	mixed	2	haifa,jaffa		abbreviated
+1948-03-17	ahr	ahr19480317-01.1.6	mixed	7	haifa,tiberias	hadassah	maqaf
+1948-03-18	hmf	hmf19480318-01.1.4	mixed	12	haifa,jaffa,jerusalem,telaviv,tiberias	hadassah,rothschild	abbreviated
+1948-03-21	hayomjlm	hayomjlm19480321-01.1.2	other	8	jerusalem,nablus,safed,tiberias	hadassah	spelled
+1948-03-22	ahr	ahr19480322-01.1.4	mixed	10	haifa,jaffa,jerusalem,safed,telaviv,tiberias	hadassah,rothschild	maqaf
+1948-03-22	hmf	hmf19480322-01.1.4	other	12	jerusalem,safed,telaviv,tiberias	hadassah	spelled
+1948-03-22	khm	khm19480322-01.1.4	other	3	safed,telaviv	hadassah	abbreviated
+1948-03-22	mar	mar19480322-01.1.3	mixed	4	haifa,jaffa,nablus,nazareth		spelled
+1948-03-25	dav	dav19480325-01.1.2	other	9	gaza,jaffa,jerusalem,safed,telaviv		spelled
+1948-03-31	haretz	haretz19480331-01.1.4	other	3	telaviv		maqaf
+1948-04-01	dav	dav19480401-01.1.4	other	4	jaffa,telaviv		spelled
+1948-04-02	haretz	haretz19480402-01.1.3	other	1	telaviv		spelled
+1948-04-08	dav	dav19480408-01.1.1	other	2	jerusalem,telaviv		spelled
+1948-04-08	haretz	haretz19480408-01.1.1	other	6	telaviv		spelled
+1948-04-14	dav	dav19480414-01.1.2	other	4	jaffa,jerusalem		spelled
+1948-04-18	mar	mar19480418-01.1.8	mixed	6	haifa,telaviv	rothschild	spelled
+1948-04-19	hayomjlm	hayomjlm19480419-01.1.2	mixed	9	haifa,jerusalem,safed,telaviv	english,hadassah	spelled
+1948-04-19	hmf	hmf19480419-01.1.4	mixed	12	haifa,jaffa,jerusalem,safed,telaviv	rothschild	abbreviated
+1948-04-19	hzh	hzh19480419-01.1.1	other	7	jerusalem	hadassah	spelled
+1948-04-21	dav	dav19480421-01.1.4	untowned	3		hadassah	spelled
+1948-04-23	hzh	hzh19480423-01.1.1	mixed	1	acre,haifa,jerusalem		abbreviated
+1948-04-25	hmf	hmf19480425-01.1.4	other	4	jaffa,jerusalem		spelled
+1948-04-25	hzh	hzh19480425-01.1.2	other	3	jerusalem		abbreviated
+1948-04-25	mivrak	mivrak19480425-01.1.1	other	2	jerusalem		spelled
+1948-04-25	mivrak	mivrak19480425-01.1.2	other	1	jerusalem		spelled
+1948-04-26	haretz	haretz19480426-01.1.4	mixed	3	haifa,jaffa,telaviv		spelled
+1948-04-26	hayomjlm	hayomjlm19480426-01.1.1	other	3	jerusalem	hadassah	maqaf
+1948-04-27	haretz	haretz19480427-01.1.4	other	6	jaffa,telaviv		spelled
+1948-04-28	haretz	haretz19480428-01.1.4	haifa	4	haifa		spelled
+1948-04-28	hbkr	hbkr19480428-01.1.4	other	7	jerusalem		maqaf,spelled
+1948-04-28	hmf	hmf19480428-01.1.4	mixed	7	acre,haifa	hadassah	abbreviated,spelled
+1948-04-28	hzh	hzh19480428-01.1.2	haifa	5	haifa		spelled
+1948-05-03	haretz	haretz19480503-01.1.3	mixed	12	acre,haifa,telaviv		spelled
+1948-05-04	ahr	ahr19480504-01.1.3	mixed	7	haifa,jaffa	hadassah	maqaf
+1948-05-04	ahr	ahr19480504-01.1.4	other	3	jaffa,telaviv		abbreviated
+1948-05-04	haretz	haretz19480504-01.1.4	mixed	8	haifa,jaffa,jerusalem,telaviv		spelled
+1948-05-04	hmf	hmf19480504-01.1.4	mixed	11	haifa,jaffa,jerusalem	hadassah	spelled
+1948-05-04	khm	khm19480504-01.1.4	mixed	6	haifa,telaviv		spelled
+1948-05-04	mar	mar19480504-01.1.1	mixed	6	haifa,telaviv		spelled
+1948-05-07	haretz	haretz19480507-01.1.7	mixed	2	haifa,jerusalem		maqaf
+1948-05-09	hmf	hmf19480509-01.1.4	mixed	10	acre,haifa,jaffa,telaviv	hadassah	spelled
+1948-05-09	hzh	hzh19480509-01.1.4	other	3	jaffa,telaviv	hadassah	spelled
+1948-05-14	hbkr	hbkr19480514-01.1.5	other	2	jaffa,jerusalem		spelled
+1948-05-16	dav	dav19480516-01.1.2	other	3	jaffa,jerusalem		spelled
+1948-05-16	ytlv	ytlv19480516-01.1.14	other	1	jaffa		maqaf
+1948-05-17	hzh	hzh19480517-01.1.3	mixed	6	haifa,jerusalem		maqaf
+1948-05-18	haretz	haretz19480518-01.1.3	untowned	1			maqaf
+1948-05-21	ahr	ahr19480521-01.1.5	haifa	3	haifa		abbreviated
+1948-06-06	ahr	ahr19480606-01.1.2	mixed	13	haifa,jerusalem	hadassah,rothschild	maqaf
+1948-06-07	hzh	hzh19480607-01.1.4	other	1	safed		spelled
+1948-06-09	hbkr	hbkr19480609-01.1.2	other	5	jerusalem	hadassah	spelled
+1948-06-11	haretz	haretz19480611-01.1.4	other	3	jaffa,telaviv		spelled
+1948-06-20	dav	dav19480620-01.1.3	mixed	10	haifa,jerusalem	hadassah	abbreviated,spelled
+1948-06-20	hzh	hzh19480620-01.1.3	mixed	7	haifa,telaviv	hadassah	spelled
+1948-06-21	dav	dav19480621-01.1.3	haifa	13	haifa	hadassah,rothschild	spelled
+1948-08-02	yomyom	yomyom19480802-01.1.4	mixed	5	haifa,jaffa	hadassah,rothschild	abbreviated
+1948-08-05	yomyom	yomyom19480805-01.1.5	other	3	jaffa		spelled
+1948-08-06	medina	medina19480806-01.1.4	other	3	jaffa,safed		spelled
+1948-08-08	hzh	hzh19480808-01.1.3	mixed	3	haifa,jaffa		maqaf
+1948-08-09	dav	dav19480809-01.1.3	haifa	4	haifa	rothschild	spelled
+1948-08-09	hzh	hzh19480809-01.1.4	mixed	6	haifa,jaffa,ramleh		spelled
+1948-08-10	hmf	hmf19480810-01.1.3	untowned	4			spelled
+1948-08-10	yomyom	yomyom19480810-01.1.2	untowned	3			spelled
+1948-08-10	yomyom	yomyom19480810-01.1.6	untowned	3			spelled
+1948-08-16	mar	mar19480816-01.1.2	untowned	1			spelled
+1948-08-18	yomyom	yomyom19480818-01.1.3	other	9	jaffa,telaviv		spelled
+1948-08-18	yomyom	yomyom19480818-01.1.7	other	9	jaffa,telaviv		spelled
+1948-08-27	ahr	ahr19480827-01.1.5	mixed	4	haifa,jaffa		spelled
+1948-08-27	haretz	haretz19480827-01.1.4	haifa	1	haifa		spelled
+1948-08-29	hzh	hzh19480829-01.1.4	mixed	7	haifa,jaffa,telaviv	rothschild	spelled
+1948-08-30	hmf	hmf19480830-01.1.2	untowned	2			spelled
+1948-08-31	dav	dav19480831-01.1.4	no_hospital_term	0			spelled
+1948-08-31	hzh	hzh19480831-01.1.3	mixed	16	acre,haifa,jaffa,telaviv		spelled
+1948-09-03	hayomjlm	hayomjlm19480903-01.1.4	mixed	9	acre,haifa,jaffa,telaviv		maqaf
+1948-09-07	mar	mar19480907-01.1.1	other	1	jaffa		spelled
+1948-09-14	hbkr	hbkr19480914-01.1.2	mixed	4	haifa,telaviv		abbreviated
+1948-09-17	dav	dav19480917-01.1.4	untowned	1			maqaf
+1948-09-17	dav	dav19480917-01.1.6	mixed	3	haifa,jerusalem,telaviv		abbreviated
+1948-09-17	hzh	hzh19480917-01.1.6	mixed	4	haifa,telaviv	hadassah	spelled
+1948-09-22	hmf	hmf19480922-01.1.4	other	3	jaffa	hadassah	spelled
+1948-09-23	haolam	haolam19480923-01.1.12	mixed	2	haifa,telaviv		abbreviated
+1948-09-23	khm	khm19480923-01.1.2	other	1	jaffa		spelled
+1948-09-24	hzh	hzh19480924-01.1.5	other	1	jaffa		spelled
+1948-09-27	hmf	hmf19480927-01.1.2	other	2	jaffa	hadassah	spelled
+1948-09-27	hzh	hzh19480927-01.1.2	other	3	jaffa,safed,telaviv	hadassah	spelled
+1948-09-28	dav	dav19480928-01.1.4	untowned	1			spelled
+1948-09-28	haretz	haretz19480928-01.1.3	mixed	7	haifa,jaffa,telaviv	hadassah	maqaf
+1948-09-28	hbkr	hbkr19480928-01.1.1	other	4	jerusalem		maqaf
+1948-10-03	dav	dav19481003-01.1.18	mixed	4	haifa,jerusalem	hadassah	maqaf
+1948-10-09	hegeh	hegeh19481009-01.1.2	untowned	1			spelled
+1948-10-29	haretz	haretz19481029-01.1.5	other	1	jaffa		spelled
+1948-10-29	hbkr	hbkr19481029-01.1.5	untowned	1			spelled
+1948-10-31	hayomjlm	hayomjlm19481031-01.1.1	other	6	jaffa,jerusalem		maqaf
+1948-11-05	haretz	haretz19481105-01.1.5	mixed	6	haifa,telaviv	hadassah	abbreviated
+1948-11-15	hbkr	hbkr19481115-01.1.1	other	2	jerusalem		spelled
+1948-11-19	ahr	ahr19481119-01.1.1	other	3	nazareth		abbreviated
+1948-11-21	ahr	ahr19481121-01.1.1	other	2	jerusalem		abbreviated
+1948-11-21	haretz	haretz19481121-01.1.4	mixed	10	gaza,haifa,jerusalem,telaviv	hadassah	abbreviated
+1948-11-21	hayomjlm	hayomjlm19481121-01.1.1	other	3	jerusalem		spelled
+1948-11-21	hbkr	hbkr19481121-01.1.1	other	5	jerusalem	hadassah	spelled
+1948-11-22	hayomjlm	hayomjlm19481122-01.1.1	other	13	jaffa,jerusalem		maqaf
+1948-11-23	hador	hador19481123-01.1.1	other	2	jerusalem		abbreviated
+1948-11-23	hbkr	hbkr19481123-01.1.1	other	7	jaffa,jerusalem,nablus,telaviv	hadassah	abbreviated
+1948-11-23	hmf	hmf19481123-01.1.4	mixed	6	haifa,jerusalem	rothschild	spelled
+1948-11-24	ahr	ahr19481124-01.1.3	other	2	jerusalem		maqaf
+1948-11-24	yomyom	yomyom19481124-01.1.1	mixed	2	haifa,nablus	hadassah	spelled
+1948-11-26	haretz	haretz19481126-01.1.5	untowned	5		hadassah	abbreviated
+1948-11-28	hbkr	hbkr19481128-01.1.4	other	6	jerusalem		spelled
+1948-11-28	hrt	hrt19481128-01.1.4	other	4	jerusalem		spelled
+1948-11-28	hzh	hzh19481128-01.1.4	other	3	jerusalem,telaviv		spelled
+1948-12-01	hmf	hmf19481201-01.1.4	other	7	jerusalem	hadassah	spelled
+1948-12-03	ahr	ahr19481203-01.1.5	untowned	1			maqaf
+1948-12-16	hador	hador19481216-01.1.4	other	1	jaffa		spelled
+1948-12-16	hzh	hzh19481216-01.1.4	mixed	4	haifa,jaffa		maqaf
+1948-12-17	hed	hed19481217-01.1.13	other	8	jaffa	english	abbreviated
+1948-12-20	haretz	haretz19481220-01.1.3	haifa	6	haifa		maqaf
+1948-12-20	hayomjlm	hayomjlm19481220-01.1.1	other	2	jaffa,jerusalem		indefinite
+1948-12-20	hmf	hmf19481220-01.1.4	haifa	4	haifa	hadassah	spelled
+1948-12-20	hrt	hrt19481220-01.1.4	other	3	jaffa		abbreviated
+1948-12-21	yomyom	yomyom19481221-01.1.1	other	2	jaffa,jerusalem		spelled
+1948-12-27	hador	hador19481227-01.1.4	haifa	4	haifa		spelled

@@ -31,6 +31,7 @@ data/eval/
 # Regenerate: python3 pipeline/jrayed_text_harvest.py — resumable, reads the
 # hit lists in data/newspapers/ and refetches only what is missing.
 data/newspapers/page_texts.jsonl
+data/newspapers/heb_page_texts.jsonl
 
 # Large regenerable full-text harvest (see data/newspapers/README.md)
 data/newspapers/govhosp_pls4148_texts.jsonl

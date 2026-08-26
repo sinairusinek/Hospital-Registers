@@ -375,6 +375,64 @@ OR of every token, is **305,730** — a bound, not a count of anything.
 > **8,587** and **305,730** are bounds. Never report either as a count of
 > references to this hospital.
 
-All three qualified-union figures are still **pre-stage-2**: no local pass has
-yet removed other towns' government hospitals. Treat them as harvest sizes, not
-as findings.
+---
+
+# Stage 2 results (run 2026-08-26)
+
+Full text of all 1,175 qualified pages harvested to `heb_page_texts.jsonl`
+(46 MB, gitignored, ~20 minutes to regenerate), then:
+
+```
+pipeline/heb_union.py         → heb_qualified_union.tsv       (1,175)
+jrayed_text_harvest.py        → heb_page_texts.jsonl          (1,175 pages)
+jrayed_concordance.py --lang he → heb_concordance.tsv         (651 windows, 475 pages)
+pipeline/heb_disambiguate.py  → heb_town_disambiguation.tsv   (1,175 rows)
+```
+
+**The proximity filter halves the stage-1 count.**
+
+| | pages |
+|---|---:|
+| qualified union (stage 1) | 1,175 |
+| …naming Haifa anywhere on the page (stage 1) | 878 |
+| …with a hospital mention *within 150 characters* of Haifa | **475** |
+| of the 878, surviving proximity | 442 (50%) |
+| found by proximity but missed by the page-level restriction | 33 |
+
+436 of the 878 are pages where the hospital and the word Haifa belong to
+different articles. This is the clearest vindication available of the Arabic
+README's rule that stage 2 is not optional.
+
+**Towns near a hospital mention, across all 1,175 pages:**
+
+| Jaffa | Haifa | Jerusalem | Tel Aviv | Acre | Safed | Nablus | Tiberias | Gaza | Ramleh | Nazareth | Hebron |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 508 | 470 | 419 | 333 | 82 | 70 | 51 | 44 | 30 | 24 | 23 | 9 |
+
+Jaffa outranks Haifa. In Hebrew the "which town's government hospital?" hazard
+is not an edge case, it is the majority of the harvest.
+
+**Verdicts** (`heb_town_disambiguation.tsv`):
+
+| verdict | pages | meaning |
+|---|---:|---|
+| other | 518 | every hospital mention with a town in range names some other town |
+| mixed | 364 | both Haifa and another town — 349 of these carry >1 hospital mention, i.e. different articles on one page |
+| untowned | 168 | hospital mentions carry no town in range; the paper's own city is the lead |
+| haifa | 106 | Haifa and no other town in range |
+| no_hospital_term | 14 | matched the query, but no hospital term the regex recognises |
+
+**Caveat on the 475.** In 212 (45%) another Haifa hospital — Hadassah,
+Rothschild, Elisha — sits inside the same window. Not disqualifying, since
+papers list several in one notice, but nothing here should be attributed to the
+Government Hospital without reading the page.
+
+**A lead, not a finding.** The Haifa-adjacent set skews late, and not only
+because the corpus grows: the 1947–48 share is 27% of the unqualified sweep,
+38% of the qualified pages, and 48% of the Haifa-adjacent ones. The gradient is
+monotonic, so it is not purely a denominator effect. Separating the conflict
+years from the hospital's own prominence from shifts in coverage needs a
+per-year page denominator the search API does not expose.
+
+**Residue:** 5 pages returned no text, 14 more carry no recognisable hospital
+term. 1.6% combined, recorded rather than dropped.

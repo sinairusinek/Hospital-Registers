@@ -154,7 +154,63 @@ This is the mirror image of the caution above: in Arabic, unqualified *the
 Government Hospital* risks belonging to another town; in Hebrew, unqualified
 *the hospital in Haifa* risks belonging to another hospital.
 
-**All session D counts are pre-stage-2 harvest sizes, not findings.** No local
+### Stage 2 — the local pass (same session)
+
+Full text of all 1,175 qualified pages harvested to `heb_page_texts.jsonl`
+(46 MB, **not committed**, regenerable in ~20 minutes), then two local passes:
+
+| file | rows | what it is |
+|---|---|---|
+| `heb_qualified_union.tsv` | 1,175 | the deduplicated union of the qualified hit lists, with a `forms` column naming which query found each page |
+| `heb_concordance.tsv` | 651 | windows where a hospital term falls within 150 characters of חיפה, ±120 characters of context — 475 pages |
+| `heb_town_disambiguation.tsv` | 1,175 | one row per page: which towns sit within 150 characters of each hospital mention, and whether another Haifa hospital does too |
+
+**Stage 2 halves the stage-1 number, which is the whole argument for doing it.**
+Of the 878 pages that name Haifa *somewhere*, only **442 (50%)** have a hospital
+mention actually within range of the town; 436 are pages where the hospital and
+the word Haifa belong to different articles. Proximity also *finds* 33 pages the
+page-level Haifa restriction missed. Net: **475 pages** carry a
+Haifa-adjacent government-hospital mention.
+
+**The union is dominated by other towns' hospitals.** Counting towns near a
+hospital mention across all 1,175 pages:
+
+| Jaffa | Haifa | Jerusalem | Tel Aviv | Acre | Safed | Nablus | Tiberias |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 508 | 470 | 419 | 333 | 82 | 70 | 51 | 44 |
+
+Jaffa's government hospital is mentioned *more often than Haifa's* in this
+corpus. The Arabic README's caution — unqualified "the Government Hospital" may
+be another town's — turns out to understate the problem in Hebrew, where it is
+the majority case.
+
+**A caveat on the 475.** In 212 of them (45%) another Haifa hospital — Hadassah,
+Rothschild, Elisha — sits inside the same window. Those are not disqualified;
+papers list several hospitals in one notice. But no page in that set should be
+attributed to the Government Hospital without reading it.
+
+**A pattern worth following, offered as a lead.** The Haifa-adjacent set is
+heavily weighted to the end of the period, and not only because the corpus grows:
+
+| | 1947–48 share |
+|---|---:|
+| unqualified sweep (proxy for corpus density) | 27% |
+| qualified pages | 38% |
+| Haifa-adjacent pages | 48% |
+
+The gradient is monotonic, so the lateness is not purely a denominator effect —
+later pages are progressively more likely to be about a *government* hospital,
+and more likely again to be about Haifa's. 1947 alone is 135 pages, 60% of that
+year's qualified set. What that means is not settled here: the conflict years,
+the hospital's own prominence, and shifts in what these papers covered are all
+live candidates, and separating them needs a per-year page denominator the
+search API does not expose.
+
+**Residue.** 5 of the 1,175 pages returned no text, and 14 more carry no
+hospital term the regex recognises — 1.6% combined, listed as `no_hospital_term`
+in the disambiguation file rather than dropped silently.
+
+**All stage-1 session D counts are pre-stage-2 harvest sizes, not findings.** No local
 pass has yet removed Jaffa's, Jerusalem's, Safed's or Acre's government
 hospitals from them.
 
@@ -805,3 +861,72 @@ The 187 Mandate-era `Krankenhaus`×`Haifa` issues, and the 54 in
 `cm_haifa_spital.tsv`, have not been read page by page; only the phrase-level
 and `Regierungskrankenhaus`×`Haifa` subsets were. That is the obvious next
 pass, and the hit lists already name the pages to fetch.
+
+### Addendum — is five mentions really all? (same day, after the question was asked)
+
+Five Mandate-era mentions of our hospital in sixteen years of a weekly looks
+too few. Two things were measured before accepting it.
+
+**Does the index actually read the run?** Yes, for body text. MB-chain issues
+containing the word `Haifa`, by year: 1933–39 between 5 and 21 (the 1932–39
+title is a monthly, and dates there are month-granular), then **49, 50, 51, 53,
+51, 52, 51, 51, 53** for 1940–48 — i.e. essentially every issue of a weekly.
+The silence is not the index failing to see the pages.
+
+**But the queries were undercounting, in three ways now measured.**
+
+- **Hyphenation splits compounds, and the index does not rejoin them.** German
+  compounds break across narrow columns, and the pieces are indexed as separate
+  tokens. `Regierungskrankenhaus` finds 109 documents; the adjacency phrase
+  `"Regierungs Krankenhaus"` finds **44 more that the first query cannot see**
+  (and `"Kranken haus"` matches 1,321). One of those 44 is Mandate-era and
+  Palestine-published — see the find below. **Always query the split form too.**
+- **Display type is often unread.** `"Haifaer Notizen"`, a running column head,
+  indexes in exactly **one** issue; `"Notizen Haifa"` in two. Headlines set in
+  display faces are largely invisible to this OCR, so an item is findable only
+  through its body text. (Same lesson as the Arabic work, from the opposite
+  direction.)
+- **Umlaut and `ae` are different tokens.** `Borromäerinnen` = 1 document,
+  `Borromaeerinnen` = 10. Inflection *is* folded (`Krankenhauses` ≡
+  `Krankenhaus`, `Haifas` ≡ `Haifa`, `Regierungskrankenhäuser` ≡
+  `Regierungskrankenhaus`), but spelling variants are not. Query both.
+
+**What the split form turned up.** *Mitteilungsblatt der Hitachduth Olej
+Germania*, June I 1938, p. 8 (page 12724706), in a tour-of-the-country essay:
+"das neue **Regierungs-Krankenhaus, von Erich Mendelsohn entworfen**, auf der
+Höhe des Carmel gegenüber dem alten Krankenhaus". A **contemporaneous**
+attestation of the Mendelsohn attribution, six months before the opening — but
+the siting is wrong for Bat Galim, which is at sea level, not "auf der Höhe des
+Carmel". Either loose writing in a rhapsodic passage, or the writer has
+conflated our hospital with the Rothschild in Hadar. Recorded as a lead: it
+bears on how firmly the Mendelsohn attribution should be stated in the article,
+and it is the kind of conflation later sources could have inherited.
+
+### Are other Haifa hospitals mentioned? Barely — and that is the answer
+
+Mandate-era (1930–48) issue counts on the Palestine-published titles, by name:
+
+| name | issues 1930–48 |
+|---|---|
+| `Regierungskrankenhaus` (all towns) | 5, +1 in the split form |
+| `Regierungshospital` / `Regierungsspital` | 4 / 3 |
+| `"Hadassah Hospital"` / `"Hadassah Krankenhaus"` | 6 / 4 |
+| `"Rothschild Hospital"` / `"Rothschild Spital"` / `"Rothschild Krankenhaus"` | 1 / 1 / 0 |
+| `Elisha` | 1 |
+| `"Bnai Zion"` | 0 |
+| `"deutsche Hospital"` / `"englische Hospital"` | 1 / 0 |
+| `"Government Hospital"` (English) | 0 |
+| `"Kupath Cholim"` (the sick fund, not a hospital) | 42 |
+
+No Haifa hospital is much named in this corpus — not the Rothschild, not
+Elisha, not Bnai Zion. The German-Jewish immigrant press names *hospitals* when
+something happens in one (casualties, a security decision, a building
+programme) and otherwise writes about immigration, restitution, organisational
+life and politics. Against that baseline five or six mentions of the Government
+Hospital is not an anomaly to explain away; it is the corpus's normal rate, and
+it is **more** than the Rothschild gets. The one institution mentioned often,
+Kupath Cholim, is the sick fund — the thing readers actually dealt with.
+
+The counts above are floors, for the two OCR reasons in the addendum. The
+remaining lift is the 187 `Krankenhaus`×`Haifa` issues, unread, where the
+hospital may well be discussed without being named.
