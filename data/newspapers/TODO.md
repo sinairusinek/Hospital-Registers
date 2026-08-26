@@ -82,3 +82,36 @@ admission register: it is probably not their denominator. The register-side
 trace is in the README — the Isolation ward runs to 26 February 1940, survives
 the Bat Galim move, and is extinct when the notebooks resume in 1944, with the
 change falling inside the four-year gap.
+
+---
+
+## Downstream deliverables (decided 2026-08-26) — gated on MB
+
+Nothing below starts until the *Mitteilungsblatt* picture is complete (item 3).
+The German-press results stay where they are, in this directory's README, until
+then. When MB closes, the accumulated press work feeds **two** products:
+
+### A. A general history of the hospital — essay + timeline
+Narrative synthesis across all four press languages plus the League of Nations
+annual reports and the census package. The spine already assembled: the
+Anglican St. Luke's mission hospital (closed 31 March 1929); the government's
+own 1918–January 1922 hospital in requisitioned Borromäerinnen premises; the
+register opening 1930 in **rented** St. Luke's premises on Mountain Road; the
+capacity steps 30 → +50 (early 1933) → +20 (1935) → +22 (1936); the move to Bat
+Galim in **October 1938** and its opening on 21/22 December 1938 (the two
+sources disagree — reconcile before citing); 225 beds thereafter; occupation
+and looting at the 1948 handover. The timeline is the same material in
+date order, and should carry the bed-count steps, since no admissions or
+occupancy trend is readable without them.
+
+### B. A newspaper-source reader, published on the explorer site
+The **complete** list of press sources, presented for reading rather than as a
+data dump — the passages themselves with translation and register context, as
+in `paper/press-register-cases.md`. Covers Arabic (Filastin, al-Difa'), English
+(Palestine Post, Palestine Bulletin), Hebrew (JPress titles), German (the four
+Palestine titles, plus MB), and the archival sources.
+
+**PII constraint carries over:** the registers hold no patient names, and the
+press does. Names published in the newspapers are usable (confirmed
+2026-08-26), but the reader must not become a route to re-identifying redacted
+register rows. Decide the presentation before building, not during.
