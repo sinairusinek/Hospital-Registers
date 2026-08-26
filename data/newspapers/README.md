@@ -95,3 +95,74 @@ matches **Harry Charles Luke**, Chief Secretary, throughout 1928–29.
 **Method note.** Search snippets are useless for premises filtering — they
 centre on whichever token the engine chose. Every finding here came from the
 full-text harvest plus a local regex, which is why stage 2 is not optional.
+
+## Session D — the German press, re-measured (2026-08-26)
+
+An earlier survey recorded "German negligible" on the strength of a single
+query whose text was not saved. It has now been reconstructed and re-run.
+
+**The earlier query was `Regierungskrankenhaus`**, and it was measured
+correctly: 4 hits (wartedestempels 3, dawar 1). But that compound is not how
+the papers say it. Measured properly:
+
+| query | all titles | German Palestine titles |
+|---|---|---|
+| `Regierungskrankenhaus` | 4 | wtd 3, dawar 1 |
+| `Regierungshospital` | 0 | — |
+| `Regierungsspital` | 2 | dawar 1, pressecho 1 |
+| `"staatliche Krankenhaus"` | 0 | — |
+| `Krankenhaus` | 271 | wtd 98, dawar 31, pressecho 29 |
+| `Krankenhaus Haifa` (AND) | 69 | wtd 37, dawar 12, pressecho 5 |
+| `Haifa` | 111,630 | pressecho 1,593, wtd 757, dawar 139 |
+
+**Holdings, not OCR, are the real limit.** JPress holds exactly **four**
+German-language titles published in Palestine: `wartedestempels` (Die Warte
+des Tempels, Jerusalem), `pressecho` (Press-Echo, Tel Aviv), `dawar` (Dawar,
+Tel Aviv — a German edition, distinct from Hebrew `dav`), and `diestimme`
+(Die Stimme, Azor). The German-Jewish immigrant press — *Mitteilungsblatt*,
+*Jedioth Chadashoth*, *Blumenthal's Neueste Nachrichten*, and *Orient*
+(Haifa, 1942–43) — is **absent from JPress entirely** and would need another
+archive. Optical Character Recognition (OCR) is *not* the problem: Warte des
+Tempels returns 2,211 pages for `und`, so its Fraktur is read well.
+
+**TRAP — the Fraktur long s (ſ) is indexed as a distinct character.**
+`Hospital` finds 1 page in Warte des Tempels; **`Hoſpital` finds 42**. A
+42× undercount from one glyph. Words with a non-final s miss the Fraktur
+corpus completely unless the ſ-variant is queried too (`Krankenhaus` is safe
+— its s is word-final). This is the German counterpart of the Arabic
+construct-form problem. **Normalise ſ→s before any local regex**, and query
+both forms server-side. `Krankenhauſ` and `ſpital` return 0, so only some
+variants exist; probe, don't assume.
+
+Files: hit lists `de_krankenhaus_*.tsv` (4 titles) and
+`de_hospital_fraktur.tsv`; full text `de_texts.jsonl` (111 pages).
+
+**Findings.**
+- **Referral mechanism, 9 July 1930 (dawar).** The Jewish Agency health
+  department asked the government to admit adult typhus patients to the
+  "Regierungsspital in Haifa" and to provide the government sanitary car to
+  carry typhus cases from the Jezreel valley to "das Regierungskrankenhaus in
+  Haifa"; the Department of Health **accepted**. This is our register's first
+  year, and it predicts a specific, testable signature: typhus/typhoid
+  admissions in later 1930 with Afula/Ein Harod-area residence.
+- **The German Hospital identified (15 April 1926, Warte des Tempels).** The
+  "German hospital" that took 8 of the wounded in the al-Difa' tally of
+  7 July 1938 is the **Deutsches Hospital der Borromäerinnen** — Borromean
+  Sisters, from 1888 a pilgrim house, from 1898 in a house rented from the
+  Templer community and later bought; Dr Peters to 1913, then Dr Wilhelm
+  Hoffmann. Admissions **155 in 1899 → 760 in 1925**. A sized comparator
+  institution.
+- **A government hospital in Haifa before ours, in requisitioned premises.**
+  The same article: the Borromäerinnen hospital was seized on the British
+  entry (September 1918), passed through English, French and American hands
+  for three years, "in der letzten Zeit **Regierungshospital**", and was
+  released only in **January 1922**. So the Mandate government ran a Haifa
+  hospital out of German premises until 1922 — distinct from the St. Luke's
+  building it rented from 1930. Prehistory of our series, not its origin.
+- **Independent support on St. Luke's.** The same German Catholic account
+  calls the English mission hospital "das bis dahin **einzige** Krankenhaus"
+  in Haifa before the Sisters began — a third source, from outside both the
+  Anglican and the Arabic record, on St. Luke's primacy.
+- **Negative kept.** `Regierungskrankenhaus von Safed` (Warte, 15 Oct 1935,
+  a German settler's death) — the dateline trap applies in German exactly as
+  in Arabic. Check the town before counting a hit.
