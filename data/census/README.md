@@ -42,6 +42,7 @@ passes all of them.
 | `census-1931-infirmities-by-age.csv` | Table XV Part I (pp. 272–275) | Same by age group, Palestine-wide. Complete for all-religions and Moslems; for Christians/Jews/Others the population, cases and insane columns are transcribed and the four sight/hearing columns are left blank (below confident-transcription threshold in our scan copy; their totals are in the by-subdistrict file). |
 | `census-1922-religion.csv` | Appendix to Vol. II (pp. 594–595) | 1922 population by religion × sex, urban (per town) and rural (per sub-district), in 1931 boundaries. |
 | `vs1945-haifa-subdistrict-villages.csv` | Village Statistics 1945, Haifa sheet | All 84 territorial units of Haifa sub-district × religion, with the sheet's footnotes in a `note` column. Haifa town row: 35,940 M / 75,500 J / 26,570 C / 290 others = 138,300. |
+| `vs1945-acre-subdistrict-villages.csv` | Village Statistics 1945, Acre sheet | All 57 territorial units (serials 1–51 villages, 52–57 tribal units) of Acre sub-district × religion, 65 rows because several serials brace two to four named settlements. TOTAL: 47,290 M / 2,950 J / 11,150 C / 6,940 others = 68,330. |
 | `vs1945-subdistrict-summary.csv` | Village Statistics 1945, summary sheet | All Palestine sub-districts × religion (1945 district boundaries: Haifa is its own district; Galilee/Samaria/Lydda districts exist by now). |
 
 ### Age-table format
@@ -94,6 +95,20 @@ divorced, widowed — each as persons/males/females.
 - 1945 Ijzim: Moslems printed garbled ("28,30"); 2,830 restored from the row total.
 - 1945 Karkur: footnote components sum to 2,180, not the printed 2,380; the cell
   keeps the printed 2,380.
+- 1945 Acre sheet: the reprint's `3` and `8` are near-identical at this scan
+  resolution. El Birwa's Christians print ambiguously; 130 is forced both by the
+  row total (1,330 + 130 = 1,460) and by the Christians column total, which
+  lands exactly on the printed 11,150 only with 130. All five columns of the
+  sheet sum to their printed totals with no other cell in doubt.
+- 1945 Acre sheet, blank vs nil: serials 53, 54, 56 and 57 ('Arab el Hujeirat,
+  el Mureisat, es Sawa'id, es Suweitat) print **no figures at all** — they are
+  tribal units enumerated inside Sakhnin, Deir Hanna, Er Rama or Tarshiha. Their
+  numeric cells are left empty and are excluded from the sums, unlike the
+  all-nil rows (Acre Rural, Khirbat Jiddin) which print the nil sign and count
+  as zeros.
+- 1945 Acre serials 6, 7, 14, 15, 32 and 47 brace two to four separately
+  counted settlements under one serial; each is its own CSV row, repeating the
+  serial, exactly as done for Haifa's serials 16 and 22.
 - Nomadic population (all Moslem) is included in the 1931 sub-district totals; the
   Haifa sub-district had none, so its total = settled.
 - 'Atlit appears in the 1945 sheet (90 M / 510 J / 60 C); the Atlit clearance-camp
@@ -105,6 +120,8 @@ Volume II also holds language (X), birthplace (XI), residence (XII),
 citizenship (XIII), years-at-school (IX B), occupations (XVI–XXI), Table VIII
 Part III–IV (per-town age tables other than Haifa) and Part V (nomads), and the
 civil-condition columns of the non-Haifa age tables. The 1945 sheets for the
-other sub-districts (Acre, Nazareth, …) are JPGs on the ANU page. `TODO.md`
-holds ready hand-off briefs for the next tranches (occupations Haifa, 1945
-Acre).
+sub-districts beyond Haifa and Acre (Nazareth, Tiberias, Beisan, Safad, Jenin,
+Tulkarm, …) are JPGs on the ANU page and remain untranscribed; `validate.py`'s
+`vs1945_villages()` takes a sub-district name, so each new sheet is checked by
+adding one call. `TODO.md` holds the remaining hand-off brief (occupations
+Haifa).

@@ -193,16 +193,26 @@ for rel in ("all","moslems","jews","christians","others"):
         check(s == u22[("total","Palestine","Palestine")][rel][i], f"1922 urban+rural Palestine {rel}[{i}]")
 
 # ---------- 1945 ----------
-vs = load("vs1945-haifa-subdistrict-villages.csv")
 cols = ("moslems","jews","christians","others","total")
-tot_row = next(r for r in vs if r["village"] == "TOTAL")
-for r in vs:
-    if r["village"] == "TOTAL": continue
-    s = sum(int(r[c]) for c in cols[:4])
-    check(s == int(r["total"]), f"vs1945 {r['village']}: M+J+C+O {s} != total {r['total']}")
-for c in cols:
-    s = sum(int(r[c]) for r in vs if r["village"] != "TOTAL")
-    check(s == int(tot_row[c]), f"vs1945 column {c}: sum {s} != printed total {tot_row[c]}")
+
+def vs1945_villages(sd):
+    """Row and column checks on one sub-district sheet; returns its TOTAL row.
+
+    Tribal units printed with no figures at all (counted inside another unit)
+    have every numeric cell blank and take no part in the sums."""
+    rows = load(f"vs1945-{sd.lower()}-subdistrict-villages.csv")
+    tot = next(r for r in rows if r["village"] == "TOTAL")
+    body = [r for r in rows if r["village"] != "TOTAL" and r["total"] != ""]
+    for r in body:
+        s = sum(int(r[c]) for c in cols[:4])
+        check(s == int(r["total"]), f"vs1945 {sd} {r['village']}: M+J+C+O {s} != total {r['total']}")
+    for c in cols:
+        s = sum(int(r[c]) for r in body)
+        check(s == int(tot[c]), f"vs1945 {sd} column {c}: sum {s} != printed total {tot[c]}")
+    return tot
+
+tot_row = vs1945_villages("Haifa")
+acre_tot_row = vs1945_villages("Acre")
 
 vss = load("vs1945-subdistrict-summary.csv")
 for r in vss:
@@ -222,9 +232,10 @@ for c in cols + ("villages_and_tribal_units",):
     full = int(gt[c]) + int(next(r for r in vss if r["subdistrict"] == "Beersheba")[c])
     check(full == int(next(r for r in vss if r["district"] == "Palestine" and r["subdistrict"] == "ALL")[c]),
           f"vs1945-summary grand total {c}")
-hrow = next(r for r in vss if r["subdistrict"] == "Haifa")
-for c in cols:
-    check(int(hrow[c]) == int(tot_row[c]), f"vs1945 Haifa summary {c} != villages TOTAL")
+for vs_sd, t in (("Haifa", tot_row), ("Acre", acre_tot_row)):
+    row = next(r for r in vss if r["subdistrict"] == vs_sd)
+    for c in cols:
+        check(int(row[c]) == int(t[c]), f"vs1945 {vs_sd} summary {c} != villages TOTAL")
 
 # ---------- infirmities ----------
 INF = ["ins","b1","bl","df","dd"]

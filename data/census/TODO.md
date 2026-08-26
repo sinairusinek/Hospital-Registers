@@ -44,24 +44,25 @@ pix.save("out.png")
 - Check columns/rows against the printed totals; note in README that the other
   units of Tables XVI–XXI remain untranscribed in the scans.
 
-## Task 2 — Village Statistics 1945, Acre sub-district (+ optional others)
+## Task 2 — DONE (2026-08-25)
 
-- Source sheets: https://users.cecs.anu.edu.au/~bdm/yabber/census/VillageStatistics1945/Acre.jpg
-  (also Nazareth.jpg, Tiberias.jpg, Beisan.jpg, Safad.jpg, Jenin.jpg,
-  Tulkarm.jpg if desired). PLO 1970 reprint; population by
-  Moslems/Jews/Christians/Others/Total, rounded to nearest 10; footnotes name
-  component settlements.
-- Follow the exact format of `vs1945-haifa-subdistrict-villages.csv`
-  (serial, village, moslems, jews, christians, others, total, note) →
-  `vs1945-acre-subdistrict-villages.csv` etc.
-- Checks (add to `validate.py`): each row M+J+C+O = total; each column sums to
-  the sheet's printed TOTAL row; the TOTAL row equals the sub-district's row in
-  `vs1945-subdistrict-summary.csv` (Acre: 47,290 / 2,950 / 11,150 / 6,940 /
-  68,330). Save the source JPG as `scans-vs1945-acre.jpg`.
+Acre sub-district is transcribed to `vs1945-acre-subdistrict-villages.csv`
+(57 serials, 65 rows) from `scans-vs1945-acre.jpg`; every row sum, all five
+column sums and the cross-check against `vs1945-subdistrict-summary.csv` pass.
+Transcription decisions are in README ("Transcription notes").
+
+The optional other sheets remain: Nazareth.jpg, Tiberias.jpg, Beisan.jpg,
+Safad.jpg, Jenin.jpg, Tulkarm.jpg at
+https://users.cecs.anu.edu.au/~bdm/yabber/census/VillageStatistics1945/ .
+To add one: follow the column format of the Haifa/Acre files, save the JPG as
+`scans-vs1945-<sd>.jpg`, and add a `vs1945_villages("<Sd>")` call plus the
+sub-district's entry in the summary cross-check loop in `validate.py` — the
+sheet-level checks are already generic. Watch for the reprint's near-identical
+`3`/`8` glyphs; the column totals are what settles them.
 
 ## Task 3 — DONE (2026-08-25)
 
 The age-table cleanup is complete: `validate.py` prints ALL CHECKS PASSED.
 The residual printed-source inconsistencies are documented in README
 ("Source-level inconsistencies kept as printed") and tolerated via `SDA_EXC`
-in validate.py. Only Tasks 1-2 above remain.
+in validate.py. Only Task 1 above remains.
