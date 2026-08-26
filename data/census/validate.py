@@ -456,5 +456,93 @@ for (dist, sdn), dd in units.items():
     check(sda[(u2,"jews","total")][0] == dd["jews"][0], f"sd-age {u2}: jews mismatch")
     check(sda[(u2,"christians","total")][0] == dd["christians"][0], f"sd-age {u2}: christians mismatch")
 
+# ---------- occupations (Table XVI Part II(a)) ----------
+OCC_COLS = ["total", "earners_males", "earners_females",
+            "partly_agriculturists_males", "partly_agriculturists_females",
+            "dependants_and_working_dependants"]
+OCC_PARENTS = {
+    "Southern District": ["Gaza", "Beersheba", "Jaffa", "Ramle"],
+    "Jerusalem District": ["Hebron", "Bethlehem", "Jerusalem", "Jericho", "Ramallah"],
+    "Northern District": ["Tulkarm", "Nablus", "Jenin", "Nazareth", "Beisan",
+                          "Tiberias", "Haifa", "Acre", "Safad"],
+    "Four Main Towns": ["Jaffa town", "Tel Aviv town", "Jerusalem town", "Haifa town"],
+    "Palestine": ["Southern District", "Jerusalem District", "Northern District"],
+}
+occ = {}
+for r in load("census-1931-occupations-by-unit.csv"):
+    occ.setdefault(r["unit"], {})[r["order"]] = [int(r[c]) for c in OCC_COLS]
+occ_units = list(occ)
+# every order of every unit: total = male earners + female earners + dependants
+for u, orders in occ.items():
+    for o, v in orders.items():
+        check(v[0] == v[1] + v[2] + v[5],
+              f"occupations {u} order {o}: total {v[0]} != earners+dependants")
+# the 58 orders (plus order 2(a)) sum to TOTAL ALL CLASSES; order 1's six
+# sub-orders sum to order 1.  Both hold in all six columns.
+TOPS = [o for o in occ["Palestine"] if o != "0" and not o[-1].isalpha()]
+ONE_PARTS = ["1a", "1b", "1c", "1d", "1e", "1f"]
+for u, orders in occ.items():
+    for i in range(6):
+        s = sum(orders[o][i] for o in TOPS)
+        check(s == orders["0"][i],
+              f"occupations {u} {OCC_COLS[i]}: orders sum {s} != all classes {orders['0'][i]}")
+        s1 = sum(orders[o][i] for o in ONE_PARTS)
+        check(s1 == orders["1"][i],
+              f"occupations {u} {OCC_COLS[i]}: order 1 parts {s1} != order 1 {orders['1'][i]}")
+# sub-districts sum to districts, districts to Palestine, towns to Four Main Towns
+for parent, kids in OCC_PARENTS.items():
+    for o in occ[parent]:
+        for i in range(6):
+            s = sum(occ[k][o][i] for k in kids)
+            check(s == occ[parent][o][i],
+                  f"occupations {parent} order {o} {OCC_COLS[i]}: parts {s} != {occ[parent][o][i]}")
+# TOTAL ALL CLASSES == the settled population of the same unit in Tables VI/VII
+for (dist, sdn), d in units.items():
+    if sdn == "ALL" or sdn not in occ:
+        continue
+    check(occ[sdn]["0"][0] == d["all"][0] - NOMADIC.get(sdn, 0),
+          f"occupations {sdn}: total all classes != settled population")
+for twn in ("Jaffa", "Tel Aviv", "Jerusalem", "Haifa"):
+    v = next(vv for (dd, tt), vv in trows.items() if tt == twn)
+    check(occ[f"{twn} town"]["0"][0] == v["all"][0],
+          f"occupations {twn} town: total all classes != Table VI town total")
+
+# ---------- organized industry, Haifa town (Table XXI Part II) ----------
+IND_BLOCKS = ["all religions", "moslems", "jews", "christians", "others"]
+# three columns for the population engaged, then five staff categories of eleven
+IND_STAFF = [5, 16, 27, 38, 49]
+ind = {}
+ind_rows = []
+for r in load("census-1931-industry-haifa-town.csv"):
+    ind[(r["religion"], int(r["column"]), r["industry"])] = int(r["value"])
+    if r["industry"] not in ind_rows:
+        ind_rows.append(r["industry"])
+IND_COLS = sorted({c for _, c, _ in ind})
+IND_TOTAL, IND_DETAIL = ind_rows[0], ind_rows[1:]
+for b in IND_BLOCKS:
+    for c in IND_COLS:
+        s = sum(ind[(b, c, i)] for i in IND_DETAIL)
+        check(s == ind[(b, c, IND_TOTAL)],
+              f"industry {b} col {c}: industries {s} != town total {ind[(b, c, IND_TOTAL)]}")
+    for i in ind_rows:
+        # engaged persons = males + females, and = the five staff categories
+        check(ind[(b, 2, i)] == ind[(b, 3, i)] + ind[(b, 4, i)],
+              f"industry {b} {i}: engaged persons != m+f")
+        s = sum(ind[(b, base, i)] for base in IND_STAFF)
+        check(s == ind[(b, 2, i)],
+              f"industry {b} {i}: staff categories {s} != engaged {ind[(b, 2, i)]}")
+        for base in IND_STAFF:
+            v = [ind[(b, base + k, i)] for k in range(11)]
+            check(v[0] == v[1] + v[2], f"industry {b} {i} col {base}: total != m+f")
+            check(v[1] == v[3] + v[5] + v[7] + v[9],
+                  f"industry {b} {i} col {base}: males != Arabs+Jews+others+non-Palestinian")
+            check(v[2] == v[4] + v[6] + v[8] + v[10],
+                  f"industry {b} {i} col {base}: females != Arabs+Jews+others+non-Palestinian")
+for c in IND_COLS:
+    for i in ind_rows:
+        s = sum(ind[(b, c, i)] for b in IND_BLOCKS[1:])
+        check(s == ind[("all religions", c, i)],
+              f"industry col {c} {i}: religions {s} != all {ind[('all religions', c, i)]}")
+
 print(f"{fails} failures" if fails else "ALL CHECKS PASSED")
 sys.exit(1 if fails else 0)

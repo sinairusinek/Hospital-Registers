@@ -40,6 +40,8 @@ passes all of them.
 | `census-1931-literacy-towns.csv` | Table IX (A) Part III (pp. 114–120) | Same for each of the 23 towns (all religions), and by religion for Jaffa, Tel Aviv, Jerusalem and **Haifa**. |
 | `census-1931-infirmities-by-subdistrict.csv` | Table XV Parts II–III (pp. 276–280) | The census's four infirmities — insane, blind of one eye, totally blind, totally deaf, deaf-and-dumb — total and "from birth", × sex, per sub-district, for all religions together and for Moslems/Christians/Jews/Others separately. "Population dealt with" = settled population. |
 | `census-1931-infirmities-by-age.csv` | Table XV Part I (pp. 272–275) | Same by age group, Palestine-wide. Complete for all-religions and Moslems; for Christians/Jews/Others the population, cases and insane columns are transcribed and the four sight/hearing columns are left blank (below confident-transcription threshold in our scan copy; their totals are in the by-subdistrict file). |
+| `census-1931-occupations-by-unit.csv` | Table XVI Part II (a) (pp. 315–396) | Occupation or means of livelihood, **settled population**, for all 27 units the table prints (Palestine, the 3 districts, all 18 sub-districts, the Four Main Towns and each of the four towns) × the classification's 58 orders (plus Order 1's six sub-orders and Order 2 (a)) × total / earners by sex / partly agriculturists by sex / dependants. Order-level only — see "Table XVI: what is and is not here". |
+| `census-1931-industry-haifa-town.csv` | Table XXI Part II (pp. 588–593) | **Organized industry, Haifa town**: the census's 16 industry groups (plus the town total) × all religions / Moslems / Jews / Christians / Others × the table's 58 columns — total population engaged, then managers, supervising & technical, clerical, operatives under 17 and operatives 17 and over, each split by sex and by Palestinian Arabs / Palestinian Jews / Palestinian others / non-Palestinians. Long format: one row per religion × industry × column. Haifa town engaged 1,881 persons (713 Moslems, 822 Jews, 307 Christians, 39 others). |
 | `census-1922-religion.csv` | Appendix to Vol. II (pp. 594–595) | 1922 population by religion × sex, urban (per town) and rural (per sub-district), in 1931 boundaries. |
 | `vs1945-haifa-subdistrict-villages.csv` | Village Statistics 1945, Haifa sheet | All 84 territorial units of Haifa sub-district × religion, with the sheet's footnotes in a `note` column. Haifa town row: 35,940 M / 75,500 J / 26,570 C / 290 others = 138,300. |
 | `vs1945-acre-subdistrict-villages.csv` | Village Statistics 1945, Acre sheet | All 57 territorial units (serials 1–51 villages, 52–57 tribal units) of Acre sub-district × religion, 65 rows because several serials brace two to four named settlements. TOTAL: 47,290 M / 2,950 J / 11,150 C / 6,940 others = 68,330. |
@@ -51,6 +53,49 @@ Rows are as printed: single years `0-1`…`4-5`, their subtotal `0-5`, then
 five-year groups to `75+` and `not_recorded`, plus a `total` row. **Do not sum
 single-year rows together with `0-5`.** Columns: population, unmarried, married,
 divorced, widowed — each as persons/males/females.
+
+### Table XVI: what is and is not here
+
+Part II (a) is **not** laid out as one section per geographic unit, the way the
+age and infirmity tables are. It runs the other way round: the 27 units are the
+*rows*, repeated identically on all 82 pages, and the occupational classification
+marches across the pages as *columns*. Every occupation group has its own
+six-column block (total earners and dependants; earners, males and females;
+partly agriculturists, males and females; dependants and working dependants),
+and each order, each sub-order of Order 1, and Order 2 (a) also carries a
+printed **Total** block.
+
+`census-1931-occupations-by-unit.csv` holds those Total blocks — 66 of them,
+covering the whole classification at order level — for all 27 units. The
+individual occupation-group columns (roughly 180 of them, "orange growers",
+"woodcutters and charcoal burners", and so on) are **not** transcribed; they
+remain in the scans. Nothing is lost from the order-level picture: the 58 order
+totals sum exactly to `TOTAL ALL CLASSES`, in every unit and every column, and
+`validate.py` checks it.
+
+The class and sub-class columns in the CSV are the classification's own
+structure (four classes, twelve sub-classes) attached to each order; Part II (a)
+prints no class or sub-class subtotals of its own, so those levels are obtained
+by summing orders.
+
+### Table XXI: what is and is not here
+
+There is no "Part III — details for principal towns". Haifa town is a section of
+**Part II**, and it is not one table but ten half-page blocks: five community
+blocks (all religions, Moslems, Jews, Christians, Others) printed twice over, on
+pp. 588–590 for columns 2–26 and again on pp. 591–593 for columns 27–59. Page 588
+and page 591 each carry the all-religions block alone; the other four pages carry
+two stacked blocks apiece. `census-1931-industry-haifa-town.csv` holds all of it.
+
+The table counts **persons engaged**, not establishments — it has no
+establishments column. "Organized industry" here means those who returned
+themselves as in salaried employment or in receipt of wages, so the numbers are
+much smaller than the occupational totals in Table XVI (1,881 persons against
+Haifa town's 50,403 inhabitants).
+
+The other units of Table XXI's Part II — the districts and the other principal
+towns — remain untranscribed in the scans, as does its Part I (the Palestine-wide
+summary, pp. 546–551).
 
 ## Transcription notes
 
@@ -109,6 +154,26 @@ divorced, widowed — each as persons/males/females.
 - 1945 Acre serials 6, 7, 14, 15, 32 and 47 brace two to four separately
   counted settlements under one serial; each is its own CSV row, repeating the
   serial, exactly as done for Haifa's serials 16 and 22.
+- Table XVI Part II (a), cells resolved by the table's own margins: Order 9
+  (Metals) Ramle total 596 (the last digit is clipped by the column rule; the row
+  identity and the Southern District column both give 596); Order 15 (Building
+  industries) Jenin dependants 268 (printed 266 — the row identity, 386 = 115 +
+  3 + …, and the printed Northern District dependants total, 7,909, each force
+  268); Order 22 (Transport by road) Haifa town total 3,618 (printed as an inky
+  "8,618"); Order 26 (Brokerage) Southern District total 2,354 (printed 2,345 —
+  legible at high magnification, so a typesetting transposition rather than a
+  broken glyph; the row identity, the four sub-district rows and the Palestine
+  row all give 2,354).
+- Table XVI Order 2 (a), Nomads, is printed nil throughout Part II (a), which
+  covers the settled population only. It is kept as a row of zeros so that the
+  order list matches the printed classification.
+- Table XXI, Haifa town: the scan's `3` and `8` are near-identical in this face.
+  Industry II (salt and bitumen), persons engaged, is read as 3 rather than 8 in
+  both the all-religions and the Jews block, which is what the block totals
+  (1,881 and 822) and the male/female split require. Column 18 (supervising and
+  technical staff, females) falls on a crop boundary; its three non-nil entries
+  are fixed exactly by column 16 minus column 17 row by row, and by columns
+  20/22/24/26.
 - Nomadic population (all Moslem) is included in the 1931 sub-district totals; the
   Haifa sub-district had none, so its total = settled.
 - 'Atlit appears in the 1945 sheet (90 M / 510 J / 60 C); the Atlit clearance-camp
@@ -117,9 +182,13 @@ divorced, widowed — each as persons/males/females.
 ## Not transcribed (available in the scans)
 
 Volume II also holds language (X), birthplace (XI), residence (XII),
-citizenship (XIII), years-at-school (IX B), occupations (XVI–XXI), Table VIII
-Part III–IV (per-town age tables other than Haifa) and Part V (nomads), and the
-civil-condition columns of the non-Haifa age tables. The 1945 sheets for the
+citizenship (XIII), years-at-school (IX B), Table VIII Part III–IV (per-town age
+tables other than Haifa) and Part V (nomads), and the civil-condition columns of
+the non-Haifa age tables. Of the occupation tables, Table XVI Part II (a) is here
+at order level and Table XXI's Haifa town section in full; still in the scans are
+Table XVI's individual occupation-group columns, its Part I summaries and Part
+II (b) (nomads), Table XVII (occupations of working dependants), Tables XVIII–XX,
+and Table XXI for every unit other than Haifa town. The 1945 sheets for the
 sub-districts beyond Haifa and Acre (Nazareth, Tiberias, Beisan, Safad, Jenin,
 Tulkarm, …) are JPGs on the ANU page and remain untranscribed; `validate.py`'s
 `vs1945_villages()` takes a sub-district name, so each new sheet is checked by
