@@ -20,6 +20,7 @@ access route and what the collection holds.
 | `hospital_haifa_concordance.tsv` | 568 | Stage 3: windows where مستشف\* falls within 150 characters of حيفا, with ±120 characters of context |
 | `press_register_candidates.tsv` | 385 | per-report candidate matches to register admissions — **leads, not identifications** |
 | `epidemic_concordance.tsv` | 1,957 | disease mentions with Haifa evidence graded by dateline, and the register's series beside each — **leads, not identifications** |
+| `lazaret_concordance.tsv` | 366 | mentions of the Kerentina, quarantine station, infectious diseases and isolation hospitals, Arabic and English — a finding aid for the referral question |
 | `casualty_spikes.tsv` | 12 | days whose injury admissions far exceed the surrounding baseline, with the press coverage that explains them |
 | `articles.jsonl` | 185 | Whole articles with headlines, for the days in `casualty_spikes.tsv` |
 | `page_texts.jsonl` | 4,150 | **not committed** (122 MB). Full OCR text of every stage-1 page |
@@ -350,6 +351,91 @@ This does not touch the main finding. Typhoid, typhus, malaria, dysentery,
 diphtheria, measles and influenza were ordinary ward business and are in the
 register in their thousands, so for those the lag measurement stands on a
 series that is genuinely the hospital's own.
+
+### The lazaret file — evidence assembled, question still open (2026-08-26)
+
+`lazaret_concordance.py → lazaret_concordance.tsv`, 366 windows over the Arabic
+corpus and the English one (`govhosp_texts.jsonl`, `stluke_page_texts.jsonl`,
+`mountainroad_texts.jsonl`). Four institution kinds are kept apart because the
+sources keep them apart: `kerentina` (الكرنتينا, 143), `quarantine_station`
+(المحجر الصحي, 164), `infectious_hospital` (مستشفى الأمراض المعدية / السارية,
+55), `isolation` (4). 92 windows are Haifa-attributed by the same graded
+dateline test as the epidemic pass; a `place` column carries the qualifier that
+follows the term, because most hits are not Haifa's.
+
+**This file settles nothing.** It exists so that the Israel State Archives
+document lands on assembled evidence rather than on a blank page. Every row is
+a lead.
+
+What the press attests about Haifa, in date order:
+
+- **Palestine Post, 2 March 1933** — "arrangements were made for temporary
+  extension of the **Infectious Diseases Hospital at Haifa** by utilising
+  adjoining premises. It is proposed in 1933 to construct an Infectious Disease
+  [pavilion]". A separate infectious diseases hospital, under pressure, being
+  extended — in the years the register's own Isolation ward is busiest.
+- **Palestine Post, 9 March 1934** — Mountain Street "between its junction with
+  Khury Street and Catoni Street in front of the **Government Isolation
+  Hospital**". The same location Session C's premises work reached independently.
+- **Palestine Post, 27 November 1934** — an employee of the **Government
+  Quarantine Station at Haifa** gored by a bull. A staffed establishment.
+- **Filastin, 8 June 1939** — Dr Munir Mash'alani, doctor of the Kerentina *in
+  Jaffa*, transfers to Haifa as assistant chief medical officer for the North.
+- **Filastin, 11 September 1941** — on promotion he supervises
+  `مستشفى الحكومة ودوائر الصحة والكرنتينا` — hospital, health offices and
+  Kerentina named as **three** things.
+- **al-Difa', 19 May 1944** — smallpox spreading in city neighbourhoods and Balad
+  al-Sheikh; the Health Department `نقلت جميع المصابين الى مستشفى الكرنتينا`,
+  moved **all** the infected to the Kerentina hospital. Haifa dateline.
+- **Filastin, 24 September 1944** — the anti-rat campaign's contact number is
+  "the Kerentina, telephone…", during the plague year.
+- **al-Difa', 17 December 1945** — a farewell at the Government Hospital attended
+  by the doctors "of the hospital, of Health and of the Kerentina"; `عيسى متّى`
+  is named **director of the Kerentina**.
+- **al-Difa', 22 August 1946** — sick detainees moved
+  `الى الكرنتينا في مستشفى الحكومة بحيفا`, the Kerentina **in** the Government
+  Hospital at Haifa.
+- **Filastin, 31 October 1947** — the Director of Medical Services inspects
+  `مستشفى الحكومة` and `دائرة الكرنتينا` as two stops; arrivals from Egypt are
+  held four days and vaccinated against cholera.
+- **Filastin, 5 November 1947** — the fullest description: all travellers from
+  Egypt taken to `محجر الكرنتينا في حيفا`; Isa Matta runs the men's quarantine
+  under Dr Ibrahim Tim, acting district medical officer; nurses of both sexes, a
+  canteen, third class at 270 mils a day.
+
+**The evidence conflicts, and the conflict is the finding.** Every attestation
+but one has the Kerentina beside the Government Hospital — a separate
+establishment with its own director, its own doctor, its own telephone, three
+things one officer supervises. The al-Difa' notice of 22 August 1946 puts it
+inside. Both cannot be flatly true, and the corpus cannot choose: the
+arrangement may have changed, or "in the Government Hospital" may be loose
+usage, or the Bat Galim building may have absorbed a function that stood apart
+on Mountain Street. **This is what the archival document is for.**
+
+Two observations for whoever reads that document, kept as leads:
+
+1. **The register has an Isolation ward of its own.** 2,788 admissions are
+   marked `Isolation` or `Infectious Diseases` (as written: `Isolation`, `Is.`,
+   `Isol`, `Isolation Ward`, `Infectious Diseases`) — 28% of typhoid, 37% of
+   diphtheria, 24% of typhus. So isolation nursing is partly *inside* this
+   series. But it runs **1931–1939 and then stops**: 17 rows in 1940, 14 in
+   1944, 3 in 1946, 2 in 1947. Whether that is a change of practice at the move
+   to Bat Galim or simply the ward column ceasing to be filled is not settled
+   here — the column is blank on 10,613 rows overall, and it is under repair in
+   a parallel thread for an unrelated defect.
+2. **The 1944 plague cases are in the register with no ward recorded** — 33 of
+   34. So plague patients did reach these notebooks, whatever the Kerentina's
+   role, and the smallpox notice of 19 May 1944 says the smallpox patients of
+   that same season did not.
+
+**Lexical trap, recorded like the others.** `محجر` is *quarry* as well as
+quarantine station: the Shafa'amr land-sale notices, the Sadiq quarry strike of
+February 1947 and the Suba quarry bus shot at in May 1938 are all in this
+corpus. The station is therefore matched only where the text qualifies it —
+`صحي`, or the two stations the papers name outright, El-Tor (the Egyptian hajj
+quarantine) and Atlit. Bare `محجر` is dropped, which costs 112 windows and would
+otherwise have put quarries in a medical file. Generic `العزل` is not matched at
+all; on its own the word is "separation".
 
 ### Reading the file
 
