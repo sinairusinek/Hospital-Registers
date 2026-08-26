@@ -26,3 +26,8 @@ data/public/hospital-registers-normalized.tsv
 
 # Evaluation runs — working output, kept out of the public repo
 data/eval/
+
+# Harvested newspaper page text (122MB, over GitHub's per-file limit).
+# Regenerate: python3 pipeline/jrayed_text_harvest.py — resumable, reads the
+# hit lists in data/newspapers/ and refetches only what is missing.
+data/newspapers/page_texts.jsonl
