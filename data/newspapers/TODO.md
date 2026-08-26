@@ -48,6 +48,10 @@ material surfaced — but that is a property of the index, not proof of absence.
 Using MB 1943–48 would need page-level harvesting, the same two-stage design as
 Jrayed and JPress.
 
+**ON HOLD (2026-08-26):** do not start the MB harvest. Sinai is checking
+whether access already exists through the diasporic memory project (Yiftach
+worked on MB there). Wait for that before harvesting from Compact Memory.
+
 **Worth fetching regardless:** Fritz Lorch, "Die deutsche Kolonie Haifa in
 Palästina" (*Palästina*, two articles) — the German Colony is where the
 pre-1938 hospital stood.
