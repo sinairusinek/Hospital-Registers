@@ -43,6 +43,31 @@ TERMS = {
     "en": (r"\b(?:Government|Govt\.?)\s+Hospital\b", r"\bHa[iy]fa\b"),
     "de": (r"\b(?:Regierungs)?(?:krankenhaus|hospital|spital)\w*\b",
            r"\bHa[iy]fa\b"),
+    # Hebrew needs no \b at either end: the prefixes ב/ל/מ/ו/ש/ה attach to the
+    # word, so an anchored pattern would miss בחיפה and לביה"ח. The spellings
+    # are folded together because the press used all of them interchangeably -
+    # spaced בית החולים, maqaf בית־החולים, and the abbreviation ביה"ח in any
+    # punctuation.
+    #
+    # The tolerances are not decorative; each was taken from a page this
+    # pattern first failed to match. [בנ] catches נית־החולים. [חה] catches the
+    # chet/he confusion that produces ההולים - the single commonest OCR failure
+    # here, and the one that silently halves recall if you leave it out. The
+    # punctuation class covers ביה''_ח, seen in a 1948 Al Hamishmar page where
+    # the same article also wrote בביה־ההולים with a maqaf where the quote
+    # belonged. Spaces are deliberately NOT in that class: allowing them makes
+    # "רבי ח..." a hospital.
+    # The left guard earns its keep on the bare abbreviation ביח, which is what
+    # ביה"ח becomes when OCR drops the mark. Ungu­arded it also fires inside
+    # הערביח, להשביח, נביח and רביח; guarded to "word start, optionally after
+    # one of the prefix letters בלמהושכ", it keeps ביח / בביח / לביח / מביח and
+    # loses the rest. Measured on this corpus: 222 real, 25 spurious before,
+    # 222 real and 0 spurious after.
+    "he": (r"(?<![א-ת])[בלמהושכ]?"
+           r"(?:[בנ]ית[\s־\-]{0,2}ה?[חה]ול\w{0,3}"
+           r"|ביה[\"״׳'`_.\-־]{0,3}ה?[חה]ול\w{0,3}"
+           r"|בי[ה]?[\"״׳'`_.\-־]{0,3}ח(?![א-ת]))",
+           r"ח[יו]פה"),
 }
 
 MONTHS = {m: i + 1 for i, m in enumerate(
