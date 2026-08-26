@@ -168,6 +168,42 @@ Files: hit lists `de_krankenhaus_*.tsv` (4 titles) and
   a German settler's death) — the dateline trap applies in German exactly as
   in Arabic. Check the town before counting a hit.
 
+### Testing the 1930 referral against the register — a negative
+
+The Dawar item of 9 July 1930 lets us predict something specific, so it was
+tested. Note first a translation trap: German **`Typhus` is typhoid fever**
+(English typhus is *Fleckfieber*), and the register agrees — of 98
+typhoid-family admissions in 1930, all but five read "Typhoid Fever" or
+"Paratyphoid".
+
+The register's 1930 typhoid season is real and large: 98 admissions, rising
+9 (May) → 17 (June) → **55 (July)** → 5 (August), 2 deaths in July, median age
+20, a third of them children.
+
+**But it is a Haifa-and-coast season, not a Jezreel-valley influx.** July
+residences: Haifa 19, not recorded 14, Tiberias 7, then ones and twos from
+Hadera, Breikeh, Benyamina, Nazareth, Shafa Amr, Athlit, Tireh. In the whole of
+1930 only **three** admissions come from the valley the article names — Naffuleh
+(Afula) 20 March, Ain Harod 28 June, Beisan 23 July. The July admissions arrive
+evenly, one to six a day; there is no step change at or after the agreement.
+
+So the prediction fails, and the failure is the result. Two readings, neither
+preferred: the accepted request sent *children* to the central hospital at Afula
+and only *adults* to Haifa, and valley adults may simply have been few; or the
+arrangement was largely worked through Afula, leaving Haifa's typhoid load
+local. Note also that 26% of June–July rows record no city at all, which caps
+how hard any residence argument can be pushed.
+
+One detail kept as a lead, not a finding: the single Ain Harod admission
+(28 June, paratyphoid, recovered) *precedes* the report by eleven days, and the
+article itself says the Department of Health "hat sie zum Teil bereits
+ausgeführt" — had already carried the measures out in part. Consistent, but
+n=1.
+
+The episode also re-confirms Session B's aggregate from a different direction:
+the paper described the arrangement on 9 July, when the ward had been filling
+since June.
+
 ## Session B — epidemics: does the press lead or lag the register? (2026-08-26)
 
 One Cathedra finding prompted this. *al-Difa'* of 21 October 1947 reported four
