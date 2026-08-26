@@ -312,6 +312,41 @@ visible at the smaller sizes session D worked at:
   and did so repeatedly. `cmd_search` now steps the block size down 100 → 50 →
   25 → 10 rather than losing a run that is nineteen requests deep.
 
+### Stage 4 — reading the articles (session E)
+
+The 349 articles in `heb_reading_queue.tsv` where Haifa is the town nearest a
+hospital mention were **read**, not counted. The readings are in
+`heb_article_readings.md`, arranged by period, with the id of every article so
+each can be reopened. Items that turned out not to be Haifa's Government
+Hospital are marked `[X]` and kept, so the next reader does not re-open them;
+`[?]` marks what the OCR or the context leaves undecided.
+
+`heb_reading_queue.tsv` is built by `pipeline/heb_article_compare.py`'s sibling
+logic — one row per article, with the hospital–Haifa character gap, the nearest
+town measured article-wide, any rival Haifa hospital named, and whether the
+page-level stage 2 had already found the issue.
+
+What the reading produced, in brief: a continuous chronology of the Bat Galim
+building from the September 1935 announcement to the 22 December 1938 opening,
+with **construction completed in September 1938** and the wards **working by 18
+November 1938** — which brackets the registers' October 1938 seam from outside;
+Erich Mendelsohn as architect, absent from his own opening; **133.5 beds
+occupied on an average day in 1938** from the Department of Health's annual
+report; the 1944–45 plague as a countable series (**64 cases, 18 dead, 36
+recovered by 17 November 1944**) treated in a department the Public Works
+Department **built beside the hospital in 1942**; the January 1948 walkout dated
+to **31 December 1947** with the Situation Committee's evidence; and the
+terminus, **2 May 1948**, when the hospital passed to the municipality with 288
+beds and was found empty.
+
+Two cautions for anyone matching press to register. The casualty names in these
+columns are **the hospital's own bulletins**, so press and register share a
+source and agreement between them is not corroboration — and after the June 1946
+railway workshops raid the CID itself thought the names it had attached to the
+bodies were wrong. And in November 1947 a district judge found the hospital
+negligent for discharging poor patients before they had recovered, in a case
+where he assigned the death to the institution rather than to the assailant.
+
 ## Session D — the German press, re-measured (2026-08-26)
 
 An earlier survey recorded "German negligible" on the strength of a single

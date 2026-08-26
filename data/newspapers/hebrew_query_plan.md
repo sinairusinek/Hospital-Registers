@@ -631,8 +631,34 @@ python3 pipeline/jrayed_concordance.py --lang he \
 python3 pipeline/heb_article_compare.py
 ```
 
-### What stage 4 should be
+### Stage 4 — done, by reading
 
-`jrayed_articles.py` for headlines over the ~55 strong candidates and the near
-set, and a read of the 231 far pairs. That is the reader the write-up needs,
-and it no longer requires any new querying.
+Headlines turned out to be useless for sorting: most are OCR wreckage or the
+bare word `חיפה`. So the 349 Haifa-nearest articles were read directly, from
+±260-character windows around each hospital mention, with full text pulled
+wherever a window earned it. `heb_reading_queue.tsv` holds the queue;
+`heb_article_readings.md` holds the readings, period by period, with every id.
+
+The far pairs were worth the reading and the near ones were worth more. Two of
+the flagged recoveries turned out to be load-bearing — HaBoker's 14 August 1939
+air-defence exercise naming "the new **and old** Government Hospital", and
+HaBoker's 18 November 1938 description of the Bat Galim wards already working
+with 230 beds and equipment moved from the old hospital, five weeks before the
+ceremony. Against that, the long-distance pairs behaved as predicted: Davar's
+11 July 1934 public-health polemic names Haifa repeatedly and means Jaffa's
+government hospital.
+
+Fourteen findings, with the article behind each, are listed under "What the
+reading changed" at the head of `heb_article_readings.md`. The ones that touch
+other project threads: the Bat Galim chronology (September 1935 announcement →
+September 1938 completion → November 1938 in use → December 1938 ceremony); a
+1938 occupancy denominator of 133.5 beds; the plague department **built beside
+the hospital in 1942** and the Yishuv's own statement in January 1948 that this
+was **the only infectious-diseases department in the north**, which narrows the
+lazaret question; the 1944–45 plague counted case by case; the 31 December 1947
+walkout with its inquiry; and the terminus, 2 May 1948.
+
+Two cautions worth carrying into any press-to-register match: the casualty
+names are the hospital's own bulletins, so the two sources are one; and in
+November 1947 a district judge found the hospital negligent for early discharge
+in a case where he assigned the death to the institution.
