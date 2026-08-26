@@ -98,6 +98,73 @@ matches **Harry Charles Luke**, Chief Secretary, throughout 1928–29.
 centre on whichever token the engine chose. Every finding here came from the
 full-text harvest plus a local regex, which is why stage 2 is not optional.
 
+## Session D — the Hebrew recall floor (2026-08-26)
+
+JPress (`--site nli`), 1930–48, page level. The plan, the diagnostics that
+built it and the full results are in `hebrew_query_plan.md`; this is the
+summary.
+
+The Hebrew figure we had been quoting — **702** for `"בית החולים הממשלתי"` —
+was a floor twice over. It was an *article*-level count (the page-level
+equivalent is 694), and it could only see the hospital spelled out in full,
+with spaces, and called *הממשלתי*.
+
+| file | query | pages |
+|---|---|---:|
+| `heb_govhosp_phrase.tsv` | `"בית החולים הממשלתי"` | 694 |
+| `heb_abbrev_phrase.tsv` | `"ביה״ח הממשלתי"` | 224 |
+| `heb_maqaf.tsv` | `"בית־החולים הממשלתי"` | 220 |
+| `heb_indef.tsv` | `"בית חולים ממשלתי"` | 59 |
+| `heb_abbrev_short.tsv` | `"בי״ח הממשלתי"` | 6 |
+| `heb_*_haifa*.tsv` | the same, restricted to pages naming `בחיפה` | 878 (union) |
+| `heb_unqualified*.tsv` | hospital + town, **no** adjective | 8,587 (union) |
+
+**The union of the qualified forms is 1,175 pages, +69% on the floor**, and the
+added forms are nearly disjoint from it: 216 of the 224 abbreviated pages, and
+209 of the 220 maqaf pages, lie outside the 694. Restricted to pages naming
+Haifa the union is **878** — the figure comparable to the Arabic 2,322 and
+1,593, which were built the same way (qualified phrase AND the town, page
+level).
+
+**Three things about the engine, measured rather than assumed.**
+
+- **Phrases do not degrade.** An eight-token phrase whose words co-occur
+  constantly returns 0, so it held. A four-token phrase returns 65 at both page
+  and article level. Precision is available at any length — the opposite of
+  what we had assumed when planning this.
+- **Abbreviation marks are stripped at index time.** `ביה״ח` (gershayim),
+  `ביה"ח` (ASCII quote) and `ביהח` (no mark) return the identical 3,580 pages,
+  facets included. One query reaches every spelling, including whatever Optical
+  Character Recognition (OCR) dropped. The same holds for the maqaf:
+  `בית־החולים` and `ביתהחולים` are one token, and it is **not** the token
+  `בית החולים` — 2,731 pages the spaced phrase cannot reach.
+- **Prefixes are part of the token**, as Arabic `ال` is: `הממשלתי` 30,070 vs
+  `ממשלתי` 14,184; `בחיפה` 74,727 vs `חיפה` 118,173. Enumeration is
+  unavoidable, since `*` truncates at the wrong end for Hebrew.
+
+**The boundary, stated deliberately.** Every qualified query needs the word
+*governmental*. Ask only for a hospital and the town and 8,587 pages answer,
+7,692 of which the qualified set never sees. Most are Haifa's other hospitals —
+Hadassah (`הדסה`), Rothschild (`רוטשילד`), Elisha (`אליישע`) — which share the
+abbreviation completely. Some are ours, called in passing "the hospital in
+Haifa". Only stage 2 can separate them, and no number from
+`heb_unqualified*.tsv` should be reported without saying which was done.
+
+This is the mirror image of the caution above: in Arabic, unqualified *the
+Government Hospital* risks belonging to another town; in Hebrew, unqualified
+*the hospital in Haifa* risks belonging to another hospital.
+
+**All session D counts are pre-stage-2 harvest sizes, not findings.** No local
+pass has yet removed Jaffa's, Jerusalem's, Safed's or Acre's government
+hospitals from them.
+
+**One fix to `jrayed.py`.** Cloudflare serves two interstitials here, and only
+the scripted one embeds `challenges.cloudflare.com`. The other is a bare
+"Checking your browser..." holding page, which slipped past the detector,
+reached the XML parser, and surfaced 400 results into a harvest as a
+mismatched-tag `ParseError` — a confusing way to be told the clearance had
+expired. `is_challenge()` now recognises both.
+
 ## Session D — the German press, re-measured (2026-08-26)
 
 An earlier survey recorded "German negligible" on the strength of a single
@@ -601,3 +668,140 @@ timeline entry.
 bubonic plague case in a fortnight admitted to the Government Hospital, the
 first having "died of heart failure" after being cured. This independently
 supports the one disease Session B found the press *leading* the register on.
+
+## Session E — the *Mitteilungsblatt*, through Compact Memory's SRU endpoint (2026-08-26)
+
+The German-Jewish immigrant press is not in JPress, and Compact Memory's HTML
+is behind a browser-verification wall. The way in is the **Visual Library SRU
+endpoint underneath it**, which is open to plain HTTP:
+
+```
+https://sammlungen.ub.uni-frankfurt.de/cm/sru?operation=explain
+https://sammlungen.ub.uni-frankfurt.de/cm/sru?operation=searchRetrieve
+    &version=1.2&recordSchema=mods&query=<CQL>&startRecord=N&maximumRecords=100
+```
+
+Client: `pipeline/compactmemory.py`.
+
+**Three corrections to what this repo previously recorded.**
+
+1. **The search IS full text.** `explain` advertises a `fulltext` index and it
+   works: `vl.fulltext=Haifa` → 16,041 documents, and phrases match
+   (`vl.fulltext="Regierungskrankenhaus in Haifa"` → 6). The earlier
+   "article/metadata level only" reading came from the website's search form,
+   not from this endpoint. Compact Memory's silence on the hospital was an
+   artefact of asking the wrong interface.
+2. **The MB run starts in the 1930s, not 1943.** The holding is a chain of
+   three title records, all Tel-Aviv:
+   *Mitteilungsblatt der Hitachduth Olej Germania* (vl 12688259, 1.1932[?]–1939),
+   *…Olej Germania we Austria* (vl 12740381, 1940–1943), and
+   *MB* (vl 12662843, 7.1943–2006). Together they cover **1933–1948** —
+   essentially the whole register span. The earlier note saw only the third.
+   *Jüdische Weltrundschau* (Jerusalem, Mar 1939 – May 1940) sits beside them.
+3. **The Fraktur long s is folded here.** `Regierungshoſpital` and
+   `Regierungshospital` return the identical 136 documents. Compact Memory's
+   index normalises ſ→s; JPress's does not. The ſ-trap is a JPress property,
+   not a German-corpus property — probe each archive separately.
+
+**Two traps of its own.**
+
+- **A hit is an ISSUE, not a page.** An AND of two terms means they occur
+  somewhere in the same issue, possibly columns apart. `cm_kh_and_haifa.tsv`
+  is 1,022 Palestine-title issues and is a finding aid, nothing more. Each hit
+  does carry the ids of the pages the terms fell on, so stage 2 is targeted.
+- **There is no server-side "search within this journal".** The `structures`,
+  `collection` and `reference` indexes all return 0 for a journal id, and
+  `dc.title=X` in an AND silently collapses to a no-op (`lucenequery` echoes
+  `_:_`) — it does not restrict, it just disappears. Filtering to a title is
+  done locally on the host title in each hit's MODS `relatedItem`, which is
+  what `--title` / `--place` do.
+
+**Text and images.** OCR text has no open route (every `/download/…ocr`,
+`/api/fulltext` path 404s; the HTML viewer is walled). Page **images** are
+open: `/cm/download/webcache/{500|1000|2000|0}/<page-id>`. At width 2000 a
+1940s MB page is comfortably readable, so stage 2 here is reading the page
+image, not harvesting text.
+
+### The queries, run
+
+Corpus-wide hits / rows on the Palestine-published titles / of those, 1930–48:
+
+| query | corpus | Palestine | Mandate |
+|---|---|---|---|
+| `Regierungskrankenhaus` | 109 | 36 | 5 |
+| `Regierungshospital` (= `Regierungshoſpital`) | 136 | 4 | 4 |
+| `Regierungsspital` | 58 | 11 | 3 |
+| `"staatliche Krankenhaus"` | 68 | 12 | 0 |
+| `"Krankenhaus in Haifa"` | 69 | 9 | 0 |
+| `"Hospital in Haifa"` | 27 | 6 | 0 |
+| `"Regierungskrankenhaus in Haifa"` | 6 | 3 | 2 |
+| `"Regierungshospital in Haifa"` / `"Regierungsspital in Haifa"` | 3 / 3 | 0 / 1 | 0 / 0 |
+| `"Bat Galim"` | 61 | 23 | 7 |
+| `Krankenhaus` AND `Haifa` | 5,669 | 1,022 | 187 |
+| `Hospital` AND `Haifa` | 2,927 | 412 | 71 |
+| `Spital` AND `Haifa` | 2,697 | 174 | 54 |
+| `Regierungskrankenhauses` (genitive) | 14 | 3 | 0 |
+| `Haifa` | 16,041 | 2,499 | 615 |
+
+Hit lists: `cm_*.tsv`. Columns are issue id, host title, place, date, volume,
+issue, the page ids and captions the terms fell on, and the hit count.
+
+**The dateline trap is the dominant one here, worse than in Arabic.** Read in
+full, most Mandate-era `Regierungskrankenhaus` hits in MB are *other towns'*:
+26 Nov 1943 is Jaffa's (casualties of the Ramat Hakovesh demonstration go "in
+das Hadassah-Hospital bzw. das Regierungshospital in Jaffa"); 24 Aug 1945 is
+Tel Aviv's ("Das Regierungskrankenhaus für die Kolonien in Tel Aviv wird
+demnächst erweitert"); 29 Apr 1948 is Jerusalem's (the Government Hospital and
+the government nursing school "unter den Schutz des Internationalen Roten
+Kreuzes gestellt" — a useful comparator for our own handover, but not ours).
+`"Bat Galim"` is likewise weak on its own: it is a neighbourhood, and most
+hits are meetings held in it.
+
+### Two findings
+
+**1. A death in the hospital that the register cannot confirm — because the
+register stops.** *Mitteilungsblatt der Hitachdut Olej Germania we Austria*,
+8 March 1940, p. 4 (page 12740472), on the Land Transfer Regulations
+demonstrations: "Am Dienstag abend starb im **Regierungskrankenhaus in Haifa**
+Lipmann *Lipschitz*, ein 27-jähriger aus Lettland stammender Jude, an den
+Verletzungen, die er bei der Demonstration erlitten hatte. An dem Begräbnis am
+Mittwoch nahmen unabsehbare Menschenmassen teil." Tuesday evening = 5 March
+1940. *Jüdische Weltrundschau* carries the same event on 11 March.
+
+The register cannot be asked. **Notebook 24 ends on 1 March 1940**, and nothing
+in the general series resumes until Notebook 29 on 8 February 1944 — only
+Notebook 25, the Atlit camp register, covers the rest of 1940. So the gap this
+repo has been calling "1941–1943" actually opens on **2 March 1940**, and this
+press item lands four days inside it. Its value is that it dates the gap from
+outside: on 5 March 1940 the hospital was admitting and its deaths were being
+reported, so the missing notebooks are missing, not never-written.
+
+**2. The Jewish patients were taken out in January 1948 — and the register
+shows it.** *MB*, 23 January 1948, p. 4 (page 12757606), "Haifaer Notizen",
+datelined Haifa 11.1.48, under **Neue Krankenhausbauten**: a 70–80 bed
+emergency hospital is to open in the former Kupath Cholim rest home in Achusa;
+Haifa is short 400 hospital beds even before counting the wounded; in the heavy
+rains the sick and wounded lay in tents in front of the Rothschild hospital;
+"Gleichzeitig mussten aus Sicherheitsgründen **die jüdischen Kranken aus dem
+Regierungskrankenhaus herausgenommen werden**!"
+
+The register agrees, and precisely. Jewish admissions per month:
+
+| 1947-04 | 05 | 06 | 09 | 10 | **1948-01** | **02** | **03** | **04** |
+|---|---|---|---|---|---|---|---|---|
+| 20 | 59 | 12 | 26 | 35 | **1** | **2** | **0** | **0** |
+
+Through 1947 Jews are a steady 5–7% of admissions; from January 1948 they are
+three people in four months, and none at all after 23 February. (Nov–Dec 1947
+are not in the transcribed series — Notebook 32 ends 27 Oct 1947, Notebook 33
+opens 4 Jan 1948 — so the withdrawal itself is not observable day by day; the
+before/after contrast is.) This is the clearest press-register corroboration
+found in any language so far, and it converts the last months of the register
+from "fewer Jewish patients" into a documented administrative act.
+
+### What is not done
+
+The 187 Mandate-era `Krankenhaus`×`Haifa` issues, and the 54 in
+`cm_haifa_spital.tsv`, have not been read page by page; only the phrase-level
+and `Regierungskrankenhaus`×`Haifa` subsets were. That is the obvious next
+pass, and the hit lists already name the pages to fetch.

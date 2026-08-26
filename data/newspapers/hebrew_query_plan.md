@@ -320,9 +320,61 @@ Eight were not recoverable from `heb_newhosp.tsv`: `ahr`, `dhy`, `hegeh`,
 more, `tsohorayimhaifa` (a Haifa title) among them. The facet caps at 15, so the
 full census still comes from H7.
 
+---
+
+# Stage H results (run 2026-08-26, page level, 1930–48)
+
+| harvest | file | pages | new vs the 694 baseline |
+|---|---|---:|---:|
+| H1 spelled out `"בית החולים הממשלתי"` | `heb_govhosp_phrase.tsv` | 694 | — |
+| H3a abbreviated `"ביה״ח הממשלתי"` | `heb_abbrev_phrase.tsv` | 224 | **216 of 224** |
+| H5a maqaf `"בית־החולים הממשלתי"` | `heb_maqaf.tsv` | 220 | **209 of 220** |
+| H6 indefinite `"בית חולים ממשלתי"` | `heb_indef.tsv` | 59 | **55 of 59** |
+| H4 short `"בי״ח הממשלתי"` | `heb_abbrev_short.tsv` | 6 | 6 of 6 |
+| **union, deduplicated on `id`** | | **1,175** | **+481 (+69%)** |
+
+The three added forms are almost entirely *disjoint* from the spelled-out
+phrase — 216 of 224, 209 of 220, 55 of 59 lie outside it. The floor was not a
+rounding error: **481 pages, two in five of the total, were invisible to the
+query that produced the 702.**
+
+Restricted to pages that also name Haifa:
+
+| harvest | file | pages |
+|---|---|---:|
+| H2b spelled out + `בחיפה` | `heb_govhosp_haifa.tsv` | 524 |
+| H3b abbreviated + `בחיפה` | `heb_abbrev_haifa.tsv` | 194 |
+| H5b maqaf + `בחיפה` | `heb_maqaf_haifa.tsv` | 176 |
+| **union** | | **878** |
+| H2a `"בית החולים הממשלתי בחיפה"` (town inside the phrase) | `heb_govhosp_haifa_phrase.tsv` | 65 |
+
+And the unqualified sweep (H9), which requires no adjective:
+
+| harvest | file | pages |
+|---|---|---:|
+| `"בית החולים" בחיפה` | `heb_unqualified.tsv` | 5,796 |
+| `ביה״ח בחיפה` | `heb_abbrev_haifa_broad.tsv` | 2,258 |
+| `ביתהחולים בחיפה` | `heb_unqualified_maqaf.tsv` | 1,461 |
+| **union** | | **8,587** |
+
+Of those, **7,692 are pages the qualified set never sees.** H7's ceiling, the
+OR of every token, is **305,730** — a bound, not a count of anything.
+
 ## The headline number
 
-> **694** page-level, spelled out (702 articles) → **+224** page-level for the
-> abbreviated form → union of H1–H6, deduplicated on `id`, is the figure to set
-> beside the Arabic 2,322 and 1,593 → H7 is a ceiling, never a count of
-> references.
+> **878** — the union of the qualified forms restricted to pages naming Haifa —
+> is the figure comparable to the Arabic **2,322** (Filastin) and **1,593**
+> (al-Difa'). Those were built the same way: a qualified hospital phrase AND the
+> town, at page level.
+>
+> **1,175** is the union without the Haifa restriction: the Government Hospital
+> named anywhere, including the many pages that mean Haifa's without saying so.
+>
+> **694 / 702** was the floor — page and article level respectively.
+>
+> **8,587** and **305,730** are bounds. Never report either as a count of
+> references to this hospital.
+
+All three qualified-union figures are still **pre-stage-2**: no local pass has
+yet removed other towns' government hospitals. Treat them as harvest sizes, not
+as findings.

@@ -212,7 +212,7 @@ class Client:
             body = self._eval(
                 f"fetch({json.dumps(self._url(params))},"
                 "{credentials:'include'}).then(r=>r.text())", True)
-            if "challenges.cloudflare.com" not in body[:3000]:
+            if not is_challenge(body):
                 return body
             self._resolve_challenge()
         raise RuntimeError("still challenged after renavigation")
@@ -254,6 +254,21 @@ class Client:
         else:
             with open(out, "wb") as f:
                 f.write(data)
+
+
+def is_challenge(body: str) -> bool:
+    """Is this response a Cloudflare interstitial rather than our content?
+
+    Cloudflare serves at least two forms here. The scripted one embeds
+    challenges.cloudflare.com; the other is a bare holding page titled
+    "Checking your browser..." with a meta refresh and no such script. Only
+    testing for the first let the second reach the XML parser, where it
+    surfaced as a mismatched-tag ParseError several hundred results into a
+    harvest - a confusing way to be told the clearance had simply expired.
+    """
+    head = body[:3000].lower()
+    return any(m in head for m in (
+        "challenges.cloudflare.com", "checking your browser", "just a moment"))
 
 
 def text(el: ET.Element | None, tag: str) -> str:
