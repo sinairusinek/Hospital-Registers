@@ -111,7 +111,10 @@ in `paper/press-register-cases.md`. Covers Arabic (Filastin, al-Difa'), English
 (Palestine Post, Palestine Bulletin), Hebrew (JPress titles), German (the four
 Palestine titles, plus MB), and the archival sources.
 
-**PII constraint carries over:** the registers hold no patient names, and the
-press does. Names published in the newspapers are usable (confirmed
-2026-08-26), but the reader must not become a route to re-identifying redacted
-register rows. Decide the presentation before building, not during.
+**Privacy is settled, and is not a blocker (ruled 2026-08-26).** Presenting
+press passages next to their matched register rows is approved, **including on
+the public explorer site**. Names published in the newspapers are usable. Do not
+re-litigate this or design around it.
+
+What remains open is **editorial, not ethical**: whether the matched pairs
+belong in the Cathedra article is a separate decision, to be taken later.
