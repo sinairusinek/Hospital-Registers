@@ -436,3 +436,73 @@ per-year page denominator the search API does not expose.
 
 **Residue:** 5 pages returned no text, 14 more carry no recognisable hospital
 term. 1.6% combined, recorded rather than dropped.
+
+---
+
+# Stage 3 — the article-level sweep (NOT YET RUN)
+
+This is the next step, and it is deliberately *not* the obvious one.
+
+**Do not bulk-mine the unqualified pages.** It was priced first:
+`pipeline/heb_sample_unqualified.py` drew 200 of the 7,692 at random (seed
+20260826, reproducible), harvested them and ran the same stage-2 filter. 34% are
+Haifa-adjacent — but 61% of those carry another Haifa hospital in the same
+window, leaving 14% clean. Extrapolated, ~2,650 Haifa-adjacent pages of which
+~1,040 (±360) have no rival in view. Those pages never say *governmental*, so
+the absence of a competitor's name is weak evidence and the stage-2 method
+cannot resolve them. 2.4 hours of the shared browser for ~1,000 unanswerable
+candidates.
+
+**Go up a level instead.** Cross-article contamination was the dominant noise in
+stage 2 — 436 of the 878 Haifa-naming pages were lost because the hospital and
+the town sat in *different articles on the same page*. At `--level Logical` both
+terms must fall inside one article, so the engine applies our proximity filter
+itself, server-side, in a single request:
+
+| query | pages | articles |
+|---|---:|---:|
+| `"בית החולים" בחיפה` (unqualified) | 5,796 | **1,875** |
+| `"בית החולים הממשלתי"` (qualified) | 694 | 702 |
+
+```sh
+J="python3 pipeline/jrayed.py --site nli search"
+Y="--from-year 1930 --to-year 1948 --max 5000 --level Logical"
+D="data/newspapers"
+
+$J '"בית החולים" בחיפה'    $Y --out $D/heb_art_unqualified.tsv   # ~1,875
+$J '"בית החולים הממשלתי"'  $Y --out $D/heb_art_govhosp.tsv       # ~702
+$J '"ביה״ח הממשלתי"'       $Y --out $D/heb_art_abbrev.tsv
+$J '"בית־החולים הממשלתי"'  $Y --out $D/heb_art_maqaf.tsv
+$J 'ביה״ח בחיפה'           $Y --out $D/heb_art_abbrev_haifa.tsv
+```
+
+Then the same two-stage pass, both of which already take `--in`/`--out`:
+
+```sh
+python3 pipeline/jrayed_text_harvest.py --site nli \
+    --glob 'heb_art_*.tsv' --out heb_article_texts.jsonl
+python3 pipeline/heb_disambiguate.py --in heb_article_texts.jsonl \
+    --out heb_article_disambiguation.tsv
+python3 pipeline/jrayed_concordance.py --lang he \
+    --in heb_article_texts.jsonl --out heb_article_concordance.tsv
+```
+
+**Four things to know before running it.**
+
+- **Article ids have four dot-segments** (`dav19381116-01.2.35.2`) against a
+  page's three. `jrayed_text_harvest.py` handles both — session C added `--site`
+  and `--glob` for exactly this (commit dc536ad).
+- **`jrayed_articles.py` gets headlines.** Both papers are segmented with
+  titles, and it was written to pull the Arabic casualty reports as the articles
+  they were. If the Hebrew corpus is going to be *read* rather than counted,
+  that is the tool.
+- **`heb_disambiguate.py` still applies**, and its window logic matters less at
+  article level but is not redundant: a long article can discuss two towns.
+- **Do not restate the page-level figures as article ones.** 694/878/475 stay
+  the numbers comparable to the Arabic 2,322 and 1,593, which are page-level.
+  Article counts are a different unit and belong in their own column, not as a
+  correction to these.
+
+**Why bother at all**, given stage 2 already produced 475 pages: those 475 are
+haystacks with a needle located somewhere in them. The article-level equivalents
+are the reports themselves, with headlines, which is what the write-up needs.
