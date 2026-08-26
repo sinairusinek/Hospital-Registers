@@ -64,3 +64,21 @@ words in the German corpus have not been swept.
 The government ran a Haifa hospital in requisitioned Borromäerinnen premises
 until January 1922; our register opens 1930 in rented St. Luke's premises.
 What happened between is still unevidenced.
+
+## 6. The lazaret referral question — Israel State Archives
+`lazaret_concordance.tsv` assembles what the press says; it does not settle it.
+Nearly every attestation puts the Kerentina **beside** the Government Hospital
+(its own director Isa Matta, its own doctor, its own telephone; Filastin of
+11 September 1941 names hospital, health offices and Kerentina as three things;
+the Palestine Post of 1933–34 has an Infectious Diseases Hospital at Haifa and a
+Government Isolation Hospital on Mountain Street). One notice, al-Difa' of
+22 August 1946, puts it inside. Working hypothesis: the lazaret was separate and
+the 1946 phrasing is loose usage for the hospital's own Isolation department —
+which the register's own Isolation ward would make natural. **Question stays
+open until the Israel State Archives documents are read.**
+
+Until it is settled, cholera, plague and smallpox cannot be read off the
+admission register: it is probably not their denominator. The register-side
+trace is in the README — the Isolation ward runs to 26 February 1940, survives
+the Bat Galim move, and is extinct when the notebooks resume in 1944, with the
+change falling inside the four-year gap.

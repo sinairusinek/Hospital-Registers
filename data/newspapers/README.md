@@ -422,15 +422,8 @@ material, not a conclusion drawn here, and the question stays open until then.
 
 Two observations for whoever reads that document, kept as leads:
 
-1. **The register has an Isolation ward of its own.** 2,788 admissions are
-   marked `Isolation` or `Infectious Diseases` (as written: `Isolation`, `Is.`,
-   `Isol`, `Isolation Ward`, `Infectious Diseases`) — 28% of typhoid, 37% of
-   diphtheria, 24% of typhus. So isolation nursing is partly *inside* this
-   series. But it runs **1931–1939 and then stops**: 17 rows in 1940, 14 in
-   1944, 3 in 1946, 2 in 1947. Whether that is a change of practice at the move
-   to Bat Galim or simply the ward column ceasing to be filled is not settled
-   here — the column is blank on 10,613 rows overall, and it is under repair in
-   a parallel thread for an unrelated defect.
+1. **The register has an Isolation ward of its own**, and it stops — but not
+   where you would expect. Traced below.
 2. **The 1944 plague cases are in the register with no ward recorded** — 33 of
    34. So plague patients did reach these notebooks, whatever the Kerentina's
    role, and the smallpox notice of 19 May 1944 says the smallpox patients of
@@ -444,6 +437,61 @@ corpus. The station is therefore matched only where the text qualifies it —
 quarantine) and Atlit. Bare `محجر` is dropped, which costs 112 windows and would
 otherwise have put quarries in a medical file. Generic `العزل` is not matched at
 all; on its own the word is "separation".
+
+### The register's own Isolation ward, and where it stops
+
+Read-only trace of `data/public/hospital-registers-normalized.tsv`, Notebook 25
+excluded as always. This is the register-side half of the referral question:
+if isolation nursing left the Government Hospital, the ward column should say so.
+
+2,788 admissions carry `Isolation` or `Infectious Diseases` — 28% of typhoid,
+37% of diphtheria, 24% of typhus, 23% of dysentery.
+
+**It is not that the ward column stops being filled.** It keeps being filled
+right through:
+
+| | 1931–Mar 1940 | 1944–1948 |
+|---|---|---|
+| admissions | 19,146 | 8,388 |
+| ward recorded | 68% | 55% |
+| `Isolation` / `Infectious Diseases` | 2,746 (18% of filled) | 22 (0.4%) |
+
+So the value disappears while the practice of recording a ward does not. What
+takes its place is a different vocabulary altogether: `General` falls from 26%
+of filled wards to 1%, while `British Section` rises from 11% to 26%, `Surgical`
+from 19% to 31%, `Medical` from 17% to 26%.
+
+**The Bat Galim move did not end it.** The hospital moved in October 1938, at
+the NB20 → NB21 seam, and `Isolation` continues straight through: NB21 (Oct
+1938 – Mar 1939) 14% of filled wards, NB22 17%, NB23 25%, NB24 8%. The last
+Isolation admissions are 17, 18 and 26 February 1940 — in the Bat Galim
+building, sixteen months after the move.
+
+**The change is undatable, because it falls inside the register's own gap.**
+The notebooks run out on 1 March 1940 and resume on 8 February 1944. `Isolation`
+is normal practice on the last surviving page before the gap and effectively
+extinct on the first page after it. Nothing in this series says when, or why.
+
+The same break shows in where infectious cases were put:
+
+| ward of infectious-disease admissions | 1931–Mar 1940 (n=3,261) | 1944–48 (n=625) |
+|---|---|---|
+| Isolation / Infectious Diseases | 32% | 0% |
+| British Section | 4% | 21% |
+| Medical | 6% | 9% |
+| blank | 53% | 67% |
+
+**Two readings, neither preferred.** Either isolation nursing moved out of the
+Government Hospital during the war years — which would fit a separate lazaret
+taking that work — or the clerks simply changed the vocabulary they wrote in the
+ward column while the wards themselves went on as before. The register cannot
+distinguish these; the archival material may. What it does establish is that the
+Mountain Street premises are not the explanation: isolation admissions continued
+under this register for sixteen months after the hospital left them.
+
+(Ward figures are as the current artifact stands. A parallel thread is repairing
+an unrelated defect in this column, so the percentages may shift slightly; the
+`Isolation` series and its cutoff are unaffected by that repair.)
 
 ### Reading the file
 
