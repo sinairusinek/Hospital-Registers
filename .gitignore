@@ -35,3 +35,4 @@ data/newspapers/heb_page_texts.jsonl
 
 # Large regenerable full-text harvest (see data/newspapers/README.md)
 data/newspapers/govhosp_pls4148_texts.jsonl
+data/newspapers/heb_sample_texts.jsonl

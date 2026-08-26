@@ -1,0 +1,201 @@
+date	pub	page_id	verdict	hospital_mentions	towns_in_range	other_haifa_hospitals	found_by
+1930-06-26	haretz	haretz19300626-01.1.1	mixed	3	haifa,safed,telaviv		
+1930-11-11	haretz	haretz19301111-01.1.4	untowned	3			
+1930-12-31	dav	dav19301231-01.1.3	other	8	jaffa,telaviv	hadassah	
+1931-01-16	dav	dav19310116-01.1.4	other	1	telaviv		
+1931-04-26	dav	dav19310426-01.1.4	untowned	2			
+1931-05-08	haretz	haretz19310508-01.1.4	haifa	2	haifa		
+1931-06-09	dhy	dhy19310609-01.1.4	untowned	6		hadassah	
+1931-06-23	haretz	haretz19310623-01.1.4	other	5	acre,jerusalem,tiberias		
+1932-06-05	dav	dav19320605-01.1.3	mixed	15	haifa,jaffa,nablus,telaviv		
+1932-06-19	haretz	haretz19320619-01.1.4	other	1	acre		
+1932-07-05	misharvetaasiyah	misharvetaasiyah19320705-01.1.13	mixed	1	haifa,safed,tiberias		
+1932-08-02	dav	dav19320802-01.1.3	mixed	3	haifa,jaffa,jerusalem		
+1932-09-11	dav	dav19320911-01.1.4	other	3	jerusalem		
+1932-09-18	dhy	dhy19320918-01.1.4	untowned	4			
+1933-04-13	haretz	haretz19330413-01.1.4	mixed	5	haifa,jaffa,jerusalem,telaviv	hadassah	
+1933-04-14	dav	dav19330414-01.1.3	mixed	7	haifa,jaffa,telaviv		
+1933-08-11	haretz	haretz19330811-01.1.4	other	1	jerusalem		
+1934-06-15	dav	dav19340615-01.1.1	other	2	telaviv		
+1934-07-05	itonmeyuhad	itonmeyuhad19340705-01.1.4	other	1	telaviv	hadassah	
+1935-01-18	haretz	haretz19350118-01.1.5	other	2	telaviv		
+1935-01-23	haretz	haretz19350123-01.1.1	untowned	3		english,hadassah	
+1935-02-19	dav	dav19350219-01.1.1	other	4	gaza,telaviv		
+1935-03-19	dav	dav19350319-01.1.5	mixed	1	haifa,telaviv		
+1935-07-31	haretz	haretz19350731-01.1.7	other	3	jaffa,nazareth		
+1935-10-29	dav	dav19351029-01.1.6	other	3	jerusalem,telaviv		
+1935-11-25	dav	dav19351125-01.1.4	other	4	telaviv	hadassah	
+1935-12-08	dav	dav19351208-01.1.1	untowned	4			
+1935-12-16	haretz	haretz19351216-01.1.6	untowned	1			
+1936-02-19	dav	dav19360219-01.1.6	other	3	jaffa,jerusalem,telaviv	hadassah	
+1936-03-25	dav	dav19360325-01.1.40	untowned	1		english	
+1936-06-01	dav	dav19360601-01.1.2	other	2	jaffa		
+1936-06-26	dav	dav19360626-01.1.17	other	3	jaffa,nablus		
+1936-07-14	dav	dav19360714-01.1.4	untowned	2			
+1936-08-11	dav	dav19360811-01.1.9	other	2	acre,safed	hadassah	
+1936-08-11	haretz	haretz19360811-01.1.5	mixed	6	haifa,jaffa,jerusalem,tiberias	hadassah	
+1936-09-06	dav	dav19360906-01.1.7	mixed	4	acre,haifa,tiberias		
+1936-10-18	dav	dav19361018-01.1.7	other	5	jerusalem,telaviv		
+1936-10-25	haretz	haretz19361025-01.1.8	untowned	1			
+1936-10-27	haretz	haretz19361027-01.1.1	other	6	jerusalem,telaviv		
+1936-11-10	dav	dav19361110-01.1.3	other	3	jaffa		
+1937-01-31	haretz	haretz19370131-01.1.3	mixed	19	haifa,jaffa	hadassah,rothschild	
+1937-03-07	itonmeyuhad	itonmeyuhad19370307-01.1.8	other	1	jerusalem		
+1937-08-12	dav	dav19370812-01.1.5	untowned	2		hadassah	
+1937-11-05	yarden	yarden19371105-01.1.1	other	1	jaffa		
+1937-11-11	dav	dav19371111-01.1.3	untowned	2			
+1937-12-20	dav	dav19371220-01.1.3	haifa	9	haifa		
+1938-01-16	haretz	haretz19380116-01.1.5	haifa	3	haifa	hadassah	
+1938-02-09	hbkr	hbkr19380209-01.1.4	other	8	telaviv		
+1938-03-21	hbkr	hbkr19380321-01.1.5	other	4	jaffa		
+1938-03-21	hzh	hzh19380321-01.1.3	mixed	2	haifa,jaffa	hadassah	
+1938-04-13	haretz	haretz19380413-01.1.7	other	3	gaza,telaviv		
+1938-06-02	dav	dav19380602-01.1.3	other	9	jaffa	hadassah	
+1938-07-07	hbkr	hbkr19380707-01.1.1	mixed	9	haifa,jaffa	hadassah	
+1938-07-25	dav	dav19380725-01.1.1	haifa	3	haifa		
+1938-08-07	hbkr	hbkr19380807-01.1.6	other	3	jerusalem	english	
+1938-09-17	hashaah	hashaah19380917-01.1.1	mixed	6	haifa,jaffa,jerusalem,telaviv	hadassah	
+1938-11-20	hbkr	hbkr19381120-01.1.6	other	2	jaffa		
+1939-03-03	dav	dav19390303-01.1.3	untowned	1			
+1939-03-14	dav	dav19390314-01.1.3	haifa	3	haifa		
+1939-04-19	dav	dav19390419-01.1.1	haifa	2	haifa		
+1939-05-10	hmf	hmf19390510-01.1.3	haifa	2	haifa	hadassah	
+1939-05-25	dav	dav19390525-01.1.3	untowned	1			
+1939-06-15	haolam	haolam19390615-01.1.10	other	1	jaffa,telaviv	hadassah	
+1939-07-03	hzh	hzh19390703-01.1.1	mixed	3	haifa,telaviv	hadassah	
+1939-07-05	dav	dav19390705-01.1.7	other	1	jerusalem	hadassah	
+1939-07-25	hzh	hzh19390725-01.1.4	other	2	jerusalem	hadassah	
+1939-08-22	haretz	haretz19390822-01.1.4	untowned	4		hadassah,rothschild	
+1939-09-05	dav	dav19390905-01.1.6	mixed	2	haifa,jaffa		
+1939-09-11	dav	dav19390911-01.1.5	other	7	jerusalem,telaviv		
+1939-10-18	hbkr	hbkr19391018-01.1.6	untowned	5		hadassah	
+1939-10-18	hzh	hzh19391018-01.1.4	other	3	telaviv	hadassah	
+1940-02-01	hzh	hzh19400201-01.1.4	untowned	2			
+1940-02-09	hbkr	hbkr19400209-01.1.8	haifa	2	haifa		
+1940-04-10	hmf	hmf19400410-01.1.4	haifa	6	haifa	hadassah,rothschild	
+1940-04-19	hbkr	hbkr19400419-01.1.8	other	1	telaviv	hadassah	
+1940-04-28	hbkr	hbkr19400428-01.1.8	mixed	4	haifa,jaffa,nazareth,telaviv	hadassah	
+1940-05-24	hashaah	hashaah19400524-01.1.1	untowned	1			
+1940-06-17	hbkr	hbkr19400617-01.1.6	other	2	jerusalem		
+1940-09-11	hbkr	hbkr19400911-01.1.4	haifa	3	haifa		
+1940-09-23	hzh	hzh19400923-01.1.1	untowned	2			
+1941-02-02	hmf	hmf19410202-01.1.3	other	2	jaffa,jerusalem	hadassah	
+1941-02-27	hzh	hzh19410227-01.1.4	haifa	5	haifa		
+1941-03-24	hbkr	hbkr19410324-01.1.4	mixed	3	haifa,jaffa,telaviv		
+1941-11-30	hzh	hzh19411130-01.1.4	other	4	telaviv	hadassah	
+1942-01-19	hbkr	hbkr19420119-01.1.2	other	1	jaffa		
+1942-01-30	hbkr	hbkr19420130-01.1.3	other	5	jaffa		
+1942-03-15	hegeh	hegeh19420315-01.1.4	untowned	1			
+1942-04-24	haretz	haretz19420424-01.1.3	untowned	1		hadassah	
+1942-06-03	haretz	haretz19420603-01.1.2	mixed	12	haifa,jaffa,jerusalem,telaviv	hadassah	
+1942-08-23	dav	dav19420823-01.1.4	other	3	jaffa,jerusalem		
+1942-09-03	haretz	haretz19420903-01.1.3	other	10	jaffa,jerusalem,nazareth,ramleh,telaviv	hadassah	
+1942-09-15	hbkr	hbkr19420915-01.1.3	untowned	2		rothschild	
+1942-11-05	haretz	haretz19421105-01.1.3	other	1	telaviv		
+1942-11-18	haretz	haretz19421118-01.1.2	other	2	jerusalem		
+1942-11-27	hzh	hzh19421127-01.1.4	haifa	2	haifa	hadassah,rothschild	
+1943-03-11	dav	dav19430311-01.1.4	untowned	3			
+1943-04-13	hzh	hzh19430413-01.1.3	untowned	6			
+1943-05-02	haretz	haretz19430502-01.1.3	other	7	jaffa	rothschild	
+1943-05-12	hzh	hzh19430512-01.1.5	other	4	jerusalem		
+1943-05-20	hbkr	hbkr19430520-01.1.4	haifa	4	haifa	rothschild	
+1943-05-23	haretz	haretz19430523-01.1.3	untowned	6		hadassah	
+1943-07-15	hmf	hmf19430715-01.1.3	mixed	3	haifa,jerusalem,telaviv	hadassah,rothschild	
+1943-07-22	hzh	hzh19430722-01.1.3	mixed	3	haifa,telaviv		
+1943-08-31	ahr	ahr19430831-01.1.3	other	9	telaviv		
+1943-10-13	dav	dav19431013-01.1.7	other	6	jerusalem	hadassah	
+1943-11-04	haretz	haretz19431104-01.1.4	other	2	nablus		
+1943-12-23	hbkr	hbkr19431223-01.1.4	untowned	2			
+1944-03-10	haretz	haretz19440310-01.1.6	mixed	2	haifa,jerusalem	rothschild	
+1944-03-15	hzh	hzh19440315-01.1.4	haifa	3	haifa	rothschild	
+1944-04-03	haretz	haretz19440403-01.1.1	mixed	5	haifa,telaviv	rothschild	
+1944-08-09	ahr	ahr19440809-01.1.3	untowned	4			
+1944-09-03	hazmantlv	hazmantlv19440903-01.1.4	untowned	2		hadassah	
+1944-10-17	haretz	haretz19441017-01.1.3	mixed	7	haifa,jaffa,jerusalem	rothschild	
+1944-10-18	ahr	ahr19441018-01.1.4	mixed	4	haifa,jaffa	hadassah	
+1944-11-15	haretz	haretz19441115-01.1.2	other	3	jaffa,telaviv		
+1945-01-23	haretz	haretz19450123-01.1.2	mixed	39	haifa,jaffa,jerusalem,nablus,telaviv	hadassah,rothschild	
+1945-02-18	dav	dav19450218-01.1.2	other	5	jaffa		
+1945-02-19	dav	dav19450219-01.1.1	other	2	jaffa	hadassah	
+1945-03-12	dav	dav19450312-01.1.2	untowned	5		hadassah	
+1945-07-12	haretz	haretz19450712-01.1.3	other	4	jaffa		
+1945-07-25	hegeh	hegeh19450725-01.1.4	no_hospital_term	0			
+1945-10-15	haretz	haretz19451015-01.1.3	other	3	telaviv	rothschild	
+1945-12-11	hegeh	hegeh19451211-01.1.4	haifa	3	haifa		
+1945-12-17	dav	dav19451217-01.1.3	untowned	2			
+1945-12-26	hmf	hmf19451226-01.1.4	mixed	8	haifa,jaffa,jerusalem	hadassah	
+1946-02-13	dav	dav19460213-01.1.2	mixed	3	haifa,telaviv		
+1946-03-03	haretz	haretz19460303-01.1.2	other	4	jaffa	english	
+1946-03-19	ahr	ahr19460319-01.1.4	other	2	jaffa		
+1946-06-16	haretz	haretz19460616-01.1.3	untowned	4		hadassah	
+1946-06-17	hayal	hayal19460617-01.1.4	other	3	jerusalem	hadassah	
+1946-06-20	hmf	hmf19460620-01.1.4	mixed	5	acre,haifa,jaffa,jerusalem,telaviv	hadassah	
+1946-07-04	hmf	hmf19460704-01.1.4	mixed	5	haifa,jaffa,jerusalem	hadassah	
+1946-07-15	hzh	hzh19460715-01.1.4	mixed	4	haifa,jaffa	english,rothschild	
+1946-07-23	haretz	haretz19460723-01.1.3	other	11	jaffa,jerusalem,telaviv	rothschild	
+1946-07-29	haretz	haretz19460729-01.1.3	other	8	acre	english,rothschild	
+1946-08-25	dav	dav19460825-01.1.3	haifa	2	haifa		
+1946-10-28	hbkr	hbkr19461028-01.1.3	other	4	telaviv,tiberias	hadassah	
+1946-10-29	dav	dav19461029-01.1.3	mixed	3	haifa,telaviv		
+1946-11-05	hbkr	hbkr19461105-01.1.2	other	10	jaffa,jerusalem,safed,telaviv	english	
+1946-11-22	haretz	haretz19461122-01.1.6	other	6	jaffa,jerusalem,telaviv	hadassah	
+1946-12-01	dav	dav19461201-01.1.3	untowned	1			
+1946-12-03	haretz	haretz19461203-01.1.4	mixed	5	gaza,haifa,jaffa,jerusalem,telaviv		
+1946-12-06	hmf	hmf19461206-01.1.12	other	7	jaffa,safed,telaviv	hadassah	
+1946-12-08	dav	dav19461208-01.1.1	mixed	2	haifa,jaffa,telaviv		
+1946-12-09	haretz	haretz19461209-01.1.3	haifa	3	haifa	rothschild	
+1946-12-30	hzh	hzh19461230-01.1.4	untowned	1		rothschild	
+1947-01-24	hzh	hzh19470124-01.1.8	other	2	jerusalem		
+1947-02-07	hbkr	hbkr19470207-01.1.8	mixed	3	haifa,telaviv	rothschild	
+1947-02-09	ahr	ahr19470209-01.1.3	haifa	6	haifa		
+1947-02-24	ahr	ahr19470224-01.1.4	haifa	4	haifa	rothschild	
+1947-02-24	hzh	hzh19470224-01.1.4	other	7	gaza,jaffa,telaviv	hadassah	
+1947-02-25	haretz	haretz19470225-01.1.4	untowned	2			
+1947-03-10	dav	dav19470310-01.1.1	other	4	jaffa,telaviv	hadassah	
+1947-03-23	haretz	haretz19470323-01.1.1	mixed	4	haifa,jaffa	rothschild	
+1947-04-18	hegeh	hegeh19470418-01.1.2	other	3	jaffa,jerusalem,safed		
+1947-04-25	hbkr	hbkr19470425-01.1.1	untowned	3			
+1947-05-23	haretz	haretz19470523-01.1.8	other	4	jerusalem,telaviv	hadassah	
+1947-05-26	hzh	hzh19470526-01.1.4	mixed	6	haifa,jaffa,jerusalem	hadassah,rothschild	
+1947-06-20	haretz	haretz19470620-01.1.4	other	3	jerusalem		
+1947-06-30	haretz	haretz19470630-01.1.1	mixed	9	haifa,telaviv	rothschild	
+1947-07-08	dav	dav19470708-01.1.3	other	4	telaviv	rothschild	
+1947-07-09	hbkr	hbkr19470709-01.1.3	haifa	2	haifa	hadassah	
+1947-07-18	haretz	haretz19470718-01.1.4	other	10	jaffa,telaviv		
+1947-08-04	hmf	hmf19470804-01.1.4	mixed	7	haifa,jaffa,jerusalem	hadassah	
+1947-08-04	hzh	hzh19470804-01.1.3	untowned	1		hadassah	
+1947-08-15	ahr	ahr19470815-01.1.5	other	6	jaffa,telaviv	rothschild	
+1947-08-24	hmf	hmf19470824-01.1.1	untowned	1		hadassah	
+1947-10-10	hmf	hmf19471010-01.1.2	untowned	3			
+1947-11-07	hzh	hzh19471107-01.1.8	mixed	6	haifa,jaffa,jerusalem	rothschild	
+1947-11-16	ahr	ahr19471116-01.1.3	untowned	2			
+1947-12-05	itonamami	itonamami19471205-01.1.2	mixed	9	haifa,jaffa,telaviv	hadassah,rothschild	
+1947-12-09	hmf	hmf19471209-01.1.4	mixed	7	gaza,haifa,jerusalem,nazareth	rothschild	
+1947-12-19	hmf	hmf19471219-01.1.7	untowned	2		hadassah	
+1947-12-28	hmf	hmf19471228-01.1.4	mixed	14	haifa,jaffa,jerusalem,telaviv	hadassah,rothschild	
+1948-01-23	haretz	haretz19480123-01.1.7	mixed	8	haifa,jerusalem	hadassah	
+1948-01-23	hmf	hmf19480123-01.1.1	other	2	telaviv	hadassah	
+1948-01-25	hzh	hzh19480125-01.1.1	mixed	5	haifa,jaffa,nazareth		
+1948-02-15	hmf	hmf19480215-01.1.3	other	6	jerusalem		
+1948-02-19	hbkr	hbkr19480219-01.1.1	other	3	jaffa,jerusalem		
+1948-02-25	hmf	hmf19480225-01.1.4	mixed	9	haifa,jaffa,jerusalem	hadassah,rothschild	
+1948-03-04	dav	dav19480304-01.1.4	other	5	jaffa,nablus,telaviv		
+1948-03-09	mar	mar19480309-01.1.8	other	1	jaffa,telaviv	english	
+1948-03-12	dav	dav19480312-01.1.8	other	2	telaviv		
+1948-03-14	hmf	hmf19480314-01.1.1	no_hospital_term	0			
+1948-03-16	hayomjlm	hayomjlm19480316-01.1.4	other	3	gaza,jaffa	hadassah	
+1948-04-14	haretz	haretz19480414-01.1.1	other	6	jerusalem	hadassah	
+1948-04-16	hmf	hmf19480416-01.1.5	untowned	1			
+1948-05-05	haretz	haretz19480505-01.1.2	other	3	telaviv		
+1948-05-24	dav	dav19480524-01.1.3	mixed	4	haifa,jaffa,jerusalem,ramleh	hadassah	
+1948-06-07	mar	mar19480607-01.1.3	untowned	2			
+1948-08-15	haretz	haretz19480815-01.1.2	no_hospital_term	0			
+1948-08-29	ahr	ahr19480829-01.1.3	mixed	4	haifa,jaffa	rothschild	
+1948-09-03	hmf	hmf19480903-01.1.6	other	5	ramleh	hadassah	
+1948-09-08	hbkr	hbkr19480908-01.1.4	untowned	1			
+1948-09-09	khm	khm19480909-01.1.2	haifa	2	haifa		
+1948-09-19	ahr	ahr19480919-01.1.1	mixed	8	haifa,jaffa,jerusalem	hadassah	
+1948-10-26	dav	dav19481026-01.1.3	other	8	jerusalem,telaviv	hadassah	
+1948-11-02	hzh	hzh19481102-01.1.3	untowned	3			
+1948-11-11	hmf	hmf19481111-01.1.2	other	6	jaffa,jerusalem,telaviv	hadassah	
+1948-11-21	dav	dav19481121-01.1.2	other	2	jaffa		
