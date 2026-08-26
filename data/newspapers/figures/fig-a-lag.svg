@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 564" width="840" height="564" class="fig" role="img" aria-labelledby="t d">
+<title id="t">How late the press was</title><desc id="d">Dot plot, one dot per Haifa press report-day, x is days between the register's surge onset and the report, faceted by disease.</desc>
+<style>
+  .fig { font-family: 'Iowan Old Style', Palatino, Georgia, serif; }
+  .surface { fill: #fcfcfb; }
+  .ink     { fill: #0b0b0b; }
+  .ink-2   { fill: #52514e; }
+  .ink-3   { fill: #898781; }
+  .rule    { stroke: #d9d8d2; stroke-width: 1; fill: none; }
+  .rule-0  { stroke: #898781; stroke-width: 1; fill: none; }
+  .reg     { fill: #2a78d6; }
+  .reg-s   { stroke: #2a78d6; fill: none; }
+  .press   { fill: #eb6834; }
+  .absent  { fill: #dcdbd5; }
+  .ring    { stroke: #fcfcfb; stroke-width: 1.5; }
+  .on-reg  { fill: #ffffff; }
+  .press-s { stroke: #eb6834; stroke-width: 2.5; }
+</style>
+<rect width="840" height="564" class="surface"/>
+<text x="38.0" y="32.0" class="ink" font-size="15" text-anchor="start" font-weight="600">Figure A · How late the press was</text>
+<text x="38.0" y="52.0" class="ink-2" font-size="11.5" text-anchor="start">One dot per Haifa press report-day, positioned against the day the register’s own surge began.</text>
+<text x="38.0" y="68.0" class="ink-3" font-size="10.5" text-anchor="start">Strict set only: Haifa established by the item’s own dateline or inside the window, no ambiguous term, register open.</text>
+<line x1="141.0" y1="98" x2="141.0" y2="480" class="rule"/>
+<text x="141.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">-120</text>
+<line x1="219.0" y1="98" x2="219.0" y2="480" class="rule"/>
+<text x="219.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">-90</text>
+<line x1="297.0" y1="98" x2="297.0" y2="480" class="rule"/>
+<text x="297.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">-60</text>
+<line x1="375.0" y1="98" x2="375.0" y2="480" class="rule"/>
+<text x="375.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">-30</text>
+<line x1="453.0" y1="98" x2="453.0" y2="480" class="rule-0"/>
+<text x="453.0" y="92.0" class="ink-2" font-size="10.5" text-anchor="middle">0</text>
+<line x1="531.0" y1="98" x2="531.0" y2="480" class="rule"/>
+<text x="531.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">+30</text>
+<line x1="609.0" y1="98" x2="609.0" y2="480" class="rule"/>
+<text x="609.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">+60</text>
+<line x1="687.0" y1="98" x2="687.0" y2="480" class="rule"/>
+<text x="687.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">+90</text>
+<line x1="765.0" y1="98" x2="765.0" y2="480" class="rule"/>
+<text x="765.0" y="92.0" class="ink-3" font-size="10.5" text-anchor="middle">+120</text>
+<text x="453.0" y="500.0" class="ink-2" font-size="10.5" text-anchor="middle">the surge begins</text>
+<text x="291.8" y="520.0" class="ink-3" font-size="10.5" text-anchor="middle">◀  press ahead of the register</text>
+<text x="624.6" y="520.0" class="ink-3" font-size="10.5" text-anchor="middle">press behind the register  ▶</text>
+<text x="114.0" y="120.0" class="ink" font-size="12.5" text-anchor="end">plague</text>
+<text x="114.0" y="135.0" class="ink-3" font-size="10" text-anchor="end">n=31 · median +35d</text>
+<circle cx="164.4" cy="118.0" r="4" class="reg ring"/>
+<circle cx="362.0" cy="118.0" r="4" class="reg ring"/>
+<circle cx="377.6" cy="118.0" r="4" class="reg ring"/>
+<circle cx="395.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="403.6" cy="108.0" r="4" class="reg ring"/>
+<circle cx="468.6" cy="118.0" r="4" class="reg ring"/>
+<circle cx="476.4" cy="108.0" r="4" class="reg ring"/>
+<circle cx="492.0" cy="118.0" r="4" class="reg ring"/>
+<circle cx="494.6" cy="108.0" r="4" class="reg ring"/>
+<circle cx="497.2" cy="128.0" r="4" class="reg ring"/>
+<circle cx="518.0" cy="118.0" r="4" class="reg ring"/>
+<circle cx="523.2" cy="108.0" r="4" class="reg ring"/>
+<circle cx="528.4" cy="118.0" r="4" class="reg ring"/>
+<circle cx="531.0" cy="128.0" r="4" class="reg ring"/>
+<circle cx="538.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="544.0" cy="108.0" r="4" class="reg ring"/>
+<circle cx="567.4" cy="118.0" r="4" class="reg ring"/>
+<circle cx="572.6" cy="108.0" r="4" class="reg ring"/>
+<circle cx="575.2" cy="128.0" r="4" class="reg ring"/>
+<circle cx="577.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="619.4" cy="118.0" r="4" class="reg ring"/>
+<circle cx="642.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="645.4" cy="108.0" r="4" class="reg ring"/>
+<circle cx="650.6" cy="128.0" r="4" class="reg ring"/>
+<circle cx="655.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="668.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="674.0" cy="108.0" r="4" class="reg ring"/>
+<circle cx="681.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="694.8" cy="118.0" r="4" class="reg ring"/>
+<circle cx="700.0" cy="108.0" r="4" class="reg ring"/>
+<circle cx="715.6" cy="118.0" r="4" class="reg ring"/>
+<text x="166.4" y="152.0" class="ink-2" font-size="10.5" text-anchor="start">the 1944 plague scare — the one time the press was first</text>
+<text x="114.0" y="186.0" class="ink" font-size="12.5" text-anchor="end">typhus</text>
+<text x="114.0" y="201.0" class="ink-3" font-size="10" text-anchor="end">n=7 · median +5d</text>
+<circle cx="164.4" cy="184.0" r="4" class="reg ring"/>
+<circle cx="260.6" cy="184.0" r="4" class="reg ring"/>
+<circle cx="406.2" cy="184.0" r="4" class="reg ring"/>
+<circle cx="466.0" cy="184.0" r="4" class="reg ring"/>
+<circle cx="622.0" cy="184.0" r="4" class="reg ring"/>
+<circle cx="720.8" cy="184.0" r="4" class="reg ring"/>
+<circle cx="720.8" cy="174.0" r="4" class="reg ring"/>
+<text x="114.0" y="252.0" class="ink" font-size="12.5" text-anchor="end">diphtheria</text>
+<text x="114.0" y="267.0" class="ink-3" font-size="10" text-anchor="end">n=4 · median +38d</text>
+<circle cx="546.6" cy="250.0" r="4" class="reg ring"/>
+<circle cx="549.2" cy="240.0" r="4" class="reg ring"/>
+<circle cx="551.8" cy="260.0" r="4" class="reg ring"/>
+<circle cx="567.4" cy="250.0" r="4" class="reg ring"/>
+<circle cx="546.6" cy="250.0" r="8.5" class="reg-s" stroke-width="1.5"/>
+<text x="524.6" y="253.0" class="ink-2" font-size="10.5" text-anchor="end">al-Difa’, 21 Oct 1947 — the report this began from</text>
+<text x="114.0" y="318.0" class="ink" font-size="12.5" text-anchor="end">typhoid</text>
+<text x="114.0" y="333.0" class="ink-3" font-size="10" text-anchor="end">n=3 · median -22d</text>
+<circle cx="336.0" cy="316.0" r="4" class="reg ring"/>
+<circle cx="395.8" cy="316.0" r="4" class="reg ring"/>
+<circle cx="453.0" cy="316.0" r="4" class="reg ring"/>
+<text x="114.0" y="384.0" class="ink" font-size="12.5" text-anchor="end">influenza</text>
+<text x="114.0" y="399.0" class="ink-3" font-size="10" text-anchor="end">n=1 · median +115d</text>
+<circle cx="752.0" cy="382.0" r="4" class="reg ring"/>
+<text x="114.0" y="450.0" class="ink" font-size="12.5" text-anchor="end">malaria</text>
+<text x="114.0" y="465.0" class="ink-3" font-size="10" text-anchor="end">n=1 · median +34d</text>
+<circle cx="541.4" cy="448.0" r="4" class="reg ring"/>
+</svg>

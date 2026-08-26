@@ -1,0 +1,61 @@
+disease	surge_onset	press
+typhoid	1930-07-22	not reported
+typhoid	1934-06-12	not reported
+typhoid	1934-10-11	not reported
+typhoid	1935-06-11	reported
+typhoid	1935-10-11	not reported
+typhoid	1936-09-22	not reported
+typhoid	1937-08-04	not reported
+typhoid	1938-07-02	not reported
+typhus	1935-10-11	not reported
+typhus	1936-05-30	not reported
+typhus	1936-09-28	not reported
+typhus	1937-08-21	not reported
+typhus	1938-06-08	reported
+typhus	1939-09-26	not reported
+typhus	1944-03-26	reported
+malaria	1934-07-26	not reported
+malaria	1935-10-03	not reported
+malaria	1937-07-24	not reported
+malaria	1937-11-22	not reported
+malaria	1938-08-13	reported
+malaria	1939-10-04	not reported
+malaria	1944-08-26	not reported
+diphtheria	1931-09-05	not reported
+diphtheria	1932-12-15	not reported
+diphtheria	1934-10-13	not reported
+diphtheria	1935-09-18	not reported
+diphtheria	1936-11-30	not reported
+diphtheria	1937-12-28	not reported
+diphtheria	1938-10-30	not reported
+diphtheria	1939-09-28	not reported
+diphtheria	1940-01-27	not reported
+diphtheria	1944-10-06	not reported
+diphtheria	1947-09-15	reported
+measles	1933-09-26	not reported
+measles	1934-02-13	not reported
+measles	1937-03-21	not reported
+measles	1938-01-27	not reported
+measles	1944-04-25	not reported
+measles	1946-03-19	not reported
+dysentery	1933-09-11	not reported
+dysentery	1934-10-21	not reported
+dysentery	1935-09-12	not reported
+dysentery	1936-09-08	not reported
+dysentery	1937-10-05	not reported
+dysentery	1938-11-07	not reported
+dysentery	1939-10-12	not reported
+dysentery	1944-04-03	not reported
+dysentery	1944-08-02	not reported
+dysentery	1946-03-28	not reported
+dysentery	1947-05-12	not reported
+dysentery	1947-10-01	not reported
+plague	1944-08-09	reported
+influenza	1932-11-11	not reported
+influenza	1933-12-20	not reported
+influenza	1935-02-02	not reported
+influenza	1936-04-04	not reported
+influenza	1936-11-14	not reported
+influenza	1938-04-04	not reported
+influenza	1939-01-28	not reported
+influenza	1946-04-28	not reported
