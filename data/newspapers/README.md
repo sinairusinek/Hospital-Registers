@@ -412,6 +412,14 @@ arrangement may have changed, or "in the Government Hospital" may be loose
 usage, or the Bat Galim building may have absorbed a function that stood apart
 on Mountain Street. **This is what the archival document is for.**
 
+The working hypothesis, held by the project and not by this file, is that the
+**lazaret was a separate institution**, and that the 1946 phrasing is someone
+calling the Government Hospital's own Isolation department "the quarantine".
+That reading does not negate a separate lazaret — the two coexist, and the
+register's own Isolation ward (below) is exactly what would make the loose usage
+natural. It is a hypothesis to be tested against the Israel State Archives
+material, not a conclusion drawn here, and the question stays open until then.
+
 Two observations for whoever reads that document, kept as leads:
 
 1. **The register has an Isolation ward of its own.** 2,788 admissions are
