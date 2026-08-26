@@ -81,9 +81,21 @@ plan's structural premise holds and enumeration is still required:
 | `בחיפה` / `חיפה` | 74,727 / 118,173 |
 | `בית־החולים` (maqaf) / `"בית החולים"` (spaced) | 2,731 / 9,956 |
 
-The maqaf line matters most: `בית־החולים` is a distinct population, **not**
-reachable from the spaced phrase, so the maqaf harvest is required rather than
-optional.
+The maqaf line matters most, and it works by the same mechanism as finding 2:
+**the maqaf is stripped too.** `ביתהחולים`, written with no separator at all,
+returns 2,731 — identical to `בית־החולים`, facets included. So the maqaf form
+is a *single index token*, genuinely disjoint from the two-token sequence
+`בית החולים`, and the spaced phrase cannot reach it. The maqaf harvest is
+required rather than optional.
+
+**6. The plan only sees the hospital when it is called governmental.** The
+spaced phrase with the town but *without* the adjective —
+`'"בית החולים" בחיפה'` — returns **5,796** pages, against 694 that also carry
+`הממשלתי`. Most of that gap is Hadassah, Rothschild and Elisha. But some of it
+is our hospital, named in passing as simply "the hospital in Haifa," and no
+query in stage H can see those. See H9 and the note attached to it: this is a
+deliberate boundary, not an oversight, and it is where the next increment of
+recall lives.
 
 ## Method inherited from the Arabic side
 
@@ -177,11 +189,17 @@ is not.
 ### H5 — the maqaf form *(required, per finding 5)*
 
 ```sh
-$J 'בית־החולים הממשלתי'       $Y --out $D/heb_maqaf.tsv
-$J 'בית־החולים הממשלתי חיפה'  $Y --out $D/heb_maqaf_haifa.tsv
+$J '"בית־החולים הממשלתי"'       $Y --out $D/heb_maqaf.tsv
+$J '"בית־החולים הממשלתי" בחיפה' $Y --out $D/heb_maqaf_haifa.tsv
 ```
 
-2,731 pages carry `בית־החולים` and the spaced phrase does not reach them.
+2,731 pages carry the single token `ביתהחולים`, and the spaced phrase does not
+reach any of them.
+
+**Quote these.** An earlier draft left H5 unquoted, which would have made it an
+AND of `ביתהחולים` with `הממשלתי` while H1 was a phrase — inflating the maqaf
+count against the spaced one for reasons having nothing to do with the press.
+The two harvests must be the same shape of query to be compared.
 
 ### H6 — indefinite construction
 
@@ -203,6 +221,39 @@ results of — it measures the room above 694 and yields the complete title list
 
 **Trap:** if stderr shows `5000/<larger>`, the ceiling was not reached; report
 it as a lower bound and say so.
+
+### H9 — the unqualified hospital *(the boundary of this plan)*
+
+```sh
+$J '"בית החולים" בחיפה'   $Y --out $D/heb_unqualified.tsv        # 5,796
+$J 'ביתהחולים בחיפה'      $Y --out $D/heb_unqualified_maqaf.tsv
+$J 'ביהח בחיפה'           $Y --out $D/heb_unqualified_abbrev.tsv
+```
+
+Everything above requires the word *governmental*. These three do not — they
+ask only for a hospital and the town. The first alone is 5,796 pages against
+the 694 baseline.
+
+**This is the plan's real recall boundary, and it is a deliberate one.** Most
+of those 5,796 are Haifa's other hospitals, and no query can tell them apart —
+only stage 2 can. Two ways to treat it, and the choice is the historian's, not
+the engine's:
+
+- **Leave it out.** Report 694 + 224 + the maqaf increment as the count of
+  press references to the *Government* Hospital, and say plainly that reports
+  naming it without the adjective are excluded. Defensible, and comparable to
+  the Arabic side, which was also built on a qualified phrase.
+- **Harvest it and filter locally.** Run these three, take the full text, and
+  have stage 2 keep only what a Government Hospital reading survives — a
+  dateline, a named ward, a case that matches the register. Far more work, and
+  the only route to the reports that call it simply "the hospital."
+
+Do not report a number from H9 without saying which of the two was done.
+
+**The mirror-image caution to the Arabic README's.** There, unqualified
+*the Government Hospital* risked belonging to another town. Here, unqualified
+*the hospital in Haifa* risks belonging to another hospital. Same failure,
+opposite axis.
 
 ### H8 — premises follow-up *(optional, mirrors session C)*
 
@@ -244,7 +295,9 @@ separate:
 | — | 5-token phrase | 2 | holds |
 | — | 8-token impossible phrase | **0** | holds — no degradation at any length tested |
 | D5 | `בית־החולים` | 2,731 | distinct from the spaced form |
+| — | `ביתהחולים` | 2,731 | identical to D5: the maqaf **is stripped**, one token |
 | D6 | `"בית החולים"` | 9,956 | denominator |
+| — | `"בית החולים" בחיפה` | **5,796** | the unqualified population H1–H6 cannot see (H9) |
 | D7 | `ביה״ח` | 3,580 | |
 | D8 | `ביה"ח` | 3,580 | identical to D7, facets included |
 | D9 | `ביה` | 33,170 | a common token, not a route to the abbreviation |
