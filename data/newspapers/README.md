@@ -253,10 +253,10 @@ series produces surges at all, **60 register surges, 6 of them reported** in the
 Haifa press within 60 days either way — typhoid 1/8, typhus 2/7, malaria 1/7,
 diphtheria 1/11, measles 0/6, dysentery 0/12, influenza 0/8, plague 1/1.
 
-The 29 strict reports printed when the register held no cases at all are not
-counter-examples: 19 are cholera, 5 plague, 5 smallpox, and only 4 were followed
-by any admission within 60 days. They are quarantine and vaccination stories,
-not case reports.
+29 strict reports were printed when the register held no cases at all — 19
+cholera, 5 plague, 5 smallpox, and only 4 followed by any admission within 60
+days. **These are not yet interpretable**, and the open question below says why:
+the quarantinable diseases had somewhere else to go.
 
 ### Per disease
 
@@ -270,8 +270,8 @@ not case reports.
 | diphtheria | 374 (43) | 4 | 1/11 | lags 36–44 days |
 | measles | 72 (3) | 0 | 0/6 | **silent** |
 | plague | 34 (7) | 33 | 1/1 | **leads** |
-| smallpox | 8 (3) | 10 | — | reports precautions, not cases |
-| cholera | 2 (0) | 15 | — | reports a fear that never arrived |
+| smallpox | 8 (3) | 10 | — | **open** — see the referral question |
+| cholera | 2 (0) | 15 | — | **open** — see the referral question |
 | trachoma | 6 (0) | 0 | — | both sources silent |
 
 **Plague is the exception that shows the rule.** It is the one disease the press
@@ -283,14 +283,24 @@ its surge dates to 9 August. Plague was notifiable, quarantinable and
 newsworthy — the High Commissioner proclaimed Haifa port at risk under the
 Public Health Ordinance — so the reporting ran ahead of the ward.
 
-**Cholera is the mirror image.** It is the most-reported disease in the strict
-Haifa set for 1947 (72 Haifa-attributed windows that year), and the register
-holds two cholera admissions in nineteen years. The press was reporting the
-Egyptian epidemic and the vaccination certificates demanded of travellers. Press
-volume measures alarm; the register measures cases; for cholera the two have
-almost no relation.
+The eleven-day lead is itself subject to the referral question: the 11 July
+report names the infectious diseases hospital, not the Government Hospital, as
+where the second case was taken. The press may be ahead of the register because
+it noticed sooner, or because the first cases were never in this register to be
+noticed. The lead is real; its cause is not established.
 
-**The silences are the result, not a gap in the method.** Dysentery: 629
+**Cholera is the disease this method cannot yet read.** It is the most-reported
+in the strict Haifa set for 1947 (72 Haifa-attributed windows that year), and
+the register holds two cholera admissions in nineteen years. That gap has at
+least two candidate readings and the corpus does not choose between them: that
+the papers were reporting an Egyptian epidemic which never arrived, or that the
+cases that did arrive were referred somewhere the notebooks do not cover. Until
+the referral question below is settled, no cholera claim should be made in
+either direction.
+
+**The silences are a result, and they are the ones the referral question does
+not touch** — dysentery, influenza and measles were ordinary ward business, not
+quarantine business, so their register series is the whole series. Dysentery: 629
 admissions, 12 register surges, one strict Haifa mention in nineteen years.
 Influenza: 369 admissions, 8 surges, one mention — and that a complaint about
 bedding in a camp. Measles: 72 admissions, 6 surges, none. These were the
@@ -298,8 +308,53 @@ diseases the hospital dealt with continuously and the papers never treated as
 news. What made a disease printable was not how many it killed but whether it
 carried a quarantine.
 
+### Open question: where did the quarantinable cases go?
+
+**Nothing in this section about cholera, plague or smallpox should be read as a
+statement about how much disease there was in Haifa.** For the quarantinable
+diseases the Government Hospital's admission register is very likely not the
+denominator, because Haifa had a lazaret and suspected cases were sent to it.
+
+What the corpus itself says, before any archival document:
+
+- *al-Difa'*, 22 August 1946 — detained immigrants found to be ill were moved
+  `الى الكرنتينا في مستشفى الحكومة بحيفا`, "to the Kerentina in the Government
+  Hospital at Haifa". The lazaret is named as a unit **of** the hospital.
+- *al-Difa'*, 11 July 1944 — a second suspected plague case was moved
+  `الى مستشفى الحكومة للأمراض المعدية في حيفا`, the government infectious
+  diseases hospital.
+- *Filastin*, 4 February 1943 — a suspected case `ينقل حالاً إلى الكرنتينا`,
+  "is transferred at once to the Kerentina, which was opened here specially to
+  treat those infected with this disease".
+- *al-Difa'*, 27 November 1947 — a plague case in Haifa taken
+  `إلى المحجر الصحي`, the quarantine station.
+- *Filastin*, 11 September 1941 — the assistant chief medical officer for the
+  Haifa and Galilee district supervises `مستشفى الحكومة ودوائر الصحة والكرنتينا`
+  as three distinct things.
+- Session C's premises work (above) independently places a **Government
+  Isolation Hospital on Mountain Street**, between Khury and Catoni Streets.
+
+Across the whole corpus the lazaret vocabulary — الكرنتينا, المحجر الصحي,
+مستشفى الأمراض السارية / المعدية — occurs on 218 pages, 21 of them with حيفا in
+the same window.
+
+So the three candidate readings of a press report with no matching admission
+are: the case was admitted elsewhere and never entered these notebooks; the
+case entered them under a ward or diagnosis the ICD-9 match does not reach; or
+there was no case. **The corpus cannot separate these.** A document from the
+Israel State Archives is expected to settle the referral arrangement; until it
+does, the cholera, plague and smallpox rows are evidence of a referral pathway
+we have not yet mapped, and the register's silence on them is uninterpreted.
+
+This does not touch the main finding. Typhoid, typhus, malaria, dysentery,
+diphtheria, measles and influenza were ordinary ward business and are in the
+register in their thousands, so for those the lag measurement stands on a
+series that is genuinely the hospital's own.
+
 ### Reading the file
 
+- Read the open referral question above before quoting any cholera, plague or
+  smallpox figure from this file.
 - Rows are **leads, not identifications**. A `lags 36d` is a statement about two
   series, not a claim that the paper is describing the admissions in the row.
   Nothing here links a named person to a record; the `press_register_candidates`
