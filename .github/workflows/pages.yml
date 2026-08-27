@@ -43,11 +43,17 @@ jobs:
       # without a manual rebuild; timeline_data.py refuses to publish a
       # sourceless payload over a sourced one.
       - run: python3 pipeline/timeline_data.py
-      # The registry and timeline are committed artifacts. If a CI rebuild
-      # disagrees with what was committed, the two have drifted and the site
-      # would ship something the repo does not record — fail instead.
-      - name: Verify the committed artifacts match a clean rebuild
-        run: git diff --exit-code -- data/public/sources-registry.json data/public/timeline.json
+      # The registry is a committed artifact built from two public inputs, so
+      # a clean rebuild must reproduce it byte for byte. If it does not, the
+      # committed file was written from something not in the repo — the state
+      # this whole change exists to prevent — so fail rather than publish it.
+      #
+      # timeline.json is deliberately NOT checked this way. It also depends on
+      # the register itself, which pipeline/build.py regenerates, so its counts
+      # move whenever that changes; pinning it here would turn an unrelated
+      # data fix into a red build. The rebuild above is what ships.
+      - name: Verify the committed source registry matches a clean rebuild
+        run: git diff --exit-code -- data/public/sources-registry.json
       - uses: actions/setup-node@v4
         with:
           node-version: 20
