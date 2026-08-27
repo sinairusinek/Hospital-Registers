@@ -21,26 +21,24 @@ Four layers on one axis, plus the sources that make them clickable:
                    emptied in 1941, which is false.
 
   sources        — the drawer payload: masthead, date, place, language, the
-                   passage and its translation. Lifted from the built payload
-                   inside paper/hospital-history.html, which is the complete
-                   278-entry set (the on-disk sources-registry.json holds only
-                   the 243 Hebrew rows; the Arabic, German and English entries
-                   are added by source_registry.py's build step).
+                   passage and its translation. Read from the public
+                   data/public/sources-registry.json, which source_registry.py
+                   builds complete at 278 entries: 243 generated from the
+                   Hebrew readings plus 35 hand-authored Arabic, German and
+                   English rows kept in sources/press/.
 
 Output: data/public/timeline.json, staged into the app by scripts/copy-data.mjs.
 """
 import csv
 import json
 import pathlib
-import re
 import sys
 from collections import Counter, defaultdict
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REGISTER = ROOT / "data" / "public" / "hospital-registers-normalized.tsv"
 EXTERNAL = ROOT / "data" / "public" / "external-events.tsv"
-HISTORY = ROOT / "paper" / "hospital-history.html"
-REGISTRY = ROOT / "paper" / "sources-registry.json"
+REGISTRY = ROOT / "data" / "public" / "sources-registry.json"
 OUT = ROOT / "data" / "public" / "timeline.json"
 
 # The Atlit camp register. 965 admissions in 1940, 962 of them Jewish, every
@@ -146,15 +144,19 @@ def read_register():
 # ---------------------------------------------------------------- sources
 
 def read_sources():
-    """The drawer payload, preferring the complete set built into the HTML."""
-    if HISTORY.exists():
-        text = HISTORY.read_text(encoding="utf-8")
-        m = re.search(r'<script id="src-data"[^>]*>(.*?)</script>', text, re.S)
-        if m:
-            return json.loads(m.group(1)), "hospital-history.html"
+    """The drawer payload: the public registry, complete at 278 entries.
 
-    # paper/ is gitignored, so a CI build has neither file. The view degrades
-    # to events without passages rather than failing.
+    source_registry.py merges the 243 generated Hebrew entries with the 35
+    hand-authored Arabic, German and English ones, so the full set no longer
+    depends on the private paper/ folder — CI and a fresh clone build the
+    same payload this does.
+
+    The registry is preferred over paper/hospital-history.html even when
+    that file is present. Both carry the same passages, but the registry is
+    generated: it escapes its own markup and resolves the [[memory]]
+    cross-references that the history document leaves raw. Reading the HTML
+    instead would republish those artefacts to the site.
+    """
     if REGISTRY.exists():
         raw = json.loads(REGISTRY.read_text(encoding="utf-8"))
         return (
@@ -336,18 +338,18 @@ def build():
 if __name__ == "__main__":
     data = build()
 
-    # paper/ is gitignored, so a checkout without it — CI, or a fresh clone —
-    # builds every layer except the sources and would quietly republish the
-    # timeline with all its passages stripped. The committed timeline.json is
-    # the artifact; refuse to overwrite a sourced one with a sourceless one.
+    # The registry is public now, so CI finds its sources. This guard stays as
+    # a backstop: if the registry is ever missing or empty, refuse to
+    # republish the timeline with all its passages silently stripped.
     if not data["sources"] and OUT.exists():
         existing = json.loads(OUT.read_text(encoding="utf-8"))
         if existing.get("sources"):
             sys.exit(
                 f"Refusing to overwrite {OUT.relative_to(ROOT)}: it carries "
                 f"{len(existing['sources'])} sources and this run found none "
-                "(paper/hospital-history.html is missing). Run this where "
-                "paper/ exists, or delete the file first if that is intended."
+                "(data/public/sources-registry.json is missing or empty). "
+                "Run python3 pipeline/source_registry.py first, or delete "
+                "the file if a sourceless rebuild is really intended."
             )
 
     OUT.write_text(

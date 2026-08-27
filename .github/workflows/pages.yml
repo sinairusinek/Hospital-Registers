@@ -6,7 +6,11 @@ on:
     paths:
       - 'app/**'
       - 'data/public/**'
+      - 'sources/**'
+      - 'data/newspapers/heb_article_readings.md'
       - 'pipeline/build.py'
+      - 'pipeline/source_registry.py'
+      - 'pipeline/timeline_data.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -30,6 +34,20 @@ jobs:
       # Builds data/public/hospital-registers-normalized.tsv, which is not
       # committed: it is 15 MB and fully derived from the consolidated TSV.
       - run: python3 pipeline/build.py
+      # The clickable-source registry: 243 entries generated from the Hebrew
+      # readings plus the 35 hand-authored rows in sources/press/. Both inputs
+      # are public, so this reproduces the committed registry exactly.
+      - run: python3 pipeline/source_registry.py
+      # The Timeline view's four layers. Regenerated rather than taken from the
+      # commit so a change to the readings or the events file reaches the site
+      # without a manual rebuild; timeline_data.py refuses to publish a
+      # sourceless payload over a sourced one.
+      - run: python3 pipeline/timeline_data.py
+      # The registry and timeline are committed artifacts. If a CI rebuild
+      # disagrees with what was committed, the two have drifted and the site
+      # would ship something the repo does not record — fail instead.
+      - name: Verify the committed artifacts match a clean rebuild
+        run: git diff --exit-code -- data/public/sources-registry.json data/public/timeline.json
       - uses: actions/setup-node@v4
         with:
           node-version: 20
