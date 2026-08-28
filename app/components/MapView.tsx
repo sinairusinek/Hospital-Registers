@@ -360,7 +360,14 @@ const MapView: React.FC<Props> = ({ data }) => {
     <div className="flex w-full h-full overflow-hidden bg-slate-50">
       {/* The map itself */}
       <div className="flex-1 min-w-0 relative">
-        <div ref={attachMap} className="absolute inset-0 z-0" />
+        {/* An inline height, not a utility class. Leaflet ships its own rule
+            for .leaflet-container, and once it attaches, that class can win
+            the cascade over Tailwind's `absolute` — leaving `inset-0` with
+            nothing to resolve against and the map zero pixels tall. Bundlers
+            order the two stylesheets differently in dev and in the built site,
+            so this is a bug that only appears once deployed. An inline style
+            does not participate in that race. */}
+        <div ref={attachMap} style={{ position: 'absolute', inset: 0, height: '100%', width: '100%' }} />
 
         {/* Basemap toggle */}
         <div className="absolute top-4 right-4 z-[500] bg-white/95 backdrop-blur rounded-2xl border border-slate-200 shadow-lg p-2">
