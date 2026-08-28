@@ -74,6 +74,10 @@ const FIELDS = ['Admission Date', 'Age', 'Sex', 'Religion', 'Nationality',
 
 const PAGE_SIZE = 25;
 
+// The exact size of the survey's "nothing here" tile. Anything at or under it
+// carries no map; the smallest real tile measured is six times larger.
+const BLANK_TILE_BYTES = 700;
+
 // Mandate-era sheet first: this is a historical map, and the modern basemap is
 // the aid to orientation rather than the subject.
 const BASEMAPS = [
@@ -238,32 +242,26 @@ const MapView: React.FC<Props> = ({ data }) => {
     const spec = BASEMAPS.find(b => b.key === basemap)!;
     const layer = L.tileLayer(spec.url, spec.options as L.TileLayerOptions);
 
-    // Outside the surveyed area, Palestine Open Maps answers with a solid
-    // black 256px JPEG rather than a 404, so Leaflet has no way to know the
-    // tile is empty and the map ends in a black field. Nothing in CSS can
-    // reach that — the black is the image. Each tile is therefore sampled
-    // once it decodes, and the blank ones are hidden so the container's own
-    // paper colour shows through and the sheet simply ends.
+    // Outside the surveyed area Palestine Open Maps answers with a solid black
+    // 256px JPEG rather than a 404, so Leaflet lays it down like any other tile
+    // and the map ends in a black field. The black is the image, so no CSS rule
+    // reaches it.
+    //
+    // Those blanks are byte-identical and tiny — 668 bytes, against 4KB-76KB for
+    // a tile with any survey on it — so the tile is fetched once and hidden on
+    // size alone. Reading the pixels instead would mean a canvas, which taints
+    // on any image already cached without CORS and then silently gives up; this
+    // check has no such failure mode. The fetch is served from the browser cache
+    // the tile itself populated.
     if (spec.key === 'historic') {
       layer.on('tileload', (e: L.TileEvent) => {
         const img = e.tile as HTMLImageElement;
-        try {
-          const probe = document.createElement('canvas');
-          probe.width = probe.height = 8;
-          const ctx = probe.getContext('2d', { willReadFrequently: true });
-          if (!ctx) return;
-          ctx.drawImage(img, 0, 0, 8, 8);
-          const { data: px } = ctx.getImageData(0, 0, 8, 8);
-          let lightest = 0;
-          for (let i = 0; i < px.length; i += 4) {
-            lightest = Math.max(lightest, px[i], px[i + 1], px[i + 2]);
-          }
-          // The survey's darkest real ink still sits well above this; only a
-          // tile that is black edge to edge fails it.
-          if (lightest < 12) img.style.visibility = 'hidden';
-        } catch {
-          // A tainted canvas means no reading is possible; leave the tile be.
-        }
+        fetch(img.src)
+          .then(r => (r.ok ? r.blob() : null))
+          .then(blob => {
+            if (blob && blob.size <= BLANK_TILE_BYTES) img.style.visibility = 'hidden';
+          })
+          .catch(() => { /* offline or blocked: leave the tile alone */ });
       });
     }
 
