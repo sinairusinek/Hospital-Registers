@@ -125,6 +125,14 @@ const MapView: React.FC<Props> = ({ data }) => {
   const mapRef = useRef<L.Map | null>(null);
   const tileRef = useRef<L.TileLayer | null>(null);
   const markersRef = useRef<Map<string, L.CircleMarker>>(new Map());
+  // The opening view is fitted to the dots, once. After that the view is the
+  // reader's to keep — a filter change should not yank the map out from under
+  // a pan they made on purpose; the ⊹ button is there for when they want it.
+  const fittedRef = useRef(false);
+  const resizeRef = useRef<ResizeObserver | null>(null);
+  // attachMap is created once and must not close over the render's data, so
+  // what it needs to know about the points is read through refs.
+  const hasPointsRef = useRef(false);
 
   // ------------------------------------------------------------ the data
 
@@ -226,8 +234,11 @@ const MapView: React.FC<Props> = ({ data }) => {
   // which is also what makes it correct under StrictMode's double mount.
   const attachMap = useCallback((node: HTMLDivElement | null) => {
     if (!node) {
+      resizeRef.current?.disconnect();
+      resizeRef.current = null;
       mapRef.current?.remove();
       mapRef.current = null;
+      fittedRef.current = false;
       tileRef.current = null;
       markersRef.current = new Map();
       return;
@@ -242,6 +253,30 @@ const MapView: React.FC<Props> = ({ data }) => {
       maxBoundsViscosity: 0.85,
       minZoom: 8
     });
+    // Tied to the instance, not to the component: under StrictMode the first
+    // map is created and torn down before the real one, and a flag that
+    // survived that would spend the only opening fit on the discarded map.
+    fittedRef.current = false;
+
+    // The map is created inside a flex row before that row has been laid out,
+    // so Leaflet caches a container width of ~126px against an element that
+    // ends up 800px wide, and anything fitted to that cached size lands in a
+    // thin strip down the left edge. The real width arrives some frames later
+    // and not on any schedule worth guessing at, so watch the element and tell
+    // Leaflet to re-measure whenever it actually changes — which also keeps the
+    // map honest when the window or the side panels are resized later.
+    const ro = new ResizeObserver(() => {
+      mapRef.current?.invalidateSize();
+      // The opening fit waits for a real size; before it the frame would be
+      // computed against a viewport nobody is looking at.
+      if (!fittedRef.current && hasPointsRef.current) {
+        fittedRef.current = true;
+        fitRef.current();
+      }
+    });
+    ro.observe(node);
+    resizeRef.current = ro;
+
     setMapReady(n => n + 1);
   }, []);
 
@@ -284,6 +319,59 @@ const MapView: React.FC<Props> = ({ data }) => {
     if (previous) layer.once('load', () => map.removeLayer(previous));
   }, [basemap, mapReady]);
 
+  // Frame every circle currently drawn, with just enough margin that the
+  // outermost ones are not clipped by their own radius.
+  const fitToPoints = useCallback(() => {
+    const map = mapRef.current;
+    if (!map || !counted.length) return;
+    const bounds = L.latLngBounds(counted.map(p => [p.lat, p.lon] as [number, number]));
+    // The map is created inside a flex row before that row has been laid out,
+    // so Leaflet caches a container width of ~126px against an element that is
+    // really 800px. Fitting to the cached size lands every point in a thin
+    // strip down the left edge, so re-measure first and fit to what is actually
+    // on screen.
+    map.invalidateSize();
+    // maxZoom keeps a fit over one selected place from diving to street level.
+    // Beirut is the one circle this cannot frame: at 33.89°N it lies north of
+    // the map's own maxBounds, so no fit can bring it fully into view, and
+    // widening that bound to reach it would let the reader pan off the survey
+    // sheet entirely. Framing the other 156 is the better trade.
+    map.fitBounds(bounds, { padding: [50, 50], maxZoom: 13 });
+  }, [counted]);
+
+  // The control is built once per map instance, so it cannot close over the
+  // fitToPoints of the render that made it — that one would frame whatever the
+  // filters said at mount. It calls through this ref, which always holds the
+  // current one.
+  const fitRef = useRef(fitToPoints);
+  fitRef.current = fitToPoints;
+  hasPointsRef.current = counted.length > 0;
+
+  // A third button under the zoom pair, in Leaflet's own control stack so it
+  // inherits the placement and the frame rather than floating over the map.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const Fit = L.Control.extend({
+      options: { position: 'topleft' as L.ControlPosition },
+      onAdd() {
+        const bar = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+        const link = L.DomUtil.create('a', '', bar);
+        link.href = '#';
+        link.title = 'Fit the view to every place shown';
+        link.setAttribute('role', 'button');
+        link.setAttribute('aria-label', 'Fit the view to every place shown');
+        link.innerHTML = '&#9974;';
+        link.style.fontSize = '15px';
+        L.DomEvent.on(link, 'click', L.DomEvent.stop).on(link, 'click', () => fitRef.current());
+        return bar;
+      }
+    });
+    const control = new Fit();
+    control.addTo(map);
+    return () => { control.remove(); };
+  }, [mapReady]);
+
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !counted.length) return;
@@ -315,8 +403,18 @@ const MapView: React.FC<Props> = ({ data }) => {
       markersRef.current.set(p.kimaId || p.label, marker);
     });
 
+    // The circles may be drawn before the container has its real width, in
+    // which case the ResizeObserver above owns the opening fit. If the size was
+    // already settled by then, that observer has fired and nothing is pending,
+    // so fit here instead — between the two, the first frame is always drawn
+    // against a viewport that exists.
+    if (!fittedRef.current) {
+      fittedRef.current = true;
+      fitToPoints();
+    }
+
     return () => { markersRef.current.forEach(m => m.remove()); };
-  }, [counted, maxN, mapReady]);
+  }, [counted, maxN, mapReady, fitToPoints]);
 
   // The selected circle is repainted rather than re-created, so the map does
   // not flicker on every selection.
