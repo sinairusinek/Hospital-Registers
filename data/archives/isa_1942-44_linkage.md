@@ -217,13 +217,104 @@ Reading the file in full corrected two things recorded from the initial sample:
   digitised — 1,790 named cases, already transcribed, waiting. If notebooks for 1942–43 exist,
   this file is a strong argument for prioritising them: the linkage machinery is built and the
   other side of the join is already in hand.
-* **The daily returns (178 pages) were classified but not transcribed.** They carry the
-  aggregate tallies with a **Died: In Hospital / Out of Hospital** split, which is an
-  independent check on hospital mortality and on the 72/23 split above. That is a contained
-  next job.
+* ~~The daily returns were classified but not transcribed.~~ **Done — see §7 below.**
 * **The `where_treated` vocabulary deserves a controlled reading.** "Isol.", "Isolation",
   "Isolation Haifa", "Govt. Hosp.", "G.H." are currently distinct strings pooled by regex.
   Whether "Isolation" always means the Government Hospital's isolation section, or sometimes
   the lazaret, is exactly the distinction `project_diphtheria_isolation_reconcile` is parked on.
   The three "Quart. Lazaret Haifa" cases show the clerks *could* name the lazaret separately
   when they meant it — which is weak evidence that bare "Isolation" means the hospital.
+
+---
+
+## 7. The daily returns transcribed, and what they do to §2 (added 2026-08-28)
+
+All **178 daily-return rectos** have now been read as well (`pipeline/isa_daily.py`, output
+`data/private/isa-1942-44-daily.tsv`, **840 tally rows**, no page failed). 30 of the 178 carry
+a heading and a signature but an **empty grid** — a return was to be sent "only when a change
+in the daily state has occurred", and multi-sheet returns exist (p.332 is headed "Sheet III"
+and tallies nothing). An empty grid is a fact about the return, not a failed read.
+
+The tallies are overwhelmingly **Haifa** (772 of 840 rows), with outlying places appearing by
+name: Tireh 7, Balad esh-Sheikh 5, **Athlit 5**, Hawassa 4, Kiryat Amal 3, Hadera 3, Ein Ghazal,
+Kfar Ata, Nesher 2 each.
+
+### The check the daily returns were fetched for
+
+They record deaths already split **In Hospital / Out of Hospital** by the clerks themselves —
+an independent measurement of the division §2 derived from the nominal `where_treated` column.
+
+| | in hospital | out of hospital |
+|---|---|---|
+| **deaths** (daily returns, n=196) | 145 (**74%**) | 51 (**26%**) |
+| **cases** (nominal returns, n=2,171) | 1,566 (**72%**) | 493 at home (**23%**) |
+
+The two land close, which is reassuring — but they are shares of *different things*, cases
+versus deaths, and the small gap runs the **wrong way**. A referral hospital takes the sicker
+patients, so deaths should be *more* hospital-concentrated than cases, not less.
+
+**The whole anomaly is one disease.** Measles supplies **34 of the 51 out-of-hospital deaths
+and none of the in-hospital ones**. Set measles aside and the picture inverts to what it should
+be:
+
+| excluding measles | deaths |
+|---|---|
+| died in hospital | 145 (**90%**) |
+| died out of hospital | 17 (**10%**) |
+
+The nominal returns say the same thing from the case side, and the contrast is stark:
+
+| disease | named cases | in hospital | at home |
+|---|---|---|---|
+| **measles** | 451 | 33 | **384** |
+| **typhoid** | 1,010 | **939** | 9 |
+
+**So the headline "23% treated at home" is very largely a single disease.** Measles was nursed
+at home and killed children there; typhoid was hospitalised almost without exception. The
+figure should be quoted per disease, not as one rate — and the corrected reading of §2 is that
+the Government Hospital captured nearly all of the *serious* notified infectious disease in
+Haifa, while measles was managed almost entirely outside it. That is a sharper and more useful
+statement than the aggregate, and it is the check paying for itself.
+
+### Disease series, 1942–44
+
+New cases and deaths as tallied on the returns (top of the list; spelling variants pooled
+by family, the clerks' own variants — "chikin pox", "diphteria", "w. cough" — left visible
+in the TSV):
+
+| disease | new cases | died in hosp. | died out |
+|---|---|---|---|
+| typhoid | 1,018 | 98 | 5 |
+| measles | 440 | 0 | **62** |
+| typhus | 254 | 33 | 3 |
+| diphtheria | 62 | 10 | 0 |
+| smallpox | 61 | 18 | 0 |
+| erysipelas | 37 | 1 | 0 |
+| chickenpox | 31 | 2 | 0 |
+| meningitis | 25 | 3 | 1 |
+| scarlet fever | 25 | 0 | 0 |
+| undulant fever | 24 | 0 | 0 |
+| **plague** | 23 | 7 | 2 |
+| hydrophobia | 4 | 4 | 0 |
+
+`Existing` and `Remaining` are **stocks, not flows**, and must never be summed across returns;
+only `New Cases` accumulates. Hydrophobia is worth noting: four cases, four deaths, all in
+hospital.
+
+### How complete the series is
+
+Serial numbers are an annual counter, so gaps are countable. **1942 is complete** (serials
+2–45, no gaps). **1943 is not**: 54 returns present out of serials 1–112, so **58 are missing**
+from the file. **1944** has 33 of 45, missing serials 7, 10, 11, 13, 18, 26, 29–32, 36, 39.
+The 1943 gap is large enough that 1943 rates must not be treated as a complete series.
+
+### Caveats carried forward
+
+* A **dash means zero and a blank means not stated**; both are preserved as written in the TSV
+  and neither is silently converted.
+* Figures were sometimes struck through and corrected by a later hand (p.341: Remaining "92"
+  corrected to "96" in pink). The final value is taken and the correction recorded in
+  `uncertain`.
+* The daily and nominal counts of death rest on different bases — a running daily state versus
+  a case note written when the return was filed — so the 260 tallied deaths and the 184 named
+  cases remarked "died" are not expected to agree, and do not.

@@ -150,13 +150,43 @@ def main() -> int:
         say("  sicker patients, so deaths should be MORE concentrated in")
         say("  hospital than cases are. Direction of the gap:")
         gap = 100*din/total_d - 100*hosp/n_cases
-        if gap > 0:
-            say(f"    deaths are {gap:.0f} points MORE hospital-concentrated than")
-            say("    cases - consistent with the hospital taking severer cases.")
-        else:
-            say(f"    deaths are {abs(gap):.0f} points LESS hospital-concentrated")
-            say("    than cases, which is the opposite of the expected direction")
-            say("    and would need explaining before either figure is used.")
+        say(f"    deaths {'MORE' if gap > 0 else 'LESS'} hospital-concentrated "
+            f"than cases by {abs(gap):.0f} points")
+        say()
+
+        # Read whole, the two figures nearly agree (70/30 against 72/23) and
+        # the small gap runs the "wrong" way. Both facts are one disease.
+        m_in = din_by_fam.get("measles", 0)
+        m_out = dout_by_fam.get("measles", 0)
+        rest_in, rest_out = din - m_in, dout - m_out
+        rest_d = rest_in + rest_out
+        say("  BUT THE AGGREGATE HIDES THE STRUCTURE. Measles alone supplies")
+        say(f"  {m_out} of the {dout} out-of-hospital deaths and {m_in} of the "
+            f"in-hospital ones,")
+        say("  because measles was nursed at home and killed there. Setting it")
+        say("  aside:")
+        if rest_d:
+            say(f"    died in hospital     {rest_in:5d}  ({100*rest_in/rest_d:.0f}%)")
+            say(f"    died out of hospital {rest_out:5d}  ({100*rest_out/rest_d:.0f}%)")
+        say("  which is firmly in the expected direction: for everything except")
+        say("  measles, death was overwhelmingly a hospital event, as it should")
+        say("  be if the hospital received the severer cases.")
+        say()
+        say("  The nominal returns say the same thing from the case side:")
+        for fam in ("measles", "typhoid"):
+            sel = [c for c in cases if L.family(c.get("disease") or "") == fam]
+            if not sel:
+                continue
+            h = sum(1 for c in sel if L.IN_HOSPITAL.search(
+                c.get("where_treated") or ""))
+            hm = sum(1 for c in sel
+                     if not L.IN_HOSPITAL.search(c.get("where_treated") or "")
+                     and L.AT_HOME.search(c.get("where_treated") or ""))
+            say(f"    {fam:8s} {len(sel):5d} named cases - "
+                f"{h} in hospital, {hm} at home")
+        say()
+        say("  So the headline '23% treated at home' is very largely ONE")
+        say("  DISEASE. Quote it by disease, not as a single rate.")
     say()
 
     # ---- per-disease series ---------------------------------------------

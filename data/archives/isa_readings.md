@@ -999,5 +999,22 @@ Headline findings:
   (not "Seigman"), treated at **"Isol. H."** (not "Govt. Hosp."); and the p.21 religion cells
   read "Palest. Moslem" / "Palest. Christian" with "Palest." carried by ditto.
 
-Still open: the 178 **daily returns** are classified but not transcribed, and they carry a
-`Died: In Hospital / Out of Hospital` split that would independently check the 72/23 figure.
+**The 178 daily returns have now been transcribed too** (`pipeline/isa_daily.py`, 840 tally
+rows, no page failed; 30 carry a heading but an empty grid, which the form's own rules allow).
+They were fetched to check the 72/23 split independently, and they did — with a correction:
+
+- Deaths split **74% in hospital / 26% out**, against 72/23 for cases. Close, but the gap runs
+  the wrong way for a referral hospital, and **the whole anomaly is measles**: it supplies 34 of
+  the 51 out-of-hospital deaths and none of the in-hospital ones. **Excluding measles, 90% of
+  deaths were in hospital.**
+- From the case side the same contrast: **measles 451 named cases, 384 at home; typhoid 1,010
+  named cases, 939 in hospital.** So the headline "23% treated at home" is very largely ONE
+  DISEASE and should be quoted per disease. The Government Hospital captured nearly all the
+  *serious* notified infectious disease in Haifa; measles was managed outside it.
+- Disease series 1942–44 (new cases): typhoid ~971 (1,012 with paratyphoid), measles 436,
+  typhus 254, diphtheria 62, smallpox 61, plague 17. Hydrophobia: 4 cases, 4 deaths, all in
+  hospital. *(Typhoid and plague depend on how the disease-name variants are folded — "Small
+  Pox"/"Smallpox", "P. Typhoid A/B", "German Measles" are all distinct strings in the column.
+  Recount from `data/private/isa-1942-44-daily.tsv` before quoting these two.)*
+- **Completeness:** serials are an annual counter. 1942 is complete (2–45, no gaps); **1943 is
+  missing 58 of 112 returns**; 1944 has 33 of 45. Do not treat 1943 as a complete series.
