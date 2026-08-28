@@ -40,7 +40,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'Diagnosis is grouped by ICD-9 chapter',
-    body: <p>The specific diagnosis column holds 4,004 distinct labels and its ICD-9 code 2,581 — far more than eight slices or a ten-value facet list can represent, so a chart of them would be mostly <em>Others</em>. The default grouping everywhere is therefore the ICD-9 chapter, the classification's own top level: nineteen headings, of which <em>Infectious and parasitic diseases</em> alone accounts for 8,771 admissions. Switch the chart to <strong>Specific</strong>, or use the <em>Diagnosis (specific)</em> facet on the left, when the argument needs a named disease. 1,149 records carry no readable code and sit outside the chapter grouping entirely.</p>
+    body: <p>The specific diagnosis column holds 4,004 distinct labels and its ICD-9 code 2,581 — far more than eight slices or a ten-value facet list can represent, so a chart of them would be mostly <em>Others</em>. The default grouping everywhere is therefore the ICD-9 chapter, the classification's own top level: nineteen headings, of which <em>Infectious and parasitic diseases</em> alone accounts for 8,771 admissions. The pie beside it counts the specific diagnoses, which is mostly <em>Others</em> until a chapter is chosen: click a chapter slice, or tick one in the facet list, and the specific pie becomes the diseases inside that chapter. 1,149 records carry no readable code and sit outside the chapter grouping entirely.</p>
   },
   {
     heading: 'A share on its own compares nothing',
@@ -125,10 +125,6 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
   // The site is static and public, so no key can be baked into the bundle.
   // Visitors supply their own; it stays in this browser only.
   const [apiKey, setApiKey] = useState<string>(() => localStorage.getItem('gemini_api_key') || '');
-  // The ICD-9 chapter is the default grouping for diagnosis everywhere: it is
-  // the level of the classification that a top-eight chart can represent.
-  const [diagnosisMode, setDiagnosisMode] = useState<'Chapter' | 'Diagnosis'>('Chapter');
-
   // Robust key mapping
   const actualKeys = useMemo(() => {
     if (fullData.length === 0) return {};
@@ -607,30 +603,23 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
         {/* Charts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Categorical Pies */}
-          {/* The chapter leads: eight slices out of nineteen chapters describe
-              the file, where eight out of 3,860 specific diagnoses leave most
-              of it in the Others residue. The specific view is one click away
-              for anything that needs naming a disease. */}
+          {/* The two levels of the classification stand side by side, and they
+              are meant to be read in that order. The chapter pie describes the
+              file: eight slices out of nineteen chapters cover it. The specific
+              pie, at eight out of 3,860 diagnoses, is mostly Others residue
+              until a chapter is chosen — click a chapter slice and the pie
+              beside it becomes the diseases inside that chapter. */}
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <div className="flex items-center justify-between mb-4 gap-2">
-              <h3 className="font-bold text-slate-800 flex items-center gap-2">
-                <HeartPulse size={18} className="text-rose-500" /> Diagnoses
-              </h3>
-              <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-[10px] font-bold">
-                {(['Chapter', 'Diagnosis'] as const).map(mode => (
-                  <button
-                    key={mode}
-                    onClick={() => setDiagnosisMode(mode)}
-                    className={`px-2 py-1 rounded-md transition-colors ${diagnosisMode === mode ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
-                  >
-                    {mode === 'Chapter' ? 'ICD-9 chapter' : 'Specific'}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="h-[300px]">
-              {renderPie(diagnosisMode === 'Chapter' ? stats.chapterData : stats.diagnosisData, diagnosisMode)}
-            </div>
+            <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
+              <HeartPulse size={18} className="text-rose-500" /> Diagnoses (ICD-9 chapter)
+            </h3>
+            <div className="h-[300px]">{renderPie(stats.chapterData, 'Chapter')}</div>
+          </div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
+              <HeartPulse size={18} className="text-rose-400" /> Diagnoses (specific)
+            </h3>
+            <div className="h-[300px]">{renderPie(stats.diagnosisData, 'Diagnosis')}</div>
           </div>
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Clinical Result</h3><div className="h-[300px]">{renderPie(stats.resultData, "Result")}</div></div>
           

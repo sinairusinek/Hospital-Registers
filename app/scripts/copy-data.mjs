@@ -36,3 +36,21 @@ if (existsSync(decisionsSrc)) {
   copyFileSync(decisionsSrc, decisionsDest);
   console.log(`Staged Kima decisions → ${decisionsDest}`);
 }
+
+// The Timeline view's four layers, assembled by pipeline/timeline_data.py.
+// Optional: without it the view explains how to build it rather than failing.
+const timelineSrc = resolve(here, '../../data/public/timeline.json');
+const timelineDest = resolve(here, '../public/data/timeline.json');
+if (existsSync(timelineSrc)) {
+  copyFileSync(timelineSrc, timelineDest);
+  console.log(`Staged timeline → ${timelineDest}`);
+}
+
+// Coordinates for the reviewed City values, built by pipeline/place_coords.py.
+// Optional: without it the Map view says how to build it rather than failing.
+const coordsSrc = resolve(here, '../../data/public/place-coords.tsv');
+const coordsDest = resolve(here, '../public/data/place-coords.tsv');
+if (existsSync(coordsSrc)) {
+  copyFileSync(coordsSrc, coordsDest);
+  console.log(`Staged place coordinates → ${coordsDest}`);
+}

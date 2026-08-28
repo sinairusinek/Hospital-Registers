@@ -3,6 +3,7 @@ import React, { useState, useMemo } from 'react';
 import { ListFilter, X } from 'lucide-react';
 import { RegistryRecord, FilterState } from '../types';
 import { facetValue, UNKNOWN } from '../facets';
+import { matchesNonFacet, failingFacetColumns } from '../filtering';
 
 interface FilterSidebarProps {
   data: RegistryRecord[];
@@ -90,21 +91,58 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
     return { facets, ranges };
   }, [data]);
 
+  // Each facet is counted over the records the *other* filters leave standing,
+  // so the lists narrow to each other: choose an ICD-9 chapter and the specific
+  // diagnoses below it are the diagnoses of that chapter, with the counts they
+  // have inside it. A facet is never narrowed by its own selection — otherwise
+  // ticking one value would erase the alternatives beside it, and the list
+  // could not be widened again.
+  //
+  // A row is therefore counted in a facet if it fails no facet at all (it is in
+  // the current selection), or if the only facet it fails is that one.
   const facetsData = useMemo(() => {
+    const displayed = Object.entries(actualKeys.facets) as [string, string][];
     const results: Record<string, Record<string, number>> = {};
-    (Object.entries(actualKeys.facets) as [string, string][]).forEach(([displayName, actualKey]) => {
-      const facetGroup: Record<string, number> = {};
-      data.forEach(row => {
+    displayed.forEach(([displayName]) => { results[displayName] = {}; });
+
+    data.forEach(row => {
+      if (!matchesNonFacet(row, filterState)) return;
+      const failing = failingFacetColumns(row, filterState, 2);
+      if (failing.length > 1) return;
+      const exempt = failing[0]; // undefined when the row is in the selection
+
+      displayed.forEach(([displayName, actualKey]) => {
+        if (exempt !== undefined && exempt !== actualKey) return;
         // Blanks are a finding, not noise: 186 admissions record no sex at all.
         // They are bucketed as Unknown rather than dropped, using the same rule
         // App.tsx applies when filtering, so the count and the filter agree.
         const val = facetValue(row[actualKey]);
-        facetGroup[val] = (facetGroup[val] || 0) + 1;
+        results[displayName][val] = (results[displayName][val] || 0) + 1;
       });
-      results[displayName] = facetGroup;
     });
     return results;
-  }, [data, actualKeys]);
+  }, [data, actualKeys, filterState]);
+
+  // The values to offer for one facet: what the other filters leave, plus any
+  // value already ticked, so a selection can always be undone even when the
+  // rest of the filters have reduced it to nothing. Ticked values sort first,
+  // so narrowing another facet cannot push a live selection out of the top ten.
+  const facetOptions = (displayName: string, selectedValues: string[]): [string, number][] => {
+    const counts = { ...(facetsData[displayName] || {}) };
+    selectedValues.forEach(val => { if (!(val in counts)) counts[val] = 0; });
+    return (Object.entries(counts) as [string, number][]).sort((a, b) => {
+      const selA = selectedValues.includes(a[0]) ? 1 : 0;
+      const selB = selectedValues.includes(b[0]) ? 1 : 0;
+      if (selA !== selB) return selB - selA;
+      return b[1] - a[1];
+    });
+  };
+
+  const clearFacet = (displayName: string) => {
+    const actualKey = actualKeys.facets[displayName];
+    if (!actualKey) return;
+    setFilterState(prev => ({ ...prev, facets: { ...prev.facets, [actualKey]: [] } }));
+  };
 
   const toggleFacet = (displayName: string, value: string) => {
     const actualKey = actualKeys.facets[displayName];
@@ -155,6 +193,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
           </button>
         </div>
 
+        {/* Said once, because it changes how every list below is read. */}
+        <p className="-mt-6 text-[10px] leading-snug text-slate-400">
+          Each list shows the values, and the counts, left by the other filters.
+        </p>
+
         <div className="space-y-6">
           <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Numeric / Date Ranges</h4>
           {rangeTargets
@@ -190,7 +233,9 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
             const actualKey = actualKeys.facets[displayName];
             if (!actualKey) return null;
 
-            const allValues = (Object.entries(facetsData[displayName] || {}) as [string, number][]).sort((a, b) => b[1] - a[1]);
+            const selectedValues = filterState.facets[actualKey] || [];
+            const selectedCount = selectedValues.length;
+            const allValues = facetOptions(displayName, selectedValues);
             // Show top 10 most frequent diagnoses or items to handle high cardinality
             const known = allValues.filter(([val]) => val !== UNKNOWN);
             const unknown = allValues.find(([val]) => val === UNKNOWN);
@@ -198,16 +243,26 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
             // for a facet like Diagnosis it would otherwise either dominate the
             // list or, for a sparse one, never surface at all.
             const topItems = unknown ? [...known.slice(0, 10), unknown] : known.slice(0, 10);
-            const selectedValues = filterState.facets[actualKey] || [];
-            const selectedCount = selectedValues.length;
 
             return (
               <div key={displayName} className="space-y-3">
                 <div className="flex justify-between items-center">
                   <h4 title={displayName} className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] truncate mr-2">{displayName}</h4>
-                  {selectedCount > 0 && <span className="bg-indigo-600 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">{selectedCount}</span>}
+                  {selectedCount > 0 && (
+                    <button
+                      onClick={() => clearFacet(displayName)}
+                      title="Clear this filter"
+                      className="bg-indigo-600 hover:bg-indigo-700 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold flex items-center gap-1 shrink-0"
+                    >
+                      {selectedCount}
+                      <X size={9} strokeWidth={3} />
+                    </button>
+                  )}
                 </div>
                 <div className="space-y-1">
+                  {allValues.length === 0 && (
+                    <p className="text-[10px] text-slate-400 italic">No values in the current selection</p>
+                  )}
                   {topItems.map(([val, count]) => (
                     <label key={val} className="flex items-center group cursor-pointer">
                       <input 
@@ -236,16 +291,18 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-xl max-h-[80vh] flex flex-col overflow-hidden">
             <div className="p-6 border-b border-slate-100 flex items-center justify-between">
-              <div><h3 className="text-lg font-bold text-slate-800">Select {activeModalFacet}</h3></div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-800">Select {activeModalFacet}</h3>
+                <p className="text-xs text-slate-500">Counts are within the current selection.</p>
+              </div>
               <button onClick={() => { setActiveModalFacet(null); setModalSearch(''); }}><X size={20} /></button>
             </div>
             <div className="p-4 bg-slate-50 border-b border-slate-100">
               <input type="text" placeholder={`Search in ${activeModalFacet}...`} className="w-full px-4 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-indigo-500" value={modalSearch} onChange={(e) => setModalSearch(e.target.value)} autoFocus />
             </div>
             <div className="flex-1 overflow-y-auto p-2 custom-scrollbar">
-              {(Object.entries(facetsData[activeModalFacet] || {}) as [string, number][])
+              {facetOptions(activeModalFacet, filterState.facets[actualKeys.facets[activeModalFacet] || ''] || [])
                 .filter(([val]) => val.toLowerCase().includes(modalSearch.toLowerCase()))
-                .sort((a, b) => b[1] - a[1])
                 .map(([val, count]) => (
                   <label key={val} className={`flex items-center p-3 rounded-xl cursor-pointer transition-all ${(filterState.facets[actualKeys.facets[activeModalFacet] || ''] || []).includes(val) ? 'bg-indigo-50' : 'hover:bg-slate-50'}`}>
                     <input type="checkbox" className="rounded text-indigo-600 w-4 h-4" checked={(filterState.facets[actualKeys.facets[activeModalFacet] || ''] || []).includes(val)} onChange={() => toggleFacet(activeModalFacet, val)} />

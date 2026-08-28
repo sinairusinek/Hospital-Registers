@@ -49,6 +49,11 @@ CLASSIFICATION = ROOT / "data" / "public" / "diagnosis-classification.tsv"
 LOW_CONFIDENCE = 0.4
 KIMA_DECISIONS = ROOT / "kimatch" / "city-kima-decisions.tsv"
 
+# The library's page listing, built by pipeline/iiif_pages.py. Read here only
+# for the year in each canvas label — see load_catalogued_years.
+IIIF_PAGES = ROOT / "data" / "public" / "iiif-pages.tsv"
+CANVAS_YEARS = re.compile(r"_(\d{4})(?:-(\d{2,4}))?_")
+
 
 def load_kima_decisions() -> dict[str, tuple[str, str]]:
     """City value -> (Kima place id, Wikidata QID) for human-confirmed matches.
@@ -66,6 +71,49 @@ def load_kima_decisions() -> dict[str, tuple[str, str]]:
             if row.get("decision") == "matched" and (row.get("kima_id") or row.get("wikidata_qid")):
                 links[row["city"]] = (row.get("kima_id", ""), row.get("wikidata_qid", ""))
     return links
+
+
+def load_catalogued_years() -> dict[str, set[int]]:
+    """Notebook number -> the years the library catalogued that notebook under.
+
+    Every repair below this point reasons from the register's own contents: the
+    order of the admissions, the stay written beside them, the dates either
+    side. That is blind to an error the whole page shares, and the year is
+    exactly such an error — it was read once per page image and written down
+    eleven times. A page read a year early is internally consistent and stays
+    invisible to its neighbours.
+
+    The library's scanning gives an outside witness. Each canvas is named for
+    the notebook it belongs to and the year that notebook covers —
+    `0030_23_1939_030_d`, `0001_24_1939-40_001_d` — a judgement made by a
+    cataloguer holding the volume, independent of anything the extraction read.
+    Checked against the page images, it is right: notebook 23 page 30 reads
+    1.10.39 on every row where the data said 1938.
+
+    Notebooks 28 and 30-33 are named `redacted_0001_0035` and carry no year, so
+    they have no anchor here and pass through untouched. The build tolerates
+    the file's absence.
+    """
+    spans: dict[str, set[int]] = {}
+    if not IIIF_PAGES.exists():
+        return spans
+    with IIIF_PAGES.open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle, delimiter="\t"):
+            found = CANVAS_YEARS.search(row.get("canvas_label", ""))
+            if not found:
+                continue
+            first = int(found.group(1))
+            if first not in REGISTER_YEARS:
+                continue
+            years = spans.setdefault(row.get("Notebook_Number", ""), set())
+            years.add(first)
+            if found.group(2):
+                # "1939-40" and "1939-1940" both mean the span they read as.
+                tail = found.group(2)
+                last = int(tail) if len(tail) == 4 else first - first % 100 + int(tail)
+                if last in REGISTER_YEARS:
+                    years.update(range(first, last + 1))
+    return spans
 
 # Column 45 lost its header in the source spreadsheets. By position (between
 # origPrimICD9Name and Additional-ICD9) and content (ICD-9 labels, filled for
@@ -624,6 +672,7 @@ REVIEW_FLAGS = [
     ("sex-cleared", "A single stray letter where a sex belongs"),
     ("date-out-of-span", "A date outside 1930-48 with nothing on the record to repair it from"),
     ("date-year-out-of-sequence", "Year corrected: the admission ran backwards against the register's order"),
+    ("date-year-off-catalogue", "Year corrected: the admission fell outside the year the library gave the notebook"),
     ("date-month-out-of-sequence", "Month corrected: the admission ran backwards against the register's order"),
     ("date-day-out-of-sequence", "Day corrected: one digit from what was read, and back in the register's order"),
     ("date-year-repaired", "A year outside 1930-48, taken from the other date on the record"),
@@ -1414,6 +1463,57 @@ def main() -> int:
             order = [name for name, _ in REVIEW_FLAGS]
             row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
 
+    # ------------------------------------- the year against the library's own
+    #
+    # The pass above reads the register's order and catches most of it. What it
+    # cannot catch is a page whose neighbours were misread the same way: a run
+    # sitting a year early with nothing in-sequence around it to be early
+    # against. Notebook 23 keeps 77 such records after the sequence pass, whole
+    # pages of "September 1938" interleaved by page number with September 1939
+    # — an order no ledger was ever written in.
+    #
+    # The catalogue answers from outside the data (load_catalogued_years). A
+    # year outside the span the library gave the volume is a misreading, and the
+    # smallest shift that seats it inside is the correction. The shift is only
+    # ever a year or two, and the discharge follows by the same rule as above:
+    # whichever reading reproduces the stay the clerk wrote.
+    catalogued = load_catalogued_years()
+    catalogue_seated: Counter[int] = Counter()
+    for notebook, items in notebooks.items():
+        span = catalogued.get(notebook)
+        if not span:
+            continue
+        for row in items:
+            admitted = to_date(row.get("Admission Date [ISO]", ""))
+            if not admitted or admitted.year in span:
+                continue
+            years = min(span, key=lambda year: abs(year - admitted.year)) - admitted.year
+            corrected = shift_years(admitted, years)
+            if corrected is None:
+                continue
+            row["Admission Date [ISO]"] = corrected.isoformat()
+
+            discharged = to_date(row.get("Discharge Date (ISO)", ""))
+            if discharged:
+                reported = (row.get("Days in Hospital (Rep)") or "").strip()
+                options = [o for o in (shift_years(discharged, years), discharged) if o]
+                if reported.isdigit():
+                    options.sort(key=lambda o: abs((o - corrected).days - int(reported)))
+                else:
+                    options.sort(key=lambda o: (o - corrected).days < 0)
+                if options:
+                    row["Discharge Date (ISO)"] = options[0].isoformat()
+                    stay = (options[0] - corrected).days
+                    row["Days in Hospital (Calc)"] = str(stay) if stay >= 0 else ""
+            catalogue_seated[years] += 1
+
+            flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+            if "date-year-off-catalogue" not in flags:
+                flags.append("date-year-off-catalogue")
+                review_counts["date-year-off-catalogue"] += 1
+            order = [name for name, _ in REVIEW_FLAGS]
+            row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+
     # ------------------------------------------------ months, and some days
     #
     # The same argument one component down. A record sitting between 9.7.33 and
@@ -1719,6 +1819,12 @@ def main() -> int:
                 ["date", "Admission Date [ISO]", "year outside 1930-48, nothing on the record to repair it from",
                  "taken whole from the identical dates either side of it in the register", span_seated]
             )
+        for years, count in sorted(catalogue_seated.items()):
+            writer.writerow(
+                ["date", "Admission Date [ISO]",
+                 "year outside the one the library catalogued the notebook under",
+                 f"corrected by {years:+d} year, the smallest shift that seats it in the notebook", count]
+            )
         if stays_over_a_year:
             writer.writerow(
                 ["unresolved", "Discharge Date (ISO)", "stay exceeds the clerk's own count by a year",
@@ -1765,6 +1871,13 @@ def main() -> int:
             for years, count in sorted(sequence_repairs.items())
         )
         print(f"sequence   {sum(sequence_repairs.values()):,} admission(s) that ran backwards, year corrected: {detail}")
+    if catalogue_seated:
+        detail = ", ".join(
+            f"{count} by {years:+d} year" + ("s" if abs(years) > 1 else "")
+            for years, count in sorted(catalogue_seated.items())
+        )
+        print(f"catalogue  {sum(catalogue_seated.values()):,} admission(s) outside the library's year "
+              f"for the notebook, corrected: {detail}")
     print(f"dates      {replaced:,} ISO date(s) rebuilt from the verbatim column, {kept:,} left as upstream had them")
     print(f"stays      {stays_cleared} impossible length(s) of stay cleared, "
           f"{stays_over_a_year} discharge year(s) a year over the clerk's own count, corrected")

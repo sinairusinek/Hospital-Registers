@@ -548,10 +548,11 @@ derived	Procedure	operation named in the diagnosis column	Procedure and diagnosi
 derived	Procedure	operation named in the diagnosis column	Procedure only	45
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	51
 review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	38
-review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	2
+review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	1
 review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
 review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	697
-review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	25
+review	Review Flags	date-year-off-catalogue	Year corrected: the admission fell outside the year the library gave the notebook	271
+review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	26
 review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	10
 review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
 review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole from identical dates either side of it	2
@@ -606,7 +607,7 @@ derived	Diagnosis Recording		Classified	28730
 derived	Diagnosis Recording		Not recorded	729
 derived	Diagnosis Recording		Recorded, not classified	420
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
-date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
+date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	26
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -1	212
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +1	452
@@ -654,7 +655,11 @@ date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair i
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
 date	Days in Hospital (Calc)	discharge before admission	cleared	38
 date	Admission Date [ISO]	year outside 1930-48, nothing on the record to repair it from	taken whole from the identical dates either side of it in the register	2
-unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	2
+date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by -1 year, the smallest shift that seats it in the notebook	1
+date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +1 year, the smallest shift that seats it in the notebook	268
+date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +6 year, the smallest shift that seats it in the notebook	1
+date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +8 year, the smallest shift that seats it in the notebook	1
+unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	1
 tail	standardized Religion	Arab		8
 tail	standardized Religion	Christian/Jewish?		2
 tail	standardized Religion	Ch. Moslem		1

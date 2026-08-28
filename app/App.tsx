@@ -1,13 +1,15 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin } from 'lucide-react';
+import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
-import { facetValue } from './facets';
+import { matchesFilters } from './filtering';
 import AboutView from './components/AboutView';
 import DataBrowser from './components/DataBrowser';
 import StatisticsView from './components/StatisticsView';
 import ReviewView from './components/ReviewView';
 import PlacesView from './components/PlacesView';
+import MapView from './components/MapView';
+import TimelineView from './components/TimelineView';
 
 declare const Papa: any;
 
@@ -185,50 +187,12 @@ const App: React.FC = () => {
     if (file) parseInto(file, false);
   };
 
-  // Central Filtering Logic
-  const filteredData = useMemo(() => {
-    return data.filter(row => {
-      // 1. Global Search
-      const matchesGlobal = filterState.searchQuery === '' || 
-        Object.values(row).some(val => 
-          String(val).toLowerCase().includes(filterState.searchQuery.toLowerCase())
-        );
-      if (!matchesGlobal) return false;
-
-      // 2. Advanced Search (Specific Columns)
-      for (const adv of filterState.advancedSearch) {
-        if (adv.query && !String(row[adv.column] || '').toLowerCase().includes(adv.query.toLowerCase())) {
-          return false;
-        }
-      }
-
-      // 3. Facet Filtering
-      for (const [col, selectedValues] of Object.entries(filterState.facets) as [string, string[]][]) {
-        if (selectedValues.length > 0) {
-          if (!selectedValues.includes(facetValue(row[col]))) return false;
-        }
-      }
-
-      // 4. Range Filtering (Handles Numbers and Dates)
-      for (const [col, range] of Object.entries(filterState.ranges) as [string, RangeFilter][]) {
-        const rowVal = row[col];
-        let numericVal: number;
-
-        if (col.toLowerCase().includes('date')) {
-          const d = new Date(String(rowVal));
-          numericVal = d.getTime();
-        } else {
-          numericVal = Number(rowVal);
-        }
-
-        if (!isNaN(numericVal) && (numericVal < range.currentMin || numericVal > range.currentMax)) {
-          return false;
-        }
-      }
-
-      return true;
-    });
-  }, [data, filterState]);
+  // Central Filtering Logic. The rule itself lives in filtering.ts, because the
+  // sidebar counts facet values with the same one.
+  const filteredData = useMemo(
+    () => data.filter(row => matchesFilters(row, filterState)),
+    [data, filterState]
+  );
 
   const toggleColumn = useCallback((key: string) => {
     setColumns(prev => prev.map(col => 
@@ -266,6 +230,15 @@ const App: React.FC = () => {
               >
                 <Info size={16} />
                 About
+              </button>
+              <button
+                onClick={() => setActiveView('timeline')}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  activeView === 'timeline' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <CalendarClock size={16} />
+                Timeline
               </button>
               <button
                 onClick={() => setActiveView('browse')}
@@ -307,6 +280,16 @@ const App: React.FC = () => {
                 <MapPin size={16} />
                 Places
               </button>
+              <button
+                onClick={() => setActiveView('map')}
+                disabled={data.length === 0}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
+                  activeView === 'map' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <MapIcon size={16} />
+                Map
+              </button>
           </div>
           {data.length === 0 && (
             <label className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium cursor-pointer transition-colors shadow-lg shadow-indigo-100">
@@ -321,6 +304,10 @@ const App: React.FC = () => {
       <main className="flex-1 overflow-hidden relative">
         {activeView === 'about' ? (
           <AboutView recordCount={data.length} onEnter={setActiveView} />
+        ) : activeView === 'timeline' ? (
+          // The timeline stands on its own generated file, so like About it is
+          // readable before — and without — the register TSV.
+          <TimelineView />
         ) : isLoading ? (
           <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-50">
             <div className="w-16 h-16 border-4 border-indigo-100 border-t-indigo-600 rounded-full animate-spin mb-4"></div>
@@ -360,6 +347,11 @@ const App: React.FC = () => {
               // Same principle: the gazetteer queues cover the whole dataset,
               // with the view's own religion and nationality facets.
               <PlacesView data={data} />
+            ) : activeView === 'map' ? (
+              // The map is of the whole dataset too: its own footer states how
+              // many records it cannot place, and a sidebar filter would make
+              // that count mean two different things at once.
+              <MapView data={data} />
             ) : (
               <StatisticsView 
                 fullData={data} 
