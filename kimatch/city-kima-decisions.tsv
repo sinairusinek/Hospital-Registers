@@ -55,7 +55,7 @@ Netanya	Netanya	6	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	C_review
 Rosh Pina	Rosh Pina	6	14873	Rosh Pina (Israel)	Q525649	kima-dump	Q525649	matched	A_autolink	0.95	auto		2026-08-06
 Waldheim	Waldheim	6					Q1917497	unmatched-no-kima-entry	A_autolink		agent	Galilee Templer colony; Kima has only the Saxony Waldheim	2026-08-06
 Akka	Akka	5	71	Acre (Israel)	Q126084	kima-dump	Q126084	matched	C_review		agent	Arabic naming tradition of Acre; value kept distinct	2026-08-06
-Bassa	Bassa	5	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa, western Galilee; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
+Bassa	Bassa	5	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa, western Galilee; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
 Kfar Tabor	Kfar Tabor	5	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	Q1186956	matched	A_autolink	0.95	auto		2026-08-06
 Kibutz	Kibutz	5					Q586687	unmatched-junk	C_review		agent	generic word	2026-08-06
 Mishmar HaEmek	Mishmar HaEmek	5	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
@@ -174,12 +174,12 @@ Atlit|Athlit C.R. Camp	Atlit|Athlit C.R. Camp	1	16036	Atlit (Israel)	Q757398	kim
 Atlit|Atlit. House of Ofman	Atlit|Atlit. House of Ofman	1	16036	Atlit (Israel)	Q757398	kima-dump	Q757398	matched	A_autolink	0.95	auto		2026-08-06
 Atlit|Cl. Camp - Athlit	Atlit|Cl. Camp - Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump	Q757398	matched	A_autolink	0.95	auto		2026-08-06
 Ayesdin	Ayesdin	1						unmatched-junk	C_review		agent		2026-08-06
-Balad al-Sheikh	Balad al-Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	wikidata-direct	Q2776471	matched	C_review		agent	own entry; kept distinct from Nesher per project policy	2026-08-06
+Balad al-Sheikh	Balad al-Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	human	Q2776471	matched	C_review		human	own entry; kept distinct from Nesher per project policy; Balad al-Shaykh as the Mandate village, not Nesher (Q135432) which succeeded it on the ground	2026-08-28
 Banks St	Banks St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Bar Galim	Bar Galim	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	or Kfar Gallim; Bat Galim more likely	2026-08-06
-Bassa I.|Bassa	Bassa I.|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
-Bassa N.1 N.F.D	Bassa N.1 N.F.D	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
-Bassa No 1|Bassa	Bassa No 1|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa / Bassa Camp; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
+Bassa I.|Bassa	Bassa I.|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
+Bassa N.1 N.F.D	Bassa N.1 N.F.D	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
+Bassa No 1|Bassa	Bassa No 1|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa / Bassa Camp; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
 Bassa No 2|Al-Bassa	Bassa No 2|Al-Bassa	1	6885	Shelomi (Israel)	Q135421	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Bat Shlomo near Zammaren|Bat Shlomo	Bat Shlomo near Zammaren|Bat Shlomo	1	587	Bat Shelomo (Israel)	Q2889218	kima-dump		matched	C_review		agent	Zammaren = Zummarin (Zichron)	2026-08-06
 Bat Yalem	Bat Yalem	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	garbled Bat Galim	2026-08-06
@@ -451,3 +451,6 @@ Zicron	Zicron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_revie
 Zikhron Yaacov	Zikhron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Zikhron Yacob	Zikhron Yacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zikron Yaacov	Zikron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+Tarshiha	Tarshiha	74	21809	Tarshiḥa (Israel)	Q134496896	human		matched	A_autolink		human	the depopulated village, not Maalot-Tarshiha (Q152385) which later absorbed it; Kima carries no coordinate, taken from Wikidata	2026-08-28
+Lajjun	Lajjun	10	16127	Lajjūn (Jordan)	Q3775368	human		matched	A_autolink		human	al-Lajjun in the Jenin sub-district; the Kima entry names it Jordan, which its own coordinate contradicts; point from Wikidata	2026-08-28
+Yanuh	Yanuh	3	18370	Yanoah (Israel)	Q2890238	human		matched	A_autolink		human	no Wikidata entity of its own; point is Yanuh-Jat, the council that now includes the village; Kima carries no coordinate	2026-08-28

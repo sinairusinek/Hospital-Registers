@@ -31,15 +31,19 @@ const COORDS_URL = `${import.meta.env.BASE_URL}data/place-coords.tsv`;
 const HELP: HelpSection[] = [
   {
     heading: 'What a circle is',
-    body: <p>One confirmed City value, sized by how many admissions carry it. The point is the coordinate of the gazetteer entry the review matched that value to — the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
+    body: <p>One place, sized by how many admissions name it — and one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single circle. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
+  },
+  {
+    heading: 'Solid circles and hollow ones',
+    body: <p>A <strong>solid</strong> circle is a place somebody ruled on — matched to the Kima gazetteer by the historian or by the assistant, and signed. A <strong>hollow, dashed</strong> circle is the matching engine's own suggestion, checked only for landing inside the region; nobody has confirmed it. Both draw real records, but a hollow circle's <em>location</em> is a lead rather than a finding, and it can be wrong in ways a ruling cannot. The engine matched "Hebron" to Hebron, Connecticut, perfectly and confidently — that is the failure mode a hollow circle is warning you about.</p>
   },
   {
     heading: 'The two basemaps',
-    body: <p><strong>Survey of Palestine 1:20,000</strong> is the Mandate-era sheet, the ground as the register clerks would have known it — villages that no longer exist are on it under the names they were then called. <strong>Modern</strong> is OpenStreetMap, for orientation. Toggling between them is the point: a place the register names may sit under a later town, or under nothing at all.</p>
+    body: <p><strong>Survey of Palestine 1:20,000</strong> is the Mandate-era sheet, the ground as the register clerks would have known it — villages that no longer exist are on it under the names they were then called. <strong>Modern</strong> is OpenStreetMap, for orientation. Toggling between them is the point: a place the register names may sit under a later town, or under nothing at all. Where the survey has no sheet, the map simply ends.</p>
   },
   {
-    heading: 'What is not on the map',
-    body: <p>Records whose City was left ambiguous, judged transcription junk, identified but absent from the gazetteer (the Haifa neighbourhoods especially), never reviewed, or simply blank. The footer counts each. Absence from the map is a state of the review, never a claim about the patient.</p>
+    heading: 'What is not on the map, and why it matters',
+    body: <p>The gazetteer review began with the cities of Jewish patients. Because the join is blind to religion, those rulings carried every community's records for the places the communities shared — Acre, Nazareth, Jenin. The places they did not share got nothing, so the Galilee and Carmel villages no Jewish patient came from stayed off the map. That absence was systematic, and it fell on Muslim and Christian records. A second round is closing it; the hollow circles are its first result. What remains unplaced is counted below the map — values still unreviewed, values judged ambiguous or illegible, and records carrying no city at all. Absence here is a state of the review, never a claim about the patient.</p>
   }
 ];
 
@@ -55,6 +59,10 @@ interface Place {
   lat: number;
   lon: number;
   source: string;
+  // 'confirmed' — a ruling in the decisions table; 'provisional' — an audited
+  // engine candidate nobody has ruled on. Drawn differently, because a
+  // provisional point is a lead and can be wrong in ways a ruling cannot.
+  standing: string;
   kimaId: string;
   kimaName: string;
   qid: string;
@@ -141,6 +149,8 @@ const MapView: React.FC<Props> = ({ data }) => {
             const existing = grouped.get(key);
             if (existing) {
               if (!existing.cities.includes(at(c, 'city'))) existing.cities.push(at(c, 'city'));
+              // One confirmed spelling settles the whole point.
+              if (at(c, 'standing') === 'confirmed') existing.standing = 'confirmed';
             } else {
               const kimaName = at(c, 'kima_name_rom');
               grouped.set(key, {
@@ -150,6 +160,7 @@ const MapView: React.FC<Props> = ({ data }) => {
                 cities: [at(c, 'city')],
                 lat, lon,
                 source: at(c, 'source'),
+                standing: at(c, 'standing') || 'confirmed',
                 kimaId,
                 kimaName,
                 qid: at(c, 'wikidata_qid')
@@ -283,13 +294,20 @@ const MapView: React.FC<Props> = ({ data }) => {
       // Area, not radius, tracks the count — a radius scale would read Haifa as
       // hundreds of times the size of Acre rather than the ~9x it is.
       const radius = 5 + 22 * Math.sqrt(p.n / maxN);
+      const provisional = p.standing === 'provisional';
       const marker = L.circleMarker([p.lat, p.lon], {
         radius,
-        color: '#ffffff', weight: 1.5,
-        fillColor: SERIES[0], fillOpacity: 0.72
+        // A provisional place is drawn hollow and dashed — visibly not the same
+        // kind of claim as a ruled one, at a glance and without a legend.
+        color: provisional ? SERIES[3] : '#ffffff',
+        weight: provisional ? 2 : 1.5,
+        dashArray: provisional ? '3 3' : undefined,
+        fillColor: provisional ? SERIES[3] : SERIES[0],
+        fillOpacity: provisional ? 0.22 : 0.72
       });
       marker.bindTooltip(
-        `<strong>${p.label}</strong><br>${p.n.toLocaleString()} record${p.n === 1 ? '' : 's'}`,
+        `<strong>${p.label}</strong><br>${p.n.toLocaleString()} record${p.n === 1 ? '' : 's'}`
+        + (provisional ? '<br><em>candidate, not yet reviewed</em>' : ''),
         { direction: 'top', offset: [0, -4] }
       );
       marker.on('click', () => { setSelected(p.kimaId || p.label); setPage(1); });
@@ -305,11 +323,13 @@ const MapView: React.FC<Props> = ({ data }) => {
   useEffect(() => {
     markersRef.current.forEach((marker, key) => {
       const on = key === selected;
+      const place = counted.find(p => (p.kimaId || p.label) === key);
+      const prov = place?.standing === 'provisional';
       marker.setStyle({
-        fillColor: on ? SERIES[1] : SERIES[0],
-        fillOpacity: on ? 0.9 : 0.72,
-        color: on ? '#1f2937' : '#ffffff',
-        weight: on ? 2.5 : 1.5
+        fillColor: on ? SERIES[1] : prov ? SERIES[3] : SERIES[0],
+        fillOpacity: on ? 0.9 : prov ? 0.22 : 0.72,
+        color: on ? '#1f2937' : prov ? SERIES[3] : '#ffffff',
+        weight: on ? 2.5 : prov ? 2 : 1.5
       });
       if (on) marker.bringToFront();
     });
@@ -392,6 +412,7 @@ const MapView: React.FC<Props> = ({ data }) => {
   }
 
   const mappedRecords = counted.reduce((s, p) => s + p.n, 0);
+  const provisionalCount = counted.filter(p => p.standing === 'provisional').length;
 
   return (
     <div className="flex w-full h-full overflow-hidden bg-slate-50">
@@ -442,6 +463,11 @@ const MapView: React.FC<Props> = ({ data }) => {
           <p className="text-xs font-bold text-slate-700">
             {counted.length} places · {mappedRecords.toLocaleString()} records
           </p>
+          {provisionalCount > 0 && (
+            <p className="text-[11px] text-amber-700 mt-0.5">
+              {provisionalCount} of them unreviewed candidates, drawn hollow
+            </p>
+          )}
           <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
             Not on the map: {offMap.unmatched.toLocaleString()} records whose City the
             review could not place, {offMap.noCity.toLocaleString()} with no City recorded.
@@ -483,6 +509,11 @@ const MapView: React.FC<Props> = ({ data }) => {
                     </a>
                   )}
                   <span>point from {selectedPlace.source}</span>
+                  {selectedPlace.standing === 'provisional' && (
+                    <span className="font-bold text-amber-600">
+                      candidate — not yet reviewed
+                    </span>
+                  )}
                 </p>
               </div>
               <button
@@ -495,6 +526,15 @@ const MapView: React.FC<Props> = ({ data }) => {
           </div>
 
           {/* Admissions over time */}
+          {selectedPlace.standing === 'provisional' && (
+            <div className="mx-6 mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
+              <p className="text-[11px] text-amber-800 leading-relaxed">
+                This place is the matching engine's own suggestion, checked only for
+                falling inside the region. Nobody has ruled on it. The records below
+                are certainly what the register says; the point on the map is a lead.
+              </p>
+            </div>
+          )}
           <div className="px-6 py-5 border-b border-slate-200">
             <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
               Admissions by year

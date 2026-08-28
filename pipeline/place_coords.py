@@ -2,12 +2,26 @@
 
 Reads kimatch/city-kima-decisions.tsv and writes
 
-  data/public/place-coords.tsv   city -> lat, lon, source, and the identifiers
+  data/public/place-coords.tsv   city -> lat, lon, source, standing, identifiers
 
-Only rows the review decided were `matched` carry an identifier, so only those
-can be placed. Everything else — ambiguous, no-Kima-entry, junk — is written
-out with empty coordinates and its decision, so the map can say honestly how
-many records it cannot put on the ground rather than silently dropping them.
+A confirmed row — one the review decided was `matched` — is placed on the
+strength of that decision. But a value the review has not yet reached is not
+thereby a value with no known location: the round-2 workbook holds engine
+candidates that passed a geographic audit, and withholding those from the map
+makes the catchment look smaller than the register says it is, in a way that
+falls hardest on the Arab villages the first review round never queued.
+
+So both are written, and the `standing` column keeps them apart:
+
+  confirmed    a human or agent ruling in city-kima-decisions.tsv
+  provisional  an audited engine candidate, nobody has ruled on it yet
+
+The map must show the difference. A provisional point is a lead, not a finding,
+and it can be wrong in ways a ruling cannot.
+
+Everything genuinely unplaceable — ambiguous, no-Kima-entry, junk, no candidate
+at all — is still written with empty coordinates and its decision, so the map
+can say how many records it cannot put on the ground rather than drop them.
 
 Two authorities, in this order:
 
@@ -40,8 +54,11 @@ KIMA_API = "https://data.geo-kima.org/api/places/{}"
 WDQS = "https://query.wikidata.org/sparql"
 UA = "HospitalRegisters/1.0 (https://github.com/sinaiRusinek; sinai.rusinek@gmail.com)"
 
-FIELDS = ["city", "lat", "lon", "source", "kima_id", "kima_name_rom",
+FIELDS = ["city", "lat", "lon", "source", "standing", "kima_id", "kima_name_rom",
           "wikidata_qid", "decision", "decided_by", "n_records"]
+
+# Round 2's audited candidates, for values no ruling covers yet.
+WORKBOOK = ROOT / "kimatch" / "round2-workbook.tsv"
 
 
 def get(url: str, timeout: int = 30) -> bytes:
@@ -90,6 +107,39 @@ def load_cache() -> dict[str, dict[str, str]]:
         return {r["city"]: r for r in csv.DictReader(fh, delimiter="\t")}
 
 
+def provisional_rows(already: set[str]) -> list[dict[str, str]]:
+    """Audited engine candidates for values no ruling covers yet.
+
+    These come from kimatch/round2-workbook.tsv and are only taken where the
+    geographic audit passed — a candidate that lands in Connecticut is worse
+    than no candidate, and the workbook records three such. They are marked
+    `provisional` so the map can draw them as the leads they are.
+    """
+    if not WORKBOOK.exists():
+        return []
+    out: list[dict[str, str]] = []
+    with WORKBOOK.open(newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh, delimiter="\t"):
+            if row["city"] in already:
+                continue
+            if row["geo_audit"] != "in-region" or not row["kima_lat"]:
+                continue
+            out.append({
+                "city": row["city"],
+                "lat": f'{float(row["kima_lat"]):.6f}',
+                "lon": f'{float(row["kima_lon"]):.6f}',
+                "source": "kima",
+                "standing": "provisional",
+                "kima_id": row["kima_id"],
+                "kima_name_rom": row["kima_name_rom"],
+                "wikidata_qid": "",
+                "decision": "",
+                "decided_by": row["grade"],
+                "n_records": row["n_records"],
+            })
+    return out
+
+
 def main() -> None:
     refresh = "--refresh" in sys.argv
     cache = {} if refresh else load_cache()
@@ -104,7 +154,7 @@ def main() -> None:
         city = d["city"]
         row = {
             "city": city,
-            "lat": "", "lon": "", "source": "",
+            "lat": "", "lon": "", "source": "", "standing": "",
             "kima_id": d.get("kima_id", ""),
             "kima_name_rom": d.get("kima_name_rom", ""),
             "wikidata_qid": d.get("wikidata_qid", ""),
@@ -117,6 +167,7 @@ def main() -> None:
         if cached and cached.get("lat"):
             row["lat"], row["lon"] = cached["lat"], cached["lon"]
             row["source"] = cached.get("source", "")
+            row["standing"] = cached.get("standing", "confirmed")
             rows.append(row)
             continue
 
@@ -131,6 +182,7 @@ def main() -> None:
             if point:
                 row["lat"], row["lon"] = f"{point[0]:.6f}", f"{point[1]:.6f}"
                 row["source"] = "kima"
+                row["standing"] = "confirmed"
                 rows.append(row)
                 continue
 
@@ -146,6 +198,9 @@ def main() -> None:
             if point:
                 row["lat"], row["lon"] = f"{point[0]:.6f}", f"{point[1]:.6f}"
                 row["source"] = "wikidata"
+                row["standing"] = "confirmed"
+
+    rows.extend(provisional_rows({r["city"] for r in rows}))
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     with OUTPUT.open("w", encoding="utf-8", newline="") as fh:
@@ -154,10 +209,12 @@ def main() -> None:
         writer.writerows(rows)
 
     placed = [r for r in rows if r["lat"]]
+    prov = [r for r in placed if r["standing"] == "provisional"]
     records_placed = sum(int(r["n_records"] or 0) for r in placed)
     records_all = sum(int(r["n_records"] or 0) for r in rows)
     print(f"Wrote {OUTPUT}")
-    print(f"  {len(placed)} of {len(rows)} reviewed City values placed")
+    print(f"  {len(placed)} of {len(rows)} City values placed "
+          f"({len(placed) - len(prov)} confirmed, {len(prov)} provisional)")
     print(f"  {records_placed:,} of {records_all:,} records in the reviewed queue can be mapped")
     unplaced = [r for r in rows if not r["lat"] and r["decision"] == "matched"]
     if unplaced:
