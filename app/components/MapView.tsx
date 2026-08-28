@@ -81,7 +81,10 @@ const BASEMAPS = [
     key: 'historic',
     label: 'Survey of Palestine, 1:20,000',
     url: 'https://palopenmaps.org/tiles/pal20k-1940s/{z}/{x}/{y}.jpg',
-    options: { maxNativeZoom: 16, maxZoom: 18,
+    // crossOrigin so the blank-tile probe below can actually read the pixels:
+    // without it the canvas taints and getImageData throws. The host sends
+    // access-control-allow-origin: *.
+    options: { maxNativeZoom: 16, maxZoom: 18, crossOrigin: 'anonymous' as const,
                attribution: 'Survey of Palestine 1:20,000 via Palestine Open Maps' }
   },
   {
@@ -234,6 +237,36 @@ const MapView: React.FC<Props> = ({ data }) => {
     if (!map) return;
     const spec = BASEMAPS.find(b => b.key === basemap)!;
     const layer = L.tileLayer(spec.url, spec.options as L.TileLayerOptions);
+
+    // Outside the surveyed area, Palestine Open Maps answers with a solid
+    // black 256px JPEG rather than a 404, so Leaflet has no way to know the
+    // tile is empty and the map ends in a black field. Nothing in CSS can
+    // reach that — the black is the image. Each tile is therefore sampled
+    // once it decodes, and the blank ones are hidden so the container's own
+    // paper colour shows through and the sheet simply ends.
+    if (spec.key === 'historic') {
+      layer.on('tileload', (e: L.TileEvent) => {
+        const img = e.tile as HTMLImageElement;
+        try {
+          const probe = document.createElement('canvas');
+          probe.width = probe.height = 8;
+          const ctx = probe.getContext('2d', { willReadFrequently: true });
+          if (!ctx) return;
+          ctx.drawImage(img, 0, 0, 8, 8);
+          const { data: px } = ctx.getImageData(0, 0, 8, 8);
+          let lightest = 0;
+          for (let i = 0; i < px.length; i += 4) {
+            lightest = Math.max(lightest, px[i], px[i + 1], px[i + 2]);
+          }
+          // The survey's darkest real ink still sits well above this; only a
+          // tile that is black edge to edge fails it.
+          if (lightest < 12) img.style.visibility = 'hidden';
+        } catch {
+          // A tainted canvas means no reading is possible; leave the tile be.
+        }
+      });
+    }
+
     layer.addTo(map);
     const previous = tileRef.current;
     tileRef.current = layer;
