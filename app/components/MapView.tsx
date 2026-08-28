@@ -189,7 +189,7 @@ const MapView: React.FC<Props> = ({ data }) => {
   // decisions file, so the two cannot drift.
   const offMap = useMemo(() => {
     if (!places) return { noCity: 0, unmatched: 0 };
-    const placed = new Set(places.map(p => p.city));
+    const placed = new Set(places.flatMap(p => p.cities));
     let noCity = 0, unmatched = 0;
     data.forEach(row => {
       const city = val(row, 'City');
@@ -216,7 +216,13 @@ const MapView: React.FC<Props> = ({ data }) => {
     }
     if (mapRef.current) return;
     mapRef.current = L.map(node, {
-      center: [32.72, 35.1], zoom: 9, zoomControl: true, scrollWheelZoom: true
+      center: [32.72, 35.1], zoom: 9, zoomControl: true, scrollWheelZoom: true,
+      // The historical sheet covers Mandate Palestine and nothing else. Without
+      // a bound, panning drifts off it into bare background that reads as a
+      // failed render rather than as the edge of the survey.
+      maxBounds: L.latLngBounds([29.2, 33.8], [33.6, 36.4]),
+      maxBoundsViscosity: 0.85,
+      minZoom: 8
     });
     setMapReady(n => n + 1);
   }, []);
@@ -367,7 +373,16 @@ const MapView: React.FC<Props> = ({ data }) => {
             order the two stylesheets differently in dev and in the built site,
             so this is a bug that only appears once deployed. An inline style
             does not participate in that race. */}
-        <div ref={attachMap} style={{ position: 'absolute', inset: 0, height: '100%', width: '100%' }} />
+        <div
+          ref={attachMap}
+          style={{
+            position: 'absolute', inset: 0, height: '100%', width: '100%',
+            // Where the survey has no sheet. A muted ground, not black: the
+            // edge of the 1:20,000 is a fact about the map's coverage, and it
+            // should look like paper running out rather than a broken tile.
+            background: '#e8e4da'
+          }}
+        />
 
         {/* Basemap toggle */}
         <div className="absolute top-4 right-4 z-[500] bg-white/95 backdrop-blur rounded-2xl border border-slate-200 shadow-lg p-2">
