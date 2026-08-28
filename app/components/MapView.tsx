@@ -249,9 +249,23 @@ const MapView: React.FC<Props> = ({ data }) => {
       // The historical sheet covers Mandate Palestine and nothing else. Without
       // a bound, panning drifts off it into bare background that reads as a
       // failed render rather than as the edge of the survey.
-      maxBounds: L.latLngBounds([29.2, 33.8], [33.6, 36.4]),
+      // Wide enough to hold the whole catchment with air around it. Beirut,
+      // the register's northernmost place, used to sit just outside this box:
+      // it could never be panned to, and worse, Leaflet will not settle on a
+      // view that would show anything beyond the bound, so the opening fit was
+      // clamped a whole zoom level below what it computed. Gaza is the
+      // southernmost place and has always been comfortably inside.
+      maxBounds: L.latLngBounds([28.9, 33.2], [34.4, 37.0]),
       maxBoundsViscosity: 0.85,
-      minZoom: 8
+      minZoom: 8,
+      // Leaflet snaps to whole zoom levels unless told otherwise, and the fit
+      // to all 157 points falls just past level 8: it therefore rounds down and
+      // draws the catchment at half the scale the panel could hold, ringed by
+      // empty margin. A zoom snap of 0 lets the fit land where it actually
+      // computes, filling the frame; the 0.25 delta keeps the +/- buttons
+      // stepping in sensible amounts rather than by fractions.
+      zoomSnap: 0,
+      zoomDelta: 0.25
     });
     // Tied to the instance, not to the component: under StrictMode the first
     // map is created and torn down before the real one, and a flag that
@@ -267,12 +281,13 @@ const MapView: React.FC<Props> = ({ data }) => {
     // map honest when the window or the side panels are resized later.
     const ro = new ResizeObserver(() => {
       mapRef.current?.invalidateSize();
-      // The opening fit waits for a real size; before it the frame would be
-      // computed against a viewport nobody is looking at.
-      if (!fittedRef.current && hasPointsRef.current) {
-        fittedRef.current = true;
-        fitRef.current();
-      }
+      // Try the opening fit on every resize until one actually lands. The two
+      // things it needs — the container's real width and the loaded points —
+      // arrive in either order, so whichever is last triggers the fit that
+      // counts; fitToPoints itself refuses to mark the job done until both are
+      // there. Without the retry, a fit attempted at the placeholder width
+      // would claim the one chance and leave the map at half scale.
+      fitRef.current(true);
     });
     ro.observe(node);
     resizeRef.current = ro;
@@ -321,22 +336,31 @@ const MapView: React.FC<Props> = ({ data }) => {
 
   // Frame every circle currently drawn, with just enough margin that the
   // outermost ones are not clipped by their own radius.
-  const fitToPoints = useCallback(() => {
+  const fitToPoints = useCallback((opening = false) => {
     const map = mapRef.current;
     if (!map || !counted.length) return;
-    const bounds = L.latLngBounds(counted.map(p => [p.lat, p.lon] as [number, number]));
-    // The map is created inside a flex row before that row has been laid out,
-    // so Leaflet caches a container width of ~126px against an element that is
-    // really 800px. Fitting to the cached size lands every point in a thin
-    // strip down the left edge, so re-measure first and fit to what is actually
-    // on screen.
+    // Leaflet caches the container size at creation, inside a flex row that has
+    // not been laid out, so it starts out ~126px wide against an element that
+    // ends up 800px. Re-measure before deciding whether this is a real frame.
     map.invalidateSize();
-    // maxZoom keeps a fit over one selected place from diving to street level.
-    // Beirut is the one circle this cannot frame: at 33.89°N it lies north of
-    // the map's own maxBounds, so no fit can bring it fully into view, and
-    // widening that bound to reach it would let the reader pan off the survey
-    // sheet entirely. Framing the other 156 is the better trade.
-    map.fitBounds(bounds, { padding: [50, 50], maxZoom: 13 });
+    // An opening fit against the placeholder width would draw the catchment at
+    // half scale and, worse, count as the one opening fit. Leave it for the
+    // resize that brings the real width.
+    if (opening) {
+      if (map.getSize().x < 200) return;
+      fittedRef.current = true;
+    }
+    const bounds = L.latLngBounds(counted.map(p => [p.lat, p.lon] as [number, number]));
+    // Padding is deliberately tight. The points run Gaza to Beirut, a long
+    // thin north-south spread, so in a panel taller than it is wide the height
+    // is what limits the fit and every pixel of padding is thrown away as
+    // margin on all four sides. maxZoom only guards fitting a single place.
+    // fitBounds is left to compute the level but not to apply it: with
+    // zoomSnap 0 the value it wants is fractional, and setting centre and zoom
+    // directly is what makes that fraction stick. Going through fitBounds
+    // alone settled a whole level lower and drew the catchment at half scale.
+    const zoom = Math.min(13, map.getBoundsZoom(bounds, false, L.point(8, 8)));
+    map.setView(bounds.getCenter(), zoom, { animate: false });
   }, [counted]);
 
   // The control is built once per map instance, so it cannot close over the
@@ -403,15 +427,9 @@ const MapView: React.FC<Props> = ({ data }) => {
       markersRef.current.set(p.kimaId || p.label, marker);
     });
 
-    // The circles may be drawn before the container has its real width, in
-    // which case the ResizeObserver above owns the opening fit. If the size was
-    // already settled by then, that observer has fired and nothing is pending,
-    // so fit here instead — between the two, the first frame is always drawn
-    // against a viewport that exists.
-    if (!fittedRef.current) {
-      fittedRef.current = true;
-      fitToPoints();
-    }
+    // The points may arrive after the container has settled, in which case no
+    // further resize is coming and this is the only chance to frame them.
+    if (!fittedRef.current) fitToPoints(true);
 
     return () => { markersRef.current.forEach(m => m.remove()); };
   }, [counted, maxN, mapReady, fitToPoints]);
