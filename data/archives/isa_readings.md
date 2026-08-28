@@ -713,14 +713,36 @@ The route that remains is the PWD drawing set itself, itemised in the E/524 sche
 Source: Table (a) "GOVERNMENT AND MUNICIPAL HOSPITALS", printed Annual Reports of the
 Department of Health, inside ISA **000v2ig**. Note the column is headed **"Nominal
 Bed-Strength"** — i.e. establishment, not beds actually in use; the "daily average number of
-beds occupied" column is the realised figure and for Haifa it *exceeds* nominal strength in
-1940 (171.0 occupied vs 220 nominal total... see caution below).
+beds occupied" column is the realised figure. For Haifa it stays *below* nominal strength
+throughout: 171.0 occupied against 220 nominal in 1940, 176.5 against 237 in 1941, 210.8
+against 261 in 1944 — i.e. roughly 78%, 74% and 81% occupancy of establishment. (An earlier
+note here wondered whether occupancy exceeded establishment; it does not, once the Total
+column is read.)
 
 | Year | General | Isolation | British | Maternity | **Total** | Moslems | Christians | Jews | Others | **Admissions** | Deaths | Discharges | Daily avg beds occupied | Beds occupied at yr end | ISA p. |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **1940** | 88 | 76 | 30 | 26 | 220 | 2,185 | 1,319 | 913 | 79 | **4,696** | 219 | 4,483 | 171.0 | 153 | 248 |
-| **1941** | 94 | 98 | 28 | 17 | 237 | 2,483 | ~1,40x | — | — | — | — | — | — | — | 223 |
-| **1944** | 117 | 98 | 28 | (18) | **261** | — | — | — | — | — | — | — | — | — | 95–96 |
+| **1940** | 88 | 76 | 30 | 26 | 220 | 2,185 | 1,519 | 913 | 79 | **4,696** | 219 | 4,483 | 171.0 | 153 | 248 |
+| **1941** | 94 | 98 | 28 | 17 | 237 | 2,453 | 1,409 | 978 | 91 | **4,931** | 212 | 4,760 | 176.5 | 172 | 223 |
+| **1944** | 117 | 98 | 28 | 18 | **261** | 3,680 | 1,846 | 704 | 107 | **6,337** | 290 | — | 210.8 | — | 95–96 |
+
+**Rows completed 2026-08-28** (session wrapping up PROMPT A). All three Haifa rows now sum
+internally: 2,185+1,519+913+79 = 4,696; 2,453+1,409+978+91 = 4,931; 3,680+1,846+704+107 = 6,337.
+That arithmetic is the check that caught two transcription errors carried in the earlier note:
+
+- **1940 Christians is 1,519, not 1,319.** Re-read at 400 dpi on p.248; the earlier 1,319 left
+  the row 200 short of its own printed total.
+- **1941 Moslems is 2,453, not 2,483, and Christians is 1,409.** The typeface on p.223 does not
+  cleanly separate 3/8/9 at any resolution the scan supports; the printed row total 4,931 and
+  the Palestine-wide column totals (which reconcile *exactly*: 11,432+4,222+10,226+117 = 25,997)
+  pin the digits uniquely.
+- **1944 Maternity is 18** (no longer parenthetical) and **Discharges / beds-at-year-end are
+  genuinely absent** — the 1944 table carries no Discharges column, only Deaths and daily
+  average. Do not expect to find them.
+
+*Method note for whoever reads these pages again:* p.223 needs rotating **-90 then 180**;
+pp. 95, 96 and 248 are **already landscape and need no rotation at all** — rotating them is what
+produced the mirrored, unreadable views on the first attempt. Read the printed row total first
+and use it as a checksum on the components; it is more legible than the components are.
 
 ### What remains, and what it would take
 Located and confirmed as **statistical tables**: ISA pp. **95–98** (1944 Govt + Voluntary),
@@ -731,13 +753,34 @@ discuss bed strength in prose.
 
 **So the file may simply not contain a Table (a) for every year.** 000v2ig is the Chief
 Secretary's *correspondence* file about the annual reports; printed reports were enclosed with
-some despatches and not others. Confirmed present: **1940, 1941, 1944**. Not yet found:
-1942, 1943, 1945, 1946, 1947.
+some despatches and not others. Confirmed present as full Table (a) sheets: **1940, 1941, 1944**.
+Still not found as Haifa rows: 1942, 1943, 1945, 1946, 1947.
 
-**Effort to finish:** two distinct jobs, very different sizes.
-1. **Complete the three years already located** — transcribe the right-hand (admissions) half
-   of the 1941 and 1944 sheets, and the Voluntary tables for Haifa. ~6 page-renders and 6
-   careful reads. **Small: well under an hour.**
+**But 1942 and 1943 are partly recoverable after all.** The 1944 sheet (p.95) carries
+Palestine-wide **Totals** rows for 1940, 1941, 1942, 1943 *and* 1944 as comparators at the foot
+of the table. So the national series is complete 1940–44 even though the per-hospital rows for
+1942–43 are absent:
+
+| Totals | Total beds | General | Isolation | British | Maternity | Admissions | Moslems | Christians | Jews | Others | Deaths | Daily avg occupied |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1940 | 1,077 | 574 | 305 | 109 | 89 | 24,863 | 10,886 | 4,352 | 9,525 | 100 | 1,411 | 847.1 |
+| 1941 | 1,109 | 595 | 327 | 107 | 80 | 25,997 | 11,432 | 4,222 | 10,226 | 117 | 1,472 | 886.1 |
+| 1942 | 1,179 | 638 | 353 | 107 | 81 | 27,165 | 12,075 | 4,358 | 10,602 | 130 | 1,544 | 995.0 |
+| 1943 | 1,212 | 644 | 373 | 114 | 81 | 27,920 | 12,343 | 4,781 | 10,682 | 114 | 1,368 | 969.5 |
+| 1944 | 1,307 | 784 | 373 | 114 | 96 | 28,764 | 12,346 | 4,464 | 11,816 | 133 | 1,507 | 1004.8 |
+
+(Both 1940 and 1941 rows here match the corresponding *year's own* sheet exactly — p.248 and
+p.223 — which is a second, independent confirmation that the column reads above are right.)
+
+**What this means for 1942–43:** we have Palestine-wide denominators but no Haifa row. Haifa's
+share of national admissions was 18.9% in 1940 and 19.0% in 1941, so a Haifa estimate for
+1942–43 is *interpolable* — but it would be an estimate, not a transcription, and should never
+be presented as a figure from the table. Flagging it as a lead, not a reading.
+
+**Effort to finish:** job (1) is now DONE (see the completed table above). Job (2) remains.
+1. ~~Complete the three years already located~~ — **done 2026-08-28.** The Haifa rows for 1940,
+   1941 and 1944 are fully transcribed and internally reconciled. The Voluntary-hospital (Table
+   (b)) Haifa entries are still only the summary figures noted further up, not full rows.
 2. **Establish whether 1942/43/45/46/47 are in the file at all** — a page-by-page sweep of the
    remaining ~200 unexamined pages at readable resolution. **Medium: a few hours**, and it may
    end with "they are not here", in which case the missing years come from the Wellcome run
