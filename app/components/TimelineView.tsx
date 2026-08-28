@@ -1214,15 +1214,16 @@ const TimelineView: React.FC = () => {
             </p>
           </div>
         </div>
-      </div>
 
-      {/* The personnel share the axis above, converted to whole years: the
-          MidEastMed dates are years, and pretending to a month would invent
-          precision the source does not have. */}
-      <PersonnelStrip
-        lo={1900 + Math.floor(lo / 12)}
-        hi={1900 + Math.floor(hi / 12)}
-      />
+        {/* The personnel share this view's axis exactly — same window, same
+            margins, and the same content box — so a given year cuts
+            vertically through the event lanes, the intake band and the staff
+            lines alike. The strip rounds to whole years for its own markers,
+            because the sources give years, but places them on this month
+            scale. It must stay inside this container: moved out, it picks up
+            different padding and every year drifts. */}
+        <PersonnelStrip lo={lo} hi={hi} />
+      </div>
 
       <SourceDrawer
         source={drawer?.source ?? null}

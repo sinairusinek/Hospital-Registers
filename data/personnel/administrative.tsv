@@ -1,0 +1,31 @@
+# The hospital's senior and administrative staff, as the press and archives name them.
+#
+# Hand-curated from the readings behind paper/hospital-history.html — NOT scraped.
+# Each row cites a source in data/public/sources-registry.json that actually names
+# the person in that post; where a source only fixes a date approximately the
+# `from`/`to` columns say so by being equal or blank rather than by guessing.
+#
+# kind: post   a named administrative office (director, deputy, senior MO)
+#       staff  a named physician without an administrative post
+# certainty: stated    the source names the post in so many words
+#            inferred  the post is deduced across sources (say why in `note`)
+#
+# same_as: the MidEastMed person node when the press and the prosopography
+#          name the SAME person. The row is then merged onto that person
+#          rather than drawn twice, and they carry both evidence marks.
+#          Only fill this where the identification is secure.
+#
+# Columns: name, name_ar, post, kind, from, to, certainty, source, same_as, note
+name	name_ar	post	kind	from	to	certainty	source	same_as	note
+Dr A. Malchi		Government physician, Haifa district; district forensic examiner; director by 1945	post	1931	1945	inferred	dav19311008-01.2.37		Transferred from Safed to the Government Hospital, Oct 1931. The directorship by 1945 is deduced across the readings, not stated in one source.
+Dr Naif Amin Hamzeh	نايف أمين حمزة	Physician; Medical Officer; director at the end	post	1936	1948	stated	pls19430602-01.1.1	60836	Hon. M.B.E. in the 1943 Birthday Honours as Medical Officer. Named director of the hospital at the handover, 28 Apr 1948; left for Lebanon.
+Dr Haddad		Physician	staff	1936	1936	stated	haretz19360608-01.2.83		Gave evidence with Dr N. Hamzeh as "physicians of the Government Hospital" at the trial over the 1 May 1936 Haifa disturbances.
+Dr Y. Shapira		Physician	staff	1937	1937	stated	haretz19370425-01.2.52		Opened a discussion on sanitary and hygienic questions in industry for the Manufacturers' Association.
+Colonel Heron		Director of Government Medical Services	post	1938	1939	stated	hzh19391123-01.2.46		Departmental, not hospital: read Mendelsohn's letter at the opening. Replaced by Mc-Cowen by Nov 1939.
+Dr J. H. Thomson		Senior Medical Officer / chief physician	post	1938	1940	stated	hbkr19401229-01.2.54		Named as supervising the staff at the move to Bat Galim, Nov 1938.
+Dr McCowen		Director, Haifa health department and of the hospital	post		1939	stated	hzh19391123-01.2.46		Leaves Nov 1939 to be Deputy Director of the Department of Health, and its Director by 1944. The Nov 1939 farewell prints the name unreadably; the Apr 1944 Tel Aviv debate resolves it.
+Dr M. K. M. Mishalany		Acting Senior Medical Officer	post	1945	1945	stated	haretz19451211-01.2.55		Showed Field Marshal Lord Gort round the hospital with the Matron. Left Dec 1945 to direct the Government Hospital in Nablus.
+Dr Ibrahim Isa'is		Deputy director	post	1945	1946	stated	haretz19451211-01.2.55		Appointed from Nablus in place of Dr Mishlani, began work 10 Dec 1945.
+Dr Laufer		Specialist surgeon; surgeon and deputy director	post	1947	1947	stated	dav19470611-01.2.73		A specialist surgeon who served in the British army during the war.
+Dr Tahuian		Physician	staff	1947	1947	stated	hmf19470716-01.2.49		"Physician of the Government Hospital", giving medical evidence in court.
+Dr MacNeil		British chief physician at the handover	post	1948	1948	stated	haretz19480503-01.2.39		Present at the transfer of the hospital to the municipality, 2 May 1948.

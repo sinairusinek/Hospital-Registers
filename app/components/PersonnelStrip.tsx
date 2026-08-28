@@ -31,11 +31,22 @@ interface Point { year: number; kind: string; }
 export interface Person {
   id: string; name: string; nameAr: string; role: string; url: string;
   kinds: string[]; spans: Span[]; points: Point[]; first: number; last: number;
+  /** Which body of evidence names this person. */
+  origin: 'mideastmed' | 'press' | 'both';
+  /** Present when the press names a post for this person. */
+  post?: string;
+  /** Press rows only: how firmly the source fixes the post. */
+  certainty?: 'stated' | 'inferred';
+  source?: string;
+  note?: string;
 }
 interface PersonnelData {
   meta: {
-    source: string; sourceUrl: string; licence: string;
-    people: number; activities: number; undated: number;
+    source: string; sourceUrl: string; sourceHome: string; licence: string;
+    project: string; pi: string; institution: string;
+    grant: string; grantKind: string;
+    people: number; fromPress: number; merged: number;
+    activities: number; undated: number;
     spans: number; points: number; first: number; last: number;
   };
   people: Person[];
@@ -54,20 +65,77 @@ const ROLE_COLOR: Record<string, string> = {
   'Midwife': '#a21caf'
 };
 const ROLE_FALLBACK = '#475569';
-const roleColor = (r: string): string => ROLE_COLOR[r] || ROLE_FALLBACK;
+
+/**
+ * A press row's role is a sentence — "Deputy director", "Senior Medical
+ * Officer" — not one of the MidEastMed professions, so it is read for the
+ * profession inside it. Every one of these people is a physician; what
+ * differs is the post, and the post belongs in the tooltip, not the hue.
+ */
+const roleColor = (r: string): string => {
+  if (ROLE_COLOR[r]) return ROLE_COLOR[r];
+  if (/surgeon|physician|medical officer|doctor|director/i.test(r)) {
+    return ROLE_COLOR.Doctor;
+  }
+  return ROLE_FALLBACK;
+};
+
+/** One chip for every name that comes from the press and archives. */
+const PRESS_FACET = 'Named in the press';
 
 // Study is a different relationship to the building than work: these are the
 // hospital's own nursing and midwifery pupils, not its staff.
 const isStudy = (k: string): boolean => k === 'Study';
 
+// Where a name came from, marked on the row itself. Two bodies of evidence
+// with different reach: MidEastMed's prosopography is broad and shallow — it
+// names midwives and pupils no newspaper ever mentioned — while the press and
+// archives are narrow and deep, naming almost only the senior posts. A reader
+// should be able to see which is speaking without opening anything.
+//
+// The MidEastMed red is taken from the tarbush in their own logo. It is a
+// nod to their identity, not their artwork: their mark is a three-face line
+// drawing that would be illegible at this size, and reproducing it would
+// imply an endorsement they have not given.
+const MEM_RED = '#8b0000';
+const PRESS_INK = '#334155';
+
+/** MidEastMed: a small tarbush, their logo's one unmistakable element. */
+const MemMark: React.FC<{ x: number; y: number; dim?: boolean }> = ({ x, y, dim }) => (
+  <g transform={`translate(${x},${y})`} opacity={dim ? 0.55 : 1}>
+    <path d="M-3.1 2.2 L-2.4 -2.2 L2.4 -2.2 L3.1 2.2 Z"
+      fill={MEM_RED} />
+    <line x1="0" y1="-2.2" x2="0" y2="-4" stroke={MEM_RED} strokeWidth="0.9" />
+    <circle cx="0" cy="-4.3" r="0.9" fill={MEM_RED} />
+  </g>
+);
+
+/** Press and archives: a folded newspaper. */
+const PressMark: React.FC<{ x: number; y: number; dim?: boolean }> = ({ x, y, dim }) => (
+  <g transform={`translate(${x},${y})`} opacity={dim ? 0.55 : 1}>
+    <rect x="-3.4" y="-3" width="6.8" height="6" rx="0.8"
+      fill="none" stroke={PRESS_INK} strokeWidth="1" />
+    <line x1="-1.8" y1="-1.1" x2="1.9" y2="-1.1" stroke={PRESS_INK} strokeWidth="0.9" />
+    <line x1="-1.8" y1="0.4" x2="1.9" y2="0.4" stroke={PRESS_INK} strokeWidth="0.9" />
+    <line x1="-1.8" y1="1.8" x2="0.6" y2="1.8" stroke={PRESS_INK} strokeWidth="0.9" />
+  </g>
+);
+
 // ---------------------------------------------------------------- layout
 
-const M = { left: 8, right: 16, top: 8, bottom: 22 };
+// These margins are the Timeline's own (its `M`), not a choice of ours: the
+// strip only aligns with the bands above if it plots into the same box. A
+// year must cut vertically through every layer of the view, so left/right
+// are copied and must be changed in step with TimelineView.
+const M = { left: 56, right: 20, top: 8, bottom: 10 };
 const ROW = 17;
-const LABEL_W = 186;
 
 const PersonnelStrip: React.FC<{
-  /** Year window, shared with the Timeline so both read against one axis. */
+  /**
+   * The window, in the Timeline's own units — months since 1900-01 — so both
+   * share one scale exactly. The strip rounds to whole years for its markers
+   * because the sources give years, but it places them on the month axis.
+   */
   lo: number;
   hi: number;
 }> = ({ lo, hi }) => {
@@ -112,9 +180,22 @@ const PersonnelStrip: React.FC<{
     return () => window.removeEventListener('keydown', onKey);
   }, [pinned]);
 
+  const loYear = Math.floor(lo / 12) + 1900;
+  const hiYear = Math.floor(hi / 12) + 1900;
+
+  // A press row's "role" is a sentence describing a post, not a category, so
+  // the chips key on a coarser facet: the MidEastMed professions, plus one
+  // chip for everyone the press and archives name.
+  const facetOf = (p: Person): string =>
+    p.origin === 'press' ? PRESS_FACET : p.role;
+
   const allRoles = useMemo(() => {
     if (!data) return [];
-    return Array.from(new Set(data.people.map(p => p.role))).sort();
+    const set = new Set<string>(data.people.map(facetOf));
+    return Array.from(set).sort(
+      (a, b) => (a === PRESS_FACET ? 1 : 0) - (b === PRESS_FACET ? 1 : 0)
+        || a.localeCompare(b)
+    );
   }, [data]);
 
   // Only people the current window can actually show. Filtering by role as
@@ -122,37 +203,40 @@ const PersonnelStrip: React.FC<{
   const shown = useMemo(() => {
     if (!data) return [];
     return data.people.filter(
-      p => (!roles || roles.has(p.role)) && p.last >= lo && p.first <= hi
+      p => (!roles || roles.has(facetOf(p))) && p.last >= loYear && p.first <= hiYear
     );
-  }, [data, roles, lo, hi]);
+  }, [data, roles, loYear, hiYear]);
 
   // Dropped by the axis rather than by the role filter — the two are different
   // kinds of absence and the caption must not blur them.
   const offWindow = useMemo(() => {
     if (!data) return 0;
     return data.people.filter(
-      p => (!roles || roles.has(p.role)) && !(p.last >= lo && p.first <= hi)
+      p => (!roles || roles.has(facetOf(p))) && !(p.last >= loYear && p.first <= hiYear)
     ).length;
-  }, [data, roles, lo, hi]);
+  }, [data, roles, loYear, hiYear]);
 
-  const plotL = M.left + LABEL_W;
+  // The Timeline's scale, verbatim: months since 1900-01 across the same box.
+  // Anything else and the year rules of the two views drift apart.
+  const plotL = M.left;
   const plotR = width - M.right;
   const plotW = Math.max(80, plotR - plotL);
-  // A year occupies a slot; its marker sits at the slot's middle, so a dot for
-  // 1946 is not confusable with the rule that opens 1946.
-  const slots = Math.max(hi - lo + 1, 1);
-  const x = (year: number): number =>
-    plotL + ((year - lo + 0.5) / slots) * plotW;
-  const halfYear = plotW / slots / 2;
+  const toM = (year: number): number => (year - 1900) * 12;
+  const xm = (m: number): number => plotL + ((m - lo) / Math.max(hi - lo, 1)) * plotW;
+  // A year's marker sits at the middle of that year — July — so a dot for 1946
+  // cannot be confused with the rule that opens 1946.
+  const x = (year: number): number => xm(toM(year) + 6);
+  const halfYear = (6 / Math.max(hi - lo, 1)) * plotW;
 
   const height = M.top + shown.length * ROW + M.bottom;
 
   const ticks = useMemo(() => {
     const out: number[] = [];
-    const step = hi - lo > 40 ? 10 : hi - lo > 18 ? 5 : hi - lo > 8 ? 2 : 1;
-    for (let y = Math.ceil(lo / step) * step; y <= hi; y += step) out.push(y);
+    const yrs = hiYear - loYear;
+    const step = yrs > 40 ? 10 : yrs > 18 ? 5 : yrs > 8 ? 2 : 1;
+    for (let y = Math.ceil(loYear / step) * step; y <= hiYear; y += step) out.push(y);
     return out;
-  }, [lo, hi]);
+  }, [loYear, hiYear]);
 
   if (error) {
     return (
@@ -173,12 +257,54 @@ const PersonnelStrip: React.FC<{
         <h3 className="text-base font-bold text-slate-900">Personnel</h3>
         <p className="mt-1 text-[13px] leading-relaxed text-slate-600 max-w-3xl">
           The {data.meta.people} people the sources place inside this hospital
-          between {data.meta.first} and {data.meta.last} — staff and, where the
-          building taught them, its nursing and midwifery pupils. A solid bar is
-          a period a source gives; a dot is a single sighting in a single year,
-          which is most of what survives. Hover a line for the record, or open
-          the person on MidEastMed.
+          between {data.meta.first} and {data.meta.last} — staff, the senior
+          officers, and, where the building taught them, its nursing and
+          midwifery pupils. A solid bar is a period a source gives; a dot is a
+          single sighting in a single year, which is most of what survives.
+          Hover a line for the record.
         </p>
+        <div className="mt-3 max-w-3xl space-y-2 text-[13px] leading-relaxed text-slate-600">
+          <p className="text-slate-500">Two bodies of evidence, marked on every row.</p>
+          <div className="flex gap-2.5">
+            <svg width="13" height="15" viewBox="-6.5 -7.5 13 15"
+              className="shrink-0 mt-[3px]" aria-hidden="true">
+              <MemMark x={0} y={0.5} />
+            </svg>
+            <p>
+              <strong className="font-semibold text-slate-800">
+                {data.meta.people - data.meta.fromPress + data.meta.merged} from{' '}
+                <a
+                  href={data.meta.sourceHome}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-700 hover:text-indigo-900 underline"
+                >
+                  MidEastMed
+                </a>
+              </strong>{' '}
+              — {data.meta.project}, the {data.meta.grantKind} project of{' '}
+              {data.meta.pi}, {data.meta.institution} (
+              <span className="font-mono text-[11.5px]">{data.meta.grant}</span>).
+              Its reach extends to midwives and pupils no newspaper ever names.
+            </p>
+          </div>
+          <div className="flex gap-2.5">
+            <svg width="13" height="15" viewBox="-6.5 -7.5 13 15"
+              className="shrink-0 mt-[3px]" aria-hidden="true">
+              <PressMark x={0} y={0} />
+            </svg>
+            <p>
+              <strong className="font-semibold text-slate-800">
+                {data.meta.fromPress} from our own readings
+              </strong>{' '}
+              of the Hebrew and English press and the archives, which see almost
+              only the senior posts — directors, deputies, medical officers. Each
+              carries the source that names it.
+              {data.meta.merged > 0 && ` ${data.meta.merged} person is named by
+                both, and carries both marks on one line.`}
+            </p>
+          </div>
+        </div>
       </header>
 
       <div className="flex flex-wrap items-center gap-1.5 mb-3 text-xs">
@@ -200,7 +326,8 @@ const PersonnelStrip: React.FC<{
             >
               <span
                 className="w-2 h-2 rounded-full shrink-0"
-                style={{ background: on ? roleColor(r) : '#cbd5e1' }}
+                style={{ background: on
+                  ? (r === PRESS_FACET ? PRESS_INK : roleColor(r)) : '#cbd5e1' }}
               />
               {r}
             </button>
@@ -221,20 +348,26 @@ const PersonnelStrip: React.FC<{
           // A silent shortfall reads as missing data. Say why the count moved:
           // these people are real and dated, just outside the years on screen.
           <span className="text-slate-400">
-            — {offWindow} outside {lo}–{hi}
+            — {offWindow} outside {loYear}–{hiYear}
           </span>
         )}
       </div>
 
-      <div ref={wrapRef} className="relative w-full">
+      {/* The same box as the Timeline's main plot — identical padding and the
+          same width/viewBox scaling — so the two SVGs map their user-space
+          coordinates onto the same screen pixels and the years line up. */}
+      <div
+        ref={wrapRef}
+        className="relative bg-white border border-slate-200 rounded-xl px-2 py-2"
+      >
         {shown.length === 0 ? (
           <p className="text-sm text-slate-500 py-6">
             No one is recorded here in these years.
           </p>
         ) : (
           <svg
-            width={width}
-            height={height}
+            width="100%"
+            viewBox={`0 0 ${width} ${height}`}
             className="block select-none"
             role="img"
             aria-label={`${shown.length} people recorded at the hospital`}
@@ -243,22 +376,17 @@ const PersonnelStrip: React.FC<{
             {/* Year rules, behind everything. A tick marks the START of its
                 year, while a marker sits at the year's midpoint — so the rule
                 is drawn half a year left of where that year's dots land. */}
+            {/* Rules only, no year labels: the axis directly above this strip
+                already carries them, and now that the two share a scale a
+                second row of the same numbers would be noise. */}
             {ticks.map(t => {
               const tx = x(t) - halfYear;
               return (
-                <g key={t}>
-                  <line
-                    x1={tx} y1={M.top - 2} x2={tx} y2={height - M.bottom + 4}
-                    stroke="#e2e8f0" strokeWidth={1}
-                  />
-                  <text
-                    x={tx} y={height - M.bottom + 16}
-                    textAnchor="middle" fontSize={10}
-                    className="font-mono" fill="#94a3b8"
-                  >
-                    {t}
-                  </text>
-                </g>
+                <line
+                  key={t}
+                  x1={tx} y1={M.top - 2} x2={tx} y2={height - M.bottom + 12}
+                  stroke="#e2e8f0" strokeWidth={1}
+                />
               );
             })}
 
@@ -266,13 +394,29 @@ const PersonnelStrip: React.FC<{
               const y = M.top + i * ROW + ROW / 2;
               const active = card?.id === p.id;
               const c = roleColor(p.role);
-              const pts = p.points.filter(q => q.year >= lo && q.year <= hi);
+              const pts = p.points.filter(q => q.year >= loYear && q.year <= hiYear);
               // The inferred bridge: only when sightings alone carry this
               // person across years, and only between the outermost dots.
               const bridge = p.spans.length === 0 && p.points.length > 1
                 ? [Math.min(...p.points.map(q => q.year)),
                    Math.max(...p.points.map(q => q.year))]
                 : null;
+
+              // Anchor the label to this person's marks, clamped into the
+              // plot so a career running off the left edge still gets a name.
+              const right = Math.min(
+                plotR, Math.max(x(p.last) + halfYear, plotL));
+              const left = Math.max(plotL, Math.min(x(p.first), plotR));
+              const label = p.name.length > 34
+                ? `${p.name.slice(0, 33)}…` : p.name;
+              // 6.1px/char matches the Timeline's own estimate for this size.
+              // A person named by both bodies of evidence carries both marks.
+              const marks = p.origin === 'both' ? [MemMark, PressMark]
+                : p.origin === 'press' ? [PressMark] : [MemMark];
+              const marksW = (marks.length - 1) * 9;
+              const labelPx = label.length * 6.1 + 14 + marksW;
+              const flip = right + labelPx > plotR;
+              const labelX = flip ? left : right;
 
               return (
                 <g
@@ -297,14 +441,42 @@ const PersonnelStrip: React.FC<{
                     fill={active ? '#f1f5f9' : 'transparent'}
                   />
 
-                  <text
-                    x={M.left + 4} y={y + 3.5}
-                    fontSize={11}
-                    fill={active ? '#0f172a' : '#475569'}
-                    className={active ? 'font-semibold' : ''}
-                  >
-                    {p.name.length > 29 ? `${p.name.slice(0, 28)}…` : p.name}
-                  </text>
+                  {/* The name rides with its own marks rather than sitting in
+                      a left-hand column: the axis now belongs to the Timeline
+                      above, and a gutter here would push every year out of
+                      line with the bands. Labels go to the right of the marks
+                      where there is room, and flip left near the frame. */}
+                  <g>
+                    {flip ? (
+                      <>
+                        <text
+                          x={labelX - 9 - marksW} y={y + 3.6} textAnchor="end"
+                          fontSize={11}
+                          fill={active ? '#0f172a' : '#475569'}
+                          className={active ? 'font-semibold' : ''}
+                        >
+                          {label}
+                        </text>
+                        {marks.map((Mk, k) => (
+                          <Mk key={k} x={labelX - 4 - k * 9} y={y} dim={!active} />
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        {marks.map((Mk, k) => (
+                          <Mk key={k} x={labelX + 4 + k * 9} y={y} dim={!active} />
+                        ))}
+                        <text
+                          x={labelX + 10 + marksW} y={y + 3.6}
+                          fontSize={11}
+                          fill={active ? '#0f172a' : '#475569'}
+                          className={active ? 'font-semibold' : ''}
+                        >
+                          {label}
+                        </text>
+                      </>
+                    )}
+                  </g>
 
                   {bridge && (
                     <line
@@ -355,9 +527,17 @@ const PersonnelStrip: React.FC<{
             style={(() => {
               const idx = shown.findIndex(p => p.id === card.id);
               const top = M.top + idx * ROW + ROW + 6;
+              // Follow the row's own marks horizontally so the card does not
+              // cover the years it is describing.
+              const anchor = card.first <= loYear
+                ? plotL : Math.min(x(card.first), plotR);
+              // The SVG scales to its container, so anchor the card in
+              // percentages of user space rather than in raw pixels.
+              const pct = Math.max(0, Math.min(
+                ((anchor + 14) / width) * 100, 100));
               return {
                 top: Math.min(top, Math.max(0, height - 150)),
-                left: Math.min(LABEL_W + 24, Math.max(8, width - 300))
+                left: `min(${pct}%, calc(100% - 292px))`
               };
             })()}
             onMouseEnter={() => { /* keep open while the pointer is on it */ }}
@@ -373,12 +553,19 @@ const PersonnelStrip: React.FC<{
                   </p>
                 )}
               </div>
-              <span
-                className="shrink-0 mt-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white"
-                style={{ background: roleColor(card.role) }}
-              >
-                {card.role}
-              </span>
+              {card.origin === 'press' ? (
+                <span className="shrink-0 mt-0.5 px-2 py-0.5 rounded-full text-[10px]
+                  font-semibold border border-slate-300 text-slate-600 bg-slate-50">
+                  Press
+                </span>
+              ) : (
+                <span
+                  className="shrink-0 mt-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white"
+                  style={{ background: roleColor(card.role) }}
+                >
+                  {card.role}
+                </span>
+              )}
             </div>
 
             <dl className="mt-3 space-y-1.5 text-[12px]">
@@ -388,7 +575,9 @@ const PersonnelStrip: React.FC<{
                     {s.from}–{s.to}
                   </dt>
                   <dd className="text-slate-600">
-                    {s.kind === 'Study' ? 'Trained here' : 'Worked here'}
+                    {s.kind === 'Study' ? 'Trained here'
+                      : s.kind === 'Post' ? 'In post'
+                      : 'Worked here'}
                   </dd>
                 </div>
               ))}
@@ -396,13 +585,35 @@ const PersonnelStrip: React.FC<{
                 <div key={`p${i}`} className="flex gap-2">
                   <dt className="font-mono text-slate-900 w-[74px] shrink-0">{q.year}</dt>
                   <dd className="text-slate-600">
-                    {q.kind === 'Study' ? 'Recorded as a pupil' : 'Recorded here'}
+                    {q.kind === 'Study' ? 'Recorded as a pupil'
+                      : q.kind === 'Post' ? 'In post'
+                      : 'Recorded here'}
                   </dd>
                 </div>
               ))}
             </dl>
 
-            {card.spans.length === 0 && card.points.length > 0 && (
+            {card.origin !== 'mideastmed' && (
+              <div className="mt-2.5 border-t border-slate-100 pt-2 space-y-1.5">
+                <p className="text-[12px] leading-snug text-slate-700">
+                  {card.post || card.role}
+                </p>
+                {card.note && (
+                  <p className="text-[11px] leading-snug text-slate-500">{card.note}</p>
+                )}
+                <p className="text-[11px] text-slate-400">
+                  {card.certainty === 'inferred'
+                    // An inferred post must never read as a printed one.
+                    ? 'Deduced across readings — no single source states it.'
+                    : 'Stated in the source.'}
+                  {card.source && (
+                    <span className="font-mono"> · {card.source}</span>
+                  )}
+                </p>
+              </div>
+            )}
+
+            {card.origin === 'mideastmed' && card.spans.length === 0 && card.points.length > 0 && (
               <p className="mt-2.5 text-[11px] leading-snug text-slate-500 border-t border-slate-100 pt-2">
                 {card.points.length > 1
                   ? 'Separate sightings, not a continuous term — the dashed rule joins them but no source covers the years between.'
@@ -410,6 +621,7 @@ const PersonnelStrip: React.FC<{
               </p>
             )}
 
+            {card.url && (
             <a
               href={card.url}
               target="_blank"
@@ -419,25 +631,29 @@ const PersonnelStrip: React.FC<{
               MidEastMed record
               <ExternalLink size={12} />
             </a>
+            )}
           </div>
         )}
       </div>
 
       <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
-        Personnel from{' '}
+        {data.meta.activities} records for{' '}
+        {data.meta.people - data.meta.fromPress} people from the{' '}
         <a
           href={data.meta.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-slate-600"
         >
-          MidEastMed
+          MidEastMed record for this hospital
         </a>
-        , Liat Kozma's ERC project ({data.meta.licence}) — {data.meta.activities} records
-        for {data.meta.people} people
-        {data.meta.undated > 0 && `, and ${data.meta.undated} undated ones no axis can place`}.
-        These are the people the surviving paperwork happens to name; the hospital
-        employed many more.
+        {data.meta.undated > 0 && `, ${data.meta.undated} of them undated and so absent here`}
+        , used under {data.meta.licence}. Funded by the {data.meta.grantKind}{' '}
+        <span className="font-mono">{data.meta.grant}</span>, {data.meta.pi},{' '}
+        {data.meta.institution}. The remaining {data.meta.fromPress} names, and
+        the posts they held, are our own readings — each row cites the source
+        that names it. These are the people the surviving paperwork happens to
+        name; the hospital employed many more.
       </p>
     </section>
   );
