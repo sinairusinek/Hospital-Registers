@@ -1,0 +1,5616 @@
+[
+ {
+  "node": "60711",
+  "url": "https://www.mideastmed.org/node/60711",
+  "name": "Saʻid ʻAbdalla al-Dajani",
+  "name_rtl": "سعيد عبدالله دجاني",
+  "year_of_birth": "1910",
+  "year_of_death": "",
+  "profession": "Doctor",
+  "city_of_birth": "Jaffa",
+  "city_of_birth_node": "60176",
+  "religion": "",
+  "gender": "",
+  "photo_url": "https://www.mideastmed.org/sites/default/files/field/photo/image/said_abdalla_al-dajani.jpg",
+  "bibliographic_references": [
+   {
+    "source": "al-Shakhsiyat",
+    "source_node": "60084",
+    "note": "p. 56"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Affiliation",
+    "study_level": "",
+    "profession": "",
+    "institution": "Arab Medical Association, Palestine",
+    "institution_node": "60322",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 55"
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Affiliation",
+    "study_level": "",
+    "profession": "",
+    "institution": "Anti-tuberculosis society, Jaffa",
+    "institution_node": "60329",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 55"
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "Muʿajam al-Atibbaʾ wa-l-Sayadlah al-Filastiniyyin",
+      "source_node": "116769",
+      "note": "vol. 2, p. 196."
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Secondary school",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1935",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "1938",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 55"
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "1938",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 55"
+     }
+    ]
+   },
+   {
+    "year_from": "1938",
+    "year_to": "1946",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 55"
+     },
+     {
+      "source": "PhB1942",
+      "source_node": "60087",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1948",
+    "year_to": "1953",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Tyre Hospital",
+    "institution_node": "60618",
+    "city": "Tyre",
+    "city_node": "60253",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "60771",
+  "url": "https://www.mideastmed.org/node/60771",
+  "name": "Da’ud Sulayman Bulus",
+  "name_rtl": "داود سليمان بولس",
+  "year_of_birth": "1883",
+  "year_of_death": "",
+  "profession": "Doctor",
+  "city_of_birth": "Kfar Yasif",
+  "city_of_birth_node": "60186",
+  "religion": "Protestant",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "15.11.1920, issue 31, p. 9"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "London School of Tropical Medicine",
+    "institution_node": "60543",
+    "city": "London",
+    "city_node": "60263",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1905",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": []
+   },
+   {
+    "year_from": "1905",
+    "year_to": "1914",
+    "kind": "Military service",
+    "study_level": "",
+    "profession": "",
+    "institution": "Egyptian Army Medical Corps",
+    "institution_node": "60317",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1915",
+    "year_to": "1917",
+    "kind": "Military service",
+    "study_level": "",
+    "profession": "",
+    "institution": "Ottoman Army",
+    "institution_node": "60309",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1917",
+    "year_to": "1920",
+    "kind": "Military service",
+    "study_level": "",
+    "profession": "",
+    "institution": "Occupied Enemy Territory Administration",
+    "institution_node": "60318",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1919",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "15.11.1920, issue 31, p. 9"
+     }
+    ]
+   },
+   {
+    "year_from": "1920",
+    "year_to": "1928",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Acre",
+    "institution_node": "60344",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1925",
+      "source_node": "84538",
+      "note": ""
+     },
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1928",
+    "year_to": "1933",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Haifa",
+    "institution_node": "60347",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Annual Report 1928",
+      "source_node": "60059",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1929",
+      "source_node": "60060",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1930",
+      "source_node": "60061",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1931",
+      "source_node": "60062",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1932",
+      "source_node": "60063",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1933",
+      "source_node": "60064",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1933",
+    "year_to": "1935",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Gaza",
+    "institution_node": "60346",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "Annual Report 1933",
+      "source_node": "60064",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "1941",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Jerusalem",
+    "institution_node": "60351",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Annual Report 1936",
+      "source_node": "60067",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1937",
+      "source_node": "60068",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1938",
+      "source_node": "60069",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1939",
+      "source_node": "60070",
+      "note": ""
+     },
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1941",
+      "source_node": "84519",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "60836",
+  "url": "https://www.mideastmed.org/node/60836",
+  "name": "Na’if Amin Hamzah",
+  "name_rtl": "نايف أمين حمزة",
+  "year_of_birth": "1895",
+  "year_of_death": "1977",
+  "profession": "Doctor",
+  "city_of_birth": "ʿAbey",
+  "city_of_birth_node": "60101",
+  "religion": "Druze",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "al-Shakhsiyat",
+    "source_node": "60084",
+    "note": "p. 36"
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "1.4.1921, issue 40, p. 16"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Aley",
+    "city_node": "67618",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "London",
+    "city_node": "60263",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Dublin",
+    "city_node": "60155",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Secondary school",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1919",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 36"
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1921",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 36"
+     }
+    ]
+   },
+   {
+    "year_from": "1919",
+    "year_to": "1920",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Egyptian Army",
+    "institution_node": "60320",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1920",
+    "year_to": "1923",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Jaffa",
+    "institution_node": "60349",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1921",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "01.04.1921, issue 40, p. 16"
+     }
+    ]
+   },
+   {
+    "year_from": "1923",
+    "year_to": "1924",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Ramalla",
+    "institution_node": "60354",
+    "city": "Ramallah",
+    "city_node": "60225",
+    "refs": [
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1924",
+    "year_to": "1930",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Gaza",
+    "institution_node": "60346",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "Annual Report 1926",
+      "source_node": "60057",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1927",
+      "source_node": "60058",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1928",
+      "source_node": "60059",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1929",
+      "source_node": "60060",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1930",
+      "source_node": "60061",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     },
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1925",
+      "source_node": "84538",
+      "note": ""
+     },
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1931",
+    "year_to": "1933",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Nablus",
+    "institution_node": "60353",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "Annual Report 1931",
+      "source_node": "60062",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1932",
+      "source_node": "60063",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1933",
+      "source_node": "60064",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1933",
+      "source_node": "60073",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1934",
+      "source_node": "60074",
+      "note": ""
+     },
+     {
+      "source": "Civil Service 1935",
+      "source_node": "60075",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Ishim",
+      "source_node": "60080",
+      "note": "p. 331"
+     },
+     {
+      "source": "Annual Report 1936",
+      "source_node": "60067",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1937",
+      "source_node": "60068",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1938",
+      "source_node": "60069",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1939",
+      "source_node": "60070",
+      "note": ""
+     },
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1941",
+      "source_node": "84519",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1948",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Nablus",
+    "institution_node": "60411",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "Ishim",
+      "source_node": "60080",
+      "note": "p. 331"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "60930",
+  "url": "https://www.mideastmed.org/node/60930",
+  "name": "Shafiq Nasr Hana Haddad",
+  "name_rtl": "شفيق ن. حنا حداد",
+  "year_of_birth": "1910",
+  "year_of_death": "",
+  "profession": "Doctor",
+  "city_of_birth": "Haifa",
+  "city_of_birth_node": "60166",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": ""
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "23.7.1936,issue 614, p. 793"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Elementary school",
+    "profession": "",
+    "institution": "Collège des Frères, Haifa",
+    "institution_node": "60523",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1934",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1939",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "Liverpool University",
+    "institution_node": "60616",
+    "city": "Liverpool",
+    "city_node": "60200",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1934",
+    "year_to": "1935",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "American University of Beirut Hospital",
+    "institution_node": "60617",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "1939",
+    "kind": "Military service",
+    "study_level": "",
+    "profession": "",
+    "institution": "Transjordan Frontier Force",
+    "institution_node": "60334",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1936",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Maʻan",
+    "city_node": "60203",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "23.07.1936,issue 614, p. 793"
+     }
+    ]
+   },
+   {
+    "year_from": "1939",
+    "year_to": "1942",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Nazareth",
+    "institution_node": "60550",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     },
+     {
+      "source": "Annual Report 1941",
+      "source_node": "84519",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1942",
+    "year_to": "1943",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1943",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1949",
+    "year_to": "1953",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "60948",
+  "url": "https://www.mideastmed.org/node/60948",
+  "name": "Sami Nimr Musallam",
+  "name_rtl": "سامي نمر مسلم",
+  "year_of_birth": "1913",
+  "year_of_death": "",
+  "profession": "Doctor",
+  "city_of_birth": "Judaydat Marj-ʿUyun",
+  "city_of_birth_node": "67137",
+  "religion": "",
+  "gender": "",
+  "photo_url": "https://www.mideastmed.org/sites/default/files/field/photo/image/sami_nimr_musallam.jpg",
+  "bibliographic_references": [
+   {
+    "source": "al-Shakhsiyat",
+    "source_node": "60084",
+    "note": "p. 134"
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "23.9.1937, issue 721, 899"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Elementary school",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jdeide",
+    "city_node": "60179",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1937",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 134"
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1949",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "Beekman Downtown Hospital, New York",
+    "institution_node": "60622",
+    "city": "New York",
+    "city_node": "60216",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1937",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "23.09.1937, issue 721, 899"
+     }
+    ]
+   },
+   {
+    "year_from": "1937",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 134"
+     }
+    ]
+   },
+   {
+    "year_from": "1939",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1941",
+    "year_to": "1943",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1942",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1944",
+    "year_to": "1948",
+    "kind": "Affiliation",
+    "study_level": "",
+    "profession": "",
+    "institution": "Anti-tuberculosis society, Palestine",
+    "institution_node": "60331",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1945",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "1948",
+    "kind": "Affiliation",
+    "study_level": "",
+    "profession": "",
+    "institution": "Arab Medical Association, Palestine",
+    "institution_node": "60322",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 134"
+     }
+    ]
+   },
+   {
+    "year_from": "1949",
+    "year_to": "1953",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Beekman Downtown Hospital, New York",
+    "institution_node": "60622",
+    "city": "New York",
+    "city_node": "60216",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "60960",
+  "url": "https://www.mideastmed.org/node/60960",
+  "name": "Jubran ʻAwdah ʻAtallah",
+  "name_rtl": "جبران عودة عطالله",
+  "year_of_birth": "1915",
+  "year_of_death": "2000",
+  "profession": "Doctor",
+  "city_of_birth": "Jerusalem",
+  "city_of_birth_node": "60182",
+  "religion": "Christian",
+  "gender": "",
+  "photo_url": "https://www.mideastmed.org/sites/default/files/field/photo/image/jubran_awda_atalla.jpg",
+  "bibliographic_references": [
+   {
+    "source": "al-Shakhsiyat",
+    "source_node": "60084",
+    "note": "P. 159"
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "13.10.1938, issue 825, p. 1171"
+   },
+   {
+    "source": "Muʿajam al-Atibbaʾ wa-l-Sayadlah al-Filastiniyyin",
+    "source_node": "116769",
+    "note": "vol. 3, pp. 117."
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Affiliation",
+    "study_level": "",
+    "profession": "",
+    "institution": "Arab Medical Association, Palestine",
+    "institution_node": "60322",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 159"
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1938",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "P. 159"
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1938",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "13.10.1938, issue 825, p. 1171"
+     }
+    ]
+   },
+   {
+    "year_from": "1938",
+    "year_to": "1940",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 159"
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "1941",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Iraqi Petroleum Company",
+    "institution_node": "67944",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 159"
+     }
+    ]
+   },
+   {
+    "year_from": "1941",
+    "year_to": "1946",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 159"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Transjordan Frontier Force",
+    "institution_node": "60334",
+    "city": "Maʻan",
+    "city_node": "60203",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "60982",
+  "url": "https://www.mideastmed.org/node/60982",
+  "name": "ʻAbd al-Latif Ibrahim Yashruti",
+  "name_rtl": "عبد اللطيف يشرطي",
+  "year_of_birth": "1917",
+  "year_of_death": "2015",
+  "profession": "Doctor",
+  "city_of_birth": "Acre",
+  "city_of_birth_node": "60100",
+  "religion": "Muslim",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "al-Shakhsiyat",
+    "source_node": "60084",
+    "note": "p. 154"
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   },
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": "p. 309"
+   },
+   {
+    "source": "Muʿajam al-Atibbaʾ wa-l-Sayadlah al-Filastiniyyin",
+    "source_node": "116769",
+    "note": "vol. 3, p. 273."
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Affiliation",
+    "study_level": "",
+    "profession": "",
+    "institution": "Arab Medical Association, Palestine",
+    "institution_node": "60322",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 154"
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Elementary school",
+    "profession": "",
+    "institution": "Government School, Acre",
+    "institution_node": "60576",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Bachelor of Arts and Sciences",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1938",
+    "kind": "Study",
+    "study_level": "Bachelor of Arts and Sciences",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": "p. 309"
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1942",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "al-Shakhsiyat",
+      "source_node": "60084",
+      "note": "p. 154"
+     }
+    ]
+   },
+   {
+    "year_from": "1942",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1942",
+    "year_to": "1945",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1947",
+    "year_to": "1955",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Edinburgh",
+    "city_node": "60157",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1955",
+    "year_to": "1957",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Ministry of Health, Jordan",
+    "institution_node": "116928",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "Muʿajam al-Atibbaʾ wa-l-Sayadlah al-Filastiniyyin",
+      "source_node": "116769",
+      "note": "vol. 3, p. 273."
+     }
+    ]
+   },
+   {
+    "year_from": "1957",
+    "year_to": "1970",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "Muʿajam al-Atibbaʾ wa-l-Sayadlah al-Filastiniyyin",
+      "source_node": "116769",
+      "note": "vol. 3, p. 275."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "60988",
+  "url": "https://www.mideastmed.org/node/60988",
+  "name": "Ibrahim Salim Ayyub",
+  "name_rtl": "ابراهيم ايوب",
+  "year_of_birth": "1915",
+  "year_of_death": "",
+  "profession": "Doctor",
+  "city_of_birth": "Jaffa",
+  "city_of_birth_node": "60176",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": ""
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1943",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1943",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1943",
+    "year_to": "1945",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1945",
+    "year_to": "1946",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Haifa",
+    "institution_node": "60347",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1947",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Safad",
+    "institution_node": "60407",
+    "city": "Safad",
+    "city_node": "60229",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1948",
+    "year_to": "1953",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Iraqi Petrolium Company, Tripoli",
+    "institution_node": "60612",
+    "city": "Tripoli",
+    "city_node": "60251",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61016",
+  "url": "https://www.mideastmed.org/node/61016",
+  "name": "ʻAtalla Asʻad Shiban",
+  "name_rtl": "عطالله اسعد شيبان",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Doctor",
+  "city_of_birth": "Rama",
+  "city_of_birth_node": "60224",
+  "religion": "Christian",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "9.8.1945, issue 1430, p. 870"
+   },
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": "p. 349"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1945",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1945",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "09.08.1945, issue 1430, p. 870"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61017",
+  "url": "https://www.mideastmed.org/node/61017",
+  "name": "Nimr ʻAbd al-Fattah Tuqan",
+  "name_rtl": "نمر عبد الفتاح طوقان",
+  "year_of_birth": "1922",
+  "year_of_death": "1963",
+  "profession": "Doctor",
+  "city_of_birth": "Nablus",
+  "city_of_birth_node": "60210",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": "p. 350"
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "11.10.1945, issue 1445, p. 1179"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "American University of Beirut Hospital",
+    "institution_node": "60617",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     },
+     {
+      "source": "Muʿajam al-Atibbaʾ wa-l-Sayadlah al-Filastiniyyin",
+      "source_node": "116769",
+      "note": "vol. 3, p. 86."
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1945",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1945",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "11.10.1945, issue 1445, p. 1179"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61034",
+  "url": "https://www.mideastmed.org/node/61034",
+  "name": "Sami Salim Khuri",
+  "name_rtl": "سامي سالم خوري",
+  "year_of_birth": "1922",
+  "year_of_death": "",
+  "profession": "Doctor, Surgeon",
+  "city_of_birth": "Nablus",
+  "city_of_birth_node": "60210",
+  "religion": "Christian",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": ""
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "15.8.1946, issue 1516, p. 758"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "University of Edinburgh",
+    "institution_node": "60519",
+    "city": "Edinburgh",
+    "city_node": "60157",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Secondary school",
+    "profession": "",
+    "institution": "St. George School",
+    "institution_node": "60537",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": []
+   },
+   {
+    "year_from": "",
+    "year_to": "1946",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1952",
+    "kind": "Study",
+    "study_level": "",
+    "profession": "",
+    "institution": "University of Edinburgh",
+    "institution_node": "60519",
+    "city": "Edinburgh",
+    "city_node": "60157",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "15.08.1946, issue 1516, p. 758"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "1947",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1947",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1948",
+    "year_to": "1950",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Nablus",
+    "institution_node": "60411",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1952",
+    "year_to": "1953",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Augusta Victora Hospital",
+    "institution_node": "60613",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1960",
+    "year_to": "1961",
+    "kind": "Affiliation",
+    "study_level": "",
+    "profession": "",
+    "institution": "Jordanian Medical Association",
+    "institution_node": "116821",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "Muʿajam al-Atibbaʾ wa-l-Sayadlah al-Filastiniyyin",
+      "source_node": "116769",
+      "note": "vol. 2, p. 178."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61140",
+  "url": "https://www.mideastmed.org/node/61140",
+  "name": "Salima Shibli",
+  "name_rtl": "سليمة شبلي",
+  "year_of_birth": "1892",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "15.11.1920, issue 31, p. 14"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1919",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "15.11.1920, issue 31, p. 14"
+     }
+    ]
+   },
+   {
+    "year_from": "1926",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Mental Hospital, Bethlehem",
+    "institution_node": "60382",
+    "city": "Bethlehem",
+    "city_node": "60135",
+    "refs": [
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Municipal Hospital, Gaza",
+    "institution_node": "60385",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Gaza",
+    "institution_node": "60561",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61143",
+  "url": "https://www.mideastmed.org/node/61143",
+  "name": "Milada Qubti",
+  "name_rtl": "ملادة قبطي",
+  "year_of_birth": "1897",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1922",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "1926",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Municipal Hospital, Jaffa",
+    "institution_node": "60394",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61153",
+  "url": "https://www.mideastmed.org/node/61153",
+  "name": "Nasima ʻAwwad",
+  "name_rtl": "نسيمة عواد",
+  "year_of_birth": "",
+  "year_of_death": "1934",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "16.12.1926, issue 177"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1926",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "16.12.1926, issue 177"
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61213",
+  "url": "https://www.mideastmed.org/node/61213",
+  "name": "Alice Tannus ʻAtiyya",
+  "name_rtl": "اليس طنوس عطية",
+  "year_of_birth": "",
+  "year_of_death": "1937",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "16.4.1932,issue 305, p. 296"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1931",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "16.07.1931, issue 287, p. *"
+     }
+    ]
+   },
+   {
+    "year_from": "1932",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "16.04.1932,issue 305, p. 296"
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Watani Hospital, Nablus",
+    "institution_node": "60404",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61216",
+  "url": "https://www.mideastmed.org/node/61216",
+  "name": "Wadiʻa Habibi",
+  "name_rtl": "وديعة حبيبي",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "16.4.1932,issue 305, p. 296"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1931",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "16.07.1931, issue 287, p. *"
+     }
+    ]
+   },
+   {
+    "year_from": "1932",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "16.04.1932,issue 305, p. 296"
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61236",
+  "url": "https://www.mideastmed.org/node/61236",
+  "name": "Zakia Chabishian",
+  "name_rtl": "زكية شابيشيان",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "Armenian",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "29.6.1933,issue 371, p. 831"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1930",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "1933",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "29.06.1933,issue 371, p. 831"
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61240",
+  "url": "https://www.mideastmed.org/node/61240",
+  "name": "Zahra Hannush",
+  "name_rtl": "زهر ة هنوش",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "25.1.1934, issue 417"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1934",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "25.01.1934, issue 417"
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Church Missionary Society Hospital, Jaffa",
+    "institution_node": "60390",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Infant Welfare Center, Ramallah",
+    "institution_node": "60414",
+    "city": "Ramallah",
+    "city_node": "60225",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61286",
+  "url": "https://www.mideastmed.org/node/61286",
+  "name": "Nabiha Salama Wirr",
+  "name_rtl": "نبيهة سلامة وير",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "13.5.1937,issue 690, p. 481"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1937",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "13.05.1937,issue 690, p. 481"
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61300",
+  "url": "https://www.mideastmed.org/node/61300",
+  "name": "Latifa Tuza",
+  "name_rtl": "لطيفة طوزة",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "28.4.1938,issue 778, p. 460"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1939",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "1938",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "28.04.1938,issue 778, p. 460"
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61304",
+  "url": "https://www.mideastmed.org/node/61304",
+  "name": "Nahil Nimr",
+  "name_rtl": "نهيل نمر",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "13.10.1938, issue 825, p. 1171"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1936",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "1938",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "13.10.1938, issue 825, p. 1171"
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Infant Welfare Center, Majdal",
+    "institution_node": "60435",
+    "city": "Majdal",
+    "city_node": "60205",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61320",
+  "url": "https://www.mideastmed.org/node/61320",
+  "name": "Dhahbiya Habib ʻAbdu",
+  "name_rtl": "ذهبية حبيب عبده",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "19.10.1939,issue 955, p. 1162"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1939",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jenin",
+    "city_node": "60180",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "19.10.1939,issue 955, p. 1162"
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jenin",
+    "city_node": "60180",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61326",
+  "url": "https://www.mideastmed.org/node/61326",
+  "name": "Warda Salfiti Ashkar",
+  "name_rtl": "وردة سلفيتي اشكر",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "25.1.1940,issue 981, p. 120"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "25.01.1940,issue 981, p. 120"
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61363",
+  "url": "https://www.mideastmed.org/node/61363",
+  "name": "Helen Nasif Haddad Hutchins",
+  "name_rtl": "",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "18.2.1943,issue 1251, p. 145"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1939",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": []
+   },
+   {
+    "year_from": "1943",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "18.02.1943,issue 1251, p. 145"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61369",
+  "url": "https://www.mideastmed.org/node/61369",
+  "name": "Zakia Khalil Husni",
+  "name_rtl": "زكية خليل حسني",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "26.8.1943,issue 1286, p. 739"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1939",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": []
+   },
+   {
+    "year_from": "1943",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "26.08.1943,issue 1286, p. 739"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61375",
+  "url": "https://www.mideastmed.org/node/61375",
+  "name": "Victoria Yaʻqub ʻAranki",
+  "name_rtl": "فيكتوريا يعقوب عرنكي",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "10.2.1944,issue 1317, p. 154"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1939",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "1944",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "10.02.1944,issue 1317, p. 154"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61398",
+  "url": "https://www.mideastmed.org/node/61398",
+  "name": "Kamilah Musa Nqula",
+  "name_rtl": "كاملة موسى نقولا",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "11.10.1945, issue 1445, p. 1179"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1945",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "11.10.1945, issue 1445, p. 1179"
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61421",
+  "url": "https://www.mideastmed.org/node/61421",
+  "name": "Yvone Tawfiq Haddad",
+  "name_rtl": "ايفون توفيق حداد",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "24.6.1947, issue 1597, p. 800"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1944",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   },
+   {
+    "year_from": "1947",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "24.06.1947, issue 1597, p. 800"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61453",
+  "url": "https://www.mideastmed.org/node/61453",
+  "name": "Lourie Ekyakchian",
+  "name_rtl": "لوري إكياكشيان",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "Armenian",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Church Missionary Society Hospital, Nablus",
+    "institution_node": "60403",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Gaza",
+    "institution_node": "60561",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61491",
+  "url": "https://www.mideastmed.org/node/61491",
+  "name": "Maryam Rizq",
+  "name_rtl": "مريم رزق",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1926",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Infant Welfare Center, Haifa",
+    "institution_node": "60449",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61496",
+  "url": "https://www.mideastmed.org/node/61496",
+  "name": "Maryam Samʿan",
+  "name_rtl": "مريم سمعان",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1926",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "United Free Church of Scotland Hospital",
+    "institution_node": "60408",
+    "city": "Tiberias",
+    "city_node": "60250",
+    "refs": [
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "United Free Church of Scotland Hospital",
+    "institution_node": "60408",
+    "city": "Tiberias",
+    "city_node": "60250",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Infant Welfare Center, Haifa",
+    "institution_node": "60449",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61500",
+  "url": "https://www.mideastmed.org/node/61500",
+  "name": "Gassia Shamlian",
+  "name_rtl": "غاسيا شامليان",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "Armenian",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Edinburgh Medical Missionary Society Nazareth Hospital",
+    "institution_node": "60405",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61503",
+  "url": "https://www.mideastmed.org/node/61503",
+  "name": "Alice Butrus Shumali",
+  "name_rtl": "أليس بطرس شمالي",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Midwife",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Infant Welfare Center, Rama",
+    "institution_node": "60446",
+    "city": "Rama",
+    "city_node": "60224",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61522",
+  "url": "https://www.mideastmed.org/node/61522",
+  "name": "Ida Ansar",
+  "name_rtl": "",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1942",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61523",
+  "url": "https://www.mideastmed.org/node/61523",
+  "name": "Zuha ʿAranki",
+  "name_rtl": "زهاء عرنكي",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1945",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61527",
+  "url": "https://www.mideastmed.org/node/61527",
+  "name": "Jalila ʻAwwad",
+  "name_rtl": "جليلة عواد",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1936",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61544",
+  "url": "https://www.mideastmed.org/node/61544",
+  "name": "Musayan Musbah Dudar",
+  "name_rtl": "",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1945",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61546",
+  "url": "https://www.mideastmed.org/node/61546",
+  "name": "Adma Faris",
+  "name_rtl": "فارس",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1939",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61591",
+  "url": "https://www.mideastmed.org/node/61591",
+  "name": "Alice Keredjian",
+  "name_rtl": "اليس كيريدجيان",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "Armenian",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1945",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61622",
+  "url": "https://www.mideastmed.org/node/61622",
+  "name": "Saʻda Ibrahim Nassar",
+  "name_rtl": "سعدة ابراهيم نصار",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1940",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61650",
+  "url": "https://www.mideastmed.org/node/61650",
+  "name": "Asa Zaybak",
+  "name_rtl": "اسا زيبك",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1946",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61656",
+  "url": "https://www.mideastmed.org/node/61656",
+  "name": "Georgetti Dafunia",
+  "name_rtl": "جورجيت دفونيا",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1946",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": []
+   }
+  ]
+ },
+ {
+  "node": "61690",
+  "url": "https://www.mideastmed.org/node/61690",
+  "name": "Tawfiq Musa Zaynun",
+  "name_rtl": "توفيق موسى زينون",
+  "year_of_birth": "1888",
+  "year_of_death": "",
+  "profession": "Pharmacist",
+  "city_of_birth": "Roumieh",
+  "city_of_birth_node": "60228",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "15.11.1920, issue 31, p. 12"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Haifa",
+    "institution_node": "60347",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1909",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1909",
+    "year_to": "1910",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Antakya",
+    "city_node": "60110",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1910",
+    "year_to": "1911",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1920",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "15.11.1920, issue 31, p. 12"
+     }
+    ]
+   },
+   {
+    "year_from": "1926",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Municipal Hospital, Jaffa",
+    "institution_node": "60394",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61692",
+  "url": "https://www.mideastmed.org/node/61692",
+  "name": "Kamil ʻIsa Haddad",
+  "name_rtl": "كامل عيسى حداد",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Pharmacist",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "1920",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "al-Kulliyah",
+      "source_node": "60083",
+      "note": "July 1 1920, Vol. VI, No. 11, 88"
+     }
+    ]
+   },
+   {
+    "year_from": "1926",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "List of medical professionals practicing in Palestine, 1926",
+      "source_node": "112482",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1930",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Municipal Hospital, Jaffa",
+    "institution_node": "60394",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "Index of 1930",
+      "source_node": "60056",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Acre",
+    "institution_node": "60344",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Acre",
+    "institution_node": "60344",
+    "city": "Acre",
+    "city_node": "60100",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61710",
+  "url": "https://www.mideastmed.org/node/61710",
+  "name": "Ilyas Bisharah ʻAtallah",
+  "name_rtl": "الياس بشارة عطالله",
+  "year_of_birth": "1910",
+  "year_of_death": "",
+  "profession": "Pharmacist",
+  "city_of_birth": "Jenin",
+  "city_of_birth_node": "60180",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": ""
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "17.8.1933, issue 382, p. 1099"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Cairo",
+    "city_node": "60148",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1933",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "al-Kulliyah",
+      "source_node": "60083",
+      "note": "1 July 1933, Vol. XIX, No. 6, p.174"
+     }
+    ]
+   },
+   {
+    "year_from": "1933",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "17.08.1933, issue 382, p. 1099"
+     }
+    ]
+   },
+   {
+    "year_from": "1933",
+    "year_to": "1934",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Amman",
+    "city_node": "60108",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1934",
+    "year_to": "1946",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1934",
+    "year_to": "1946",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1934",
+    "year_to": "1946",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Safad",
+    "institution_node": "60407",
+    "city": "Safad",
+    "city_node": "60229",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Safad Dispensary",
+    "institution_node": "60371",
+    "city": "Safad",
+    "city_node": "60229",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Safad",
+    "institution_node": "60356",
+    "city": "Safad",
+    "city_node": "60229",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "1947",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1947",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "61711",
+  "url": "https://www.mideastmed.org/node/61711",
+  "name": "Fawzi Salim Bishara",
+  "name_rtl": "فوزي سليم بشارة",
+  "year_of_birth": "1911",
+  "year_of_death": "",
+  "profession": "Pharmacist",
+  "city_of_birth": "Nazareth",
+  "city_of_birth_node": "60213",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": ""
+   },
+   {
+    "source": "Official Gazette",
+    "source_node": "60051",
+    "note": "17.8.1933, issue 382, p. 1099"
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Residency",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "",
+    "city_node": "",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1933",
+    "kind": "Study",
+    "study_level": "Medical studies",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "al-Kulliyah",
+      "source_node": "60083",
+      "note": "1 July 1933, Vol. XIX, No. 6, p.174"
+     }
+    ]
+   },
+   {
+    "year_from": "1933",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Nazareth",
+    "city_node": "60213",
+    "refs": [
+     {
+      "source": "Official Gazette",
+      "source_node": "60051",
+      "note": "17.08.1933, issue 382, p. 1099"
+     }
+    ]
+   },
+   {
+    "year_from": "1933",
+    "year_to": "1935",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1934",
+    "year_to": "1934",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Church Missionary Society Hospital, Nablus",
+    "institution_node": "60403",
+    "city": "Nablus",
+    "city_node": "60210",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1934",
+    "year_to": "1948",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Medical Stores, Jerusalem",
+    "institution_node": "60540",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1935",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jerusalem",
+    "institution_node": "60397",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Index of 1935",
+      "source_node": "60055",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1936",
+    "year_to": "1938",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Jaffa",
+    "institution_node": "60349",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1939",
+    "year_to": "1939",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1940",
+      "source_node": "60054",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1940",
+    "year_to": "1940",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Jaffa",
+    "institution_node": "60410",
+    "city": "Jaffa",
+    "city_node": "60176",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1941",
+    "year_to": "1942",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "District Health Office, Gaza",
+    "institution_node": "60346",
+    "city": "Gaza",
+    "city_node": "60164",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1946",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Index of 1946",
+      "source_node": "60053",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1948",
+    "year_to": "1950",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Brumana Highschool",
+    "institution_node": "60614",
+    "city": "Brummana",
+    "city_node": "60146",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1950",
+    "year_to": "1953",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "UNRWA, Beirut",
+    "institution_node": "60615",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "1953",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "66538",
+  "url": "https://www.mideastmed.org/node/66538",
+  "name": "Faris Khalil Haddad",
+  "name_rtl": "فارس خليل حداد",
+  "year_of_birth": "1916",
+  "year_of_death": "1986",
+  "profession": "Nurse",
+  "city_of_birth": "Hurfeish",
+  "city_of_birth_node": "66537",
+  "religion": "Christian",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "Oral history",
+      "source_node": "70343",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Study",
+    "study_level": "Professional diploma",
+    "profession": "",
+    "institution": "",
+    "institution_node": "",
+    "city": "Jerusalem",
+    "city_node": "60182",
+    "refs": [
+     {
+      "source": "Oral history",
+      "source_node": "70343",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "node": "86521",
+  "url": "https://www.mideastmed.org/node/86521",
+  "name": "Judith Eliashberg",
+  "name_rtl": "",
+  "year_of_birth": "",
+  "year_of_death": "",
+  "profession": "Nurse",
+  "city_of_birth": "",
+  "city_of_birth_node": "",
+  "religion": "",
+  "gender": "",
+  "photo_url": "",
+  "bibliographic_references": [
+   {
+    "source": "AUB Alumni",
+    "source_node": "60052",
+    "note": ""
+   }
+  ],
+  "activities": [
+   {
+    "year_from": "",
+    "year_to": "",
+    "kind": "Work",
+    "study_level": "",
+    "profession": "",
+    "institution": "Government Hospital, Haifa",
+    "institution_node": "60387",
+    "city": "Haifa",
+    "city_node": "60166",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "year_from": "",
+    "year_to": "1936",
+    "kind": "Study",
+    "study_level": "Professional diploma",
+    "profession": "",
+    "institution": "American University of Beirut",
+    "institution_node": "60512",
+    "city": "Beirut",
+    "city_node": "60123",
+    "refs": [
+     {
+      "source": "AUB Alumni",
+      "source_node": "60052",
+      "note": ""
+     }
+    ]
+   }
+  ]
+ }
+]

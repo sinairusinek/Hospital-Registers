@@ -11,6 +11,8 @@ on:
       - 'pipeline/build.py'
       - 'pipeline/source_registry.py'
       - 'pipeline/timeline_data.py'
+      - 'pipeline/personnel_data.py'
+      - 'data/mideastmed/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -43,6 +45,10 @@ jobs:
       # without a manual rebuild; timeline_data.py refuses to publish a
       # sourceless payload over a sourced one.
       - run: python3 pipeline/timeline_data.py
+      # The personnel strip, from the MidEastMed scrape committed under
+      # data/mideastmed/. Pure transform of a committed input, so a rebuild
+      # here always reproduces the committed personnel.json.
+      - run: python3 pipeline/personnel_data.py
       # The registry is a committed artifact built from two public inputs, so
       # a clean rebuild must reproduce it byte for byte. If it does not, the
       # committed file was written from something not in the repo — the state

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ExternalLink, X, Loader2, BookOpen } from 'lucide-react';
 import { PageScan, PageScanIndex, usePageScans, pageImageUrl } from './ScanLink';
+import PersonnelStrip from './PersonnelStrip';
 
 /**
  * The hospital's registers on one time axis, in four layers.
@@ -1214,6 +1215,14 @@ const TimelineView: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* The personnel share the axis above, converted to whole years: the
+          MidEastMed dates are years, and pretending to a month would invent
+          precision the source does not have. */}
+      <PersonnelStrip
+        lo={1900 + Math.floor(lo / 12)}
+        hi={1900 + Math.floor(hi / 12)}
+      />
 
       <SourceDrawer
         source={drawer?.source ?? null}

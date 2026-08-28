@@ -46,6 +46,15 @@ if (existsSync(timelineSrc)) {
   console.log(`Staged timeline → ${timelineDest}`);
 }
 
+// The personnel strip: who MidEastMed places inside the hospital, built by
+// pipeline/personnel_data.py. Optional, like the rest.
+const personnelSrc = resolve(here, '../../data/public/personnel.json');
+const personnelDest = resolve(here, '../public/data/personnel.json');
+if (existsSync(personnelSrc)) {
+  copyFileSync(personnelSrc, personnelDest);
+  console.log(`Staged personnel → ${personnelDest}`);
+}
+
 // Coordinates for the reviewed City values, built by pipeline/place_coords.py.
 // Optional: without it the Map view says how to build it rather than failing.
 const coordsSrc = resolve(here, '../../data/public/place-coords.tsv');
