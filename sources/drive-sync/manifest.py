@@ -1,166 +1,168 @@
 #!/usr/bin/env python3
-"""Build the manifest CSV: one row per file in the Drive collection."""
+"""Rebuild the manifest from what is actually in Drive, not from the staging
+tree — so the moved context/ folders and the ISA bulk are covered too."""
 import csv
 import os
+import json
+import subprocess
 from pathlib import Path
 
-S = Path(
-    "/private/tmp/claude-501/-Users-sinairusinek-Documents-GitHub-Hospital-Registers"
-    "/b7db0c0c-d15e-4325-89a1-2d25996b5d3b/scratchpad"
-)
-ST = S / "stage"
-REPO = Path("/Users/sinairusinek/Documents/GitHub/Hospital-Registers")
+# Working directory: beside these scripts by default, or $HR_DRIVE_WORKDIR.
+S = Path(os.environ.get("HR_DRIVE_WORKDIR", Path(__file__).resolve().parent))
+D = "jeckedrive:מאמר לקתדרה/מקורות ראשוניים"
 
-# description | provenance | caution | repo path, keyed by staged filename
-DESC = {
-    "קישורים לסריקות (iiif-pages).tsv": (
-        "2,547 שורות: פנקס/עמוד → כתובת IIIF וכתובת צפייה. הדרך לחזור מרשומה אל כתב היד",
-        "ספריית אוניברסיטת חיפה, Alma/ExLibris 972HAI_MAIN",
-        "",
-        "data/public/iiif-pages.tsv",
-    ),
-    "diagnosis-classification.tsv": (
-        "סיווג האבחנות ל-ICD-9",
-        "מודל, לפי ההנחיה diagnoses-icd9-v1",
-        "",
-        "data/public/diagnosis-classification.tsv",
-    ),
-    "normalization-report.tsv": (
-        "כל החלטת מיזוג בנרמול + 95 ערכים בזנב הנדיר (פחות מ-20 רשומות)",
-        "pipeline/build.py",
-        "מסמך לביקורת, לא נתון סופי",
-        "data/public/normalization-report.tsv",
-    ),
-    "address-corrections.tsv": (
-        "תיקוני כתובות",
-        "עבודה ידנית",
-        "",
-        "data/public/address-corrections.tsv",
-    ),
-    "place-coords.tsv": (
-        "קואורדינטות לכל מקום בגזטיר",
-        "Kima + Wikidata",
-        "שתי רשומות Kima ללא קואורדינטות",
-        "data/public/place-coords.tsv",
-    ),
-    "external-events.tsv": (
-        "כרונולוגיה חיצונית לציר הזמן",
-        "אצור ביד",
-        "טיוטה הממתינה לעריכתך",
-        "data/public/external-events.tsv",
-    ),
-    "city-kima-decisions.tsv": (
-        "החלטות זיהוי 437 ערכי City מול הגזטיר ההיסטורי Kima",
-        "סשן אדם-בלולאה, 2026-08-06",
-        "עמודת decided_by מבחינה בין auto / agent / human",
-        "kimatch/city-kima-decisions.tsv",
-    ),
-    "review-workbook.tsv": (
-        "בסיס הראיות שעליו נשענו החלטות Kima",
-        "כנ\"ל",
-        "",
-        "kimatch/review-workbook.tsv",
-    ),
-    "hand-authored-sources.json": (
-        "35 ציטוטים שנקראו ותורגמו ביד (29 אנגלית, 3 ערבית, 3 גרמנית)",
-        "קריאה ידנית",
-        "אין גנרטור שיבנה אותם מחדש — ערכו כאן",
-        "sources/press/hand-authored-sources.json",
-    ),
-    "sources-registry.json": (
-        "278 ציטוטי עיתונות עם קישורי-קבע ל-NLI Veridian והערת קריאה",
-        "נוצר מהקריאות בעברית + הקובץ הידני",
-        "נוצר אוטומטית — אל תערכו ידנית",
-        "data/public/sources-registry.json",
-    ),
-    "meca-jem-catalogue.txt": (
-        "קטלוג ארכיון המזרח התיכון באוקספורד, אוסף Jerusalem & the East Mission GB165-0161",
-        "MECA Oxford",
-        "",
-        "sources/archives/meca-jem-catalogue.txt",
-    ),
-    "DOH_annual_report_1921.pdf": (
-        "דוח מחלקת הבריאות 1921, המקור הסרוק",
-        "archive.org",
-        "",
-        "paper/sources/doh/DOH_annual_report_1921.pdf",
-    ),
-    "DOH_annual_report_1921.txt": (
-        "אותו דוח, שכבת טקסט",
-        "OCR",
-        "OCR פגום מקומית",
-        "sources/archives/doh/DOH_annual_report_1921.txt",
-    ),
-}
+out = subprocess.run(
+    [str(S / "rc.sh"), "lsjson", D, "-R", "--files-only"],
+    capture_output=True, text=True,
+)
+files = json.loads(out.stdout)
 
 SECTION = {
+    "00": "— מדריך / Guide",
     "01": "01 הפנקסים · Registers",
     "02": "02 ארכיון המדינה · Israel State Archives",
     "03": "03 דוחות רשמיים · Official reports",
     "04": "04 עיתונות · Press",
     "05": "05 מפקדים · Census",
     "06": "06 סינתזה · Synthesis",
+    "07": "07 ספרות משנית · Secondary literature",
+}
+
+# Longest-prefix rules: folder path fragment -> (what it is, provenance, caution, repo path)
+RULES = [
+    ("01 הפנקסים/דוגמאות עמודים", (
+        "סריקת עמוד פנקס, 2000 פיקסל", "ספריית אוניברסיטת חיפה", "",
+        "data/private/page-cache/")),
+    ("01 הפנקסים/שיטת החילוץ", (
+        "ההנחיה שניתנה למודל — שיטת ההתקנה של המהדורה", "הפרויקט", "",
+        "pipeline/prompts/")),
+    ("01 הפנקסים/ביקורת תאריכים", (
+        "עקבות תיקון השנים / מצאי עמודי אמת Transkribus", "pipeline/build.py",
+        "מסמכי ביקורת, לא נתון סופי", "data/eval/")),
+    ("01 הפנקסים/נתונים נגזרים", (
+        "טבלה נגזרת מהקורפוס (סיווג אבחנות, נרמול, כתובות, מקומות, Kima)",
+        "pipeline/build.py + kimatch", "", "data/public/, kimatch/")),
+    ("02 ארכיון המדינה/תיקים PDF", (
+        "תיק ארכיון המדינה במלואו, לפי סימן התיק", "ארכיון המדינה", "",
+        "paper/sources/isa/")),
+    ("02 ארכיון המדינה/עמודים", (
+        "עמוד מרונדר מתיק 000zbri — החזרים חודשיים על מחלות מדבקות 1942–44",
+        "ארכיון המדינה", "התיק סרוק כתמונה בלבד; אין שכבת טקסט",
+        "paper/sources/isa/pages/")),
+    ("02 ארכיון המדינה/איורים", (
+        "תכנית/מפה שחולצה מתיקי הארכיון", "ארכיון המדינה", "",
+        "paper/sources/isa/figures/")),
+    ("02 ארכיון המדינה/קריאות", (
+        "קריאה בתיקי הארכיון — מסמך Google Doc, ניתן להערות", "הפרויקט", "",
+        "data/archives/")),
+    ("02 ארכיון המדינה/חילוצים", (
+        "חילוץ נקוב בשם מתיקי הארכיון", "ארכיון המדינה",
+        "שמות פרטיים לצד מידע רפואי — לא להפצה", "data/private/")),
+    ("03 דוחות רשמיים/דוחות המנדט", (
+        "הדוח השנתי לממשלת הוד מלכותו, שכבת טקסט",
+        "archive.org report-admin-palestine-*", "OCR פגום מקומית",
+        "sources/archives/mandate-reports/")),
+    ("03 דוחות רשמיים/מחלקת הבריאות", (
+        "דוח מחלקת הבריאות 1921", "archive.org", "",
+        "paper/sources/doh/, sources/archives/doh/")),
+    ("03 דוחות רשמיים/רשימות מציאה", (
+        "רשימת היטים גולמית (grep) מספרי הכחול ומדוחות מחלקת הבריאות",
+        "grep מעל שכבת OCR",
+        "פלט גולמי; מספרי השורות אינם ניתנים לפענוח — רמז, לא תמלול",
+        "data/haifa_hospital_*.txt")),
+    ("04 עיתונות/קריאות", (
+        "קריאה בקורפוס העיתונות — מסמך Google Doc, ניתן להערות", "הפרויקט", "",
+        "data/newspapers/, paper/")),
+    ("04 עיתונות/ציטוטים", (
+        "ציטוטי עיתונות מוכנים עם קישורי-קבע", "NLI Veridian + קריאה ידנית",
+        "sources-registry נוצר אוטומטית — אל תערכו ידנית",
+        "sources/press/, data/public/")),
+    ("04 עיתונות/איורים", (
+        "לוח איור לפרק העיתונות", "הפרויקט", "", "data/newspapers/figures/")),
+    ("04 עיתונות/קורפוס", (
+        "קורפוס העיתונות: טקסטים מלאים, רשימות היטים וקונקורדנציות",
+        "Jrayed / JPress / Compact Memory",
+        "התאמות עיתונות-פנקס הן רמזים, לא זיהויים", "data/newspapers/")),
+    ("05 מפקדים", (
+        "טבלת מפקד או סטטיסטיקת כפרים, תומללה מסריקות",
+        "מפקד 1931 (מילס) / Village Statistics 1945",
+        "VS-1945 מעוגל לעשרות; 1922 בגבולות 1931", "data/census/")),
+    ("06 סינתזה", (
+        "סינתזה / לוח הדפסה למאמר", "הפרויקט",
+        "קובצי HTML הם דפים עצמאיים — הורידו ופתחו בדפדפן", "paper/")),
+    ("01 הפנקסים/תמלולי פנקסים", (
+        "תמלול פנקס יחיד, טבלאות מונַנמות (10 מתוך 33)",
+        "חילוץ במודל מולטימודלי", "קיצור דרך אל 11-26data — לא עותק",
+        "hospitals11-26/")),
+    ("07 ספרות משנית/ביבליוגרפיה", (
+        "ספרות משנית — פריט ביבליוגרפי",
+        "נאסף לצורך המאמר; ראו גיליון 'סקירת ספרות'",
+        "קיצור דרך אל תיקיית הביבליוגרפיה — לא עותק", "—")),
+    ("01 הפנקסים", ("", "", "", "data/public/")),
+]
+
+TOPLEVEL = {
+    "00 מדריך — קראו קודם": (
+        "המדריך לאוסף: מה נמצא היכן, סדר קריאה, מפתח קיצורים ואזהרות",
+        "נכתב לאוסף הזה", "התחילו כאן", "—"),
+    "מפת הקבצים": (
+        "המסמך הזה — שורה לכל קובץ באוסף", "נוצר מהאוסף עצמו", "", "—"),
+}
+
+NAMED = {
+    "קישורים לסריקות (iiif-pages).tsv": (
+        "2,547 שורות: פנקס/עמוד → כתובת IIIF וכתובת צפייה. הדרך לחזור מרשומה אל כתב היד",
+        "ספריית אוניברסיטת חיפה, Alma 972HAI_MAIN", "", "data/public/iiif-pages.tsv"),
+    "מאגר הנתונים המלא (xlsx).xlsx": (
+        "קיצור דרך אל מאגר הנתונים המלא (לא מונַנם)", "הפרויקט",
+        "שמות מלאים — לא להפצה", "—"),
+    "מאגר הנתונים המלא (csv).csv": (
+        "קיצור דרך אל אותו מאגר בפורמט csv", "הפרויקט",
+        "ה-TSV/CSV נכתב בלי מרכאות — כבו את טיפול המרכאות", "—"),
+    "רשימת התיקים של אליעזר.xlsx": (
+        "קיצור דרך אל רשימת תיקי ארכיון המדינה של אליעזר באומגרטן",
+        "אליעזר באומגרטן", "עמודת 'משימות' מחזיקה את מה שנותר לעשות", "—"),
 }
 
 
-def describe(rel: Path, name: str):
-    if name in DESC:
-        return DESC[name]
-    parts = rel.parts
-    sub = parts[1] if len(parts) > 1 else ""
-    if name.endswith(".html") and "קריאות" in sub:
-        return ("קריאה — עולה ל-Drive כמסמך Google Doc, ניתן להערות", "המאגר", "", "")
-    if "דוגמאות עמודים" in sub:
-        return ("סריקת עמוד פנקס, 2000 פיקסל", "ספריית אוניברסיטת חיפה", "", "data/private/page-cache/")
-    if "שיטת החילוץ" in sub:
-        return ("ההנחיה שניתנה למודל — שיטת ההתקנה של המהדורה", "המאגר", "", "pipeline/prompts/")
-    if "ביקורת תאריכים" in sub:
-        return ("עקבות תיקון השנים / מצאי עמודי אמת Transkribus", "pipeline/build.py", "", "data/eval/")
-    if "שמות" in sub:
+def describe(path: str, name: str):
+    if name in NAMED:
+        return NAMED[name]
+    stem = name.rsplit(".", 1)[0]
+    if stem in TOPLEVEL:
+        return TOPLEVEL[stem]
+    if name.endswith("meca-jem-catalogue.txt"):
         return (
-            "חילוץ נקוב בשם מתיקי הארכיון",
-            "ארכיון המדינה",
-            "שמות פרטיים לצד מידע רפואי — לא להפצה",
-            "data/private/",
-        )
-    if "איורים" in sub and parts[0].startswith("02"):
-        return ("תכנית/מפה שחולצה מתיקי הארכיון", "ארכיון המדינה", "", "paper/sources/isa/figures/")
-    if "דוחות המנדט" in sub:
-        return (
-            "הדוח השנתי לממשלת הוד מלכותו, שכבת טקסט",
-            "archive.org report-admin-palestine-*",
-            "OCR",
-            "sources/archives/mandate-reports/",
-        )
-    if parts[0].startswith("06"):
-        return ("סינתזה / לוח הדפסה", "הפרויקט", "", "paper/")
-    if parts[0].startswith("04") and "איורים" in sub:
-        return ("לוח איור לפרק העיתונות", "הפרויקט", "", "data/newspapers/figures/")
+            "קטלוג ארכיון המזרח התיכון באוקספורד, אוסף Jerusalem & the East Mission GB165-0161",
+            "MECA Oxford", "", "sources/archives/meca-jem-catalogue.txt")
+    for frag, vals in RULES:
+        if path.startswith(frag):
+            return vals
     return ("", "", "", "")
 
 
 rows = []
-for p in sorted(ST.rglob("*")):
-    if p.is_dir() or p.name == ".DS_Store":
-        continue
-    rel = p.relative_to(ST)
-    top = rel.parts[0][:2] if rel.parts[0][:2].isdigit() else ""
-    desc, prov, caut, repo = describe(rel, p.name)
-    rows.append(
-        {
-            "סעיף / Section": SECTION.get(top, "— מדריך / guide"),
-            "נתיב ב-Drive / Path": str(rel),
-            "מה זה / What it is": desc,
-            "מקור / Provenance": prov,
-            "אזהרה / Caution": caut,
-            "גודל / Size (KB)": round(p.stat().st_size / 1024, 1),
-            "נתיב במאגר / Repo path": repo,
-        }
-    )
+for f in files:
+    path = f["Path"]
+    name = f["Name"]
+    top = path[:2] if path[:2].isdigit() else "00"
+    desc, prov, caut, repo = describe(path, name)
+    rows.append({
+        "סעיף / Section": SECTION.get(top, ""),
+        "נתיב ב-Drive / Path": path,
+        "מה זה / What it is": desc,
+        "מקור / Provenance": prov,
+        "אזהרה / Caution": caut,
+        "גודל / Size (KB)": round(f.get("Size", 0) / 1024, 1) if f.get("Size", 0) > 0 else "",
+        "נתיב במאגר / Repo path": repo,
+    })
 
-out = S / "manifest.csv"
-with out.open("w", encoding="utf-8-sig", newline="") as fh:
+rows.sort(key=lambda r: r["נתיב ב-Drive / Path"])
+out_path = S / "manifest.csv"
+with out_path.open("w", encoding="utf-8-sig", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
     w.writeheader()
     w.writerows(rows)
-print(f"{len(rows)} rows -> {out}")
+print(f"{len(rows)} rows")
+undesc = sum(1 for r in rows if not r["מה זה / What it is"])
+print(f"{undesc} rows without a description")

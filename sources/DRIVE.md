@@ -6,6 +6,8 @@ checkout. Built 28 August 2026.
 
 - Folder: <https://drive.google.com/drive/folders/1o184-P0II0N1tn9EUTeo922J8Soipfh4>
 - Drive root folder ID: `0B1TlfouSwHTnfmNWZ0JFdGdodHRqYnBpYkRjVnNmU19WS0NUTVdybDg1V2pSckpYemhDNlE`
+- 619 files, 1.01 GB. Guide Doc `1sEGXWEOIHlJ550jxmZsWWt-rUa1iOiJAtYi55SOz1Gg`;
+  file-map Sheet `1PGfkD6EXzAKIqzbsTzNRZQYiKCQYpnWwgcgikFQWk98`.
 
 ## Layout
 
@@ -29,11 +31,20 @@ Shortcuts, not copies: the master `Hospital-Registers-2025-08-10.xlsx`/`.csv`,
 
 ## How it was built
 
-The scripts are in `sources/drive-sync/`: `rc.sh` (rclone wrapper), `stage.sh`
-(builds the local staging tree), `md2html.py` (Markdown → importable HTML), and
-`manifest.py` (builds the file-map CSV). All transfers use the `jeckedrive:`
-rclone remote — the Drive connector is far more expensive for files this size,
-and direct Google API calls with rclone's token are rate-limited.
+The scripts are in `sources/drive-sync/`:
+
+| script | what it does |
+|---|---|
+| `rc.sh` | rclone wrapper pinning the Drive root folder |
+| `stage.sh` | builds the local staging tree from the repo |
+| `md2html.py` | Markdown → HTML that Drive will import as a Doc |
+| `fix_guide.py` | repairs the two defects Drive's importer introduces |
+| `manifest.py` | rebuilds the file-map CSV **from Drive itself**, so moved and bulk-uploaded files are covered |
+
+They work beside themselves by default; set `HR_DRIVE_WORKDIR` to stage
+elsewhere. All transfers use the `jeckedrive:` rclone remote — the Drive
+connector is far more expensive for files this size, and direct Google API
+calls with rclone's token are rate-limited.
 
 Wrapper that pins the root folder (note `--drive-root-folder-id=VALUE`; the
 space-separated form is parsed as an unknown flag and the command dies):
@@ -89,3 +100,8 @@ is a converted artifact; delete and re-import if a reading changes materially.
 information. They are gitignored here for that reason and are in Drive only
 because the collaborators are co-investigators. Anyone given access to the
 folder gets them.
+
+**As of 28 August 2026 the folder is shared `anyone` → writer**, inherited from
+the parent `מאמר לקתדרה` and predating this collection. That means anyone with
+the link can read *and* edit the named-patient material above. Left as found,
+because access is the project owner's decision; worth revisiting.

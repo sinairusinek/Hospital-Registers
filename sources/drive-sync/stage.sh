@@ -3,8 +3,8 @@
 #   מאמר לקתדרה/מקורות ראשוניים
 # Copies (not symlinks) so rclone sees real files.
 set -e
-REPO=/Users/sinairusinek/Documents/GitHub/Hospital-Registers
-S=/private/tmp/claude-501/-Users-sinairusinek-Documents-GitHub-Hospital-Registers/b7db0c0c-d15e-4325-89a1-2d25996b5d3b/scratchpad
+REPO="$(cd "$(dirname "$0")/../.." && pwd)"   # repo root, two levels up
+S="${HR_DRIVE_WORKDIR:-$(cd "$(dirname "$0")" && pwd)}"
 ST=$S/stage
 cd $REPO
 
