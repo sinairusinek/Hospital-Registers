@@ -501,16 +501,28 @@ merged	StandardNationality	British Subj.	British	1
 merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
 merged	City	Haifa?Atlit?	Haifa?Atlit	1
+moved	Address	British Section	cleared; the ward column already carries British Section	2
+moved	Occupation	Gen	Ward: General	1
+moved	Occupation	Gen.	cleared; the ward column already carries General	4
+moved	Occupation	Gen.	Ward: General, read from the clerk's written ward	1
 moved	Occupation	General	cleared; the ward column already carries General	1
+moved	Occupation	Gynaecology	Ward: General	1
+moved	Address	Gynecology	cleared; the ward column already carries General	1
 moved	Occupation	Gynecology	cleared; the ward column already carries General	25
 moved	Occupation	Gynecology	Ward: General	1
 moved	Occupation	Gynecology	Ward: General, read from the clerk's written ward	1
 moved	Occupation	Isolation	Ward: Isolation, read from the clerk's written ward	1
+moved	Occupation	Mat	Ward: Maternity, read from the clerk's written ward	1
 moved	Occupation	Maternity	cleared; the ward column already carries Maternity	2
 moved	Occupation	Maternity	Ward: Maternity, read from the clerk's written ward	2
+moved	Occupation	Med	cleared; the ward column already carries Medical	1
 moved	Occupation	Medical	cleared; the ward column already carries Isolation	1
 moved	Occupation	Medical	cleared; the ward column already carries Medical	2
 moved	Occupation	Medical	Ward: Medical	2
+moved	Occupation	Surg	cleared; the ward column already carries Surgical	31
+moved	Occupation	Surg	Ward: Surgical, read from the clerk's written ward	4
+moved	Occupation	Surg.	cleared; the ward column already carries Surgical	3
+moved	Occupation	Surg.	Ward: Surgical, read from the clerk's written ward	1
 moved	Occupation	Surgical	cleared; the ward column already carries Surgical	3
 moved	Occupation	Surgical	Ward: Surgical	1
 moved	Occupation	Surgical	Ward: Surgical, read from the clerk's written ward	7
@@ -571,13 +583,13 @@ withheld	discarded_values			29879
 withheld	splitDiscValues			29879
 withheld	Address	value repeated the next of kin		236
 withheld	City	value repeated the next of kin		3
-withheld	Occupation	value repeated the next of kin		37
+withheld	Occupation	value repeated the next of kin		36
 withheld	Original Diagnosis	value repeated the next of kin		1
 withheld	Original Result	value repeated the next of kin		1
 withheld	Payment Status	value repeated the next of kin		1
 withheld	Standardized Diagnosis	value repeated the next of kin		1
 withheld	splitDiscValues	value repeated the next of kin		4
-withheld	Address	value is a name known from the kin column		251
+withheld	Address	value is a name known from the kin column		249
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
 derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	20621

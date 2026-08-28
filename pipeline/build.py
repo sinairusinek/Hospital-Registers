@@ -422,7 +422,27 @@ WARD_WRITTEN = {name.lower(): name for name in WARD_NAMES} | WARD | {
     "surg.": "Surgical",
     "gen": "General",
     "gen.": "General",
+    "mat": "Maternity",
+    "mat.": "Maternity",
+    "med": "Medical",
+    "med.": "Medical",
+    "is": "Isolation",
+    "is.": "Isolation",
+    "isol": "Isolation",
+    "br": "British Section",
+    "br.": "British Section",
 }
+
+# What counts as a ward name misfiled into another column. The full names are
+# not enough: the row that shifted by one column carries whatever the clerk
+# actually wrote, and the clerk wrote "Surg", "Gen." and "Mat" far more often
+# than "Surgical". Matching only the expanded forms left 47 records with a ward
+# in Occupation, nine of them with no ward recorded at all.
+#
+# Deliberately excluded: bare "D", single letters, and anything that is a
+# plausible trade or place. "Mat" is included because no Haifa occupation reads
+# that way; if one ever does it will show up as a lost Occupation in the report.
+WARD_MISFILED = {name.lower() for name in WARD_NAMES} | set(WARD_WRITTEN)
 
 # Record-level ward corrections, keyed (Notebook_Number, Notebook Record ID),
 # for readings that survive only in a column the pipeline drops. Notebook 11
@@ -999,7 +1019,7 @@ def main() -> int:
         and not any(ch.isdigit() for ch in value)
         and place_vocabulary[value.strip()] < KIN_RARITY
     }
-    ward_rehomed: Counter[tuple[str, str, str]] = Counter()
+    ward_rehomed: Counter[tuple[str, str, str, str]] = Counter()
     ward_corrected = 0
     ward_degynecologised: Counter[tuple[str, str]] = Counter()
     dates_rebuilt = Counter()
@@ -1072,18 +1092,21 @@ def main() -> int:
                 final_values["standardized ward"][corrected] += 1
                 ward_corrected += 1
 
-        # The extraction sometimes filed the ward as the patient's occupation:
-        # 49 records carry a bare ward name in Occupation, most of them beside
-        # the very same value in the ward column. The name is taken out of
-        # Occupation; where the ward column is empty it is completed, trusting
-        # the clerk's own written ward over the misfiled value where the two
-        # disagree.
-        occupation = (row.get("Occupation") or "").strip()
-        if occupation in WARD_NAMES:
+        # The extraction sometimes shifted a row by one column, so the ward
+        # lands in the patient's Occupation — and, more rarely, in the Address.
+        # Most such rows carry the very same value in the ward column too; some
+        # carry no ward at all, and for those this is the only record of it.
+        # The name is taken out of the column it does not belong in; where the
+        # ward column is empty it is completed, trusting the clerk's own
+        # written ward over the misfiled value where the two disagree.
+        for column in ("Occupation", "Address"):
+            misfiled = (row.get(column) or "").strip()
+            if misfiled.lower() not in WARD_MISFILED:
+                continue
             current = (row.get("standardized ward") or "").strip()
             written = (row.get("Ward") or "").strip()
             resolved = WARD_WRITTEN.get(written.lower(), "")
-            if resolved and current in ("", occupation) and resolved != current:
+            if resolved and current in ("", misfiled) and resolved != current:
                 target, source = resolved, "written"
             elif current:
                 target, source = current, "duplicate"
@@ -1091,14 +1114,14 @@ def main() -> int:
                 # The misfiled name is read by the same rules as a written
                 # ward, so a "Gynecology" arriving through Occupation lands
                 # on General like every other one.
-                target, source = WARD_WRITTEN.get(occupation.lower(), occupation), "occupation"
-            row["Occupation"] = ""
+                target, source = WARD_WRITTEN.get(misfiled.lower(), misfiled), column.lower()
+            row[column] = ""
             if target != current:
                 row["standardized ward"] = target
                 if current:
                     final_values["standardized ward"][current] -= 1
                 final_values["standardized ward"][target] += 1
-            ward_rehomed[(occupation, target, source)] += 1
+            ward_rehomed[(misfiled, target, source, column)] += 1
 
         # The derived chapter rides in a column of its own; the source's code
         # and three-digit category are both left exactly as they are.
@@ -1759,13 +1782,14 @@ def main() -> int:
         writer.writerow(["kind", "column", "from", "to", "records"])
         for (column, before, after), count in changes.most_common():
             writer.writerow(["cleared" if not after else "merged", column, before, after, count])
-        for (occupation, ward, source), count in sorted(ward_rehomed.items()):
+        for (misfiled, ward, source, column), count in sorted(ward_rehomed.items()):
             what = {
                 "written": f"Ward: {ward}, read from the clerk's written ward",
                 "occupation": f"Ward: {ward}",
+                "address": f"Ward: {ward}",
                 "duplicate": f"cleared; the ward column already carries {ward}",
             }[source]
-            writer.writerow(["moved", "Occupation", occupation, what, count])
+            writer.writerow(["moved", column, misfiled, what, count])
         for (before, after), count in sorted(ward_degynecologised.items()):
             writer.writerow(["corrected", "Ward as written", before,
                              f"{after} — the register writes Gen., not Gyn.", count])
@@ -1843,8 +1867,8 @@ def main() -> int:
     print(f"cleared    {cleared} value(s) outside a closed vocabulary")
     print(f"coarsened  {coarsened:,} addresses")
     if ward_rehomed:
-        seated = sum(c for (_, _, source), c in ward_rehomed.items() if source != "duplicate")
-        print(f"wards      {sum(ward_rehomed.values())} ward name(s) taken out of Occupation, "
+        seated = sum(c for (_, _, source, _), c in ward_rehomed.items() if source != "duplicate")
+        print(f"wards      {sum(ward_rehomed.values())} ward name(s) taken out of Occupation/Address, "
               f"{seated} seated in an empty ward column"
               + (f", {ward_corrected} corrected by hand against the scan" if ward_corrected else ""))
     print(f"withheld   {', '.join(sorted(DROP_COLUMNS))}")
