@@ -55,7 +55,7 @@ Netanya	32.328611	34.856667	kima	24	Netanya (Israel)	Q192225	matched	agent	6
 Rosh Pina	32.969086	35.542456	kima	14873	Rosh Pina (Israel)	Q525649	matched	auto	6
 Waldheim							unmatched-no-kima-entry	agent	6
 Akka	32.926111	35.083889	kima	71	Acre (Israel)	Q126084	matched	agent	5
-Bassa				21539	Bassah (Israel)		matched	human	5
+Bassa	33.076111	35.140833	wikidata	21539	Bassah (Israel)	Q2915875	matched	human	5
 Kfar Tabor	32.687139	35.420222	kima	1666	Kefar Tavor (Israel)	Q1186956	matched	auto	5
 Kibutz							unmatched-junk	agent	5
 Mishmar HaEmek	32.609722	35.141667	kima	214	Mishmar Ha'emek (Israel)	Q1938721	matched	auto	5
@@ -86,7 +86,7 @@ Hedera|Hadera	32.450000	34.916667	kima	858	Hadera (Israel)	Q471886	matched	auto	
 Jenin	32.461111	35.300000	kima	79775	Jenin (West Bank)	Q374748	matched	agent	3
 Kefutz Mizra	32.650700	35.287797	kima	224	Mizra (Israel)	Q2889536	matched	agent	3
 Kfar Hasidim	32.743200	35.093497	kima	830	Kefar Hasidim (Israel)	Q135425	matched	agent	3
-Kfar Kharoshet				21749	Kefar Haroshet (Israel)		matched	agent	3
+Kfar Kharoshet	32.723889	35.127222	kima	21920	Kiryat Haroshet (Israel)	Q1743479	matched	human	3
 Kibutz Affikim|Affikim	32.679600	35.577800	kima	554	Afikim (Israel)	Q383280	matched	agent	3
 Kirjat Hayim	32.828333	35.067222	kima	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	matched	agent	3
 Kiryat Kharoshet	32.723889	35.127222	kima	21920	Kiryat Haroshet (Israel)	Q1743479	matched	agent	3
@@ -177,9 +177,9 @@ Ayesdin							unmatched-junk	agent	1
 Balad al-Sheikh	32.771606	35.042069	wikidata	21670	Balad al-Shaykh (Israel)	Q2776471	matched	agent	1
 Banks St							unmatched-no-kima-entry	agent	1
 Bar Galim	32.833911	34.981714	kima	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	1
-Bassa I.|Bassa				21539	Bassah (Israel)		matched	human	1
-Bassa N.1 N.F.D				21539	Bassah (Israel)		matched	human	1
-Bassa No 1|Bassa				21539	Bassah (Israel)		matched	human	1
+Bassa I.|Bassa	33.076111	35.140833	wikidata	21539	Bassah (Israel)	Q2915875	matched	human	1
+Bassa N.1 N.F.D	33.076111	35.140833	wikidata	21539	Bassah (Israel)	Q2915875	matched	human	1
+Bassa No 1|Bassa	33.076111	35.140833	wikidata	21539	Bassah (Israel)	Q2915875	matched	human	1
 Bassa No 2|Al-Bassa	33.083333	35.150000	kima	6885	Shelomi (Israel)	Q135421	matched	auto	1
 Bat Shlomo near Zammaren|Bat Shlomo	32.596897	35.003197	kima	587	Bat Shelomo (Israel)	Q2889218	matched	agent	1
 Bat Yalem	32.833911	34.981714	kima	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	1

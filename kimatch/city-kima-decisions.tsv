@@ -55,7 +55,7 @@ Netanya	Netanya	6	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	C_review
 Rosh Pina	Rosh Pina	6	14873	Rosh Pina (Israel)	Q525649	kima-dump	Q525649	matched	A_autolink	0.95	auto		2026-08-06
 Waldheim	Waldheim	6					Q1917497	unmatched-no-kima-entry	A_autolink		agent	Galilee Templer colony; Kima has only the Saxony Waldheim	2026-08-06
 Akka	Akka	5	71	Acre (Israel)	Q126084	kima-dump	Q126084	matched	C_review		agent	Arabic naming tradition of Acre; value kept distinct	2026-08-06
-Bassa	Bassa	5	21539	Bassah (Israel)				matched	C_review		human	al-Bassa, western Galilee	2026-08-06
+Bassa	Bassa	5	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa, western Galilee; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
 Kfar Tabor	Kfar Tabor	5	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	Q1186956	matched	A_autolink	0.95	auto		2026-08-06
 Kibutz	Kibutz	5					Q586687	unmatched-junk	C_review		agent	generic word	2026-08-06
 Mishmar HaEmek	Mishmar HaEmek	5	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
@@ -86,7 +86,7 @@ Hedera|Hadera	Hedera|Hadera	3	858	Hadera (Israel)	Q471886	kima-dump	Q471886	matc
 Jenin	Jenin	3	79775	Jenin (West Bank)	Q374748	kima-dump	Q374748	matched	C_review		agent		2026-08-06
 Kefutz Mizra	Kefutz Mizra	3	224	Mizra (Israel)	Q2889536	kima-dump		matched	C_review		agent	kibbutz Mizra	2026-08-06
 Kfar Hasidim	Kfar Hasidim	3	830	Kefar Hasidim (Israel)	Q135425	kima-dump	Q135425	matched	C_review		agent		2026-08-06
-Kfar Kharoshet	Kfar Kharoshet	3	21749	Kefar Haroshet (Israel)				matched	C_review		agent	Kefar Haroshet, distinct from Kiryat Haroshet	2026-08-06
+Kfar Kharoshet	Kfar Kharoshet	3	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		human	same place as Kiryat Kharoshet; the earlier reading kept them distinct, overruled 2026-08-28	2026-08-28
 Kibutz Affikim|Affikim	Kibutz Affikim|Affikim	3	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Kirjat Hayim	Kirjat Hayim	3	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		agent		2026-08-06
 Kiryat Kharoshet	Kiryat Kharoshet	3	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		agent		2026-08-06
@@ -177,9 +177,9 @@ Ayesdin	Ayesdin	1						unmatched-junk	C_review		agent		2026-08-06
 Balad al-Sheikh	Balad al-Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	wikidata-direct	Q2776471	matched	C_review		agent	own entry; kept distinct from Nesher per project policy	2026-08-06
 Banks St	Banks St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Bar Galim	Bar Galim	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	or Kfar Gallim; Bat Galim more likely	2026-08-06
-Bassa I.|Bassa	Bassa I.|Bassa	1	21539	Bassah (Israel)				matched	C_review		human		2026-08-06
-Bassa N.1 N.F.D	Bassa N.1 N.F.D	1	21539	Bassah (Israel)				matched	C_review		human		2026-08-06
-Bassa No 1|Bassa	Bassa No 1|Bassa	1	21539	Bassah (Israel)				matched	C_review		human	al-Bassa / Bassa Camp	2026-08-06
+Bassa I.|Bassa	Bassa I.|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
+Bassa N.1 N.F.D	Bassa N.1 N.F.D	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
+Bassa No 1|Bassa	Bassa No 1|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa / Bassa Camp; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata	2026-08-28
 Bassa No 2|Al-Bassa	Bassa No 2|Al-Bassa	1	6885	Shelomi (Israel)	Q135421	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Bat Shlomo near Zammaren|Bat Shlomo	Bat Shlomo near Zammaren|Bat Shlomo	1	587	Bat Shelomo (Israel)	Q2889218	kima-dump		matched	C_review		agent	Zammaren = Zummarin (Zichron)	2026-08-06
 Bat Yalem	Bat Yalem	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	garbled Bat Galim	2026-08-06
