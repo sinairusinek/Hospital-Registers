@@ -57,3 +57,42 @@ The decisions file doubles as `--prior-resolutions` input (its `spelling` +
   both readings nest; alternations across different towns stay ambiguous.
 - Distinct naming traditions (Acre/Akka, Balad al-Sheikh/Nesher) keep their
   distinct City values; linking to the same Kima place does not merge them.
+
+## Round 2 — the villages the first round could not see (2026-08-28)
+
+The first round scoped the queue to Jewish patients' cities. Because the
+build-time join is religion-blind, those matches carried every community's
+records for the places the communities *shared* — Acre, Nazareth, Jenin. What
+they could not carry is the places they did not share: the Galilee and Carmel
+villages no Jewish patient came from. Those stayed unreviewed and so stayed off
+the map, and the absence is systematic rather than random — 3,570 records,
+2,744 of them Muslim and 577 Christian.
+
+`extract_queue.py` now takes every City value by default (`--religion` reproduces
+the original round), with `--min-records` and `--new-only` for triage. Round 2
+took the 209 values seen 3+ times that the first round never ruled on: 1,717
+records, 1,290 Muslim and 267 Christian.
+
+```bash
+python3 kimatch/extract_queue.py --min-records 3 --new-only
+cd ../Kimatch && .venv/bin/kimatch match \
+  -c <repo>/kimatch/hospital_registers_city.json \
+  -o <repo>/kimatch/match-round2.csv --split-by-grade \
+  --prior-resolutions <repo>/kimatch/city-kima-decisions.tsv
+```
+
+- `round2-workbook.tsv` — **the review queue.** One row per value, with the
+  engine's candidate, the Kima entry's coordinates, a geographic audit, and the
+  religion mix of the records the ruling would speak for. Fill `your_decision`
+  and `your_kima_id`; `proposed_decision` is pre-filled only where an A-grade
+  match also passed the audit.
+
+The audit is not decoration. Three A-grade matches land outside any plausible
+catchment — Hebron to Hebron **Connecticut**, Zeitoun to Zeytun **Turkey**,
+Cairo to a record labelled Cairo **Illinois** whose coordinates are in fact
+Egypt's. The label lies and the point is right, which is exactly why these are
+reviewed rather than autolinked. `_grade` alone is not a verdict.
+
+Of the 209: 40 are A-grade and in-region (471 records) and could be taken as
+read; 158 drew no candidate at all; 5 matched an entry Kima holds without
+coordinates (Tarshiha the largest at 74 records), the same gap al-Bassa had.

@@ -1,0 +1,210 @@
+city	n_records	grade	method	confidence	kima_id	kima_name_rom	kima_lat	kima_lon	geo_audit	religion_mix	proposed_decision	your_decision	your_kima_id	note	candidates
+Tarshiha	74	A_autolink	name_exact	0.95	21809	Tarshiḥa (Israel)			entry-has-no-coordinate	Muslim 52, Christian 21, Not recorded 1					21809
+Arara	70	A_autolink	name_exact	0.95	20918	Ar'ara (Israel)	32.49456	35.09411	in-region	Muslim 69, Not recorded 1	matched				20918
+Yarka	40	A_autolink	name_exact	0.95	18267	Yirka (Israel)	32.93333	35.18333	in-region	Not recorded 34, Muslim 5, Druze 1	matched				18267
+Ein Ghazal	38	A_autolink	name_exact	0.95	21329	Ein Ghazal (Israel)	32.63194	34.96736	in-region	Muslim 37, Not recorded 1	matched				21329
+Mughar	35	A_autolink	name_exact	0.95	21974	Mughar (Israel)	32.89000	35.40833	in-region	Christian 17, Muslim 9, Not recorded 8	matched				21974
+Wadi Salib	34	A_autolink	name_exact	0.95	19522	Wadi Salib (Haifa, Israel)	32.81110	35.00000	in-region	Muslim 33, Christian 1	matched				19522
+Gaza	29	A_autolink	name_exact	0.95	12982	Gaza (Gaza Strip)	31.51667	34.45000	in-region	Muslim 25, Christian 4	matched				12982
+Tamra	28	A_autolink	name_exact	0.95	20270	Tamra (Israel)	32.85115	35.20711	in-region	Muslim 28	matched				20270
+Deir Hanna	19	A_autolink	name_exact	0.95	21739	Dair Hanna (Israel)	32.86241	35.37117	in-region	Muslim 15, Christian 4	matched				21739
+Fassuta	14	A_autolink	name_exact	0.95	21519	Fassuta (Israel)	33.04944	35.30583	in-region	Christian 13, Muslim 1	matched				21519
+Kafr Kanna	13	A_autolink	name_exact	0.95	20496	Kafr Kanna (Israel)	32.75000	35.35000	in-region	Muslim 10, Christian 3	matched				20496
+Mt. Carmel|Mount Carmel	11	A_autolink	name_exact	0.95	1156	Karmel, Mount (Israel)	32.67250	35.02333	in-region	Muslim 6, Christian 5	matched				1156
+Ararah	11	A_autolink	name_exact	0.95	20918	Ar'ara (Israel)	32.49456	35.09411	in-region	Muslim 11	matched				20918
+Ibillin	11	A_autolink	name_exact	0.95	21569	I'bilin (Israel)	32.82222	35.19333	in-region	Christian 9, Muslim 2	matched				21569
+Ein Hod	10	A_autolink	name_exact	0.95	18441	En Hod (Israel)	32.70146	34.98001	in-region	Muslim 10	matched				18441
+Lajjun	10	A_autolink	name_exact	0.95	16127	Lajjūn (Jordan)			entry-has-no-coordinate	Muslim 10					16127
+Acca	9	A_autolink	name_exact	0.95	71	Acre (Israel)	32.92611	35.08389	in-region	Muslim 7, Not recorded 1, Arab 1	matched				71
+Hebron	8	A_autolink	name_exact	0.95	17166	Hebron (Conn.)	41.65278	-72.39139	OUT-OF-REGION	Muslim 7, Christian 1					17166
+Arraba	8	A_autolink	name_exact	0.95	21307	Arraba (Israel)	32.85111	35.33861	in-region	Muslim 8	matched				21307
+Beissan|Beisan	8	A_autolink	name_exact	0.95	613	Bet She'an (Israel)	32.49611	35.49889	in-region	Muslim 7, Christian 1	matched				613
+Amka	7	A_autolink	name_exact	0.95	23142	Amka (Israel)	32.97944	35.16333	in-region	Muslim 7	matched				23142
+Mazra'a	6	A_autolink	name_exact	0.95	26615	Mazra'a (Israel)	32.98310	35.09762	in-region	Muslim 5, Not recorded 1	matched				26615
+Suhmata	5	A_autolink	name_exact	0.95	21806	Suhmata (Israel)	33.00520	35.30380	in-region	Muslim 5	matched				21806
+Beit She'an	5	A_autolink	name_exact	0.95	613	Bet She'an (Israel)	32.49611	35.49889	in-region	Muslim 4, Christian 1	matched				613
+Baka	4	A_autolink	name_exact	0.95	21216	Bak'a (Jerusalem, Israel)	31.75917	35.22082	in-region	Muslim 4	matched				21216
+Cairo	4	A_autolink	name_exact	0.95	11803	Cairo (Ill.)	30.06263	31.24967	OUT-OF-REGION	Christian 3, Muslim 1					11803
+Kababir	4	A_autolink	name_exact	0.95	22655	Kababir (Haifa, Israel)	32.80420	34.97315	in-region	Muslim 4	matched				22655
+Hawara	4	A_autolink	name_exact	0.95	21617	Hawara (Israel)	32.15250	35.25667	in-region	Muslim 4	matched				21617
+Zib	3	A_autolink	name_exact	0.95	887	Gesher Haziv (Israel)	33.03900	35.11130	in-region	Muslim 3	matched				887
+Tantoura|Tantura	3	A_autolink	name_exact	0.95	21005	Tantura (Israel)	32.60940	34.91768	in-region	Muslim 3	matched				21005
+Jaffa|P. & P. Jaffa	3	A_autolink	name_exact	0.95	629	Jaffa (Tel Aviv-Yafo, Israel)	32.05222	34.75306	in-region	Christian 3	matched				629
+Ludd	3	A_autolink	name_exact	0.95	178	Lod (Israel)	31.95000	34.90000	in-region	Muslim 2, Christian 1	matched				178
+Tamrah	3	A_autolink	name_exact	0.95	20270	Tamra (Israel)	32.85115	35.20711	in-region	Muslim 3	matched				20270
+Nahef	3	A_autolink	name_exact	0.95	26311	Naḥaf (Israel)	32.93194	35.31750	in-region	Muslim 3	matched				26311
+Samra	3	A_autolink	name_exact	0.95	22266	Khirbet Samara (Israel)	32.11667	35.26667	in-region	Muslim 3	matched				22266
+Beyrouth	3	A_autolink	name_exact	0.95	651	Beirut (Lebanon)	33.88694	35.51306	in-region	Christian 2, Muslim 1	matched				651
+Nazareth|Dept. of Police, Nazareth	3	A_autolink	name_exact	0.95	18	Nazareth (Israel)	32.70210	35.29785	in-region	Christian 3	matched				18
+Kafr Manda	3	A_autolink	name_exact	0.95	21581	Kafr Manda (Israel)	32.81667	35.26667	in-region	Muslim 3	matched				21581
+Bassah	3	A_autolink	name_exact	0.95	21539	Bassah (Israel)			entry-has-no-coordinate	Muslim 2, Christian 1					21539
+Kweikat	3	A_autolink	name_exact	0.95	21333	Kuwaykat (Israel)	32.97108	35.14651	in-region	Muslim 3	matched				21333
+Beit Dajan	3	A_autolink	name_exact	0.95	9783	Bet Dagan (Israel)	32.00269	34.82925	in-region	Muslim 3	matched				9783
+Nazareth|P & P Nazareth	3	A_autolink	name_exact	0.95	18	Nazareth (Israel)	32.70210	35.29785	in-region	Christian 2, Muslim 1	matched				18
+Balad el Sheikh|Balad al-Shaykh	3	A_autolink	name_exact	0.95	21670	Balad al-Shaykh (Israel)			entry-has-no-coordinate	Muslim 3					21670
+Tarbikha	3	A_autolink	name_exact	0.95	299	Shomera (Israel)	33.08286	35.28424	in-region	Muslim 3	matched				299
+Nahf	3	A_autolink	name_exact	0.95	26311	Naḥaf (Israel)	32.93194	35.31750	in-region	Muslim 3	matched				26311
+Afula|Affuleh	3	A_autolink	name_exact	0.95	18417	Afula (Israel)	32.60778	35.28972	in-region	Christian 2, Muslim 1	matched				18417
+Yanuh	3	A_autolink	name_exact	0.95	18370	Yanoah (Israel)			entry-has-no-coordinate	Not recorded 2, Muslim 1					18370
+Zeitoun	3	A_autolink	name_exact	0.95	15520	Zeytun (Turkey)	28.92510	53.24560	OUT-OF-REGION	Christian 2, Muslim 1					15520
+HAIFA	5	B_review	prior	0.85	791	Haifa (Israel)	32.81917	34.99917	in-region	Muslim 4, Christian 1					791|15834
+Haifa|Haifa Nazareth St	4	B_review	prior	0.85	791	Haifa (Israel)	32.81917	34.99917	in-region	Muslim 4					791|15834
+Haifa|German Colony Haifa	3	B_review	prior	0.85	791	Haifa (Israel)	32.81917	34.99917	in-region	Christian 3					791|15834
+Kafr Yasif	49	C_review	fuzzy	1.0					no-candidate	Christian 36, Muslim 10, Not recorded 3					88951|24453
+Igzim	46	C_review		0.0					no-candidate	Muslim 46					
+Julis	36	C_review	fuzzy	1.0					no-candidate	Not recorded 27, Muslim 9					82237|4096|7231|17850|73656
+Kantara	34	C_review	fuzzy	1.0					no-candidate	Muslim 24, Christian 10					22537|85270|2734
+Arrabeh	31	C_review	fuzzy	0.8					no-candidate	Muslim 31					21307|71763
+Jaba'	30	C_review	fuzzy	1.0					no-candidate	Muslim 30					72404|70943|8187
+Hawassa	28	C_review		0.0					no-candidate	Muslim 28					
+Abu Snan	23	C_review	fuzzy	1.0					no-candidate	Not recorded 11, Christian 10, Muslim 2					80956
+Jish	23	C_review	fuzzy	1.0					no-candidate	Not recorded 16, Muslim 4, Christian 3					88554
+Umm al-Fahm	22	C_review	fuzzy	1.0					no-candidate	Muslim 21, Not recorded 1					743|22365
+Amman	19	C_review	fuzzy	1.0					no-candidate	Muslim 15, Christian 3, Not recorded 1					74|74635|22019|23405|17784
+Trans-Jordan	15	C_review		0.0					no-candidate	Muslim 14, Not recorded 1					
+Kabri	15	C_review	fuzzy	1.0					no-candidate	Muslim 14, Not recorded 1					869|70938|74549|17211|5190
+Um el Fahm	14	C_review	fuzzy	0.75					no-candidate	Muslim 14					743
+Isfiya	14	C_review		0.0					no-candidate	Not recorded 9, Christian 3, Muslim 2					
+Birweh	14	C_review		0.0					no-candidate	Muslim 13, Christian 1					
+Damun	13	C_review	fuzzy	1.0					no-candidate	Muslim 13					921|17311|18528
+Shaab	13	C_review	fuzzy	1.0					no-candidate	Muslim 13					8214|22875|22958
+Damoun	13	C_review	fuzzy	1.0					no-candidate	Muslim 13					921|17311|18528|14340
+Sha'ab	13	C_review	fuzzy	1.0					no-candidate	Muslim 13					8214|22875|22958
+Yamoun	12	C_review		0.0					no-candidate	Muslim 12					
+Ya'bad	12	C_review	fuzzy	1.0					no-candidate	Muslim 12					75339
+Ramel	12	C_review	fuzzy	1.0					no-candidate	Muslim 11, Christian 1					2003|456|2010
+Hallisa	11	C_review	fuzzy	1.0					no-candidate	Muslim 10, Christian 1					15946|8822|89590|21610|15505
+Daliet el Carmel	11	C_review		0.0					no-candidate	Not recorded 6, Muslim 3, Christian 1					
+Tanturah	10	C_review	fuzzy	0.833					no-candidate	Muslim 10					21005|22251
+Sileh	10	C_review	fuzzy	1.0					no-candidate	Muslim 10					2137|72167|7919|72783
+Sarafand	10	C_review	fuzzy	1.0					no-candidate	Muslim 7, Christian 3					73393
+Jalameh	10	C_review	fuzzy	0.8					no-candidate	Muslim 5, Christian 3, Not recorded 2					3912
+Jenin|P.M.F. Jenin	10	C_review	fuzzy	1.0					no-candidate	Christian 10					79775|10532|10559|71563|7069
+Subbarin	9	C_review		0.0					no-candidate	Muslim 9					
+Eggim	9	C_review		0.0					no-candidate	Muslim 9					
+Zeita	9	C_review	fuzzy	1.0					no-candidate	Muslim 9					88094|72452
+Im El Fahem	9	C_review	fuzzy	0.75					no-candidate	Muslim 7, Not recorded 2					743
+Isfia	8	C_review		0.0					no-candidate	Not recorded 7, Muslim 1					
+Tantourah	8	C_review	fuzzy	0.667					no-candidate	Muslim 7, Christian 1					22251|21005
+Rummaneh	8	C_review	fuzzy	1.0					no-candidate	Muslim 8					75571|76181|75989|22064
+Ard el Yahoud	8	C_review		0.0					no-candidate	Muslim 7, Not recorded 1					
+Sabbarine	8	C_review		0.0					no-candidate	Muslim 8					
+Sindianeh	8	C_review		0.0					no-candidate	Muslim 8					
+Saffourieh	8	C_review	fuzzy	1.0					no-candidate	Muslim 8					3544|406|85997
+Stanton Street	8	C_review	fuzzy	0.769					no-candidate	Muslim 6, Christian 2					20392
+Bireh	7	C_review	fuzzy	1.0					no-candidate	Muslim 7					351|20433
+Um el Fahem	7	C_review	fuzzy	0.75					no-candidate	Muslim 7					743
+Lajjoun	7	C_review	fuzzy	1.0					no-candidate	Muslim 6, Christian 1					16127
+Sabbarin	7	C_review		0.0					no-candidate	Muslim 7					
+Wadi Rushmia	7	C_review		0.0					no-candidate	Muslim 6, Christian 1					
+Churches Quarter	7	C_review		0.0					no-candidate	Christian 4, Muslim 3					
+Ya'abad	7	C_review	fuzzy	0.62					no-candidate	Muslim 6, Not recorded 1					75339
+Balad el Sheikh|Balad al-Sheikh	6	C_review	fuzzy	1.0					no-candidate	Muslim 6					21670|26853
+Eggem	6	C_review		0.0					no-candidate	Muslim 6					
+Reineh	6	C_review	fuzzy	1.0					no-candidate	Christian 3, Muslim 3					26609
+Damascus	6	C_review	name_ambiguous	0.5					no-candidate	Muslim 6					939|15118
+Kabatich	6	C_review		0.0					no-candidate	Muslim 6					
+Sajad	6	C_review	fuzzy	1.0					no-candidate	Muslim 5, Christian 1					88820
+Kabatieh	6	C_review	fuzzy	0.714					no-candidate	Muslim 6					19845|74014
+Sasa	6	C_review	fuzzy	1.0					no-candidate	Muslim 5, Christian 1					27
+Yabad	5	C_review	fuzzy	1.0					no-candidate	Muslim 5					75339
+Sha'b	5	C_review	fuzzy	1.0					no-candidate	Muslim 5					8214|22958|22875
+Kafr Qari'	5	C_review	fuzzy	1.0					no-candidate	Muslim 5					20116
+Iggim	5	C_review		0.0					no-candidate	Muslim 5					
+Jisr el Majami	5	C_review		0.0					no-candidate	Muslim 3, Christian 2					
+Saffurieh	5	C_review	fuzzy	1.0					no-candidate	Muslim 5					3544|406|85997
+Shweikeh	5	C_review	fuzzy	1.0					no-candidate	Muslim 5					73073
+Bineh	5	C_review		0.0					no-candidate	Muslim 4, Christian 1					
+Kufr Kanna	5	C_review	fuzzy	1.0					no-candidate	Muslim 4, Christian 1					20496
+Hartel Kanayis	5	C_review		0.0					no-candidate	Muslim 3, Christian 2					
+Halissa	5	C_review	fuzzy	1.0					no-candidate	Muslim 5					11825|485|139
+Souk Shwam	5	C_review		0.0					no-candidate	Muslim 5					
+Saadeh	5	C_review	fuzzy	1.0					no-candidate	Muslim 5					2021|6211|11251
+Beirut	4	C_review	name_ambiguous	0.5					no-candidate	Christian 2, Muslim 2					651|15116
+Tantaunah	4	C_review	fuzzy	0.667					no-candidate	Muslim 4					80969|15806
+Kafr Lam	4	C_review	fuzzy	0.75					no-candidate	Muslim 4					22687
+Ard el Yahud	4	C_review		0.0					no-candidate	Muslim 4					
+Deir el Asad	4	C_review	fuzzy	1.0					no-candidate	Muslim 4					6077
+Sindiani	4	C_review		0.0					no-candidate	Muslim 4					
+Jisr el Majamie	4	C_review		0.0					no-candidate	Muslim 4					
+Rihanieh	4	C_review		0.0					no-candidate	Muslim 4					
+Kannir	4	C_review	fuzzy	1.0					no-candidate	Muslim 4					12818
+Ajloun	4	C_review	fuzzy	0.62					no-candidate	Muslim 4					16141|19830
+Arah	4	C_review	fuzzy	0.667					no-candidate	Muslim 4					76884|20918|21161|15105
+Fassouta	4	C_review	fuzzy	1.0					no-candidate	Christian 4					21519
+Shfaram	4	C_review	fuzzy	1.0					no-candidate	Christian 2, Muslim 2					261
+Kwikat	4	C_review	fuzzy	1.0					no-candidate	Muslim 3, Not recorded 1					21333
+Kabatia	4	C_review	fuzzy	1.0					no-candidate	Muslim 3, Not recorded 1					73993|74014
+Kakun	4	C_review	fuzzy	1.0					no-candidate	Muslim 4					2747|14540
+Wadi Salib (Haifa)	4	C_review	fuzzy	0.667					no-candidate	Muslim 4					19522
+[uncertain_city]	4	C_review		0.0					no-candidate	Christian 3, Muslim 1					
+Kisaria	4	C_review	fuzzy	1.0					no-candidate	Muslim 3, Christian 1					84588|6936|20262|72487|14632
+Silet el Hartieh	4	C_review	fuzzy	1.0					no-candidate	Muslim 4					71896|78961
+Sileh el Hartieh	4	C_review		0.0					no-candidate	Muslim 4					
+Bassa No 2	4	C_review	fuzzy	0.667					no-candidate	Christian 4					6149|18201
+Balad al-Sheikh / Haifa	4	C_review	fuzzy	0.7					no-candidate	Muslim 3, Christian 1					21670|26853
+Carmel Section	4	C_review		0.0					no-candidate	Christian 3, Muslim 1					
+Transj	4	C_review	fuzzy	0.667					no-candidate	Muslim 3, Christian 1					84688|9695|15786|4919
+Ramayes	4	C_review		0.0					no-candidate	Christian 2, Muslim 1, Not recorded 1					
+Jalama	4	C_review	fuzzy	1.0					no-candidate	Christian 4					3912|26573|73276
+T. Jordan	3	C_review		0.0					no-candidate	Muslim 2, Christian 1					
+Hartel Kashleh	3	C_review		0.0					no-candidate	Christian 3					
+Kisra	3	C_review	fuzzy	1.0					no-candidate	Not recorded 3					69497|6936|20262|72487|14632
+Acre District	3	C_review	fuzzy	0.6					no-candidate	Muslim 3					82493
+Wadi Rushmiya	3	C_review		0.0					no-candidate	Muslim 3					
+Tiri	3	C_review		0.0					no-candidate	Muslim 3					
+Acre S/Dist	3	C_review		0.0					no-candidate	Muslim 1, Not recorded 1, Christian 1					
+Kakoun	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					2747|14540
+Roshpina	3	C_review	fuzzy	1.0					no-candidate	Christian 2, Muslim 1					14873|375|4509|84577
+Breikeh	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					577|86433
+Ain Hod	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					18441|26578
+Caesaria	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					6936|26932|13681|9369
+Freidis	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					70253|84891
+Faradieh	3	C_review		0.0					no-candidate	Christian 2, Not recorded 1					
+London	3	C_review	name_ambiguous	0.5					no-candidate	Christian 3					6463|20873
+Tiberias|Dept of Police, Tiberias	3	C_review	fuzzy	1.0					no-candidate	Muslim 2, Christian 1					807|7437|17277|5277
+Nahr	3	C_review	name_ambiguous	0.5					no-candidate	Muslim 3					619|16865
+Lubieh	3	C_review		0.0					no-candidate	Muslim 3					
+Ibellin	3	C_review	fuzzy	1.0					no-candidate	Muslim 2, Christian 1					21569|86416
+Shafa	3	C_review	fuzzy	1.0					no-candidate	Muslim 2, Christian 1					70946|16999|22080
+Mansi	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					10671|12945|13341|187|8014
+Zababdeh	3	C_review		0.0					no-candidate	Muslim 2, Christian 1					
+Nadel Yahud	3	C_review		0.0					no-candidate	Not recorded 2, Muslim 1					
+Rihaniya	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					72003|86151|23436|14239|6181
+Berkin	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					14595|87581|15952|15209|26987
+Jezzin	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					26946
+Wadi Nisnas (Haifa)	3	C_review	fuzzy	0.667					no-candidate	Christian 2, Muslim 1					85346
+Kafr Rai	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					88748|89992
+Shuweika	3	C_review	fuzzy	0.667					no-candidate	Muslim 2, Christian 1					73073
+Umm az-Zinat	3	C_review		0.0					no-candidate	Muslim 3					
+Damoun|Damun	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					921|17311|18528|14340
+Daliyat al-Karmel	3	C_review	fuzzy	1.0					no-candidate	Not recorded 3					73128
+Kabul	3	C_review	name_ambiguous	0.5					no-candidate	Muslim 3					8230|21578
+Khalsa	3	C_review	fuzzy	1.0					no-candidate	Muslim 2, Not recorded 1					485
+Deir al-Asad	3	C_review		0.0					no-candidate	Muslim 3					
+Bala'	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					74068|17913|19240|86191|16370
+Kirweh	3	C_review		0.0					no-candidate	Muslim 2, Christian 1					
+Um El Fahim	3	C_review	fuzzy	0.75					no-candidate	Muslim 3					743
+Saffuriyya	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					85997|406|3544
+Akre	3	C_review		0.0					no-candidate	Muslim 2, Christian 1					
+Attil	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					70902|7886
+Birkin	3	C_review	fuzzy	1.0					no-candidate	Muslim 2, Not recorded 1					87581|14595|15952|15209|26987
+Burka	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					24642|75548|6702|13619|70198
+Safsaf	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					828
+Kufr Manda	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					21581|5811|25478
+Kufr Qari'	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					20116
+Jenin S/D	3	C_review		0.0					no-candidate	Muslim 3					
+Naqoura	3	C_review		0.0					no-candidate	Muslim 2, Christian 1					
+Gdeideh	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					1661
+Tulkarm|Tul-Karm	3	C_review	fuzzy	1.0					no-candidate	Christian 3					73472|81810
+Jenin|C.M.F. Jenin	3	C_review	fuzzy	1.0					no-candidate	Christian 3					79775|10532|10559|71563|7069
+Ramtha	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					69636|70876
+Lebanon	3	C_review	name_ambiguous	0.5					no-candidate	Muslim 3					7242|10296|12973
+Saffuriya	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					85997|406|3544
+Baqa al-Gharbiyye	3	C_review		0.0					no-candidate	Muslim 2, Christian 1					
+Beersheba	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					699|27053|21851|21173
+Saideh	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					2021|15925|13639|78588
+Lajoun	3	C_review	fuzzy	1.0					no-candidate	Muslim 3					84907
+Yanouh	3	C_review		0.0					no-candidate	Not recorded 3					
+Salameh	3	C_review	fuzzy	1.0					no-candidate	Christian 3					22997|5610|21235|3912|7056
+Nawa	3	C_review		0.0					no-candidate	Muslim 3					

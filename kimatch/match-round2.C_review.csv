@@ -1,0 +1,159 @@
+city,name1,name2,n_records,_match_status,_match_method,_grade,_confidence,_sound_match,_flags,_kima_id,_kima_name_rom,_kima_name_heb,_distance_km,_candidates
+Kafr Yasif,Kafr Yasif,,49,fuzzy,fuzzy,C_review,1.0,,,,,,,88951|24453
+Igzim,Igzim,,46,no_match,,C_review,0.0,,,,,,,
+Julis,Julis,,36,fuzzy,fuzzy,C_review,1.0,,,,,,,82237|4096|7231|17850|73656
+Kantara,Kantara,,34,fuzzy,fuzzy,C_review,1.0,,,,,,,22537|85270|2734
+Arrabeh,Arrabeh,,31,fuzzy,fuzzy,C_review,0.8,,,,,,,21307|71763
+Jaba',Jaba',,30,fuzzy,fuzzy,C_review,1.0,,,,,,,72404|70943|8187
+Hawassa,Hawassa,,28,no_match,,C_review,0.0,,,,,,,
+Abu Snan,Abu Snan,,23,fuzzy,fuzzy,C_review,1.0,,,,,,,80956
+Jish,Jish,,23,fuzzy,fuzzy,C_review,1.0,,,,,,,88554
+Umm al-Fahm,Umm al-Fahm,,22,fuzzy,fuzzy,C_review,1.0,,,,,,,743|22365
+Amman,Amman,,19,fuzzy,fuzzy,C_review,1.0,,,,,,,74|74635|22019|23405|17784
+Trans-Jordan,Trans-Jordan,,15,no_match,,C_review,0.0,,,,,,,
+Kabri,Kabri,,15,fuzzy,fuzzy,C_review,1.0,,,,,,,869|70938|74549|17211|5190
+Um el Fahm,Um el Fahm,,14,fuzzy,fuzzy,C_review,0.75,,,,,,,743
+Isfiya,Isfiya,,14,no_match,,C_review,0.0,,,,,,,
+Birweh,Birweh,,14,no_match,,C_review,0.0,,,,,,,
+Damun,Damun,,13,fuzzy,fuzzy,C_review,1.0,,,,,,,921|17311|18528
+Shaab,Shaab,,13,fuzzy,fuzzy,C_review,1.0,,,,,,,8214|22875|22958
+Damoun,Damoun,,13,fuzzy,fuzzy,C_review,1.0,,,,,,,921|17311|18528|14340
+Sha'ab,Sha'ab,,13,fuzzy,fuzzy,C_review,1.0,,,,,,,8214|22875|22958
+Yamoun,Yamoun,,12,no_match,,C_review,0.0,,,,,,,
+Ya'bad,Ya'bad,,12,fuzzy,fuzzy,C_review,1.0,,,,,,,75339
+Ramel,Ramel,,12,fuzzy,fuzzy,C_review,1.0,,,,,,,2003|456|2010
+Hallisa,Hallisa,,11,fuzzy,fuzzy,C_review,1.0,,,,,,,15946|8822|89590|21610|15505
+Daliet el Carmel,Daliet el Carmel,,11,no_match,,C_review,0.0,,,,,,,
+Tanturah,Tanturah,,10,fuzzy,fuzzy,C_review,0.833,,,,,,,21005|22251
+Sileh,Sileh,,10,fuzzy,fuzzy,C_review,1.0,,,,,,,2137|72167|7919|72783
+Sarafand,Sarafand,,10,fuzzy,fuzzy,C_review,1.0,,,,,,,73393
+Jalameh,Jalameh,,10,fuzzy,fuzzy,C_review,0.8,,,,,,,3912
+Jenin|P.M.F. Jenin,Jenin,P.M.F. Jenin,10,fuzzy,fuzzy,C_review,1.0,,,,,,,79775|10532|10559|71563|7069
+Subbarin,Subbarin,,9,no_match,,C_review,0.0,,,,,,,
+Eggim,Eggim,,9,no_match,,C_review,0.0,,,,,,,
+Zeita,Zeita,,9,fuzzy,fuzzy,C_review,1.0,,,,,,,88094|72452
+Im El Fahem,Im El Fahem,,9,fuzzy,fuzzy,C_review,0.75,,,,,,,743
+Isfia,Isfia,,8,no_match,,C_review,0.0,,,,,,,
+Tantourah,Tantourah,,8,fuzzy,fuzzy,C_review,0.667,,,,,,,22251|21005
+Rummaneh,Rummaneh,,8,fuzzy,fuzzy,C_review,1.0,,,,,,,75571|76181|75989|22064
+Ard el Yahoud,Ard el Yahoud,,8,no_match,,C_review,0.0,,,,,,,
+Sabbarine,Sabbarine,,8,no_match,,C_review,0.0,,,,,,,
+Sindianeh,Sindianeh,,8,no_match,,C_review,0.0,,,,,,,
+Saffourieh,Saffourieh,,8,fuzzy,fuzzy,C_review,1.0,,,,,,,3544|406|85997
+Stanton Street,Stanton Street,,8,fuzzy,fuzzy,C_review,0.769,,,,,,,20392
+Bireh,Bireh,,7,fuzzy,fuzzy,C_review,1.0,,,,,,,351|20433
+Um el Fahem,Um el Fahem,,7,fuzzy,fuzzy,C_review,0.75,,,,,,,743
+Lajjoun,Lajjoun,,7,fuzzy,fuzzy,C_review,1.0,,,,,,,16127
+Sabbarin,Sabbarin,,7,no_match,,C_review,0.0,,,,,,,
+Wadi Rushmia,Wadi Rushmia,,7,no_match,,C_review,0.0,,,,,,,
+Churches Quarter,Churches Quarter,,7,no_match,,C_review,0.0,,,,,,,
+Ya'abad,Ya'abad,,7,fuzzy,fuzzy,C_review,0.62,,,,,,,75339
+Balad el Sheikh|Balad al-Sheikh,Balad el Sheikh,Balad al-Sheikh,6,fuzzy,fuzzy,C_review,1.0,,,,,,,21670|26853
+Eggem,Eggem,,6,no_match,,C_review,0.0,,,,,,,
+Reineh,Reineh,,6,fuzzy,fuzzy,C_review,1.0,,,,,,,26609
+Damascus,Damascus,,6,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,939|15118
+Kabatich,Kabatich,,6,no_match,,C_review,0.0,,,,,,,
+Sajad,Sajad,,6,fuzzy,fuzzy,C_review,1.0,,,,,,,88820
+Kabatieh,Kabatieh,,6,fuzzy,fuzzy,C_review,0.714,,,,,,,19845|74014
+Sasa,Sasa,,6,fuzzy,fuzzy,C_review,1.0,,,,,,,27
+Yabad,Yabad,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,75339
+Sha'b,Sha'b,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,8214|22958|22875
+Kafr Qari',Kafr Qari',,5,fuzzy,fuzzy,C_review,1.0,,,,,,,20116
+Iggim,Iggim,,5,no_match,,C_review,0.0,,,,,,,
+Jisr el Majami,Jisr el Majami,,5,no_match,,C_review,0.0,,,,,,,
+Saffurieh,Saffurieh,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,3544|406|85997
+Shweikeh,Shweikeh,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,73073
+Bineh,Bineh,,5,no_match,,C_review,0.0,,,,,,,
+Kufr Kanna,Kufr Kanna,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,20496
+Hartel Kanayis,Hartel Kanayis,,5,no_match,,C_review,0.0,,,,,,,
+Halissa,Halissa,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,11825|485|139
+Souk Shwam,Souk Shwam,,5,no_match,,C_review,0.0,,,,,,,
+Saadeh,Saadeh,,5,fuzzy,fuzzy,C_review,1.0,,,,,,,2021|6211|11251
+Beirut,Beirut,,4,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,651|15116
+Tantaunah,Tantaunah,,4,fuzzy,fuzzy,C_review,0.667,,,,,,,80969|15806
+Kafr Lam,Kafr Lam,,4,fuzzy,fuzzy,C_review,0.75,,,,,,,22687
+Ard el Yahud,Ard el Yahud,,4,no_match,,C_review,0.0,,,,,,,
+Deir el Asad,Deir el Asad,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,6077
+Sindiani,Sindiani,,4,no_match,,C_review,0.0,,,,,,,
+Jisr el Majamie,Jisr el Majamie,,4,no_match,,C_review,0.0,,,,,,,
+Rihanieh,Rihanieh,,4,no_match,,C_review,0.0,,,,,,,
+Kannir,Kannir,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,12818
+Ajloun,Ajloun,,4,fuzzy,fuzzy,C_review,0.62,,,,,,,16141|19830
+Arah,Arah,,4,fuzzy,fuzzy,C_review,0.667,,,,,,,76884|20918|21161|15105
+Fassouta,Fassouta,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,21519
+Shfaram,Shfaram,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,261
+Kwikat,Kwikat,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,21333
+Kabatia,Kabatia,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,73993|74014
+Kakun,Kakun,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,2747|14540
+Wadi Salib (Haifa),Wadi Salib (Haifa),,4,fuzzy,fuzzy,C_review,0.667,,,,,,,19522
+[uncertain_city],[uncertain_city],,4,no_match,,C_review,0.0,,,,,,,
+Kisaria,Kisaria,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,84588|6936|20262|72487|14632
+Silet el Hartieh,Silet el Hartieh,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,71896|78961
+Sileh el Hartieh,Sileh el Hartieh,,4,no_match,,C_review,0.0,,,,,,,
+Bassa No 2,Bassa No 2,,4,fuzzy,fuzzy,C_review,0.667,,,,,,,6149|18201
+Balad al-Sheikh / Haifa,Balad al-Sheikh / Haifa,,4,fuzzy,fuzzy,C_review,0.7,,,,,,,21670|26853
+Carmel Section,Carmel Section,,4,no_match,,C_review,0.0,,,,,,,
+Transj,Transj,,4,fuzzy,fuzzy,C_review,0.667,,,,,,,84688|9695|15786|4919
+Ramayes,Ramayes,,4,no_match,,C_review,0.0,,,,,,,
+Jalama,Jalama,,4,fuzzy,fuzzy,C_review,1.0,,,,,,,3912|26573|73276
+T. Jordan,T. Jordan,,3,no_match,,C_review,0.0,,,,,,,
+Hartel Kashleh,Hartel Kashleh,,3,no_match,,C_review,0.0,,,,,,,
+Kisra,Kisra,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,69497|6936|20262|72487|14632
+Acre District,Acre District,,3,fuzzy,fuzzy,C_review,0.6,,,,,,,82493
+Wadi Rushmiya,Wadi Rushmiya,,3,no_match,,C_review,0.0,,,,,,,
+Tiri,Tiri,,3,no_match,,C_review,0.0,,,,,,,
+Acre S/Dist,Acre S/Dist,,3,no_match,,C_review,0.0,,,,,,,
+Kakoun,Kakoun,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,2747|14540
+Roshpina,Roshpina,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,14873|375|4509|84577
+Breikeh,Breikeh,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,577|86433
+Ain Hod,Ain Hod,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,18441|26578
+Caesaria,Caesaria,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,6936|26932|13681|9369
+Freidis,Freidis,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,70253|84891
+Faradieh,Faradieh,,3,no_match,,C_review,0.0,,,,,,,
+London,London,,3,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,6463|20873
+"Tiberias|Dept of Police, Tiberias",Tiberias,"Dept of Police, Tiberias",3,fuzzy,fuzzy,C_review,1.0,,,,,,,807|7437|17277|5277
+Nahr,Nahr,,3,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,619|16865
+Lubieh,Lubieh,,3,no_match,,C_review,0.0,,,,,,,
+Ibellin,Ibellin,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,21569|86416
+Shafa,Shafa,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,70946|16999|22080
+Mansi,Mansi,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,10671|12945|13341|187|8014
+Zababdeh,Zababdeh,,3,no_match,,C_review,0.0,,,,,,,
+Nadel Yahud,Nadel Yahud,,3,no_match,,C_review,0.0,,,,,,,
+Rihaniya,Rihaniya,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,72003|86151|23436|14239|6181
+Berkin,Berkin,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,14595|87581|15952|15209|26987
+Jezzin,Jezzin,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,26946
+Wadi Nisnas (Haifa),Wadi Nisnas (Haifa),,3,fuzzy,fuzzy,C_review,0.667,,,,,,,85346
+Kafr Rai,Kafr Rai,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,88748|89992
+Shuweika,Shuweika,,3,fuzzy,fuzzy,C_review,0.667,,,,,,,73073
+Umm az-Zinat,Umm az-Zinat,,3,no_match,,C_review,0.0,,,,,,,
+Damoun|Damun,Damoun,Damun,3,fuzzy,fuzzy,C_review,1.0,,,,,,,921|17311|18528|14340
+Daliyat al-Karmel,Daliyat al-Karmel,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,73128
+Kabul,Kabul,,3,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,8230|21578
+Khalsa,Khalsa,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,485
+Deir al-Asad,Deir al-Asad,,3,no_match,,C_review,0.0,,,,,,,
+Bala',Bala',,3,fuzzy,fuzzy,C_review,1.0,,,,,,,74068|17913|19240|86191|16370
+Kirweh,Kirweh,,3,no_match,,C_review,0.0,,,,,,,
+Um El Fahim,Um El Fahim,,3,fuzzy,fuzzy,C_review,0.75,,,,,,,743
+Saffuriyya,Saffuriyya,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,85997|406|3544
+Akre,Akre,,3,no_match,,C_review,0.0,,,,,,,
+Attil,Attil,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,70902|7886
+Birkin,Birkin,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,87581|14595|15952|15209|26987
+Burka,Burka,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,24642|75548|6702|13619|70198
+Safsaf,Safsaf,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,828
+Kufr Manda,Kufr Manda,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,21581|5811|25478
+Kufr Qari',Kufr Qari',,3,fuzzy,fuzzy,C_review,1.0,,,,,,,20116
+Jenin S/D,Jenin S/D,,3,no_match,,C_review,0.0,,,,,,,
+Naqoura,Naqoura,,3,no_match,,C_review,0.0,,,,,,,
+Gdeideh,Gdeideh,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,1661
+Tulkarm|Tul-Karm,Tulkarm,Tul-Karm,3,fuzzy,fuzzy,C_review,1.0,,,,,,,73472|81810
+Jenin|C.M.F. Jenin,Jenin,C.M.F. Jenin,3,fuzzy,fuzzy,C_review,1.0,,,,,,,79775|10532|10559|71563|7069
+Ramtha,Ramtha,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,69636|70876
+Lebanon,Lebanon,,3,name_ambiguous,name_ambiguous,C_review,0.5,,ambiguous_exact_name,,,,,7242|10296|12973
+Saffuriya,Saffuriya,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,85997|406|3544
+Baqa al-Gharbiyye,Baqa al-Gharbiyye,,3,no_match,,C_review,0.0,,,,,,,
+Beersheba,Beersheba,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,699|27053|21851|21173
+Saideh,Saideh,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,2021|15925|13639|78588
+Lajoun,Lajoun,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,84907
+Yanouh,Yanouh,,3,no_match,,C_review,0.0,,,,,,,
+Salameh,Salameh,,3,fuzzy,fuzzy,C_review,1.0,,,,,,,22997|5610|21235|3912|7056
+Nawa,Nawa,,3,no_match,,C_review,0.0,,,,,,,

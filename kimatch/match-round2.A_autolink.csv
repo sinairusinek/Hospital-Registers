@@ -1,0 +1,49 @@
+city,name1,name2,n_records,_match_status,_match_method,_grade,_confidence,_sound_match,_flags,_kima_id,_kima_name_rom,_kima_name_heb,_distance_km,_candidates
+Tarshiha,Tarshiha,,74,name_exact,name_exact,A_autolink,0.95,True,,21809,Tarshiḥa (Israel),תרשיחא (ישראל),,21809
+Arara,Arara,,70,name_exact,name_exact,A_autolink,0.95,True,,20918,Ar'ara (Israel),ערערה (ישראל),,20918
+Yarka,Yarka,,40,name_exact,name_exact,A_autolink,0.95,True,,18267,Yirka (Israel),ירכא (ישראל),,18267
+Ein Ghazal,Ein Ghazal,,38,name_exact,name_exact,A_autolink,0.95,True,,21329,Ein Ghazal (Israel),עין ע'זאל (ישראל),,21329
+Mughar,Mughar,,35,name_exact,name_exact,A_autolink,0.95,True,,21974,Mughar (Israel),מור'אר (ישראל),,21974
+Wadi Salib,Wadi Salib,,34,name_exact,name_exact,A_autolink,0.95,True,,19522,"Wadi Salib (Haifa, Israel)","ואדי סאליב (חיפה, ישראל)",,19522
+Gaza,Gaza,,29,name_exact,name_exact,A_autolink,0.95,True,,12982,Gaza (Gaza Strip),עזה (רצועת עזה),,12982
+Tamra,Tamra,,28,name_exact,name_exact,A_autolink,0.95,True,,20270,Tamra (Israel),טמרה (ישראל),,20270
+Deir Hanna,Deir Hanna,,19,name_exact,name_exact,A_autolink,0.95,True,,21739,Dair Hanna (Israel),דיר חנא (ישראל),,21739
+Fassuta,Fassuta,,14,name_exact,name_exact,A_autolink,0.95,True,,21519,Fassuta (Israel),פסוטה (ישראל),,21519
+Kafr Kanna,Kafr Kanna,,13,name_exact,name_exact,A_autolink,0.95,True,,20496,Kafr Kanna (Israel),כפר כנא (ישראל),,20496
+Mt. Carmel|Mount Carmel,Mt. Carmel,Mount Carmel,11,name_exact,name_exact,A_autolink,0.95,True,,1156,"Karmel, Mount (Israel)",הר הכרמל (ישראל),,1156
+Ararah,Ararah,,11,name_exact,name_exact,A_autolink,0.95,True,,20918,Ar'ara (Israel),ערערה (ישראל),,20918
+Ibillin,Ibillin,,11,name_exact,name_exact,A_autolink,0.95,True,,21569,I'bilin (Israel),עיבלין (ישראל),,21569
+Ein Hod,Ein Hod,,10,name_exact,name_exact,A_autolink,0.95,True,,18441,En Hod (Israel),עין הוד (ישראל),,18441
+Lajjun,Lajjun,,10,name_exact,name_exact,A_autolink,0.95,True,,16127,Lajjūn (Jordan),לג'ון (ירדן),,16127
+Acca,Acca,,9,name_exact,name_exact,A_autolink,0.95,True,,71,Acre (Israel),עכו (ישראל),,71
+Hebron,Hebron,,8,name_exact,name_exact,A_autolink,0.95,True,,17166,Hebron (Conn.),הברון (קונטיקט),,17166
+Arraba,Arraba,,8,name_exact,name_exact,A_autolink,0.95,True,,21307,Arraba (Israel),עראבה (ישראל),,21307
+Beissan|Beisan,Beissan,Beisan,8,name_exact,name_exact,A_autolink,0.95,True,,613,Bet She'an (Israel),בית שאן (ישראל),,613
+Amka,Amka,,7,name_exact,name_exact,A_autolink,0.95,True,,23142,Amka (Israel),עמקה (ישראל),,23142
+Mazra'a,Mazra'a,,6,name_exact,name_exact,A_autolink,0.95,True,,26615,Mazra'a (Israel),מזרעה (ישראל),,26615
+Suhmata,Suhmata,,5,name_exact,name_exact,A_autolink,0.95,True,,21806,Suhmata (Israel),סוחמאתא (ישראל),,21806
+Beit She'an,Beit She'an,,5,name_exact,name_exact,A_autolink,0.95,True,,613,Bet She'an (Israel),בית שאן (ישראל),,613
+Baka,Baka,,4,name_exact,name_exact,A_autolink,0.95,True,,21216,"Bak'a (Jerusalem, Israel)","בקעה (ירושלים, ישראל)",,21216
+Cairo,Cairo,,4,name_exact,name_exact,A_autolink,0.95,True,,11803,Cairo (Ill.),קיירו (אילינוי),,11803
+Kababir,Kababir,,4,name_exact,name_exact,A_autolink,0.95,True,,22655,"Kababir (Haifa, Israel)","כבאביר (חיפה, ישראל)",,22655
+Hawara,Hawara,,4,name_exact,name_exact,A_autolink,0.95,True,,21617,Hawara (Israel),חווארה (ישראל),,21617
+Zib,Zib,,3,name_exact,name_exact,A_autolink,0.95,True,,887,Gesher Haziv (Israel),גשר הזיו (ישראל),,887
+Tantoura|Tantura,Tantoura,Tantura,3,name_exact,name_exact,A_autolink,0.95,True,,21005,Tantura (Israel),טנטורה (ישראל),,21005
+Jaffa|P. & P. Jaffa,Jaffa,P. & P. Jaffa,3,name_exact,name_exact,A_autolink,0.95,True,,629,"Jaffa (Tel Aviv-Yafo, Israel)","יפו (תל אביב-יפו, ישראל)",,629
+Ludd,Ludd,,3,name_exact,name_exact,A_autolink,0.95,True,,178,Lod (Israel),לוד (ישראל),,178
+Tamrah,Tamrah,,3,name_exact,name_exact,A_autolink,0.95,True,,20270,Tamra (Israel),טמרה (ישראל),,20270
+Nahef,Nahef,,3,name_exact,name_exact,A_autolink,0.95,True,,26311,Naḥaf (Israel),נחף (ישראל),,26311
+Samra,Samra,,3,name_exact,name_exact,A_autolink,0.95,True,,22266,Khirbet Samara (Israel),חורבת סמארה (ישראל),,22266
+Beyrouth,Beyrouth,,3,name_exact,name_exact,A_autolink,0.95,True,,651,Beirut (Lebanon),בירות (לבנון),,651
+"Nazareth|Dept. of Police, Nazareth",Nazareth,"Dept. of Police, Nazareth",3,name_exact,name_exact,A_autolink,0.95,True,,18,Nazareth (Israel),נצרת (ישראל),,18
+Kafr Manda,Kafr Manda,,3,name_exact,name_exact,A_autolink,0.95,True,,21581,Kafr Manda (Israel),כפר מנדא (ישראל),,21581
+Bassah,Bassah,,3,name_exact,name_exact,A_autolink,0.95,True,,21539,Bassah (Israel),אל-באסה (ישראל),,21539
+Kweikat,Kweikat,,3,name_exact,name_exact,A_autolink,0.95,True,,21333,Kuwaykat (Israel),כויכאת (ישראל),,21333
+Beit Dajan,Beit Dajan,,3,name_exact,name_exact,A_autolink,0.95,True,,9783,Bet Dagan (Israel),בית דגן (ישראל),,9783
+Nazareth|P & P Nazareth,Nazareth,P & P Nazareth,3,name_exact,name_exact,A_autolink,0.95,True,,18,Nazareth (Israel),נצרת (ישראל),,18
+Balad el Sheikh|Balad al-Shaykh,Balad el Sheikh,Balad al-Shaykh,3,name_exact,name_exact,A_autolink,0.95,True,,21670,Balad al-Shaykh (Israel),בלד אל-שייח (ישראל),,21670
+Tarbikha,Tarbikha,,3,name_exact,name_exact,A_autolink,0.95,True,,299,Shomera (Israel),שומרה (ישראל),,299
+Nahf,Nahf,,3,name_exact,name_exact,A_autolink,0.95,True,,26311,Naḥaf (Israel),נחף (ישראל),,26311
+Afula|Affuleh,Afula,Affuleh,3,name_exact,name_exact,A_autolink,0.95,True,,18417,Afula (Israel),עפולה (ישראל),,18417
+Yanuh,Yanuh,,3,name_exact,name_exact,A_autolink,0.95,True,,18370,Yanoah (Israel),ינוח (ישראל),,18370
+Zeitoun,Zeitoun,,3,name_exact,name_exact,A_autolink,0.95,True,,15520,Zeytun (Turkey),זיתון (טורקיה),,15520

@@ -1,0 +1,4 @@
+city,name1,name2,n_records,_match_status,_match_method,_grade,_confidence,_sound_match,_flags,_kima_id,_kima_name_rom,_kima_name_heb,_distance_km,_candidates
+HAIFA,HAIFA,,5,name_exact,prior,B_review,0.85,True,,791,Haifa (Israel),חיפה (ישראל),,791|15834
+Haifa|Haifa Nazareth St,Haifa,Haifa Nazareth St,4,name_exact,prior,B_review,0.85,True,,791,Haifa (Israel),חיפה (ישראל),,791|15834
+Haifa|German Colony Haifa,Haifa,German Colony Haifa,3,name_exact,prior,B_review,0.85,True,,791,Haifa (Israel),חיפה (ישראל),,791|15834
