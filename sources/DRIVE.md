@@ -6,7 +6,7 @@ checkout. Built 28 August 2026.
 
 - Folder: <https://drive.google.com/drive/folders/1o184-P0II0N1tn9EUTeo922J8Soipfh4>
 - Drive root folder ID: `0B1TlfouSwHTnfmNWZ0JFdGdodHRqYnBpYkRjVnNmU19WS0NUTVdybDg1V2pSckpYemhDNlE`
-- 619 files, 1.01 GB. Guide Doc `1sEGXWEOIHlJ550jxmZsWWt-rUa1iOiJAtYi55SOz1Gg`;
+- 619 files, 1.01 GB. Guide Doc `1ZkaLi-1P3l5p0CnbnzYqeNyzYjWoocRrqSHYL_rPWu0`;
   file-map Sheet `1PGfkD6EXzAKIqzbsTzNRZQYiKCQYpnWwgcgikFQWk98`.
 
 ## Layout
