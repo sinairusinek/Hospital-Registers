@@ -1,5 +1,6 @@
 
 import React, { useMemo, useState } from 'react';
+import WorkInProgress from './WorkInProgress';
 import { ClipboardCheck, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { RegistryRecord } from '../types';
 import { UNKNOWN } from '../facets';
@@ -203,7 +204,12 @@ const ReviewView: React.FC<Props> = ({ data }) => {
   }
 
   return (
-    <div className="flex w-full h-full overflow-hidden bg-slate-50">
+    <div className="flex flex-col w-full h-full overflow-hidden">
+      <WorkInProgress>
+        these queues are still being adjudicated; a flag here marks a record
+        worth a second look, not a known error.
+      </WorkInProgress>
+    <div className="flex w-full flex-1 overflow-hidden bg-slate-50">
       {/* Queues */}
       <div className="w-80 shrink-0 bg-white border-r border-slate-200 overflow-y-auto">
         <div className="p-5 border-b border-slate-200">
@@ -307,6 +313,7 @@ const ReviewView: React.FC<Props> = ({ data }) => {
       </div>
 
       <HelpPanel title="How to use this" sections={HELP} storageKey="help.review" />
+    </div>
     </div>
   );
 };

@@ -54,3 +54,15 @@ if (existsSync(coordsSrc)) {
   copyFileSync(coordsSrc, coordsDest);
   console.log(`Staged place coordinates → ${coordsDest}`);
 }
+
+// "Mountain Road to Bat Galim", the institutional history behind the History
+// tab. Authored at paper/hospital-history.html, which is gitignored with the
+// rest of the private drafts, so the *shipped* copy in public/ is the tracked
+// one and CI builds from that. This step only refreshes it when the authored
+// file is present — i.e. on the machine where it is written, never in CI.
+const historySrc = resolve(here, '../../paper/hospital-history.html');
+const historyDest = resolve(here, '../public/hospital-history.html');
+if (existsSync(historySrc)) {
+  copyFileSync(historySrc, historyDest);
+  console.log(`Staged institutional history → ${historyDest}`);
+}

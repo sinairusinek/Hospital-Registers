@@ -1,6 +1,6 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon } from 'lucide-react';
+import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import { matchesFilters } from './filtering';
 import AboutView from './components/AboutView';
@@ -10,6 +10,7 @@ import ReviewView from './components/ReviewView';
 import PlacesView from './components/PlacesView';
 import MapView from './components/MapView';
 import TimelineView from './components/TimelineView';
+import HistoryView from './components/HistoryView';
 
 declare const Papa: any;
 
@@ -241,6 +242,15 @@ const App: React.FC = () => {
                 Timeline
               </button>
               <button
+                onClick={() => setActiveView('history')}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  activeView === 'history' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <BookOpen size={16} />
+                History
+              </button>
+              <button
                 onClick={() => setActiveView('browse')}
                 disabled={data.length === 0}
                 className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
@@ -308,6 +318,10 @@ const App: React.FC = () => {
           // The timeline stands on its own generated file, so like About it is
           // readable before — and without — the register TSV.
           <TimelineView />
+        ) : activeView === 'history' ? (
+          // Likewise the history: a self-contained document in public/, framed
+          // as it stands rather than ported into React.
+          <HistoryView />
         ) : isLoading ? (
           <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-50">
             <div className="w-16 h-16 border-4 border-indigo-100 border-t-indigo-600 rounded-full animate-spin mb-4"></div>
