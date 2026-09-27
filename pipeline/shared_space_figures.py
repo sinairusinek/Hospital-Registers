@@ -56,8 +56,7 @@ BRITISH_NAT = {"British", "Palestinian British"}
 # 130 rows) are left out: a record in two wards cannot sit in one bar.
 WARD_ORDER = [
     "Surgical", "Medical", "General", "Maternity",
-    "Isolation", "Infectious Diseases", "Venereal Diseases",
-    "British Section",
+    "Isolation", "British Section",
 ]
 
 # The mixed grouping, in the order the charts use.
@@ -313,39 +312,69 @@ def fig_mixed_groups(rows):
 
 
 def fig_withdrawal(rows):
-    """Jewish share of admissions per year, and the 1948 months.
+    """Jewish share of admissions at three resolutions: year, month, day.
 
     The curve is the second headline: the shared institution was abandoned by
-    one community from 1936, a decade before the war. Isolation and Infectious
-    Diseases are carried alongside because notifiable-disease admission was
-    compulsory — what collapsed was elective use, and those two wards show it.
+    one community from 1936, a decade before the war. Isolation is carried
+    alongside because notifiable-disease admission was compulsory — what
+    collapsed was elective use, and that ward shows it.
+
+    All three levels are emitted as counts only. The view computes percentages
+    from them, so the percent/raw toggle cannot drift from the totals, and a
+    month is always exactly the sum of its days. Months and days carry no
+    minimum: a thin month is real evidence late on, and the view shows n so a
+    two-admission bar cannot be misread as a share. The year series keeps its
+    30-record floor because it is the one the prose quotes.
     """
+    def counts(keyfn, floor=0):
+        buckets = defaultdict(Counter)
+        iso = defaultdict(Counter)
+        for r in rows:
+            if g(r, "Religion") not in MCJ:
+                continue
+            k = keyfn(r)
+            if not k:
+                continue
+            buckets[k][g(r, "Religion")] += 1
+            if ward(r) == "Isolation":
+                iso[k][g(r, "Religion")] += 1
+        out = []
+        for k in sorted(buckets):
+            c = buckets[k]
+            n = sum(c.values())
+            if n < floor:
+                continue
+            row = {"key": k, "n": n, **{m: c[m] for m in MCJ}}
+            isolation_n = sum(iso[k].values())
+            if isolation_n:
+                row["isolationN"] = isolation_n
+                row["isolationJewish"] = iso[k]["Jewish"]
+            out.append(row)
+        return out
+
+    def dated(length):
+        """The admission date truncated, or '' when it is not that precise."""
+        def key(r):
+            d = g(r, "Admission Date")
+            return d[:length] if len(d) >= length else ""
+        return key
+
+    years = counts(dated(4), floor=30)
+    months = counts(dated(7))
+    days = counts(dated(10))
+
+    # The year series the prose quotes, as percentages, unchanged in shape.
     series = []
-    for yr in sorted({year(r) for r in rows if year(r)}):
-        sub = [r for r in rows if year(r) == yr and g(r, "Religion") in MCJ]
-        if len(sub) < 30:
-            continue
-        c = Counter(g(r, "Religion") for r in sub)
-        iso = [r for r in sub if ward(r) in ("Isolation", "Infectious Diseases")]
-        ic = Counter(g(r, "Religion") for r in iso)
+    for y in years:
         series.append({
-            "year": yr, "n": len(sub),
-            **{m: pct(c[m], len(sub)) for m in MCJ},
-            "isolationN": len(iso),
-            "jewishInIsolation": pct(ic["Jewish"], len(iso)) if len(iso) >= 30 else None,
+            "year": y["key"], "n": y["n"],
+            **{m: pct(y[m], y["n"]) for m in MCJ},
+            "isolationN": y.get("isolationN", 0),
+            "jewishInIsolation": (pct(y["isolationJewish"], y["isolationN"])
+                                  if y.get("isolationN", 0) >= 30 else None),
         })
-    months = []
-    for r in rows:
-        d = g(r, "Admission Date")
-        if len(d) >= 7 and d[:4] in ("1947", "1948") and g(r, "Religion") in MCJ:
-            months.append((d[:7], g(r, "Religion")))
-    bym = defaultdict(Counter)
-    for m, rel in months:
-        bym[m][rel] += 1
-    return {"years": series,
-            "lateMonths": [{"month": m, **{k: bym[m][k] for k in MCJ},
-                            "n": sum(bym[m].values())}
-                           for m in sorted(bym)]}
+
+    return {"years": series, "months": months, "days": days}
 
 
 def fig_staff(rows):

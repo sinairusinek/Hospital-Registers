@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Loader2, AlertTriangle, Table2 } from 'lucide-react';
+import { Loader2, AlertTriangle, Table2, ChevronRight } from 'lucide-react';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import { SERIES, NEUTRAL, RESIDUE } from '../colors';
 
@@ -33,6 +33,15 @@ interface YearRow {
   year: string; n: number; Muslim: number; Christian: number; Jewish: number;
   isolationN: number; jewishInIsolation: number | null;
 }
+/**
+ * One bucket of the withdrawal series at any resolution: `key` is an ISO date
+ * truncated to the level (1938, 1938-04, 1938-04-12). Counts only — the view
+ * derives percentages, so the toggle cannot disagree with the totals.
+ */
+interface PeriodRow {
+  key: string; n: number; Muslim: number; Christian: number; Jewish: number;
+  isolationN?: number; isolationJewish?: number;
+}
 interface Occupancy {
   year: string; admissions: number; bedDays: number; meanBeds: number; pctOf24: number;
 }
@@ -60,7 +69,8 @@ interface SharedSpaceData {
   mixedGroups: { mixed: MixedRow[]; plain: MixedRow[] };
   withdrawal: {
     years: YearRow[];
-    lateMonths: { month: string; Muslim: number; Christian: number; Jewish: number; n: number }[];
+    months: PeriodRow[];
+    days: PeriodRow[];
   };
   staff: {
     n: number; female: number; inBritishSection: number;
@@ -97,6 +107,12 @@ interface SharedSpaceData {
 
 // The three religions keep the colours they carry everywhere else in the site
 // and in the article's figures: Muslim green, Christian orange, Jewish blue.
+// "1938-04" as "Apr". The year is already the row above it in the drilldown,
+// so repeating it only makes the column wider.
+const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONTH_LABEL = (key: string) => MONTH_NAMES[Number(key.slice(5, 7)) - 1] ?? key;
+
 const REL = { Muslim: SERIES[2], Christian: SERIES[1], Jewish: SERIES[0] } as const;
 const MCJ = ['Muslim', 'Christian', 'Jewish'] as const;
 
@@ -273,6 +289,79 @@ const StackedBar: React.FC<{
   </div>
 );
 
+/**
+ * The withdrawal series, drilled.
+ *
+ * One horizontal stacked bar per month, grouped under its year, and every month
+ * opens to its own days. The resolution is monthly by default because that is
+ * where the 1936-37 turn is legible: a year hides it inside an average, a day is
+ * mostly noise, and the last months of 1948 need the month to be countable at
+ * all. The daily level exists for exactly those months, where a single admission
+ * is the finding.
+ *
+ * Two scales, because they answer different questions. Percent shows
+ * composition and is the argument; raw shows volume and is the check on it — a
+ * 50% bar over two admissions and one over two hundred look identical in
+ * percent, and in the closing months of the register that difference is the
+ * whole story. Raw bars share one axis across the whole chart, so months are
+ * comparable by length; percent bars each fill the width.
+ *
+ * Counts come from the generator at every level; the percentages are computed
+ * here, so a bar and its tooltip cannot disagree with the table.
+ */
+const DrilldownBar: React.FC<{
+  row: PeriodRow; label: string; scale: 'pct' | 'raw'; max: number;
+  indent?: boolean; open?: boolean; onToggle?: () => void;
+}> = ({ row, label, scale, max, indent, open, onToggle }) => {
+  const parts = MCJ.map(m => ({ key: m, v: row[m], color: REL[m] }));
+  // In percent every bar fills the track; in raw the track is the largest
+  // bucket in the series, so length carries volume.
+  const width = scale === 'pct' ? 100 : (max ? (row.n / max) * 100 : 0);
+  const share = (v: number) => (row.n ? (v / row.n) * 100 : 0);
+  const aria = `${label}: ${row.n} admissions, ` +
+    parts.map(p => `${p.key} ${p.v} (${share(p.v).toFixed(0)}%)`).join(', ');
+
+  const bar = (
+    <div className="flex h-6 gap-[2px] rounded overflow-hidden"
+         style={{ width: `${width}%` }} role="img" aria-label={aria}>
+      {parts.filter(p => p.v > 0).map(p => (
+        <div key={p.key} className="flex items-center justify-center overflow-hidden
+                                    first:rounded-l last:rounded-r"
+             style={{ width: `${share(p.v)}%`, background: p.color }}
+             title={`${p.key}: ${p.v} (${share(p.v).toFixed(1)}%)`}>
+          {share(p.v) >= 12 && width > 12 && (
+            <span className="text-[10px] font-medium text-white tabular-nums px-1">
+              {scale === 'pct' ? `${Math.round(share(p.v))}%` : p.v}
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className={`grid grid-cols-[8rem_1fr_3.5rem] gap-3 items-center py-[3px]
+                     ${indent ? 'pl-6' : ''}`}>
+      {onToggle ? (
+        <button onClick={onToggle} aria-expanded={open}
+                className="flex items-center justify-end gap-1 text-xs text-slate-600
+                           hover:text-slate-900 tabular-nums group">
+          <ChevronRight size={12} aria-hidden="true"
+            className={`transition-transform shrink-0 text-slate-400
+                        group-hover:text-slate-600 ${open ? 'rotate-90' : ''}`} />
+          {label}
+        </button>
+      ) : (
+        <div className="text-right text-xs text-slate-500 tabular-nums pr-[calc(0.25rem+12px)]">
+          {label}
+        </div>
+      )}
+      <div className="min-w-0">{bar}</div>
+      <div className="text-[11px] text-slate-400 tabular-nums">{row.n.toLocaleString()}</div>
+    </div>
+  );
+};
+
 /** Every figure ships a table view; this is the disclosure that holds it. */
 const TableView: React.FC<{ children: React.ReactNode; label?: string }> = ({ children, label }) => (
   <details className="mt-4 max-w-3xl group">
@@ -339,6 +428,67 @@ const SharedSpaceView: React.FC = () => {
     () => data ? Math.max(...data.mixedGroups.mixed.map(m => m.cfr)) : 1,
     [data]
   );
+
+  // The withdrawal drilldown. Years and months are collapsed by default: the
+  // chart opens at the resolution the argument is made at, and the reader digs
+  // where they doubt it.
+  const [scale, setScale] = useState<'pct' | 'raw'>('pct');
+  const [openYears, setOpenYears] = useState<Set<string>>(new Set());
+  const [openMonths, setOpenMonths] = useState<Set<string>>(new Set());
+
+  // Months under their year, days under their month. Both series arrive sorted
+  // by key, so the grouped lists stay chronological without re-sorting.
+  const byYear = useMemo(() => {
+    const m = new Map<string, PeriodRow[]>();
+    for (const r of data?.withdrawal.months ?? []) {
+      const y = r.key.slice(0, 4);
+      (m.get(y) ?? m.set(y, []).get(y)!).push(r);
+    }
+    return m;
+  }, [data]);
+
+  const byMonth = useMemo(() => {
+    const m = new Map<string, PeriodRow[]>();
+    for (const r of data?.withdrawal.days ?? []) {
+      const k = r.key.slice(0, 7);
+      (m.get(k) ?? m.set(k, []).get(k)!).push(r);
+    }
+    return m;
+  }, [data]);
+
+  // A year's own totals, summed from its months rather than taken from the
+  // percentage series, so every level of the chart adds up to the one above it.
+  // A year whose months are all thin still gets a bar: the year series decides
+  // which years are drawn, this only supplies the counts.
+  const yearTotals = useMemo(() => {
+    const m = new Map<string, PeriodRow>();
+    for (const y of data?.withdrawal.years ?? []) {
+      const months = byYear.get(y.year) ?? [];
+      m.set(y.year, {
+        key: y.year, n: months.reduce((a, r) => a + r.n, 0),
+        Muslim: months.reduce((a, r) => a + r.Muslim, 0),
+        Christian: months.reduce((a, r) => a + r.Christian, 0),
+        Jewish: months.reduce((a, r) => a + r.Jewish, 0),
+      });
+    }
+    return m;
+  }, [data, byYear]);
+
+  // One axis per level, so bars are comparable down a column but a thin day is
+  // not crushed against the busiest year.
+  const yearMax = useMemo(
+    () => Math.max(1, ...[...yearTotals.values()].map(r => r.n)), [yearTotals]);
+  const monthMax = useMemo(
+    () => Math.max(1, ...(data?.withdrawal.months ?? []).map(r => r.n)), [data]);
+  const dayMax = useMemo(
+    () => Math.max(1, ...(data?.withdrawal.days ?? []).map(r => r.n)), [data]);
+
+  const toggle = (set: React.Dispatch<React.SetStateAction<Set<string>>>, key: string) =>
+    set(prev => {
+      const next = new Set(prev);
+      next.has(key) ? next.delete(key) : next.add(key);
+      return next;
+    });
 
   if (error) {
     return (
@@ -738,43 +888,78 @@ python3 pipeline/shared_space_figures.py</pre>
           }
         >
           <Legend items={relLegend} />
+          <div className="flex items-center justify-between gap-4 mb-3 max-w-3xl">
+            <div className="text-xs text-slate-500">
+              Monthly. Click a year to open its months, a month to open its days.
+            </div>
+            <div className="flex rounded-md border border-slate-200 overflow-hidden text-xs">
+              {(['pct', 'raw'] as const).map(mode => (
+                <button key={mode} onClick={() => setScale(mode)}
+                        aria-pressed={scale === mode}
+                        className={`px-3 py-1 ${scale === mode
+                          ? 'bg-slate-700 text-white font-medium'
+                          : 'bg-white text-slate-600 hover:bg-slate-50'}`}>
+                  {mode === 'pct' ? 'Share' : 'Counts'}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="bg-white rounded-xl border border-slate-200 p-5">
-            {withdrawal.years.map(y => (
-              <StackedBar key={y.year} label={y.year} sub={`n=${y.n.toLocaleString()}`}
-                parts={MCJ.map(m => ({ key: m, pct: y[m], color: REL[m] }))} />
-            ))}
+            <div className="grid grid-cols-[8rem_1fr_3.5rem] gap-3 text-[11px] font-semibold
+                            text-slate-400 pb-1.5 mb-1 border-b border-slate-100">
+              <div className="text-right">Period</div>
+              <div>{scale === 'pct' ? 'Share of admissions' : 'Admissions'}</div>
+              <div>n</div>
+            </div>
+            {withdrawal.years.map(y => {
+              const months = byYear.get(y.year) ?? [];
+              const yearOpen = openYears.has(y.year);
+              return (
+                <div key={y.year} className={yearOpen ? 'py-1' : ''}>
+                  <DrilldownBar
+                    row={yearTotals.get(y.year)!} label={y.year}
+                    scale={scale} max={yearMax}
+                    open={yearOpen} onToggle={() => toggle(setOpenYears, y.year)}
+                  />
+                  {yearOpen && months.map(m => {
+                    const monthOpen = openMonths.has(m.key);
+                    const days = byMonth.get(m.key) ?? [];
+                    return (
+                      <div key={m.key}>
+                        <DrilldownBar
+                          row={m} label={MONTH_LABEL(m.key)} indent
+                          scale={scale} max={monthMax}
+                          open={monthOpen} onToggle={() => toggle(setOpenMonths, m.key)}
+                        />
+                        {monthOpen && (
+                          days.length ? days.map(d => (
+                            <div key={d.key} className="pl-6">
+                              <DrilldownBar row={d} label={d.key.slice(8)} indent
+                                            scale={scale} max={dayMax} />
+                            </div>
+                          )) : (
+                            <p className="pl-16 py-1 text-[11px] text-slate-400">
+                              No admission in this month carries a day-precise date.
+                            </p>
+                          )
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
           <p className="text-xs text-slate-500 mt-3 max-w-3xl leading-relaxed">
-            Gaps in the year series are archival, not historical: the register is missing for
+            Gaps in the series are archival, not historical: the register is missing for
             1941–43 and 1945, and the press has the hospital working throughout. 1932's level is
-            itself a reading decision — see the QUOTE_NONE note in the generator.
-          </p>
-
-          <h3 className="text-sm font-semibold text-slate-700 mt-8 mb-3">
-            The last months, in counts
-          </h3>
-          <div className="overflow-x-auto">
-            <table className="text-xs border-collapse">
-              <thead><tr><TH>Month</TH>{MCJ.map(m => <TH key={m} right>{m}</TH>)}<TH right>Total</TH></tr></thead>
-              <tbody>
-                {withdrawal.lateMonths.map(m => (
-                  <tr key={m.month}>
-                    <TD>{m.month}</TD>
-                    {MCJ.map(k => (
-                      <TD key={k} right>
-                        <span className={k === 'Jewish' && m.month.startsWith('1948')
-                          ? 'font-semibold text-slate-900' : ''}>{m[k]}</span>
-                      </TD>
-                    ))}
-                    <TD right>{m.n}</TD>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-slate-500 mt-3 max-w-3xl leading-relaxed">
-            One Jewish admission in January 1948, two in February, none thereafter — the register's
-            side of the removal of Jewish patients that the Mitteilungsblatt reports for that month.
+            itself a reading decision — see the QUOTE_NONE note in the generator. A year is drawn
+            only where it holds 30 or more admissions; months and days carry no floor, so read
+            them with the n beside them — in <strong>Share</strong> a two-admission month fills
+            the width like any other, which is what <strong>Counts</strong> is there to correct.
+            Open 1948 to see it: one Jewish admission in January, two in February, none
+            thereafter — the register's side of the removal of Jewish patients that the
+            Mitteilungsblatt reports for that month.
           </p>
         </Section>
 
