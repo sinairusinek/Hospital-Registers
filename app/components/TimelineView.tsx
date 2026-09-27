@@ -55,24 +55,54 @@ interface TimelineData {
 
 // ---------------------------------------------------------------- scales
 
+// Below this many months on screen the axis names days rather than months, and
+// the readout follows it. Two months is where day ticks stop colliding on a
+// plot of any usable width.
+const DAY_SPAN = 2;
+
+// The floor on zooming in: about a fortnight. Closer than this and the axis is
+// mostly empty — the register's own resolution is the day.
+const MIN_SPAN = 0.5;
+
+const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/** Days in a month, Gregorian. The axis reaches day zoom, so February matters. */
+const daysInMonth = (y: number, m: number): number =>
+  [31, (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0 ? 29 : 28,
+    31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m];
+
 /** Months since 1900-01, so a date is a number the axis can place. */
 const toM = (iso: string): number => {
   const y = Number(iso.slice(0, 4));
   const m = Number(iso.slice(5, 7) || '1');
   const d = Number(iso.slice(8, 10) || '1');
-  // The day is carried as a fraction so a dated event lands inside its month
-  // rather than on the month boundary; at year zoom this is invisible, at
-  // month zoom it is the difference between the 1st and the 29th.
-  return (y - 1900) * 12 + (m - 1) + (d - 1) / 31;
+  // The day is carried as a fraction of its own month's length. A uniform /31
+  // would be invisible at year zoom and wrong by up to three days at the end of
+  // February, which at day zoom is the difference between two ticks.
+  return (y - 1900) * 12 + (m - 1) + (d - 1) / daysInMonth(y, m - 1);
 };
 
-const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** The inverse, back to a calendar day. */
+const fromMParts = (n: number): { y: number; m: number; d: number } => {
+  const total = Math.floor(n);
+  const y = 1900 + Math.floor(total / 12);
+  const m = ((total % 12) + 12) % 12;
+  const frac = n - total;
+  const d = Math.min(daysInMonth(y, m), Math.floor(frac * daysInMonth(y, m) + 1e-6) + 1);
+  return { y, m, d };
+};
 
 const fromM = (n: number): string => {
-  const y = 1900 + Math.floor(n / 12);
-  const m = Math.floor(n % 12);
+  const { y, m } = fromMParts(n);
   return `${MONTH_NAMES[m]} ${y}`;
+};
+
+/** Month or day, according to how much of the axis is on screen. */
+const fromMDay = (n: number, span: number): string => {
+  if (span > DAY_SPAN) return fromM(n);
+  const { y, m, d } = fromMParts(n);
+  return `${d} ${MONTH_NAMES[m]} ${y}`;
 };
 
 const longDate = (iso: string): string => {
@@ -183,6 +213,50 @@ function yearTicks(lo: number, hi: number, width: number): number[] {
   for (let y = y0; y <= y1; y += 1) years.push(y);
   const step = Math.max(1, Math.ceil((years.length * 42) / Math.max(width, 1)));
   return years.filter((_, i) => i % step === 0);
+}
+
+/**
+ * Day ticks for a span of a few weeks, thinned by the same arithmetic as the
+ * years: how many labels fit in the width available. The first day of a month
+ * carries the month's name, so a run of bare numbers never loses its footing.
+ */
+function dayTicks(lo: number, hi: number, width: number):
+  { at: number; label: string; major: boolean }[] {
+  const out: { at: number; label: string; major: boolean }[] = [];
+  const start = fromMParts(lo);
+  let y = start.y;
+  let m = start.m;
+  let d = start.d;
+  const all: { at: number; y: number; m: number; d: number }[] = [];
+  for (let guard = 0; guard < 400; guard += 1) {
+    const at = (y - 1900) * 12 + m + (d - 1) / daysInMonth(y, m);
+    if (at > hi) break;
+    if (at >= lo) all.push({ at, y, m, d });
+    d += 1;
+    if (d > daysInMonth(y, m)) { d = 1; m += 1; }
+    if (m > 11) { m = 0; y += 1; }
+  }
+  const step = Math.max(1, Math.ceil((all.length * 34) / Math.max(width, 1)));
+  const perM = width / Math.max(hi - lo, 1e-6);   // pixels per month
+  all.forEach((t, i) => {
+    // A thinned axis must not drop the month boundary: it is the one tick that
+    // says which month the bare numbers belong to. It is kept whatever the
+    // thinning, and its neighbours give way to it — "1 Aug" is three glyphs
+    // wider than a bare number and will collide with a 31st or a 2nd that the
+    // even spacing would otherwise have kept.
+    const major = t.d === 1;
+    if (!major) {
+      if (i % step !== 0) return;
+      const near = all.find(o => o.d === 1 && Math.abs(o.at - t.at) * perM < 26);
+      if (near) return;
+    }
+    out.push({
+      at: t.at,
+      label: major ? `${t.d} ${MONTH_NAMES[t.m]}` : String(t.d),
+      major,
+    });
+  });
+  return out;
 }
 
 // ---------------------------------------------------------------- drawer
@@ -477,7 +551,10 @@ const TimelineView: React.FC = () => {
   // Wider spans get fewer lanes: at full extent the labels cannot all fit and
   // pretending otherwise buries the register band under them.
   const span = hi - lo;
-  const laneBudget = span > 170 ? 3 : span > 90 ? 5 : span > 40 ? 7 : 9;
+  // At day zoom the events are spread over far more pixels each, so more of
+  // them can carry a label rather than falling back to a bare dot.
+  const laneBudget = span > 170 ? 3 : span > 90 ? 5 : span > 40 ? 7
+    : span > DAY_SPAN ? 9 : 12;
   const slack = plotW / 9;
 
   const extPlaced = useMemo(
@@ -572,7 +649,7 @@ const TimelineView: React.FC = () => {
     const mid = (lo + hi) / 2;
     const span = Math.min(
       extent[1] - extent[0],
-      Math.max(3, (hi - lo) * factor)
+      Math.max(MIN_SPAN, (hi - lo) * factor)
     );
     let a = mid - span / 2;
     let b = mid + span / 2;
@@ -609,8 +686,10 @@ const TimelineView: React.FC = () => {
   const hiddenLabels =
     extPlaced.filter(p => !p.labelled).length +
     instPlaced.filter(p => !p.labelled).length;
-  const ticks = yearTicks(lo, hi, plotW);
-  const monthTicks = hi - lo <= 48;
+  const dayZoom = hi - lo <= DAY_SPAN;
+  const ticks = dayZoom ? [] : yearTicks(lo, hi, plotW);
+  const days = dayZoom ? dayTicks(lo, hi, plotW) : [];
+  const monthTicks = !dayZoom && hi - lo <= 48;
   const zoomed = Boolean(range) && (hi - lo) < (extent[1] - extent[0]) - 0.5;
   const kindsPresent: string[] = Array.from(new Set(data.external.map(e => e.kind)));
 
@@ -628,7 +707,8 @@ const TimelineView: React.FC = () => {
           <p className="text-slate-500 leading-relaxed max-w-3xl">
             Four layers on one axis: what was happening in the country, what the hospital
             itself did, how many people it admitted month by month, and which ledger says so.
-            Drag on the strip at the foot to zoom; click any flag for its source.
+            Drag on the strip at the foot to zoom; click any flag for its source. Zoom
+            in far enough and the axis counts days, though the intake band stays monthly.
           </p>
         </header>
 
@@ -696,7 +776,7 @@ const TimelineView: React.FC = () => {
             </button>
           )}
           <span className="font-mono text-slate-400 ml-1">
-            {fromM(lo)} – {fromM(hi)}
+            {fromMDay(lo, hi - lo)} – {fromMDay(hi, hi - lo)}
           </span>
           {hiddenLabels > 0 && (
             <span className="text-slate-400">
@@ -904,7 +984,15 @@ const TimelineView: React.FC = () => {
               />
             ))}
 
-            {/* intake band */}
+            {/* intake band
+              *
+              * Monthly, and it stays monthly when the axis reaches days: the
+              * counts come from pipeline/timeline_data.py aggregated by month.
+              * At day zoom a bar therefore spans its whole month behind the
+              * dated layers, and its tooltip says "Jul 1938" rather than a day,
+              * which is the honest reading of a monthly figure. A daily series
+              * would need the pipeline to emit one.
+              */}
             {data.intake.map(m => {
               const a = x(toM(m.month));
               const b = x(toM(m.month) + 1);
@@ -1024,6 +1112,24 @@ const TimelineView: React.FC = () => {
                   key={`mt-${m}`} x1={px} y1={axisY} x2={px} y2={axisY + 2.5}
                   stroke="#cbd5e1"
                 />
+              );
+            })}
+            {days.map(t => {
+              const px = x(t.at);
+              if (px < M.left - 1 || px > width - M.right + 1) return null;
+              return (
+                <g key={`d-${t.at}`}>
+                  <line
+                    x1={px} y1={axisY} x2={px} y2={axisY + (t.major ? 4 : 2.5)}
+                    stroke={t.major ? '#94a3b8' : '#cbd5e1'}
+                  />
+                  <text
+                    x={px} y={yearsY} textAnchor="middle" fontSize={11}
+                    fill={t.major ? '#475569' : '#94a3b8'} className="font-mono"
+                  >
+                    {t.label}
+                  </text>
+                </g>
               );
             })}
 
