@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Loader2, AlertTriangle, Table2 } from 'lucide-react';
 import HelpPanel, { HelpSection } from './HelpPanel';
-import { SERIES, NEUTRAL } from '../colors';
+import { SERIES, NEUTRAL, RESIDUE } from '../colors';
 
 /**
  * Was the Government Hospital a common space for Arabs, Jews and Britons?
@@ -75,8 +75,21 @@ interface SharedSpaceData {
     wardBias: Record<string, Record<string, number>>;
   };
   payment: {
-    byGroup: { group: string; n: number; recordedPct: number; gratisPct: number; recordedN: number }[];
+    evidence: {
+      blankWithRatePct: number; gratisWithRatePct: number;
+      blankByClass: Record<string, number>;
+      pages: { n: number; allBlankPct: number; noneBlankPct: number; mixedPct: number };
+      split: { gratis: number; chargedWithRate: number; unknown: number };
+    };
+    byGroup: {
+      group: string; n: number; gratisPct: number; gratisThirdClassPct: number;
+      thirdClassN: number; medianRate: number | null; rateN: number;
+    }[];
     byClass: Record<string, string | number | null>[];
+    byMixed: {
+      group: string; n: number; gratisPct: number;
+      gratisThirdClassPct: number; thirdClassN: number;
+    }[];
   };
 }
 
@@ -160,6 +173,20 @@ const HELP: HelpSection[] = [
         for 1944–48 are therefore the weakest numbers in this view, and the Isolation label all but
         disappears from the column after 1940, so no late comparison is possible for it. The gaps
         panel gives the full profile.
+      </p>
+    )
+  },
+  {
+    heading: 'The payment column is a gratis marker',
+    body: (
+      <p>
+        It is not a "recorded / not recorded" field, and reading it as one inverts the finding. The
+        clerk wrote <em>Gratis</em> when treatment was free and left the cell <strong>empty</strong>{' '}
+        when a fee was charged, entering the fee in the Rate column instead. Rate is filled for 56%
+        of the blank rows and 0.6% of the Gratis ones; the blank covers 99% of first class and 20%
+        of third; and 89% of pages mix blank with filled rows, so it is not a clerk skipping a
+        column. A blank is therefore evidence of payment. The 13% of admissions that are blank{' '}
+        <em>and</em> carry no rate are the genuinely unknown ones.
       </p>
     )
   },
@@ -817,65 +844,214 @@ python3 pipeline/shared_space_figures.py</pre>
         {/* ---------------------------------------------------------- 07 */}
         <Section
           n="07"
-          title="What the register does not say"
+          title="Free treatment, and who paid"
           lede={
             <p>
-              Two negative results, and they are worth publishing as such. Payment carries no
-              comparative signal at all: where a status is recorded, over 99.5% of admissions in
-              every group and every class were gratis — this was a free hospital, and the column
-              only varies in whether the clerk filled it in. And the diagnostic gaps are temporal,
-              not confessional: coverage collapses as the Mandate ends, in the same years for
-              everyone. The one exception is the ward column, which fails unevenly by group in the
-              late years, and that is the caution to carry into the article.
+              The payment column had to be read before it could be counted. It is a{' '}
+              <strong>gratis marker</strong>, not a completeness field: the clerk wrote{' '}
+              <em>Gratis</em> when treatment was free and left the cell empty when a fee was
+              charged, entering the fee in the Rate column instead. So a blank is evidence of
+              payment, and the hospital treated{' '}
+              <Num v={100 * payment.evidence.split.gratis / data.meta.records} suffix="%" /> of its
+              admissions free. The interesting part is who the exceptions were — and once class is
+              held constant, they are barely the groups at all.
             </p>
           }
         >
-          <div className="grid lg:grid-cols-2 gap-5">
-            <div className="bg-white rounded-xl border border-slate-200 p-5">
-              <h3 className="text-sm font-semibold text-slate-700 mb-3">
-                Gratis treatment, by group
-              </h3>
-              <table className="w-full text-xs border-collapse">
-                <thead><tr><TH>Group</TH><TH right>Status recorded</TH><TH right>Of those, gratis</TH></tr></thead>
-                <tbody>
-                  {payment.byGroup.map(p => (
-                    <tr key={p.group}>
-                      <TD>{p.group}</TD>
-                      <TD right><Num v={p.recordedPct} suffix="%" /></TD>
-                      <TD right><Num v={p.gratisPct} suffix="%" dp={2} /></TD>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p className="text-[11px] text-slate-400 mt-3 leading-relaxed">
-                The variation is in the first column, not the second. Whether payment was noted at
-                all is a fact about clerical practice; that it was free is a fact about the
-                institution.
-              </p>
+          <div className="bg-white rounded-xl border border-slate-200 p-5 mb-6">
+            <h3 className="text-sm font-semibold text-slate-700 mb-3">
+              Why the blank is a charge and not a silence
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-x-6 gap-y-3 text-xs text-slate-600">
+              <div>
+                <div className="font-semibold text-slate-700 mb-1">The Rate column is complementary</div>
+                Rate is filled for <strong><Num v={payment.evidence.blankWithRatePct} suffix="%" /></strong>{' '}
+                of blank rows against <strong><Num v={payment.evidence.gratisWithRatePct} suffix="%" /></strong>{' '}
+                of <em>Gratis</em> rows. The blanks carry money.
+              </div>
+              <div>
+                <div className="font-semibold text-slate-700 mb-1">It tracks class like a fee</div>
+                Blank for{' '}
+                {(['1', '2', '3'] as const).map((k, i) => (
+                  <span key={k}>
+                    {i > 0 && ', '}
+                    <strong><Num v={payment.evidence.blankByClass[k]} suffix="%" /></strong> of class {k}
+                  </span>
+                ))}. The paying classes are the blank ones.
+              </div>
+              <div>
+                <div className="font-semibold text-slate-700 mb-1">It is not a skipped column</div>
+                <strong><Num v={payment.evidence.pages.mixedPct} suffix="%" /></strong> of pages mix
+                blank with filled rows and only{' '}
+                <Num v={payment.evidence.pages.allBlankPct} suffix="%" /> are wholly blank — it
+                varies patient by patient, on one page.
+              </div>
             </div>
-
-            <div className="bg-white rounded-xl border border-slate-200 p-5">
-              <h3 className="text-sm font-semibold text-slate-700 mb-3">
-                Column coverage
-              </h3>
-              {gaps.coverage.map(c => (
-                <div key={c.column} className="grid grid-cols-[11rem_1fr_3rem] gap-3 items-center py-0.5">
-                  <div className="text-[11px] text-slate-600 text-right truncate" title={c.column}>
-                    {c.column}
+            <div className="flex h-7 gap-[2px] mt-5" role="img"
+                 aria-label="Marked gratis, charged with a recorded rate, and genuinely unknown">
+              {[
+                { k: 'Marked gratis', v: payment.evidence.split.gratis, c: NEUTRAL },
+                { k: 'Charged, rate recorded', v: payment.evidence.split.chargedWithRate, c: SERIES[3] },
+                { k: 'Blank, no rate — unknown', v: payment.evidence.split.unknown, c: RESIDUE }
+              ].map((seg, i, arr) => {
+                const total = arr.reduce((a, b) => a + b.v, 0);
+                return (
+                  <div key={seg.k} className="flex items-center justify-center overflow-hidden
+                                              first:rounded-l last:rounded-r"
+                       style={{ width: `${(seg.v / total) * 100}%`, background: seg.c }}
+                       title={`${seg.k}: ${seg.v.toLocaleString()}`}>
+                    <span className={`text-[11px] font-medium tabular-nums px-1
+                                      ${i === 2 ? 'text-slate-600' : 'text-white'}`}>
+                      {Math.round((seg.v / total) * 100)}%
+                    </span>
                   </div>
-                  <div className="h-4 bg-slate-100 rounded-sm overflow-hidden">
-                    <div className="h-full rounded-sm"
-                         style={{ width: `${c.pct}%`,
-                                  background: c.pct < 50 ? SERIES[7] : c.pct < 90 ? SERIES[3] : NEUTRAL }} />
-                  </div>
-                  <div className="text-[11px] text-slate-500 tabular-nums">{c.pct}%</div>
-                </div>
+                );
+              })}
+            </div>
+            <ul className="flex flex-wrap gap-x-5 gap-y-1 mt-2">
+              {[
+                { label: `Marked gratis (${payment.evidence.split.gratis.toLocaleString()})`, color: NEUTRAL },
+                { label: `Charged, rate recorded (${payment.evidence.split.chargedWithRate.toLocaleString()})`, color: SERIES[3] },
+                { label: `Blank, no rate — unknown (${payment.evidence.split.unknown.toLocaleString()})`, color: RESIDUE }
+              ].map(i => (
+                <li key={i.label} className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                  <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: i.color }} />
+                  {i.label}
+                </li>
               ))}
-              <p className="text-[11px] text-slate-400 mt-3 leading-relaxed">
-                Procedure at 1.8% is not a gap to be filled — the register simply did not record
-                operations as a rule.
-              </p>
+            </ul>
+          </div>
+
+          <h3 className="text-sm font-semibold text-slate-700 mb-1">
+            Treated free, by group — and within class
+          </h3>
+          <p className="text-xs text-slate-500 mb-4 max-w-3xl">
+            The headline spread is large and almost entirely a class effect. Within third class the
+            three are within 9 points, and the order changes: Jewish patients are the <em>most</em>{' '}
+            likely to be treated free. The median fee where one was charged says the same thing from
+            the other side.
+          </p>
+          <div className="bg-white rounded-xl border border-slate-200 p-5 mb-5">
+            <div className="grid grid-cols-[7rem_1fr_1fr] gap-4 text-xs font-semibold
+                            text-slate-500 pb-2 border-b border-slate-200 mb-2">
+              <div />
+              <div>All admissions</div>
+              <div>Third class only</div>
             </div>
+            {payment.byGroup.map(r => (
+              <div key={r.group} className="grid grid-cols-[7rem_1fr_1fr] gap-4 items-center py-1.5">
+                <div className="text-sm text-slate-700 text-right">{r.group}</div>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 h-5 bg-slate-100 rounded-sm overflow-hidden">
+                    <div className="h-full rounded-sm"
+                         style={{ width: `${r.gratisPct}%`, background: REL[r.group as keyof typeof REL] }} />
+                  </div>
+                  <span className="text-xs text-slate-500 tabular-nums w-10 shrink-0">
+                    {r.gratisPct}%
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 h-5 bg-slate-100 rounded-sm overflow-hidden">
+                    <div className="h-full rounded-sm"
+                         style={{ width: `${r.gratisThirdClassPct}%`,
+                                  background: REL[r.group as keyof typeof REL] }} />
+                  </div>
+                  <span className="text-xs text-slate-500 tabular-nums w-10 shrink-0">
+                    {r.gratisThirdClassPct}%
+                  </span>
+                </div>
+              </div>
+            ))}
+            <p className="text-[11px] text-slate-400 mt-3 leading-relaxed">
+              Median fee where a rate was recorded:{' '}
+              {payment.byGroup.map((r, i) => (
+                <span key={r.group}>
+                  {i > 0 && ' · '}{r.group} <strong>{r.medianRate ?? '—'} mils</strong>
+                  <span className="text-slate-300"> (n={r.rateN.toLocaleString()})</span>
+                </span>
+              ))}. The Christian median is nearly three times the Muslim one and five times the
+              Jewish — which is the British officials inside that category again, not a fee scale
+              that varied by religion.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 className="text-sm font-semibold text-slate-700 mb-3">
+              Treated free, by class
+            </h3>
+            <table className="text-xs border-collapse">
+              <thead><tr><TH>Class</TH>{MCJ.map(m => <TH key={m} right>{m}</TH>)}</tr></thead>
+              <tbody>
+                {payment.byClass.map(r => (
+                  <tr key={String(r.class)}>
+                    <TD>Class {String(r.class)}</TD>
+                    {MCJ.map(m => (
+                      <TD key={m} right>
+                        {r[m] === null || r[m] === undefined
+                          ? <span className="text-slate-300">—</span>
+                          : `${Number(r[m]).toFixed(1)}%`}
+                      </TD>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="text-[11px] text-slate-400 mt-3 leading-relaxed">
+              First class paid, third class largely did not, and that — not confession — is what the
+              column measures.
+            </p>
+          </div>
+          <TableView label="With nationality crossed in">
+            <table className="w-full text-xs border-collapse">
+              <thead><tr><TH>Group</TH><TH right>n</TH><TH right>Gratis</TH>
+                <TH right>Gratis, 3rd class</TH></tr></thead>
+              <tbody>
+                {payment.byMixed.map(r => (
+                  <tr key={r.group}>
+                    <TD>{r.group}</TD><TD right>{r.n.toLocaleString()}</TD>
+                    <TD right><Num v={r.gratisPct} suffix="%" /></TD>
+                    <TD right><Num v={r.gratisThirdClassPct} suffix="%" />
+                      <span className="text-slate-400"> (n={r.thirdClassN.toLocaleString()})</span></TD>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </TableView>
+        </Section>
+
+        {/* ---------------------------------------------------------- 08 */}
+        <Section
+          n="08"
+          title="What the register does not say"
+          lede={
+            <p>
+              The diagnostic gaps are temporal, not confessional: coverage collapses as the Mandate
+              ends, in the same years for everyone, so a comparison between groups is not being
+              quietly distorted by who got recorded. The one exception is the ward column, which
+              fails unevenly by group in the late years — and that is the caution to carry into the
+              article.
+            </p>
+          }
+        >
+          <div className="bg-white rounded-xl border border-slate-200 p-5 max-w-2xl">
+            <h3 className="text-sm font-semibold text-slate-700 mb-3">Column coverage</h3>
+            {gaps.coverage.map(c => (
+              <div key={c.column} className="grid grid-cols-[11rem_1fr_3rem] gap-3 items-center py-0.5">
+                <div className="text-[11px] text-slate-600 text-right truncate" title={c.column}>
+                  {c.column}
+                </div>
+                <div className="h-4 bg-slate-100 rounded-sm overflow-hidden">
+                  <div className="h-full rounded-sm"
+                       style={{ width: `${c.pct}%`,
+                                background: c.pct < 50 ? SERIES[7] : c.pct < 90 ? SERIES[3] : NEUTRAL }} />
+                </div>
+                <div className="text-[11px] text-slate-500 tabular-nums">{c.pct}%</div>
+              </div>
+            ))}
+            <p className="text-[11px] text-slate-400 mt-3 leading-relaxed">
+              Procedure at 1.8% is not a gap to be filled — the register simply did not record
+              operations as a rule.
+            </p>
           </div>
 
           <h3 className="text-sm font-semibold text-slate-700 mt-8 mb-1">

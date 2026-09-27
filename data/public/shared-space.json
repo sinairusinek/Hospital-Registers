@@ -955,41 +955,110 @@
   }
  },
  "payment": {
+  "evidence": {
+   "blankWithRatePct": 56.0,
+   "gratisWithRatePct": 0.6,
+   "blankByClass": {
+    "1": 99.0,
+    "2": 55.4,
+    "3": 19.6
+   },
+   "pages": {
+    "n": 2149,
+    "allBlankPct": 1.9,
+    "noneBlankPct": 9.4,
+    "mixedPct": 88.6
+   },
+   "split": {
+    "gratis": 20263,
+    "chargedWithRate": 4841,
+    "unknown": 3810
+   }
+  },
   "byGroup": [
    {
     "group": "Muslim",
     "n": 15081,
-    "recordedPct": 73.1,
-    "gratisPct": 99.59,
-    "recordedN": 11028
+    "gratisPct": 73.1,
+    "gratisThirdClassPct": 78.3,
+    "thirdClassN": 13571,
+    "medianRate": 120.0,
+    "rateN": 1704
    },
    {
     "group": "Christian",
     "n": 7706,
-    "recordedPct": 57.6,
-    "gratisPct": 99.68,
-    "recordedN": 4438
+    "gratisPct": 57.6,
+    "gratisThirdClassPct": 79.3,
+    "thirdClassN": 3492,
+    "medianRate": 350.0,
+    "rateN": 2178
    },
    {
     "group": "Jewish",
     "n": 5055,
-    "recordedPct": 80.8,
-    "gratisPct": 99.95,
-    "recordedN": 4083
+    "gratisPct": 80.8,
+    "gratisThirdClassPct": 87.1,
+    "thirdClassN": 4482,
+    "medianRate": 72.5,
+    "rateN": 594
    }
   ],
   "byClass": [
    {
+    "class": "1",
+    "Muslim": 3.3,
+    "Christian": 0.8,
+    "Jewish": 0.0
+   },
+   {
     "class": "2",
-    "Muslim": 99.3,
-    "Christian": 99.5,
-    "Jewish": 99.3
+    "Muslim": 37.4,
+    "Christian": 47.7,
+    "Jewish": 35.3
    },
    {
     "class": "3",
-    "Muslim": 99.6,
-    "Christian": 99.9,
-    "Jewish": 100.0
+    "Muslim": 78.3,
+    "Christian": 79.3,
+    "Jewish": 87.1
+   }
+  ],
+  "byMixed": [
+   {
+    "group": "Muslim",
+    "n": 15081,
+    "gratisPct": 73.1,
+    "gratisThirdClassPct": 78.3,
+    "thirdClassN": 13571
+   },
+   {
+    "group": "Christian, Palestinian nat.",
+    "n": 4246,
+    "gratisPct": 62.2,
+    "gratisThirdClassPct": 79.8,
+    "thirdClassN": 3091
+   },
+   {
+    "group": "Christian, British nat.",
+    "n": 2771,
+    "gratisPct": 52.2,
+    "gratisThirdClassPct": 77.4,
+    "thirdClassN": 53
+   },
+   {
+    "group": "Jewish, Palestinian nat.",
+    "n": 2114,
+    "gratisPct": 71.5,
+    "gratisThirdClassPct": 80.3,
+    "thirdClassN": 1748
+   },
+   {
+    "group": "Jewish, other/unrecorded nat.",
+    "n": 2941,
+    "gratisPct": 87.4,
+    "gratisThirdClassPct": 91.4,
+    "thirdClassN": 2734
    }
   ]
  }

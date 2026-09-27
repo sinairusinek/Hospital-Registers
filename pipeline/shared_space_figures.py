@@ -435,38 +435,98 @@ def fig_gaps(rows):
 
 
 def fig_payment(rows):
-    """Gratis treatment by group — a null result, and worth publishing as one.
+    """Who was treated free, and who was charged.
 
-    Almost every admission with a recorded payment status was free: 99.6% and
-    over in every group and every class. The column therefore carries no
-    comparative signal at all. The thing that *does* vary is whether the clerk
-    filled it in, which is a fact about the register and not about the patients.
+    The Payment Status column is not a "recorded / not recorded" field, and
+    reading it as one inverts the finding. It is a **gratis marker**: the clerk
+    wrote Gratis when treatment was free and left it EMPTY when a fee was
+    charged, entering the fee in the Rate column instead. Three things establish
+    this and none of them is subtle. Rate is filled for 56.0% of the blank rows
+    and 0.6% of the "Gratis" ones — the two columns are near-complementary. The
+    blank tracks class the way a fee would: 99.0% of first class, 55.4% of
+    second, 19.6% of third. And it is not a clerical era or a skipped page —
+    88.6% of pages mix blank and filled rows, only 1.9% are wholly blank.
+
+    So a blank here is evidence of payment, not of silence, and "gratis rate"
+    below means marked-gratis over all admissions of that group. The residue
+    matters and is reported: 13.2% of admissions are blank with no rate either,
+    and those are the genuinely unknown ones.
     """
-    def status(row):
-        v = g(row, "Payment Status").lower()
-        if not v:
-            return ""
-        if "grat" in v or "free" in v or "unable to pay" in v or "waiv" in v:
-            return "gratis"
-        if "pd" in v or "paid" in v or v in ("pay", "ok"):
-            return "paid"
-        return "other"
-    out = []
+    def marked_gratis(row):
+        return bool(g(row, "Payment Status"))
+
+    def rate_mils(row):
+        t = g(row, "Rate").replace("Mils", "").replace("mils", "").strip()
+        try:
+            return float(t)
+        except ValueError:
+            return None
+
+    # The evidence for reading the blank as a charge, carried into the view so
+    # the claim travels with the figure rather than living only in this comment.
+    blank = [r for r in rows if not marked_gratis(r)]
+    filled = [r for r in rows if marked_gratis(r)]
+    pages = defaultdict(list)
+    for r in rows:
+        pages[(g(r, "Notebook_Number"), g(r, "Page_Number"))].append(r)
+    full = [p for p in pages.values() if len(p) >= 8]
+    all_blank = sum(1 for p in full if all(not marked_gratis(r) for r in p))
+    none_blank = sum(1 for p in full if all(marked_gratis(r) for r in p))
+
+    evidence = {
+        "blankWithRatePct": pct(sum(1 for r in blank if g(r, "Rate")), len(blank)),
+        "gratisWithRatePct": pct(sum(1 for r in filled if g(r, "Rate")), len(filled)),
+        "blankByClass": {k: pct(sum(1 for r in rows if klass(r) == k and not marked_gratis(r)),
+                                sum(1 for r in rows if klass(r) == k))
+                         for k in ("1", "2", "3")},
+        "pages": {"n": len(full),
+                  "allBlankPct": pct(all_blank, len(full)),
+                  "noneBlankPct": pct(none_blank, len(full)),
+                  "mixedPct": pct(len(full) - all_blank - none_blank, len(full))},
+        "split": {
+            "gratis": len(filled),
+            "chargedWithRate": sum(1 for r in blank if g(r, "Rate")),
+            "unknown": sum(1 for r in blank if not g(r, "Rate")),
+        },
+    }
+
+    by_group = []
     for m in MCJ:
         sub = [r for r in rows if g(r, "Religion") == m]
-        rec = [r for r in sub if status(r)]
-        out.append({"group": m, "n": len(sub),
-                    "recordedPct": pct(len(rec), len(sub)),
-                    "gratisPct": round(100 * sum(1 for r in rec if status(r) == "gratis") / len(rec), 2) if rec else None,
-                    "recordedN": len(rec)})
+        third = [r for r in sub if klass(r) == "3"]
+        rates = [x for x in (rate_mils(r) for r in sub if not marked_gratis(r)) if x]
+        by_group.append({
+            "group": m, "n": len(sub),
+            "gratisPct": pct(sum(1 for r in sub if marked_gratis(r)), len(sub)),
+            "gratisThirdClassPct": pct(sum(1 for r in third if marked_gratis(r)), len(third)),
+            "thirdClassN": len(third),
+            "medianRate": statistics.median(rates) if rates else None,
+            "rateN": len(rates),
+        })
+
     by_class = []
-    for k in ("2", "3"):
+    for k in ("1", "2", "3"):
         row = {"class": k}
         for m in MCJ:
-            sub = [r for r in rows if g(r, "Religion") == m and klass(r) == k and status(r)]
-            row[m] = round(100 * sum(1 for r in sub if status(r) == "gratis") / len(sub), 1) if len(sub) >= 20 else None
+            sub = [r for r in rows if g(r, "Religion") == m and klass(r) == k]
+            row[m] = pct(sum(1 for r in sub if marked_gratis(r)), len(sub)) if len(sub) >= 25 else None
         by_class.append(row)
-    return {"byGroup": out, "byClass": by_class}
+
+    by_mixed = []
+    for k in MIXED_ORDER:
+        sub = [r for r in rows if mixed(r) == k]
+        if len(sub) < 50:
+            continue
+        third = [r for r in sub if klass(r) == "3"]
+        by_mixed.append({
+            "group": k, "n": len(sub),
+            "gratisPct": pct(sum(1 for r in sub if marked_gratis(r)), len(sub)),
+            "gratisThirdClassPct": pct(sum(1 for r in third if marked_gratis(r)), len(third)),
+            "thirdClassN": len(third),
+        })
+
+    return {"evidence": evidence, "byGroup": by_group,
+            "byClass": by_class, "byMixed": by_mixed}
 
 
 def build(rows):
@@ -525,9 +585,20 @@ def report(data):
         iso = f"  isolation J {y['jewishInIsolation']}%" if y["jewishInIsolation"] else ""
         print(f"  {y['year']} n={y['n']:5d}  M {y['Muslim']:5.1f}%  C {y['Christian']:5.1f}%  J {y['Jewish']:5.1f}%{iso}")
     p = data["payment"]
-    print("\n=== PAYMENT (the null result) ===")
+    ev = p["evidence"]
+    print("\n=== PAYMENT: the blank is a charge, not a silence ===")
+    print(f"  Rate filled for {ev['blankWithRatePct']}% of blank rows vs {ev['gratisWithRatePct']}% of Gratis rows")
+    print(f"  blank by class: {ev['blankByClass']}")
+    print(f"  pages mixing blank and filled: {ev['pages']['mixedPct']}% (wholly blank {ev['pages']['allBlankPct']}%)")
+    print(f"  split: {ev['split']}")
+    print("\n  gratis share by group (blank counted as charged):")
     for r in p["byGroup"]:
-        print(f"  {r['group']:10s} status recorded for {r['recordedPct']:5.1f}%; of those, gratis {r['gratisPct']}%")
+        print(f"    {r['group']:10s} {r['gratisPct']:5.1f}%   3rd class {r['gratisThirdClassPct']:5.1f}%"
+              f"   median fee {r['medianRate']} mils (n={r['rateN']})")
+    print("\n  within class:")
+    for r in p["byClass"]:
+        print(f"    class {r['class']}: " + "  ".join(
+            f"{m[0]} {r[m]}%" for m in MCJ if r[m] is not None))
     gp = data["gaps"]
     print("\n=== COVERAGE ===")
     for c in gp["coverage"]:
