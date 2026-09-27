@@ -5,13 +5,15 @@ import {
   PieChart, Pie, Cell, AreaChart, Area, Brush, BarChart, Bar, ReferenceArea
 } from 'recharts';
 import { GoogleGenAI } from "@google/genai";
-import { TrendingUp, Users, MapPin, HeartPulse, Globe, CheckCircle2, Sparkles, BrainCircuit, Calendar, Baby, Timer, RotateCcw } from 'lucide-react';
+import { TrendingUp, Users, MapPin, HeartPulse, Globe, CheckCircle2, Sparkles, BrainCircuit, Calendar, Baby, Timer, RotateCcw, ChevronDown, LineChart as LineChartIcon } from 'lucide-react';
 import { RegistryRecord, FilterState } from '../types';
 import { facetValue, UNKNOWN } from '../facets';
 import { buildColorScale, ColorScale, OTHERS, RESIDUE, DIVERGING } from '../colors';
 import FilterSidebar from './FilterSidebar';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import RepresentationPanel from './RepresentationPanel';
+import CompositionOverTime from './CompositionOverTime';
+import HeatmapPanel from './HeatmapPanel';
 
 const HELP: HelpSection[] = [
   {
@@ -120,6 +122,9 @@ const absentRuns = (span: string[], present: Set<string>): [string, string][] =>
 };
 
 const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterState, setFilterState }) => {
+  // Which pie has its temporal panel open. One at a time: the expanded panel is
+  // two charts wide and several open at once would push the grid into a column.
+  const [expandedPie, setExpandedPie] = useState<string | null>(null);
   const [aiInsight, setAiInsight] = useState<string>('');
   const [isGenerating, setIsGenerating] = useState(false);
   // The site is static and public, so no key can be baked into the bundle.
@@ -140,6 +145,10 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
       { id: 'Admission Date', aliases: ['admission date', 'admission date [iso]', 'date'] },
       { id: 'City', aliases: ['city', 'town', 'residence'] },
       { id: 'Nationality', aliases: ['nationality', 'standardnationality', 'standard_nationality'] },
+      { id: 'Ward', aliases: ['ward', 'standardized ward'] },
+      // Not charted; used to warn when the Atlit camp register is in a selection.
+      { id: 'Notebook', aliases: ['notebook_number', 'notebook number'] },
+      { id: 'Class', aliases: ['class'] },
       { id: 'Age', aliases: ['age'] },
       { id: 'Stay', aliases: ['days in hospital', 'days in hospital (calc)', 'length of stay', 'stay duration'] }
     ];
@@ -400,6 +409,65 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     }));
   };
 
+  /**
+   * A pie, its title, and a "More" disclosure that adds the same dimension over
+   * time. The temporal panel is deliberately not a replacement for the pie: the
+   * pie answers who is in the selection and the lines answer when, and a claim
+   * about change over time needs both — which is why opening one widens the card
+   * to the full grid rather than swapping the chart inside it.
+   */
+  const PieCard: React.FC<{
+    displayName: string;
+    title: string;
+    icon: React.ReactNode;
+    chartData: { name: string; value: number }[];
+    note?: string;
+  }> = ({ displayName, title, icon, chartData, note }) => {
+    const open = expandedPie === displayName;
+    const canExpand = Boolean(actualKeys[displayName] && actualKeys['Admission Date']);
+    return (
+      <div className={`bg-white p-6 rounded-2xl border border-slate-200 shadow-sm ${
+        open ? 'md:col-span-2 lg:col-span-3' : ''
+      }`}>
+        <div className="flex items-start justify-between gap-2 mb-4">
+          <h3 className="font-bold text-slate-800 flex items-center gap-2">{icon} {title}</h3>
+          {canExpand && (
+            <button
+              onClick={() => setExpandedPie(open ? null : displayName)}
+              aria-expanded={open}
+              className={`flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-medium
+                          shrink-0 transition-colors ${
+                open ? 'bg-indigo-50 text-indigo-600' : 'text-slate-400 hover:text-slate-700 hover:bg-slate-50'
+              }`}
+              title={open ? 'Hide the time series' : 'Show this dimension over time'}
+            >
+              <LineChartIcon size={12} />
+              {open ? 'Less' : 'More'}
+              <ChevronDown size={12} className={open ? 'rotate-180 transition-transform' : 'transition-transform'} />
+            </button>
+          )}
+        </div>
+        <div className={open ? 'grid lg:grid-cols-[minmax(0,20rem)_1fr] gap-6 items-start' : ''}>
+          <div className="h-[300px]">{renderPie(chartData, displayName)}</div>
+          {open && (
+            <div className="border-t lg:border-t-0 lg:border-l border-slate-100 pt-4 lg:pt-0 lg:pl-6">
+              <CompositionOverTime
+                data={data}
+                valueKey={actualKeys[displayName]}
+                dateKey={actualKeys['Admission Date']}
+                values={chartData.map(d => d.name)}
+                colorScale={colorScales[displayName]}
+                displayName={displayName}
+                notebookKey={actualKeys['Notebook']}
+              />
+            </div>
+          )}
+        </div>
+        {note && <p className="text-[10px] text-slate-400 mt-3 leading-relaxed">{note}</p>}
+      </div>
+    );
+  };
+
   const renderPie = (chartData: any[], displayName: string) => {
     if (chartData.length === 0) return <div className="h-full flex items-center justify-center text-slate-400 text-sm italic">No data</div>;
     const color = colorScales[displayName];
@@ -600,6 +668,17 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
           filterState={filterState}
         />
 
+        {/* The representation panel above compares one dimension with the
+            registry; this crosses two with each other. Together they cover the
+            two questions a pie cannot answer — whether a selection is unusual,
+            and where inside it the unusualness sits. */}
+        <HeatmapPanel
+          fullData={fullData}
+          data={data}
+          actualKeys={actualKeys}
+          filterState={filterState}
+        />
+
         {/* Charts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Categorical Pies */}
@@ -609,19 +688,15 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
               pie, at eight out of 3,860 diagnoses, is mostly Others residue
               until a chapter is chosen — click a chapter slice and the pie
               beside it becomes the diseases inside that chapter. */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
-              <HeartPulse size={18} className="text-rose-500" /> Diagnoses (ICD-9 chapter)
-            </h3>
-            <div className="h-[300px]">{renderPie(stats.chapterData, 'Chapter')}</div>
-          </div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
-              <HeartPulse size={18} className="text-rose-400" /> Diagnoses (specific)
-            </h3>
-            <div className="h-[300px]">{renderPie(stats.diagnosisData, 'Diagnosis')}</div>
-          </div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Clinical Result</h3><div className="h-[300px]">{renderPie(stats.resultData, "Result")}</div></div>
+          <PieCard displayName="Chapter" title="Diagnoses (ICD-9 chapter)"
+                   icon={<HeartPulse size={18} className="text-rose-500" />}
+                   chartData={stats.chapterData} />
+          <PieCard displayName="Diagnosis" title="Diagnoses (specific)"
+                   icon={<HeartPulse size={18} className="text-rose-400" />}
+                   chartData={stats.diagnosisData} />
+          <PieCard displayName="Result" title="Clinical Result"
+                   icon={<CheckCircle2 size={18} className="text-emerald-500" />}
+                   chartData={stats.resultData} />
           
           {/* Age Distribution (Interactive) */}
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col group/card">
@@ -707,10 +782,18 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
             <p className="text-[9px] text-slate-400 text-center mt-2 font-medium italic">Click bars to isolate specific stay durations</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Sparkles size={18} className="text-amber-500" /> Religion</h3><div className="h-[300px]">{renderPie(stats.religionData, "Religion")}</div></div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Globe size={18} className="text-emerald-500" /> Nationality</h3><div className="h-[300px]">{renderPie(stats.nationalityData, "Nationality")}</div></div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><Users size={18} className="text-indigo-500" /> Sex Distribution</h3><div className="h-[300px]">{renderPie(stats.sexData, "Sex")}</div></div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2"><MapPin size={18} className="text-slate-500" /> Origin Cities</h3><div className="h-[300px]">{renderPie(stats.cityData, "City")}</div></div>
+          <PieCard displayName="Religion" title="Religion"
+                   icon={<Sparkles size={18} className="text-amber-500" />}
+                   chartData={stats.religionData} />
+          <PieCard displayName="Nationality" title="Nationality"
+                   icon={<Globe size={18} className="text-emerald-500" />}
+                   chartData={stats.nationalityData} />
+          <PieCard displayName="Sex" title="Sex Distribution"
+                   icon={<Users size={18} className="text-indigo-500" />}
+                   chartData={stats.sexData} />
+          <PieCard displayName="City" title="Origin Cities"
+                   icon={<MapPin size={18} className="text-slate-500" />}
+                   chartData={stats.cityData} />
         </div>
 
         {/* AI Analysis Section */}

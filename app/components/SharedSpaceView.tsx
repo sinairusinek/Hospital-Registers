@@ -374,8 +374,12 @@ python3 pipeline/shared_space_figures.py</pre>
   const palMixed = mixedGroups.mixed.find(m => m.group === 'Christian, Palestinian nat.');
 
   return (
-    <div className="h-full overflow-y-auto bg-slate-50">
-      <div className="max-w-5xl mx-auto px-8 py-10">
+    // A flex row, so the help sits beside the figures as a foldable side panel
+    // rather than as a block the reader must scroll past to reach section 01.
+    // The article column owns the scrollbar; the panel keeps its own.
+    <div className="flex w-full h-full overflow-hidden bg-slate-50">
+      <div className="flex-1 min-w-0 overflow-y-auto custom-scrollbar">
+        <div className="max-w-5xl mx-auto px-8 py-10">
         <header className="mb-8 max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-2">
             Figures for the article
@@ -391,9 +395,6 @@ python3 pipeline/shared_space_figures.py</pre>
             sort the wards.
           </p>
         </header>
-
-        <HelpPanel title="How to read these figures" sections={HELP}
-                   storageKey="hospital-registry-shared-space-help" />
 
         {/* ---------------------------------------------------------- 01 */}
         <Section
@@ -1126,7 +1127,10 @@ python3 pipeline/shared_space_figures.py</pre>
           </p>
           <p>{data.meta.note}</p>
         </footer>
+        </div>
       </div>
+
+      <HelpPanel title="How to read this" sections={HELP} storageKey="help.shared-space" />
     </div>
   );
 };
