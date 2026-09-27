@@ -4,25 +4,27 @@ merged	standardized Religion	Moslem	Muslim	1194
 merged	Class standard	3rd	3	1194
 merged	Class standard	2nd	2	504
 merged	City	Hedera	Hadera	204
-merged	standardized ward	Infectious	Infectious Diseases	111
+merged	standardized ward	Infectious Diseases	Isolation	149
+merged	standardized ward	Infectious	Isolation	111
+cleared	standardized ward	Venereal Diseases		90
 merged	City	Nazareth (the address is Haifa's Nazareth-named street)	Haifa	85
 merged	City	Atlit	Athlit	83
 merged	City	Shefa Amr	Shafa Amr	81
 merged	City	Tulkarm	Tulkarem	77
 merged	StandardNationality	Poland	Polish	57
-merged	standardized ward	Isolation|Infectious Section	Isolation | Infectious Diseases	52
-merged	standardized ward	Infectious Diseases Section	Infectious Diseases	51
+merged	standardized ward	Isolation|Infectious Section	Isolation	52
+merged	standardized ward	Infectious Diseases Section	Isolation	51
 merged	City	Shefa-'Amr	Shafa Amr	46
-merged	standardized ward	Infectious Section	Infectious Diseases	44
+merged	standardized ward	Infectious Section	Isolation	44
 merged	City	Jaffa (the address is Haifa's Jaffa-named street)	Haifa	43
 merged	Class standard	1st	1	33
-merged	standardized ward	Isolation|Infectious	Isolation | Infectious Diseases	29
+merged	standardized ward	Isolation|Infectious	Isolation	29
 merged	City	Haifa?	Haifa	29
 merged	City	Yajur	Yajour	25
 merged	City	Tantura	Tantoura	24
 merged	City	Beissan	Beisan	24
 merged	City	Affuleh	Afula	21
-merged	standardized ward	Isolation|Infectious Diseases	Isolation | Infectious Diseases	20
+merged	standardized ward	Isolation|Infectious Diseases	Isolation	20
 merged	City	Ijzim	Igzim	19
 merged	City	Balad el Sheikh	Balad al-Sheikh	18
 merged	StandardNationality	Cheko	Czechoslovakian	18
@@ -73,7 +75,7 @@ merged	City	Ramah	Rameh	5
 merged	City	Ramleh (the address says village / Acre district)	Rameh	5
 merged	City	Is.	Is	5
 merged	City	Kiryat Hayim	Kiryat Haim	5
-merged	standardized ward	British Section|Infectious	British Section | Infectious Diseases	5
+merged	standardized ward	British Section|Infectious	British Section | Isolation	5
 merged	City	Al-Bassa	Bassa	5
 merged	City	Maghar	Mughar	5
 merged	City	Jaba	Jaba'	5
@@ -102,7 +104,7 @@ merged	City	Wadi Saleeb	Wadi Salib	4
 merged	Class standard	3rd class	3	4
 merged	City	El Zib	Zib	3
 merged	City	Wadi es Salib	Wadi Salib	3
-merged	standardized ward	Medical|Infectious	Medical | Infectious Diseases	3
+merged	standardized ward	Medical|Infectious	Medical | Isolation	3
 merged	City	Yamun	Yamoun	3
 merged	City	Sachnin	Sakhnin	3
 merged	City	Tul Karem	Tulkarem	3
@@ -210,7 +212,7 @@ merged	City	Mughrar	Mughar	1
 merged	City	Wadi el Salib	Wadi Salib	1
 merged	City	El Mujeidil	Mujeidil	1
 merged	City	Haifa|Churches Ort.	Haifa|Churches Ort	1
-merged	standardized ward	Infectious | Infectious Diseases Section	Infectious Diseases	1
+merged	standardized ward	Infectious | Infectious Diseases Section	Isolation	1
 merged	City	Wad en Nisnas	Wadi Nisnas	1
 merged	City	El Biriwi	Biriwi	1
 merged	City	El Lile	Lile	1
@@ -248,7 +250,7 @@ merged	City	Adel Yahud.	Adel Yahud	1
 merged	City	Al-Tira	Tira	1
 merged	City	Boury Billet?	Boury Billet	1
 merged	City	Kafr Yousif	Kafr Yasif	1
-merged	standardized ward	Venereal Diseases|Infectious	Venereal Diseases | Infectious Diseases	1
+merged	standardized ward	Venereal Diseases|Infectious	Isolation	1
 merged	City	Rameleh	Rameh	1
 merged	City	Majdal Krum	Majd al-Krum	1
 merged	City	Arabeh	Arrabeh	1
@@ -502,30 +504,72 @@ merged	StandardNationality	T/Jordanian	Transjordanian	1
 merged	StandardNationality	British C/E	British	1
 merged	City	Haifa?Atlit?	Haifa?Atlit	1
 moved	Address	British Section	cleared; the ward column already carries British Section	2
+moved	Occupation	Children's	Ward: Children's	1
 moved	Occupation	Gen	Ward: General	1
-moved	Occupation	Gen.	cleared; the ward column already carries General	4
-moved	Occupation	Gen.	Ward: General, read from the clerk's written ward	1
+moved	Occupation	Gen.	cleared; the ward column already carries General	5
 moved	Occupation	General	cleared; the ward column already carries General	1
+moved	Occupation	General Ward	cleared; the ward column already carries General	1
 moved	Occupation	Gynaecology	Ward: General	1
 moved	Address	Gynecology	cleared; the ward column already carries General	1
-moved	Occupation	Gynecology	cleared; the ward column already carries General	25
+moved	Occupation	Gynecology	cleared; the ward column already carries General	26
 moved	Occupation	Gynecology	Ward: General	1
-moved	Occupation	Gynecology	Ward: General, read from the clerk's written ward	1
-moved	Occupation	Isolation	Ward: Isolation, read from the clerk's written ward	1
-moved	Occupation	Mat	Ward: Maternity, read from the clerk's written ward	1
-moved	Occupation	Maternity	cleared; the ward column already carries Maternity	2
-moved	Occupation	Maternity	Ward: Maternity, read from the clerk's written ward	2
+moved	Occupation	Isolation	cleared; the ward column already carries Isolation	1
+moved	Occupation	Mat	cleared; the ward column already carries Maternity	1
+moved	Occupation	Maternity	cleared; the ward column already carries Maternity	4
 moved	Occupation	Med	cleared; the ward column already carries Medical	1
 moved	Occupation	Medical	cleared; the ward column already carries Isolation	1
 moved	Occupation	Medical	cleared; the ward column already carries Medical	2
 moved	Occupation	Medical	Ward: Medical	2
-moved	Occupation	Surg	cleared; the ward column already carries Surgical	31
-moved	Occupation	Surg	Ward: Surgical, read from the clerk's written ward	4
-moved	Occupation	Surg.	cleared; the ward column already carries Surgical	3
-moved	Occupation	Surg.	Ward: Surgical, read from the clerk's written ward	1
-moved	Occupation	Surgical	cleared; the ward column already carries Surgical	3
+moved	Occupation	Surg	cleared; the ward column already carries Surgical	35
+moved	Occupation	Surg.	cleared; the ward column already carries Surgical	4
+moved	Occupation	Surgical	cleared; the ward column already carries Surgical	10
 moved	Occupation	Surgical	Ward: Surgical	1
-moved	Occupation	Surgical	Ward: Surgical, read from the clerk's written ward	7
+recovered	Ward	Br	Ward: British Section, read from the clerk's written ward	6
+recovered	Ward	Br.	Ward: British Section, read from the clerk's written ward	10
+recovered	Ward	British Section	Ward: British Section, read from the clerk's written ward	25
+recovered	Ward	Children's Ward	Ward: Children's, read from the clerk's written ward	18
+recovered	Ward	Gen	Ward: General, read from the clerk's written ward	57
+recovered	Ward	Gen.	Ward: General, read from the clerk's written ward	36
+recovered	Ward	General	Ward: General, read from the clerk's written ward	243
+recovered	Ward	General Ward	Ward: General, read from the clerk's written ward	26
+recovered	Ward	I.D.	Ward: Isolation, read from the clerk's written ward	14
+recovered	Ward	I.D.S.	Ward: Isolation, read from the clerk's written ward	6
+recovered	Ward	I.S.	Ward: Isolation, read from the clerk's written ward	28
+recovered	Ward	I.s.	Ward: Isolation, read from the clerk's written ward	1
+recovered	Ward	Infectious Diseases	Ward: Isolation, read from the clerk's written ward	108
+recovered	Ward	Infectious Diseases Section	Ward: Isolation, read from the clerk's written ward	15
+recovered	Ward	Infectious Diseases Ward	Ward: Isolation, read from the clerk's written ward	11
+recovered	Ward	Infectious Section	Ward: Isolation, read from the clerk's written ward	14
+recovered	Ward	Is.	Ward: Isolation, read from the clerk's written ward	485
+recovered	Ward	Isol	Ward: Isolation, read from the clerk's written ward	373
+recovered	Ward	Isol.	Ward: Isolation, read from the clerk's written ward	46
+recovered	Ward	Isolation	Ward: Isolation, read from the clerk's written ward	2120
+recovered	Ward	Isolation / British Section	Ward: Isolation | British Section, read from the clerk's written ward	1
+recovered	Ward	Isolation Section	Ward: Isolation, read from the clerk's written ward	17
+recovered	Ward	Isolation Ward	Ward: Isolation, read from the clerk's written ward	73
+recovered	Ward	Isolation/Infectious Diseases	Ward: Isolation, read from the clerk's written ward	5
+recovered	Ward	MAT.	Ward: Maternity, read from the clerk's written ward	1
+recovered	Ward	MED.	Ward: Medical, read from the clerk's written ward	1
+recovered	Ward	Mat	Ward: Maternity, read from the clerk's written ward	13
+recovered	Ward	Mat.	Ward: Maternity, read from the clerk's written ward	38
+recovered	Ward	Maternity	Ward: Maternity, read from the clerk's written ward	486
+recovered	Ward	Maternity Ward	Ward: Maternity, read from the clerk's written ward	4
+recovered	Ward	Med	Ward: Medical, read from the clerk's written ward	171
+recovered	Ward	Med.	Ward: Medical, read from the clerk's written ward	71
+recovered	Ward	Medical	Ward: Medical, read from the clerk's written ward	28
+recovered	Ward	Medical Ward	Ward: Medical, read from the clerk's written ward	11
+recovered	Ward	Medical/Surgical	Ward: Medical | Surgical, read from the clerk's written ward	2
+recovered	Ward	Surg	Ward: Surgical, read from the clerk's written ward	715
+recovered	Ward	Surg | Gen | Surgical | General	Ward: Surgical | General, read from the clerk's written ward	1
+recovered	Ward	Surg.	Ward: Surgical, read from the clerk's written ward	261
+recovered	Ward	Surg. | Surgical Ward	Ward: Surgical, read from the clerk's written ward	1
+recovered	Ward	Surgical	Ward: Surgical, read from the clerk's written ward	209
+recovered	Ward	Surgical Section	Ward: Surgical, read from the clerk's written ward	38
+recovered	Ward	Surgical Ward	Ward: Surgical, read from the clerk's written ward	19
+recovered	Ward	Surgical/General	Ward: Surgical | General, read from the clerk's written ward	1
+recovered	Ward	maternity	Ward: Maternity, read from the clerk's written ward	2
+recovered	Ward	med	Ward: Medical, read from the clerk's written ward	2
+recovered	Ward	surg.	Ward: Surgical, read from the clerk's written ward	1
 corrected	Ward as written	-|Gynecology	- | General — the register writes Gen., not Gyn.	85
 corrected	Ward as written	2nd|Gynecology	2nd | General — the register writes Gen., not Gyn.	1
 corrected	Ward as written	3erd|Gynecology	3erd | General — the register writes Gen., not Gyn.	4
@@ -562,6 +606,7 @@ review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagno
 review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	38
 review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	1
 review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
+review	Review Flags	sex-contradicts-diagnosis	Sex reads Male on a record whose diagnosis is a birth	28
 review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	697
 review	Review Flags	date-year-off-catalogue	Year corrected: the admission fell outside the year the library gave the notebook	271
 review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	26
@@ -730,20 +775,21 @@ tail	StandardNationality	Non.		1
 tail	StandardNationality	Swedish		1
 tail	StandardNationality	P.		1
 tail	StandardNationality	Danish		1
-tail	standardized ward	British Section | Infectious Diseases		5
+tail	standardized ward	British Section | Isolation		5
 tail	standardized ward	Medical | British Section		5
-tail	standardized ward	Medical | Infectious Diseases		3
+tail	standardized ward	Medical | Isolation		3
 tail	standardized ward	Palestine Police Force		3
+tail	standardized ward	Surgical | General		2
 tail	standardized ward	Surgical | British Section		2
 tail	standardized ward	Maternity | British Section		2
-tail	standardized ward	Venereal Diseases | Infectious Diseases		1
+tail	standardized ward	Medical | Surgical		2
+tail	standardized ward	Isolation | British Section		1
 tail	standardized ward	Medical | Maternity		1
 tail	standardized ward	Obstetrics		1
 tail	standardized ward	Maternity Surgical		1
 tail	standardized ward	Private		1
 tail	standardized ward	Prison Ward		1
 tail	standardized ward	Surgical British Section		1
-tail	standardized ward	Children's		1
 tail	standardized ward	French Carmelite		1
 tail	Class standard	3rd?		12
 tail	Class standard	3rd & 2nd		11

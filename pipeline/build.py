@@ -397,41 +397,106 @@ GYNECOLOGY_IS_GENERAL = {
 # The same reading, as a word inside a longer value.
 GYNECOLOGY_WORD = re.compile(r"\bgyn(?:ae|e)?(?:cology|cological)?\.?", re.IGNORECASE)
 
-WARD = {
-    "mat": "Maternity",
-    "mat.": "Maternity",
-    "infectious": "Infectious Diseases",
-    "infectious section": "Infectious Diseases",
-    "infectious diseases section": "Infectious Diseases",
-    "childrens": "Children's",
-} | GYNECOLOGY_IS_GENERAL
-
 # The wards of the hospital, as they read once standardized. An Occupation
 # holding exactly one of these — a 7-year-old "Gynecology" among them — is the
 # ward column's content misfiled by the extraction, not a trade. The spurious
 # gynaecology stays in this set because it is still a misfiled ward name; what
 # it resolves to is settled by WARD_WRITTEN, not by the set.
+# "Infectious Diseases" and "Venereal Diseases" are deliberately absent: the
+# first resolves to Isolation and the second to nothing, both below. They stay
+# in WARD_MISFILED via WARD_WRITTEN, so a misfiled one is still caught.
 WARD_NAMES = {
     "Surgical", "Medical", "British Section", "Isolation", "Gynecology",
-    "General", "Maternity", "Infectious Diseases", "Venereal Diseases",
+    "General", "Maternity",
 }
 
-# The clerk's abbreviations, for reading the written ward on those records.
-WARD_WRITTEN = {name.lower(): name for name in WARD_NAMES} | WARD | {
+# The hospital had no venereal ward, and no clerk ever wrote one. All 95
+# records the source calls "Venereal Diseases" have an EMPTY written ward: the
+# label exists only in the extraction's pre-computed standardized column. Not
+# one of them carries a venereal diagnosis — the top readings are typhoid fever
+# (26), malaria, louse-borne typhus, shigellosis, anthrax, scarlet fever,
+# cerebro-spinal meningitis. They cluster on a handful of pages in notebooks
+# 6-14, the signature of a label propagating down a page: the same error class
+# as the per-page year misread, in the same column that produced Gynecology.
+#
+# The 1935 memorandum and the 1936 Schedule of Accommodation list every designed
+# unit of the hospital and there is no venereal section among them.
+VENEREAL_IS_NOTHING = {
+    "venereal diseases", "venereal", "venereal diseases ward",
+    "venereal diseases section", "venereal ward", "v.d.", "vd",
+}
+
+# "Infectious Diseases" and "Isolation" are two names for one establishment.
+#
+# The building has one infectious-disease unit: the Fever Section on the
+# pavilion system (88 beds in 1935, 74 in the 1936 schedule), physically
+# separate from the ward blocks. There is no second infectious ward in the plan.
+#
+# The register agrees three ways. The written forms overlap — "Infectious
+# Section" standardizes to both labels, as do "Is." and "I.S.", and 101 raw
+# values read "Isolation|Infectious" or "Isolation|Infectious Section": both
+# names on one admission. They barely coexist — of 1,352 pages carrying either,
+# only 30 carry both, and they sort by notebook (Infectious in 6-15, Isolation
+# in 16-23) and by year (Infectious 1933-36, then collapsing as Isolation climbs
+# to its 1939 peak): a change of clerical vocabulary around 1937, not one ward
+# closing and another opening. And the case-mix is the same — both led by
+# typhoid fever, then typhus, erysipelas, diphtheria, gastroenteritis and
+# observation for suspected infectious disease, in that order.
+#
+# The name kept is Isolation: it is what the clerks wrote for 5,464 of the
+# 5,957, and what the register's own late usage settles on.
+INFECTIOUS_IS_ISOLATION = {
+    "infectious diseases": "Isolation",
+    "infectious": "Isolation",
+    "infectious section": "Isolation",
+    "infectious diseases section": "Isolation",
+    "infectious diseases ward": "Isolation",
+    "i.d.s.": "Isolation",
+    "i.d.": "Isolation",
+    "fever section": "Isolation",
+    "fever ward": "Isolation",
+}
+
+# The clerk's abbreviations. This is the one list: the ward column is
+# standardized through it as well as read through it, because the clerk wrote
+# the same "Surg", "Is." and "Gen." in both places. Keeping two maps meant the
+# ward column knew only the expanded forms, and 5,190 records whose ward reads
+# plainly on the page standardized to nothing.
+#
+# What is deliberately absent stays absent: the lettered pavilions (A–G), the
+# huts, "[uncertain_ward]" and the bare qualifiers resolve to no ward at all,
+# because nothing in the file says what they were. See
+# data/archives/isa_buildings_index.md on the pavilions.
+WARD_WRITTEN = {name.lower(): name for name in WARD_NAMES} | {
     "surg": "Surgical",
     "surg.": "Surgical",
+    "surgical section": "Surgical",
+    "surgical ward": "Surgical",
     "gen": "General",
     "gen.": "General",
+    "general ward": "General",
     "mat": "Maternity",
     "mat.": "Maternity",
+    "maternity ward": "Maternity",
     "med": "Medical",
     "med.": "Medical",
+    "medical ward": "Medical",
     "is": "Isolation",
     "is.": "Isolation",
+    "i.s.": "Isolation",
     "isol": "Isolation",
+    "isol.": "Isolation",
+    "isolation ward": "Isolation",
+    "isolation section": "Isolation",
     "br": "British Section",
     "br.": "British Section",
-}
+    "childrens": "Children's",
+    "children's": "Children's",
+    "children's ward": "Children's",
+} | GYNECOLOGY_IS_GENERAL | INFECTIOUS_IS_ISOLATION
+
+# The ward column is standardized by the same map that reads a written ward.
+WARD = WARD_WRITTEN
 
 # What counts as a ward name misfiled into another column. The full names are
 # not enough: the row that shifted by one column carries whatever the clerk
@@ -442,7 +507,7 @@ WARD_WRITTEN = {name.lower(): name for name in WARD_NAMES} | WARD | {
 # Deliberately excluded: bare "D", single letters, and anything that is a
 # plausible trade or place. "Mat" is included because no Haifa occupation reads
 # that way; if one ever does it will show up as a lost Occupation in the report.
-WARD_MISFILED = {name.lower() for name in WARD_NAMES} | set(WARD_WRITTEN)
+WARD_MISFILED = {name.lower() for name in WARD_NAMES} | set(WARD_WRITTEN) | VENEREAL_IS_NOTHING
 
 # Record-level ward corrections, keyed (Notebook_Number, Notebook Record ID),
 # for readings that survive only in a column the pipeline drops. Notebook 11
@@ -522,6 +587,14 @@ def normalize(column: str, value: str) -> str:
     if not rules or not value:
         return value
     stripped = value.strip()
+    if column == "standardized ward":
+        # A ward the hospital never had is not a ward. Dropping the part rather
+        # than the record keeps "Venereal Diseases|Isolation" as Isolation.
+        kept = [p for p in WARD_SPLIT.split(stripped)
+                if p.strip() and p.strip().lower() not in VENEREAL_IS_NOTHING]
+        stripped = " | ".join(p.strip() for p in kept)
+        if not stripped:
+            return ""
     if column == "standardized ward" and WARD_SPLIT.search(stripped):
         parts = [rules.get(p.strip().lower(), p.strip()) for p in WARD_SPLIT.split(stripped) if p.strip()]
         seen: list[str] = []
@@ -1058,6 +1131,7 @@ def main() -> int:
     ward_rehomed: Counter[tuple[str, str, str, str]] = Counter()
     ward_corrected = 0
     ward_degynecologised: Counter[tuple[str, str]] = Counter()
+    ward_recovered: Counter[tuple[str, str]] = Counter()
     dates_rebuilt = Counter()
     stays_cleared = 0
     stays_over_a_year = 0
@@ -1112,6 +1186,23 @@ def main() -> int:
             if replacement != written_ward:
                 row["Ward"] = replacement
                 ward_degynecologised[(written_ward, replacement)] += 1
+
+        # The ward column standardizes only what it already holds. Where the
+        # extraction left it empty but the clerk's written ward reads plainly
+        # — "Isolation", "Surg", "Is.", "Med", "Gen", "Maternity" — the
+        # written value is the record of the ward, and it is read by the same
+        # map. Combinations are split as everywhere else. Values that say
+        # nothing about a ward (the lettered pavilions, "Hut",
+        # "[uncertain_ward]") resolve to nothing and are left alone.
+        if not (row.get("standardized ward") or "").strip():
+            written = (row.get("Ward") or "").strip()
+            if written:
+                recovered = normalize("standardized ward", written)
+                parts = [p.strip() for p in WARD_SPLIT.split(recovered) if p.strip()]
+                if parts and all(p in WARD_NAMES or p == "Children's" for p in parts):
+                    row["standardized ward"] = recovered
+                    final_values["standardized ward"][recovered] += 1
+                    ward_recovered[(written, recovered)] += 1
 
         # A hand correction first, so the pass below finds the ward in place.
         key = (
@@ -1835,6 +1926,9 @@ def main() -> int:
                 "duplicate": f"cleared; the ward column already carries {ward}",
             }[source]
             writer.writerow(["moved", column, misfiled, what, count])
+        for (before, after), count in sorted(ward_recovered.items()):
+            writer.writerow(["recovered", "Ward", before,
+                             f"Ward: {after}, read from the clerk's written ward", count])
         for (before, after), count in sorted(ward_degynecologised.items()):
             writer.writerow(["corrected", "Ward as written", before,
                              f"{after} — the register writes Gen., not Gyn.", count])
@@ -1911,6 +2005,9 @@ def main() -> int:
     print(f"merged     {sum(changes.values()) - cleared:,} values across {len(changes)} rules")
     print(f"cleared    {cleared} value(s) outside a closed vocabulary")
     print(f"coarsened  {coarsened:,} addresses")
+    if ward_recovered:
+        print(f"wards      {sum(ward_recovered.values()):,} ward(s) recovered from the clerk's written ward "
+              f"across {len(ward_recovered)} written form(s)")
     if ward_rehomed:
         seated = sum(c for (_, _, source, _), c in ward_rehomed.items() if source != "duplicate")
         print(f"wards      {sum(ward_rehomed.values())} ward name(s) taken out of Occupation/Address, "
