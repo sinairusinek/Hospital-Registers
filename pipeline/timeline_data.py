@@ -10,7 +10,8 @@ Four layers on one axis, plus the sources that make them clickable:
   2. institution — what the hospital itself did, taken from the press read.
                    Seeded from the flags in pipeline/history_timeline.py and
                    expanded here; each event names a source id.
-  3. intake      — monthly admissions from the register. The Atlit camp book
+  3. intake      — monthly admissions from the register, with a parallel daily
+                   series for the zoomed-in axis. The Atlit camp book
                    (Notebook 25) is kept as a SEPARATE series and never folded
                    into the general count: see the standing ruling in memory.
   4. notebooks   — which physical ledger covers which months, so the band can
@@ -94,6 +95,8 @@ def read_register():
 
     general = Counter()
     atlit = Counter()
+    general_day = Counter()
+    atlit_day = Counter()
     nb_months = defaultdict(set)
     nb_first_page = {}
     undated = 0
@@ -107,12 +110,20 @@ def read_register():
                 undated += 1
                 continue
             month = date[:7]
+            # A day only counts when the register gives one. Some records carry
+            # a month and no day; they belong in the monthly band and cannot be
+            # placed on a daily one, so the two series do not sum alike.
+            day = date[:10] if len(date) >= 10 and date[7] == "-" else None
             notebook = (row.get("Notebook_Number") or "").strip()
 
             if notebook == ATLIT_NOTEBOOK:
                 atlit[month] += 1
+                if day:
+                    atlit_day[day] += 1
             else:
                 general[month] += 1
+                if day:
+                    general_day[day] += 1
 
             if notebook:
                 nb_months[notebook].add(month)
@@ -138,7 +149,7 @@ def read_register():
         })
     notebooks.sort(key=lambda n: (n["start"], int(n["notebook"])))
 
-    return general, atlit, notebooks, total, undated
+    return general, atlit, general_day, atlit_day, notebooks, total, undated
 
 
 # ---------------------------------------------------------------- sources
@@ -266,13 +277,27 @@ def read_external():
 # ---------------------------------------------------------------- build
 
 def build():
-    general, atlit, notebooks, total, undated = read_register()
+    general, atlit, general_day, atlit_day, notebooks, total, undated = read_register()
     sources, source_origin = read_sources()
 
     span = months(FIRST, LAST)
     intake = [
         {"month": m, "general": general.get(m, 0), "atlit": atlit.get(m, 0)}
         for m in span
+    ]
+
+    # The same admissions by day, for the axis once it counts days. Only days
+    # the register actually reaches are listed — 3,538 of the 6,600-odd in the
+    # span — because an empty day and a day inside a four-year gap are not the
+    # same claim, and the view must not draw a zero where it means "no ledger".
+    #
+    # Packed as arrays rather than objects: [date, general] or, where the Atlit
+    # book also has admissions that day, [date, general, atlit]. Same data, and
+    # it keeps the daily series from outweighing everything else in the file.
+    daily = [
+        [d, general_day.get(d, 0)] if not atlit_day.get(d)
+        else [d, general_day.get(d, 0), atlit_day[d]]
+        for d in sorted(set(general_day) | set(atlit_day))
     ]
 
     # A gap is a month in which the register records nothing at all. The Atlit
@@ -327,6 +352,7 @@ def build():
             "sourceOrigin": source_origin,
         },
         "intake": intake,
+        "daily": daily,
         "gaps": gaps,
         "notebooks": notebooks,
         "institutional": institutional,
@@ -359,7 +385,8 @@ if __name__ == "__main__":
     m = data["meta"]
     print(f"timeline -> {OUT.relative_to(ROOT)}")
     print(f"  {m['generalRecords']:,} general + {m['atlitRecords']:,} Atlit "
-          f"admissions across {len(data['intake'])} months")
+          f"admissions across {len(data['intake'])} months, "
+          f"{len(data['daily'])} dated days")
     print(f"  {len(data['gaps'])} gap runs, {len(data['notebooks'])} notebooks")
     print(f"  {len(data['external'])} external + "
           f"{len(data['institutional'])} institutional events, "

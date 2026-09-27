@@ -13,6 +13,11 @@ import PersonnelStrip from './PersonnelStrip';
  * reads as a hospital that emptied in 1941, which is false. Every gap here is
  * an archival absence; the press has the hospital working throughout.
  *
+ * The intake layer carries two series from pipeline/timeline_data.py — by month
+ * for the long view, by day once the axis is zoomed past DAY_SPAN. They are
+ * drawn on separate scales, since a month peaks near 450 and a day near 51, and
+ * the caption on the y axis says which is in force.
+ *
  * Data comes from pipeline/timeline_data.py. The view holds no history of its
  * own beyond layout.
  */
@@ -22,6 +27,10 @@ const DATA_URL = `${import.meta.env.BASE_URL}data/timeline.json`;
 // ---------------------------------------------------------------- types
 
 interface IntakeMonth { month: string; general: number; atlit: number; }
+/** One dated day: [date, general] or [date, general, atlit]. Packed as arrays
+ *  by pipeline/timeline_data.py — 3,530 of them, and objects would dominate
+ *  the file. Only days the register reaches are present. */
+type IntakeDay = [string, number] | [string, number, number];
 interface Gap { start: string; end: string; months: number; reason: string; }
 interface Notebook {
   notebook: string; start: string; end: string; months: number;
@@ -46,6 +55,7 @@ interface TimelineData {
     atlitNotebook: string; sourceOrigin: string | null;
   };
   intake: IntakeMonth[];
+  daily: IntakeDay[];
   gaps: Gap[];
   notebooks: Notebook[];
   institutional: InstitutionalEvent[];
@@ -479,7 +489,9 @@ const TimelineView: React.FC = () => {
   const [showNotebooks, setShowNotebooks] = useState(false);
   const [showAtlit, setShowAtlit] = useState(true);
   const [kinds, setKinds] = useState<Set<string> | null>(null);
-  const [hover, setHover] = useState<{ x: number; y: number; m: IntakeMonth } | null>(null);
+  const [hover, setHover] = useState<
+    { x: number; y: number; label: string; general: number; atlit: number } | null
+  >(null);
 
   const wrapRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(1100);
@@ -586,13 +598,36 @@ const TimelineView: React.FC = () => {
   const nbH = showNotebooks ? NB_H + 10 : 0;
   const height = nbTop + nbH + M.bottom + 6;
 
+  const dayZoom = hi - lo <= DAY_SPAN;
+
+  // The days on screen, once the axis counts them. Filtered to the visible
+  // range so a drag does not walk 3,530 rows per frame.
+  const visibleDaily = useMemo(() => {
+    if (!data || !dayZoom) return [];
+    return data.daily.filter(r => {
+      const at = toM(r[0]);
+      return at >= lo - 0.05 && at <= hi + 0.05;
+    });
+  }, [data, dayZoom, lo, hi]);
+
+  // Two scales, because one cannot serve both. A month peaks near 450 and a
+  // day near 51: drawn against the monthly maximum, every daily bar would be a
+  // sliver. The band is rescaled to whichever series it is drawing, and the
+  // axis label beside it says which — otherwise the same height would silently
+  // mean two different things.
   const maxIntake = useMemo(() => {
     if (!data) return 1;
+    if (dayZoom) {
+      return Math.max(
+        1,
+        ...visibleDaily.map(r => r[1] + (showAtlit ? (r[2] ?? 0) : 0))
+      );
+    }
     return Math.max(
       1,
       ...data.intake.map(m => m.general + (showAtlit ? m.atlit : 0))
     );
-  }, [data, showAtlit]);
+  }, [data, showAtlit, dayZoom, visibleDaily]);
 
   const barY = useCallback(
     (v: number) => axisY - (v / maxIntake) * (BAND_H - 8),
@@ -686,7 +721,6 @@ const TimelineView: React.FC = () => {
   const hiddenLabels =
     extPlaced.filter(p => !p.labelled).length +
     instPlaced.filter(p => !p.labelled).length;
-  const dayZoom = hi - lo <= DAY_SPAN;
   const ticks = dayZoom ? [] : yearTicks(lo, hi, plotW);
   const days = dayZoom ? dayTicks(lo, hi, plotW) : [];
   const monthTicks = !dayZoom && hi - lo <= 48;
@@ -708,7 +742,7 @@ const TimelineView: React.FC = () => {
             Four layers on one axis: what was happening in the country, what the hospital
             itself did, how many people it admitted month by month, and which ledger says so.
             Drag on the strip at the foot to zoom; click any flag for its source. Zoom
-            in far enough and the axis counts days, though the intake band stays monthly.
+            in past two months and both the axis and the intake band count days.
           </p>
         </header>
 
@@ -984,16 +1018,50 @@ const TimelineView: React.FC = () => {
               />
             ))}
 
-            {/* intake band
+            {/* intake band — daily
               *
-              * Monthly, and it stays monthly when the axis reaches days: the
-              * counts come from pipeline/timeline_data.py aggregated by month.
-              * At day zoom a bar therefore spans its whole month behind the
-              * dated layers, and its tooltip says "Jul 1938" rather than a day,
-              * which is the honest reading of a monthly figure. A daily series
-              * would need the pipeline to emit one.
+              * Below DAY_SPAN the band redraws from the daily series. Only days
+              * the register reaches are in it, so a day with no bar means no
+              * admission recorded, and a stretch with no bars at all means no
+              * ledger — the gap layer above says which. The band is rescaled to
+              * the days on screen; the caption beside it says so, because the
+              * same bar height means one thing per month and another per day.
               */}
-            {data.intake.map(m => {
+            {dayZoom && visibleDaily.map(r => {
+              const at = toM(r[0]);
+              const a = x(at);
+              // One day in month units, from this day's own month: the same
+              // arithmetic toM uses, so a bar starts on its tick and ends on
+              // the next one rather than drifting through February.
+              const dayW = x(at + 1 / daysInMonth(
+                Number(r[0].slice(0, 4)), Number(r[0].slice(5, 7)) - 1)) - a;
+              const b = a + dayW;
+              if (b < M.left || a > width - M.right) return null;
+              const gen = r[1];
+              const atl = r[2] ?? 0;
+              const w = Math.max(1.2, dayW - (dayW > 4 ? 1 : 0.2));
+              const gh = axisY - barY(gen);
+              const ah = showAtlit ? (axisY - barY(atl)) : 0;
+              return (
+                <g
+                  key={r[0]}
+                  onMouseEnter={() => setHover({
+                    x: a + w / 2, y: barY(gen + (showAtlit ? atl : 0)),
+                    label: longDate(r[0]), general: gen, atlit: atl,
+                  })}
+                >
+                  {showAtlit && atl > 0 && (
+                    <rect
+                      x={a} y={barY(gen + atl)} width={w} height={ah} fill={ATLIT}
+                    />
+                  )}
+                  <rect x={a} y={barY(gen)} width={w} height={gh} fill={INTAKE} />
+                </g>
+              );
+            })}
+
+            {/* intake band — monthly */}
+            {!dayZoom && data.intake.map(m => {
               const a = x(toM(m.month));
               const b = x(toM(m.month) + 1);
               if (b < M.left || a > width - M.right) return null;
@@ -1004,7 +1072,10 @@ const TimelineView: React.FC = () => {
               return (
                 <g
                   key={m.month}
-                  onMouseEnter={() => setHover({ x: (a + b) / 2, y: barY(m.general + ah), m })}
+                  onMouseEnter={() => setHover({
+                    x: (a + b) / 2, y: barY(m.general + ah),
+                    label: fromM(toM(m.month)), general: m.general, atlit: m.atlit,
+                  })}
                 >
                   {showAtlit && m.atlit > 0 && (
                     <rect
@@ -1027,7 +1098,7 @@ const TimelineView: React.FC = () => {
                 <rect
                   x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124)}
                   y={Math.max(bandTop + 2, hover.y - 42)}
-                  width={124} height={showAtlit && hover.m.atlit ? 50 : 36} rx={4}
+                  width={124} height={showAtlit && hover.atlit ? 50 : 36} rx={4}
                   fill="#0f172a" opacity={0.9}
                 />
                 <text
@@ -1036,29 +1107,36 @@ const TimelineView: React.FC = () => {
                   fontSize={10.5} fill="#fff" className="font-mono"
                 >
                   <tspan x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124) + 9}>
-                    {fromM(toM(hover.m.month))}
+                    {hover.label}
                   </tspan>
                   <tspan
                     x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124) + 9}
                     dy={14}
                   >
-                    {hover.m.general.toLocaleString()} admissions
+                    {hover.general.toLocaleString()} admissions
                   </tspan>
-                  {showAtlit && hover.m.atlit > 0 && (
+                  {showAtlit && hover.atlit > 0 && (
                     <tspan
                       x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124) + 9}
                       dy={14} fill="#c7d2fe"
                     >
-                      {hover.m.atlit.toLocaleString()} at Atlit
+                      {hover.atlit.toLocaleString()} at Atlit
                     </tspan>
                   )}
                 </text>
               </g>
             )}
 
-            {/* y axis */}
+            {/* y axis
+              *
+              * The step follows the scale in force. Rounding to 50 suits a
+              * monthly band peaking near 450 and erases a daily one peaking
+              * near 51, where both gridlines would round to the same number or
+              * to nothing at all.
+              */}
             {[0.5, 1].map(f => {
-              const v = Math.round((maxIntake * f) / 50) * 50;
+              const grid = maxIntake >= 200 ? 50 : maxIntake >= 40 ? 10 : 5;
+              const v = Math.round((maxIntake * f) / grid) * grid;
               if (!v) return null;
               return (
                 <g key={f}>
@@ -1079,7 +1157,7 @@ const TimelineView: React.FC = () => {
               x={M.left - 7} y={bandTop + 9} textAnchor="end"
               fontSize={9} fill="#cbd5e1" className="font-mono"
             >
-              adm.
+              {dayZoom ? 'adm./day' : 'adm./mo.'}
             </text>
 
             {/* axis */}
