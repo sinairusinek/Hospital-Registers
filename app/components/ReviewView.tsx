@@ -57,6 +57,12 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Sex', 'Age', 'Ward', 'Diagnosis']
   },
   {
+    flag: 'sex-contradicts-diagnosis',
+    title: 'A man admitted to give birth',
+    question: 'The sex column reads Male and the diagnosis is a birth \u2014 a childbirth, a delivery, an abortion, a puerperal fever. Both cannot stand. The diagnosis is the likelier witness: it is the reason the record exists, while the sex is a single letter in a narrow column. Two of these were checked against the page (notebook 32, page 74: registers 4773 and 4778 are written M in a run of six maternity admissions whose other four read F), and the slip is the clerk\u2019s own, not the extraction\u2019s \u2014 which is why nothing has been corrected here. Does the page read M or F? Note that a man in the maternity ward is not by itself an error: the ward took overflow, and on 6 July 1938 it held bomb casualties. Only the birth in the diagnosis column makes this queue.',
+    fields: ['Sex', 'Age', 'Ward', 'Diagnosis as written', 'Diagnosis', 'Religion', 'Result']
+  },
+  {
     flag: 'date-unreadable',
     title: 'A date that could not be read',
     question: 'The clerk\'s own writing could not be parsed into a date, so the upstream conversion has been left in place — the only reading available, and an unverified one. Does it match the page?',

@@ -661,6 +661,41 @@ ICD10_CHAPTER = {
     "R50.9": "780-799 Symptoms, signs and ill-defined conditions",  # fever, unspecified
 }
 
+# An obstetric diagnosis on a record whose sex reads Male. The two cannot both
+# be right, and the diagnosis is the better witness: "Childbirth" is the whole
+# reason the record exists, while the sex is one letter in a narrow column. On
+# notebook 32 page 74 the page was checked — register 4773 (Childbirth) and 4778
+# (Deathbirth) are both written M in a run of six maternity admissions whose
+# other four read F, in a hand where M and F are plainly distinguishable. The
+# error is the clerk's, not the extraction's. Nothing is corrected on the
+# strength of that: the flag sends a person to the page.
+#
+# "Labour" is the trap. Lobar pneumonia is written "Labor Pneumonia" throughout
+# the registers, which is why the word is only obstetric when no pneumonia
+# stands beside it. Gynaecological conditions — endometritis, uterine fibroid —
+# are deliberately out: they are also impossible in a man, but they are not
+# self-evidently a birth, and a weaker inference does not belong in the same
+# queue. "Deathbirth" is the clerks' own word for a stillbirth.
+OBSTETRIC_DIAGNOSIS = re.compile(
+    r"\b(child ?birth|dead ?birth|death ?birth|still ?birth|deliver(?:y|ies)"
+    r"|confinement|abortion|miscarriage|pregnan\w*|puerper\w*|gravidarum"
+    r"|eclamps\w*|placenta\w*|caesarean|cesarean|parturition|post.?partum"
+    r"|primipara|multipara|lochia)\b",
+    re.IGNORECASE,
+)
+OBSTETRIC_LABOUR = re.compile(r"\blabou?r\b", re.IGNORECASE)
+LOBAR_MISREAD = re.compile(r"pneum|lobar", re.IGNORECASE)
+
+
+def is_obstetric(text: str) -> bool:
+    """True where a diagnosis can only belong to a woman giving birth."""
+    if not text:
+        return False
+    if OBSTETRIC_DIAGNOSIS.search(text):
+        return True
+    return bool(OBSTETRIC_LABOUR.search(text) and not LOBAR_MISREAD.search(text))
+
+
 # Values from the Result column that ended up in a diagnosis or code field. They
 # are a column misalignment, not a diagnosis, and are never classified — the
 # record is flagged so the page can be checked.
@@ -690,6 +725,7 @@ REVIEW_FLAGS = [
     ("impossible-stay", "Discharged before admitted; the stay has been cleared"),
     ("stay-over-by-a-year", "Discharge year corrected: the stay ran a year over the clerk's own count"),
     ("sex-cleared", "A single stray letter where a sex belongs"),
+    ("sex-contradicts-diagnosis", "Sex reads Male on a record whose diagnosis is a birth"),
     ("date-out-of-span", "A date outside 1930-48 with nothing on the record to repair it from"),
     ("date-year-out-of-sequence", "Year corrected: the admission ran backwards against the register's order"),
     ("date-year-off-catalogue", "Year corrected: the admission fell outside the year the library gave the notebook"),
@@ -1280,6 +1316,15 @@ def main() -> int:
             flags.append("result-in-diagnosis")
         elif written_diag and CLASSIFIER_DEBRIS.search(written_diag):
             flags.append("classifier-debris")
+
+        # The sex column against the diagnosis. Both diagnosis fields are read:
+        # the clerk's own words where they survive, the standardized reading
+        # where the extraction left only that.
+        if (row.get("Sex") or "").strip() == "Male" and (
+            is_obstetric(written_diag)
+            or is_obstetric((row.get("Standardized Diagnosis", "") or "").strip())
+        ):
+            flags.append("sex-contradicts-diagnosis")
 
         if not chapter:
             flags.append("no-icd9-chapter")
