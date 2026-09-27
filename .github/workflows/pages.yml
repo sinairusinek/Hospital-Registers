@@ -12,6 +12,7 @@ on:
       - 'pipeline/source_registry.py'
       - 'pipeline/timeline_data.py'
       - 'pipeline/personnel_data.py'
+      - 'pipeline/shared_space_figures.py'
       - 'data/mideastmed/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -49,6 +50,11 @@ jobs:
       # data/mideastmed/. Pure transform of a committed input, so a rebuild
       # here always reproduces the committed personnel.json.
       - run: python3 pipeline/personnel_data.py
+      # The Shared Space view's figures. Like timeline.json these depend on the
+      # register that pipeline/build.py regenerates above, so they are rebuilt
+      # here rather than taken from the commit — otherwise a data fix would
+      # leave the article's figures describing the previous register.
+      - run: python3 pipeline/shared_space_figures.py
       # The registry is a committed artifact built from two public inputs, so
       # a clean rebuild must reproduce it byte for byte. If it does not, the
       # committed file was written from something not in the repo — the state
