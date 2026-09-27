@@ -1,0 +1,996 @@
+{
+ "meta": {
+  "records": 28914,
+  "note": "Notebook 25 (the Atlit camp register, 965 rows) excluded throughout. Religion shares use an M+C+J denominator; blanks leave both numerator and denominator."
+ },
+ "wardMix": {
+  "wards": [
+   {
+    "ward": "Surgical",
+    "n": 5078,
+    "Muslim": 76.3,
+    "Christian": 18.5,
+    "Jewish": 5.2
+   },
+   {
+    "ward": "Medical",
+    "n": 3795,
+    "Muslim": 60.5,
+    "Christian": 29.8,
+    "Jewish": 9.7
+   },
+   {
+    "ward": "General",
+    "n": 3645,
+    "Muslim": 65.7,
+    "Christian": 27.0,
+    "Jewish": 7.3
+   },
+   {
+    "ward": "Maternity",
+    "n": 1979,
+    "Muslim": 55.5,
+    "Christian": 37.2,
+    "Jewish": 7.3
+   },
+   {
+    "ward": "Isolation",
+    "n": 5318,
+    "Muslim": 39.7,
+    "Christian": 14.1,
+    "Jewish": 46.2
+   },
+   {
+    "ward": "Infectious Diseases",
+    "n": 486,
+    "Muslim": 32.7,
+    "Christian": 13.0,
+    "Jewish": 54.3
+   },
+   {
+    "ward": "Venereal Diseases",
+    "n": 94,
+    "Muslim": 41.5,
+    "Christian": 11.7,
+    "Jewish": 46.8
+   },
+   {
+    "ward": "British Section",
+    "n": 2710,
+    "Muslim": 15.9,
+    "Christian": 75.8,
+    "Jewish": 8.3
+   }
+  ],
+  "baseline": {
+   "ward": "All admissions",
+   "n": 27842,
+   "Muslim": 54.2,
+   "Christian": 27.7,
+   "Jewish": 18.2
+  }
+ },
+ "mixing": {
+  "pages": {
+   "n": 2112,
+   "allThree": 1540,
+   "allThreePct": 72.9,
+   "two": 554,
+   "twoPct": 26.2,
+   "single": 18,
+   "singlePct": 0.9
+  },
+  "adjacency": [
+   {
+    "ward": "Surgical",
+    "n": 5078,
+    "observed": 63.6,
+    "chance": 61.9,
+    "excess": 1.6
+   },
+   {
+    "ward": "Medical",
+    "n": 3795,
+    "observed": 50.1,
+    "chance": 46.4,
+    "excess": 3.7
+   },
+   {
+    "ward": "General",
+    "n": 3645,
+    "observed": 54.3,
+    "chance": 51.0,
+    "excess": 3.3
+   },
+   {
+    "ward": "Maternity",
+    "n": 1979,
+    "observed": 49.1,
+    "chance": 45.2,
+    "excess": 4.0
+   },
+   {
+    "ward": "Isolation",
+    "n": 5318,
+    "observed": 43.4,
+    "chance": 39.1,
+    "excess": 4.3
+   },
+   {
+    "ward": "Infectious Diseases",
+    "n": 486,
+    "observed": 44.3,
+    "chance": 41.9,
+    "excess": 2.4
+   },
+   {
+    "ward": "British Section",
+    "n": 2710,
+    "observed": 74.8,
+    "chance": 60.7,
+    "excess": 14.0
+   }
+  ]
+ },
+ "britishSection": {
+  "total": 2763,
+  "designedBeds": 24,
+  "religion": [
+   {
+    "name": "Christian",
+    "n": 2057
+   },
+   {
+    "name": "Muslim",
+    "n": 432
+   },
+   {
+    "name": "Jewish",
+    "n": 225
+   }
+  ],
+  "nationality": [
+   {
+    "name": "British",
+    "n": 1794
+   },
+   {
+    "name": "Palestinian",
+    "n": 688
+   },
+   {
+    "name": "Polish",
+    "n": 25
+   },
+   {
+    "name": "American",
+    "n": 17
+   },
+   {
+    "name": "Syrian",
+    "n": 12
+   },
+   {
+    "name": "Palestinian British",
+    "n": 11
+   },
+   {
+    "name": "German",
+    "n": 10
+   }
+  ],
+  "nonBritish": {
+   "n": 958,
+   "byClass": {
+    "1": 32,
+    "2": 246,
+    "3": 594
+   },
+   "byReligion": {
+    "Muslim": 432,
+    "Christian": 274,
+    "Jewish": 214
+   },
+   "staff": 75,
+   "topOccupations": [
+    {
+     "name": "Nurse",
+     "n": 25
+    },
+    {
+     "name": "Prob. Nurse",
+     "n": 17
+    },
+    {
+     "name": "Labourer",
+     "n": 6
+    },
+    {
+     "name": "P/Nurse",
+     "n": 5
+    },
+    {
+     "name": "Police",
+     "n": 3
+    },
+    {
+     "name": "Soldier",
+     "n": 3
+    },
+    {
+     "name": "Grad. Nurse",
+     "n": 3
+    },
+    {
+     "name": "Lab.",
+     "n": 2
+    }
+   ]
+  },
+  "occupancy": [
+   {
+    "year": "1935",
+    "admissions": 261,
+    "bedDays": 2933,
+    "meanBeds": 8.0,
+    "pctOf24": 33
+   },
+   {
+    "year": "1936",
+    "admissions": 194,
+    "bedDays": 2202,
+    "meanBeds": 6.0,
+    "pctOf24": 25
+   },
+   {
+    "year": "1937",
+    "admissions": 248,
+    "bedDays": 3133,
+    "meanBeds": 8.6,
+    "pctOf24": 36
+   },
+   {
+    "year": "1938",
+    "admissions": 331,
+    "bedDays": 4250,
+    "meanBeds": 11.6,
+    "pctOf24": 49
+   },
+   {
+    "year": "1939",
+    "admissions": 383,
+    "bedDays": 4335,
+    "meanBeds": 11.9,
+    "pctOf24": 49
+   },
+   {
+    "year": "1940",
+    "admissions": 93,
+    "bedDays": 979,
+    "meanBeds": 2.7,
+    "pctOf24": 11
+   },
+   {
+    "year": "1944",
+    "admissions": 539,
+    "bedDays": 4844,
+    "meanBeds": 13.3,
+    "pctOf24": 55
+   },
+   {
+    "year": "1946",
+    "admissions": 376,
+    "bedDays": 3673,
+    "meanBeds": 10.1,
+    "pctOf24": 42
+   },
+   {
+    "year": "1947",
+    "admissions": 260,
+    "bedDays": 3137,
+    "meanBeds": 8.6,
+    "pctOf24": 36
+   },
+   {
+    "year": "1948",
+    "admissions": 57,
+    "bedDays": 434,
+    "meanBeds": 1.2,
+    "pctOf24": 5
+   }
+  ],
+  "reach": [
+   {
+    "group": "Muslim",
+    "n": 12461,
+    "pct": 3.5
+   },
+   {
+    "group": "Christian, Palestinian nat.",
+    "n": 3678,
+    "pct": 3.5
+   },
+   {
+    "group": "Christian, British nat.",
+    "n": 2451,
+    "pct": 72.7
+   },
+   {
+    "group": "Jewish, Palestinian nat.",
+    "n": 1634,
+    "pct": 8.6
+   },
+   {
+    "group": "Jewish, other/unrecorded nat.",
+    "n": 2468,
+    "pct": 3.4
+   }
+  ]
+ },
+ "mixedGroups": {
+  "mixed": [
+   {
+    "group": "Muslim",
+    "n": 15081,
+    "classN": 14436,
+    "class1": 0.4,
+    "class2": 5.6,
+    "class3": 94.0,
+    "cfr": 7.71,
+    "cfrN": 13703,
+    "cfrThirdClass": 8.01,
+    "cfrThirdClassN": 12552
+   },
+   {
+    "group": "Christian, Palestinian nat.",
+    "n": 4246,
+    "classN": 4059,
+    "class1": 2.2,
+    "class2": 21.6,
+    "class3": 76.2,
+    "cfr": 4.8,
+    "cfrN": 3872,
+    "cfrThirdClass": 5.7,
+    "cfrThirdClassN": 2876
+   },
+   {
+    "group": "Christian, British nat.",
+    "n": 2771,
+    "classN": 2631,
+    "class1": 14.4,
+    "class2": 83.5,
+    "class3": 2.0,
+    "cfr": 1.53,
+    "cfrN": 2618,
+    "cfrThirdClass": null,
+    "cfrThirdClassN": 51
+   },
+   {
+    "group": "Jewish, Palestinian nat.",
+    "n": 2114,
+    "classN": 2054,
+    "class1": 0.7,
+    "class2": 14.2,
+    "class3": 85.1,
+    "cfr": 3.89,
+    "cfrN": 2007,
+    "cfrThirdClass": 3.75,
+    "cfrThirdClassN": 1678
+   },
+   {
+    "group": "Jewish, other/unrecorded nat.",
+    "n": 2941,
+    "classN": 2881,
+    "class1": 0.5,
+    "class2": 4.6,
+    "class3": 94.9,
+    "cfr": 2.73,
+    "cfrN": 2825,
+    "cfrThirdClass": 2.6,
+    "cfrThirdClassN": 2654
+   }
+  ],
+  "plain": [
+   {
+    "group": "Muslim",
+    "n": 15081,
+    "classN": 14436,
+    "class1": 0.4,
+    "class2": 5.6,
+    "class3": 94.0,
+    "cfr": 7.71,
+    "cfrN": 13703
+   },
+   {
+    "group": "Christian",
+    "n": 7706,
+    "classN": 7332,
+    "class1": 7.2,
+    "class2": 45.2,
+    "class3": 47.6,
+    "cfr": 3.71,
+    "cfrN": 7138
+   },
+   {
+    "group": "Jewish",
+    "n": 5055,
+    "classN": 4935,
+    "class1": 0.6,
+    "class2": 8.6,
+    "class3": 90.8,
+    "cfr": 3.21,
+    "cfrN": 4832
+   }
+  ]
+ },
+ "withdrawal": {
+  "years": [
+   {
+    "year": "1930",
+    "n": 508,
+    "Muslim": 50.8,
+    "Christian": 19.5,
+    "Jewish": 29.7,
+    "isolationN": 12,
+    "jewishInIsolation": null
+   },
+   {
+    "year": "1931",
+    "n": 446,
+    "Muslim": 43.3,
+    "Christian": 23.8,
+    "Jewish": 33.0,
+    "isolationN": 227,
+    "jewishInIsolation": 54.2
+   },
+   {
+    "year": "1932",
+    "n": 419,
+    "Muslim": 41.1,
+    "Christian": 21.7,
+    "Jewish": 37.2,
+    "isolationN": 182,
+    "jewishInIsolation": 63.2
+   },
+   {
+    "year": "1933",
+    "n": 1795,
+    "Muslim": 46.9,
+    "Christian": 25.9,
+    "Jewish": 27.2,
+    "isolationN": 648,
+    "jewishInIsolation": 51.2
+   },
+   {
+    "year": "1934",
+    "n": 2317,
+    "Muslim": 48.6,
+    "Christian": 25.8,
+    "Jewish": 25.6,
+    "isolationN": 665,
+    "jewishInIsolation": 50.1
+   },
+   {
+    "year": "1935",
+    "n": 2008,
+    "Muslim": 51.7,
+    "Christian": 21.5,
+    "Jewish": 26.8,
+    "isolationN": 542,
+    "jewishInIsolation": 53.5
+   },
+   {
+    "year": "1936",
+    "n": 2474,
+    "Muslim": 51.9,
+    "Christian": 27.1,
+    "Jewish": 21.0,
+    "isolationN": 576,
+    "jewishInIsolation": 52.3
+   },
+   {
+    "year": "1937",
+    "n": 2899,
+    "Muslim": 56.4,
+    "Christian": 26.8,
+    "Jewish": 16.8,
+    "isolationN": 866,
+    "jewishInIsolation": 40.0
+   },
+   {
+    "year": "1938",
+    "n": 3093,
+    "Muslim": 56.1,
+    "Christian": 27.5,
+    "Jewish": 16.4,
+    "isolationN": 857,
+    "jewishInIsolation": 43.4
+   },
+   {
+    "year": "1939",
+    "n": 3077,
+    "Muslim": 46.7,
+    "Christian": 31.4,
+    "Jewish": 21.9,
+    "isolationN": 1098,
+    "jewishInIsolation": 41.6
+   },
+   {
+    "year": "1940",
+    "n": 648,
+    "Muslim": 48.9,
+    "Christian": 31.3,
+    "Jewish": 19.8,
+    "isolationN": 107,
+    "jewishInIsolation": 36.4
+   },
+   {
+    "year": "1944",
+    "n": 2894,
+    "Muslim": 59.2,
+    "Christian": 30.5,
+    "Jewish": 10.3,
+    "isolationN": 15,
+    "jewishInIsolation": null
+   },
+   {
+    "year": "1946",
+    "n": 2300,
+    "Muslim": 61.3,
+    "Christian": 30.6,
+    "Jewish": 8.1,
+    "isolationN": 4,
+    "jewishInIsolation": null
+   },
+   {
+    "year": "1947",
+    "n": 2146,
+    "Muslim": 63.6,
+    "Christian": 29.3,
+    "Jewish": 7.1,
+    "isolationN": 5,
+    "jewishInIsolation": null
+   },
+   {
+    "year": "1948",
+    "n": 729,
+    "Muslim": 70.0,
+    "Christian": 29.6,
+    "Jewish": 0.4,
+    "isolationN": 0,
+    "jewishInIsolation": null
+   }
+  ],
+  "lateMonths": [
+   {
+    "month": "1947-04",
+    "Muslim": 149,
+    "Christian": 66,
+    "Jewish": 20,
+    "n": 235
+   },
+   {
+    "month": "1947-05",
+    "Muslim": 405,
+    "Christian": 154,
+    "Jewish": 59,
+    "n": 618
+   },
+   {
+    "month": "1947-06",
+    "Muslim": 120,
+    "Christian": 39,
+    "Jewish": 12,
+    "n": 171
+   },
+   {
+    "month": "1947-08",
+    "Muslim": 2,
+    "Christian": 1,
+    "Jewish": 0,
+    "n": 3
+   },
+   {
+    "month": "1947-09",
+    "Muslim": 349,
+    "Christian": 163,
+    "Jewish": 26,
+    "n": 538
+   },
+   {
+    "month": "1947-10",
+    "Muslim": 340,
+    "Christian": 206,
+    "Jewish": 35,
+    "n": 581
+   },
+   {
+    "month": "1948-01",
+    "Muslim": 163,
+    "Christian": 50,
+    "Jewish": 1,
+    "n": 214
+   },
+   {
+    "month": "1948-02",
+    "Muslim": 129,
+    "Christian": 67,
+    "Jewish": 2,
+    "n": 198
+   },
+   {
+    "month": "1948-03",
+    "Muslim": 152,
+    "Christian": 68,
+    "Jewish": 0,
+    "n": 220
+   },
+   {
+    "month": "1948-04",
+    "Muslim": 66,
+    "Christian": 31,
+    "Jewish": 0,
+    "n": 97
+   }
+  ]
+ },
+ "staff": {
+  "n": 203,
+  "female": 187,
+  "comparison": [
+   {
+    "religion": "Muslim",
+    "staffPct": 4.6,
+    "staffN": 9,
+    "allPct": 54.2
+   },
+   {
+    "religion": "Christian",
+    "staffPct": 41.0,
+    "staffN": 80,
+    "allPct": 27.7
+   },
+   {
+    "religion": "Jewish",
+    "staffPct": 54.4,
+    "staffN": 106,
+    "allPct": 18.2
+   }
+  ],
+  "wards": [
+   {
+    "name": "British Section",
+    "n": 78
+   },
+   {
+    "name": "General",
+    "n": 44
+   },
+   {
+    "name": "Medical",
+    "n": 27
+   },
+   {
+    "name": "Not recorded",
+    "n": 19
+   },
+   {
+    "name": "Surgical",
+    "n": 18
+   },
+   {
+    "name": "Isolation",
+    "n": 8
+   }
+  ],
+  "occupations": [
+   {
+    "name": "Nurse",
+    "n": 70
+   },
+   {
+    "name": "Prob. Nurse",
+    "n": 28
+   },
+   {
+    "name": "nurse",
+    "n": 8
+   },
+   {
+    "name": "Graduate Nurse",
+    "n": 6
+   },
+   {
+    "name": "Prob. nurse",
+    "n": 5
+   },
+   {
+    "name": "P/Nurse",
+    "n": 5
+   },
+   {
+    "name": "Doctor",
+    "n": 4
+   },
+   {
+    "name": "Wardmaid",
+    "n": 4
+   },
+   {
+    "name": "Dist. Nurse",
+    "n": 3
+   },
+   {
+    "name": "C/Nurse",
+    "n": 3
+   }
+  ],
+  "inBritishSection": 78
+ },
+ "gaps": {
+  "coverage": [
+   {
+    "column": "Diagnosis as written",
+    "filled": 25436,
+    "pct": 88.0
+   },
+   {
+    "column": "Diagnosis as standardized",
+    "filled": 28210,
+    "pct": 97.6
+   },
+   {
+    "column": "ICD-9 Code",
+    "filled": 27861,
+    "pct": 96.4
+   },
+   {
+    "column": "ICD-9 Chapter",
+    "filled": 27811,
+    "pct": 96.2
+   },
+   {
+    "column": "Result",
+    "filled": 26573,
+    "pct": 91.9
+   },
+   {
+    "column": "Ward",
+    "filled": 24071,
+    "pct": 83.3
+   },
+   {
+    "column": "Class",
+    "filled": 27583,
+    "pct": 95.4
+   },
+   {
+    "column": "Age",
+    "filled": 28055,
+    "pct": 97.0
+   },
+   {
+    "column": "Procedure",
+    "filled": 517,
+    "pct": 1.8
+   }
+  ],
+  "byYear": [
+   {
+    "year": "1930",
+    "n": 523,
+    "icd9Missing": 2.1,
+    "wardMissing": 95.4,
+    "resultMissing": 6.9
+   },
+   {
+    "year": "1931",
+    "n": 529,
+    "icd9Missing": 1.3,
+    "wardMissing": 2.3,
+    "resultMissing": 4.2
+   },
+   {
+    "year": "1932",
+    "n": 424,
+    "icd9Missing": 0.5,
+    "wardMissing": 4.7,
+    "resultMissing": 5.2
+   },
+   {
+    "year": "1933",
+    "n": 1810,
+    "icd9Missing": 0.7,
+    "wardMissing": 4.2,
+    "resultMissing": 1.4
+   },
+   {
+    "year": "1934",
+    "n": 2354,
+    "icd9Missing": 0.6,
+    "wardMissing": 7.3,
+    "resultMissing": 2.0
+   },
+   {
+    "year": "1935",
+    "n": 2081,
+    "icd9Missing": 1.2,
+    "wardMissing": 9.1,
+    "resultMissing": 5.4
+   },
+   {
+    "year": "1936",
+    "n": 2597,
+    "icd9Missing": 1.5,
+    "wardMissing": 8.5,
+    "resultMissing": 5.4
+   },
+   {
+    "year": "1937",
+    "n": 3061,
+    "icd9Missing": 1.2,
+    "wardMissing": 7.3,
+    "resultMissing": 5.4
+   },
+   {
+    "year": "1938",
+    "n": 3154,
+    "icd9Missing": 2.7,
+    "wardMissing": 8.1,
+    "resultMissing": 6.6
+   },
+   {
+    "year": "1939",
+    "n": 3136,
+    "icd9Missing": 0.5,
+    "wardMissing": 2.5,
+    "resultMissing": 4.5
+   },
+   {
+    "year": "1940",
+    "n": 665,
+    "icd9Missing": 0.6,
+    "wardMissing": 17.0,
+    "resultMissing": 5.9
+   },
+   {
+    "year": "1944",
+    "n": 2968,
+    "icd9Missing": 4.6,
+    "wardMissing": 30.0,
+    "resultMissing": 7.6
+   },
+   {
+    "year": "1946",
+    "n": 2364,
+    "icd9Missing": 5.2,
+    "wardMissing": 33.1,
+    "resultMissing": 11.3
+   },
+   {
+    "year": "1947",
+    "n": 2281,
+    "icd9Missing": 8.2,
+    "wardMissing": 36.1,
+    "resultMissing": 18.1
+   },
+   {
+    "year": "1948",
+    "n": 775,
+    "icd9Missing": 24.1,
+    "wardMissing": 39.4,
+    "resultMissing": 38.3
+   }
+  ],
+  "byGroup": [
+   {
+    "group": "Muslim",
+    "n": 15081,
+    "icd9Missing": 4.1,
+    "wardMissing": 17.4,
+    "resultMissing": 9.1
+   },
+   {
+    "group": "Christian",
+    "n": 7706,
+    "icd9Missing": 3.0,
+    "wardMissing": 13.1,
+    "resultMissing": 7.4
+   },
+   {
+    "group": "Jewish",
+    "n": 5055,
+    "icd9Missing": 1.9,
+    "wardMissing": 18.9,
+    "resultMissing": 4.4
+   }
+  ],
+  "wardMissingLate": [
+   {
+    "year": "1938",
+    "Muslim": 9.3,
+    "Christian": 5.4,
+    "Jewish": 8.7
+   },
+   {
+    "year": "1944",
+    "Muslim": 34.2,
+    "Christian": 17.3,
+    "Jewish": 43.0
+   },
+   {
+    "year": "1946",
+    "Muslim": 30.9,
+    "Christian": 34.1,
+    "Jewish": 48.9
+   },
+   {
+    "year": "1947",
+    "Muslim": 33.0,
+    "Christian": 37.4,
+    "Jewish": 57.9
+   },
+   {
+    "year": "1948",
+    "Muslim": 41.0,
+    "Christian": 35.6,
+    "Jewish": null
+   }
+  ],
+  "wardBias": {
+   "known": {
+    "n": 24071,
+    "cfr": 5.66,
+    "Muslim": 53.6,
+    "Christian": 28.8,
+    "Jewish": 17.6
+   },
+   "missing": {
+    "n": 4843,
+    "cfr": 6.41,
+    "Muslim": 57.2,
+    "Christian": 22.0,
+    "Jewish": 20.8
+   }
+  }
+ },
+ "payment": {
+  "byGroup": [
+   {
+    "group": "Muslim",
+    "n": 15081,
+    "recordedPct": 73.1,
+    "gratisPct": 99.59,
+    "recordedN": 11028
+   },
+   {
+    "group": "Christian",
+    "n": 7706,
+    "recordedPct": 57.6,
+    "gratisPct": 99.68,
+    "recordedN": 4438
+   },
+   {
+    "group": "Jewish",
+    "n": 5055,
+    "recordedPct": 80.8,
+    "gratisPct": 99.95,
+    "recordedN": 4083
+   }
+  ],
+  "byClass": [
+   {
+    "class": "2",
+    "Muslim": 99.3,
+    "Christian": 99.5,
+    "Jewish": 99.3
+   },
+   {
+    "class": "3",
+    "Muslim": 99.6,
+    "Christian": 99.9,
+    "Jewish": 100.0
+   }
+  ]
+ }
+}

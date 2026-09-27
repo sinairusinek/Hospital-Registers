@@ -1,6 +1,6 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen } from 'lucide-react';
+import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen, Users2 } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import { matchesFilters } from './filtering';
 import AboutView from './components/AboutView';
@@ -11,6 +11,7 @@ import PlacesView from './components/PlacesView';
 import MapView from './components/MapView';
 import TimelineView from './components/TimelineView';
 import HistoryView from './components/HistoryView';
+import SharedSpaceView from './components/SharedSpaceView';
 
 declare const Papa: any;
 
@@ -251,6 +252,15 @@ const App: React.FC = () => {
                 History
               </button>
               <button
+                onClick={() => setActiveView('shared-space')}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  activeView === 'shared-space' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Users2 size={16} />
+                Shared Space
+              </button>
+              <button
                 onClick={() => setActiveView('browse')}
                 disabled={data.length === 0}
                 className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
@@ -322,6 +332,10 @@ const App: React.FC = () => {
           // Likewise the history: a self-contained document in public/, framed
           // as it stands rather than ported into React.
           <HistoryView />
+        ) : activeView === 'shared-space' ? (
+          // The article's figures stand on their own generated JSON, so like the
+          // timeline they are readable without the register TSV.
+          <SharedSpaceView />
         ) : isLoading ? (
           <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-50">
             <div className="w-16 h-16 border-4 border-indigo-100 border-t-indigo-600 rounded-full animate-spin mb-4"></div>

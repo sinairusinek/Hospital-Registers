@@ -55,6 +55,16 @@ if (existsSync(personnelSrc)) {
   console.log(`Staged personnel → ${personnelDest}`);
 }
 
+// The Shared Space view's figures — ward mixing, the British Section, the mixed
+// religion/nationality grouping — built by pipeline/shared_space_figures.py.
+// Optional, like the rest: the view says how to build it rather than failing.
+const sharedSrc = resolve(here, '../../data/public/shared-space.json');
+const sharedDest = resolve(here, '../public/data/shared-space.json');
+if (existsSync(sharedSrc)) {
+  copyFileSync(sharedSrc, sharedDest);
+  console.log(`Staged shared-space figures → ${sharedDest}`);
+}
+
 // Coordinates for the reviewed City values, built by pipeline/place_coords.py.
 // Optional: without it the Map view says how to build it rather than failing.
 const coordsSrc = resolve(here, '../../data/public/place-coords.tsv');
