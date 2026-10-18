@@ -52,7 +52,13 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
     { label: 'Sex', internalKey: 'sex', aliases: ['gender'] },
     { label: 'Religion', internalKey: 'religion', aliases: ['standardized religion', 'standardized_religion'] },
     { label: 'Nationality', internalKey: 'nationality', aliases: ['standardnationality'] },
-    { label: 'Ward', internalKey: 'ward', aliases: ['standardized ward'] }
+    { label: 'Ward', internalKey: 'ward', aliases: ['standardized ward'] },
+    // Both read out of the Address column with Yoni Furas's vocabulary
+    // (pipeline/address_layers.py). An institution in the address is how the
+    // patient was reached — workplace, custody, regiment — not proof of
+    // employment.
+    { label: 'Town quarter', internalKey: 'neighbourhood', aliases: [] },
+    { label: 'Institution in address', internalKey: 'address institution', aliases: [] }
   ];
 
   const rangeTargets = [

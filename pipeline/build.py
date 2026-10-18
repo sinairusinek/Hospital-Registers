@@ -30,6 +30,8 @@ from collections import Counter
 from datetime import date, timedelta
 from pathlib import Path
 
+from address_layers import classify as classify_address
+
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "public" / "hospital-registers-2025-08-10.tsv"
 OUTPUT = ROOT / "data" / "public" / "hospital-registers-normalized.tsv"
@@ -71,6 +73,21 @@ def load_kima_decisions() -> dict[str, tuple[str, str]]:
             if row.get("decision") == "matched" and (row.get("kima_id") or row.get("wikidata_qid")):
                 links[row["city"]] = (row.get("kima_id", ""), row.get("wikidata_qid", ""))
     return links
+
+
+def load_haifa_cities() -> set[str]:
+    """City values the gazetteer places in Haifa: the city, or one of its
+    quarters. Haifa's quarters may be read from these records' addresses."""
+    cities: set[str] = set()
+    if not KIMA_DECISIONS.exists():
+        return cities
+    with KIMA_DECISIONS.open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle, delimiter="\t"):
+            if row.get("decision") == "matched" and (
+                    row.get("kima_id") == "791" or "(Haifa," in (row.get("kima_name_rom") or "")
+                    or row.get("wikidata_qid") in ("Q12404212", "Q7212307")):
+                cities.add(row["city"])
+    return cities
 
 
 def load_catalogued_years() -> dict[str, set[int]]:
@@ -1102,6 +1119,8 @@ def main() -> int:
 
     changes: Counter[tuple[str, str, str]] = Counter()
     kima_links = load_kima_decisions()
+    haifa_cities = load_haifa_cities()
+    layered: Counter[str] = Counter()
     kima_linked = 0
     street_reseated = 0
     final_values: dict[str, Counter[str]] = {col: Counter() for col in RULES}
@@ -1494,6 +1513,14 @@ def main() -> int:
 
         if "Address" in row:
             before = row["Address"] or ""
+            # The institution and quarter the address names, read before the
+            # house numbers go (see pipeline/address_layers.py).
+            city = row.get("City") or ""
+            layers = classify_address(before, city, city in haifa_cities)
+            row.update(layers)
+            for column in ("Address institution", "Neighbourhood"):
+                if layers[column]:
+                    layered[column] += 1
             after = coarsen_address(before)
             if after != before:
                 coarsened += 1
@@ -1889,6 +1916,11 @@ def main() -> int:
         fieldnames.append("Review Flags")
     if "City as written" not in fieldnames and "City" in fieldnames:
         fieldnames.insert(fieldnames.index("City"), "City as written")
+    if "Neighbourhood" not in fieldnames and "Address" in fieldnames:
+        at = fieldnames.index("Address") + 1
+        for offset, name in enumerate(("Neighbourhood", "Address institution",
+                                       "Address institution type", "Address layer source")):
+            fieldnames.insert(at + offset, name)
     if "City Kima ID" not in fieldnames and "City" in fieldnames:
         at = fieldnames.index("City") + 1
         fieldnames.insert(at, "City Kima ID")
@@ -1951,6 +1983,9 @@ def main() -> int:
         if kima_linked:
             writer.writerow(["derived", "City Kima ID", "reviewed match in kimatch/city-kima-decisions.tsv",
                              "Kima place id and Wikidata QID attached", kima_linked])
+        for column, count in layered.most_common():
+            writer.writerow(["derived", column, "read from Address (pipeline/address_layers.py)",
+                             "Furas's label, or a pattern drawn from his labels", count])
         for label, count in chapters.most_common():
             writer.writerow(["derived", "ICD-9 Chapter", "", label, count])
         if icd9_padded:
