@@ -122,9 +122,12 @@ What his identifications changed: al-Tira is the Mandate village Q4118776
 Ave) is the Herzliya quarter of Haifa, not Herzliya town; bare "Ara" is 'Ara,
 not Ar'ara; Ard el-Yahud gets its own QID; and about 150 Galilee, Carmel and
 Wadi Ara villages are linked. Two fixes rode along: "Hadar" pointed at Kefar
-Hadar (Hod HaSharon) while meaning Hadar HaCarmel; Rechavia and Kiryat Shmuel
-are the Haifa quarters, not Jerusalem's; "Gedera" and "Ghedera" are HTR misreadings of Hedera, so Hadera (user ruling). Haifa quarters with no Kima point are
-drawn at Haifa (`source` = `haifa-quarter-no-point` in place-coords.tsv).
+Hadar (Hod HaSharon) while meaning Hadar HaCarmel; Kiryat Shmuel is Haifa's,
+not Jerusalem's; "Gedera" and "Ghedera" are HTR misreadings of Hedera, so
+Hadera; and "Rechavia, Affuleh S/D." (NB24 p99) is the clerk's slip for
+Merhavia by Afula, not Rehavia in Jerusalem or Haifa (user rulings). Haifa
+quarters with no Kima point are drawn at Haifa (`source` =
+`haifa-quarter-no-point` in place-coords.tsv).
 
 Rerun after editing the rulings:
 

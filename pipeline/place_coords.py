@@ -200,7 +200,7 @@ def main() -> None:
                 row["source"] = "wikidata"
                 row["standing"] = "confirmed"
 
-    # A Haifa quarter Kima carries without a point (Rehavya in Haifa) is still
+    # A Haifa quarter Kima carries without a point (Rehavya in Haifa, say) is still
     # in Haifa: draw it at the city's point rather than leave it off the map,
     # and say so in `source`.
     haifa = next((r for r in rows if r["kima_id"] == "791" and r["lat"]), None)

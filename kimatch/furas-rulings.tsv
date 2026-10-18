@@ -238,7 +238,7 @@ Ardel Yahud|Ard al-Yahud	Ardel Yahud|Ard al-Yahud	2	matched		Q12404212			family	
 Adel Yahud	Adel Yahud	1	matched		Q12404212			family	agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas
 Nahliel Yahud	Nahliel Yahud	1	matched		Q12404212			family	agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas
 Halisa	Halisa	1	matched	83220	Q7212307			family	agent	Halisa, Haifa - same place as Furas Hallisa Qrt
-Rechavia	Rechavia	1	matched	22262		Rehavia		user	human	Rehavia, Haifa quarter, not Jerusalem's (user ruling 2026-10-18). Kima entry has no point; drawn at Haifa. NB: the address reads "Rechavia Affuleh S/D." - worth a look at the scan
+Rechavia	Rechavia	1	matched	205	Q2920170	Rehavia		user	human	"Merhavia - the ledger reads ""Rechavia, Affuleh S/D."" (NB24 p99, serial 642): the clerk's slip for Merhavia by Afula, not a Haifa or Jerusalem quarter (user ruling 2026-10-18)"
 Kiryat Shmuel	Kiryat Shmuel	1	matched	22901		Kiryat Shmuel		sweep	agent	Kiryat Shmuel in Haifa bay (founded 1938), not Jerusalem's; Jewish patient, Nov 1939. Found by the sweep that followed the Rehavia ruling
-Gedera	Gedera	4	matched	858	Q471886			user	human	Hadera - "Gedera" is an HTR misreading of Hedera (user ruling 2026-10-18)
+Gedera	Gedera	4	matched	858	Q471886			user	human	"Hadera - ""Gedera"" is an HTR misreading of Hedera (user ruling 2026-10-18)"
 Ghedera	Ghedera	2	matched	858	Q471886			user	human	Hadera - HTR misreading of Hedera (user ruling 2026-10-18); closes the Hadera-vs-Gedera hold

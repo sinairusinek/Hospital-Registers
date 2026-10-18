@@ -531,7 +531,7 @@ Ramat Gan	Ramat Gan	1	777	Ramat Gan (Israel)	Q192807	kima-dump	Q192807	matched	C
 Ramatby	Ramatby	1						unmatched-junk	C_review		agent		2026-08-06
 Ramleh	Ramleh	1	456	Ramla (Israel)	Q221447	kima-dump	Q4518509	matched	C_review		agent	held for human review: QID conflict - kima-dump Q221447 vs direct Wikidata Q4518509	2026-08-06
 Ras El Ein	Ras El Ein	1					Q655065	unmatched-ambiguous	C_review		agent		2026-08-06
-Rechavia	Rechavia	1	22262	Rehavya (Haifa, Israel)		human		matched	A_autolink	0.95	human	"Rehavia, Haifa quarter, not Jerusalem's (user ruling 2026-10-18). Kima entry has no point; drawn at Haifa. NB: the address reads ""Rechavia Affuleh S/D."" - worth a look at the scan"	2026-10-18
+Rechavia	Rechavia	1	205	Merhavya (Israel)	Q2920170	human		matched	A_autolink	0.95	human	"Merhavia - the ledger reads ""Rechavia, Affuleh S/D."" (NB24 p99, serial 642): the clerk's slip for Merhavia by Afula, not a Haifa or Jerusalem quarter (user ruling 2026-10-18)"	2026-10-18
 Rehovoth	Rehovoth	1	562	Rehovot (Israel)	Q207350	kima-dump	Q207350	matched	C_review		agent		2026-08-06
 Roy	Roy	1			Q11878352	human		matched	C_review		human	El-Ro'i by Kiryat Haroshet; no Kima entry, Wikidata only	2026-08-06
 Rumat Neshanan	Rumat Neshanan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump		matched	C_review		agent	read as Ramat/Neve Shaanan	2026-08-06
