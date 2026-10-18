@@ -65,6 +65,11 @@ const QUEUES: { key: string; title: string; question: string }[] = [
     question: 'Links that follow decisions you made in the review session: Tel Amal to Nir David, Bethania to Bitanya, the finer-reading pipe policy, al-Bassa, Degania Alef.'
   },
   {
+    key: 'matched-furas',
+    title: 'Matched — Yoni Furas’s identifications',
+    question: 'Places identified by Yoni Furas (University of Haifa), collaborator, in his annotation of the patient addresses: the Mandate villages of the Galilee and Carmel, the Haifa quarters, al-Tira as the village rather than Tirat Carmel. Entries he marked "check" are not applied. His sheet is published as data/public/furas-unique-addresses-2024.tsv.'
+  },
+  {
     key: 'matched-auto',
     title: 'Matched — engine, geo-audited',
     question: 'Unambiguous exact-name matches from the kimatch engine, each checked to fall inside the Israel/Palestine region. The least likely to need attention.'

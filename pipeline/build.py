@@ -287,7 +287,9 @@ CITY = {
     "hadar hacarmel": "Hadar Hacarmel",
     "yajur": "Yajour", "yagur": "Yajour", "yagour": "Yajour",
     "tarsheeha": "Tarshiha",
-    "ara": "Arara", "ar'ara": "Arara", "arrara": "Arara", "ara'ra": "Arara",
+    # Bare "Ara" is 'Ara, the neighbouring village in Wadi Ara, not Ar'ara
+    # (Yoni Furas's reading, kimatch/furas-rulings.tsv); it keeps its own value.
+    "ar'ara": "Arara", "arrara": "Arara", "ara'ra": "Arara",
     "arra": "Arara", "araara": "Arara", "a'ara": "Arara", "ara'ara": "Arara",
     # "Rameleh" looks like Ramleh but the one record carrying it says "of
     # Acre": it is Rameh (al-Rama) in the Galilee, as are Rami and the

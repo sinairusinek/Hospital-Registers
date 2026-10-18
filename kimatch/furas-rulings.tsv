@@ -1,0 +1,244 @@
+city	city_as_written	n_records	decision	kima_id	wikidata_qid	furas_reading	furas_type	match	decided_by	note
+Tireh	Tireh	258	matched	756	Q4118776	Tireh	Village	exact	furas	Tireh - per Y. Furas
+Tira	Tira	28	matched	756	Q4118776	Tira	Village	exact	furas	Tireh - per Y. Furas
+Herzlia	Herzlia	19	matched	791	Q41621			exact	furas	Herzliya quarter of Haifa (Hadar), not Herzliya town - per Y. Furas; no own gazetteer entry, drawn at Haifa
+Herzlia	Herzliya	13	matched	791	Q41621			exact	furas	Herzliya quarter of Haifa (Hadar), not Herzliya town - per Y. Furas; no own gazetteer entry, drawn at Haifa
+Herzlia	Herzelia	4	matched	791	Q41621	Herzelia	Street	exact	furas	Herzliya quarter of Haifa (Hadar), not Herzliya town - per Y. Furas; no own gazetteer entry, drawn at Haifa
+Tireh	|Tireh	1	matched	756	Q4118776	Tireh	Village	exact	furas	Tireh - per Y. Furas
+Julis	Julis	36	matched	82237	Q2601777	Julis	Village	exact	furas	Julis - per Y. Furas
+Kafr Yasif	Kafr Yasif	29	matched	88951	Q2632879	Kafr Yasif	Village	exact	furas	Kafr Yasif - per Y. Furas
+Arara	Arara	29	matched	20918	Q2915935	Ararah	Village	exact	furas	Ararah - per Y. Furas
+Tamra	Tamra	28	matched	20270	Q168176	Tamra	Village	exact	furas	Tamra - per Y. Furas
+Jish	Jish	23	matched	88554	Q1527236	Jish	village	exact	furas	Jish - per Y. Furas
+Igzim	Igzim	21	matched		Q2918334	Igzim	Village	exact	furas	Igzim - per Y. Furas
+Mughar	Mughar	17	matched	21974	Q930847	Mughar	Village	exact	furas	Mughar - per Y. Furas
+Um el Fahm	Um el Fahm	14	matched	743	Q168245	Um el Fahm	village	exact	furas	Um el Fahm - per Y. Furas
+Fassuta	Fassuta	14	matched	21519	Q2917294	Fassouta	Village	fuzzy 0.93	furas	Fassouta - per Y. Furas
+Shaab	Shaab	13	matched	77238	Q2655669	Shaab	Village	exact	furas	Shaab - per Y. Furas
+Sha'ab	Sha'ab	13	matched	77238	Q2655669	Shaab	Village	exact	furas	Shaab - per Y. Furas
+Daliet el Carmel	Daliet el Carmel	11	matched	73128	Q2667061	Daliet el Carmel	Village	exact	furas	Daliet el Carmel - per Y. Furas
+Ararah	Ararah	11	matched	20918	Q2915935	Ararah	Village	exact	furas	Ararah - per Y. Furas
+Ibillin	Ibillin	11	matched	21569	Q2915647	Ibillin	Village	exact	furas	Ibillin - per Y. Furas
+Arara	Ar'ara	10	matched	20918	Q2915935	Ararah	Village	exact	furas	Ararah - per Y. Furas
+Subbarin	Subbarin	9	matched		Q7395979	Subbarin	Village	exact	furas	Subbarin - per Y. Furas
+Isfia	Isfia	8	matched	26671	Q2890836	Isfia	Village	exact	furas	Asfia - per Y. Furas
+Sabbarin	Sabbarin	7	matched		Q7395979	Subbarin	Village	fuzzy 0.88	furas	Subbarin - per Y. Furas
+Sha'b	Sha'b	5	matched	77238	Q2655669	Shaab	Village	fuzzy 0.89	furas	Shaab - per Y. Furas
+HAIFA	HAIFA	5	matched	791	Q41621	Haifa	Settlement	exact	furas	Haifa - per Y. Furas
+Arara	Arrara	5	matched	20918	Q2915935	Ararah	Village	fuzzy 0.91	furas	Ararah - per Y. Furas
+Kafr Yasif	Kufr Yasif	4	matched	88951	Q2632879	Kafr Yasif	Village	fuzzy 0.89	furas	Kafr Yasif - per Y. Furas
+Arah	Arah	4	matched		Q2859313	Arah	Village	exact	furas	Arah - per Y. Furas
+Fassouta	Fassouta	4	matched	21519	Q2917294	Fassouta	Village	exact	furas	Fassouta - per Y. Furas
+Kakun	Kakun	4	matched	19717	Q2919625	Kakoun	Village	fuzzy 0.91	furas	Kakoun - per Y. Furas
+Arara	Ara'ra	4	matched	20918	Q2915935	Ararah	Village	exact	furas	Ararah - per Y. Furas
+Balad al-Sheikh / Haifa	Balad al-Sheikh / Haifa	4	matched	21670	Q2776471	Balad Sheikh, Haifa	Village	fuzzy 0.94	furas	Balad el-Sheikh - per Y. Furas
+Kakoun	Kakoun	3	matched	19717	Q2919625	Kakoun	Village	exact	furas	Kakoun - per Y. Furas
+Freidis	Freidis	3	matched	84891	Q1011538	Freidis	Village	exact	furas	Fureidis - per Y. Furas
+Ibellin	Ibellin	3	matched	21569	Q2915647	Ibillin	Village	fuzzy 0.86	furas	Ibillin - per Y. Furas
+Bassah	Bassah	3	matched	21539	Q2915875	Bassah	Village	exact	furas	Bassa - per Y. Furas
+Saffuriyya	Saffuriyya	3	matched	85997	Q18192054	Saffuria	Village	fuzzy 0.89	furas	Saffurieh - per Y. Furas
+Saffuriya	Saffuriya	3	matched	85997	Q18192054	Saffuria	Village	fuzzy 0.94	furas	Saffurieh - per Y. Furas
+Igzim	Iggzim	3	matched		Q2918334	Igzim	Village	fuzzy 0.91	furas	Igzim - per Y. Furas
+Ain Hod	Ain Hod	2	matched	18441	Q991378	Ain Hod	Village	exact	furas	Ain Hod - per Y. Furas
+Sulam	Sulam	2	matched	86790	Q2777713	Sulam	Settlement	exact	furas	Sulam - per Y. Furas
+Dalieh el Carmel	Dalieh el Carmel	2	matched	73128	Q2667061	Daliet el Carmel	Village	fuzzy 0.93	furas	Daliet el Carmel - per Y. Furas
+Araarah	Araarah	2	matched	20918	Q2915935	Ararah	Village	fuzzy 0.92	furas	Ararah - per Y. Furas
+Balad el Sheik	Balad el Sheik	2	matched	21670	Q2776471	Balad el Sheikh	Village	fuzzy 0.96	furas	Balad el-Sheikh - per Y. Furas
+Shaáb	Shaáb	2	matched	77238	Q2655669	Shaab	Village	fuzzy 0.89	furas	Shaab - per Y. Furas
+Arara	Arra	2	matched	20918	Q2915935	Ararah	Village	fuzzy 0.89	furas	Ararah - per Y. Furas
+Mughar	Mghar	2	matched	21974	Q930847	Mughar	Village	fuzzy 0.91	furas	Mughar - per Y. Furas
+Kafr Yasif	Kafr Yassif	2	matched	88951	Q2632879	Kafr Yasif	Village	fuzzy 0.95	furas	Kafr Yasif - per Y. Furas
+Fureidis	Fureidis	2	matched	84891	Q1011538	Freidis	Village	fuzzy 0.93	furas	Fureidis - per Y. Furas
+Um El Fahm	Um El Fahm	2	matched	743	Q168245	Um el Fahm	village	exact	furas	Um el Fahm - per Y. Furas
+Kafr Yasif	Kafar Yasif	1	matched	88951	Q2632879	Kafr Yasif	Village	exact	furas	Kafr Yasif - per Y. Furas
+Kafr Yasif	Kafr-Yasif	1	matched	88951	Q2632879	Kafr Yasif	Village	exact	furas	Kafr Yasif - per Y. Furas
+Ain Hod	Ain Hod.	1	matched	18441	Q991378	Ain Hod	Village	exact	furas	Ain Hod - per Y. Furas
+Shaab village	Shaab village	1	matched	77238	Q2655669	Shaab	Village	exact	furas	Shaab - per Y. Furas
+Yabed	Yabed	1	matched	75339	Q1828708	Yabed	Village	exact	furas	Ya'bad - per Y. Furas
+Haifa S/Dist	Haifa S/Dist.	1	matched	791	Q41621	Haifa SDist		exact	furas	Haifa SDist: Haifa place per Y. Furas; no own gazetteer entry, drawn at Haifa
+Saffuria	Saffuria	1	matched	85997	Q18192054	Saffuria	Village	exact	furas	Saffurieh - per Y. Furas
+'Arah	'Arah	1	matched		Q2859313	Arah	Village	exact	furas	Arah - per Y. Furas
+I'billin	I'billin	1	matched	21569	Q2915647	Ibillin	Village	exact	furas	Ibillin - per Y. Furas
+Daliet El Carmel	Daliet El Carmel	1	matched	73128	Q2667061	Daliet el Carmel	Village	exact	furas	Daliet el Carmel - per Y. Furas
+Naza[reth]	Naza[reth]	1	matched	18	Q430776	Nazareth	City	exact	furas	Nazareth - per Y. Furas
+Gaza	Gaza	29	matched	12982	Q47492	Gaza	City	exact	furas	Gaza - per Y. Furas
+Yarka	Yarka	24	matched	18267	Q2640151	Yarka	Village	exact	furas	Yarka - per Y. Furas
+Deir Hanna	Deir Hanna	19	matched	21739	Q612483	Der Hanna		fuzzy 0.94	furas	Deir Hanna - per Y. Furas
+Amman	Amman	19	matched	74	Q3805	amman	City	exact	furas	Amman - per Y. Furas
+Abu Snan	Abu Snan	17	matched	80956	Q2572624	Abu Snan	Village	exact	furas	Abu Snan - per Y. Furas
+Trans-Jordan	Trans-Jordan	15	matched	17467	Q867586	Transjordan	City	exact	furas	Salt - per Y. Furas
+Isfiya	Isfiya	14	matched	26671	Q2890836	Isiya	Village	fuzzy 0.91	furas	Asfia - per Y. Furas
+Kafr Kanna	Kafr Kanna	13	matched	20496	Q2633158	Kaf Kanna	Village	fuzzy 0.94	furas	Kafr Kanna - per Y. Furas
+Damoun	Damoun	13	matched		Q1186264	Damoun	Village	exact	furas	Damun - per Y. Furas
+Damun	Damun	12	matched		Q1186264	Damun	Village	exact	furas	Damun - per Y. Furas
+Ein Ghazal	Ain Ghazal	10	matched	21329	Q2918965	Ain Ghazal	Village	exact	furas	Ain Ghazal - per Y. Furas
+Tanturah	Tanturah	10	matched	21005	Q2100836	Tanturah	Village	exact	furas	Tanturah - per Y. Furas
+Zeita	Zeita	9	matched		Q8068604	Zeita	Village	exact	furas	Zeita - per Y. Furas
+Tantourah	Tantourah	8	matched	21005	Q2100836	Tantourah	Village	exact	furas	Tanturah - per Y. Furas
+Arraba	Arraba	8	matched	21307	Q2568887	araba	Village	fuzzy 0.91	furas	Arabeh - per Y. Furas
+Um el Fahem	Um el Fahem	7	matched	743	Q168245	Umm El Fahem	Village	fuzzy 0.95	furas	Um el Fahm - per Y. Furas
+Lajjoun	Lajjoun	7	matched	16127	Q3775368	Lajoun	Village	fuzzy 0.92	furas	Lajoun - per Y. Furas
+Kabatich	Kabatich	6	matched	73993	Q1899332	Kabatieh	Village	fuzzy 0.88	furas	Kabatieh - per Y. Furas
+Kabatieh	Kabatieh	6	matched	73993	Q1899332	Kabatieh	Village	exact	furas	Kabatieh - per Y. Furas
+Suhmata	Suhmata	5	matched	21806	Q2777621	Submata	Village	fuzzy 0.86	furas	Suhmata - per Y. Furas
+Beirut	Beirut	4	matched	651	Q3820	Beirut	City	exact	furas	Beirut - per Y. Furas
+Kafr Lam	Kafr Lam	4	matched		Q6346183	Kafr Lam	Village	exact	furas	Kafr Lam - per Y. Furas
+Deir el Asad	Deir el Asad	4	matched	6077	Q612599	Deirel Asaad	Village	fuzzy 0.95	furas	Deir al-Asad - per Y. Furas
+Sindiani	Sindiani	4	matched		Q4703260	Sindiani	Village	exact	furas	Sindiyana - per Y. Furas
+Rihanieh	Rihanieh	4	matched		Q2152846	Rihanieh	Village	exact	furas	Rihanieh - per Y. Furas
+Wadi el Hawareth	Wadi el Hawareth	4	matched		Q13358574	Wadi el Hawareth	Village	exact	furas	Wadi el Hawareth - per Y. Furas
+Kannir	Kannir	4	matched		Q7266495	Kannir	Village	exact	furas	Qannir - per Y. Furas
+Abu Snan	Abu Sinan	4	matched	80956	Q2572624	Abu Snan	Village	fuzzy 0.93	furas	Abu Snan - per Y. Furas
+Shfaram	Shfaram	4	matched	261	Q990657	Shafar Amr	Village	fuzzy 0.88	furas	Shefa Amr - per Y. Furas
+Tiri	Tiri	3	matched	756	Q4118776	Tiri	Village	exact	furas	Tireh - per Y. Furas
+Roshpina	Roshpina	3	matched	14873	Q525649	Rosh-Pina	Settlement	exact	furas	Rosh Pina - per Y. Furas
+Breikeh	Breikeh	3	matched		Q2897020	Breikeh	Village	exact	furas	Breikeh - per Y. Furas
+Tamrah	Tamrah	3	matched	20270	Q168176	Tamrah	Village	exact	furas	Tamra - per Y. Furas
+Nahef	Nahef	3	matched	26311	Q2390257	Nahef	Village	exact	furas	Nahef - per Y. Furas
+Faradieh	Faradieh	3	matched		Q5436211	Faradieh	Village	exact	furas	Farradiyya - per Y. Furas
+Shafa	Shafa	3	matched	261	Q990657	Shafa - m	Village	fuzzy 0.91	furas	Shefa Amr - per Y. Furas
+Deir al-Asad	Deir al-Asad	3	matched	6077	Q612599	Deirel Asaad	Village	fuzzy 0.86	furas	Deir al-Asad - per Y. Furas
+Um El Fahim	Um El Fahim	3	matched	743	Q168245	Um el Fahim	Village	exact	furas	Um el Fahm - per Y. Furas
+Nahf	Nahf	3	matched	26311	Q2390257	Nahef	Village	fuzzy 0.89	furas	Nahef - per Y. Furas
+Lajoun	Lajoun	3	matched	16127	Q3775368	Lajoun	Village	exact	furas	Lajoun - per Y. Furas
+Um el Zeinat	Um el Zeinat	2	matched		Q2255513	Um el Zeinat	Village	exact	furas	Um el Zeinat - per Y. Furas
+Salfit	Salfit	2	matched	82777	Q1972013	Salfity	Village	fuzzy 0.92	furas	Salfit - per Y. Furas
+Umm el Fahm	Umm el Fahm	2	matched	743	Q168245	Umm El Fahem	Village	fuzzy 0.95	furas	Um el Fahm - per Y. Furas
+Hartel Muballatta	Hartel Muballatta	2	matched	71	Q126084	Hart el Mubalatta	Neighborhood	fuzzy 0.97	furas	Acre - per Y. Furas
+Der Hanna	Der Hanna	2	matched	21739	Q612483	Der Hanna		exact	furas	Deir Hanna - per Y. Furas
+Majd el Krum	Majd el Krum	2	matched	19615	Q2777868	Majdel Roum	Village	fuzzy 0.90	furas	Majd al-Krum - per Y. Furas
+TransJordanian	TransJordanian	2	matched	17467	Q867586	Transjordan	City	fuzzy 0.88	furas	Salt - per Y. Furas
+Transjordan	Transjordan	2	matched	17467	Q867586	Transjordan	City	exact	furas	Salt - per Y. Furas
+Kabatyeh	Kabatyeh	2	matched	73993	Q1899332	Kabatieh	Village	fuzzy 0.88	furas	Kabatieh - per Y. Furas
+Wadi Ara	Wadi Ara	2	matched		Q7959216	Wadi arah	Village	fuzzy 0.93	furas	Wadi arah - per Y. Furas
+Yamoun / Jenin	Yamoun / Jenin	2	matched	20986	Q4703350	Yamoun Jenin S/D	Village	fuzzy 0.92	furas	Yamun - per Y. Furas
+Sajour	Sajour	2	matched	75033	Q732433	Sajour	Village	exact	furas	Sajur - per Y. Furas
+Kaboul	Kaboul	2	matched	21578	Q1018884	Kabou	Village	fuzzy 0.91	furas	Kabul - per Y. Furas
+Ras En Naqura	Ras En Naqura	2	matched		Q748504	Rasin Naqura		fuzzy 0.91	furas	Naqura - per Y. Furas
+Shafr Amr	Shafr Amr	2	matched	261	Q990657	Shafar Amr	Village	fuzzy 0.94	furas	Shefa Amr - per Y. Furas
+Meron	Meron	1	matched	236		Meron	Village	exact	furas	Meron - per Y. Furas
+Salt	Salt	1	matched	17467	Q867586	Salt	City	exact	furas	Salt - per Y. Furas
+Deir el Asaad	Deir el Asaad	1	matched	6077	Q612599	Deirel Asaad	Village	exact	furas	Deir al-Asad - per Y. Furas
+Minsi	Minsi	1	matched		Q2368058	Minsi	Village	exact	furas	Mansi - per Y. Furas
+Solam	Solam	1	matched	86790	Q2777713	Solam	Village	exact	furas	Solam - per Y. Furas
+Trans Jordan	Trans Jordan	1	matched	17467	Q867586	Transjordan	City	exact	furas	Salt - per Y. Furas
+Wadi Arah	Wadi Arah	1	matched		Q7959216	Wadi arah	Village	exact	furas	Wadi arah - per Y. Furas
+Um el Fahim	Um el Fahim	1	matched	743	Q168245	Um el Fahim	Village	exact	furas	Um el Fahm - per Y. Furas
+Kefr Kanna	Kefr Kanna	1	matched	20496	Q2633158	Kefr Kanna	Village	exact	furas	Kafr Kanna - per Y. Furas
+Alliance Scool	Alliance Scool	1	matched	791	Q41621	alliance Scool	School	exact	furas	alliance Scool: Haifa school per Y. Furas; no own gazetteer entry, drawn at Haifa
+Eilut	Eilut	1	matched	21697	Q2915756	Eilut	Village	exact	furas	Ilut - per Y. Furas
+Arrabi	Arrabi	1	matched	21307	Q2568887	arrabi	Village	exact	furas	Arabeh - per Y. Furas
+Araba	Araba	1	matched	21307	Q2568887	araba	Village	exact	furas	Arabeh - per Y. Furas
+Jisr el-Zarka	Jisr el-Zarka	1	matched	21576	Q764601	Jisr el Zarka -	Village	exact	furas	Jisr al-Zarqa - per Y. Furas
+Maloul	Maloul	1	matched		Q2892972	Maloul	Village	exact	furas	Ma'alul - per Y. Furas
+Um El Zeinat	Um El Zeinat	1	matched		Q2255513	Um el Zeinat	Village	exact	furas	Um el Zeinat - per Y. Furas
+Kfar Inan	Kfar Inan	1	matched		Q6346161	Kfar Inan	Village	exact	furas	Kfar Inan - per Y. Furas
+Nasareth	Nasareth	1	matched	18	Q430776	nasareth	City	exact	furas	Nazareth - per Y. Furas
+Jisr El Zarka	Jisr El Zarka	1	matched	21576	Q764601	Jisr el Zarka -	Village	exact	furas	Jisr al-Zarqa - per Y. Furas
+Jalami	Jalami	1	matched		Q4704113	Jalami	Village	exact	furas	Al-Jalama - per Y. Furas
+Tarshiha/Acre	Tarshiha/Acre	1	matched	21809	Q134496896	Tarshiha, Acre	Village	exact	furas	Tarshiha - per Y. Furas
+Hammam El Basha	Hammam El Basha	1	matched	71	Q126084	Hammam el Basha	Neighborhood	exact	furas	Acre - per Y. Furas
+Umm el Fahem	Umm el Fahem	1	matched	743	Q168245	Umm El Fahem	Village	exact	furas	Um el Fahm - per Y. Furas
+Acre Gate	Acre Gate	1	matched	71	Q126084	Acre Gate	City	exact	furas	Acre - per Y. Furas
+Ardel Yahud	Ardel Yahud	32	matched		Q12404212	Ard el-Yahud	Neighborhood	exact	furas	Ard el-Yahud, Haifa - per Y. Furas
+Carmel Station	Carmel Station	31	matched	791	Q41621	Carmel Station	Neighborhood	exact	furas	Carmel Station: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Mt. Carmel	Mt. Carmel	17	matched	791	Q41621	Mt Carmel	Neighborhood	exact	furas	Mt Carmel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Wadi Salib	Wadi Salib	16	matched	19522	Q2910153	Wadi Salib	Neighborhood	exact	furas	Wadi Salib, Haifa - per Y. Furas
+Ramel	Ramel	12	matched	791	Q41621	Ramel	Neighborhood	exact	furas	Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Ard el Yahoud	Ard el Yahoud	8	matched		Q12404212	ard el Yahoud	Neighborhood	exact	furas	Ard el-Yahud, Haifa - per Y. Furas
+Stanton Street	Stanton Street	8	matched	791	Q41621	Station Street	Street	fuzzy 0.92	furas	Station Street: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa
+Wadi Rushmia	Wadi Rushmia	7	matched	791	Q41621	Wadi Rushmia	Neighborhood	exact	furas	Wadi Rushmia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Hartel Yahud	Hartel Yahud	6	matched	791	Q41621	Hart el Yahud	Neighborhood	exact	furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa
+Churches Quarter	Churches Quarter	6	matched	791	Q41621	Churches Qrt	Neighborhood	fuzzy 0.89	furas	Churches Qrt: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Kibutz	Kibutz	5	matched	791	Q41621	Kibutz	Neighborhood	exact	furas	Kibutz: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Hartel Kanayis	Hartel Kanayis	5	matched	791	Q41621	Hartel Kanayis	Neighborhood	exact	furas	Hartel Kanayis: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Wadi Salib	Wadi Salub	5	matched	19522	Q2910153	Wadi Salib	Neighborhood	fuzzy 0.89	furas	Wadi Salib, Haifa - per Y. Furas
+Ard el Yahud	Ard el Yahud	4	matched		Q12404212	Ard el-Yahud	Neighborhood	exact	furas	Ard el-Yahud, Haifa - per Y. Furas
+Wadi Salib (Haifa)	Wadi Salib (Haifa)	4	matched	19522	Q2910153	Wadi Salim. Haifa	Neighborhood	fuzzy 0.93	furas	Wadi Salib, Haifa - per Y. Furas
+Wadi Salib	Wadi Saleeb	4	matched	19522	Q2910153	Wadi Saleeb	Neighborhood	exact	furas	Wadi Salib, Haifa - per Y. Furas
+Hartel Kashleh	Hartel Kashleh	3	matched	791	Q41621	Hartel Kashleh	Neighborhood	exact	furas	Harat al-Kishleh: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Hart el Yahud	Hart el Yahud	3	matched	791	Q41621	Hart el Yahud	Neighborhood	exact	furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa
+Wadi Salib	Wadi es Salib	3	matched	19522	Q2910153	Wadi el Salib	Neighborhood	fuzzy 0.91	furas	Wadi Salib, Haifa - per Y. Furas
+Wadi Rushmiya	Wadi Rushmiya	3	matched	791	Q41621	Wadi Rushmia	Neighborhood	fuzzy 0.96	furas	Wadi Rushmia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Khamra	Khamra	3	matched	791	Q41621	Khamrah	Neighborhood	fuzzy 0.92	furas	Khamrah: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Wadi Nisnas (Haifa)	Wadi Nisnas (Haifa)	3	matched	85346	Q2920415	Wadi Nisnas Haifa	Neighborhood	exact	furas	Wadi Nisnas, Haifa - per Y. Furas
+Sh.Khunat Oadim	Sh.Khunat Oadim	2	matched	791	Q41621	Shkhunat Ovdim	Neighborhood	fuzzy 0.92	furas	Shkhunat Ovdim: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Aracl Yahud	Aracl Yahud	2	matched		Q12404212	Ard el-Yahud	Neighborhood	fuzzy 0.90	furas	Ard el-Yahud, Haifa - per Y. Furas
+Allenby St	Allenby St.	2	matched	791	Q41621	Allenby St	Street	exact	furas	Allenby St: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa
+Ardel Yahud	Ard al-Yahud	2	matched		Q12404212	Ard el-Yahud	Neighborhood	fuzzy 0.90	furas	Ard el-Yahud, Haifa - per Y. Furas
+Allenby Street	Allenby Street	2	matched	791	Q41621	Allenby Street	Street	exact	furas	Allenby Street: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa
+Hartel Yahoud	Hartel Yahoud	2	matched	791	Q41621	Hart el Yahud	Neighborhood	fuzzy 0.96	furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa
+Allenby	Allenby	2	matched	791	Q41621	Allenby St	Street	fuzzy 0.88	furas	Allenby St: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa
+Mt Carmel	Mt Carmel	2	matched	791	Q41621	Mt Carmel	Neighborhood	exact	furas	Mt Carmel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Carmel Avenue	Carmel Avenue	2	matched	791	Q41621	Carmel Hvenue	St.	fuzzy 0.92	furas	Carmel Hvenue: Haifa st. per Y. Furas; no own gazetteer entry, drawn at Haifa
+Arab el Ramel	Arab el Ramel.	1	matched	791	Q41621	Arab el Ramel	Neighborhood	exact	furas	Arab el Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Furn el Abyad	Furn el Abyad	1	matched	791	Q41621	Furn el Abyad	Place	exact	furas	Furn el Abyad: Haifa place per Y. Furas; no own gazetteer entry, drawn at Haifa
+Megiddo Road	Megiddo Road	1	matched	791	Q41621	Megiddo Road	Street	exact	furas	Megiddo Road: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa
+Wadi Salib	Wadi el Salib	1	matched	19522	Q2910153	Wadi el Salib	Neighborhood	exact	furas	Wadi Salib, Haifa - per Y. Furas
+Ardel Ramel	Ardel Ramel	1	matched	791	Q41621	Ardel Ramel	Neighborhood	exact	furas	Ardel Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Dar el Abyad	Dar el Abyad	1	matched	791	Q41621	Darel abyad	House	exact	furas	Darel abyad: Haifa house per Y. Furas; no own gazetteer entry, drawn at Haifa
+Hartel Ghazazwi	Hartel Ghazazwi	1	matched	791	Q41621	Hartel Ghazazwi	Neighborhood	exact	furas	Hartel Ghazazwi: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Hallisa Qrt	Hallisa Qrt	1	matched	83220	Q7212307	Hallisa Qrt	Neighborhood	exact	furas	Halisa, Haifa - per Y. Furas
+Beit Ibrahim	Beit Ibrahim	1	matched	791	Q41621	Beit Ibrahim	House	exact	furas	Beit Ibrahim: Haifa house per Y. Furas; no own gazetteer entry, drawn at Haifa
+Wadi Rushumia	Wadi Rushumia	1	matched	791	Q41621	Wadi Rushumia	Neighborhood	exact	furas	Wadi Rushumia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Wadi Nasnas (Haifa)	Wadi Nasnas (Haifa)	1	matched	85346	Q2920415	Wadi Nasnas, Haifa	Neighborhood	exact	furas	Wadi Nisnas, Haifa - per Y. Furas
+Haifa|Ard el Yahoud	Haifa|Ard el Yahoud	1	matched		Q12404212	Haifa ard el Yahoud	Neighborhood	exact	furas	Ard el-Yahud, Haifa - per Y. Furas
+Haifa|Carmel Avenue	Haifa|Carmel Avenue	1	matched	791	Q41621	Haifa Carmel Avenue	St.	exact	furas	Haifa Carmel Avenue: Haifa st. per Y. Furas; no own gazetteer entry, drawn at Haifa
+Carmel - Haifa	Carmel - Haifa	1	matched	791	Q41621	Carmel, Haifa	Neighborhood	exact	furas	Carmel, Haifa: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Souk El Abyad	Souk El Abyad	1	matched	791	Q41621	Souk el Abyad	Neighborhood	exact	furas	Souk el Abyad: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Khamra Square	Khamra Square	1	matched	791	Q41621	Khamra Square	Neighborhood	exact	furas	Khamra Square: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Carmel Station	Carmel station	1	matched	791	Q41621	Carmel Station	Neighborhood	exact	furas	Carmel Station: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa
+Hadar	Hadar	4	matched	21150	Q2630079	Hedera	Settlement	exact	agent	Hadar HaCarmel (Retsof St, police billet); Kima id was Kefar Hadar (Hod HaSharon). Furas read Hedera but marked it check - his doubt left open, not applied
+Heazelia	Heazelia	1	matched	791	Q41621				agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town
+Shezlia	Shezlia	1	matched	791	Q41621				agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town
+Shenglia	Shenglia	1	matched	791	Q41621				agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town
+Kantara	Kantara	34	held			Kantara	Village	exact	furas	Furas names the place but not which namesake; no referent to link
+Hadar	Hadar	4	held			Hedera	Settlement	exact	furas	"Furas marked this ""check"" - his own open question"
+Jisr el Majamie	Jisr el Majamie	4	held			Jisr el Majamie	Railway Station	exact	furas	"Furas marked this ""check"" - his own open question"
+Beit Gan	Beit Gan	4	held			Beit Gan	Settlement	exact	furas	"Furas marked this ""check"" - his own open question"
+Haifa s/d	Haifa s/d	2	held			Haifa S/D	?	exact	furas	Furas names the place but not which namesake; no referent to link
+Haifa S/D	Haifa S/D	2	held			Haifa S/D	?	exact	furas	Furas names the place but not which namesake; no referent to link
+Haifa - S/D	Haifa - S/D.	1	held			Haifa S/D	?	exact	furas	Furas names the place but not which namesake; no referent to link
+Jaba'	Jaba'	15	held			Jaba	Village	exact	furas	Furas names the place but not which namesake; no referent to link
+Sarafand	Sarafand	10	held			Sarafand	Village	exact	furas	"Furas marked this ""check"" - his own open question"
+Sileh	Sileh	9	held			Sileh	Village	exact	furas	Furas names the place but not which namesake; no referent to link
+Kineret	Kineret	7	held			Kineret	Settlement	exact	furas	Furas names the place but not which namesake; no referent to link
+Kinereth	Kinereth	6	held			Kinereth	Settlement	exact	furas	Furas names the place but not which namesake; no referent to link
+Kinneret	Kinneret	6	held			Kineret	Settlement	fuzzy 0.93	furas	Furas names the place but not which namesake; no referent to link
+Jisr el Majami	Jisr el Majami	5	held			Jisr el Majami	Railway Station	exact	furas	"Furas marked this ""check"" - his own open question"
+Jaba'	Jaba	5	held			Jaba	Village	exact	furas	Furas names the place but not which namesake; no referent to link
+Kurdaneh	Kurdaneh	3	held			Kurdaneh		exact	furas	Furas names the place but not which namesake; no referent to link
+Arab Turkman	Arab Turkman	2	held			Arab el Turkman	Village	fuzzy 0.92	furas	Furas names the place but not which namesake; no referent to link
+Jabata	Jabata	2	held			Jabata	Village	exact	furas	"Furas marked this ""check"" - his own open question"
+Jdeideh	Jdeideh	2	held			Jdeideh	Village	exact	furas	Furas names the place but not which namesake; no referent to link
+Zarka	Zarka	2	held			Zarka	City	exact	furas	Furas names the place but not which namesake; no referent to link
+Jisr el-Majami	Jisr el-Majami	1	held			Jisr el Majami	Railway Station	exact	furas	"Furas marked this ""check"" - his own open question"
+Nahlat Yacob	Nahlat Yacob	1	held			Nahlat Yacob	Settlement	exact	furas	Furas names the place but not which namesake; no referent to link
+Tel Shamman	Tel Shamman	1	held			Tel Shamman	Settlement	exact	furas	"Furas marked this ""check"" - his own open question"
+Raman	Raman	1	held			Raman	Village	exact	furas	"Furas marked this ""check"" - his own open question"
+Sileh	|Sileh	1	held			Sileh	Village	exact	furas	Furas names the place but not which namesake; no referent to link
+Tabor	Tabor	1	held			Tabor	Settlement	exact	furas	"Furas marked this ""check"" - his own open question"
+Jaba'	Jab'a	1	held			Jaba	Village	exact	furas	Furas names the place but not which namesake; no referent to link
+Kibbutz Hashomer	Kibbutz Hashomer	2	held			Kibutz Hashomer	Neighborhood	fuzzy 0.97	furas	"Furas marked this ""check"" - his own open question"
+Beit Lahim	Beit Lahim	2	held			Beit Lahim	Neighborhood	exact	furas	"Furas marked this ""check"" - his own open question"
+Beit Lahm	Beit Lahm	2	held			Beit Lahim	Neighborhood	fuzzy 0.94	furas	"Furas marked this ""check"" - his own open question"
+Ara	Ara	17	matched		Q2859313	Ara	Village	exact	furas	'Ara (Arah), Wadi Ara - per Y. Furas; not Ar'ara
+Tire	Tire	5	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tirat Carmel	Tirat Carmel	3	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tireh (Acre Sub District)	Tireh (Acre Sub District)	2	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Haifa|Tireh	Haifa|Tireh	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tirat Carmel / Haifa	Tirat Carmel / Haifa	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tireh Village	Tireh Village	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tireh, Haifa	Tireh, Haifa	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tireh-Haifa	Tireh-Haifa	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tireh-Hayark	Tireh-Hayark	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tires	Tires	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Tires|Tireh	Tires|Tireh	1	matched	756	Q4118776			family	agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas
+Ardel Yahud|Ard al-Yahud	Ardel Yahud|Ard al-Yahud	2	matched		Q12404212			family	agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas
+Adel Yahud	Adel Yahud	1	matched		Q12404212			family	agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas
+Nahliel Yahud	Nahliel Yahud	1	matched		Q12404212			family	agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas
+Halisa	Halisa	1	matched	83220	Q7212307			family	agent	Halisa, Haifa - same place as Furas Hallisa Qrt
+Rechavia	Rechavia	1	matched	22262		Rehavia		user	human	Rehavia, Haifa quarter, not Jerusalem's (user ruling 2026-10-18). Kima entry has no point; drawn at Haifa. NB: the address reads "Rechavia Affuleh S/D." - worth a look at the scan
+Kiryat Shmuel	Kiryat Shmuel	1	matched	22901		Kiryat Shmuel		sweep	agent	Kiryat Shmuel in Haifa bay (founded 1938), not Jerusalem's; Jewish patient, Nov 1939. Found by the sweep that followed the Rehavia ruling
+Gedera	Gedera	4	matched	858	Q471886			user	human	Hadera - "Gedera" is an HTR misreading of Hedera (user ruling 2026-10-18)
+Ghedera	Ghedera	2	matched	858	Q471886			user	human	Hadera - HTR misreading of Hedera (user ruling 2026-10-18); closes the Hadera-vs-Gedera hold

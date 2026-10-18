@@ -1,52 +1,97 @@
 city	spelling	n_records	kima_id	kima_name_rom	wikidata_qid	qid_source	wikidata_direct	decision	grade	confidence	decided_by	note	date
 Haifa	Haifa	1999	791	Haifa (Israel)	Q41621	kima-dump	Q41621	matched	C_review		agent	city, not the district entity	2026-08-06
 Athlit	Athlit	1021	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
-Tireh	Tireh	268	756	Tirat Karmel (Israel)	Q168215	kima-dump	Q5712494	matched	outside-queue		human	user ruling: Tira/Tireh in this dataset = al-Tira (Tirat Karmel); held for human review: QID conflict - kima-dump Q168215 vs direct Wikidata Q5712494	2026-08-06
+Tireh	Tireh	268	756	Tirat Karmel (Israel)	Q4118776	furas	Q5712494	matched	outside-queue		furas	Tireh - per Y. Furas	2026-10-18
 Hadera	Hadera	267	858	Hadera (Israel)	Q471886	kima-dump	Q471886	matched	C_review		agent		2026-08-06
 Tiberias	Tiberias	142	807	Tiberias (Israel)	Q151920	kima-dump	Q151920	matched	C_review		agent		2026-08-06
 Acre	Acre	90	71	Acre (Israel)	Q126084	kima-dump	Q126084	matched	C_review		agent		2026-08-06
 Hadar Hacarmel	Hadar Hacarmel	88	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	Q2630079	matched	C_review		agent		2026-08-06
 Kiryat Haim	Kiryat Haim	82	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	Q112957897	matched	C_review		agent	held for human review: QID conflict - kima-dump Q2655674 vs direct Wikidata Q112957897	2026-08-06
+Tarshiha	Tarshiha	74	21809	Tarshiḥa (Israel)	Q134496896	human		matched	A_autolink		human	the depopulated village, not Maalot-Tarshiha (Q152385) which later absorbed it; Kima carries no coordinate, taken from Wikidata	2026-08-28
 Rameh	Rameh	69	77979	Rameh (Israel)	Q2915661	kima-dump	Q2915661	matched	outside-queue		human	user ruling: Rameh village (al-Rama, Galilee) is not Ramleh	2026-08-06
 Afula	Afula	53	18417	Afula (Israel)	Q152462	kima-dump	Q152462	matched	A_autolink	0.95	auto		2026-08-06
+Arara	Arara	50	20918	Ar'ara (Israel)	Q2915935	furas		matched	furas		furas	Ararah - per Y. Furas	2026-10-18
 Jaffa	Jaffa	44	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	Q180294	matched	A_autolink		agent		2026-08-06
 Kiryat Bialik	Kiryat Bialik	41	866	Kiryat Bialik (Israel)	Q152374	kima-dump	Q152374	matched	C_review		agent		2026-08-06
 Zichron Yaakov	Zichron Yaakov	41	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	Q198399	matched	C_review		agent		2026-08-06
+Kafr Yasif	Kafr Yasif	37	88951	Kafr Yasif (Israel)	Q2632879	furas		matched	furas		furas	Kafr Yasif - per Y. Furas	2026-10-18
+Julis	Julis	36	82237	Julis (Israel)	Q2601777	furas		matched	furas		furas	Julis - per Y. Furas	2026-10-18
 Yajour	Yajour	35	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent	Yagur; Mandate romanization	2026-08-06
 Affikim	Affikim	31	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Tel Aviv	Tel Aviv	30	272	Tel Aviv-Yafo (Israel)	Q33935	kima-dump	Q33935	matched	A_autolink		agent	Tel Aviv-Yafo city, not the district entity	2026-08-06
+Gaza	Gaza	29	12982	Gaza (Gaza Strip)	Q47492	furas		matched	furas		furas	Gaza - per Y. Furas	2026-10-18
+Wadi Salib	Wadi Salib	29	19522	Wadi Salib (Haifa, Israel)	Q2910153	furas		matched	furas		furas	Wadi Salib, Haifa - per Y. Furas	2026-10-18
 Karkur	Karkur	28	19149	Karkur (Israel)	Q2475182	kima-dump	Q123685287	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2475182 vs direct Wikidata Q123685287	2026-08-06
+Tamra	Tamra	28	20270	Tamra (Israel)	Q168176	furas		matched	furas		furas	Tamra - per Y. Furas	2026-10-18
 Bat Galim	Bat Galim	27	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	Q810685	matched	A_autolink	0.95	auto		2026-08-06
 Benyamina	Benyamina	27	21551	Binyamina (Israel)	Q863886	kima-dump		matched	C_review		agent		2026-08-06
 Safad	Safad	27	377	Tsefat (Israel)	Q188336	kima-dump	Q188336	matched	A_autolink	0.95	auto		2026-08-06
 Tel Amal	Tel Amal	27	7	Nir David (Israel)	Q943058	kima-dump		matched	C_review		human	kibbutz Tel Amal = Nir David (split from Kiryat Amal)	2026-08-06
-Herzlia	Herzlia	26	700	Herzeliyya (Israel)	Q152491	kima-dump	Q152491	matched	A_autolink	0.95	auto		2026-08-06
+Herzlia	Herzlia	26	791	Haifa (Israel)	Q41621	furas	Q152491	matched	A_autolink	0.95	furas	Herzliya quarter of Haifa (Hadar), not Herzliya town - per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Kiryat Motzkin	Kiryat Motzkin	25	481	Kiryat Motzkin (Israel)	Q152567	kima-dump	Q152567	matched	C_review		agent		2026-08-06
 Pardess Hanna	Pardess Hanna	25	160	Pardes Hanna-Karkur (Israel)	Q2475182	kima-dump		matched	C_review		agent	Kima has only the merged Pardes Hanna-Karkur entity	2026-08-06
+Igzim	Igzim	24			Q2918334	furas		matched	furas		furas	Igzim - per Y. Furas	2026-10-18
 Nahalal	Nahalal	24	38	Nahalal (Israel)	Q1724338	kima-dump		matched	C_review		agent		2026-08-06
+Yarka	Yarka	24	18267	Yirka (Israel)	Q2640151	furas		matched	furas		furas	Yarka - per Y. Furas	2026-10-18
+Jish	Jish	23	88554	Jish (Israel)	Q1527236	furas		matched	furas		furas	Jish - per Y. Furas	2026-10-18
 Nazareth	Nazareth	23	18	Nazareth (Israel)	Q430776	kima-dump	Q430776	matched	A_autolink	0.95	auto		2026-08-06
 Jerusalem	Jerusalem	22	691	Jerusalem (Israel)	Q1218	kima-dump	Q1218	matched	C_review		agent	city entry, not sancak/East	2026-08-06
+Abu Snan	Abu Snan	21	80956	Abu Sinan (Israel)	Q2572624	furas		matched	furas		furas	Abu Snan - per Y. Furas	2026-10-18
 Kfar Vitkin	Kfar Vitkin	20	825	Kefar Vitkin (Israel)	Q2495402	kima-dump		matched	C_review		agent		2026-08-06
+Amman	Amman	19	74	Amman (Jordan)	Q3805	furas		matched	furas		furas	Amman - per Y. Furas	2026-10-18
+Deir Hanna	Deir Hanna	19	21739	Dair Hanna (Israel)	Q612483	furas		matched	furas		furas	Deir Hanna - per Y. Furas	2026-10-18
+Mughar	Mughar	19	21974	Mughar (Israel)	Q930847	furas		matched	furas		furas	Mughar - per Y. Furas	2026-10-18
+Ara	Ara	17			Q2859313	furas		matched	furas		furas	'Ara (Arah), Wadi Ara - per Y. Furas; not Ar'ara	2026-10-18
 Tulkarem	Tulkarem	16	73472	Tulkarem (West Bank)	Q985531	kima-dump	Q985531	matched	C_review		agent		2026-08-06
+Trans-Jordan	Trans-Jordan	15	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
 Yavniel	Yavniel	15	18477	Yavne'el (Israel)	Q1676894	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Zichron Jacob	Zichron Jacob	15	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
-Ardel Yahud	Ardel Yahud	14						unmatched-no-kima-entry	C_review		agent	Ard el-Yahud, Haifa's old Jewish quarter	2026-08-06
+Ardel Yahud	Ardel Yahud	14			Q12404212	furas		matched	C_review		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
+Fassuta	Fassuta	14	21519	Fassuta (Israel)	Q2917294	furas		matched	furas		furas	Fassouta - per Y. Furas	2026-10-18
+Isfiya	Isfiya	14	26671	Usafiye (Israel)	Q2890836	furas		matched	furas		furas	Asfia - per Y. Furas	2026-10-18
+Um el Fahm	Um el Fahm	14	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
 Bethania	Bethania	13	16157	Betanyah (Israel)				matched	A_autolink		human	Bitanya above Lake Kinneret	2026-08-06
+Damoun	Damoun	13			Q1186264	furas		matched	furas		furas	Damun - per Y. Furas	2026-10-18
+Kafr Kanna	Kafr Kanna	13	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	furas		furas	Kafr Kanna - per Y. Furas	2026-10-18
+Sha'ab	Sha'ab	13	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
+Shaab	Shaab	13	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
+Damun	Damun	12			Q1186264	furas		matched	furas		furas	Damun - per Y. Furas	2026-10-18
+Ramel	Ramel	12	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Ararah	Ararah	11	20918	Ar'ara (Israel)	Q2915935	furas		matched	furas		furas	Ararah - per Y. Furas	2026-10-18
+Daliet el Carmel	Daliet el Carmel	11	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	furas		furas	Daliet el Carmel - per Y. Furas	2026-10-18
 Ein Harod	Ein Harod	11	12370	En Harod (Israel)	Q1339887	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Ibillin	Ibillin	11	21569	I'bilin (Israel)	Q2915647	furas		matched	furas		furas	Ibillin - per Y. Furas	2026-10-18
 Kfar Ata	Kfar Ata	11	477	Kiryat Ata (Israel)	Q152602	kima-dump	Q152602	matched	C_review		agent	Kfar Ata = pre-1965 name of Kiryat Ata	2026-08-06
+Ein Ghazal	Ein Ghazal	10	21329	Ein Ghazal (Israel)	Q2918965	furas		matched	furas		furas	Ain Ghazal - per Y. Furas	2026-10-18
 Kibutz Affikim	Kibutz Affikim	10	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
+Lajjun	Lajjun	10	16127	Lajjūn (Jordan)	Q3775368	human		matched	A_autolink		human	al-Lajjun in the Jenin sub-district; the Kima entry names it Jordan, which its own coordinate contradicts; point from Wikidata	2026-08-28
 Nesher	Nesher	10	20	Nesher (Israel)	Q135432	kima-dump	Q135432	matched	C_review		agent		2026-08-06
+Tanturah	Tanturah	10	21005	Tantura (Israel)	Q2100836	furas		matched	furas		furas	Tanturah - per Y. Furas	2026-10-18
 Yokneam	Yokneam	10	18301	Yokne'am (Israel)	Q2890709	kima-dump	Q167582	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2890709 vs direct Wikidata Q167582	2026-08-06
+Subbarin	Subbarin	9			Q7395979	furas		matched	furas		furas	Subbarin - per Y. Furas	2026-10-18
+Zeita	Zeita	9			Q8068604	furas		matched	furas		furas	Zeita - per Y. Furas	2026-10-18
 Ahuza	Ahuza	8	21015	Ahuza (Haifa, Israel)	Q4159159	kima-dump	Q2889211	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q4159159 vs direct Wikidata Q2889211	2026-08-06
 Ain Harod	Ain Harod	8	12370	En Harod (Israel)	Q1339887	kima-dump		matched	C_review		agent	generic En Harod; Ihud/Me'uhad split is post-1948	2026-08-06
+Ard el Yahoud	Ard el Yahoud	8			Q12404212	furas		matched	furas		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
+Arraba	Arraba	8	21307	Arraba (Israel)	Q2568887	furas		matched	furas		furas	Arabeh - per Y. Furas	2026-10-18
 Dejania	Dejania	8	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	C_review		human	unqualified Degania read as Alef	2026-08-06
+Isfia	Isfia	8	26671	Usafiye (Israel)	Q2890836	furas		matched	furas		furas	Asfia - per Y. Furas	2026-10-18
 Kfar Hassidim	Kfar Hassidim	8	830	Kefar Hasidim (Israel)	Q135425	kima-dump	Q135425	matched	C_review		agent		2026-08-06
+Stanton Street	Stanton Street	8	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Station Street: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Tantourah	Tantourah	8	21005	Tantura (Israel)	Q2100836	furas		matched	furas		furas	Tanturah - per Y. Furas	2026-10-18
 Kineret	Kineret	7						unmatched-ambiguous	C_review		human		2026-08-06
+Lajjoun	Lajjoun	7	16127	Lajjūn (Jordan)	Q3775368	furas		matched	furas		furas	Lajoun - per Y. Furas	2026-10-18
 Nahariya	Nahariya	7	39	Nahariyya (Israel)	Q167749	kima-dump	Q167749	matched	A_autolink	0.95	auto		2026-08-06
 Neveh Shaanan	Neveh Shaanan	7	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump		matched	C_review		agent	Haifa's Neve Sha'anan (catchment)	2026-08-06
+Sabbarin	Sabbarin	7			Q7395979	furas		matched	furas		furas	Subbarin - per Y. Furas	2026-10-18
+Um el Fahem	Um el Fahem	7	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
+Wadi Rushmia	Wadi Rushmia	7	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Wadi Rushmia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Benjamina	Benjamina	6	21551	Binyamina (Israel)	Q863886	kima-dump		matched	C_review		agent		2026-08-06
+Churches Quarter	Churches Quarter	6	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Churches Qrt: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Emek	Emek	6						unmatched-ambiguous	C_review		human	region nickname without clean referent	2026-08-06
 Haifa|Hadar Hacarmel	Haifa|Hadar Hacarmel	6	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	Q41621	matched	C_review		human	pipe policy: prefer the finer reading	2026-08-06
+Kabatich	Kabatich	6	73993	Kabatiya (West Bank)	Q1899332	furas		matched	furas		furas	Kabatieh - per Y. Furas	2026-10-18
+Kabatieh	Kabatieh	6	73993	Kabatiya (West Bank)	Q1899332	furas		matched	furas		furas	Kabatieh - per Y. Furas	2026-10-18
 Kfar Atta	Kfar Atta	6	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
 Kinereth	Kinereth	6						unmatched-ambiguous	C_review		human		2026-08-06
 Kinneret	Kinneret	6					Q5533392	unmatched-ambiguous	C_review		human	Kevutsa vs Moshava undecidable	2026-08-06
@@ -56,34 +101,60 @@ Rosh Pina	Rosh Pina	6	14873	Rosh Pina (Israel)	Q525649	kima-dump	Q525649	matched
 Waldheim	Waldheim	6					Q1917497	unmatched-no-kima-entry	A_autolink		agent	Galilee Templer colony; Kima has only the Saxony Waldheim	2026-08-06
 Akka	Akka	5	71	Acre (Israel)	Q126084	kima-dump	Q126084	matched	C_review		agent	Arabic naming tradition of Acre; value kept distinct	2026-08-06
 Bassa	Bassa	5	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa, western Galilee; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
+HAIFA	HAIFA	5	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Haifa - per Y. Furas	2026-10-18
+Hartel Kanayis	Hartel Kanayis	5	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Hartel Kanayis: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Kfar Tabor	Kfar Tabor	5	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	Q1186956	matched	A_autolink	0.95	auto		2026-08-06
-Kibutz	Kibutz	5					Q586687	unmatched-junk	C_review		agent	generic word	2026-08-06
+Kibutz	Kibutz	5	791	Haifa (Israel)	Q41621	furas	Q586687	matched	C_review		furas	Kibutz: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Mishmar HaEmek	Mishmar HaEmek	5	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Mount Carmel	Mount Carmel	5						unmatched-ambiguous	A_autolink		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
 Nathania	Nathania	5	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	C_review		agent		2026-08-06
 Nathanya	Nathanya	5	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	A_autolink	0.95	auto		2026-08-06
-Tire	Tire	5	756	Tirat Karmel (Israel)	Q168215	kima-dump	Q630533	matched	outside-queue		human	user ruling: Tira/Tireh = al-Tira; held for human review: QID conflict - kima-dump Q168215 vs direct Wikidata Q630533	2026-08-06
+Sha'b	Sha'b	5	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
+Suhmata	Suhmata	5	21806	Suhmata (Israel)	Q2777621	furas		matched	furas		furas	Suhmata - per Y. Furas	2026-10-18
+Tire	Tire	5	756	Tirat Karmel (Israel)	Q4118776	human	Q630533	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
 Zammarin	Zammarin	5	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Zikhron Yacov	Zikhron Yacov	5	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+Arah	Arah	4			Q2859313	furas		matched	furas		furas	Arah - per Y. Furas	2026-10-18
+Ard el Yahud	Ard el Yahud	4			Q12404212	furas		matched	furas		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
+Balad al-Sheikh / Haifa	Balad al-Sheikh / Haifa	4	21670	Balad al-Shaykh (Israel)	Q2776471	furas		matched	furas		furas	Balad el-Sheikh - per Y. Furas	2026-10-18
+Beirut	Beirut	4	651	Beirut (Lebanon)	Q3820	furas		matched	furas		furas	Beirut - per Y. Furas	2026-10-18
 Degania	Degania	4	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Deir el Asad	Deir el Asad	4	6077	Dair el Asad (Israel)	Q612599	furas		matched	furas		furas	Deir al-Asad - per Y. Furas	2026-10-18
+Fassouta	Fassouta	4	21519	Fassuta (Israel)	Q2917294	furas		matched	furas		furas	Fassouta - per Y. Furas	2026-10-18
 Gan Shmuel	Gan Shmuel	4	904	Gan Shemu'el (Israel)	Q166857	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
-Gedera	Gedera	4	341	Gedera (Israel)	Q921505	kima-dump	Q921505	matched	C_review		agent		2026-08-06
+Gedera	Gedera	4	858	Hadera (Israel)	Q471886	human	Q921505	matched	C_review		human	"Hadera - ""Gedera"" is an HTR misreading of Hedera (user ruling 2026-10-18)"	2026-10-18
 Had. Hac	Had. Hac	4	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Is	Is	4					Q189	unmatched-junk	C_review		agent		2026-08-06
+Kafr Lam	Kafr Lam	4			Q6346183	furas		matched	furas		furas	Kafr Lam - per Y. Furas	2026-10-18
+Kakun	Kakun	4	19717	Qāqūn	Q2919625	furas		matched	furas		furas	Kakoun - per Y. Furas	2026-10-18
+Kannir	Kannir	4			Q7266495	furas		matched	furas		furas	Qannir - per Y. Furas	2026-10-18
 Kishon	Kishon	4						unmatched-no-kima-entry	C_review		human	Kishon harbour area; river entity rejected	2026-08-06
 Migdal	Migdal	4	6904	Migdal (Israel)	Q2916182	kima-dump	Q2916182	matched	C_review		agent	Galilee Migdal (catchment), not Ashkelon's	2026-08-06
-Mt. Carmel	Mt. Carmel	4					Q12894637	unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Mt. Carmel	Mt. Carmel	4	791	Haifa (Israel)	Q41621	furas	Q12894637	matched	C_review		furas	Mt Carmel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Naharia	Naharia	4	39	Nahariyya (Israel)	Q167749	kima-dump	Q167749	matched	C_review		agent		2026-08-06
+Rihanieh	Rihanieh	4			Q2152846	furas		matched	furas		furas	Rihanieh - per Y. Furas	2026-10-18
 Rishon LeZion	Rishon LeZion	4	493	Rishon Letsiyon (Israel)	Q201051	kima-dump	Q201051	matched	A_autolink	0.95	auto		2026-08-06
 Sdedera	Sdedera	4	858	Hadera (Israel)	Q471886	kima-dump		matched	C_review		human	user ruling: garbled Hadera	2026-08-06
+Shfaram	Shfaram	4	261	Shefar'am (Israel)	Q990657	furas		matched	furas		furas	Shefa Amr - per Y. Furas	2026-10-18
+Sindiani	Sindiani	4			Q4703260	furas		matched	furas		furas	Sindiyana - per Y. Furas	2026-10-18
 Tabor Street	Tabor Street	4						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
-Wadi el Hawareth	Wadi el Hawareth	4						unmatched-ambiguous	C_review		human	held for human review: Hefer Valley region entity; suggested #4986	2026-08-06
+Wadi Salib (Haifa)	Wadi Salib (Haifa)	4	19522	Wadi Salib (Haifa, Israel)	Q2910153	furas		matched	furas		furas	Wadi Salib, Haifa - per Y. Furas	2026-10-18
+Wadi el Hawareth	Wadi el Hawareth	4			Q13358574	furas		matched	C_review		furas	Wadi el Hawareth - per Y. Furas	2026-10-18
+Ain Hod	Ain Hod	3	18441	En Hod (Israel)	Q991378	furas		matched	furas		furas	Ain Hod - per Y. Furas	2026-10-18
 Athlit|Atlit	Athlit|Atlit	3	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Bassah	Bassah	3	21539	Bassah (Israel)	Q2915875	furas		matched	furas		furas	Bassa - per Y. Furas	2026-10-18
 Beit Galim	Beit Galim	3	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	Bat Galim	2026-08-06
 Beit Gan	Beit Gan	3						unmatched-no-kima-entry	C_review		human	Beit Gan by Yavne'el; no Kima entry	2026-08-06
+Breikeh	Breikeh	3			Q2897020	furas		matched	furas		furas	Breikeh - per Y. Furas	2026-10-18
+Deir al-Asad	Deir al-Asad	3	6077	Dair el Asad (Israel)	Q612599	furas		matched	furas		furas	Deir al-Asad - per Y. Furas	2026-10-18
+Faradieh	Faradieh	3			Q5436211	furas		matched	furas		furas	Farradiyya - per Y. Furas	2026-10-18
+Freidis	Freidis	3	84891	Furaidis (Israel)	Q1011538	furas		matched	furas		furas	Fureidis - per Y. Furas	2026-10-18
 Had. Hac.|Hadar Hacarmel	Had. Hac.|Hadar Hacarmel	3	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
+Hartel Kashleh	Hartel Kashleh	3	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Harat al-Kishleh: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Hedera|Hadera	Hedera|Hadera	3	858	Hadera (Israel)	Q471886	kima-dump	Q471886	matched	A_autolink	0.95	auto		2026-08-06
+Ibellin	Ibellin	3	21569	I'bilin (Israel)	Q2915647	furas		matched	furas		furas	Ibillin - per Y. Furas	2026-10-18
 Jenin	Jenin	3	79775	Jenin (West Bank)	Q374748	kima-dump	Q374748	matched	C_review		agent		2026-08-06
+Kakoun	Kakoun	3	19717	Qāqūn	Q2919625	furas		matched	furas		furas	Kakoun - per Y. Furas	2026-10-18
 Kefutz Mizra	Kefutz Mizra	3	224	Mizra (Israel)	Q2889536	kima-dump		matched	C_review		agent	kibbutz Mizra	2026-08-06
 Kfar Hasidim	Kfar Hasidim	3	830	Kefar Hasidim (Israel)	Q135425	kima-dump	Q135425	matched	C_review		agent		2026-08-06
 Kfar Kharoshet	Kfar Kharoshet	3	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		human	same place as Kiryat Kharoshet; the earlier reading kept them distinct, overruled 2026-08-28	2026-08-28
@@ -91,27 +162,50 @@ Kibutz Affikim|Affikim	Kibutz Affikim|Affikim	3	554	Afikim (Israel)	Q383280	kima
 Kirjat Hayim	Kirjat Hayim	3	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		agent		2026-08-06
 Kiryat Kharoshet	Kiryat Kharoshet	3	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		agent		2026-08-06
 Kiryat Naim	Kiryat Naim	3	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		human	read as Kiryat Haim (H/N misreading)	2026-08-06
+Lajoun	Lajoun	3	16127	Lajjūn (Jordan)	Q3775368	furas		matched	furas		furas	Lajoun - per Y. Furas	2026-10-18
 Meshek Yagur	Meshek Yagur	3	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent		2026-08-06
 Mitzpa	Mitzpa	3	21700	Mitspa (Israel)	Q2776808	kima-dump	Q2776808	matched	C_review		agent	Mitzpa near Tiberias	2026-08-06
+Nahef	Nahef	3	26311	Naḥaf (Israel)	Q2390257	furas		matched	furas		furas	Nahef - per Y. Furas	2026-10-18
+Nahf	Nahf	3	26311	Naḥaf (Israel)	Q2390257	furas		matched	furas		furas	Nahef - per Y. Furas	2026-10-18
+Roshpina	Roshpina	3	14873	Rosh Pina (Israel)	Q525649	furas		matched	furas		furas	Rosh Pina - per Y. Furas	2026-10-18
+Saffuriya	Saffuriya	3	85997	Saffuriya (Israel)	Q18192054	furas		matched	furas		furas	Saffurieh - per Y. Furas	2026-10-18
+Saffuriyya	Saffuriyya	3	85997	Saffuriya (Israel)	Q18192054	furas		matched	furas		furas	Saffurieh - per Y. Furas	2026-10-18
 Samakh	Samakh	3	16228	Tsemah (Israel)	Q2908710	kima-dump	Q2908710	matched	A_autolink	0.95	auto		2026-08-06
+Shafa	Shafa	3	261	Shefar'am (Israel)	Q990657	furas		matched	furas		furas	Shefa Amr - per Y. Furas	2026-10-18
+Tamrah	Tamrah	3	20270	Tamra (Israel)	Q168176	furas		matched	furas		furas	Tamra - per Y. Furas	2026-10-18
 Tel Yosef	Tel Yosef	3	186	Tel-Yosef (Israel)	Q2917286	kima-dump	Q2917286	matched	A_autolink	0.95	auto		2026-08-06
-Tirat Carmel	Tirat Carmel	3	756	Tirat Karmel (Israel)	Q168215	kima-dump	Q168215	matched	outside-queue		human		2026-08-06
+Tirat Carmel	Tirat Carmel	3	756	Tirat Karmel (Israel)	Q4118776	human	Q168215	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Tiri	Tiri	3	756	Tirat Karmel (Israel)	Q4118776	furas		matched	furas		furas	Tireh - per Y. Furas	2026-10-18
+Um El Fahim	Um El Fahim	3	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
+Wadi Nisnas (Haifa)	Wadi Nisnas (Haifa)	3	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	furas		matched	furas		furas	Wadi Nisnas, Haifa - per Y. Furas	2026-10-18
+Wadi Rushmiya	Wadi Rushmiya	3	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Wadi Rushmia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Yanuh	Yanuh	3	18370	Yanoah (Israel)	Q2890238	human		matched	A_autolink		human	no Wikidata entity of its own; point is Yanuh-Jat, the council that now includes the village; Kima carries no coordinate	2026-08-28
 Yavne'el	Yavne'el	3	18477	Yavne'el (Israel)	Q1676894	kima-dump	Q1676894	matched	A_autolink	0.95	auto		2026-08-06
 [ambiguous_city]	[ambiguous_city]	3						unmatched-junk	C_review		agent	pipeline marker	2026-08-06
 Affikin	Affikin	2	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
-Ardel Yahud|Ard al-Yahud	Ardel Yahud|Ard al-Yahud	2						unmatched-no-kima-entry	C_review		agent		2026-08-06
+Allenby	Allenby	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Allenby St: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Allenby St	Allenby St	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Allenby St: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Allenby Street	Allenby Street	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Allenby Street: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Araarah	Araarah	2	20918	Ar'ara (Israel)	Q2915935	furas		matched	furas		furas	Ararah - per Y. Furas	2026-10-18
+Aracl Yahud	Aracl Yahud	2			Q12404212	furas		matched	furas		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
+Ardel Yahud|Ard al-Yahud	Ardel Yahud|Ard al-Yahud	2			Q12404212	human		matched	C_review		agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas	2026-10-18
 Athlit|Athlit Camp	Athlit|Athlit Camp	2	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Athlit|Athlit Police station	Athlit|Athlit Police station	2	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Balad el Sheik	Balad el Sheik	2	21670	Balad al-Shaykh (Israel)	Q2776471	furas		matched	furas		furas	Balad el-Sheikh - per Y. Furas	2026-10-18
 Balfuria	Balfuria	2	20640	Balfuriyya (Israel)	Q2479614	kima-dump		matched	C_review		agent		2026-08-06
 Bat Shlomo	Bat Shlomo	2	587	Bat Shelomo (Israel)	Q2889218	kima-dump	Q2889218	matched	C_review		agent		2026-08-06
 Beisan	Beisan	2	613	Bet She'an (Israel)	Q152368	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Benyamina|Binyamina	Benyamina|Binyamina	2	21551	Binyamina (Israel)	Q863886	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Bethlehem	Bethlehem	2					Q5776	unmatched-ambiguous	C_review		agent	likely Bethlehem of Galilee (absent from Kima)	2026-08-06
 Carmel	Carmel	2						unmatched-ambiguous	A_autolink		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
+Carmel Avenue	Carmel Avenue	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Carmel Hvenue: Haifa st. per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Dalieh el Carmel	Dalieh el Carmel	2	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	furas		furas	Daliet el Carmel - per Y. Furas	2026-10-18
 Degania B	Degania B	2	893	Deganya Bet (Israel)	Q1022506	kima-dump		matched	C_review		agent	explicit Bet	2026-08-06
+Der Hanna	Der Hanna	2	21739	Dair Hanna (Israel)	Q612483	furas		matched	furas		furas	Deir Hanna - per Y. Furas	2026-10-18
 Ekron	Ekron	2	21515	Ekron (Israel)	Q1914736	wikidata-reconciled	Q1914736	matched	C_review		agent	modern Ekron village	2026-08-06
+Fureidis	Fureidis	2	84891	Furaidis (Israel)	Q1011538	furas		matched	furas		furas	Fureidis - per Y. Furas	2026-10-18
 German Colony	German Colony	2	21139	German Colony (Haifa, Israel)	Q2413425	wikidata-reconciled	Q2413425	matched	C_review		agent	Haifa's German Colony (catchment)	2026-08-06
-Ghedera	Ghedera	2						unmatched-ambiguous	C_review		human	held for human review: Hadera vs Gedera	2026-08-06
+Ghedera	Ghedera	2	858	Hadera (Israel)	Q471886	human		matched	C_review		human	Hadera - HTR misreading of Hedera (user ruling 2026-10-18); closes the Hadera-vs-Gedera hold	2026-10-18
 Ginjar	Ginjar	2	929	Ginnegar (Israel)	Q2776845	kima-dump		matched	C_review		agent	Ginegar	2026-08-06
 Givat Ada	Givat Ada	2	18292	Giv'at Ada (Israel)	Q7189221	kima-dump	Q7189221	matched	A_autolink	0.95	auto		2026-08-06
 Givat Brenner	Givat Brenner	2	751	Giv'at Brener (Israel)	Q476835	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
@@ -121,9 +215,13 @@ Had Stae	Had Stae	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		mat
 Had. Stac	Had. Stac	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent	read as Had. Hac. (Hadar Hacarmel)	2026-08-06
 Hadar HaCarmel (Haifa)	Hadar HaCarmel (Haifa)	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Hadar Hacarmel / Haifa	Hadar Hacarmel / Haifa	2	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
+Hartel Muballatta	Hartel Muballatta	2	71	Acre (Israel)	Q126084	furas		matched	furas		furas	Acre - per Y. Furas	2026-10-18
+Hartel Yahoud	Hartel Yahoud	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa	2026-10-18
 Herzl Street	Herzl Street	2						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Huleh	Huleh	2					Q5866252	unmatched-ambiguous	A_autolink		human	held for human review: Hula Valley region entity; suggested #3327	2026-08-06
 Jaffa|Co. C.I.D. Jaffa	Jaffa|Co. C.I.D. Jaffa	2	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	Q180294	matched	A_autolink	0.95	auto		2026-08-06
+Kabatyeh	Kabatyeh	2	73993	Kabatiya (West Bank)	Q1899332	furas		matched	furas		furas	Kabatieh - per Y. Furas	2026-10-18
+Kaboul	Kaboul	2	21578	Kabul (Israel)	Q1018884	furas		matched	furas		furas	Kabul - per Y. Furas	2026-10-18
 Kfar Tavor	Kfar Tavor	2	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	Q1186956	matched	A_autolink	0.95	auto		2026-08-06
 Kfar Yehezkiel	Kfar Yehezkiel	2	832	Kefar Yehezkel (Israel)	Q2890846	kima-dump		matched	C_review		agent		2026-08-06
 Khalisa	Khalisa	2	485	Kiryat Shemona (Israel)	Q327413	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
@@ -132,36 +230,56 @@ Kibutz Affiking|Kibutz Affikim	Kibutz Affiking|Kibutz Affikim	2	554	Afikim (Isra
 Kineret|Kinneret	Kineret|Kinneret	2						unmatched-ambiguous	C_review		human		2026-08-06
 Kiryat Gesher	Kiryat Gesher	2						unmatched-ambiguous	C_review		agent		2026-08-06
 Kurdaneh	Kurdaneh	2						unmatched-no-kima-entry	C_review		agent	Kurdani, by the Na'aman springs	2026-08-06
+Majd el Krum	Majd el Krum	2	19615	Majd al-Kurum (Israel)	Q2777868	furas		matched	furas		furas	Majd al-Krum - per Y. Furas	2026-10-18
 Mishmar Haemek	Mishmar Haemek	2	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Mt Carmel	Mt Carmel	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Mt Carmel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Nablus	Nablus	2	310	Nablus (West Bank)	Q214178	kima-dump	Q214178	matched	A_autolink	0.95	auto		2026-08-06
 Nachla	Nachla	2					Q25492963	unmatched-ambiguous	C_review		agent		2026-08-06
 Ness Ziona	Ness Ziona	2	15	Nes Tsiyyona (Israel)	Q168162	kima-dump	Q168162	matched	C_review		agent		2026-08-06
 Neve Shaanan	Neve Shaanan	2	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump	Q2919842	matched	C_review		agent		2026-08-06
 Nur El Shams|Nur Shams	Nur El Shams|Nur Shams	2	76253	Nur Shams Camp (West Bank)	Q7069998	kima-dump		matched	C_review		agent	Nur Shams detention camp	2026-08-06
 P. & P. Zichron Yacob	P. & P. Zichron Yacob	2	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+Ras En Naqura	Ras En Naqura	2			Q748504	furas		matched	furas		furas	Naqura - per Y. Furas	2026-10-18
 Rehovot	Rehovot	2	562	Rehovot (Israel)	Q207350	kima-dump	Q207350	matched	C_review		agent		2026-08-06
 Rosh Pinna	Rosh Pinna	2	14873	Rosh Pina (Israel)	Q525649	kima-dump	Q525649	matched	C_review		agent		2026-08-06
+Salfit	Salfit	2	82777	Salfīt (West Bank)	Q1972013	furas		matched	furas		furas	Salfit - per Y. Furas	2026-10-18
 Sdedead	Sdedead	2	858	Hadera (Israel)	Q471886	kima-dump		matched	C_review		human	user ruling: garbled Hadera	2026-08-06
-Sh.Khunat Oadim	Sh.Khunat Oadim	2						unmatched-no-kima-entry	C_review		agent	Shkhunat Ovdim	2026-08-06
+Sh.Khunat Oadim	Sh.Khunat Oadim	2	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Shkhunat Ovdim: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Shafa Amr	Shafa Amr	2	261	Shefar'am (Israel)	Q990657	kima-dump		matched	C_review		agent	Shefa-Amr	2026-08-06
+Shafr Amr	Shafr Amr	2	261	Shefar'am (Israel)	Q990657	furas		matched	furas		furas	Shefa Amr - per Y. Furas	2026-10-18
+Shaáb	Shaáb	2	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
+Sulam	Sulam	2	86790	Sulam (Israel)	Q2777713	furas		matched	furas		furas	Sulam - per Y. Furas	2026-10-18
 Tantoura	Tantoura	2	21005	Tantura (Israel)	Q2100836	kima-dump		matched	C_review		agent	Tantura on the Carmel coast	2026-08-06
-Tireh (Acre Sub District)	Tireh (Acre Sub District)	2	756	Tirat Karmel (Israel)	Q168215	kima-dump		matched	outside-queue		human	linked per ruling; note the clerk's Acre Sub District qualifier	2026-08-06
+Tireh (Acre Sub District)	Tireh (Acre Sub District)	2	756	Tirat Karmel (Israel)	Q4118776	human		matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+TransJordanian	TransJordanian	2	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
+Transjordan	Transjordan	2	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
+Um El Fahm	Um El Fahm	2	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
+Um el Zeinat	Um el Zeinat	2			Q2255513	furas		matched	furas		furas	Um el Zeinat - per Y. Furas	2026-10-18
+Umm el Fahm	Umm el Fahm	2	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
+Wadi Ara	Wadi Ara	2			Q7959216	furas		matched	furas		furas	Wadi arah - per Y. Furas	2026-10-18
 Yajouj	Yajouj	2	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent	garbled Yajour	2026-08-06
 Yajour|Yajur	Yajour|Yajur	2	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent		2026-08-06
+Yamoun / Jenin	Yamoun / Jenin	2	20986	Yamun	Q4703350	furas		matched	furas		furas	Yamun - per Y. Furas	2026-10-18
 Zichron Jacob|Zichron Yaakov	Zichron Jacob|Zichron Yaakov	2	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+'Arah	'Arah	1			Q2859313	furas		matched	furas		furas	Arah - per Y. Furas	2026-10-18
 002.2	002.2	1						unmatched-junk	C_review		agent		2026-08-06
 Abu Khalil	Abu Khalil	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Abu Shousheh	Abu Shousheh	1						unmatched-ambiguous	C_review		agent	Kima's Abu Shusha is the Gezer one; the Mishmar Haemek village is absent	2026-08-06
+Acre Gate	Acre Gate	1	71	Acre (Israel)	Q126084	furas		matched	furas		furas	Acre - per Y. Furas	2026-10-18
 Acre S/D	Acre S/D	1						unmatched-ambiguous	C_review		agent		2026-08-06
-Adel Yahud	Adel Yahud	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
+Adel Yahud	Adel Yahud	1			Q12404212	human		matched	C_review		agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas	2026-10-18
 Affula (Afula)	Affula (Afula)	1	18417	Afula (Israel)	Q152462	kima-dump		matched	C_review		agent		2026-08-06
 Affula|Affula Nugst	Affula|Affula Nugst	1	18417	Afula (Israel)	Q152462	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Affuleh|Afula	Affuleh|Afula	1	18417	Afula (Israel)	Q152462	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Afula|Affuleh Carea st	Afula|Affuleh Carea st	1	18417	Afula (Israel)	Q152462	kima-dump	Q152462	matched	A_autolink	0.95	auto		2026-08-06
 Afula|Afuleh	Afula|Afuleh	1	18417	Afula (Israel)	Q152462	kima-dump	Q152462	matched	A_autolink	0.95	auto		2026-08-06
 Ahava	Ahava	1						unmatched-ambiguous	C_review		agent	the Ahava children's home?	2026-08-06
-Alliance Scool	Alliance Scool	1						unmatched-no-kima-entry	C_review		agent	institution	2026-08-06
+Alliance Scool	Alliance Scool	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	alliance Scool: Haifa school per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Alya Street	Alya Street	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Arab el Ramel	Arab el Ramel	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Arab el Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Araba	Araba	1	21307	Arraba (Israel)	Q2568887	furas		matched	furas		furas	Arabeh - per Y. Furas	2026-10-18
+Ardel Ramel	Ardel Ramel	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Ardel Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Arrabi	Arrabi	1	21307	Arraba (Israel)	Q2568887	furas		matched	furas		furas	Arabeh - per Y. Furas	2026-10-18
 Ashadot Yakov	Ashadot Yakov	1	26521	Ashdot Yaakov (Israel)	Q2891543	kima-dump		matched	C_review		agent	generic Ashdot Ya'akov; Ihud/Me'uhad split post-1948	2026-08-06
 Ata village	Ata village	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
 Aten Village	Aten Village	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent	garbled Ata village	2026-08-06
@@ -191,6 +309,7 @@ Beit Alfa / Beisan	Beit Alfa / Beisan	1	563	Bet Alfa (Israel)	Q2900562	kima-dump
 Beit Alpha	Beit Alpha	1	563	Bet Alfa (Israel)	Q2900562	kima-dump		matched	C_review		agent		2026-08-06
 Beit Anya	Beit Anya	1	16157	Betanyah (Israel)				matched	C_review		human		2026-08-06
 Beit Dagan	Beit Dagan	1	9783	Bet Dagan (Israel)	Q2920214	kima-dump	Q2920214	matched	A_autolink	0.95	auto		2026-08-06
+Beit Ibrahim	Beit Ibrahim	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Beit Ibrahim: Haifa house per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Beit Jan	Beit Jan	1	90226	Bait Jan (Israel)	Q814900	kima-dump	Q814900	matched	C_review		human		2026-08-06
 Beit Jann	Beit Jann	1	90226	Bait Jan (Israel)	Q814900	kima-dump	Q814900	matched	C_review		human	Druze village, Upper Galilee	2026-08-06
 Beit Olim	Beit Olim	1						unmatched-no-kima-entry	C_review		agent	immigrants' hostel	2026-08-06
@@ -216,20 +335,25 @@ Bithania|Bethania	Bithania|Bethania	1	16157	Betanyah (Israel)				matched	A_autol
 Blys	Blys	1						unmatched-junk	C_review		agent		2026-08-06
 Brene Shaanan	Brene Shaanan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump		matched	C_review		agent	garbled Neve Shaanan	2026-08-06
 Buriq	Buriq	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Carmel - Haifa	Carmel - Haifa	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Carmel, Haifa: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Carmel Ahuza	Carmel Ahuza	1	21015	Ahuza (Haifa, Israel)	Q4159159	kima-dump		matched	C_review		agent	Ahuza on the Carmel	2026-08-06
-Carmel Station	Carmel Station	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Carmel Station	Carmel Station	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Carmel Station: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Carmiel	Carmiel	1	162	Karmi'el (Israel)	Q152418	kima-dump	Q152418	matched	A_autolink	0.95	auto		2026-08-06
 Churipat Hayim	Churipat Hayim	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		agent	garbled Kiryat Haim	2026-08-06
 Coastal Watch Bath-Jalim	Coastal Watch Bath-Jalim	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	coastal-watch post at Bat Galim	2026-08-06
 Daganya	Daganya	1	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	C_review		human		2026-08-06
+Daliet El Carmel	Daliet El Carmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	furas		furas	Daliet el Carmel - per Y. Furas	2026-10-18
 Dantel Yahud	Dantel Yahud	1						unmatched-no-kima-entry	C_review		agent	garbled Ard/Harat el-Yahud	2026-08-06
 Dar Awwaj	Dar Awwaj	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Dar el Abyad	Dar el Abyad	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Darel abyad: Haifa house per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Defna	Defna	1	974	Dafna (Israel)	Q545232	kima-dump		matched	C_review		agent	Dafna	2026-08-06
 Degania|Tiberias S/D	Degania|Tiberias S/D	1	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Deganya	Deganya	1	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Deir el Asaad	Deir el Asaad	1	6077	Dair el Asad (Israel)	Q612599	furas		matched	furas		furas	Deir al-Asad - per Y. Furas	2026-10-18
 Dejani	Dejani	1	892	Deganya Alef (Israel)	Q2371396	kima-dump	Q850106	matched	C_review		human	held for human review: QID conflict - kima-dump Q2371396 vs direct Wikidata Q850106	2026-08-06
 Doris St	Doris St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Drachla Tabor St	Drachla Tabor St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Eilut	Eilut	1	21697	Ilut (Israel)	Q2915756	furas		matched	furas		furas	Ilut - per Y. Furas	2026-10-18
 Ein Haron	Ein Haron	1	12370	En Harod (Israel)	Q1339887	kima-dump		matched	C_review		agent	garbled Ein Harod	2026-08-06
 Ein Hashofet	Ein Hashofet	1	91	En Hashofet (Israel)	Q2890213	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Ein Shemer	Ein Shemer	1	69	En Shemer (Israel)	Q166865	kima-dump		matched	C_review		agent		2026-08-06
@@ -239,12 +363,13 @@ Emek R.|Emek	Emek R.|Emek	1						unmatched-ambiguous	C_review		human		2026-08-06
 Emek Zevouloun	Emek Zevouloun	1						unmatched-ambiguous	C_review		human	held for human review: Emek Zevulun region entity; suggested #86676	2026-08-06
 En Dor	En Dor	1	19136	En Dor (Israel)	Q2916646	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Fot Luq	Fot Luq	1						unmatched-junk	C_review		agent		2026-08-06
+Furn el Abyad	Furn el Abyad	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Furn el Abyad: Haifa place per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Galil	Galil	1						unmatched-ambiguous	C_review		human	held for human review: Galilee region entity; suggested #1475	2026-08-06
 Geda	Geda	1					Q1792	unmatched-junk	C_review		agent		2026-08-06
 Gisr El Majami	Gisr El Majami	1						unmatched-ambiguous	C_review		agent	Jisr al-Majami / Gesher area	2026-08-06
 Giv'at Ada	Giv'at Ada	1	18292	Giv'at Ada (Israel)	Q7189221	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Givat Adam	Givat Adam	1	18292	Giv'at Ada (Israel)	Q7189221	kima-dump		matched	C_review		agent	read as Giv'at Ada	2026-08-06
-Hadar	Hadar	1	27009	Kefar Hadar (Hod Hasharon, Israel)	Q2630079	wikidata-direct	Q2630079	matched	A_autolink	0.95	auto		2026-08-06
+Hadar	Hadar	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	human	Q2630079	matched	A_autolink	0.95	agent	Hadar HaCarmel (Retsof St, police billet); Kima id was Kefar Hadar (Hod HaSharon). Furas read Hedera but marked it check - his doubt left open, not applied	2026-10-18
 Hadar Hacarmel (Haifa)	Hadar Hacarmel (Haifa)	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Hadar Hacarmel Haifa	Hadar Hacarmel Haifa	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Hadar Hacarmel|Had. Hac	Hadar Hacarmel|Had. Hac	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	Q2630079	matched	C_review		agent		2026-08-06
@@ -256,12 +381,15 @@ Hadera|Hedera	Hadera|Hedera	1	858	Hadera (Israel)	Q471886	kima-dump	Q471886	matc
 Haifa (Nesher)	Haifa (Nesher)	1	20	Nesher (Israel)	Q135432	kima-dump		matched	C_review		agent	parenthetical = finer reading	2026-08-06
 Haifa / Mount Carmel	Haifa / Mount Carmel	1						unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
 Haifa / Tel Amal	Haifa / Tel Amal	1						unmatched-ambiguous	C_review		agent	two different places	2026-08-06
+Haifa S/Dist	Haifa S/Dist	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Haifa SDist: Haifa place per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Haifa S/P	Haifa S/P	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Haifa [Hadar HaCarmel]	Haifa [Hadar HaCarmel]	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Haifa s/d	Haifa s/d	1						unmatched-ambiguous	C_review		agent	sub-district, not the city	2026-08-06
+Haifa|Ard el Yahoud	Haifa|Ard el Yahoud	1			Q12404212	furas		matched	furas		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
 Haifa|Ardel Jahud, Haifa	Haifa|Ardel Jahud, Haifa	1					Q41621	unmatched-no-kima-entry	C_review		human	finer reading Ard el-Yahud; no Kima entry	2026-08-06
 Haifa|Bassa	Haifa|Bassa	1					Q41621	unmatched-ambiguous	C_review		human	held for human review: Haifa's Bassa area vs al-Bassa	2026-08-06
 Haifa|Bourj Billet	Haifa|Bourj Billet	1					Q41621	unmatched-ambiguous	C_review		agent	second reading unidentifiable	2026-08-06
+Haifa|Carmel Avenue	Haifa|Carmel Avenue	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Haifa Carmel Avenue: Haifa st. per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Haifa|Churches Ort	Haifa|Churches Ort	1					Q41621	unmatched-ambiguous	C_review		agent	second reading unidentifiable	2026-08-06
 Haifa|Dar el Kadkany	Haifa|Dar el Kadkany	1					Q41621	unmatched-ambiguous	C_review		agent	second reading unidentifiable	2026-08-06
 Haifa|Had. Stac	Haifa|Had. Stac	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	Q41621	matched	C_review		human	pipe policy; Had. Stac read as Hadar Hac.	2026-08-06
@@ -269,23 +397,29 @@ Haifa|Hadar Hacarmel Haifa	Haifa|Hadar Hacarmel Haifa	1	21150	Hadar Hakarmel (Ha
 Haifa|Hedera	Haifa|Hedera	1					Q41621	unmatched-ambiguous	C_review		agent	two different towns	2026-08-06
 Haifa|Mt. Carmel	Haifa|Mt. Carmel	1					Q41621	unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
 Haifa|Nesher	Haifa|Nesher	1	20	Nesher (Israel)	Q135432	kima-dump	Q41621	matched	C_review		human	user ruling: Nesher	2026-08-06
-Haifa|Tireh	Haifa|Tireh	1	756	Tirat Karmel (Israel)	Q168215	kima-dump	Q41621	matched	outside-queue		human	pipe policy: finer reading	2026-08-06
+Haifa|Tireh	Haifa|Tireh	1	756	Tirat Karmel (Israel)	Q4118776	human	Q41621	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
 Haim	Haim	1						unmatched-junk	C_review		agent	fragment	2026-08-06
 Halershert	Halershert	1						unmatched-junk	C_review		agent		2026-08-06
-Halisa	Halisa	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
+Halisa	Halisa	1	83220	al-Khalisa (Haifa, Israel)	Q7212307	human		matched	C_review		agent	Halisa, Haifa - same place as Furas Hallisa Qrt	2026-10-18
 Hallesa	Hallesa	1					Q3473140	unmatched-no-kima-entry	C_review		agent		2026-08-06
-Hallisa Qrt	Hallisa Qrt	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
+Hallisa Qrt	Hallisa Qrt	1	83220	al-Khalisa (Haifa, Israel)	Q7212307	furas		matched	C_review		furas	Halisa, Haifa - per Y. Furas	2026-10-18
 Hallissa	Hallissa	1						unmatched-no-kima-entry	C_review		agent	Halisa neighborhood	2026-08-06
+Hammam El Basha	Hammam El Basha	1	71	Acre (Israel)	Q126084	furas		matched	furas		furas	Acre - per Y. Furas	2026-10-18
 Hammeh	Hammeh	1						unmatched-ambiguous	A_autolink		human	held for human review: el-Hamme spa, but Kima entity is the Hammat Gader archaeological site; suggested #4414	2026-08-06
 Hanita	Hanita	1	799	Hanita (Israel)	Q2890402	kima-dump		matched	C_review		agent		2026-08-06
-Hart el Yahud	Hart el Yahud	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
-Hartel Yahud	Hartel Yahud	1						unmatched-no-kima-entry	C_review		agent	Harat el-Yahud	2026-08-06
+Hart el Yahud	Hart el Yahud	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa	2026-10-18
+Hartel Ghazazwi	Hartel Ghazazwi	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Hartel Ghazazwi: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Hartel Yahud	Hartel Yahud	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa	2026-10-18
 Hazorea	Hazorea	1	986	Hazore'a (Israel)	Q1000893	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
-Heazelia	Heazelia	1	700	Herzeliyya (Israel)	Q152491	kima-dump		matched	C_review		agent	garbled Herzlia	2026-08-06
+Heazelia	Heazelia	1	791	Haifa (Israel)	Q41621	human		matched	C_review		agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town	2026-10-18
 Hittin	Hittin	1	21331	Hittin (Israel)	Q1246960	kima-dump	Q1246960	matched	A_autolink	0.95	auto		2026-08-06
+I'billin	I'billin	1	21569	I'bilin (Israel)	Q2915647	furas		matched	furas		furas	Ibillin - per Y. Furas	2026-10-18
 Irbed	Irbed	1						unmatched-ambiguous	C_review		agent	Irbid, Transjordan plausible; foreign location held for human review	2026-08-06
 Jaffa|Carmel Ahu K.bert	Jaffa|Carmel Ahu K.bert	1	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	Q180294	matched	A_autolink	0.95	auto		2026-08-06
+Jalami	Jalami	1			Q4704113	furas		matched	furas		furas	Al-Jalama - per Y. Furas	2026-10-18
 Jarit Nahalal	Jarit Nahalal	1	38	Nahalal (Israel)	Q1724338	kima-dump		matched	C_review		agent	garbled; Nahalal	2026-08-06
+Jisr El Zarka	Jisr El Zarka	1	21576	Jisr az-Zarka (Israel)	Q764601	furas		matched	furas		furas	Jisr al-Zarqa - per Y. Furas	2026-10-18
+Jisr el-Zarka	Jisr el-Zarka	1	21576	Jisr az-Zarka (Israel)	Q764601	furas		matched	furas		furas	Jisr al-Zarqa - per Y. Furas	2026-10-18
 Joknan	Joknan	1	18301	Yokne'am (Israel)	Q2890709	kima-dump		matched	C_review		agent	garbled Yokneam	2026-08-06
 Jokneam	Jokneam	1	18301	Yokne'am (Israel)	Q2890709	kima-dump	Q167582	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2890709 vs direct Wikidata Q167582	2026-08-06
 Kafaratta	Kafaratta	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
@@ -296,6 +430,7 @@ Kafr Yasin	Kafr Yasin	1	88951	Kafr Yasif (Israel)	Q2632879	kima-dump		matched	C_
 Kefa Tabor	Kefa Tabor	1	1666	Kefar Tavor (Israel)	Q1186956	kima-dump		matched	C_review		agent	Kfar Tavor	2026-08-06
 Kefar Ata	Kefar Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Kefar Bireim	Kefar Bireim	1						unmatched-ambiguous	C_review		agent	Bir'im? kibbutz Bar'am is post-1948	2026-08-06
+Kefr Kanna	Kefr Kanna	1	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	furas		furas	Kafr Kanna - per Y. Furas	2026-10-18
 Kenereth	Kenereth	1						unmatched-ambiguous	C_review		human		2026-08-06
 Kfar Baroukh	Kfar Baroukh	1	815	Kefar Barukh (Israel)	Q2777518	kima-dump		matched	C_review		agent		2026-08-06
 Kfar Baruch	Kfar Baruch	1	815	Kefar Barukh (Israel)	Q2777518	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
@@ -304,6 +439,7 @@ Kfar Hahoresh	Kfar Hahoresh	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump		ma
 Kfar Hasharon	Kfar Hasharon	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Kfar Hasidim / Kfar Hanoar	Kfar Hasidim / Kfar Hanoar	1	830	Kefar Hasidim (Israel)	Q135425	kima-dump		matched	C_review		agent	Kfar Hanoar is the youth village at Kfar Hasidim	2026-08-06
 Kfar Horesh	Kfar Horesh	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump		matched	C_review		agent	Kefar Hahoresh near Nazareth	2026-08-06
+Kfar Inan	Kfar Inan	1			Q6346161	furas		matched	furas		furas	Kfar Inan - per Y. Furas	2026-10-18
 Kfar Jeladim	Kfar Jeladim	1	21910	Kefar Yeladim (Israel)				matched	C_review		agent	Kfar Yeladim	2026-08-06
 Kfar Jeshuah	Kfar Jeshuah	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump		matched	C_review		agent		2026-08-06
 Kfar Joshua	Kfar Joshua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump		matched	C_review		agent		2026-08-06
@@ -318,7 +454,8 @@ Kfar Yehoshoua	Kfar Yehoshoua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dum
 Kfar Yehoshua	Kfar Yehoshua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Kfar Yeshua	Kfar Yeshua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump		matched	C_review		agent	Kfar Yehoshua	2026-08-06
 Kfar Yideyah	Kfar Yideyah	1	831	Kefar Yedidya (Israel)	Q2920134	kima-dump		matched	C_review		agent	garbled Kfar Yedidya	2026-08-06
-Khamra	Khamra	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Khamra	Khamra	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Khamrah: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Khamra Square	Khamra Square	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Khamra Square: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Kharwa	Kharwa	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Kibbutz Affikim	Kibbutz Affikim	1	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Kibbutz Dalia	Kibbutz Dalia	1	886	Daliyya (Israel)	Q1000997	kima-dump		matched	C_review		agent		2026-08-06
@@ -337,7 +474,7 @@ Kiryat Eliyahu	Kiryat Eliyahu	1						unmatched-no-kima-entry	C_review		agent	Hai
 Kiryat Haim / Kibbutz Amal	Kiryat Haim / Kibbutz Amal	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Kiryat Haim|Kiryat-Haim Tribune Amal	Kiryat Haim|Kiryat-Haim Tribune Amal	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump	Q112957897	matched	C_review		agent		2026-08-06
 Kiryat Kamal	Kiryat Kamal	1						unmatched-no-kima-entry	C_review		human	garbled Kiryat Amal (Tivon)	2026-08-06
-Kiryat Shmuel	Kiryat Shmuel	1	22902	Kiryat Shemuel (Jerusalem, Israel)	Q185687	wikidata-direct	Q185687	matched	A_autolink	0.95	auto		2026-08-06
+Kiryat Shmuel	Kiryat Shmuel	1	22901	Kiryat Shemuel (Haifa, Israel)		human	Q185687	matched	A_autolink	0.95	agent	Kiryat Shmuel in Haifa bay (founded 1938), not Jerusalem's; Jewish patient, Nov 1939. Found by the sweep that followed the Rehavia ruling	2026-10-18
 Kiryat Yam	Kiryat Yam	1	480	Kiryat Yam (Israel)	Q152387	kima-dump	Q152387	matched	C_review		agent		2026-08-06
 Kiryat-Haim Tribune Amal	Kiryat-Haim Tribune Amal	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		agent		2026-08-06
 Kufr 'Ata	Kufr 'Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
@@ -350,12 +487,16 @@ Maagan	Maagan	1	189	Ma'agan (Israel)	Q2916656	kima-dump	Q187979	matched	C_review
 Majamil	Majamil	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Majd al-Krum	Majd al-Krum	1	19615	Majd al-Kurum (Israel)	Q2777868	kima-dump	Q2777868	matched	A_autolink	0.95	auto		2026-08-06
 Majdal	Majdal	1	6904	Migdal (Israel)	Q2916182	kima-dump	Q12192298	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2916182 vs direct Wikidata Q12192298	2026-08-06
+Maloul	Maloul	1			Q2892972	furas		matched	furas		furas	Ma'alul - per Y. Furas	2026-10-18
 Mashmar Hyam	Mashmar Hyam	1						unmatched-ambiguous	C_review		agent	Mishmar HaYam vs Mishmar Haemek	2026-08-06
 Massada	Massada	1	219	Masada (Israel)	Q2888546	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Megiddo Road	Megiddo Road	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Megiddo Road: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Menahemia Colony	Menahemia Colony	1	18297	Menahemya (Israel)	Q2917281	kima-dump		matched	C_review		agent	Menahemya	2026-08-06
 Merchavia	Merchavia	1	205	Merhavya (Israel)	Q2920170	kima-dump	Q1004796	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2920170 vs direct Wikidata Q1004796	2026-08-06
+Meron	Meron	1	236	Meron (Israel)		furas		matched	furas		furas	Meron - per Y. Furas	2026-10-18
 Mes-hah	Mes-hah	1	1666	Kefar Tavor (Israel)	Q1186956	kima-dump		matched	C_review		agent	Mesha = old name of Kfar Tavor	2026-08-06
 Meshek Yagour	Meshek Yagour	1	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent		2026-08-06
+Minsi	Minsi	1			Q2368058	furas		matched	furas		furas	Mansi - per Y. Furas	2026-10-18
 Mizpa	Mizpa	1	21700	Mitspa (Israel)	Q2776808	kima-dump		matched	C_review		agent		2026-08-06
 Mizra	Mizra	1	224	Mizra (Israel)	Q2889536	kima-dump		matched	C_review		agent		2026-08-06
 Mount Tabor	Mount Tabor	1					Q6923978	unmatched-ambiguous	A_autolink		human	held for human review: Mount Tabor entity; suggested #5765	2026-08-06
@@ -365,11 +506,13 @@ Nabi Sha'man Hagelil	Nabi Sha'man Hagelil	1						unmatched-ambiguous	C_review		a
 Naffuleh	Naffuleh	1	18417	Afula (Israel)	Q152462	kima-dump		matched	C_review		agent	garbled Affuleh (Afula)	2026-08-06
 Nahla	Nahla	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Nahlat Yacob	Nahlat Yacob	1						unmatched-ambiguous	C_review		agent		2026-08-06
-Nahliel Yahud	Nahliel Yahud	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
+Nahliel Yahud	Nahliel Yahud	1			Q12404212	human		matched	C_review		agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas	2026-10-18
+Nasareth	Nasareth	1	18	Nazareth (Israel)	Q430776	furas		matched	furas		furas	Nazareth - per Y. Furas	2026-10-18
 Natamia	Natamia	1	24	Netanya (Israel)	Q192225	kima-dump		matched	C_review		agent	garbled Natania	2026-08-06
 Natania	Natania	1	24	Netanya (Israel)	Q192225	kima-dump		matched	C_review		agent		2026-08-06
 Natsera (Nazareth)	Natsera (Nazareth)	1	18	Nazareth (Israel)	Q430776	kima-dump		matched	C_review		agent		2026-08-06
 Natseria	Natseria	1	18	Nazareth (Israel)	Q430776	kima-dump		matched	C_review		agent	read as Nazareth	2026-08-06
+Naza[reth]	Naza[reth]	1	18	Nazareth (Israel)	Q430776	furas		matched	furas		furas	Nazareth - per Y. Furas	2026-10-18
 Nebertz	Nebertz	1						unmatched-junk	C_review		agent		2026-08-06
 Nes Ziona	Nes Ziona	1	15	Nes Tsiyyona (Israel)	Q168162	kima-dump	Q168162	matched	A_autolink	0.95	auto		2026-08-06
 Netanya|Nathania	Netanya|Nathania	1	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	C_review		agent		2026-08-06
@@ -388,24 +531,30 @@ Ramat Gan	Ramat Gan	1	777	Ramat Gan (Israel)	Q192807	kima-dump	Q192807	matched	C
 Ramatby	Ramatby	1						unmatched-junk	C_review		agent		2026-08-06
 Ramleh	Ramleh	1	456	Ramla (Israel)	Q221447	kima-dump	Q4518509	matched	C_review		agent	held for human review: QID conflict - kima-dump Q221447 vs direct Wikidata Q4518509	2026-08-06
 Ras El Ein	Ras El Ein	1					Q655065	unmatched-ambiguous	C_review		agent		2026-08-06
-Rechavia	Rechavia	1	21723	Rehavya (Jerusalem, Israel)	Q654128	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Rechavia	Rechavia	1	22262	Rehavya (Haifa, Israel)		human		matched	A_autolink	0.95	human	"Rehavia, Haifa quarter, not Jerusalem's (user ruling 2026-10-18). Kima entry has no point; drawn at Haifa. NB: the address reads ""Rechavia Affuleh S/D."" - worth a look at the scan"	2026-10-18
 Rehovoth	Rehovoth	1	562	Rehovot (Israel)	Q207350	kima-dump	Q207350	matched	C_review		agent		2026-08-06
 Roy	Roy	1			Q11878352	human		matched	C_review		human	El-Ro'i by Kiryat Haroshet; no Kima entry, Wikidata only	2026-08-06
 Rumat Neshanan	Rumat Neshanan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump		matched	C_review		agent	read as Ramat/Neve Shaanan	2026-08-06
-Sajour	Sajour	1					Q732433	unmatched-ambiguous	C_review		agent	Sajur vs Sejera	2026-08-06
+Saffuria	Saffuria	1	85997	Saffuriya (Israel)	Q18192054	furas		matched	furas		furas	Saffurieh - per Y. Furas	2026-10-18
+Sajour	Sajour	1	75033	Sajur (Israel)	Q732433	furas	Q732433	matched	C_review		furas	Sajur - per Y. Furas	2026-10-18
 Sakhnin	Sakhnin	1	95	Sakhnin (Israel)	Q168330	kima-dump	Q168330	matched	C_review		agent		2026-08-06
 Salem	Salem	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Salt	Salt	1	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
 Sedjerah	Sedjerah	1	733	Ilaniyya (Israel)	Q2916589	kima-dump		matched	C_review		agent	Sejera = Ilaniyya	2026-08-06
+Shaab village	Shaab village	1	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
 Shar Amakim	Shar Amakim	1	258	Sha'ar Ha'amakim (Israel)	Q135484	kima-dump		matched	C_review		agent	Sha'ar Ha'amakim	2026-08-06
 Shatel Yahud	Shatel Yahud	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
 Shavei Tzion / Nahariya	Shavei Tzion / Nahariya	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Shavei Zion	Shavei Zion	1	21799	Shave Tsiyyon (Israel)	Q571191	kima-dump	Q571191	matched	C_review		agent		2026-08-06
-Shenglia	Shenglia	1	700	Herzeliyya (Israel)	Q152491	kima-dump		matched	C_review		human	user ruling: Shenglia Qrt = Herzliya	2026-08-06
-Shezlia	Shezlia	1	700	Herzeliyya (Israel)	Q152491	kima-dump		matched	C_review		agent	by analogy with the Shenglia ruling	2026-08-06
+Shenglia	Shenglia	1	791	Haifa (Israel)	Q41621	human		matched	C_review		agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town	2026-10-18
+Shezlia	Shezlia	1	791	Haifa (Israel)	Q41621	human		matched	C_review		agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town	2026-10-18
 Shunat Zarefin	Shunat Zarefin	1						unmatched-ambiguous	C_review		agent	Sarafand?	2026-08-06
 Smillel	Smillel	1						unmatched-junk	C_review		agent		2026-08-06
+Solam	Solam	1	86790	Sulam (Israel)	Q2777713	furas		matched	furas		furas	Solam - per Y. Furas	2026-10-18
+Souk El Abyad	Souk El Abyad	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Souk el Abyad: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 St. Hashomer	St. Hashomer	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Staerneck	Staerneck	1						unmatched-junk	C_review		agent		2026-08-06
+Tarshiha/Acre	Tarshiha/Acre	1	21809	Tarshiḥa (Israel)	Q134496896	furas		matched	furas		furas	Tarshiha - per Y. Furas	2026-10-18
 Tel Chai	Tel Chai	1	16154	Tel Hai (Israel)	Q2094886	kima-dump	Q2094886	matched	C_review		agent	Tel Hai	2026-08-06
 Tel Joseph	Tel Joseph	1	186	Tel-Yosef (Israel)	Q2917286	kima-dump		matched	C_review		agent		2026-08-06
 Tel Mond	Tel Mond	1	21757	Tel Mond (Israel)	Q2304754	kima-dump	Q2304754	matched	A_autolink	0.95	auto		2026-08-06
@@ -417,23 +566,31 @@ Tiberias / Kinneret	Tiberias / Kinneret	1						unmatched-ambiguous	C_review		age
 Tiberias S/D	Tiberias S/D	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Tiberias|P. & P. Tiberias	Tiberias|P. & P. Tiberias	1	807	Tiberias (Israel)	Q151920	kima-dump	Q151920	matched	C_review		agent		2026-08-06
 Tiberias|Tiberia	Tiberias|Tiberia	1	807	Tiberias (Israel)	Q151920	kima-dump	Q151920	matched	C_review		agent		2026-08-06
-Tira	Tira	1	756	Tirat Karmel (Israel)	Q168215	kima-dump	Q167594	matched	C_review		human	user ruling: Tira/Tireh in this dataset = al-Tira (Tirat Karmel); held for human review: QID conflict - kima-dump Q168215 vs direct Wikidata Q167594	2026-08-06
-Tirat Carmel / Haifa	Tirat Carmel / Haifa	1	756	Tirat Karmel (Israel)	Q168215	kima-dump		matched	outside-queue		human		2026-08-06
+Tira	Tira	1	756	Tirat Karmel (Israel)	Q4118776	furas	Q167594	matched	C_review		furas	Tireh - per Y. Furas	2026-10-18
+Tirat Carmel / Haifa	Tirat Carmel / Haifa	1	756	Tirat Karmel (Israel)	Q4118776	human		matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
 Tirat Zvi	Tirat Zvi	1	757	Tirat Tsvi (Israel)	Q550025	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Tirat Zvi	Tirat Zvi	1	757	Tirat Tsvi (Israel)	Q550025	kima-dump		matched	outside-queue		agent	kibbutz Tirat Zvi, Bet Shean valley - not al-Tira	2026-08-06
 Tirch	Tirch	1					Q43	unmatched-ambiguous	C_review		agent		2026-08-06
-Tireh Village	Tireh Village	1	756	Tirat Karmel (Israel)	Q168215	kima-dump		matched	outside-queue		human		2026-08-06
-Tireh, Haifa	Tireh, Haifa	1	756	Tirat Karmel (Israel)	Q168215	kima-dump		matched	outside-queue		human		2026-08-06
-Tireh-Haifa	Tireh-Haifa	1	756	Tirat Karmel (Israel)	Q168215	kima-dump		matched	outside-queue		human		2026-08-06
-Tireh-Hayark	Tireh-Hayark	1	756	Tirat Karmel (Israel)	Q168215	kima-dump		matched	outside-queue		human	garbled suffix	2026-08-06
+Tireh Village	Tireh Village	1	756	Tirat Karmel (Israel)	Q4118776	human		matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Tireh, Haifa	Tireh, Haifa	1	756	Tirat Karmel (Israel)	Q4118776	human		matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Tireh-Haifa	Tireh-Haifa	1	756	Tirat Karmel (Israel)	Q4118776	human		matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Tireh-Hayark	Tireh-Hayark	1	756	Tirat Karmel (Israel)	Q4118776	human		matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
 Tireh/Athlit	Tireh/Athlit	1						unmatched-ambiguous	outside-queue		agent	alternation across two different places	2026-08-06
-Tires	Tires	1	756	Tirat Karmel (Israel)	Q168215	kima-dump	Q25374396	matched	outside-queue		human	garbled Tireh; held for human review: QID conflict - kima-dump Q168215 vs direct Wikidata Q25374396	2026-08-06
-Tires|Tireh	Tires|Tireh	1	756	Tirat Karmel (Israel)	Q168215	kima-dump	Q25374396	matched	outside-queue		human		2026-08-06
+Tires	Tires	1	756	Tirat Karmel (Israel)	Q4118776	human	Q25374396	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Tires|Tireh	Tires|Tireh	1	756	Tirat Karmel (Israel)	Q4118776	human	Q25374396	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Trans Jordan	Trans Jordan	1	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
 Turaan	Turaan	1						unmatched-no-kima-entry	C_review		agent	Tur'an village absent from Kima	2026-08-06
+Um El Zeinat	Um El Zeinat	1			Q2255513	furas		matched	furas		furas	Um el Zeinat - per Y. Furas	2026-10-18
+Um el Fahim	Um el Fahim	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
+Umm el Fahem	Umm el Fahem	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
 Vilhelma	Vilhelma	1	26771	Wilhelma (Israel)	Q2906526	kima-dump		matched	C_review		agent	Wilhelma Templer colony	2026-08-06
 W. el Nisnass	W. el Nisnass	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled		matched	C_review		agent	Wadi Nisnas	2026-08-06
+Wadi Arah	Wadi Arah	1			Q7959216	furas		matched	furas		furas	Wadi arah - per Y. Furas	2026-10-18
 Wadi Kavara	Wadi Kavara	1						unmatched-no-kima-entry	C_review		agent	Kabara marshes	2026-08-06
+Wadi Nasnas (Haifa)	Wadi Nasnas (Haifa)	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	furas		matched	furas		furas	Wadi Nisnas, Haifa - per Y. Furas	2026-10-18
 Wadi Nisnas	Wadi Nisnas	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled	Q2920415	matched	C_review		agent		2026-08-06
+Wadi Rushumia	Wadi Rushumia	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Wadi Rushumia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Yabed	Yabed	1	75339	Ya'bad (West Bank)	Q1828708	furas		matched	furas		furas	Ya'bad - per Y. Furas	2026-10-18
 Yavne'el / Tiberias	Yavne'el / Tiberias	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Yavneel	Yavneel	1	18477	Yavne'el (Israel)	Q1676894	kima-dump	Q1676894	matched	A_autolink	0.95	auto		2026-08-06
 Yavneel Colony	Yavneel Colony	1	18477	Yavne'el (Israel)	Q1676894	kima-dump		matched	C_review		agent		2026-08-06
@@ -451,6 +608,3 @@ Zicron	Zicron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_revie
 Zikhron Yaacov	Zikhron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Zikhron Yacob	Zikhron Yacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zikron Yaacov	Zikron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
-Tarshiha	Tarshiha	74	21809	Tarshiḥa (Israel)	Q134496896	human		matched	A_autolink		human	the depopulated village, not Maalot-Tarshiha (Q152385) which later absorbed it; Kima carries no coordinate, taken from Wikidata	2026-08-28
-Lajjun	Lajjun	10	16127	Lajjūn (Jordan)	Q3775368	human		matched	A_autolink		human	al-Lajjun in the Jenin sub-district; the Kima entry names it Jordan, which its own coordinate contradicts; point from Wikidata	2026-08-28
-Yanuh	Yanuh	3	18370	Yanoah (Israel)	Q2890238	human		matched	A_autolink		human	no Wikidata entity of its own; point is Yanuh-Jat, the council that now includes the village; Kima carries no coordinate	2026-08-28

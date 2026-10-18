@@ -96,3 +96,40 @@ reviewed rather than autolinked. `_grade` alone is not a verdict.
 Of the 209: 40 are A-grade and in-region (471 records) and could be taken as
 read; 158 drew no candidate at all; 5 matched an entry Kima holds without
 coordinates (Tarshiha the largest at 74 records), the same gap al-Bassa had.
+
+## Yoni Furas's identifications (2026-10-18)
+
+Yoni Furas (University of Haifa), collaborator on the project, annotated the
+2024 list of unique patient addresses: a reading for each string, a place type
+(village, neighbourhood, street, house, police, railway, IPC, military unit…),
+the town, and for many villages a Wikidata QID. His sheet is published as
+`data/public/furas-unique-addresses-2024.tsv`, credited to him. The historian
+ruled that his identifications stand wherever he gave one.
+
+- `furas-rulings.tsv` — the reviewed bridge from his sheet to the City column:
+  one row per `City as written` value, matched to his row exactly or by a close
+  spelling (`match`), with the Kima id and QID his reading resolves to. Rows he
+  marked "check", and rows that name a place without saying which namesake
+  (Sileh, Jaba', Kineret, Kantara…), are `held` and change nothing. Close-spelling
+  matches that landed on a different place (Kufr Kanna → his "Kafr Anna",
+  Jaba'a → his "Jabata") were rejected.
+- `apply_furas.py` folds the matched rows into `city-kima-decisions.tsv`
+  (`decided_by` = `furas`; `agent`/`human` for the few rows that extend or
+  correct around his rulings). Idempotent.
+
+What his identifications changed: al-Tira is the Mandate village Q4118776
+(the "direct Wikidata" rival Q5712494 was a village in Iran); Herzlia (Qrt.,
+Ave) is the Herzliya quarter of Haifa, not Herzliya town; bare "Ara" is 'Ara,
+not Ar'ara; Ard el-Yahud gets its own QID; and about 150 Galilee, Carmel and
+Wadi Ara villages are linked. Two fixes rode along: "Hadar" pointed at Kefar
+Hadar (Hod HaSharon) while meaning Hadar HaCarmel; Rechavia and Kiryat Shmuel
+are the Haifa quarters, not Jerusalem's; "Gedera" and "Ghedera" are HTR misreadings of Hedera, so Hadera (user ruling). Haifa quarters with no Kima point are
+drawn at Haifa (`source` = `haifa-quarter-no-point` in place-coords.tsv).
+
+Rerun after editing the rulings:
+
+```bash
+python3 kimatch/apply_furas.py
+python3 pipeline/build.py
+python3 pipeline/place_coords.py   # delete a city's row first to re-place it
+```

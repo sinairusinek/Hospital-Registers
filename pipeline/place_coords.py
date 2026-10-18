@@ -200,6 +200,17 @@ def main() -> None:
                 row["source"] = "wikidata"
                 row["standing"] = "confirmed"
 
+    # A Haifa quarter Kima carries without a point (Rehavya in Haifa) is still
+    # in Haifa: draw it at the city's point rather than leave it off the map,
+    # and say so in `source`.
+    haifa = next((r for r in rows if r["kima_id"] == "791" and r["lat"]), None)
+    for row in rows:
+        if (haifa and not row["lat"] and row["decision"] == "matched"
+                and "(Haifa," in row["kima_name_rom"]):
+            row["lat"], row["lon"] = haifa["lat"], haifa["lon"]
+            row["source"] = "haifa-quarter-no-point"
+            row["standing"] = "confirmed"
+
     rows.extend(provisional_rows({r["city"] for r in rows}))
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

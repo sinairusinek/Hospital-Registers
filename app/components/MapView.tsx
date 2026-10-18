@@ -43,9 +43,14 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'What is not on the map, and why it matters',
-    body: <p>The gazetteer review began with the cities of Jewish patients. Because the join is blind to religion, those rulings carried every community's records for the places the communities shared — Acre, Nazareth, Jenin. The places they did not share got nothing, so the Galilee and Carmel villages no Jewish patient came from stayed off the map. That absence was systematic, and it fell on Muslim and Christian records. A second round is closing it; the hollow circles are its first result. What remains unplaced is counted below the map — values still unreviewed, values judged ambiguous or illegible, and records carrying no city at all. Absence here is a state of the review, never a claim about the patient.</p>
+    body: <p>The gazetteer review began with the cities of Jewish patients. Because the join is blind to religion, those rulings carried every community's records for the places the communities shared — Acre, Nazareth, Jenin. The places they did not share got nothing, so the Galilee and Carmel villages no Jewish patient came from stayed off the map. That absence was systematic, and it fell on Muslim and Christian records. A second round is closing it; the hollow circles are its first result. Most of the villages now drawn solid were identified by Yoni Furas (University of Haifa), collaborator, whose annotation of the patient addresses also moved Herzliya to the Haifa quarter of that name and al-Tira back to the village. What remains unplaced is counted below the map — values still unreviewed, values judged ambiguous or illegible, and records carrying no city at all. Absence here is a state of the review, never a claim about the patient.</p>
   }
 ];
+
+// Where the Kima entry is named for a later successor than the place the
+// register means, the circle carries the Mandate name. Kima 756 is "Tirat
+// Karmel"; the patients came from al-Tira, the village (Q4118776).
+const LABEL_OVERRIDE: Record<string, string> = { '756': 'al-Tira' };
 
 interface Place {
   // The label the circle carries: the gazetteer's own name where there is one,
@@ -164,7 +169,8 @@ const MapView: React.FC<Props> = ({ data }) => {
               grouped.set(key, {
                 // Kima's romanized name carries a parenthetical country; the
                 // circle wants the bare settlement.
-                label: kimaName ? kimaName.replace(/\s*\([^)]*\)\s*$/, '') : at(c, 'city'),
+                label: LABEL_OVERRIDE[kimaId]
+                  || (kimaName ? kimaName.replace(/\s*\([^)]*\)\s*$/, '') : at(c, 'city')),
                 cities: [at(c, 'city')],
                 lat, lon,
                 source: at(c, 'source'),
