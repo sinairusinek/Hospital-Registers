@@ -5,7 +5,7 @@ import {
   PieChart, Pie, Cell, AreaChart, Area, Brush, BarChart, Bar, ReferenceArea
 } from 'recharts';
 import { GoogleGenAI } from "@google/genai";
-import { TrendingUp, Users, MapPin, HeartPulse, Globe, CheckCircle2, Sparkles, BrainCircuit, Calendar, Baby, Timer, RotateCcw, ChevronDown, LineChart as LineChartIcon } from 'lucide-react';
+import { TrendingUp, Users, MapPin, HeartPulse, Globe, CheckCircle2, Sparkles, BrainCircuit, Calendar, Baby, Timer, RotateCcw, ChevronDown, LineChart as LineChartIcon, Users2 } from 'lucide-react';
 import { RegistryRecord, FilterState } from '../types';
 import { facetValue, UNKNOWN } from '../facets';
 import { buildColorScale, ColorScale, OTHERS, RESIDUE, DIVERGING } from '../colors';
@@ -13,6 +13,7 @@ import FilterSidebar from './FilterSidebar';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import RepresentationPanel from './RepresentationPanel';
 import CompositionOverTime from './CompositionOverTime';
+import { GROUP_COLUMN } from '../groups';
 import HeatmapPanel from './HeatmapPanel';
 
 const HELP: HelpSection[] = [
@@ -39,6 +40,10 @@ const HELP: HelpSection[] = [
   {
     heading: 'A colour belongs to a value',
     body: <p>Colours are fixed to the values themselves, not to their rank in the current selection, so filtering never repaints the survivors and two states of the same chart can be compared. Muslim is green, Christian orange and Jewish blue in every chart that shows them; <em>{UNKNOWN}</em> is always grey, and the pale grey <em>Others</em> is the residue.</p>
+  },
+  {
+    heading: 'Religion and nationality, crossed',
+    body: <p>The register records religion and nationality in separate columns, and their pies are kept as the clerks wrote them. The <em>Religion × nationality</em> pie and facet are an alternative reading of the same records, not a replacement: <em>Christian</em> on its own pools British officials with Palestinian Arabs, so this grouping separates them into <em>Palestinian Arab</em> (Muslim or Christian, Palestinian nationality), <em>British Christian</em> (British or Palestinian British nationality), <em>Jewish</em> (any nationality) and <em>Other</em>. A Muslim or Christian whose nationality is blank cannot be placed on either side of the Palestinian line and counts as <em>{UNKNOWN}</em>. Compound nationalities such as <em>Palestinian Syrian</em> count as <em>Other</em>, as they do on the Shared Space page.</p>
   },
   {
     heading: 'Diagnosis is grouped by ICD-9 chapter',
@@ -145,6 +150,8 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
       { id: 'Admission Date', aliases: ['admission date', 'admission date [iso]', 'date'] },
       { id: 'City', aliases: ['city', 'town', 'residence'] },
       { id: 'Nationality', aliases: ['nationality', 'standardnationality', 'standard_nationality'] },
+      // Derived at load time from the two above; see groups.ts.
+      { id: 'Group', aliases: [GROUP_COLUMN.toLowerCase()] },
       { id: 'Ward', aliases: ['ward', 'standardized ward'] },
       // Not charted; used to warn when the Atlit camp register is in a selection.
       { id: 'Notebook', aliases: ['notebook_number', 'notebook number'] },
@@ -170,7 +177,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
   // Built from fullData, so nothing the filters do can repaint a slice.
   const colorScales = useMemo(() => {
     const scales: Record<string, ColorScale> = {};
-    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis', 'Chapter'].forEach(name => {
+    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Group', 'Diagnosis', 'Chapter'].forEach(name => {
       scales[name] = buildColorScale(fullData, actualKeys[name], name);
     });
     return scales;
@@ -182,7 +189,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
   // shares of comparable populations and their ratio means something.
   const baselines = useMemo(() => {
     const out: Record<string, Record<string, number>> = {};
-    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Diagnosis', 'Chapter'].forEach(dim => {
+    ['Sex', 'Result', 'Religion', 'City', 'Nationality', 'Group', 'Diagnosis', 'Chapter'].forEach(dim => {
       const counts: Record<string, number> = {};
       let total = 0;
       fullData.forEach(row => {
@@ -254,7 +261,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
 
   const stats = useMemo(() => {
     const distributions: Record<string, Record<string, number>> = {
-      sex: {}, result: {}, religion: {}, city: {}, nationality: {}, diagnosis: {}, chapter: {}, age: {}, stay: {}
+      sex: {}, result: {}, religion: {}, city: {}, nationality: {}, group: {}, diagnosis: {}, chapter: {}, age: {}, stay: {}
     };
 
     data.forEach(row => {
@@ -274,6 +281,9 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
 
       const nat = facetValue(actualKeys['Nationality'] && row[actualKeys['Nationality']]);
       distributions.nationality[nat] = (distributions.nationality[nat] || 0) + 1;
+
+      const grp = facetValue(actualKeys['Group'] && row[actualKeys['Group']]);
+      distributions.group[grp] = (distributions.group[grp] || 0) + 1;
 
       // The diagnosis chart stays a distribution of recorded diagnoses only: an
       // unrecorded slice would outweigh every real one. The sidebar still counts
@@ -332,6 +342,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
       diagnosisData: formatCategorical(distributions.diagnosis),
       chapterData: formatCategorical(distributions.chapter),
       nationalityData: formatCategorical(distributions.nationality),
+      groupData: formatCategorical(distributions.group),
       ageData: formatNumeric(distributions.age),
       stayData: formatNumeric(distributions.stay)
     };
@@ -788,6 +799,12 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
           <PieCard displayName="Nationality" title="Nationality"
                    icon={<Globe size={18} className="text-emerald-500" />}
                    chartData={stats.nationalityData} />
+          {/* The two pies before it, crossed: an alternative reading of the
+              same records, never a replacement for them. */}
+          <PieCard displayName="Group" title="Religion × nationality"
+                   icon={<Users2 size={18} className="text-amber-600" />}
+                   chartData={stats.groupData}
+                   note="Palestinian Arab: Muslim or Christian of Palestinian nationality. British Christian: Christian of British or Palestinian British nationality. Jewish: any nationality. Other: everyone else recorded, e.g. Egyptian or Syrian Muslims, Armenian Christians, Druze, Bahai. Not recorded: no religion, or a Muslim or Christian with no nationality." />
           <PieCard displayName="Sex" title="Sex Distribution"
                    icon={<Users size={18} className="text-indigo-500" />}
                    chartData={stats.sexData} />

@@ -4,6 +4,7 @@ import { ListFilter, X } from 'lucide-react';
 import { RegistryRecord, FilterState } from '../types';
 import { facetValue, UNKNOWN } from '../facets';
 import { matchesNonFacet, failingFacetColumns } from '../filtering';
+import { GROUP_COLUMN } from '../groups';
 
 interface FilterSidebarProps {
   data: RegistryRecord[];
@@ -52,6 +53,9 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
     { label: 'Sex', internalKey: 'sex', aliases: ['gender'] },
     { label: 'Religion', internalKey: 'religion', aliases: ['standardized religion', 'standardized_religion'] },
     { label: 'Nationality', internalKey: 'nationality', aliases: ['standardnationality'] },
+    // The two above crossed into one grouping (groups.ts). Beside them, not
+    // instead of them: either can be filtered without the other.
+    { label: 'Religion × nationality', internalKey: GROUP_COLUMN.toLowerCase(), aliases: [] },
     { label: 'Ward', internalKey: 'ward', aliases: ['standardized ward'] },
     // Both read out of the Address column with Yoni Furas's vocabulary
     // (pipeline/address_layers.py). An institution in the address is how the

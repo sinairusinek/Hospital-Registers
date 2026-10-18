@@ -3,6 +3,7 @@ import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen, Users2 } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import { matchesFilters } from './filtering';
+import { addGroupColumn, GROUP_COLUMN } from './groups';
 import AboutView from './components/AboutView';
 import DataBrowser from './components/DataBrowser';
 import StatisticsView from './components/StatisticsView';
@@ -96,6 +97,10 @@ const App: React.FC = () => {
         if (rawData.length > 0) {
           const keys = Object.keys(rawData[0]);
           cleanSex(rawData, keys);
+          // Before the columns are listed, so the derived grouping is offered
+          // under Columns like any other.
+          addGroupColumn(rawData, keys);
+          if (GROUP_COLUMN in rawData[0]) keys.push(GROUP_COLUMN);
           // The cleaned columns carry the plain names in the published artifact,
           // so those are what the table shows by default. The verbatim columns
           // ("Nationality as written") are one click away under Columns.

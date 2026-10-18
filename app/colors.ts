@@ -49,6 +49,18 @@ const SEMANTIC: Record<string, Record<string, string>> = {
     Muslim: SERIES[2],    // green
     Christian: SERIES[1], // orange
     Jewish: SERIES[0]     // blue
+  },
+  // The alternative grouping. Jewish keeps its blue. Palestinian Arab is
+  // deliberately not the Muslim green — the group is Muslim and Christian, and
+  // a shared hue would read the two views as one. British Christian takes the
+  // darker orange the Shared Space view already gives it. Validated as a set
+  // (all pairs): worst ΔE 13.0 deutan, 16.3 normal; yellow is below 3:1 on
+  // white, which the pie's labelled legend covers.
+  Group: {
+    'Palestinian Arab': SERIES[3],  // yellow
+    'British Christian': '#a8481a', // dark orange
+    Jewish: SERIES[0],              // blue
+    Other: SERIES[6]                // violet
   }
 };
 
