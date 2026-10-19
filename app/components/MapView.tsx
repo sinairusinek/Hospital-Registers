@@ -7,7 +7,8 @@ import {
 import { MapPin, X, Layers, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { RegistryRecord } from '../types';
 import { UNKNOWN, facetValue } from '../facets';
-import { SERIES, NEUTRAL } from '../colors';
+import { SERIES, semanticColor } from '../colors';
+import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
 
@@ -30,12 +31,12 @@ const COORDS_URL = `${import.meta.env.BASE_URL}data/place-coords.tsv`;
 
 const HELP: HelpSection[] = [
   {
-    heading: 'What a circle is',
-    body: <p>One place, sized by how many admissions name it — and one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single circle. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
+    heading: 'What a pie is',
+    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The slices follow the filters: narrow the years and every pie is recut for them. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
   },
   {
-    heading: 'Solid circles and hollow ones',
-    body: <p>A <strong>solid</strong> circle is a place somebody ruled on — matched to the Kima gazetteer by the historian or by the assistant, and signed. A <strong>hollow, dashed</strong> circle is the matching engine's own suggestion, checked only for landing inside the region; nobody has confirmed it. Both draw real records, but a hollow circle's <em>location</em> is a lead rather than a finding, and it can be wrong in ways a ruling cannot. The engine matched "Hebron" to Hebron, Connecticut, perfectly and confidently — that is the failure mode a hollow circle is warning you about.</p>
+    heading: 'Solid pies and dashed ones',
+    body: <p>A <strong>solid</strong> pie is a place somebody ruled on — matched to the Kima gazetteer by the historian or by the assistant, and signed. A <strong>faded pie with a dashed rim</strong> is the matching engine's own suggestion, checked only for landing inside the region; nobody has confirmed it. Both draw real records, but a dashed pie's <em>location</em> is a lead rather than a finding, and it can be wrong in ways a ruling cannot. The engine matched "Hebron" to Hebron, Connecticut, perfectly and confidently — that is the failure mode a dashed rim is warning you about.</p>
   },
   {
     heading: 'The two basemaps',
@@ -43,7 +44,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'What is not on the map, and why it matters',
-    body: <p>The gazetteer review began with the cities of Jewish patients. Because the join is blind to religion, those rulings carried every community's records for the places the communities shared — Acre, Nazareth, Jenin. The places they did not share got nothing, so the Galilee and Carmel villages no Jewish patient came from stayed off the map. That absence was systematic, and it fell on Muslim and Christian records. A second round is closing it; the hollow circles are its first result. Most of the villages now drawn solid were identified by Yoni Furas (University of Haifa), collaborator, whose annotation of the patient addresses also moved Herzliya to the Haifa quarter of that name and al-Tira back to the village. What remains unplaced is counted below the map — values still unreviewed, values judged ambiguous or illegible, and records carrying no city at all. Absence here is a state of the review, never a claim about the patient.</p>
+    body: <p>The gazetteer review began with the cities of Jewish patients. Because the join is blind to religion, those rulings carried every community's records for the places the communities shared — Acre, Nazareth, Jenin. The places they did not share got nothing, so the Galilee and Carmel villages no Jewish patient came from stayed off the map. That absence was systematic, and it fell on Muslim and Christian records. A second round is closing it; the dashed pies are its first result. Most of the villages now drawn solid were identified by Yoni Furas (University of Haifa), collaborator, whose annotation of the patient addresses also moved Herzliya to the Haifa quarter of that name and al-Tira back to the village. What remains unplaced is counted below the map — values still unreviewed, values judged ambiguous or illegible, and records carrying no city at all. Absence here is a state of the review, never a claim about the patient.</p>
   }
 ];
 
@@ -76,6 +77,61 @@ interface Place {
 }
 
 interface Unplaced { decision: string; records: number; }
+
+// The slices, in a fixed order round the pie so the same community always sits
+// in the same place and two pies can be read against each other at a glance.
+// The unrecorded last, in the neutral grey every chart gives a blank.
+const COMMUNITIES = [PALESTINIAN_ARAB, JEWISH, BRITISH_CHRISTIAN, OTHER, UNKNOWN];
+
+// The fixed colours the charts give each community, so a community is the
+// same hue here as on the Statistics pie whatever the filters leave.
+const communityColor = (k: string) => semanticColor(GROUP_DIM, k);
+
+type Mix = Record<string, number>;
+
+/** A pie as an SVG string, for a Leaflet divIcon. */
+const pieSvg = (mix: Mix, r: number, provisional: boolean, selected: boolean): string => {
+  const stroke = selected ? 2.5 : provisional ? 1.75 : 1.25;
+  const size = Math.ceil(2 * (r + stroke));
+  const c = size / 2;
+  const total = COMMUNITIES.reduce((s, k) => s + (mix[k] || 0), 0) || 1;
+  // A provisional place is faded and dashed — visibly not the same kind of claim
+  // as a ruled one — but keeps its slices, since its records are real.
+  const opacity = provisional && !selected ? 0.5 : 0.88;
+  let a0 = -Math.PI / 2;
+  const parts: string[] = [];
+  COMMUNITIES.forEach(k => {
+    const n = mix[k] || 0;
+    if (!n) return;
+    const fill = communityColor(k);
+    if (n === total) {
+      parts.push(`<circle cx="${c}" cy="${c}" r="${r}" fill="${fill}"/>`);
+      return;
+    }
+    const a1 = a0 + (2 * Math.PI * n) / total;
+    const large = a1 - a0 > Math.PI ? 1 : 0;
+    const x0 = c + r * Math.cos(a0), y0 = c + r * Math.sin(a0);
+    const x1 = c + r * Math.cos(a1), y1 = c + r * Math.sin(a1);
+    parts.push(`<path d="M${c},${c}L${x0.toFixed(2)},${y0.toFixed(2)}A${r},${r} 0 ${large} 1 ${x1.toFixed(2)},${y1.toFixed(2)}Z" fill="${fill}"/>`);
+    a0 = a1;
+  });
+  const rim = selected ? '#1f2937' : provisional ? '#334155' : '#ffffff';
+  const dash = provisional && !selected ? ' stroke-dasharray="3 2"' : '';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" style="display:block;overflow:visible">`
+    + `<g fill-opacity="${opacity}">${parts.join('')}</g>`
+    + `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${rim}" stroke-width="${stroke}"${dash}/></svg>`;
+};
+
+const pieIcon = (mix: Mix, r: number, provisional: boolean, selected: boolean): L.DivIcon => {
+  const stroke = selected ? 2.5 : provisional ? 1.75 : 1.25;
+  const size = Math.ceil(2 * (r + stroke));
+  return L.divIcon({
+    html: pieSvg(mix, r, provisional, selected),
+    className: 'map-pie',
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2]
+  });
+};
 
 const val = (row: RegistryRecord, key: string): string => {
   const raw = row[key];
@@ -131,7 +187,7 @@ const MapView: React.FC<Props> = ({ data }) => {
 
   const mapRef = useRef<L.Map | null>(null);
   const tileRef = useRef<L.TileLayer | null>(null);
-  const markersRef = useRef<Map<string, L.CircleMarker>>(new Map());
+  const markersRef = useRef<Map<string, L.Marker>>(new Map());
   // The opening view is fitted to the dots, once. After that the view is the
   // reader's to keep — a filter change should not yank the map out from under
   // a pan they made on purpose; the ⊹ button is there for when they want it.
@@ -215,7 +271,16 @@ const MapView: React.FC<Props> = ({ data }) => {
   const withCounts = useMemo(() => {
     if (!places) return [];
     return places
-      .map(p => ({ ...p, n: p.cities.reduce((sum, c) => sum + (byCity.get(c) || []).length, 0) }))
+      .map(p => {
+        const mix: Mix = {};
+        let n = 0;
+        p.cities.forEach(c => (byCity.get(c) || []).forEach(row => {
+          const g = facetValue(row[GROUP_COLUMN]);
+          mix[g] = (mix[g] || 0) + 1;
+          n++;
+        }));
+        return { ...p, n, mix };
+      })
       .filter(p => p.n > 0)
       .sort((a, b) => b.n - a.n);
   }, [places, byCity]);
@@ -223,6 +288,7 @@ const MapView: React.FC<Props> = ({ data }) => {
   const abroad = useMemo(() => withCounts.filter(p => !MAP_BOUNDS.contains([p.lat, p.lon])), [withCounts]);
 
   const maxN = counted.length ? counted[0].n : 1;
+  const radiusOf = useCallback((n: number) => 5 + 22 * Math.sqrt(n / maxN), [maxN]);
 
   // Records not on the map at all: no City on the record, or a City value the
   // review never reached. Counted from the data itself rather than from the
@@ -416,25 +482,30 @@ const MapView: React.FC<Props> = ({ data }) => {
     markersRef.current.forEach(m => m.remove());
     markersRef.current = new Map();
 
-    counted.forEach(p => {
+    counted.forEach((p, i) => {
       // Area, not radius, tracks the count — a radius scale would read Haifa as
       // hundreds of times the size of Acre rather than the ~9x it is.
-      const radius = 5 + 22 * Math.sqrt(p.n / maxN);
+      const radius = radiusOf(p.n);
       const provisional = p.standing === 'provisional';
-      const marker = L.circleMarker([p.lat, p.lon], {
-        radius,
-        // A provisional place is drawn hollow and dashed — visibly not the same
-        // kind of claim as a ruled one, at a glance and without a legend.
-        color: provisional ? SERIES[3] : '#ffffff',
-        weight: provisional ? 2 : 1.5,
-        dashArray: provisional ? '3 3' : undefined,
-        fillColor: provisional ? SERIES[3] : SERIES[0],
-        fillOpacity: provisional ? 0.22 : 0.72
+      const marker = L.marker([p.lat, p.lon], {
+        icon: pieIcon(p.mix, radius, provisional, false),
+        // Leaflet stacks markers by latitude; a pie has to stack by size
+        // instead, smaller over larger, or Haifa buries its own suburbs.
+        // counted runs largest first, so a later index sits higher.
+        zIndexOffset: i * 10000,
+        riseOnHover: true,
+        keyboard: false
       });
+      const breakdown = COMMUNITIES
+        .filter(k => p.mix[k])
+        .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${communityColor(k)}"></span>`
+          + `${k} ${p.mix[k].toLocaleString()} (${Math.round(100 * p.mix[k] / p.n)}%)`)
+        .join('<br>');
       marker.bindTooltip(
         `<strong>${p.label}</strong><br>${p.n.toLocaleString()} record${p.n === 1 ? '' : 's'}`
-        + (provisional ? '<br><em>candidate, not yet reviewed</em>' : ''),
-        { direction: 'top', offset: [0, -4] }
+        + (provisional ? '<br><em>candidate, not yet reviewed</em>' : '')
+        + `<div style="margin-top:4px;font-size:11px;line-height:1.5">${breakdown}</div>`,
+        { direction: 'top', offset: [0, -radius] }
       );
       marker.on('click', () => { setSelected(p.kimaId || p.label); setPage(1); });
       marker.addTo(map);
@@ -446,24 +517,20 @@ const MapView: React.FC<Props> = ({ data }) => {
     if (!fittedRef.current) fitToPoints(true);
 
     return () => { markersRef.current.forEach(m => m.remove()); };
-  }, [counted, maxN, mapReady, fitToPoints]);
+  }, [counted, radiusOf, mapReady, fitToPoints]);
 
-  // The selected circle is repainted rather than re-created, so the map does
-  // not flicker on every selection.
+  // The selected pie is redrawn with a dark rim and lifted to the top; the
+  // marker itself is kept, so the map does not flicker on every selection.
   useEffect(() => {
-    markersRef.current.forEach((marker, key) => {
+    counted.forEach((p, i) => {
+      const key = p.kimaId || p.label;
+      const marker = markersRef.current.get(key);
+      if (!marker) return;
       const on = key === selected;
-      const place = counted.find(p => (p.kimaId || p.label) === key);
-      const prov = place?.standing === 'provisional';
-      marker.setStyle({
-        fillColor: on ? SERIES[1] : prov ? SERIES[3] : SERIES[0],
-        fillOpacity: on ? 0.9 : prov ? 0.22 : 0.72,
-        color: on ? '#1f2937' : prov ? SERIES[3] : '#ffffff',
-        weight: on ? 2.5 : prov ? 2 : 1.5
-      });
-      if (on) marker.bringToFront();
+      marker.setIcon(pieIcon(p.mix, radiusOf(p.n), p.standing === 'provisional', on));
+      marker.setZIndexOffset(on ? 10000000 : i * 10000);
     });
-  }, [selected, counted]);
+  }, [selected, counted, radiusOf]);
 
   // ------------------------------------------------------- the selection
 
@@ -595,9 +662,17 @@ const MapView: React.FC<Props> = ({ data }) => {
           </p>
           {provisionalCount > 0 && (
             <p className="text-[11px] text-amber-700 mt-0.5">
-              {provisionalCount} of them unreviewed candidates, drawn hollow
+              {provisionalCount} of them unreviewed candidates, drawn faded with a dashed rim
             </p>
           )}
+          <ul className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1">
+            {COMMUNITIES.map(k => (
+              <li key={k} className="flex items-center gap-1.5 text-[11px] text-slate-600">
+                <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: communityColor(k) }} />
+                {k}
+              </li>
+            ))}
+          </ul>
           <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
             Not on the map: {offMap.unmatched.toLocaleString()} records whose City the
             review could not place, {offMap.noCity.toLocaleString()} with no City recorded.
@@ -774,7 +849,7 @@ const MapView: React.FC<Props> = ({ data }) => {
               <MapPin size={18} className="text-slate-600" /> Places on the map
             </h3>
             <p className="text-xs text-slate-500 mt-1">
-              Click a circle, or a row here, for that place's records over time.
+              Click a pie, or a row here, for that place's records over time.
             </p>
           </div>
           <ul className="p-2">

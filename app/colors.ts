@@ -66,6 +66,11 @@ const SEMANTIC: Record<string, Record<string, string>> = {
 
 export type ColorScale = (name: string) => string;
 
+// The fixed colour of one value, for views that colour a dimension without
+// building its full scale. Values with no fixed colour fall to the neutral grey.
+export const semanticColor = (displayName: string, name: string): string =>
+  SEMANTIC[displayName]?.[name] ?? NEUTRAL;
+
 export const buildColorScale = (
   rows: RegistryRecord[],
   key: string | undefined,
