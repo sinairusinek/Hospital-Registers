@@ -123,7 +123,7 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         ("Mount Carmel", r"\bm(oun)?t\.?\s*carmel|har\s*hacarmel|central\s*carmel"),
         ("Neve Sha'anan", r"nev[eh]+\s*sha"),
         ("Herzliya quarter", r"\bherz?e?li?y?a\b|\bhezelia"),
-        ("Halisa", r"\bk?h?al+[iy]sa?h?\b"),
+        ("Halisa", r"\bk?h?al+[eiy]+s+[aeiy]?h?\b"),
         ("Harat al-Kanais", r"kana[iy]+s|churches?\s*(qr|qu|q\b|st)"),
         ("Harat al-Kishleh", r"kishl|kashl|barracks\s*q"),
         ("Sharqiyya", r"shar[kq]i"),
@@ -137,6 +137,7 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         ("Burj", r"\bbur[jg]\s*(qr|qu|sq|st)"),
         ("Ghazazwa", r"gha?zaz"),
         ("Shawafna", r"shawaf"),
+        ("Harat al-Mukhallis", r"m[ui]?k?h?al+[ie]+s|\bn?a?kh?al+is\b|enukhallis"),
         ("Kibbutz Hashomer Hatzair", r"hashomer\s*ha\W?tza|kibb?utz\s*hashomer"),
     ],
     "Acre": [

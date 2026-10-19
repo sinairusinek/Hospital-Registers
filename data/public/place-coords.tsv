@@ -19,6 +19,7 @@ Julis	32.943889	35.186667	kima	confirmed	82237	Julis (Israel)	Q2601777	matched	f
 Yajour	32.741500	35.077197	kima	confirmed	771	Yagur (Israel)	Q586687	matched	agent	35
 Kantara	30.850000	32.310000	wikidata	confirmed			Q1324574	matched	agent	34
 Affikim	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	31
+Arrabeh								unmatched-ambiguous	agent	31
 Jaba'	32.651319	34.962042	wikidata	confirmed			Q4118648	matched	agent	30
 Tel Aviv	32.080000	34.780000	kima	confirmed	272	Tel Aviv-Yafo (Israel)	Q33935	matched	agent	30
 Gaza	31.516670	34.450000	kima	provisional	12982	Gaza (Gaza Strip)	Q47492	matched	furas	29
@@ -414,6 +415,7 @@ Arabbi	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched
 Ard el Yahad	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	variant	1
 Ard el Yehud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	variant	1
 Ardel Ramel	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
+Arrabat al-Battuf	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	agent	1
 Arrabi	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	furas	1
 Arraby	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	variant	1
 Asfia	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	variant	1
@@ -879,5 +881,6 @@ Zikhron Yaacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	
 Zikhron Yacob	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
 Zikron Yaacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
 Zummarin	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	1
+Arraba (Jenin)	32.405170	35.201890	kima	confirmed	71763	Arraba (West Bank)	Q2463999	matched	agent	0
 Hawara	32.152500	35.256670	kima	provisional	21617	Hawara (Israel)			A_autolink	4
 Samra	32.116670	35.266670	kima	provisional	22266	Khirbet Samara (Israel)			A_autolink	3

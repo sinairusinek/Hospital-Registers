@@ -19,6 +19,7 @@ Julis	Julis	36	82237	Julis (Israel)	Q2601777	furas		matched	furas		furas	Julis -
 Yajour	Yajour	35	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent	Yagur; Mandate romanization	2026-08-06
 Kantara	Kantara	34			Q1324574	human		matched	furas		agent	El Qantara East, the Suez Canal terminus of Palestine Railways: Egyptian railway labourers, 'Kantara East', 'P. Railway Kantara'	2026-10-18
 Affikim	Affikim	31	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
+Arrabeh	Arrabeh	31						unmatched-ambiguous	furas		agent	two Arrabas (Jenin; al-Battuf) and the address names neither: held for review	2026-10-18
 Jaba'	Jaba'	30			Q4118648	human		matched	furas		agent	Jaba' of the Haifa sub-district: the addresses say 'Jaba' Haifa s/o', 'Hfa S/Dist.'	2026-10-18
 Tel Aviv	Tel Aviv	30	272	Tel Aviv-Yafo (Israel)	Q33935	kima-dump	Q33935	matched	A_autolink		agent	Tel Aviv-Yafo city, not the district entity	2026-08-06
 Gaza	Gaza	29	12982	Gaza (Gaza Strip)	Q47492	furas		matched	furas		furas	Gaza - per Y. Furas	2026-10-18
@@ -414,6 +415,7 @@ Arabbi	Arabbi	1	21307	Arraba (Israel)	Q2568887	furas		matched	variant-skeleton		
 Ard el Yahad	Ard el Yahad	1			Q12404212	furas		matched	variant-skeleton		variant	spelling of 'Ard el Yahud' (skeleton: same consonant skeleton as 'Ard el Yahud')	2026-10-19
 Ard el Yehud	Ard el Yehud	1			Q12404212	furas		matched	variant-skeleton		variant	spelling of 'Ard el Yahud' (skeleton: same consonant skeleton as 'Ard el Yahud')	2026-10-19
 Ardel Ramel	Ardel Ramel	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Ardel Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Arrabat al-Battuf	Arrabat al-Battuf	1	21307	Arraba (Israel)	Q2568887	human		matched	furas		agent	Arrabat al-Battuf (Acre sub-district); set per record from the address (kimatch/record-rules.tsv)	2026-10-18
 Arrabi	Arrabi	1	21307	Arraba (Israel)	Q2568887	furas		matched	furas		furas	Arabeh - per Y. Furas	2026-10-18
 Arraby	Arraby	1	21307	Arraba (Israel)	Q2568887	furas		matched	variant-skeleton		variant	spelling of 'Arrabi' (skeleton: same consonant skeleton as 'Arrabi')	2026-10-19
 Asfia	Asfia	1	26671	Usafiye (Israel)	Q2890836	furas		matched	variant-skeleton		variant	spelling of 'Isfia' (skeleton: same consonant skeleton as 'Isfia')	2026-10-19
@@ -879,3 +881,4 @@ Zikhron Yaacov	Zikhron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	
 Zikhron Yacob	Zikhron Yacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zikron Yaacov	Zikron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zummarin	Zummarin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zamarin' (skeleton: same consonant skeleton as 'Zamarin')	2026-10-19
+Arraba (Jenin)	Arraba (Jenin)	0	71763	Arraba (West Bank)	Q2463999	human		matched	furas		agent	Arraba of the Jenin sub-district; set per record from the address (kimatch/record-rules.tsv)	2026-10-18

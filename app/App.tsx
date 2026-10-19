@@ -47,7 +47,9 @@ const cleanSex = (rows: RegistryRecord[], keys: string[]) => {
 const App: React.FC = () => {
   const [data, setData] = useState<RegistryRecord[]>([]);
   // About is the landing view: a visitor meets the project before the table.
-  const [activeView, setActiveView] = useState<ViewType>('about');
+  // "#yoni" lands on the place questions in the Review view, so the link can be sent.
+  const [activeView, setActiveView] = useState<ViewType>(
+    () => (window.location.hash.startsWith('#yoni') ? 'review' : 'about'));
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [columns, setColumns] = useState<ColumnConfig[]>([]);

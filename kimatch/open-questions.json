@@ -1,0 +1,601 @@
+{
+ "for": "Yoni Furas",
+ "questions": [
+  {
+   "id": "sarafand",
+   "group": "1 · Your own open notes",
+   "title": "Sarafand — the camp or the village?",
+   "question": "Your sheet marks Sarafand 'check specifically: can refer to the camp or the village'. Seven Muslim and three Christian patients. Which Sarafand — the British camp at Sarafand al-Amar, either Ramle village, or Sarafand in Lebanon?",
+   "reading": "Held: not on the map.",
+   "cities": [
+    "Sarafand"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "jisr-majami",
+   "group": "1 · Your own open notes",
+   "title": "Jisr el-Majami — village, station or bridge?",
+   "question": "You marked it 'village and station' and gave the bridge's Wikidata item (Q20384748). Several records are police or IPC postings there. One place, or should the station/police post be kept apart from the village?",
+   "reading": "Held.",
+   "cities": [
+    "Jisr el Majami",
+    "Jisr el Majamie",
+    "Jisr el-Majami",
+    "Gisr El Majami"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "beit-gan",
+   "group": "1 · Your own open notes",
+   "title": "Beit Gan — your Q2900552, marked 'check'",
+   "question": "You identified Beit Gan (by Yavne'el, Q2900552) but marked it to check. Is that the settlement these patients came from?",
+   "reading": "Held; Beit Gan has no Kima entry (a donation candidate).",
+   "cities": [
+    "Beit Gan"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "jabata",
+   "group": "1 · Your own open notes",
+   "title": "Jabata — which village?",
+   "question": "You read 'Jabata' as Jebata and marked it to check. Is this Jibta, or another village?",
+   "reading": "Held.",
+   "cities": [
+    "Jabata"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "raman",
+   "group": "1 · Your own open notes",
+   "title": "Raman — Rameh?",
+   "question": "You read Raman as Rameh, with 'check'. Our standing ruling is that Rameh is al-Rama in the Galilee, not Ramleh. Same here?",
+   "reading": "Held.",
+   "cities": [
+    "Raman"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "tel-shamman",
+   "group": "1 · Your own open notes",
+   "title": "Tel Shamman — Tel Amal (Nir David)?",
+   "question": "You read it as Tel Amal, with 'check'. Tel Amal was founded 1936 and became Nir David. Is that right for this record?",
+   "reading": "Held.",
+   "cities": [
+    "Tel Shamman"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "tabor",
+   "group": "1 · Your own open notes",
+   "title": "Tabor — Kfar Tavor, or Mount Tabor?",
+   "question": "You read 'Tabor' as Kfar Tavor, with 'check'. Two further records say 'Mount Tabor' / 'Mt. Tabor' (Kadoorie school is there). Village or mountain?",
+   "reading": "Held.",
+   "cities": [
+    "Tabor",
+    "Mount Tabor",
+    "Mt. Tabor"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "beit-lahim",
+   "group": "1 · Your own open notes",
+   "title": "Beit Lahim — Bat Galim, or Bethlehem of Galilee?",
+   "question": "Your sheet: 'Bat Galim or Beit Lehem?', check. Two more records say 'Bethlehem'. We lean to Bethlehem of Galilee (the German Templer colony) for those. And Beit Lahim?",
+   "reading": "Held.",
+   "cities": [
+    "Beit Lahim",
+    "Beit Lahm",
+    "Bethlehem"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "hashomer",
+   "group": "1 · Your own open notes",
+   "title": "Kibbutz Hashomer (Hatzair) — a Haifa group?",
+   "question": "You typed it as a Haifa neighbourhood (and 'Hedera Kibutz' with check). Was this the Hashomer Hatzair urban group in Haifa, or a kibbutz elsewhere (Hadera)?",
+   "reading": "Held.",
+   "cities": [
+    "Kibbutz Hashomer",
+    "Kibutz"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "hadar",
+   "group": "1 · Your own open notes",
+   "title": "Hadar — Hadera, or Hadar HaCarmel?",
+   "question": "You read 'Hadar' as Hedera, with 'check'. These four records say 'Retsof street Hadar', 'Hadar Police Billet', 'Beit Dr … Hadar'. We read them as Hadar HaCarmel. Agree?",
+   "reading": "Hadar HaCarmel (on the map).",
+   "cities": [
+    "Hadar"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "kinneret",
+   "group": "2 · Places named, but which one?",
+   "title": "Kineret — the moshava or the kvutza?",
+   "question": "Kinneret (moshava, 1909) and Kvutzat Kinneret (1913) are a kilometre apart. Is there any way to tell them apart in these records?",
+   "reading": "Held (standing ruling: plain Kinneret stays ambiguous).",
+   "cities": [
+    "Kineret",
+    "Kinereth",
+    "Kinneret",
+    "Kineret|Kinneret"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "zarka",
+   "group": "2 · Places named, but which one?",
+   "title": "Zarka",
+   "question": "Jisr al-Zarqa, or another Zarqa?",
+   "reading": "Held.",
+   "cities": [
+    "Zarka"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "jdeideh",
+   "group": "2 · Places named, but which one?",
+   "title": "Jdeideh / Gdeideh",
+   "question": "al-Judayda by Acre (Jdeideh-Makr), or another Judayda?",
+   "reading": "Held.",
+   "cities": [
+    "Jdeideh",
+    "Gdeideh"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "kurdaneh",
+   "group": "2 · Places named, but which one?",
+   "title": "Kurdaneh — Kurdani by Na'aman spring?",
+   "question": "Kurdani has no Kima entry. Is it the Kurdani by the Na'aman spring, near Acre?",
+   "reading": "Held; a Kima donation candidate.",
+   "cities": [
+    "Kurdaneh",
+    "Kurdani"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "turkman",
+   "group": "2 · Places named, but which one?",
+   "title": "Arab el-Turkman",
+   "question": "Which Turkman group or encampment (Marj ibn Amer / Megiddo area)?",
+   "reading": "Held.",
+   "cities": [
+    "Arab Turkman",
+    "Arab el Turkman"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "nahlat-yacob",
+   "group": "2 · Places named, but which one?",
+   "title": "Nahlat Yacob",
+   "question": "Nahalat Ya'akov — where? (Not to be confused with Nahalat Yehuda, which the scans showed is a third toponym near Ard el-Yahud.)",
+   "reading": "Held.",
+   "cities": [
+    "Nahlat Yacob"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "rihanieh",
+   "group": "3 · Where your sheet and the records part ways",
+   "title": "Rihanieh — Haifa sub-district or Safad?",
+   "question": "You identified 'Rihanieh' as al-Rihaniyya in the Haifa sub-district (Q2152846). But records spelled 'Rihaniya' read 'Rihanieh. Safad s/o' — the Circassian Rihaniyya in Upper Galilee. Your four Rihanieh records give no district. Are they Haifa's, or Safad's too?",
+   "reading": "Rihanieh → Haifa's (your ruling); Rihaniya → Safad's (from the address).",
+   "cities": [
+    "Rihanieh",
+    "Rihaniya"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "harat-yahud",
+   "group": "3 · Where your sheet and the records part ways",
+   "title": "Harat al-Yahud and Ard el-Yahud — two places?",
+   "question": "Your sheet gives the Harat al-Yahud rows the Wikidata item of Ard el-Yahud (Q12404212). Following Naor (2019) we keep them apart: Harat al-Yahud inside the old city, evacuated July 1938; Ard el-Yahud outside the walls, founded 1891. Agree?",
+   "reading": "Two places; Harat al-Yahud drawn at Haifa.",
+   "neighbourhoods": [
+    "Haifa: Harat al-Yahud"
+   ],
+   "cities": []
+  },
+  {
+   "id": "kantara",
+   "group": "3 · Where your sheet and the records part ways",
+   "title": "Kantara — El Qantara East?",
+   "question": "Your sheet types Kantara as a village without a location. The records are mostly Egyptian railway labourers: 'Kantara East', 'P. Railway Kantara', 'Engineering Kantara'. We read El Qantara East, the Suez Canal end of Palestine Railways. Agree?",
+   "reading": "El Qantara East (listed beyond the map's edge).",
+   "cities": [
+    "Kantara"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "jaba",
+   "group": "4 · Our new readings — please check",
+   "title": "Jaba' — the Haifa village",
+   "question": "Addresses read 'Jaba' Haifa s/o', 'Jaba' Hfa S/Dist.' — so we took Jaba' of the Haifa sub-district (Q4118648), not the Jenin one, for all thirty. Right?",
+   "reading": "Jaba' (Haifa).",
+   "cities": [
+    "Jaba'"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "ijzim",
+   "group": "4 · Our new readings — please check",
+   "title": "Eggim, Eggem, Iggim — Ijzim?",
+   "question": "Twenty Muslim patients from 'Eggim/Eggem/Iggim'; one reads 'Eggem - Haifa'. We read Ijzim, with g for j. Right?",
+   "reading": "Ijzim.",
+   "cities": [
+    "Eggim",
+    "Eggem",
+    "Iggim"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "sileh",
+   "group": "4 · Our new readings — please check",
+   "title": "Sileh — Silat al-Harithiya?",
+   "question": "Addresses read 'Sileh village, Jenin Sub Dist.', 'Near Affuleh', one 'Nablus Sub District'. We took Silat al-Harithiya. Could some be Silat al-Dhahr?",
+   "reading": "Silat al-Harithiya.",
+   "cities": [
+    "Sileh",
+    "Silet el Hartieh",
+    "Sileh el Hartieh"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "hawassa",
+   "group": "4 · Our new readings — please check",
+   "title": "Hawassa — the Haifa quarter",
+   "question": "Twenty-eight Muslim patients from 'Hawassa'. We read Harat al-Hawassa, the shack quarter east of Haifa. Right?",
+   "reading": "Haifa (quarter).",
+   "cities": [
+    "Hawassa"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "jalameh",
+   "group": "4 · Our new readings — please check",
+   "title": "Jalameh — al-Jalama of Haifa?",
+   "question": "'Haifa District Jalameh', 'Jalameh Police Station'. We took al-Jalama of the Haifa sub-district (Q4704113). Right?",
+   "reading": "al-Jalama (Haifa).",
+   "cities": [
+    "Jalameh"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "mukhallis",
+   "group": "4 · Our new readings — please check",
+   "title": "Harat al-Mukhallis — a quarter of its own",
+   "question": "Forty-three Haifa addresses name Mukhallis ('Mukhallis Street', 'Hartel Mukhalis', 'Beit El Mukhalis'). We treat it as its own quarter around Deir al-Mukhallis, not Halisa. Right?",
+   "reading": "Haifa: Harat al-Mukhallis.",
+   "neighbourhoods": [
+    "Haifa: Harat al-Mukhallis"
+   ],
+   "cities": []
+  },
+  {
+   "id": "khalisa",
+   "group": "4 · Our new readings — please check",
+   "title": "Khalsa — the Huleh village; Hallisa — the Haifa quarter",
+   "question": "Of 151 lines spelled Halisa/Hallissa/Khalisa, 146 are clearly the Haifa quarter. Three, spelled 'Khalsa' (1936–38), we read as al-Khalisa in the Huleh. Right? (And one 'Halleesa, Bureen - Nablus' we left alone.)",
+   "reading": "Khalsa → al-Khalisa (Huleh).",
+   "cities": [
+    "Khalsa"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "villages",
+   "group": "4 · Our new readings — please check",
+   "title": "Mandate villages, not their successors",
+   "question": "Where Kima's entry is the later settlement, we linked the Mandate village: al-Kabri (not Kibbutz Kabri), Sa'sa' (not Kibbutz Sasa), al-Birwa, al-Tira (not Tirat Carmel), Tarshiha (not Ma'alot). Right?",
+   "reading": "Mandate villages.",
+   "cities": [
+    "Kabri",
+    "Sasa",
+    "Birweh",
+    "Tireh",
+    "Tarshiha"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "transjordan",
+   "group": "4 · Our new readings — please check",
+   "title": "Transjordan — drawn at Salt",
+   "question": "You placed 'Transjordan' at Salt; we did the same for 'Transj', 'T. Jordan'. A country label on a town's point: keep, or leave off the map?",
+   "reading": "Salt.",
+   "cities": [
+    "Trans-Jordan",
+    "Transjordan",
+    "Trans Jordan",
+    "TransJordanian",
+    "Transj",
+    "T. Jordan"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "arrabeh",
+   "group": "5 · Still unidentified",
+   "title": "Arrabeh with no district",
+   "question": "Two Arrabas: Arraba of Jenin and Arrabat al-Battuf. Where the address or the page names a district we split them: 21 Jenin, 13 al-Battuf, and four that the scan shows are Ar'ara. These 24 name neither, on the record or the page — we read the scans. Those that name a district run Jenin in 1934–39 and al-Battuf in 1944–47. Is that a pattern you would trust, or is there another way to tell?",
+   "reading": "Held.",
+   "cities": [
+    "Arrabeh"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "bassa",
+   "group": "5 · Still unidentified",
+   "title": "Bassa No. 2 — al-Bassa or Shelomi?",
+   "question": "al-Bassa (Q2915875) and 'Bassa No 2' / Shelomi sit ~1 km apart; the register also has 'Bassa No 1', 'Bassa II. N.F.D.', 'Haifa|Bassa'. Were the numbered Bassas camps? Which records belong to the village?",
+   "reading": "Held (the open Bassa/Shelomi question).",
+   "cities": [
+    "Bassa No 2",
+    "Haifa|Bassa"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "features",
+   "group": "5 · Still unidentified",
+   "title": "Mountains, valleys, regions",
+   "question": "Mount Carmel, the Emek, the Huleh, the Galilee, el-Hamme. Should a patient 'from the Emek' go on the map at all, and where?",
+   "reading": "Held (never auto-linked).",
+   "cities": [
+    "Mount Carmel",
+    "Carmel",
+    "Hacarmel",
+    "Huleh",
+    "Emek",
+    "Emek Hayarden",
+    "Emek Zevouloun",
+    "Galil",
+    "Hammeh",
+    "Haifa / Mount Carmel",
+    "Haifa|Mt. Carmel"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "tail",
+   "group": "5 · Still unidentified",
+   "title": "182 other unidentified spellings (2+ records each)",
+   "question": "Spellings no round has resolved. Many are misreadings; the scan link beside each record shows what the clerk wrote. Any you recognise, a word is enough.",
+   "reading": "Not on the map.",
+   "cities": [
+    "Yamoun",
+    "Mt. Carmel|Mount Carmel",
+    "Hebron",
+    "Rummaneh",
+    "Amka",
+    "Bireh",
+    "Ya'abad",
+    "Reineh",
+    "Mazra'a",
+    "Damascus",
+    "Sajad",
+    "Kafr Qari'",
+    "Shweikeh",
+    "Bineh",
+    "Beit She'an",
+    "Souk Shwam",
+    "Saadeh",
+    "Baka",
+    "Tantaunah",
+    "Cairo",
+    "Ajloun",
+    "Kwikat",
+    "Kabatia",
+    "[uncertain_city]",
+    "Kababir",
+    "Kisaria",
+    "Haifa|Haifa Nazareth St",
+    "Carmel Section",
+    "Hawara",
+    "Ramayes",
+    "Jalama",
+    "Zib",
+    "Kisra",
+    "Ludd",
+    "Caesaria",
+    "Samra",
+    "London",
+    "Beyrouth",
+    "Nazareth|Dept. of Police, Nazareth",
+    "Nahr",
+    "Lubieh",
+    "Kafr Manda",
+    "Kweikat",
+    "Zababdeh",
+    "Nadel Yahud",
+    "Berkin",
+    "Beit Dajan",
+    "Jezzin",
+    "Kafr Rai",
+    "Shuweika",
+    "Nazareth|P & P Nazareth",
+    "Haifa|German Colony Haifa",
+    "Bala'",
+    "Kirweh",
+    "Tarbikha",
+    "Attil",
+    "Birkin",
+    "Burka",
+    "Safsaf",
+    "Afula|Affuleh",
+    "Kufr Manda",
+    "Kufr Qari'",
+    "Naqoura",
+    "Ramtha",
+    "Lebanon",
+    "Baqa al-Gharbiyye",
+    "Beersheba",
+    "Saideh",
+    "Zeitoun",
+    "Salameh",
+    "Nawa",
+    "Râmi",
+    "Shathlia",
+    "Jeida",
+    "Taibeh",
+    "Ghbayya",
+    "Damra",
+    "Kafrein",
+    "Shamania",
+    "Jericho",
+    "Roshumia",
+    "Kababieh",
+    "Mishmar Haemels",
+    "Jira",
+    "Sira",
+    "British Police Mt Carmel.|Mt. Carmel",
+    "Lidd",
+    "Kwekat",
+    "Silwad",
+    "Yabna",
+    "Husan",
+    "Abbasieh",
+    "Haifa|Ard El Yahud Haifa",
+    "Haifa|Carmel Station",
+    "Naqura",
+    "Lireh",
+    "Yaska",
+    "Haija",
+    "Rushamia",
+    "Buteimat",
+    "Jaidi",
+    "Hfa",
+    "Eggin",
+    "Iksal",
+    "Baka al-Gharbiyye",
+    "Haifa|Carmel Station Haifa",
+    "Lod",
+    "Raanana",
+    "Jabalia",
+    "Bourj",
+    "Igzim|Ijzim",
+    "[Unclear, likely Haifa]",
+    "Biray Sajad",
+    "Syria",
+    "Toubas",
+    "Dalyeh",
+    "Haifa|Nazareth Street, Haifa",
+    "Dalieh",
+    "Isol",
+    "Assira",
+    "Bisan (Beit She'an)",
+    "Rumaneh",
+    "Buqei'a",
+    "Izzim",
+    "Mielia",
+    "Bala",
+    "Saffurich",
+    "Shejaimen",
+    "P.o.P Libsrias",
+    "Samaria",
+    "Lifta",
+    "Bassa Acre sp",
+    "Manshieh",
+    "Zalafeh",
+    "Haifa|Balad el Sheikh",
+    "Haifa|Kala-azar",
+    "Shefa'amer, 'Isol",
+    "Kufr Qari",
+    "Sid el Arab",
+    "Zeeb - Acre S/D",
+    "Tabgha",
+    "Khubeizeh",
+    "Zbouba",
+    "Yanuh-Jat",
+    "Jere",
+    "Egging",
+    "Issefya",
+    "Sassa",
+    "Deir El Ghusun",
+    "Shuwaikeh",
+    "Kufer Kari",
+    "Beit El Muhor",
+    "Tripoli",
+    "Tarbicha",
+    "Hunin",
+    "Kanayes",
+    "Ajlun",
+    "Medina",
+    "Beit Safafa",
+    "Haifa S/S",
+    "Abu Shusheh",
+    "Milya",
+    "Shell Bridge",
+    "E. A. C. S. Waldheim|Waldheim",
+    "Beit Lid",
+    "Sandeh",
+    "Yaabad",
+    "Balaa",
+    "Zeeb - Acre S/D|Zeeb",
+    "Jatt",
+    "Anabta",
+    "Shefa Amr Haifa F",
+    "Caesarea",
+    "Kufr Yuba",
+    "Jenin F",
+    "Haifa S/D",
+    "Irbed S/D",
+    "Anjara",
+    "Wadi Jamal",
+    "Urban Division",
+    "Iraq al-Manshiyya",
+    "Arrabat al-Battuf"
+   ],
+   "neighbourhoods": []
+  },
+  {
+   "id": "qid-conflicts",
+   "group": "6 · Technical (project team, not for Yoni)",
+   "title": "14 Wikidata conflicts",
+   "question": "Kima's QID and an independent Wikidata lookup disagree. The independent lookup has been wrong before (Tireh → a village in Iran). Housekeeping for us.",
+   "reading": "Linked on Kima's QID.",
+   "cities": [
+    "Kiryat Haim",
+    "Karkur",
+    "Yokneam",
+    "Ahuza",
+    "Kiryat Haroshet",
+    "Dejani",
+    "Jokneam",
+    "Kafata",
+    "Maagan",
+    "Majdal",
+    "Merchavia",
+    "Neve Sha'anan",
+    "Ramleh",
+    "Zamarin"
+   ],
+   "neighbourhoods": []
+  }
+ ]
+}

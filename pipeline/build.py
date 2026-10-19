@@ -79,6 +79,32 @@ def load_kima_decisions() -> dict[str, tuple[str, str]]:
     return links
 
 
+RECORD_RULES = ROOT / "kimatch" / "record-rules.tsv"
+RECORD_READINGS = ROOT / "kimatch" / "record-readings.tsv"
+
+
+def load_record_places() -> tuple[list[tuple[re.Pattern, re.Pattern, str]], dict[tuple[str, str], tuple[str, str]]]:
+    """Where one spelling covers two places (two Arrabas; Halisa the Haifa
+    quarter and al-Khalisa the village), the decision is taken per record:
+    first from a reading of the scan (record-readings.tsv, keyed by notebook
+    and serial, the admission year checked — serials restart each January), then from the district its address names
+    (record-rules.tsv, first matching rule wins)."""
+    rules: list[tuple[re.Pattern, re.Pattern, str]] = []
+    readings: dict[tuple[str, str], tuple[str, str]] = {}
+    if RECORD_RULES.exists():
+        with RECORD_RULES.open(newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                if row["city_regex"].startswith("#"):
+                    continue
+                rules.append((re.compile(row["city_regex"], re.IGNORECASE),
+                              re.compile(row["address_regex"] or "", re.IGNORECASE), row["target_city"]))
+    if RECORD_READINGS.exists():
+        with RECORD_READINGS.open(newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                readings[(row["notebook"], row["serial"])] = (row["admission_date"][:4], row["target_city"])
+    return rules, readings
+
+
 def load_haifa_cities() -> set[str]:
     """City values the gazetteer places in Haifa: the city, or one of its
     quarters. Haifa's quarters may be read from these records' addresses."""
@@ -840,6 +866,7 @@ REVIEW_FLAGS = [
     ("procedure-only", "An operation named with no diagnosis behind it"),
     ("no-icd9-chapter", "No ICD-9 code the classification could place"),
     ("city-read-from-address", "City was blank; filled from the place the Address names"),
+    ("city-set-by-record", "One spelling, two places: City set for this record from its address or its scan"),
 ]
 
 
@@ -1126,6 +1153,8 @@ def main() -> int:
     kima_links = load_kima_decisions()
     haifa_cities = load_haifa_cities()
     city_from_address = 0
+    record_rules, record_readings = load_record_places()
+    city_by_record = 0
     layered: Counter[str] = Counter()
     kima_linked = 0
     street_reseated = 0
@@ -1532,6 +1561,22 @@ def main() -> int:
                     flags.append("city-read-from-address")
                     order = [name for name, _ in REVIEW_FLAGS]
                     row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
+            reading = record_readings.get((row.get("Notebook_Number") or "", row.get("Notebook Record ID") or ""))
+            dates = " ".join(v or "" for k, v in row.items() if k and "Admission" in k)
+            settled = reading[1] if reading and (reading[0] in dates or reading[0][2:] in dates) else ""
+            if not settled and cleaned:
+                for city_rx, address_rx, target in record_rules:
+                    if (city_rx.search(written) or city_rx.search(cleaned)) and address_rx.search(row.get("Address") or ""):
+                        settled = target
+                        break
+            if settled and settled != cleaned:
+                cleaned = settled
+                row["City"] = cleaned
+                city_by_record += 1
+                flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+                flags.append("city-set-by-record")
+                order = [name for name, _ in REVIEW_FLAGS]
+                row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
             kima_id, qid = kima_links.get(cleaned, ("", ""))
             row["City Kima ID"] = kima_id
             row["City Wikidata"] = qid
@@ -2010,6 +2055,9 @@ def main() -> int:
         if kima_linked:
             writer.writerow(["derived", "City Kima ID", "reviewed match in kimatch/city-kima-decisions.tsv",
                              "Kima place id and Wikidata QID attached", kima_linked])
+        if city_by_record:
+            writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
+                             "flagged city-set-by-record", city_by_record])
         if city_from_address:
             writer.writerow(["derived", "City", "blank City, place read from Address (kimatch/place_resolver.py)",
                              "flagged city-read-from-address", city_from_address])

@@ -48,7 +48,7 @@ def main() -> None:
             continue
         with path.open(encoding="utf-8", newline="") as fh:
             for r in csv.DictReader(fh, delimiter="\t"):
-                if r["decision"] == "matched":
+                if r["decision"] == "matched" or (r["decision"].startswith("unmatched") and path.name != "furas-rulings.tsv"):
                     rulings[r["city"]].append(r)
     counts: Counter[str] = Counter()
     csv.field_size_limit(10**9)
@@ -75,8 +75,8 @@ def main() -> None:
             added += 1
         else:
             updated += 1
-        row.update(kima_id=kima_id, kima_name_rom=name, wikidata_qid=qid, qid_source=source,
-                   decision="matched", decided_by=first["decided_by"], note=first["note"], date=DATE)
+        row.update(kima_id=kima_id, kima_name_rom=name, wikidata_qid=qid, qid_source=source if (kima_id or qid) else "",
+                   decision=first["decision"], decided_by=first["decided_by"], note=first["note"], date=DATE)
 
     decisions.sort(key=lambda r: (-int(r["n_records"] or 0), r["city"]))
     with DECISIONS.open("w", encoding="utf-8", newline="") as fh:

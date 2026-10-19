@@ -636,9 +636,10 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		249
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22923
-derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	908
-derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2692
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22979
+derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	90
+derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	919
+derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2840
 derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	1970
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8771
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4654

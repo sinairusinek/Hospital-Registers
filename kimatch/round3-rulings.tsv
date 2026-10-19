@@ -71,3 +71,6 @@ Naqoura	Naqoura	0	matched		Q748504			round3	agent	Naqura, as Furas reads it
 Ramtha	Ramtha	0	matched	69636	Q31594			round3	agent	al-Ramtha
 Beersheba	Beersheba	0	matched	699	Q41843			round3	agent	Beersheba
 Kantara	Kantara	0	matched		Q1324574			round3	agent	El Qantara East, the Suez Canal terminus of Palestine Railways: Egyptian railway labourers, 'Kantara East', 'P. Railway Kantara'
+Arraba (Jenin)	Arraba (Jenin)	0	matched	71763	Q2463999				agent	Arraba of the Jenin sub-district; set per record from the address (kimatch/record-rules.tsv)
+Arrabat al-Battuf	Arrabat al-Battuf	0	matched	21307	Q2568887				agent	Arrabat al-Battuf (Acre sub-district); set per record from the address (kimatch/record-rules.tsv)
+Arrabeh	Arrabeh	0	unmatched-ambiguous						agent	two Arrabas (Jenin; al-Battuf) and the address names neither: held for review

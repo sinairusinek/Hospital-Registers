@@ -1,7 +1,7 @@
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import WorkInProgress from './WorkInProgress';
-import { ClipboardCheck, ChevronLeft, ChevronRight, Download } from 'lucide-react';
+import { ClipboardCheck, ChevronLeft, ChevronRight, Download, MapPin } from 'lucide-react';
 import { RegistryRecord } from '../types';
 import { UNKNOWN } from '../facets';
 import HelpPanel, { HelpSection } from './HelpPanel';
@@ -21,6 +21,10 @@ const HELP: HelpSection[] = [
   {
     heading: 'What the scan links give you',
     body: <p><em>Open page N</em> goes straight to the image of that page, served by the Haifa library over IIIF. <em>Whole notebook</em> opens the library's own viewer, which cannot be opened at a page — its build reads no page parameter — so it always starts at the front of the volume. Pages resolve for 20,794 of the 29,726 records: notebooks 6 to 9 have no scan at all, notebook 29 is only partly digitized, and some records carry no page number to resolve.</p>
+  },
+  {
+    heading: 'Place questions',
+    body: <p>The second tab gathers the place questions still open after Yoni Furas's identifications and three rounds of gazetteer review — his own "check" marks, places named without saying which one, readings where his sheet and the records part ways, our new readings for him to confirm, and what is still unidentified. Each question opens the records it concerns. <em>Export queue</em> gives them as a spreadsheet; a link ending in <span className="font-mono">#yoni</span> opens this tab directly.</p>
   },
   {
     heading: 'Corrections go to the source',
@@ -143,10 +147,44 @@ const val = (row: RegistryRecord, key: string): string => {
   return s === 'null' || s === 'undefined' ? '' : s;
 };
 
+// The open place questions, written for Yoni Furas (kimatch/open_questions.py).
+// A question selects its records by City value or by town quarter.
+interface PlaceQuestion {
+  id: string; group: string; title: string; question: string; reading: string;
+  cities: string[]; neighbourhoods: string[];
+}
+const QUESTIONS_URL = `${import.meta.env.BASE_URL}data/place-questions.json`;
+const PLACE_FIELDS = ['Admission Date', 'City as written', 'City', 'Address', 'Neighbourhood', 'Religion', 'Nationality', 'Occupation'];
+
 const ReviewView: React.FC<Props> = ({ data }) => {
+  // "#yoni" opens straight onto the place questions, so the link can be sent.
+  const [mode, setMode] = useState<'flags' | 'places'>(
+    () => (typeof window !== 'undefined' && window.location.hash.startsWith('#yoni') ? 'places' : 'flags'));
   const [active, setActive] = useState<string>(QUEUES[0].flag);
+  const [activeQ, setActiveQ] = useState<string>('');
+  const [questions, setQuestions] = useState<PlaceQuestion[]>([]);
   const scans = usePageScans();
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    fetch(QUESTIONS_URL)
+      .then(r => (r.ok ? r.json() : { questions: [] }))
+      .then(j => {
+        setQuestions(j.questions || []);
+        if (j.questions?.length) setActiveQ(q => q || j.questions[0].id);
+      })
+      .catch(() => setQuestions([]));
+  }, []);
+
+  const byQuestion = useMemo(() => {
+    const out: Record<string, RegistryRecord[]> = {};
+    questions.forEach(q => {
+      const cities = new Set(q.cities);
+      const quarters = new Set(q.neighbourhoods);
+      out[q.id] = data.filter(r => cities.has(val(r, 'City')) || quarters.has(val(r, 'Neighbourhood')));
+    });
+    return out;
+  }, [data, questions]);
 
   // The flag column is written by pipeline/build.py. If an older file is
   // uploaded it will not be there, and the view says so rather than showing an
@@ -168,8 +206,11 @@ const ReviewView: React.FC<Props> = ({ data }) => {
     return out;
   }, [data, flagKey]);
 
-  const queue = QUEUES.find(q => q.flag === active)!;
-  const records = byFlag[active] || [];
+  const placeQ = questions.find(q => q.id === activeQ);
+  const queue = mode === 'places' && placeQ
+    ? { flag: placeQ.id, title: placeQ.title, question: placeQ.question, fields: PLACE_FIELDS }
+    : QUEUES.find(q => q.flag === active)!;
+  const records = mode === 'places' ? (byQuestion[activeQ] || []) : (byFlag[active] || []);
   const totalPages = Math.max(1, Math.ceil(records.length / PAGE_SIZE));
   const shown = records.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
   const totalFlagged = useMemo(
@@ -178,6 +219,8 @@ const ReviewView: React.FC<Props> = ({ data }) => {
   );
 
   const select = (flag: string) => { setActive(flag); setPage(1); };
+  const selectQ = (id: string) => { setActiveQ(id); setPage(1); };
+  const switchMode = (m: 'flags' | 'places') => { setMode(m); setPage(1); };
 
   const exportQueue = () => {
     if (records.length === 0) return;
@@ -189,7 +232,7 @@ const ReviewView: React.FC<Props> = ({ data }) => {
     }));
     const link = document.createElement('a');
     link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8;' }));
-    link.download = `review_${active}.csv`;
+    link.download = mode === 'places' ? `place-question_${activeQ}.csv` : `review_${active}.csv`;
     link.click();
   };
 
@@ -227,6 +270,44 @@ const ReviewView: React.FC<Props> = ({ data }) => {
             {' '}({((totalFlagged / Math.max(1, data.length)) * 100).toFixed(1)}%) carry at least one flag.
           </p>
         </div>
+        <div className="px-3 pt-3 flex gap-1">
+          {(['flags', 'places'] as const).map(m => (
+            <button key={m} onClick={() => switchMode(m)}
+              className={`flex-1 px-2 py-1.5 rounded-lg text-[11px] font-bold border ${mode === m ? 'bg-indigo-50 text-indigo-700 border-indigo-200' : 'text-slate-500 border-slate-200 hover:bg-slate-50'}`}>
+              {m === 'flags' ? 'Record flags' : 'Place questions'}
+            </button>
+          ))}
+        </div>
+        {mode === 'places' ? (
+          <div className="p-3 space-y-3">
+            <p className="text-[11px] text-slate-500 leading-relaxed px-1">
+              For Yoni Furas: the place questions still open after his identifications and three rounds of review.
+              Each opens the records it concerns, with a link to the page. Link straight here with <span className="font-mono">#yoni</span>.
+            </p>
+            {Array.from(new Set(questions.map(q => q.group))).map(group => (
+              <div key={group}>
+                <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-1 mb-1">{group}</h4>
+                <ul className="space-y-1">
+                  {questions.filter(q => q.group === group).map(q => {
+                    const n = (byQuestion[q.id] || []).length;
+                    const isActive = q.id === activeQ;
+                    return (
+                      <li key={q.id}>
+                        <button onClick={() => selectQ(q.id)}
+                          className={`w-full text-left px-3 py-2 rounded-xl transition-colors ${isActive ? 'bg-indigo-50 border border-indigo-200' : 'border border-transparent hover:bg-slate-50'}`}>
+                          <div className="flex items-baseline justify-between gap-2">
+                            <span className={`text-xs font-bold ${isActive ? 'text-indigo-700' : 'text-slate-700'}`}>{q.title}</span>
+                            <span className={`text-xs font-bold tabular-nums shrink-0 ${isActive ? 'text-indigo-600' : 'text-slate-400'}`}>{n.toLocaleString()}</span>
+                          </div>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
         <ul className="p-3 space-y-1">
           {QUEUES.map(q => {
             const n = (byFlag[q.flag] || []).length;
@@ -252,6 +333,7 @@ const ReviewView: React.FC<Props> = ({ data }) => {
             );
           })}
         </ul>
+        )}
       </div>
 
       {/* The queue itself */}
@@ -278,10 +360,18 @@ const ReviewView: React.FC<Props> = ({ data }) => {
             </div>
           </div>
           <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">{queue.question}</p>
+          {mode === 'places' && placeQ && (
+            <p className="text-xs text-slate-500 flex items-start gap-1.5 max-w-3xl">
+              <MapPin size={13} className="mt-0.5 shrink-0 text-indigo-400" />
+              <span><span className="font-bold text-slate-600">Our current reading:</span> {placeQ.reading}
+                {placeQ.cities.length > 0 && placeQ.cities.length <= 12 && <> · spellings: {placeQ.cities.join(', ')}</>}
+              </span>
+            </p>
+          )}
         </div>
 
         {records.length === 0 ? (
-          <div className="text-center text-sm text-slate-400 italic py-16">Nothing flagged in this queue.</div>
+          <div className="text-center text-sm text-slate-400 italic py-16">{mode === 'places' ? 'No records in the loaded data carry these spellings.' : 'Nothing flagged in this queue.'}</div>
         ) : (
           <div className="space-y-4">
             {shown.map((row, idx) => {

@@ -1,0 +1,10 @@
+city_regex	address_regex	target_city	note
+# Two Arrabas. The address names the district; a bare spelling stays ambiguous (see record-readings.tsv for those read off the scan).			
+^\W*a{1,2}r{1,2}a{1,2}b{1,2}(eh|e|ah|a|ih|i|y|et|at)\b	batt?h?[aou]u?f	Arrabat al-Battuf	Arrabat al-Battuf: the address names the Battuf
+^\W*a{1,2}r{1,2}a{1,2}b{1,2}(eh|e|ah|a|ih|i|y|et|at)\b	\barrara\b	Arara	Ar'ara, not Arraba: the address reads Arrara (Haifa S/D)
+^\W*a{1,2}r{1,2}a{1,2}b{1,2}(eh|e|ah|a|ih|i|y|et|at)\b	jen[ie]n|jening|nabl[ou]s|neblus	Arraba (Jenin)	Arraba of the Jenin sub-district: the address names Jenin or Nablus
+^\W*a{1,2}r{1,2}a{1,2}b{1,2}(eh|e|ah|a|ih|i|y|et|at)\b	\bacre\b(?!\s*r(oa)?d)|\bacca\b|\bakka\b|\bnez\b	Arrabat al-Battuf	Arrabat al-Battuf: the address names the Acre sub-district
+^\W*a{1,2}r{1,2}a{1,2}b{1,2}(eh|e|ah|a|ih|i|y|et|at)\b		Arrabeh	two Arrabas and the address names neither district
+# Halisa, the Haifa quarter, against al-Khalisa in the Huleh: the register spells the village Khalsa, the quarter Hallisa/Hallissa/Hallesa.			
+^\W*khalsa\b		Khalsa	al-Khalisa village (Huleh): the register's spelling for it
+^\W*k?h?al+[eiy]+s+[aeiy]?h?\b|^al-khalisa		Halisa	Halisa, the Haifa quarter: every such spelling with a context places it in Haifa

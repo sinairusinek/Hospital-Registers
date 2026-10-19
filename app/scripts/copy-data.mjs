@@ -74,6 +74,15 @@ if (existsSync(coordsSrc)) {
   console.log(`Staged place coordinates → ${coordsDest}`);
 }
 
+// The open place questions for Yoni Furas, built by kimatch/open_questions.py,
+// shown in the Review view's "Place questions" mode.
+const questionsSrc = resolve(here, '../../kimatch/open-questions.json');
+const questionsDest = resolve(here, '../public/data/place-questions.json');
+if (existsSync(questionsSrc)) {
+  copyFileSync(questionsSrc, questionsDest);
+  console.log(`Staged place questions → ${questionsDest}`);
+}
+
 // "Mountain Road to Bat Galim", the institutional history behind the History
 // tab. Authored at paper/hospital-history.html, which is gitignored with the
 // rest of the private drafts, so the *shipped* copy in public/ is the tracked
