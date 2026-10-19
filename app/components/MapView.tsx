@@ -78,6 +78,15 @@ interface Place {
 
 interface Unplaced { decision: string; records: number; }
 
+// The review's decisions, in words, for the note under the map.
+const UNPLACED_LABEL: Record<string, string> = {
+  unreviewed: 'not yet identified',
+  'unmatched-ambiguous': 'held as ambiguous',
+  'unmatched-no-kima-entry': 'identified but not in the gazetteer',
+  'unmatched-junk': 'judged transcription debris',
+  matched: 'identified, no coordinates'
+};
+
 // The slices, in a fixed order round the pie so the same community always sits
 // in the same place and two pies can be read against each other at a glance.
 // The unrecorded last, in the neutral grey every chart gives a blank.
@@ -176,7 +185,8 @@ interface Props { data: RegistryRecord[]; }
 
 const MapView: React.FC<Props> = ({ data }) => {
   const [places, setPlaces] = useState<Place[] | null>(null);
-  const [unplaced, setUnplaced] = useState<Unplaced[]>([]);
+  // City value -> the review's decision, for values with no point to draw.
+  const [decisionOf, setDecisionOf] = useState<Map<string, string>>(new Map());
   const [selected, setSelected] = useState<string | null>(null);
   const [basemap, setBasemap] = useState<BasemapKey>('historic');
   const [page, setPage] = useState(1);
@@ -209,7 +219,7 @@ const MapView: React.FC<Props> = ({ data }) => {
         // Keyed on the Kima id where present, else the rounded point, so two
         // spellings the review sent to the same entry become one circle.
         const grouped = new Map<string, Place>();
-        const missed = new Map<string, number>();
+        const missed = new Map<string, string>();
         lines.slice(1).forEach(line => {
           const c = line.split('\t');
           const lat = parseFloat(at(c, 'lat'));
@@ -239,16 +249,13 @@ const MapView: React.FC<Props> = ({ data }) => {
               });
             }
           } else {
-            const d = at(c, 'decision') || 'unreviewed';
-            missed.set(d, (missed.get(d) || 0) + (parseInt(at(c, 'n_records'), 10) || 0));
+            missed.set(at(c, 'city'), at(c, 'decision') || 'unreviewed');
           }
         });
         setPlaces(Array.from(grouped.values()));
-        setUnplaced(Array.from(missed.entries())
-          .map(([decision, records]) => ({ decision, records }))
-          .sort((a, b) => b.records - a.records));
+        setDecisionOf(missed);
       })
-      .catch(() => { setPlaces([]); setUnplaced([]); });
+      .catch(() => { setPlaces([]); setDecisionOf(new Map()); });
   }, []);
 
   // Records grouped by the City string, so a click on a circle can hand back
@@ -293,17 +300,26 @@ const MapView: React.FC<Props> = ({ data }) => {
   // Records not on the map at all: no City on the record, or a City value the
   // review never reached. Counted from the data itself rather than from the
   // decisions file, so the two cannot drift.
+  // Why each unplaced record is unplaced is counted from the records too — the
+  // decisions file's own counts are round 1's, Jewish patients only.
   const offMap = useMemo(() => {
-    if (!places) return { noCity: 0, unmatched: 0 };
+    if (!places) return { noCity: 0, unmatched: 0, why: [] as Unplaced[] };
     const placed = new Set(places.flatMap(p => p.cities));
     let noCity = 0, unmatched = 0;
+    const why = new Map<string, number>();
     data.forEach(row => {
       const city = val(row, 'City');
-      if (!city) noCity++;
-      else if (!placed.has(city)) unmatched++;
+      if (!city) { noCity++; return; }
+      if (placed.has(city)) return;
+      unmatched++;
+      const d = decisionOf.get(city) || 'unreviewed';
+      why.set(d, (why.get(d) || 0) + 1);
     });
-    return { noCity, unmatched };
-  }, [data, places]);
+    return {
+      noCity, unmatched,
+      why: Array.from(why.entries()).map(([decision, records]) => ({ decision, records })).sort((a, b) => b.records - a.records)
+    };
+  }, [data, places, decisionOf]);
 
   // ------------------------------------------------------------ the map
 
@@ -674,11 +690,11 @@ const MapView: React.FC<Props> = ({ data }) => {
             ))}
           </ul>
           <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
-            Not on the map: {offMap.unmatched.toLocaleString()} records whose City the
-            review could not place, {offMap.noCity.toLocaleString()} with no City recorded.
-            {unplaced.length > 0 && (
-              <> Of the reviewed values: {unplaced.map(u => `${u.decision} ${u.records.toLocaleString()}`).join(', ')}.</>
-            )}
+            Not on the map: {offMap.noCity.toLocaleString()} records with no City recorded,
+            and {offMap.unmatched.toLocaleString()} whose City has no point
+            {offMap.why.length > 0 && (
+              <> — {offMap.why.map(u => `${UNPLACED_LABEL[u.decision] || u.decision} ${u.records.toLocaleString()}`).join(', ')}</>
+            )}. The open questions are under Review → Place questions.
           </p>
           {abroad.length > 0 && (
             <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">

@@ -55,6 +55,18 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Admission Date as written', 'Admission Date', 'Discharge Date as written', 'Discharge Date', 'Days in Hospital as written', 'Days in Hospital']
   },
   {
+    flag: 'city-set-by-record',
+    title: 'One spelling, two places — set for this record',
+    question: 'The spelling covers two places — Arraba of Jenin and Arrabat al-Battuf; Halisa the Haifa quarter and al-Khalisa in the Huleh — and this record\'s City was chosen from the district its address names or from a reading of its page (kimatch/record-rules.tsv, record-readings.tsv). Does the page bear it out?',
+    fields: ['City as written', 'City', 'Address', 'Neighbourhood', 'Admission Date', 'Religion']
+  },
+  {
+    flag: 'city-read-from-address',
+    title: 'City was blank — read from the address',
+    question: 'The clerk left the City column empty, but the address names one place the review has ruled on — a village written in the wrong column, or a Haifa quarter or street — and the City was filled from it. "City as written" stays blank so the clerk\'s own record shows. Is the place right?',
+    fields: ['City as written', 'City', 'Address', 'Neighbourhood', 'Admission Date', 'Religion']
+  },
+  {
     flag: 'sex-cleared',
     title: 'A stray letter where a sex belongs',
     question: 'The source held a single letter that is not an abbreviation of either term in any reading — debris from a neighbouring column. It has been cleared here; the consolidated TSV still holds the letter. What does the page say?',
