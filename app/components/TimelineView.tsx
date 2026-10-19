@@ -503,6 +503,8 @@ const TimelineView: React.FC = () => {
   // The country's events. Folded by default: the band and the hospital's own
   // flags are the subject, and the context is there when it is asked for.
   const [showContext, setShowContext] = useState(false);
+  // The hospital's own chronology, folded the same way.
+  const [showHospital, setShowHospital] = useState(false);
   const [hover, setHover] = useState<
     { x: number; y: number; label: string; general: number; atlit: number;
       split?: number[] | null } | null
@@ -569,9 +571,9 @@ const TimelineView: React.FC = () => {
   }, [data, showContext, lo, hi]);
 
   const visibleInstitutional = useMemo<InstitutionalEvent[]>(() => {
-    if (!data) return [];
+    if (!data || !showHospital) return [];
     return data.institutional.filter(e => toM(e.date) >= lo && toM(e.date) <= hi);
-  }, [data, lo, hi]);
+  }, [data, showHospital, lo, hi]);
 
   const charW = 6.1;
   // Wider spans get fewer lanes: at full extent the labels cannot all fit and
@@ -604,7 +606,7 @@ const TimelineView: React.FC = () => {
   const extTop = M.top;
   const extH = showContext ? extLanes * EXT_LANE : 0;
   const instTop = extTop + extH + (showContext ? 10 : 0);
-  const instH = instLanes * INST_LANE;
+  const instH = showHospital ? instLanes * INST_LANE : 0;
   const bandTop = instTop + instH + 12;
   const axisY = bandTop + BAND_H;
   const yearsY = axisY + 15;
@@ -814,7 +816,8 @@ const TimelineView: React.FC = () => {
           <p className="text-slate-500 leading-relaxed max-w-3xl">
             Four layers on one axis: what was happening in the country, what the hospital
             itself did, how many people it admitted month by month, and which ledger says so.
-            The country's events are folded under <em>Historic context</em>. Colour the
+            The country's events and the hospital's own are folded under <em>Historic
+            context</em> and <em>Hospital history</em>. Colour the
             admissions by who the patients were or what became of them, and switch to
             percentages to compare the mix across years of very different size. Drag on
             the strip at the foot to zoom; click any flag for its source. Zoom in past two
@@ -833,6 +836,16 @@ const TimelineView: React.FC = () => {
             }`}
           >
             Historic context {showContext ? '▾' : '▸'}
+          </button>
+          <button
+            onClick={() => setShowHospital(v => !v)}
+            aria-expanded={showHospital}
+            className={`px-2.5 py-1 rounded-full border transition-colors ${
+              showHospital ? 'bg-white border-slate-300 text-slate-700'
+                           : 'bg-slate-100 border-slate-200 text-slate-400'
+            }`}
+          >
+            Hospital history {showHospital ? '▾' : '▸'}
           </button>
 
           <span className="w-px h-4 bg-slate-200 mx-1" />
