@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import {
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar
 } from 'recharts';
-import { MapPin, X, Layers, ChevronLeft, ChevronRight, Download } from 'lucide-react';
+import { MapPin, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Download } from 'lucide-react';
 import { RegistryRecord } from '../types';
 import { UNKNOWN, facetValue } from '../facets';
 import { SERIES, semanticColor } from '../colors';
@@ -190,6 +190,15 @@ const MapView: React.FC<Props> = ({ data }) => {
   const [selected, setSelected] = useState<string | null>(null);
   const [basemap, setBasemap] = useState<BasemapKey>('historic');
   const [page, setPage] = useState(1);
+  // The info box can be folded to its headline, so it stops covering the
+  // southern coast; the reader's choice is remembered between visits.
+  const [infoOpen, setInfoOpen] = useState<boolean>(() => {
+    try { return localStorage.getItem('map.infoOpen') !== '0'; } catch { return true; }
+  });
+  const toggleInfo = () => setInfoOpen(v => {
+    try { localStorage.setItem('map.infoOpen', v ? '0' : '1'); } catch { /* private window */ }
+    return !v;
+  });
   // Bumped whenever a map instance is created, so the tile and marker effects
   // re-run against the new one rather than the removed one.
   const [mapReady, setMapReady] = useState(0);
@@ -673,9 +682,20 @@ const MapView: React.FC<Props> = ({ data }) => {
 
         {/* What the map does and does not carry */}
         <div className="absolute bottom-6 left-4 z-[500] bg-white/95 backdrop-blur rounded-2xl border border-slate-200 shadow-lg px-4 py-3 max-w-xs">
-          <p className="text-xs font-bold text-slate-700">
-            {counted.length} places · {mappedRecords.toLocaleString()} records
-          </p>
+          <button
+            onClick={toggleInfo}
+            aria-expanded={infoOpen}
+            title={infoOpen ? 'Minimize' : 'Show the legend and what is not on the map'}
+            className="w-full flex items-center justify-between gap-3 text-left"
+          >
+            <span className="text-xs font-bold text-slate-700">
+              {counted.length} places · {mappedRecords.toLocaleString()} records
+            </span>
+            {infoOpen
+              ? <ChevronDown size={14} className="text-slate-400 shrink-0" />
+              : <ChevronUp size={14} className="text-slate-400 shrink-0" />}
+          </button>
+          {infoOpen && <>
           {provisionalCount > 0 && (
             <p className="text-[11px] text-amber-700 mt-0.5">
               {provisionalCount} of them unreviewed candidates, drawn faded with a dashed rim
@@ -701,6 +721,7 @@ const MapView: React.FC<Props> = ({ data }) => {
               Beyond the map's edge: {abroad.map(p => `${p.label} ${p.n.toLocaleString()}`).join(', ')}.
             </p>
           )}
+          </>}
         </div>
       </div>
 

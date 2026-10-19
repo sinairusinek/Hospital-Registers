@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ExternalLink, X, Loader2, BookOpen } from 'lucide-react';
 import { PageScan, PageScanIndex, usePageScans, pageImageUrl } from './ScanLink';
 import PersonnelStrip from './PersonnelStrip';
-import { semanticColor, NEUTRAL } from '../colors';
+import { colorsForRanked, ColorScale } from '../colors';
 import { GROUP_DIM } from '../groups';
 
 /**
@@ -28,10 +28,13 @@ const DATA_URL = `${import.meta.env.BASE_URL}data/timeline.json`;
 
 // ---------------------------------------------------------------- types
 
-interface IntakeMonth {
-  month: string; general: number; atlit: number;
-  /** The general count split by Community, in meta.communities order. */
-  community?: number[];
+interface IntakeMonth { month: string; general: number; atlit: number; }
+/** One way of colouring the band. Counts are over the general intake only, in
+ *  `values` order, parallel to intake (month) and to daily (day); null where
+ *  the register has no general admission. */
+interface Facet {
+  key: string; label: string; values: string[];
+  month: (number[] | null)[]; day: (number[] | null)[];
 }
 /** One dated day: [date, general] or [date, general, atlit]. Packed as arrays
  *  by pipeline/timeline_data.py — 3,530 of them, and objects would dominate
@@ -59,12 +62,11 @@ interface TimelineData {
     first: string; last: string; records: number; dated: number;
     undated: number; generalRecords: number; atlitRecords: number;
     atlitNotebook: string; sourceOrigin: string | null;
-    communities?: string[];
   };
   intake: IntakeMonth[];
   daily: IntakeDay[];
-  /** Row for row with daily: that day's general count split by Community. */
-  dailyCommunity?: number[][];
+  /** Absent from a timeline.json built before the band could be split. */
+  facets?: Facet[];
   gaps: Gap[];
   notebooks: Notebook[];
   institutional: InstitutionalEvent[];
@@ -139,54 +141,22 @@ const INTAKE = '#2a78d6';       // SERIES[0]
 const ATLIT = '#4a3aa7';        // SERIES[6] — a different institution
 const GAP = '#898781';          // NEUTRAL: an absence, not a category
 
-// The Community split uses the fixed colours the Statistics pie and the Map
-// give each community. "Other" is the same violet as the Atlit book, so while
-// the band is split the Atlit bars are drawn as an outline instead.
-const communityColor = (k: string): string =>
-  k === 'Not recorded' ? NEUTRAL : semanticColor(GROUP_DIM, k);
+// The facet colours are the site's: Community keeps the fixed hues the
+// Statistics pie and the Map give it, and the other facets are coloured by
+// rank exactly as the Statistics pies are. The Atlit book's violet is also the
+// colour of some facet values, so while the band is split the Atlit bars are
+// drawn as an outline instead.
+const facetColors = (f: Facet): ColorScale =>
+  colorsForRanked(f.key === 'community' ? GROUP_DIM : f.label, f.values);
 
 /** The Atlit bars: solid violet normally, an outline while the band is split. */
 const atlitStyle = (split: boolean) => (split
   ? { fill: '#ffffff', stroke: ATLIT, strokeWidth: 0.8 }
   : { fill: ATLIT });
 
-/** One bar, stacked from the axis up by Community. */
-const stack = (
-  key: string, a: number, w: number, counts: number[], names: string[],
-  barY: (v: number) => number
-) => {
-  let base = 0;
-  return counts.map((n, i) => {
-    if (!n) return null;
-    const y0 = barY(base);
-    base += n;
-    const y1 = barY(base);
-    return (
-      <rect key={`${key}-${i}`} x={a} y={y1} width={w} height={y0 - y1}
-        fill={communityColor(names[i])} />
-    );
-  });
-};
-
-const KIND_COLOR: Record<string, string> = {
-  conflict: '#b2182b',
-  migration: '#1baf7a',
-  policy: '#4a3aa7',
-  disaster: '#eb6834',
-  health: '#eda100',
-  infrastructure: '#0e7490',
-  other: '#64748b'
-};
-
-const KIND_LABEL: Record<string, string> = {
-  conflict: 'Conflict',
-  migration: 'Migration',
-  policy: 'Policy',
-  disaster: 'Disaster',
-  health: 'Health',
-  infrastructure: 'Infrastructure',
-  other: 'Other'
-};
+// The historical context is not a category of anything, and colouring it by
+// kind put a second legend beside the band's. One quiet ink for all of it.
+const EVENT = '#64748b';
 
 const HOSPITAL = '#0f766e';     // the institution's own flag colour
 
@@ -526,11 +496,16 @@ const TimelineView: React.FC = () => {
   const [openNotebook, setOpenNotebook] = useState<Notebook | null>(null);
   const [showNotebooks, setShowNotebooks] = useState(false);
   const [showAtlit, setShowAtlit] = useState(true);
-  const [byCommunity, setByCommunity] = useState(false);
-  const [kinds, setKinds] = useState<Set<string> | null>(null);
+  // The band's colouring: null for the plain intake, else a facet key.
+  const [facetKey, setFacetKey] = useState<string | null>(null);
+  // Each bar as shares of 100% rather than as counts.
+  const [percent, setPercent] = useState(false);
+  // The country's events. Folded by default: the band and the hospital's own
+  // flags are the subject, and the context is there when it is asked for.
+  const [showContext, setShowContext] = useState(false);
   const [hover, setHover] = useState<
     { x: number; y: number; label: string; general: number; atlit: number;
-      community?: number[] } | null
+      split?: number[] | null } | null
   >(null);
 
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -587,12 +562,11 @@ const TimelineView: React.FC = () => {
   );
 
   const visibleExternal = useMemo<ExternalEvent[]>(() => {
-    if (!data) return [];
+    if (!data || !showContext) return [];
     return data.external.filter(
-      e => (!kinds || kinds.has(e.kind))
-        && toM(e.date) <= hi && toM(e.end || e.date) >= lo
+      e => toM(e.date) <= hi && toM(e.end || e.date) >= lo
     );
-  }, [data, kinds, lo, hi]);
+  }, [data, showContext, lo, hi]);
 
   const visibleInstitutional = useMemo<InstitutionalEvent[]>(() => {
     if (!data) return [];
@@ -628,8 +602,8 @@ const TimelineView: React.FC = () => {
     ...instPlaced.filter(p => p.labelled).map(p => p.lane + 1), 1);
 
   const extTop = M.top;
-  const extH = extLanes * EXT_LANE;
-  const instTop = extTop + extH + 10;
+  const extH = showContext ? extLanes * EXT_LANE : 0;
+  const instTop = extTop + extH + (showContext ? 10 : 0);
   const instH = instLanes * INST_LANE;
   const bandTop = instTop + instH + 12;
   const axisY = bandTop + BAND_H;
@@ -645,7 +619,7 @@ const TimelineView: React.FC = () => {
   const visibleDaily = useMemo(() => {
     if (!data || !dayZoom) return [];
     return data.daily
-      .map((r, i) => ({ r, c: data.dailyCommunity?.[i] }))
+      .map((r, i) => ({ r, i }))
       .filter(({ r }) => {
         const at = toM(r[0]);
         return at >= lo - 0.05 && at <= hi + 0.05;
@@ -659,6 +633,7 @@ const TimelineView: React.FC = () => {
   // mean two different things.
   const maxIntake = useMemo(() => {
     if (!data) return 1;
+    if (percent) return 100;
     if (dayZoom) {
       return Math.max(
         1,
@@ -669,7 +644,14 @@ const TimelineView: React.FC = () => {
       1,
       ...data.intake.map(m => m.general + (showAtlit ? m.atlit : 0))
     );
-  }, [data, showAtlit, dayZoom, visibleDaily]);
+  }, [data, showAtlit, dayZoom, visibleDaily, percent]);
+
+  // The overview always draws whole months as counts, so it has its own scale
+  // rather than borrowing the band's, which may be daily or in percent.
+  const maxMonthly = useMemo(() => {
+    if (!data) return 1;
+    return Math.max(1, ...data.intake.map(m => m.general + (showAtlit ? m.atlit : 0)));
+  }, [data, showAtlit]);
 
   const barY = useCallback(
     (v: number) => axisY - (v / maxIntake) * (BAND_H - 8),
@@ -767,10 +749,56 @@ const TimelineView: React.FC = () => {
   const days = dayZoom ? dayTicks(lo, hi, plotW) : [];
   const monthTicks = !dayZoom && hi - lo <= 48;
   const zoomed = Boolean(range) && (hi - lo) < (extent[1] - extent[0]) - 0.5;
-  const kindsPresent: string[] = Array.from(new Set(data.external.map(e => e.kind)));
-  // An older timeline.json has no split; the toggle is then simply not offered.
-  const communities = data.meta.communities ?? [];
-  const split = byCommunity && communities.length > 0;
+  // An older timeline.json has no facets; the colouring row is then not offered.
+  const facets = data.facets ?? [];
+  const facet = facets.find(f => f.key === facetKey) ?? null;
+  const colorOf: ColorScale | null = facet ? facetColors(facet) : null;
+  const split = Boolean(facet);
+
+  /**
+   * One bar of the band, monthly or daily: the general intake, plain or split
+   * by the facet, with the Atlit book on top when shown. In percent mode the
+   * whole bar is 100 and every part is its share of it.
+   */
+  const bar = (
+    key: string, a: number, w: number, hoverX: number, label: string,
+    gen: number, atl: number, parts: number[] | null | undefined
+  ) => {
+    const shownAtl = showAtlit ? atl : 0;
+    const total = gen + shownAtl;
+    if (!total) return null;
+    const k = percent ? 100 / total : 1;
+    const rects: React.ReactNode[] = [];
+    if (facet && colorOf && parts) {
+      let base = 0;
+      parts.forEach((n, i) => {
+        if (!n) return;
+        const y0 = barY(base * k);
+        base += n;
+        const y1 = barY(base * k);
+        rects.push(<rect key={i} x={a} y={y1} width={w} height={y0 - y1}
+          fill={colorOf(facet.values[i])} />);
+      });
+    } else if (gen) {
+      rects.push(<rect key="g" x={a} y={barY(gen * k)} width={w}
+        height={axisY - barY(gen * k)} fill={INTAKE} />);
+    }
+    if (shownAtl) {
+      rects.push(<rect key="a" x={a} y={barY(total * k)} width={w}
+        height={barY(gen * k) - barY(total * k)} {...atlitStyle(split)} />);
+    }
+    return (
+      <g
+        key={key}
+        onMouseEnter={() => setHover({
+          x: hoverX, y: barY(total * k), label, general: gen, atlit: atl,
+          split: facet ? parts : null,
+        })}
+      >
+        {rects}
+      </g>
+    );
+  };
 
   return (
     <div className="h-full overflow-y-auto custom-scrollbar bg-slate-50">
@@ -786,36 +814,26 @@ const TimelineView: React.FC = () => {
           <p className="text-slate-500 leading-relaxed max-w-3xl">
             Four layers on one axis: what was happening in the country, what the hospital
             itself did, how many people it admitted month by month, and which ledger says so.
-            Drag on the strip at the foot to zoom; click any flag for its source. Zoom
-            in past two months and both the axis and the intake band count days.
+            The country's events are folded under <em>Historic context</em>. Colour the
+            admissions by who the patients were or what became of them, and switch to
+            percentages to compare the mix across years of very different size. Drag on
+            the strip at the foot to zoom; click any flag for its source. Zoom in past two
+            months and both the axis and the intake band count days.
           </p>
         </header>
 
         {/* controls */}
         <div className="flex flex-wrap items-center gap-2 text-xs">
-          {kindsPresent.map(k => {
-            const on = !kinds || kinds.has(k);
-            return (
-              <button
-                key={k}
-                onClick={() => {
-                  const next = new Set(kinds ?? kindsPresent);
-                  if (next.has(k)) next.delete(k); else next.add(k);
-                  setKinds(next.size === kindsPresent.length ? null : next);
-                }}
-                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border transition-colors ${
-                  on ? 'bg-white border-slate-300 text-slate-700'
-                     : 'bg-slate-100 border-slate-200 text-slate-400'
-                }`}
-              >
-                <span
-                  className="w-2 h-2 rounded-full"
-                  style={{ background: on ? (KIND_COLOR[k] || KIND_COLOR.other) : '#cbd5e1' }}
-                />
-                {KIND_LABEL[k] || k}
-              </button>
-            );
-          })}
+          <button
+            onClick={() => setShowContext(v => !v)}
+            aria-expanded={showContext}
+            className={`px-2.5 py-1 rounded-full border transition-colors ${
+              showContext ? 'bg-white border-slate-300 text-slate-700'
+                          : 'bg-slate-100 border-slate-200 text-slate-400'
+            }`}
+          >
+            Historic context {showContext ? '▾' : '▸'}
+          </button>
 
           <span className="w-px h-4 bg-slate-200 mx-1" />
 
@@ -828,18 +846,6 @@ const TimelineView: React.FC = () => {
           >
             Atlit camp book
           </button>
-          {communities.length > 0 && (
-            <button
-              onClick={() => setByCommunity(v => !v)}
-              title="Split the general intake by Community: religion crossed with nationality"
-              className={`px-2.5 py-1 rounded-full border transition-colors ${
-                byCommunity ? 'bg-white border-slate-300 text-slate-700'
-                            : 'bg-slate-100 border-slate-200 text-slate-400'
-              }`}
-            >
-              By community
-            </button>
-          )}
           <button
             onClick={() => setShowNotebooks(v => !v)}
             className={`px-2.5 py-1 rounded-full border transition-colors ${
@@ -848,6 +854,16 @@ const TimelineView: React.FC = () => {
             }`}
           >
             Notebooks
+          </button>
+          <button
+            onClick={() => setPercent(v => !v)}
+            title="Draw every bar as 100%, divided into its proportions"
+            className={`px-2.5 py-1 rounded-full border transition-colors ${
+              percent ? 'bg-white border-slate-300 text-slate-700'
+                      : 'bg-slate-100 border-slate-200 text-slate-400'
+            }`}
+          >
+            Percentages
           </button>
 
           <span className="w-px h-4 bg-slate-200 mx-1" />
@@ -876,6 +892,27 @@ const TimelineView: React.FC = () => {
             </span>
           )}
         </div>
+
+        {/* what the band is coloured by */}
+        {facets.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2 text-xs -mt-2">
+            <span className="text-slate-400 mr-1">Colour the admissions by</span>
+            {[{ key: null as string | null, label: 'Nothing' },
+              ...facets.map(f => ({ key: f.key as string | null, label: f.label }))].map(o => (
+              <button
+                key={o.key ?? 'none'}
+                onClick={() => setFacetKey(o.key)}
+                aria-pressed={facetKey === o.key}
+                className={`px-2.5 py-1 rounded-full border transition-colors ${
+                  facetKey === o.key ? 'bg-indigo-50 border-indigo-300 text-indigo-700'
+                                     : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
+                }`}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* main plot */}
         <div
@@ -930,8 +967,8 @@ const TimelineView: React.FC = () => {
                 <rect
                   key={`span-${item.date}-${item.label}`}
                   x={a} y={y - 3} width={b - a} height={6} rx={3}
-                  fill={KIND_COLOR[item.kind] || KIND_COLOR.other}
-                  opacity={0.22}
+                  fill={EVENT}
+                  opacity={0.18}
                 />
               );
             })}
@@ -943,7 +980,7 @@ const TimelineView: React.FC = () => {
               const y = labelled
                 ? extTop + lane * EXT_LANE + 11
                 : extTop + extH + 2;
-              const color = KIND_COLOR[item.kind] || KIND_COLOR.other;
+              const color = EVENT;
               return (
                 <g
                   key={`ext-${item.date}-${item.label}`}
@@ -1056,7 +1093,7 @@ const TimelineView: React.FC = () => {
                   ? extTop + lane * EXT_LANE + 11 + DOT_DROP
                   : extTop + extH + 2}
                 r={labelled ? 3 : 2.6}
-                fill={KIND_COLOR[item.kind] || KIND_COLOR.other}
+                fill={EVENT}
                 stroke="#fff" strokeWidth={1}
                 pointerEvents="none"
               />
@@ -1084,7 +1121,7 @@ const TimelineView: React.FC = () => {
               * the days on screen; the caption beside it says so, because the
               * same bar height means one thing per month and another per day.
               */}
-            {dayZoom && visibleDaily.map(({ r, c }) => {
+            {dayZoom && visibleDaily.map(({ r, i }) => {
               const at = toM(r[0]);
               const a = x(at);
               // One day in month units, from this day's own month: the same
@@ -1094,83 +1131,46 @@ const TimelineView: React.FC = () => {
                 Number(r[0].slice(0, 4)), Number(r[0].slice(5, 7)) - 1)) - a;
               const b = a + dayW;
               if (b < M.left || a > width - M.right) return null;
-              const gen = r[1];
-              const atl = r[2] ?? 0;
               const w = Math.max(1.2, dayW - (dayW > 4 ? 1 : 0.2));
-              const gh = axisY - barY(gen);
-              const ah = showAtlit ? (axisY - barY(atl)) : 0;
-              return (
-                <g
-                  key={r[0]}
-                  onMouseEnter={() => setHover({
-                    x: a + w / 2, y: barY(gen + (showAtlit ? atl : 0)),
-                    label: longDate(r[0]), general: gen, atlit: atl, community: c,
-                  })}
-                >
-                  {showAtlit && atl > 0 && (
-                    <rect
-                      x={a} y={barY(gen + atl)} width={w} height={ah}
-                      {...atlitStyle(split)}
-                    />
-                  )}
-                  {split && c
-                    ? stack(r[0], a, w, c, communities, barY)
-                    : <rect x={a} y={barY(gen)} width={w} height={gh} fill={INTAKE} />}
-                </g>
-              );
+              return bar(r[0], a, w, a + w / 2, longDate(r[0]),
+                r[1], r[2] ?? 0, facet?.day[i]);
             })}
 
             {/* intake band — monthly */}
-            {!dayZoom && data.intake.map(m => {
+            {!dayZoom && data.intake.map((m, i) => {
               const a = x(toM(m.month));
               const b = x(toM(m.month) + 1);
               if (b < M.left || a > width - M.right) return null;
-              if (!m.general && !m.atlit) return null;
               const w = Math.max(0.8, b - a - (b - a > 4 ? 1 : 0.2));
-              const gh = axisY - barY(m.general);
-              const ah = showAtlit ? (axisY - barY(m.atlit)) : 0;
-              return (
-                <g
-                  key={m.month}
-                  onMouseEnter={() => setHover({
-                    x: (a + b) / 2, y: barY(m.general + ah),
-                    label: fromM(toM(m.month)), general: m.general, atlit: m.atlit,
-                    community: m.community,
-                  })}
-                >
-                  {showAtlit && m.atlit > 0 && (
-                    <rect
-                      x={a} y={barY(m.general + m.atlit)} width={w} height={ah}
-                      {...atlitStyle(split)}
-                    />
-                  )}
-                  {split && m.community
-                    ? stack(m.month, a, w, m.community, communities, barY)
-                    : <rect x={a} y={barY(m.general)} width={w} height={gh} fill={INTAKE} />}
-                </g>
-              );
+              return bar(m.month, a, w, (a + b) / 2, fromM(toM(m.month)),
+                m.general, m.atlit, facet?.month[i]);
             })}
 
             {/* hover readout */}
             {hover && (() => {
-              // One line per figure: the date, the total, then either the
-              // Atlit line or, when the band is split, a line per community.
+              // One line per figure: the date, the total, then a line per
+              // facet value when the band is split, then the Atlit book. In
+              // percent mode each carries its share of the whole bar too.
+              const whole = hover.general + (showAtlit ? hover.atlit : 0);
+              const pct = (n: number) => (percent && whole
+                ? ` (${(100 * n / whole).toFixed(n / whole < 0.1 ? 1 : 0)}%)` : '');
               const lines: { text: string; fill: string; swatch?: string }[] = [
                 { text: hover.label, fill: '#fff' },
-                { text: `${hover.general.toLocaleString()} admissions`, fill: '#fff' },
+                { text: `${hover.general.toLocaleString()} admissions${pct(hover.general)}`, fill: '#fff' },
               ];
-              if (split && hover.community) {
-                hover.community.forEach((n, i) => {
+              if (facet && colorOf && hover.split) {
+                hover.split.forEach((n, i) => {
                   if (n) lines.push({
-                    text: `${n.toLocaleString()} ${communities[i]}`,
-                    fill: '#e2e8f0', swatch: communityColor(communities[i]),
+                    text: `${n.toLocaleString()} ${facet.values[i]}${pct(n)}`,
+                    fill: '#e2e8f0', swatch: colorOf(facet.values[i]),
                   });
                 });
               }
               if (showAtlit && hover.atlit > 0) {
-                lines.push({ text: `${hover.atlit.toLocaleString()} at Atlit`, fill: '#c7d2fe' });
+                lines.push({ text: `${hover.atlit.toLocaleString()} at Atlit${pct(hover.atlit)}`, fill: '#c7d2fe' });
               }
-              const boxW = split ? 176 : 124;
+              const longest = Math.max(...lines.map(l => l.text.length + (l.swatch ? 2 : 0)));
+              const boxW = Math.max(124, 18 + longest * 6.4);
               const boxH = 8 + lines.length * 14;
               const bx = Math.min(Math.max(hover.x - boxW / 2, M.left), width - M.right - boxW);
               const by = Math.max(bandTop + 2, Math.min(hover.y - 42, axisY - boxH));
@@ -1230,7 +1230,7 @@ const TimelineView: React.FC = () => {
               x={M.left - 7} y={bandTop + 9} textAnchor="end"
               fontSize={9} fill="#cbd5e1" className="font-mono"
             >
-              {dayZoom ? 'adm./day' : 'adm./mo.'}
+              {percent ? '% of bar' : dayZoom ? 'adm./day' : 'adm./mo.'}
             </text>
 
             {/* axis */}
@@ -1379,7 +1379,7 @@ const TimelineView: React.FC = () => {
               if (!total) return null;
               const a = ovX(toM(m.month));
               const b = ovX(toM(m.month) + 1);
-              const h = (total / maxIntake) * (OVERVIEW_H - 20);
+              const h = (total / maxMonthly) * (OVERVIEW_H - 20);
               return (
                 <rect
                   key={m.month}
@@ -1437,27 +1437,36 @@ const TimelineView: React.FC = () => {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-xs text-slate-500">
           <div className="space-y-1.5">
             <p className="font-semibold text-slate-700">The band</p>
-            {split ? (
+            {facet && colorOf ? (
               <>
-                <p>Monthly admissions, general register, by community:</p>
+                <p>{dayZoom ? 'Daily' : 'Monthly'} admissions, general register,
+                  by {facet.label.toLowerCase()}{percent ? ', as shares of each bar' : ''}:</p>
                 <p className="flex flex-wrap gap-x-3 gap-y-1">
-                  {communities.map(k => (
+                  {facet.values.map(k => (
                     <span key={k} className="flex items-center gap-1.5">
-                      <span className="w-3 h-3 rounded-sm" style={{ background: communityColor(k) }} />
+                      <span className="w-3 h-3 rounded-sm" style={{ background: colorOf(k) }} />
                       {k}
                     </span>
                   ))}
                 </p>
-                <p className="leading-relaxed">
-                  Community is religion crossed with nationality, as on the Statistics
-                  page; <em>Not recorded</em> is a Muslim or Christian with no nationality,
-                  or no religion at all.
-                </p>
+                {facet.key === 'community' && (
+                  <p className="leading-relaxed">
+                    Community is religion crossed with nationality, as on the Statistics
+                    page; <em>Not recorded</em> is a Muslim or Christian with no nationality,
+                    or no religion at all.
+                  </p>
+                )}
+                {facet.values.includes('Others') && (
+                  <p className="leading-relaxed">
+                    <em>Others</em> pools every value past the seven commonest.
+                  </p>
+                )}
               </>
             ) : (
               <p className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-sm" style={{ background: INTAKE }} />
-                Monthly admissions, general register
+                {dayZoom ? 'Daily' : 'Monthly'} admissions, general register
+                {percent ? ', as shares of each bar' : ''}
               </p>
             )}
             <p className="flex items-center gap-2">

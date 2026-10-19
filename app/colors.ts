@@ -76,8 +76,6 @@ export const buildColorScale = (
   key: string | undefined,
   displayName: string
 ): ColorScale => {
-  const semantic = SEMANTIC[displayName] || {};
-
   const counts = new Map<string, number>();
   rows.forEach(row => {
     const v = facetValue(key && row[key]);
@@ -90,6 +88,16 @@ export const buildColorScale = (
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .map(([name]) => name);
 
+  return colorsForRanked(displayName, ranked);
+};
+
+/**
+ * The colour scale for values already ranked commonest first — the half of
+ * buildColorScale that does not need the rows, for views (the Timeline) that
+ * receive their counts pre-aggregated.
+ */
+export const colorsForRanked = (displayName: string, ranked: string[]): ColorScale => {
+  const semantic = SEMANTIC[displayName] || {};
   const reserved = new Set(Object.values(semantic));
   const pool = SERIES.filter(c => !reserved.has(c));
 

@@ -77,6 +77,64 @@ def community(religion, nationality):
     return 3
 
 
+# ---------------------------------------------------------------- facets
+#
+# The intake band can be coloured by any of these. Each is counted over the
+# general intake only (Atlit is another institution's book and stays its own
+# series), by month and by day, so the split always sums to the bar it splits.
+#
+# A facet with many values keeps its TOP_N commonest and pools the rest as
+# "Others"; blanks are "Not recorded", never dropped. The ranking is taken over
+# the whole register, Atlit included, because that is the population the
+# Statistics page ranks its colours over — the same value should be the same
+# colour on both pages.
+
+UNKNOWN = "Not recorded"
+OTHERS = "Others"
+TOP_N = 7
+
+AGE_BINS = ["Under 5", "5–14", "15–29", "30–44", "45–59", "60 and over"]
+
+
+def age_bin(age, unit):
+    """The register's age, in years, into a broad band."""
+    try:
+        n = float((age or "").strip())
+    except ValueError:
+        return UNKNOWN
+    u = (unit or "").strip().lower()
+    # Months, weeks and days are infants; "ys", "Years | Years", a blank unit
+    # beside a number, all read as years.
+    if u.startswith(("month", "day", "w", "my")):
+        return AGE_BINS[0]
+    for i, top in enumerate([5, 15, 30, 45, 60]):
+        if n < top:
+            return AGE_BINS[i]
+    return AGE_BINS[-1]
+
+
+def chapter_label(raw):
+    """'001-139 Infectious and parasitic diseases' -> the words alone."""
+    raw = (raw or "").strip()
+    parts = raw.split(" ", 1)
+    return parts[1] if len(parts) == 2 and any(ch.isdigit() for ch in parts[0]) else raw
+
+
+# key, label, how to read the value, fixed order (None = rank by count)
+FACETS = [
+    ("community", "Community",
+     lambda r: COMMUNITIES[community(r.get("Religion"), r.get("Nationality"))],
+     COMMUNITIES),
+    ("sex", "Sex", lambda r: (r.get("Sex") or "").strip() or UNKNOWN, None),
+    ("diagnosis", "Diagnosis (ICD-9 chapter)",
+     lambda r: chapter_label(r.get("ICD-9 Chapter")) or UNKNOWN, None),
+    ("result", "Result", lambda r: (r.get("Result") or "").strip() or UNKNOWN, None),
+    ("ward", "Ward", lambda r: (r.get("Ward") or "").strip() or UNKNOWN, None),
+    ("age", "Age", lambda r: age_bin(r.get("Age"), r.get("Age Unit")),
+     AGE_BINS + [UNKNOWN]),
+]
+
+
 # ---------------------------------------------------------------- helpers
 
 def months(lo, hi):
@@ -124,9 +182,10 @@ def read_register():
     atlit = Counter()
     general_day = Counter()
     atlit_day = Counter()
-    # General intake only, split by Community: month -> [n per COMMUNITIES].
-    comm = defaultdict(lambda: [0] * len(COMMUNITIES))
-    comm_day = defaultdict(lambda: [0] * len(COMMUNITIES))
+    # Raw facet values per general admission, bucketed once the ranking over
+    # the whole register is known: (month, day, {facet: value}).
+    facet_rows = []
+    facet_rank = {key: Counter() for key, *_ in FACETS}
     nb_months = defaultdict(set)
     nb_first_page = {}
     undated = 0
@@ -146,17 +205,19 @@ def read_register():
             day = date[:10] if len(date) >= 10 and date[7] == "-" else None
             notebook = (row.get("Notebook_Number") or "").strip()
 
+            values = {key: read(row) for key, _, read, _ in FACETS}
+            for key, v in values.items():
+                facet_rank[key][v] += 1
+
             if notebook == ATLIT_NOTEBOOK:
                 atlit[month] += 1
                 if day:
                     atlit_day[day] += 1
             else:
                 general[month] += 1
-                c = community(row.get("Religion"), row.get("Nationality"))
-                comm[month][c] += 1
+                facet_rows.append((month, day, values))
                 if day:
                     general_day[day] += 1
-                    comm_day[day][c] += 1
 
             if notebook:
                 nb_months[notebook].add(month)
@@ -182,8 +243,37 @@ def read_register():
         })
     notebooks.sort(key=lambda n: (n["start"], int(n["notebook"])))
 
-    return (general, atlit, general_day, atlit_day, comm, comm_day,
+    facets = bucket_facets(facet_rows, facet_rank)
+    return (general, atlit, general_day, atlit_day, facets,
             notebooks, total, undated)
+
+
+def bucket_facets(rows, rank):
+    """Per facet: its value list, and counts by month and by day over it."""
+    out = []
+    for key, label, _, fixed in FACETS:
+        if fixed:
+            values = list(fixed)
+        else:
+            ranked = [v for v, _ in sorted(rank[key].items(),
+                                           key=lambda kv: (-kv[1], kv[0]))
+                      if v != UNKNOWN]
+            values = ranked[:TOP_N]
+            if len(ranked) > TOP_N:
+                values.append(OTHERS)
+            values.append(UNKNOWN)
+        index = {v: i for i, v in enumerate(values)}
+        pooled = index.get(OTHERS)
+        by_month = defaultdict(lambda: [0] * len(values))
+        by_day = defaultdict(lambda: [0] * len(values))
+        for month, day, vals in rows:
+            i = index.get(vals[key], pooled)
+            by_month[month][i] += 1
+            if day:
+                by_day[day][i] += 1
+        out.append({"key": key, "label": label, "values": values,
+                    "month": by_month, "day": by_day})
+    return out
 
 
 # ---------------------------------------------------------------- sources
@@ -311,16 +401,13 @@ def read_external():
 # ---------------------------------------------------------------- build
 
 def build():
-    (general, atlit, general_day, atlit_day, comm, comm_day,
+    (general, atlit, general_day, atlit_day, facets,
      notebooks, total, undated) = read_register()
     sources, source_origin = read_sources()
 
     span = months(FIRST, LAST)
     intake = [
-        {"month": m, "general": general.get(m, 0), "atlit": atlit.get(m, 0),
-         # The general count split by Community, in meta.communities order.
-         # Atlit is not split: it is another institution's book.
-         "community": comm[m] if m in comm else [0] * len(COMMUNITIES)}
+        {"month": m, "general": general.get(m, 0), "atlit": atlit.get(m, 0)}
         for m in span
     ]
 
@@ -337,11 +424,18 @@ def build():
         else [d, general_day.get(d, 0), atlit_day[d]]
         for d in sorted(set(general_day) | set(atlit_day))
     ]
-    # Aligned with daily, row for row: the general count of that day split by
-    # Community. A parallel array, so the packed daily rows keep their shape.
-    daily_community = [
-        comm_day[d] if d in comm_day else [0] * len(COMMUNITIES)
-        for d, *_ in daily
+    # The facet splits, as arrays parallel to intake and to daily, so neither
+    # packed series changes shape. A month or day with no general admissions
+    # is null rather than a row of zeros.
+    facet_payload = [
+        {
+            "key": f["key"],
+            "label": f["label"],
+            "values": f["values"],
+            "month": [f["month"].get(m) for m in span],
+            "day": [f["day"].get(d) for d, *_ in daily],
+        }
+        for f in facets
     ]
 
     # A gap is a month in which the register records nothing at all. The Atlit
@@ -394,11 +488,10 @@ def build():
             "atlitRecords": sum(atlit.values()),
             "atlitNotebook": ATLIT_NOTEBOOK,
             "sourceOrigin": source_origin,
-            "communities": COMMUNITIES,
         },
         "intake": intake,
         "daily": daily,
-        "dailyCommunity": daily_community,
+        "facets": facet_payload,
         "gaps": gaps,
         "notebooks": notebooks,
         "institutional": institutional,
