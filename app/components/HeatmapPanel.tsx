@@ -4,6 +4,7 @@ import { RegistryRecord, FilterState } from '../types';
 import { facetValue, UNKNOWN } from '../facets';
 import { DIVERGING, NEUTRAL } from '../colors';
 import { crossTabulate, HeatCell } from '../stats';
+import { GROUP_DIM, dimensionLabel, linkedDimensions } from '../groups';
 
 /**
  * Two dimensions crossed, coloured by how far each cell departs from independence.
@@ -30,7 +31,7 @@ const MIN_N = 20;
 
 // The dimensions worth crossing. Diagnosis is deliberately absent — 4,004
 // distinct labels cannot be a heatmap axis; Chapter is its readable form.
-const DIMENSIONS = ['Religion', 'Nationality', 'Ward', 'Class', 'Sex', 'Chapter', 'Result', 'City'] as const;
+const DIMENSIONS = ['Religion', 'Nationality', GROUP_DIM, 'Ward', 'Class', 'Sex', 'Chapter', 'Result', 'City'] as const;
 type Dimension = typeof DIMENSIONS[number];
 
 // Past this many values an axis stops being readable, so the tail is dropped
@@ -122,8 +123,11 @@ const HeatmapPanel: React.FC<Props> = ({ fullData, data, actualKeys, filterState
   const sameDim = rowDim === colDim;
   // Filtering on an axis makes that axis circular: the excluded values are absent
   // because the filter excluded them, not because of how the two dimensions relate.
-  const axisFiltered = [rowKey, colKey]
-    .filter(k => k && (filterState.facets[k] || []).length > 0).length > 0;
+  // Religion, Nationality and their crossing count as one here (groups.ts): a
+  // British Christian filter makes the Religion axis circular too.
+  const axisFiltered = [...linkedDimensions(rowDim), ...linkedDimensions(colDim)]
+    .map(d => actualKeys[d])
+    .some(k => k && (filterState.facets[k] || []).length > 0);
 
   const fill = (cell: HeatCell | undefined): string => {
     if (!cell || cell.observed === 0) return '#f8fafc';
@@ -177,7 +181,7 @@ const HeatmapPanel: React.FC<Props> = ({ fullData, data, actualKeys, filterState
           <select value={rowDim} onChange={e => setRowDim(e.target.value as Dimension)}
                   className="text-xs border border-slate-200 rounded-md px-2 py-1 bg-white
                              text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-100">
-            {DIMENSIONS.filter(d => actualKeys[d]).map(d => <option key={d} value={d}>{d}</option>)}
+            {DIMENSIONS.filter(d => actualKeys[d]).map(d => <option key={d} value={d}>{dimensionLabel(d)}</option>)}
           </select>
         </label>
         <label className="text-[11px] text-slate-500">
@@ -185,7 +189,7 @@ const HeatmapPanel: React.FC<Props> = ({ fullData, data, actualKeys, filterState
           <select value={colDim} onChange={e => setColDim(e.target.value as Dimension)}
                   className="text-xs border border-slate-200 rounded-md px-2 py-1 bg-white
                              text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-100">
-            {DIMENSIONS.filter(d => actualKeys[d]).map(d => <option key={d} value={d}>{d}</option>)}
+            {DIMENSIONS.filter(d => actualKeys[d]).map(d => <option key={d} value={d}>{dimensionLabel(d)}</option>)}
           </select>
         </label>
         <label className="flex items-center gap-1.5 text-[11px] text-slate-500 pb-1 cursor-pointer">
@@ -202,7 +206,7 @@ const HeatmapPanel: React.FC<Props> = ({ fullData, data, actualKeys, filterState
         </p>
       ) : result.total === 0 ? (
         <p className="text-xs text-slate-400 italic py-8 text-center">
-          No records in this selection carry both {rowDim} and {colDim}.
+          No records in this selection carry both {dimensionLabel(rowDim)} and {dimensionLabel(colDim)}.
         </p>
       ) : (
         <>
@@ -211,7 +215,7 @@ const HeatmapPanel: React.FC<Props> = ({ fullData, data, actualKeys, filterState
                           rounded-lg px-3 py-2 mb-4">
               <AlertTriangle size={13} className="shrink-0 mt-0.5" />
               <span>
-                A filter is active on {rowDim} or {colDim}. The ratios are computed
+                A filter is active on {dimensionLabel(rowDim)} or {dimensionLabel(colDim)}, or on a column one of them is built from. The ratios are computed
                 inside the selection, so the filtered axis compares its surviving
                 values only — read it as a sub-table, not as the registry.
               </span>

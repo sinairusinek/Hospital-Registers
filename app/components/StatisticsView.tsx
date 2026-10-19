@@ -42,8 +42,8 @@ const HELP: HelpSection[] = [
     body: <p>Colours are fixed to the values themselves, not to their rank in the current selection, so filtering never repaints the survivors and two states of the same chart can be compared. Muslim is green, Christian orange and Jewish blue in every chart that shows them; <em>{UNKNOWN}</em> is always grey, and the pale grey <em>Others</em> is the residue.</p>
   },
   {
-    heading: 'Religion and nationality, crossed',
-    body: <p>The register records religion and nationality in separate columns, and their pies are kept as the clerks wrote them. The <em>Religion × nationality</em> pie and facet are an alternative reading of the same records, not a replacement: <em>Christian</em> on its own pools British officials with Palestinian Arabs, so this grouping separates them into <em>Palestinian Arab</em> (Muslim or Christian, Palestinian nationality), <em>British Christian</em> (British or Palestinian British nationality), <em>Jewish</em> (any nationality) and <em>Other</em>. A Muslim or Christian whose nationality is blank cannot be placed on either side of the Palestinian line and counts as <em>{UNKNOWN}</em>. Compound nationalities such as <em>Palestinian Syrian</em> count as <em>Other</em>, as they do on the Shared Space page.</p>
+    heading: 'Community: religion and nationality, crossed',
+    body: <p>The register records religion and nationality in separate columns, and their pies are kept as the clerks wrote them. The <em>Community</em> pie and facet cross the two columns, as an alternative reading of the same records rather than a replacement. <em>Christian</em> on its own pools British officials with Palestinian Arabs, so this grouping separates them into <em>Palestinian Arab</em> (Muslim or Christian, Palestinian nationality), <em>British Christian</em> (British or Palestinian British nationality), <em>Jewish</em> (any nationality) and <em>Other</em>. A Muslim or Christian whose nationality is blank cannot be placed on either side of the Palestinian line and counts as <em>{UNKNOWN}</em>. Compound nationalities such as <em>Palestinian Syrian</em> count as <em>Other</em>, as they do on the Shared Space page.</p>
   },
   {
     heading: 'Diagnosis is grouped by ICD-9 chapter',
@@ -801,7 +801,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
                    chartData={stats.nationalityData} />
           {/* The two pies before it, crossed: an alternative reading of the
               same records, never a replacement for them. */}
-          <PieCard displayName="Group" title="Religion × nationality"
+          <PieCard displayName="Group" title={GROUP_COLUMN}
                    icon={<Users2 size={18} className="text-amber-600" />}
                    chartData={stats.groupData}
                    note="Palestinian Arab: Muslim or Christian of Palestinian nationality. British Christian: Christian of British or Palestinian British nationality. Jewish: any nationality. Other: everyone else recorded, e.g. Egyptian or Syrian Muslims, Armenian Christians, Druze, Bahai. Not recorded: no religion, or a Muslim or Christian with no nationality." />

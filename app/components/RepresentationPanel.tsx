@@ -8,13 +8,14 @@ import { RegistryRecord, FilterState } from '../types';
 import { UNKNOWN } from '../facets';
 import { DIVERGING, NEUTRAL } from '../colors';
 import { computeLift, log2, LiftRow } from '../stats';
+import { GROUP_DIM, dimensionLabel, linkedDimensions } from '../groups';
 
 // Below this many records in the selection a ratio is arithmetic, not evidence.
 // The row is still drawn — a small cell is itself worth seeing — but greyed, so
 // nothing is silently dropped from a chart someone may cite.
 const MIN_N = 20;
 
-const DIMENSIONS = ['Religion', 'Nationality', 'Sex', 'Chapter', 'City', 'Result'] as const;
+const DIMENSIONS = ['Religion', 'Nationality', GROUP_DIM, 'Sex', 'Chapter', 'City', 'Result'] as const;
 type Dimension = typeof DIMENSIONS[number];
 
 interface Props {
@@ -43,7 +44,13 @@ const RepresentationPanel: React.FC<Props> = ({ fullData, data, actualKeys, filt
   // Filtering on the very column being compared makes the comparison circular:
   // the excluded values read as ×0 because the filter excluded them, not
   // because the selection is composed differently.
-  const selfFiltered = Boolean(key && (filterState.facets[key] || []).length > 0);
+  // Religion, Nationality and their crossing count as one here (groups.ts).
+  const filteredLinks = linkedDimensions(dimension).filter(d => {
+    const k = actualKeys[d];
+    return Boolean(k && (filterState.facets[k] || []).length > 0);
+  });
+  const selfFiltered = filteredLinks.length > 0;
+  const dimLabel = dimensionLabel(dimension);
 
   const tableRows = useMemo(() => {
     return result.rows
@@ -127,7 +134,7 @@ const RepresentationPanel: React.FC<Props> = ({ fullData, data, actualKeys, filt
             className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 outline-none"
           >
             {DIMENSIONS.filter(d => actualKeys[d]).map(d => (
-              <option key={d} value={d}>{d === 'Chapter' ? 'Diagnosis (ICD-9 chapter)' : d}</option>
+              <option key={d} value={d}>{d === 'Chapter' ? 'Diagnosis (ICD-9 chapter)' : dimensionLabel(d)}</option>
             ))}
           </select>
           <label className="flex items-center gap-2 text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 cursor-pointer">
@@ -154,9 +161,15 @@ const RepresentationPanel: React.FC<Props> = ({ fullData, data, actualKeys, filt
             <div className="flex items-start gap-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-xl p-3">
               <AlertTriangle size={14} className="shrink-0 mt-0.5" />
               <span>
-                A {dimension} filter is active, so this chart is comparing {dimension} against a
-                selection defined by {dimension}. Clear that facet, or pick another dimension,
-                before reading anything into it.
+                {filteredLinks.length === 1 && filteredLinks[0] === dimension ? (
+                  <>A {dimLabel} filter is active, so this chart is comparing {dimLabel} against a
+                  selection defined by {dimLabel}.</>
+                ) : (
+                  <>A {filteredLinks.map(dimensionLabel).join(' and ')} filter is active, and it
+                  shares a source column with {dimLabel}, so this chart compares {dimLabel} against
+                  a selection that partly defines it.</>
+                )}{' '}
+                Clear that facet, or pick another dimension, before reading anything into it.
               </span>
             </div>
           )}
@@ -225,7 +238,7 @@ const RepresentationPanel: React.FC<Props> = ({ fullData, data, actualKeys, filt
             <table className="w-full text-xs">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-widest text-slate-400 border-b border-slate-200">
-                  <th className="py-2 pr-4 font-bold">{dimension}</th>
+                  <th className="py-2 pr-4 font-bold">{dimLabel}</th>
                   <th className="py-2 pr-4 font-bold text-right">In selection</th>
                   <th className="py-2 pr-4 font-bold text-right">Share of selection</th>
                   <th className="py-2 pr-4 font-bold text-right">Share of registry</th>

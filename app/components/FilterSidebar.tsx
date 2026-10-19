@@ -55,7 +55,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ data, filterState, setFil
     { label: 'Nationality', internalKey: 'nationality', aliases: ['standardnationality'] },
     // The two above crossed into one grouping (groups.ts). Beside them, not
     // instead of them: either can be filtered without the other.
-    { label: 'Religion × nationality', internalKey: GROUP_COLUMN.toLowerCase(), aliases: [] },
+    { label: GROUP_COLUMN, internalKey: GROUP_COLUMN.toLowerCase(), aliases: [] },
     { label: 'Ward', internalKey: 'ward', aliases: ['standardized ward'] },
     // Both read out of the Address column with Yoni Furas's vocabulary
     // (pipeline/address_layers.py). An institution in the address is how the

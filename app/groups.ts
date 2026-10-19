@@ -12,7 +12,25 @@
 import { RegistryRecord } from './types';
 import { UNKNOWN } from './facets';
 
-export const GROUP_COLUMN = 'Religion × nationality';
+// Named Community, after the Mandate's own usage ("the Arab community"); it is
+// religion crossed with nationality, as the help text and the pie's note say.
+export const GROUP_COLUMN = 'Community';
+
+// The panels key their dimensions by short ids; this is the grouping's, and
+// the label it is shown under.
+export const GROUP_DIM = 'Group';
+export const dimensionLabel = (dim: string): string => (dim === GROUP_DIM ? GROUP_COLUMN : dim);
+
+// The grouping is made of Religion and Nationality, so a filter on any of the
+// three partly defines the other two. The panels warn when a selection is
+// defined by the dimension it is compared on; they have to see this link too,
+// or a British Christian filter would show Religion "×3.4 Christian" unflagged.
+const LINKED: Record<string, string[]> = {
+  Religion: [GROUP_DIM],
+  Nationality: [GROUP_DIM],
+  [GROUP_DIM]: ['Religion', 'Nationality']
+};
+export const linkedDimensions = (dim: string): string[] => [dim, ...(LINKED[dim] || [])];
 
 export const PALESTINIAN_ARAB = 'Palestinian Arab';
 export const BRITISH_CHRISTIAN = 'British Christian';
