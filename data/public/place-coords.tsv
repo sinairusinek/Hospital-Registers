@@ -17,10 +17,13 @@ Zichron Yaakov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	
 Kafr Yasif	32.954722	35.165278	kima	confirmed	88951	Kafr Yasif (Israel)	Q2632879	matched	furas	37
 Julis	32.943889	35.186667	kima	confirmed	82237	Julis (Israel)	Q2601777	matched	furas	36
 Yajour	32.741500	35.077197	kima	confirmed	771	Yagur (Israel)	Q586687	matched	agent	35
+Kantara	30.850000	32.310000	wikidata	confirmed			Q1324574	matched	agent	34
 Affikim	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	31
+Jaba'	32.651319	34.962042	wikidata	confirmed			Q4118648	matched	agent	30
 Tel Aviv	32.080000	34.780000	kima	confirmed	272	Tel Aviv-Yafo (Israel)	Q33935	matched	agent	30
 Gaza	31.516670	34.450000	kima	provisional	12982	Gaza (Gaza Strip)	Q47492	matched	furas	29
 Wadi Salib	32.811100	35.000000	kima	provisional	19522	Wadi Salib (Haifa, Israel)	Q2910153	matched	furas	29
+Hawassa	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	agent	28
 Karkur	32.471111	34.967500	kima	confirmed	19149	Karkur (Israel)	Q2475182	matched	auto	28
 Tamra	32.851150	35.207110	kima	provisional	20270	Tamra (Israel)	Q168176	matched	furas	28
 Bat Galim	32.833911	34.981714	kima	confirmed	21063	Bat Galim (Haifa, Israel)	Q810685	matched	auto	27
@@ -36,6 +39,7 @@ Yarka	32.933330	35.183330	kima	provisional	18267	Yirka (Israel)	Q2640151	matched
 Jish	33.025833	35.444722	kima	confirmed	88554	Jish (Israel)	Q1527236	matched	furas	23
 Nazareth	32.702103	35.297850	kima	confirmed	18	Nazareth (Israel)	Q430776	matched	auto	23
 Jerusalem	31.778889	35.225556	kima	confirmed	691	Jerusalem (Israel)	Q1218	matched	agent	22
+Umm al-Fahm	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	22
 Abu Snan	32.957500	35.172778	kima	confirmed	80956	Abu Sinan (Israel)	Q2572624	matched	furas	21
 Kfar Vitkin	32.381797	34.876897	kima	confirmed	825	Kefar Vitkin (Israel)	Q2495402	matched	agent	20
 Amman	31.950000	35.933333	kima	confirmed	74	Amman (Jordan)	Q3805	matched	furas	19
@@ -43,10 +47,12 @@ Deir Hanna	32.862410	35.371170	kima	provisional	21739	Dair Hanna (Israel)	Q61248
 Mughar	32.890000	35.408330	kima	provisional	21974	Mughar (Israel)	Q930847	matched	furas	19
 Ara	32.505692	35.078122	wikidata	confirmed			Q2859313	matched	furas	17
 Tulkarem	32.311111	35.030833	kima	confirmed	73472	Tulkarem (West Bank)	Q985531	matched	agent	16
+Kabri	33.020897	35.149000	kima	confirmed	869	Kabri (Israel)	Q4702652	matched	agent	15
 Trans-Jordan	32.039167	35.727222	kima	confirmed	17467	Salṭ (Jordan)	Q867586	matched	furas	15
 Yavniel	32.709497	35.499400	kima	confirmed	18477	Yavne'el (Israel)	Q1676894	matched	auto	15
 Zichron Jacob	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	15
 Ardel Yahud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	furas	14
+Birweh	32.905175	35.180164	wikidata	confirmed			Q2914542	matched	agent	14
 Fassuta	33.049440	35.305830	kima	provisional	21519	Fassuta (Israel)	Q2917294	matched	furas	14
 Isfiya	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	furas	14
 Um el Fahm	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	furas	14
@@ -57,28 +63,46 @@ Sha'ab	32.888889	35.236944	kima	confirmed	77238	Shaʻab (Israel)	Q2655669	matche
 Shaab	32.888889	35.236944	kima	confirmed	77238	Shaʻab (Israel)	Q2655669	matched	furas	13
 Damun	32.876944	35.183056	wikidata	confirmed			Q1186264	matched	furas	12
 Ramel	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	12
+Ya'bad	32.446667	35.170278	kima	confirmed	75339	Ya'bad (West Bank)	Q1828708	matched	variant	12
+Yamoun	32.486486	35.235272	kima	confirmed	20986	Yamun	Q4703350	matched	agent	12
 Ararah	32.494560	35.094110	kima	provisional	20918	Ar'ara (Israel)	Q2915935	matched	furas	11
 Daliet el Carmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	furas	11
 Ein Harod	32.560300	35.390800	kima	confirmed	12370	En Harod (Israel)	Q1339887	matched	auto	11
+Hallisa	32.801508	35.006764	kima	confirmed	83220	al-Khalisa (Haifa, Israel)	Q7212307	matched	variant	11
 Ibillin	32.822220	35.193330	kima	provisional	21569	I'bilin (Israel)	Q2915647	matched	furas	11
 Kfar Ata	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	11
+Mt. Carmel|Mount Carmel	32.672500	35.023330	kima	provisional	791	Haifa (Israel)	Q41621	matched	agent	11
 Ein Ghazal	32.631940	34.967360	kima	provisional	21329	Ein Ghazal (Israel)	Q2918965	matched	furas	10
+Ein Hod	32.701460	34.980010	kima	provisional	18441	En Hod (Israel)	Q991378	matched	variant	10
+Jalameh	32.723403	35.088478	wikidata	confirmed			Q4704113	matched	agent	10
+Jenin|P.M.F. Jenin	32.461111	35.300000	kima	confirmed	79775	Jenin (West Bank)	Q374748	matched	variant	10
 Kibutz Affikim	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	10
 Lajjun	32.574722	35.177778	wikidata	confirmed	16127	Lajjūn (Jordan)	Q3775368	matched	human	10
 Nesher	32.771111	35.039444	kima	confirmed	20	Nesher (Israel)	Q135432	matched	agent	10
+Sileh	32.508125	35.227656	kima	confirmed	71896	Silat al Harithiya (West Bank)	Q2898808	matched	agent	10
 Tanturah	32.609400	34.917675	kima	confirmed	21005	Tantura (Israel)	Q2100836	matched	furas	10
 Yokneam	32.653900	35.100297	kima	confirmed	18301	Yokne'am (Israel)	Q2890709	matched	auto	10
+Acca	32.926110	35.083890	kima	provisional	71	Acre (Israel)	Q126084	matched	variant	9
+Eggim	32.644722	34.988056	wikidata	confirmed			Q2918334	matched	agent	9
+Im El Fahem	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	9
 Subbarin	32.571136	35.023097	wikidata	confirmed			Q7395979	matched	furas	9
 Zeita	32.384511	35.050822	wikidata	confirmed			Q8068604	matched	furas	9
 Ahuza	32.774142	34.991325	kima	confirmed	21015	Ahuza (Haifa, Israel)	Q4159159	matched	auto	8
 Ain Harod	32.560300	35.390800	kima	confirmed	12370	En Harod (Israel)	Q1339887	matched	agent	8
 Ard el Yahoud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	furas	8
 Arraba	32.851110	35.338610	kima	provisional	21307	Arraba (Israel)	Q2568887	matched	furas	8
+Beissan|Beisan	32.496110	35.498890	kima	provisional	613	Bet She'an (Israel)	Q152368	matched	variant	8
 Dejania	32.708100	35.574897	kima	confirmed	892	Deganya Alef (Israel)	Q2371396	matched	human	8
+Hebron	31.535000	35.098611	kima	confirmed	966	Hebron (West Bank)	Q168225	matched	agent	8
 Isfia	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	furas	8
 Kfar Hassidim	32.743200	35.093497	kima	confirmed	830	Kefar Hasidim (Israel)	Q135425	matched	agent	8
+Rummaneh	32.523889	35.205000	kima	confirmed	75571	Rummaneh (West Bank)	Q7379315	matched	agent	8
+Sabbarine	32.571136	35.023097	wikidata	confirmed			Q7395979	matched	variant	8
+Saffourieh	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	variant	8
+Sindianeh	32.556750	35.002264	wikidata	confirmed			Q4703260	matched	variant	8
 Stanton Street	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	8
 Tantourah	32.609400	34.917675	kima	confirmed	21005	Tantura (Israel)	Q2100836	matched	furas	8
+Amka	32.979440	35.163330	kima	provisional	23142	Amka (Israel)	Q2914984	matched	agent	7
 Kineret								unmatched-ambiguous	human	7
 Lajjoun	32.574722	35.177778	wikidata	confirmed	16127	Lajjūn (Jordan)	Q3775368	matched	furas	7
 Nahariya	33.003611	35.092500	kima	confirmed	39	Nahariyya (Israel)	Q167749	matched	auto	7
@@ -86,8 +110,12 @@ Neveh Shaanan	32.790278	35.015833	kima	confirmed	21497	Neve Sha'anan (Haifa, Isr
 Sabbarin	32.571136	35.023097	wikidata	confirmed			Q7395979	matched	furas	7
 Um el Fahem	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	furas	7
 Wadi Rushmia	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	7
+Ya'abad	32.446667	35.170278	kima	confirmed	75339	Ya'bad (West Bank)	Q1828708	matched	agent	7
+Balad el Sheikh|Balad al-Sheikh	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	variant	6
 Benjamina	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	agent	6
 Churches Quarter	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	6
+Damascus	33.513056	36.291944	kima	confirmed	939	Damascus (Syria)	Q3766	matched	agent	6
+Eggem	32.644722	34.988056	wikidata	confirmed			Q2918334	matched	agent	6
 Emek								unmatched-ambiguous	human	6
 Haifa|Hadar Hacarmel	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	human	6
 Kabatich	32.409553	35.280881	kima	confirmed	73993	Kabatiya (West Bank)	Q1899332	matched	furas	6
@@ -96,39 +124,60 @@ Kfar Atta	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	mat
 Kinereth								unmatched-ambiguous	human	6
 Kinneret								unmatched-ambiguous	human	6
 Kiryat Haroshet	32.723889	35.127222	kima	confirmed	21920	Kiryat Haroshet (Israel)	Q1743479	matched	auto	6
+Mazra'a	32.983100	35.097620	kima	provisional	26615	Mazra'a (Israel)	Q2890424	matched	agent	6
 Netanya	32.328611	34.856667	kima	confirmed	24	Netanya (Israel)	Q192225	matched	agent	6
+Reineh	32.723056	35.315833	kima	confirmed	26609	Raina (Israel)	Q2655682	matched	agent	6
 Rosh Pina	32.969086	35.542456	kima	confirmed	14873	Rosh Pina (Israel)	Q525649	matched	auto	6
+Sasa	33.026897	35.394500	kima	confirmed	27	Sasa (Israel)	Q12468030	matched	agent	6
 Waldheim								unmatched-no-kima-entry	agent	6
 Akka	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	agent	5
 Bassa	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	human	5
+Beit She'an	32.496110	35.498890	kima	provisional	613	Bet She'an (Israel)	Q152368	matched	agent	5
+Bineh	32.928489	35.267786	kima	confirmed	21303	Bi'ina (Israel)	Q2890909	matched	agent	5
 HAIFA	32.819170	34.999170	kima	provisional	791	Haifa (Israel)	Q41621	matched	furas	5
+Halissa	32.801508	35.006764	kima	confirmed	83220	al-Khalisa (Haifa, Israel)	Q7212307	matched	variant	5
 Hartel Kanayis	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	5
+Iggim	32.644722	34.988056	wikidata	confirmed			Q2918334	matched	agent	5
+Kafr Qari'	32.505803	35.053822	kima	confirmed	20116	Kafr Kara (Israel)	Q1721086	matched	agent	5
 Kfar Tabor	32.687139	35.420222	kima	confirmed	1666	Kefar Tavor (Israel)	Q1186956	matched	auto	5
 Kibutz	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	5
+Kufr Kanna	32.750000	35.350000	kima	confirmed	20496	Kafr Kanna (Israel)	Q2633158	matched	variant	5
 Mishmar HaEmek	32.609722	35.141667	kima	confirmed	214	Mishmar Ha'emek (Israel)	Q1938721	matched	auto	5
 Mount Carmel								unmatched-ambiguous	human	5
 Nathania	32.328611	34.856667	kima	confirmed	24	Netanya (Israel)	Q192225	matched	agent	5
 Nathanya	32.328611	34.856667	kima	confirmed	24	Netanya (Israel)	Q192225	matched	auto	5
+Saffurieh	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	variant	5
 Sha'b	32.888889	35.236944	kima	confirmed	77238	Shaʻab (Israel)	Q2655669	matched	furas	5
+Shweikeh					73073	Shuwaykah (Tulkarem, West Bank)		matched	agent	5
+Souk Shwam	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	agent	5
 Suhmata	33.005200	35.303800	kima	provisional	21806	Suhmata (Israel)	Q2777621	matched	furas	5
 Tire	32.766667	34.966667	kima	confirmed	756	Tirat Karmel (Israel)	Q4118776	matched	agent	5
+Yabad	32.446667	35.170278	kima	confirmed	75339	Ya'bad (West Bank)	Q1828708	matched	variant	5
 Zammarin	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	auto	5
 Zikhron Yacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	5
+Ajloun	32.333611	35.752222	kima	confirmed	16141	ʻAjlūn (Jordan)	Q1141858	matched	agent	4
 Arah	32.505692	35.078122	wikidata	confirmed			Q2859313	matched	furas	4
 Ard el Yahud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	furas	4
+Baka	31.759170	35.220820	kima	provisional			Q2916599	matched	agent	4
 Balad al-Sheikh / Haifa	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	furas	4
 Beirut	33.886944	35.513056	kima	confirmed	651	Beirut (Lebanon)	Q3820	matched	furas	4
+Cairo	30.044444	31.235833	wikidata	confirmed			Q85	matched	agent	4
 Degania	32.708100	35.574897	kima	confirmed	892	Deganya Alef (Israel)	Q2371396	matched	auto	4
 Deir el Asad	32.936389	35.271944	kima	confirmed	6077	Dair el Asad (Israel)	Q612599	matched	furas	4
 Fassouta	33.049444	35.305833	kima	confirmed	21519	Fassuta (Israel)	Q2917294	matched	furas	4
 Gan Shmuel	32.450000	34.950000	kima	confirmed	904	Gan Shemu'el (Israel)	Q166857	matched	auto	4
 Gedera	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	human	4
 Had. Hac	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	4
+Haifa|Haifa Nazareth St	32.819170	34.999170	kima	provisional	791	Haifa (Israel)	Q41621	matched	agent	4
 Is								unmatched-junk	agent	4
+Kababir	32.804200	34.973150	kima	provisional	22655	Kababir (Haifa, Israel)	Q2897547	matched	agent	4
+Kabatia	32.409553	35.280881	kima	confirmed	73993	Kabatiya (West Bank)	Q1899332	matched	agent	4
 Kafr Lam	32.637392	34.934375	wikidata	confirmed			Q6346183	matched	furas	4
 Kakun	32.360003	34.995272	kima	confirmed	19717	Qāqūn	Q2919625	matched	furas	4
 Kannir	32.528414	35.030736	wikidata	confirmed			Q7266495	matched	furas	4
+Kisaria	32.500000	34.900000	kima	confirmed	6936	Caesarea (Israel)	Q1615560	matched	agent	4
 Kishon								unmatched-no-kima-entry	human	4
+Kwikat	32.971083	35.146508	kima	confirmed	21333	Kuwaykat (Israel)	Q3545099	matched	agent	4
 Migdal	32.839078	35.499294	kima	confirmed	6904	Migdal (Israel)	Q2916182	matched	agent	4
 Mt. Carmel	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	4
 Naharia	33.003611	35.092500	kima	confirmed	39	Nahariyya (Israel)	Q167749	matched	agent	4
@@ -136,51 +185,107 @@ Rihanieh	32.619900	35.086800	wikidata	confirmed			Q2152846	matched	furas	4
 Rishon LeZion	31.950000	34.800000	kima	confirmed	493	Rishon Letsiyon (Israel)	Q201051	matched	auto	4
 Sdedera	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	human	4
 Shfaram	32.805556	35.169444	kima	confirmed	261	Shefar'am (Israel)	Q990657	matched	furas	4
+Sileh el Hartieh	32.508125	35.227656	kima	confirmed	71896	Silat al Harithiya (West Bank)	Q2898808	matched	agent	4
+Silet el Hartieh	32.508125	35.227656	kima	confirmed	71896	Silat al Harithiya (West Bank)	Q2898808	matched	agent	4
 Sindiani	32.556750	35.002264	wikidata	confirmed			Q4703260	matched	furas	4
 Tabor Street								unmatched-no-kima-entry	agent	4
+Transj	32.039167	35.727222	kima	confirmed	17467	Salṭ (Jordan)	Q867586	matched	agent	4
 Wadi Salib (Haifa)	32.811100	35.000000	kima	confirmed	19522	Wadi Salib (Haifa, Israel)	Q2910153	matched	furas	4
 Wadi el Hawareth	32.390000	34.900000	wikidata	confirmed			Q13358574	matched	furas	4
+Acre District	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	variant	3
+Acre S/Dist	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	variant	3
+Afula|Affuleh	32.607780	35.289720	kima	provisional	18417	Afula (Israel)	Q152462	matched	agent	3
 Ain Hod	32.701458	34.980008	kima	confirmed	18441	En Hod (Israel)	Q991378	matched	furas	3
+Akre	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	variant	3
 Athlit|Atlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	3
+Attil	32.369383	35.071803	kima	confirmed	70902	Attil (West Bank)	Q246431	matched	agent	3
+Bala'	32.333167	35.108653	kima	confirmed	74068	Bal'a (West Bank)	Q4849622	matched	agent	3
+Balad el Sheikh|Balad al-Shaykh	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	variant	3
+Baqa al-Gharbiyye	32.420328	35.042181	wikidata	confirmed			Q2916599	matched	agent	3
 Bassah	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	furas	3
+Beersheba	31.258889	34.797778	kima	confirmed	699	Beersheba (Israel)	Q41843	matched	agent	3
+Beit Dajan	32.002690	34.829250	kima	provisional			Q12200452	matched	agent	3
 Beit Galim	32.833911	34.981714	kima	confirmed	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	3
 Beit Gan								unmatched-no-kima-entry	human	3
+Berkin	32.455556	35.260278	kima	confirmed	87581	Birkin (West Bank)	Q286871	matched	agent	3
+Beyrouth	33.886940	35.513060	kima	provisional	651	Beirut (Lebanon)	Q3820	matched	agent	3
+Birkin	32.455556	35.260278	kima	confirmed	87581	Birkin (West Bank)	Q286871	matched	agent	3
 Breikeh	32.558069	34.977611	wikidata	confirmed			Q2897020	matched	furas	3
+Burka	32.302211	35.193111	wikidata	confirmed			Q5000295	matched	agent	3
+Caesaria	32.500000	34.900000	kima	confirmed	6936	Caesarea (Israel)	Q1615560	matched	agent	3
+Daliyat al-Karmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	3
+Damoun|Damun	32.876944	35.183056	wikidata	confirmed			Q1186264	matched	variant	3
 Deir al-Asad	32.936389	35.271944	kima	confirmed	6077	Dair el Asad (Israel)	Q612599	matched	furas	3
 Faradieh	32.931572	35.428256	wikidata	confirmed			Q5436211	matched	furas	3
 Freidis	32.596542	34.950600	kima	confirmed	84891	Furaidis (Israel)	Q1011538	matched	furas	3
 Had. Hac.|Hadar Hacarmel	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	3
+Haifa|German Colony Haifa	32.819170	34.999170	kima	provisional	21139	German Colony (Haifa, Israel)	Q2413425	matched	agent	3
 Hartel Kashleh	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	3
 Hedera|Hadera	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	auto	3
 Ibellin	32.822222	35.193333	kima	confirmed	21569	I'bilin (Israel)	Q2915647	matched	furas	3
+Jaffa|P. & P. Jaffa	32.052220	34.753060	kima	provisional	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	matched	variant	3
 Jenin	32.461111	35.300000	kima	confirmed	79775	Jenin (West Bank)	Q374748	matched	agent	3
+Jenin S/D	32.461111	35.300000	kima	confirmed	79775	Jenin (West Bank)	Q374748	matched	variant	3
+Jenin|C.M.F. Jenin	32.461111	35.300000	kima	confirmed	79775	Jenin (West Bank)	Q374748	matched	variant	3
+Jezzin	33.540000	35.583611	kima	confirmed	26946	Jezzine (Lebanon)	Q25910	matched	agent	3
+Kabul	32.868333	35.211389	kima	confirmed	21578	Kabul (Israel)	Q1018884	matched	variant	3
+Kafr Manda	32.816670	35.266670	kima	provisional	21581	Kafr Manda (Israel)	Q2915534	matched	agent	3
+Kafr Rai	32.375997	35.155097	kima	confirmed	88748	Kafr Ra'i (West Bank)	Q2898490	matched	agent	3
 Kakoun	32.360003	34.995272	kima	confirmed	19717	Qāqūn	Q2919625	matched	furas	3
 Kefutz Mizra	32.650700	35.287797	kima	confirmed	224	Mizra (Israel)	Q2889536	matched	agent	3
 Kfar Hasidim	32.743200	35.093497	kima	confirmed	830	Kefar Hasidim (Israel)	Q135425	matched	agent	3
 Kfar Kharoshet	32.723889	35.127222	kima	confirmed	21920	Kiryat Haroshet (Israel)	Q1743479	matched	human	3
+Khalsa	33.207500	35.569722	kima	confirmed	485	Kiryat Shemona (Israel)	Q327413	matched	variant	3
 Kibutz Affikim|Affikim	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	3
 Kirjat Hayim	32.828333	35.067222	kima	confirmed	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	matched	agent	3
 Kiryat Kharoshet	32.723889	35.127222	kima	confirmed	21920	Kiryat Haroshet (Israel)	Q1743479	matched	agent	3
 Kiryat Naim	32.828333	35.067222	kima	confirmed	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	matched	human	3
+Kisra	32.963828	35.302308	wikidata	confirmed	69497	Kisra (Israel)	Q2890184	matched	agent	3
+Kufr Manda	32.816667	35.266667	kima	confirmed	21581	Kafr Manda (Israel)	Q2915534	matched	agent	3
+Kufr Qari'	32.505803	35.053822	kima	confirmed	20116	Kafr Kara (Israel)	Q1721086	matched	agent	3
+Kweikat	32.971080	35.146510	kima	provisional	21333	Kuwaykat (Israel)	Q3545099	matched	agent	3
 Lajoun	32.574722	35.177778	wikidata	confirmed	16127	Lajjūn (Jordan)	Q3775368	matched	furas	3
+London	51.507222	-0.127500	wikidata	confirmed			Q84	matched	agent	3
+Lubieh	32.775889	35.429350	kima	confirmed	19876	Lubiyā (Israel)		matched	agent	3
+Ludd	31.950000	34.900000	kima	provisional	178	Lod (Israel)	Q207540	matched	agent	3
+Mansi	32.594889	35.172681	wikidata	confirmed			Q2368058	matched	variant	3
 Meshek Yagur	32.741500	35.077197	kima	confirmed	771	Yagur (Israel)	Q586687	matched	agent	3
 Mitzpa	32.790556	35.509444	kima	confirmed	21700	Mitspa (Israel)	Q2776808	matched	agent	3
+Nadel Yahud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	agent	3
 Nahef	32.931940	35.317500	kima	provisional	26311	Naḥaf (Israel)	Q2390257	matched	furas	3
 Nahf	32.931940	35.317500	kima	provisional	26311	Naḥaf (Israel)	Q2390257	matched	furas	3
+Nahr	33.007061	35.141272	wikidata	confirmed			Q4703015	matched	agent	3
+Naqoura	33.120000	35.134167	wikidata	confirmed			Q748504	matched	agent	3
+Nazareth|Dept. of Police, Nazareth	32.702100	35.297850	kima	provisional	18	Nazareth (Israel)	Q430776	matched	agent	3
+Nazareth|P & P Nazareth	32.702100	35.297850	kima	provisional	18	Nazareth (Israel)	Q430776	matched	agent	3
+Ramtha	32.559167	36.006944	kima	confirmed	69636	Ramthā (Jordan)	Q31594	matched	agent	3
+Rihaniya	33.048367	35.487600	kima	confirmed	23436	Raihaniyya (Israel)	Q2916856	matched	agent	3
 Roshpina	32.969086	35.542456	kima	confirmed	14873	Rosh Pina (Israel)	Q525649	matched	furas	3
 Saffuriya	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	furas	3
 Saffuriyya	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	furas	3
+Safsaf	33.011614	35.445658	wikidata	confirmed			Q1657002	matched	agent	3
+Salameh	32.049150	34.805008	wikidata	confirmed			Q7403531	matched	agent	3
 Samakh	32.704864	35.587569	kima	confirmed	16228	Tsemah (Israel)	Q2908710	matched	auto	3
 Shafa	32.805556	35.169444	kima	confirmed	261	Shefar'am (Israel)	Q990657	matched	furas	3
+Shuweika					73073	Shuwaykah (Tulkarem, West Bank)		matched	agent	3
+T. Jordan	32.039167	35.727222	kima	confirmed	17467	Salṭ (Jordan)	Q867586	matched	agent	3
 Tamrah	32.851150	35.207110	kima	provisional	20270	Tamra (Israel)	Q168176	matched	furas	3
+Tantoura|Tantura	32.609400	34.917680	kima	provisional	21005	Tantura (Israel)	Q2100836	matched	variant	3
+Tarbikha	33.082860	35.284240	kima	provisional			Q2777821	matched	agent	3
 Tel Yosef	32.556497	35.401000	kima	confirmed	186	Tel-Yosef (Israel)	Q2917286	matched	auto	3
+Tiberias|Dept of Police, Tiberias	32.789722	35.524722	kima	confirmed	807	Tiberias (Israel)	Q151920	matched	variant	3
 Tirat Carmel	32.766667	34.966667	kima	confirmed	756	Tirat Karmel (Israel)	Q4118776	matched	agent	3
 Tiri	32.766667	34.966667	kima	confirmed	756	Tirat Karmel (Israel)	Q4118776	matched	furas	3
+Tulkarm|Tul-Karm	32.311111	35.030833	kima	confirmed	73472	Tulkarem (West Bank)	Q985531	matched	variant	3
 Um El Fahim	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	furas	3
+Umm az-Zinat	32.647200	35.063300	wikidata	confirmed			Q2255513	matched	variant	3
 Wadi Nisnas (Haifa)	32.816300	34.996300	wikidata	confirmed	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	matched	furas	3
 Wadi Rushmiya	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	3
+Yanouh	32.981900	35.249900	wikidata	confirmed	18370	Yanoah (Israel)	Q2890238	matched	variant	3
 Yanuh	32.981900	35.249900	wikidata	confirmed	18370	Yanoah (Israel)	Q2890238	matched	human	3
 Yavne'el	32.709497	35.499400	kima	confirmed	18477	Yavne'el (Israel)	Q1676894	matched	auto	3
+Zababdeh	32.385342	35.323172	kima	confirmed	77797	al-Zababida (West Bank)	Q136690	matched	agent	3
+Zib	33.039000	35.111300	kima	provisional			Q4831969	matched	agent	3
 [ambiguous_city]								unmatched-junk	agent	3
 Affikin	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	2
 Allenby	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	2
@@ -193,8 +298,10 @@ Athlit|Athlit Camp	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q7573
 Athlit|Athlit Police station	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	2
 Balad el Sheik	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	furas	2
 Balfuria	32.630200	35.296300	kima	confirmed	20640	Balfuriyya (Israel)	Q2479614	matched	agent	2
+Bassa N=1|Bassa	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	variant	2
 Bat Shlomo	32.596897	35.003197	kima	confirmed	587	Bat Shelomo (Israel)	Q2889218	matched	agent	2
 Beisan	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	auto	2
+Beisan|Beisan P.P	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	variant	2
 Benyamina|Binyamina	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	auto	2
 Bethlehem								unmatched-ambiguous	agent	2
 Carmel								unmatched-ambiguous	human	2
@@ -202,7 +309,9 @@ Carmel Avenue	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	match
 Dalieh el Carmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	furas	2
 Degania B	32.708083	35.574889	kima	confirmed	893	Deganya Bet (Israel)	Q1022506	matched	agent	2
 Der Hanna	32.862411	35.371169	kima	confirmed	21739	Dair Hanna (Israel)	Q612483	matched	furas	2
+Ein Gazal	32.631944	34.967361	kima	confirmed	21329	Ein Ghazal (Israel)	Q2918965	matched	variant	2
 Ekron	31.854542	34.841950	kima	confirmed	21515	Ekron (Israel)	Q1914736	matched	agent	2
+Esfia	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	variant	2
 Fureidis	32.596542	34.950600	kima	confirmed	84891	Furaidis (Israel)	Q1011538	matched	furas	2
 German Colony	32.819667	34.990553	kima	confirmed	21139	German Colony (Haifa, Israel)	Q2413425	matched	agent	2
 Ghedera	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	human	2
@@ -219,7 +328,11 @@ Hartel Muballatta	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	ma
 Hartel Yahoud	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	2
 Herzl Street								unmatched-no-kima-entry	agent	2
 Huleh								unmatched-ambiguous	human	2
+Im El Fahem|Umm al-Fahm	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	2
+Im El Zinat	32.647200	35.063300	wikidata	confirmed			Q2255513	matched	variant	2
+Isifiya	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	variant	2
 Jaffa|Co. C.I.D. Jaffa	32.052222	34.753056	kima	confirmed	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	matched	auto	2
+Jenin|Jenin G	32.461111	35.300000	kima	confirmed	79775	Jenin (West Bank)	Q374748	matched	variant	2
 Kabatyeh	32.409553	35.280881	kima	confirmed	73993	Kabatiya (West Bank)	Q1899332	matched	furas	2
 Kaboul	32.868333	35.211389	kima	confirmed	21578	Kabul (Israel)	Q1018884	matched	furas	2
 Kfar Tavor	32.687139	35.420222	kima	confirmed	1666	Kefar Tavor (Israel)	Q1186956	matched	auto	2
@@ -229,7 +342,9 @@ Kibbutz Hashomer								unmatched-ambiguous	agent	2
 Kibutz Affiking|Kibutz Affikim	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	2
 Kineret|Kinneret								unmatched-ambiguous	human	2
 Kiryat Gesher								unmatched-ambiguous	agent	2
+Kufr Kani	32.750000	35.350000	kima	confirmed	20496	Kafr Kanna (Israel)	Q2633158	matched	variant	2
 Kurdaneh								unmatched-no-kima-entry	agent	2
+Maghar Village	32.890000	35.408333	kima	confirmed	21974	Mughar (Israel)	Q930847	matched	variant	2
 Majd el Krum	32.921389	35.256944	kima	confirmed	19615	Majd al-Kurum (Israel)	Q2777868	matched	furas	2
 Mishmar Haemek	32.609722	35.141667	kima	confirmed	214	Mishmar Ha'emek (Israel)	Q1938721	matched	auto	2
 Mt Carmel	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	2
@@ -240,14 +355,19 @@ Neve Shaanan	32.790278	35.015833	kima	confirmed	21497	Neve Sha'anan (Haifa, Isra
 Nur El Shams|Nur Shams	32.318711	35.058786	kima	confirmed	76253	Nur Shams Camp (West Bank)	Q7069998	matched	agent	2
 P. & P. Zichron Yacob	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	2
 Ras En Naqura	33.120000	35.134167	wikidata	confirmed			Q748504	matched	furas	2
+Ras al-Naqoura	33.120000	35.134167	wikidata	confirmed			Q748504	matched	variant	2
 Rehovot	31.891389	34.807778	kima	confirmed	562	Rehovot (Israel)	Q207350	matched	agent	2
+Rosh Pina|Rosh Pinna	32.969086	35.542456	kima	confirmed	14873	Rosh Pina (Israel)	Q525649	matched	variant	2
 Rosh Pinna	32.969086	35.542456	kima	confirmed	14873	Rosh Pina (Israel)	Q525649	matched	agent	2
+Saffoury	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	variant	2
+Saffury	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	variant	2
 Salfit	32.081944	35.182222	kima	confirmed	82777	Salfīt (West Bank)	Q1972013	matched	furas	2
 Sdedead	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	human	2
 Sh.Khunat Oadim	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	2
 Shafa Amr	32.805556	35.169444	kima	confirmed	261	Shefar'am (Israel)	Q990657	matched	agent	2
 Shafr Amr	32.805556	35.169444	kima	confirmed	261	Shefar'am (Israel)	Q990657	matched	furas	2
 Shaáb	32.888889	35.236944	kima	confirmed	77238	Shaʻab (Israel)	Q2655669	matched	furas	2
+Sindyanah	32.556750	35.002264	wikidata	confirmed			Q4703260	matched	variant	2
 Sulam	32.605633	35.334306	kima	confirmed	86790	Sulam (Israel)	Q2777713	matched	furas	2
 Tantoura	32.609400	34.917675	kima	confirmed	21005	Tantura (Israel)	Q2100836	matched	agent	2
 Tireh (Acre Sub District)	32.766667	34.966667	kima	confirmed	756	Tirat Karmel (Israel)	Q4118776	matched	agent	2
@@ -257,69 +377,110 @@ Um El Fahm	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	m
 Um el Zeinat	32.647200	35.063300	wikidata	confirmed			Q2255513	matched	furas	2
 Umm el Fahm	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	furas	2
 Wadi Ara	32.475400	35.031900	wikidata	confirmed			Q7959216	matched	furas	2
+Wadi en Nisnas|Wadi Nisnas	32.816300	34.996300	wikidata	confirmed	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	matched	variant	2
 Yajouj	32.741500	35.077197	kima	confirmed	771	Yagur (Israel)	Q586687	matched	agent	2
 Yajour|Yajur	32.741500	35.077197	kima	confirmed	771	Yagur (Israel)	Q586687	matched	agent	2
 Yamoun / Jenin	32.486486	35.235272	kima	confirmed	20986	Yamun	Q4703350	matched	furas	2
 Zichron Jacob|Zichron Yaakov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	2
+Zichron Jacob|Zichron Yakov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	2
 'Arah	32.505692	35.078122	wikidata	confirmed			Q2859313	matched	furas	1
 002.2								unmatched-junk	agent	1
+Aarabi	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	variant	1
+Abo Snan village	32.957500	35.172778	kima	confirmed	80956	Abu Sinan (Israel)	Q2572624	matched	variant	1
 Abu Khalil								unmatched-ambiguous	agent	1
 Abu Shousheh								unmatched-ambiguous	agent	1
+Acca (Acre)	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	variant	1
+Acre (Acca)	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	variant	1
 Acre Gate	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	furas	1
 Acre S/D								unmatched-ambiguous	agent	1
+Acre|Acre S/Dist	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	variant	1
 Adel Yahud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	agent	1
 Affula (Afula)	32.607778	35.289722	kima	confirmed	18417	Afula (Israel)	Q152462	matched	agent	1
 Affula|Affula Nugst	32.607778	35.289722	kima	confirmed	18417	Afula (Israel)	Q152462	matched	auto	1
 Affuleh|Afula	32.607778	35.289722	kima	confirmed	18417	Afula (Israel)	Q152462	matched	auto	1
+Afula|Affula	32.607778	35.289722	kima	confirmed	18417	Afula (Israel)	Q152462	matched	variant	1
 Afula|Affuleh Carea st	32.607778	35.289722	kima	confirmed	18417	Afula (Israel)	Q152462	matched	auto	1
 Afula|Afuleh	32.607778	35.289722	kima	confirmed	18417	Afula (Israel)	Q152462	matched	auto	1
 Ahava								unmatched-ambiguous	agent	1
+Akka (Acre)	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	variant	1
 Alliance Scool	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Alya Street								unmatched-no-kima-entry	agent	1
+Amman|Amman Trans-Jordan	31.950000	35.933333	kima	confirmed	74	Amman (Jordan)	Q3805	matched	variant	1
+Ara village|Ara	32.505692	35.078122	wikidata	confirmed			Q2859313	matched	variant	1
+Ara'arah	32.494558	35.094114	kima	confirmed	20918	Ar'ara (Israel)	Q2915935	matched	variant	1
 Arab el Ramel	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Araba	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	furas	1
+Arabbi	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	variant	1
+Ard el Yahad	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	variant	1
+Ard el Yehud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	variant	1
 Ardel Ramel	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Arrabi	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	furas	1
+Arraby	32.851111	35.338611	kima	confirmed	21307	Arraba (Israel)	Q2568887	matched	variant	1
+Asfia	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	variant	1
 Ashadot Yakov	32.658056	35.581944	kima	confirmed	26521	Ashdot Yaakov (Israel)	Q2891543	matched	agent	1
 Ata village	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
 Aten Village	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
+Athlit Haifa|Athlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	variant	1
+Athlit I.|Athlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	variant	1
+Athlit Police No 291|Athlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	variant	1
+Athlit c/o Police|Athlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	variant	1
 Athlit|Athlit C. Camps	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
 Athlit|Athlit J.L.Co. 2	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
+Athlit|Athlit Ol. Camp	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	variant	1
+Athlit|Athlit Police	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	variant	1
 Athlit|Athlit Prison	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
 Athlit|Cl. Camp - Athlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
 Atlit|Athlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
 Atlit|Athlit C.R. Camp	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
+Atlit|Athlit Prison	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	variant	1
 Atlit|Atlit. House of Ofman	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
 Atlit|Cl. Camp - Athlit	32.687222	34.938333	kima	confirmed	16036	Atlit (Israel)	Q757398	matched	auto	1
 Ayesdin								unmatched-junk	agent	1
+Balad Esh Sheikh	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	variant	1
+Balad Sheikh|Balad al-Sheikh	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	variant	1
 Balad al-Sheikh	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	human	1
+Balad ash Sheikh	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	variant	1
+Balad ash-Sheikh	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	variant	1
 Banks St								unmatched-no-kima-entry	agent	1
 Bar Galim	32.833911	34.981714	kima	confirmed	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	1
+Bassa (Al-Bassa)	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	variant	1
 Bassa I.|Bassa	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	human	1
 Bassa N.1 N.F.D	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	human	1
 Bassa No 1|Bassa	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	human	1
 Bassa No 2|Al-Bassa	33.083333	35.150000	kima	confirmed	6885	Shelomi (Israel)	Q135421	matched	auto	1
+Bassa. Deri.|Bassa	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	variant	1
+Bassa|Al-Bassa	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	variant	1
+Bassa|Bassa N:1	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	variant	1
+Bassa|Bassah	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	matched	variant	1
 Bat Shlomo near Zammaren|Bat Shlomo	32.596897	35.003197	kima	confirmed	587	Bat Shelomo (Israel)	Q2889218	matched	agent	1
 Bat Yalem	32.833911	34.981714	kima	confirmed	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	1
 Bath Galim|Bath Galim K. H. Bldg	32.833911	34.981714	kima	confirmed	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	1
 Bathelim K.butz|Bathelim								unmatched-ambiguous	agent	1
+Beisan, Police No 793|Beisan	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	variant	1
+Beisan|Beisan Police	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	variant	1
+Beisan|Beisan S/D	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	variant	1
+Beisan|Beisan c/o	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	variant	1
 Beisan|Dept. of Police, Beisan	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	auto	1
 Beit Alfa	32.516111	35.430278	kima	confirmed	563	Bet Alfa (Israel)	Q2900562	matched	auto	1
 Beit Alfa / Beisan	32.516111	35.430278	kima	confirmed	563	Bet Alfa (Israel)	Q2900562	matched	agent	1
 Beit Alpha	32.516111	35.430278	kima	confirmed	563	Bet Alfa (Israel)	Q2900562	matched	agent	1
 Beit Anya	32.704830	35.565534	kima	confirmed	16157	Betanyah (Israel)		matched	human	1
 Beit Dagan	32.002689	34.829247	kima	confirmed	9783	Bet Dagan (Israel)	Q2920214	matched	auto	1
+Beit Dagon	32.002689	34.829247	kima	confirmed	9783	Bet Dagan (Israel)	Q2920214	matched	variant	1
 Beit Ibrahim	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Beit Jan	32.965278	35.379444	kima	confirmed	90226	Bait Jan (Israel)	Q814900	matched	human	1
 Beit Jann	32.965278	35.379444	kima	confirmed	90226	Bait Jan (Israel)	Q814900	matched	human	1
+Beit Jin	32.965278	35.379444	kima	confirmed	90226	Bait Jan (Israel)	Q814900	matched	variant	1
 Beit Olim								unmatched-no-kima-entry	agent	1
 Beit tatikva								unmatched-no-kima-entry	agent	1
+Beit-Jan	32.965278	35.379444	kima	confirmed	90226	Bait Jan (Israel)	Q814900	matched	variant	1
 Beit-Zerah	32.688897	35.573397	kima	confirmed	599	Bet Zera (Israel)	Q2573500	matched	agent	1
 Ben Yehuda								unmatched-ambiguous	agent	1
 Ben Yehuda St								unmatched-no-kima-entry	agent	1
 Ben Yehuda Street								unmatched-no-kima-entry	agent	1
 Beni Brak	32.080740	34.833800	kima	confirmed	594	Bene Brak (Israel)	Q152467	matched	agent	1
 Benjamin								unmatched-ambiguous	agent	1
+Benjaminah	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	variant	1
 Benjamina|Benyamina	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	agent	1
 Benjaminia	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	agent	1
 Benyamina. & Beit-Sacaross	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	agent	1
@@ -331,38 +492,62 @@ Bet Olim								unmatched-no-kima-entry	agent	1
 Beth Shearim	32.696197	35.177300	kima	confirmed	616	Bet She'arim (Israel)	Q1269256	matched	agent	1
 Biniamina|Binyamina	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	auto	1
 Binjamina|Binyamina	32.522222	34.945000	kima	confirmed	21551	Binyamina (Israel)	Q863886	matched	auto	1
+Bisany	32.496111	35.498889	kima	confirmed	613	Bet She'an (Israel)	Q152368	matched	variant	1
 Bithania|Bethania	32.704830	35.565534	kima	confirmed	16157	Betanyah (Israel)		matched	human	1
 Blys								unmatched-junk	agent	1
+Brekeh	32.558069	34.977611	wikidata	confirmed			Q2897020	matched	variant	1
 Brene Shaanan	32.790278	35.015833	kima	confirmed	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	matched	agent	1
 Buriq								unmatched-ambiguous	agent	1
 Carmel - Haifa	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Carmel Ahuza	32.774142	34.991325	kima	confirmed	21015	Ahuza (Haifa, Israel)	Q4159159	matched	agent	1
 Carmel Station	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
+Carmel Stn	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	variant	1
 Carmiel	32.900000	35.283333	kima	confirmed	162	Karmi'el (Israel)	Q152418	matched	auto	1
 Churipat Hayim	32.828333	35.067222	kima	confirmed	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	matched	agent	1
 Coastal Watch Bath-Jalim	32.833911	34.981714	kima	confirmed	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	1
 Daganya	32.708100	35.574897	kima	confirmed	892	Deganya Alef (Israel)	Q2371396	matched	human	1
+Dalet el Carmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	1
+Daliat Il Carmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	1
+Daliat al-Karmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	1
+Daliat el Carmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	1
 Daliet El Carmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	furas	1
+Daliet el Karmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	1
+Daliet el-Karmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	1
+Dalyat El Carmel	32.693056	35.049444	kima	confirmed	73128	Daliyat al-Karmil (Israel)	Q2667061	matched	variant	1
+Dammoun Village	32.876944	35.183056	wikidata	confirmed			Q1186264	matched	variant	1
 Dantel Yahud								unmatched-no-kima-entry	agent	1
 Dar Awwaj								unmatched-ambiguous	agent	1
+Dar Hanna	32.862411	35.371169	kima	confirmed	21739	Dair Hanna (Israel)	Q612483	matched	variant	1
 Dar el Abyad	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Defna	33.230000	35.638611	kima	confirmed	974	Dafna (Israel)	Q545232	matched	agent	1
 Degania|Tiberias S/D	32.708100	35.574897	kima	confirmed	892	Deganya Alef (Israel)	Q2371396	matched	auto	1
 Deganya	32.708100	35.574897	kima	confirmed	892	Deganya Alef (Israel)	Q2371396	matched	auto	1
 Deir el Asaad	32.936389	35.271944	kima	confirmed	6077	Dair el Asad (Israel)	Q612599	matched	furas	1
+Deir el-Asad	32.936389	35.271944	kima	confirmed	6077	Dair el Asad (Israel)	Q612599	matched	variant	1
 Dejani	32.708100	35.574897	kima	confirmed	892	Deganya Alef (Israel)	Q2371396	matched	human	1
+Dept of Survey Jaffa|Jaffa	32.052222	34.753056	kima	confirmed	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	matched	variant	1
 Doris St								unmatched-no-kima-entry	agent	1
 Drachla Tabor St								unmatched-no-kima-entry	agent	1
+Egzeim Village	32.644722	34.988056	wikidata	confirmed			Q2918334	matched	variant	1
+Eibalin	32.822222	35.193333	kima	confirmed	21569	I'bilin (Israel)	Q2915647	matched	variant	1
 Eilut	32.716667	35.262500	kima	confirmed	21697	Ilut (Israel)	Q2915756	matched	furas	1
 Ein Haron	32.560300	35.390800	kima	confirmed	12370	En Harod (Israel)	Q1339887	matched	agent	1
+Ein Harud	32.560300	35.390800	kima	confirmed	12370	En Harod (Israel)	Q1339887	matched	variant	1
 Ein Hashofet	32.595900	35.101100	kima	confirmed	91	En Hashofet (Israel)	Q2890213	matched	auto	1
 Ein Shemer	32.461300	35.006700	kima	confirmed	69	En Shemer (Israel)	Q166865	matched	agent	1
+Em El Fahim	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	1
 Emek Hayarden								unmatched-ambiguous	human	1
 Emek R								unmatched-ambiguous	human	1
 Emek R.|Emek								unmatched-ambiguous	human	1
 Emek Zevouloun								unmatched-ambiguous	human	1
 En Dor	32.656197	35.417097	kima	confirmed	19136	En Dor (Israel)	Q2916646	matched	auto	1
+Faradi Village	32.931572	35.428256	wikidata	confirmed			Q5436211	matched	variant	1
+Farradeh	32.931572	35.428256	wikidata	confirmed			Q5436211	matched	variant	1
+Farradieh	32.931572	35.428256	wikidata	confirmed			Q5436211	matched	variant	1
+Fassoutah	33.049444	35.305833	kima	confirmed	21519	Fassuta (Israel)	Q2917294	matched	variant	1
 Fot Luq								unmatched-junk	agent	1
+Fraidis	32.596542	34.950600	kima	confirmed	84891	Furaidis (Israel)	Q1011538	matched	variant	1
+Fredis	32.596542	34.950600	kima	confirmed	84891	Furaidis (Israel)	Q1011538	matched	variant	1
 Furn el Abyad	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Galil								unmatched-ambiguous	human	1
 Geda								unmatched-junk	agent	1
@@ -370,12 +555,14 @@ Gisr El Majami								unmatched-ambiguous	agent	1
 Giv'at Ada	32.518056	35.044444	kima	confirmed	18292	Giv'at Ada (Israel)	Q7189221	matched	auto	1
 Givat Adam	32.518056	35.044444	kima	confirmed	18292	Giv'at Ada (Israel)	Q7189221	matched	agent	1
 Hadar	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	1
+Hadar Carmel	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	variant	1
 Hadar Hacarmel (Haifa)	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	1
 Hadar Hacarmel Haifa	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	1
 Hadar Hacarmel|Had. Hac	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	1
 Hadar [Haifa]	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	1
 Haddar Carmel	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	matched	agent	1
 Hadeira (Hadera)	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	agent	1
+Hadera P. & P.|Hadera	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	variant	1
 Hadera|Hadera P. & P	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	agent	1
 Hadera|Hedera	32.450000	34.916667	kima	confirmed	858	Hadera (Israel)	Q471886	matched	auto	1
 Haifa (Nesher)	32.771111	35.039444	kima	confirmed	20	Nesher (Israel)	Q135432	matched	agent	1
@@ -398,11 +585,15 @@ Haifa|Hedera								unmatched-ambiguous	agent	1
 Haifa|Mt. Carmel								unmatched-ambiguous	human	1
 Haifa|Nesher	32.771111	35.039444	kima	confirmed	20	Nesher (Israel)	Q135432	matched	human	1
 Haifa|Tireh	32.766667	34.966667	kima	confirmed	756	Tirat Karmel (Israel)	Q4118776	matched	agent	1
+Haifa|Wad El Salib	32.811100	35.000000	kima	confirmed	19522	Wadi Salib (Haifa, Israel)	Q2910153	matched	variant	1
 Haim								unmatched-junk	agent	1
 Halershert								unmatched-junk	agent	1
+Halesa	32.801508	35.006764	kima	confirmed	83220	al-Khalisa (Haifa, Israel)	Q7212307	matched	variant	1
 Halisa	32.801508	35.006764	kima	confirmed	83220	al-Khalisa (Haifa, Israel)	Q7212307	matched	agent	1
+Halleesa	32.801508	35.006764	kima	confirmed	83220	al-Khalisa (Haifa, Israel)	Q7212307	matched	variant	1
 Hallesa								unmatched-no-kima-entry	agent	1
 Hallisa Qrt	32.801508	35.006764	kima	confirmed	83220	al-Khalisa (Haifa, Israel)	Q7212307	matched	furas	1
+Hallisah	32.801508	35.006764	kima	confirmed	83220	al-Khalisa (Haifa, Israel)	Q7212307	matched	variant	1
 Hallissa								unmatched-no-kima-entry	agent	1
 Hammam El Basha	32.926111	35.083889	kima	confirmed	71	Acre (Israel)	Q126084	matched	furas	1
 Hammeh								unmatched-ambiguous	human	1
@@ -410,26 +601,49 @@ Hanita	33.087600	35.173497	kima	confirmed	799	Hanita (Israel)	Q2890402	matched	a
 Hart el Yahud	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Hartel Ghazazwi	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 Hartel Yahud	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
+Hattin	32.807580	35.453820	kima	confirmed	21331	Hittin (Israel)	Q1246960	matched	variant	1
 Hazorea	32.644722	35.120833	kima	confirmed	986	Hazore'a (Israel)	Q1000893	matched	auto	1
 Heazelia	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	agent	1
 Hittin	32.807580	35.453820	kima	confirmed	21331	Hittin (Israel)	Q1246960	matched	auto	1
 I'billin	32.822222	35.193333	kima	confirmed	21569	I'bilin (Israel)	Q2915647	matched	furas	1
+Ibbellin	32.822222	35.193333	kima	confirmed	21569	I'bilin (Israel)	Q2915647	matched	variant	1
+Ibbillin	32.822222	35.193333	kima	confirmed	21569	I'bilin (Israel)	Q2915647	matched	variant	1
+Ibhilin	32.822222	35.193333	kima	confirmed	21569	I'bilin (Israel)	Q2915647	matched	variant	1
+Ibillin Village	32.822222	35.193333	kima	confirmed	21569	I'bilin (Israel)	Q2915647	matched	variant	1
+Ilut	32.716667	35.262500	kima	confirmed	21697	Ilut (Israel)	Q2915756	matched	variant	1
+Im El Fahim	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	1
+Im el Fahim	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	1
 Irbed								unmatched-ambiguous	agent	1
+Isfeyia	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	variant	1
+Isifia	32.719444	35.063333	kima	confirmed	26671	Usafiye (Israel)	Q2890836	matched	variant	1
 Jaffa|Carmel Ahu K.bert	32.052222	34.753056	kima	confirmed	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	matched	auto	1
+Jaffa|Dept of Survey Jaffa	32.052222	34.753056	kima	confirmed	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	matched	variant	1
 Jalami	32.723403	35.088478	wikidata	confirmed			Q4704113	matched	furas	1
 Jarit Nahalal	32.690000	35.196667	kima	confirmed	38	Nahalal (Israel)	Q1724338	matched	agent	1
+Jenin S/Dist	32.461111	35.300000	kima	confirmed	79775	Jenin (West Bank)	Q374748	matched	variant	1
+Jeser El Zarka	32.537919	34.912228	kima	confirmed	21576	Jisr az-Zarka (Israel)	Q764601	matched	variant	1
+Jeser el Zarka	32.537919	34.912228	kima	confirmed	21576	Jisr az-Zarka (Israel)	Q764601	matched	variant	1
 Jisr El Zarka	32.537919	34.912228	kima	confirmed	21576	Jisr az-Zarka (Israel)	Q764601	matched	furas	1
 Jisr el-Zarka	32.537919	34.912228	kima	confirmed	21576	Jisr az-Zarka (Israel)	Q764601	matched	furas	1
 Joknan	32.653900	35.100297	kima	confirmed	18301	Yokne'am (Israel)	Q2890709	matched	agent	1
 Jokneam	32.653900	35.100297	kima	confirmed	18301	Yokne'am (Israel)	Q2890709	matched	auto	1
+Kabaty	32.409553	35.280881	kima	confirmed	73993	Kabatiya (West Bank)	Q1899332	matched	variant	1
+Kabatya	32.409553	35.280881	kima	confirmed	73993	Kabatiya (West Bank)	Q1899332	matched	variant	1
+Kabul (Acre Sub District)	32.868333	35.211389	kima	confirmed	21578	Kabul (Israel)	Q1018884	matched	variant	1
 Kafaratta	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
 Kafata	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
+Kafer Yousef	32.954722	35.165278	kima	confirmed	88951	Kafr Yasif (Israel)	Q2632879	matched	variant	1
+Kafr 'Inan	32.922867	35.418453	wikidata	confirmed			Q6346161	matched	variant	1
 Kafr Branch								unmatched-ambiguous	agent	1
+Kafr Enan	32.922867	35.418453	wikidata	confirmed			Q6346161	matched	variant	1
 Kafr Hittim	32.800278	35.502500	kima	confirmed	21908	Kefar Hittim (Israel)	Q2916642	matched	agent	1
 Kafr Yasin	32.954722	35.165278	kima	confirmed	88951	Kafr Yasif (Israel)	Q2632879	matched	agent	1
+Kanner	32.528414	35.030736	wikidata	confirmed			Q7266495	matched	variant	1
+Kaunir	32.528414	35.030736	wikidata	confirmed			Q7266495	matched	variant	1
 Kefa Tabor	32.687139	35.420222	kima	confirmed	1666	Kefar Tavor (Israel)	Q1186956	matched	agent	1
 Kefar Ata	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	auto	1
 Kefar Bireim								unmatched-ambiguous	agent	1
+Kefr Etta	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	variant	1
 Kefr Kanna	32.750000	35.350000	kima	confirmed	20496	Kafr Kanna (Israel)	Q2633158	matched	furas	1
 Kenereth								unmatched-ambiguous	human	1
 Kfar Baroukh	32.646500	35.189500	kima	confirmed	815	Kefar Barukh (Israel)	Q2777518	matched	agent	1
@@ -443,8 +657,10 @@ Kfar Inan	32.922867	35.418453	wikidata	confirmed			Q6346161	matched	furas	1
 Kfar Jeladim	32.622220	35.325000	kima	confirmed	21910	Kefar Yeladim (Israel)		matched	agent	1
 Kfar Jeshuah	32.683597	35.153900	kima	confirmed	19294	Kefar Yehoshu'a (Israel)	Q2889616	matched	agent	1
 Kfar Joshua	32.683597	35.153900	kima	confirmed	19294	Kefar Yehoshu'a (Israel)	Q2889616	matched	agent	1
+Kfar Kanna	32.750000	35.350000	kima	confirmed	20496	Kafr Kanna (Israel)	Q2633158	matched	variant	1
 Kfar Kasidim	32.743200	35.093497	kima	confirmed	830	Kefar Hasidim (Israel)	Q135425	matched	agent	1
 Kfar Khassidim	32.743200	35.093497	kima	confirmed	830	Kefar Hasidim (Israel)	Q135425	matched	agent	1
+Kfar Lam	32.637392	34.934375	wikidata	confirmed			Q6346183	matched	variant	1
 Kfar Nachanesh	32.702100	35.274297	kima	confirmed	820	Kefar Hahoresh (Israel)	Q2777455	matched	agent	1
 Kfar Nacharish / Nazareth	32.702100	35.274297	kima	confirmed	820	Kefar Hahoresh (Israel)	Q2777455	matched	agent	1
 Kfar Saba	32.185783	34.907683	kima	confirmed	839	Kefar Sava (Israel)	Q152436	matched	auto	1
@@ -467,6 +683,7 @@ Kinneret (Kibbutz)	32.713400	35.562500	kima	confirmed	1669	Kinneret (Kevutsa) (I
 Kinnereth								unmatched-ambiguous	human	1
 Kiriat Haroshet	32.723889	35.127222	kima	confirmed	21920	Kiryat Haroshet (Israel)	Q1743479	matched	agent	1
 Kiriat Kinzet								unmatched-junk	agent	1
+Kiriyat Shmuel	32.834019	35.067842	kima	confirmed	22901	Kiryat Shemuel (Haifa, Israel)		matched	variant	1
 Kiryat Amal								unmatched-no-kima-entry	human	1
 Kiryat Ata	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
 Kiryat Eliahu								unmatched-no-kima-entry	agent	1
@@ -477,20 +694,28 @@ Kiryat Kamal								unmatched-no-kima-entry	human	1
 Kiryat Shmuel	32.834019	35.067842	kima	confirmed	22901	Kiryat Shemuel (Haifa, Israel)		matched	agent	1
 Kiryat Yam	32.833056	35.066389	kima	confirmed	480	Kiryat Yam (Israel)	Q152387	matched	agent	1
 Kiryat-Haim Tribune Amal	32.828333	35.067222	kima	confirmed	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	matched	agent	1
+Kokun	32.360003	34.995272	kima	confirmed	19717	Qāqūn	Q2919625	matched	variant	1
+Kufer Inan	32.922867	35.418453	wikidata	confirmed			Q6346161	matched	variant	1
+Kufer Kanna	32.750000	35.350000	kima	confirmed	20496	Kafr Kanna (Israel)	Q2633158	matched	variant	1
 Kufr 'Ata	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
+Kufr 'Inan	32.922867	35.418453	wikidata	confirmed			Q6346161	matched	variant	1
 Kufr Ata	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
+Kufr Inan	32.922867	35.418453	wikidata	confirmed			Q6346161	matched	variant	1
 Kufretta	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	1
 Kuryat el Yahu								unmatched-no-kima-entry	agent	1
 Kvutzat Kinereth	32.713400	35.562500	kima	confirmed	1669	Kinneret (Kevutsa) (Israel)	Q2296107	matched	agent	1
+Lajjun|Lajjoun	32.574722	35.177778	wikidata	confirmed	16127	Lajjūn (Jordan)	Q3775368	matched	variant	1
 Lydda	31.950000	34.900000	kima	confirmed	178	Lod (Israel)	Q207540	matched	auto	1
 Maagan	32.706297	35.599897	kima	confirmed	189	Ma'agan (Israel)	Q2916656	matched	agent	1
 Majamil								unmatched-ambiguous	agent	1
 Majd al-Krum	32.921389	35.256944	kima	confirmed	19615	Majd al-Kurum (Israel)	Q2777868	matched	auto	1
+Majd el Kroom	32.921389	35.256944	kima	confirmed	19615	Majd al-Kurum (Israel)	Q2777868	matched	variant	1
 Majdal	32.839078	35.499294	kima	confirmed	6904	Migdal (Israel)	Q2916182	matched	auto	1
 Maloul	32.695589	35.239494	wikidata	confirmed			Q2892972	matched	furas	1
 Mashmar Hyam								unmatched-ambiguous	agent	1
 Massada	32.683397	35.598500	kima	confirmed	219	Masada (Israel)	Q2888546	matched	auto	1
 Megiddo Road	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
+Mejdal	32.839078	35.499294	kima	confirmed	6904	Migdal (Israel)	Q2916182	matched	variant	1
 Menahemia Colony	32.667700	35.554000	kima	confirmed	18297	Menahemya (Israel)	Q2917281	matched	agent	1
 Merchavia	32.605850	35.307250	kima	confirmed	205	Merhavya (Israel)	Q2920170	matched	auto	1
 Meron	32.983333	35.441667	kima	confirmed	236	Meron (Israel)		matched	furas	1
@@ -499,10 +724,12 @@ Meshek Yagour	32.741500	35.077197	kima	confirmed	771	Yagur (Israel)	Q586687	matc
 Minsi	32.594889	35.172681	wikidata	confirmed			Q2368058	matched	furas	1
 Mizpa	32.790556	35.509444	kima	confirmed	21700	Mitspa (Israel)	Q2776808	matched	agent	1
 Mizra	32.650700	35.287797	kima	confirmed	224	Mizra (Israel)	Q2889536	matched	agent	1
+Moghar|Mughar	32.890000	35.408333	kima	confirmed	21974	Mughar (Israel)	Q930847	matched	variant	1
 Mount Tabor								unmatched-ambiguous	human	1
 Mt. Tabor								unmatched-ambiguous	human	1
 Na'an	31.885000	34.858611	kima	confirmed	16	Na'an (Israel)	Q1026840	matched	agent	1
 Nabi Sha'man Hagelil								unmatched-ambiguous	agent	1
+Nablus S/D	32.216111	35.266111	kima	confirmed	310	Nablus (West Bank)	Q214178	matched	variant	1
 Naffuleh	32.607778	35.289722	kima	confirmed	18417	Afula (Israel)	Q152462	matched	agent	1
 Nahla								unmatched-ambiguous	agent	1
 Nahlat Yacob								unmatched-ambiguous	agent	1
@@ -525,23 +752,42 @@ Petach Tikva	32.083333	34.883333	kima	confirmed	426	Petah Tikva (Israel)	Q190828
 Petah Tikva	32.083333	34.883333	kima	confirmed	426	Petah Tikva (Israel)	Q190828	matched	auto	1
 Petah Tikvah	32.083333	34.883333	kima	confirmed	426	Petah Tikva (Israel)	Q190828	matched	auto	1
 Port Mason								unmatched-junk	agent	1
+Qaqun	32.360003	34.995272	kima	confirmed	19717	Qāqūn	Q2919625	matched	variant	1
 Qiryat Ata	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	auto	1
 Ramallah	31.896944	35.201667	kima	confirmed	453	Ramalla (West Bank)	Q158119	matched	auto	1
 Ramat Gan	32.070007	34.823541	kima	confirmed	777	Ramat Gan (Israel)	Q192807	matched	agent	1
 Ramatby								unmatched-junk	agent	1
 Ramleh	31.927500	34.862500	kima	confirmed	456	Ramla (Israel)	Q221447	matched	agent	1
 Ras El Ein								unmatched-ambiguous	agent	1
+Ras El Naqoura	33.120000	35.134167	wikidata	confirmed			Q748504	matched	variant	1
+Ras En Nakura	33.120000	35.134167	wikidata	confirmed			Q748504	matched	variant	1
+Ras Naqura	33.120000	35.134167	wikidata	confirmed			Q748504	matched	variant	1
+Ras en Naqura	33.120000	35.134167	wikidata	confirmed			Q748504	matched	variant	1
 Rechavia	32.605850	35.307250	kima	confirmed	205	Merhavya (Israel)	Q2920170	matched	human	1
+Rehovooth	31.891389	34.807778	kima	confirmed	562	Rehovot (Israel)	Q207350	matched	variant	1
 Rehovoth	31.891389	34.807778	kima	confirmed	562	Rehovot (Israel)	Q207350	matched	agent	1
 Roy	32.710667	35.104722	wikidata	confirmed			Q11878352	matched	human	1
 Rumat Neshanan	32.790278	35.015833	kima	confirmed	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	matched	agent	1
+Rushpina	32.969086	35.542456	kima	confirmed	14873	Rosh Pina (Israel)	Q525649	matched	variant	1
+S'abbarein	32.571136	35.023097	wikidata	confirmed			Q7395979	matched	variant	1
+Sabbarien	32.571136	35.023097	wikidata	confirmed			Q7395979	matched	variant	1
+Sabberin	32.571136	35.023097	wikidata	confirmed			Q7395979	matched	variant	1
+Safa Ram	32.805556	35.169444	kima	confirmed	261	Shefar'am (Israel)	Q990657	matched	variant	1
+Safed|Safad	32.965833	35.498333	kima	confirmed	377	Tsefat (Israel)	Q188336	matched	variant	1
+Saffouri	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	variant	1
+Saffuri	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	variant	1
 Saffuria	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	furas	1
+Saffuriya (Nazareth)	32.752222	35.281111	wikidata	confirmed	85997	Saffuriya (Israel)	Q18192054	matched	variant	1
+Sahmata	33.005200	35.303800	kima	confirmed	21806	Suhmata (Israel)	Q2777621	matched	variant	1
 Sajour	32.931650	35.319586	kima	confirmed	75033	Sajur (Israel)	Q732433	matched	furas	1
+Sajur	32.931650	35.319586	kima	confirmed	75033	Sajur (Israel)	Q732433	matched	variant	1
 Sakhnin	32.866667	35.300000	kima	confirmed	95	Sakhnin (Israel)	Q168330	matched	agent	1
 Salem								unmatched-ambiguous	agent	1
 Salt	32.039167	35.727222	kima	confirmed	17467	Salṭ (Jordan)	Q867586	matched	furas	1
 Sedjerah	32.758333	35.401944	kima	confirmed	733	Ilaniyya (Israel)	Q2916589	matched	agent	1
 Shaab village	32.888889	35.236944	kima	confirmed	77238	Shaʻab (Israel)	Q2655669	matched	furas	1
+Shafo 'amr	32.805556	35.169444	kima	confirmed	261	Shefar'am (Israel)	Q990657	matched	variant	1
+Shafr 'Amr	32.805556	35.169444	kima	confirmed	261	Shefar'am (Israel)	Q990657	matched	variant	1
 Shar Amakim	32.721944	35.111667	kima	confirmed	258	Sha'ar Ha'amakim (Israel)	Q135484	matched	agent	1
 Shatel Yahud								unmatched-no-kima-entry	agent	1
 Shavei Tzion / Nahariya								unmatched-ambiguous	agent	1
@@ -549,11 +795,16 @@ Shavei Zion	32.979597	35.082200	kima	confirmed	21799	Shave Tsiyyon (Israel)	Q571
 Shenglia	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	agent	1
 Shezlia	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	agent	1
 Shunat Zarefin								unmatched-ambiguous	agent	1
+Sindiyani	32.556750	35.002264	wikidata	confirmed			Q4703260	matched	variant	1
+Sindyaneh	32.556750	35.002264	wikidata	confirmed			Q4703260	matched	variant	1
 Smillel								unmatched-junk	agent	1
 Solam	32.605633	35.334306	kima	confirmed	86790	Sulam (Israel)	Q2777713	matched	furas	1
+Souk Abyad	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	variant	1
 Souk El Abyad	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
 St. Hashomer								unmatched-ambiguous	agent	1
 Staerneck								unmatched-junk	agent	1
+Subbarein	32.571136	35.023097	wikidata	confirmed			Q7395979	matched	variant	1
+Tantura (Dor)	32.609400	34.917675	kima	confirmed	21005	Tantura (Israel)	Q2100836	matched	variant	1
 Tarshiha/Acre	33.008965	35.268330	wikidata	confirmed	21809	Tarshiḥa (Israel)	Q134496896	matched	furas	1
 Tel Chai	33.235000	35.578333	kima	confirmed	16154	Tel Hai (Israel)	Q2094886	matched	agent	1
 Tel Joseph	32.556497	35.401000	kima	confirmed	186	Tel-Yosef (Israel)	Q2917286	matched	agent	1
@@ -579,23 +830,41 @@ Tireh/Athlit								unmatched-ambiguous	agent	1
 Tires	32.766667	34.966667	kima	confirmed	756	Tirat Karmel (Israel)	Q4118776	matched	agent	1
 Tires|Tireh	32.766667	34.966667	kima	confirmed	756	Tirat Karmel (Israel)	Q4118776	matched	agent	1
 Trans Jordan	32.039167	35.727222	kima	confirmed	17467	Salṭ (Jordan)	Q867586	matched	furas	1
+Tulkarem S/D	32.311111	35.030833	kima	confirmed	73472	Tulkarem (West Bank)	Q985531	matched	variant	1
+Tulkarem|Tul-Karm	32.311111	35.030833	kima	confirmed	73472	Tulkarem (West Bank)	Q985531	matched	variant	1
+Tulkarem|Tulkarem S/D	32.311111	35.030833	kima	confirmed	73472	Tulkarem (West Bank)	Q985531	matched	variant	1
+Tulkarm|Tulkarem	32.311111	35.030833	kima	confirmed	73472	Tulkarem (West Bank)	Q985531	matched	variant	1
+Tulkharem	32.311111	35.030833	kima	confirmed	73472	Tulkarem (West Bank)	Q985531	matched	variant	1
 Turaan								unmatched-no-kima-entry	agent	1
+Um El Fahem	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	1
 Um El Zeinat	32.647200	35.063300	wikidata	confirmed			Q2255513	matched	furas	1
+Um al-Fahm	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	1
 Um el Fahim	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	furas	1
+Umm El Fahem	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	variant	1
+Umm al-Zaynat	32.647200	35.063300	wikidata	confirmed			Q2255513	matched	variant	1
 Umm el Fahem	32.515833	35.152500	kima	confirmed	743	Umm al-Fahm (Israel)	Q168245	matched	furas	1
 Vilhelma	32.023300	34.913500	kima	confirmed	26771	Wilhelma (Israel)	Q2906526	matched	agent	1
+W. Nisnas	32.816300	34.996300	wikidata	confirmed	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	matched	variant	1
 W. el Nisnass	32.816300	34.996300	wikidata	confirmed	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	matched	agent	1
+Wad Rushmia	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	variant	1
+Wad Rushmya	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	variant	1
 Wadi Arah	32.475400	35.031900	wikidata	confirmed			Q7959216	matched	furas	1
 Wadi Kavara								unmatched-no-kima-entry	agent	1
 Wadi Nasnas (Haifa)	32.816300	34.996300	wikidata	confirmed	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	matched	furas	1
 Wadi Nisnas	32.816300	34.996300	wikidata	confirmed	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	matched	agent	1
+Wadi Roshmia	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	variant	1
 Wadi Rushumia	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	1
+Wady Rushmiyeh	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	variant	1
+Yaabed	32.446667	35.170278	kima	confirmed	75339	Ya'bad (West Bank)	Q1828708	matched	variant	1
 Yabed	32.446667	35.170278	kima	confirmed	75339	Ya'bad (West Bank)	Q1828708	matched	furas	1
+Yaboud	32.446667	35.170278	kima	confirmed	75339	Ya'bad (West Bank)	Q1828708	matched	variant	1
 Yavne'el / Tiberias								unmatched-ambiguous	agent	1
 Yavneel	32.709497	35.499400	kima	confirmed	18477	Yavne'el (Israel)	Q1676894	matched	auto	1
 Yavneel Colony	32.709497	35.499400	kima	confirmed	18477	Yavne'el (Israel)	Q1676894	matched	agent	1
 Yavniel Colony	32.709497	35.499400	kima	confirmed	18477	Yavne'el (Israel)	Q1676894	matched	agent	1
 Zamarin	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	auto	1
+Zammarrin	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	1
+Zammarrine	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	1
 Zeeb								unmatched-no-kima-entry	agent	1
 Zekra Yacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
 Zichron	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	auto	1
@@ -605,31 +874,10 @@ Zichron Yaakov|Bat shlomo - Zichron Jacob	32.570833	34.951667	kima	confirmed	825
 Zichron Yacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
 Zichron Yakov|Zichron Yaakov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
 Zicron	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
+Zikhron	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	1
 Zikhron Yaacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	auto	1
 Zikhron Yacob	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
 Zikron Yaacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1
-Mt. Carmel|Mount Carmel	32.672500	35.023330	kima	provisional	1156	Karmel, Mount (Israel)			A_autolink	11
-Ein Hod	32.701460	34.980010	kima	provisional	18441	En Hod (Israel)			A_autolink	10
-Acca	32.926110	35.083890	kima	provisional	71	Acre (Israel)			A_autolink	9
-Beissan|Beisan	32.496110	35.498890	kima	provisional	613	Bet She'an (Israel)			A_autolink	8
-Amka	32.979440	35.163330	kima	provisional	23142	Amka (Israel)			A_autolink	7
-Mazra'a	32.983100	35.097620	kima	provisional	26615	Mazra'a (Israel)			A_autolink	6
-Beit She'an	32.496110	35.498890	kima	provisional	613	Bet She'an (Israel)			A_autolink	5
-Baka	31.759170	35.220820	kima	provisional	21216	Bak'a (Jerusalem, Israel)			A_autolink	4
-Kababir	32.804200	34.973150	kima	provisional	22655	Kababir (Haifa, Israel)			A_autolink	4
+Zummarin	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	1
 Hawara	32.152500	35.256670	kima	provisional	21617	Hawara (Israel)			A_autolink	4
-Zib	33.039000	35.111300	kima	provisional	887	Gesher Haziv (Israel)			A_autolink	3
-Tantoura|Tantura	32.609400	34.917680	kima	provisional	21005	Tantura (Israel)			A_autolink	3
-Jaffa|P. & P. Jaffa	32.052220	34.753060	kima	provisional	629	Jaffa (Tel Aviv-Yafo, Israel)			A_autolink	3
-Ludd	31.950000	34.900000	kima	provisional	178	Lod (Israel)			A_autolink	3
 Samra	32.116670	35.266670	kima	provisional	22266	Khirbet Samara (Israel)			A_autolink	3
-Beyrouth	33.886940	35.513060	kima	provisional	651	Beirut (Lebanon)			A_autolink	3
-Nazareth|Dept. of Police, Nazareth	32.702100	35.297850	kima	provisional	18	Nazareth (Israel)			A_autolink	3
-Kafr Manda	32.816670	35.266670	kima	provisional	21581	Kafr Manda (Israel)			A_autolink	3
-Kweikat	32.971080	35.146510	kima	provisional	21333	Kuwaykat (Israel)			A_autolink	3
-Beit Dajan	32.002690	34.829250	kima	provisional	9783	Bet Dagan (Israel)			A_autolink	3
-Nazareth|P & P Nazareth	32.702100	35.297850	kima	provisional	18	Nazareth (Israel)			A_autolink	3
-Tarbikha	33.082860	35.284240	kima	provisional	299	Shomera (Israel)			A_autolink	3
-Afula|Affuleh	32.607780	35.289720	kima	provisional	18417	Afula (Israel)			A_autolink	3
-Haifa|Haifa Nazareth St	32.819170	34.999170	kima	provisional	791	Haifa (Israel)			B_review	4
-Haifa|German Colony Haifa	32.819170	34.999170	kima	provisional	791	Haifa (Israel)			B_review	3

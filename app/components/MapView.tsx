@@ -52,6 +52,8 @@ const HELP: HelpSection[] = [
 // Karmel"; the patients came from al-Tira, the village (Q4118776).
 const LABEL_OVERRIDE: Record<string, string> = { '756': 'al-Tira' };
 
+const MAP_BOUNDS = L.latLngBounds([28.9, 33.2], [34.4, 37.0]);
+
 interface Place {
   // The label the circle carries: the gazetteer's own name where there is one,
   // otherwise the commonest spelling in the registers.
@@ -206,13 +208,19 @@ const MapView: React.FC<Props> = ({ data }) => {
     return out;
   }, [data]);
 
-  const counted = useMemo(() => {
+  // Places past the map's edge — Cairo, London, El Qantara — are real
+  // origins but cannot be drawn: Leaflet will not settle on a view that shows
+  // anything past maxBounds, so one of them would hold the fit back for all
+  // the rest. They are named under the map instead.
+  const withCounts = useMemo(() => {
     if (!places) return [];
     return places
       .map(p => ({ ...p, n: p.cities.reduce((sum, c) => sum + (byCity.get(c) || []).length, 0) }))
       .filter(p => p.n > 0)
       .sort((a, b) => b.n - a.n);
   }, [places, byCity]);
+  const counted = useMemo(() => withCounts.filter(p => MAP_BOUNDS.contains([p.lat, p.lon])), [withCounts]);
+  const abroad = useMemo(() => withCounts.filter(p => !MAP_BOUNDS.contains([p.lat, p.lon])), [withCounts]);
 
   const maxN = counted.length ? counted[0].n : 1;
 
@@ -261,7 +269,7 @@ const MapView: React.FC<Props> = ({ data }) => {
       // view that would show anything beyond the bound, so the opening fit was
       // clamped a whole zoom level below what it computed. Gaza is the
       // southernmost place and has always been comfortably inside.
-      maxBounds: L.latLngBounds([28.9, 33.2], [34.4, 37.0]),
+      maxBounds: MAP_BOUNDS,
       maxBoundsViscosity: 0.85,
       minZoom: 8,
       // Leaflet snaps to whole zoom levels unless told otherwise, and the fit
@@ -597,6 +605,11 @@ const MapView: React.FC<Props> = ({ data }) => {
               <> Of the reviewed values: {unplaced.map(u => `${u.decision} ${u.records.toLocaleString()}`).join(', ')}.</>
             )}
           </p>
+          {abroad.length > 0 && (
+            <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+              Beyond the map's edge: {abroad.map(p => `${p.label} ${p.n.toLocaleString()}`).join(', ')}.
+            </p>
+          )}
         </div>
       </div>
 

@@ -1,0 +1,73 @@
+city	city_as_written	n_records	decision	kima_id	wikidata_qid	furas_reading	furas_type	match	decided_by	note
+Jaba'	Jaba'	0	matched		Q4118648			round3	agent	Jaba' of the Haifa sub-district: the addresses say 'Jaba' Haifa s/o', 'Hfa S/Dist.'
+Eggim	Eggim	0	matched		Q2918334			round3	agent	Ijzim, south of Haifa ('Eggem - Haifa'); g for j
+Eggem	Eggem	0	matched		Q2918334			round3	agent	Ijzim, south of Haifa ('Eggem - Haifa'); g for j
+Iggim	Iggim	0	matched		Q2918334			round3	agent	Ijzim, south of Haifa; g for j
+Sileh	Sileh	0	matched	71896	Q2898808			round3	agent	Silat al-Harithiya: addresses 'Jenin Sub Dist.', 'Near Affuleh'
+Silet el Hartieh	Silet el Hartieh	0	matched	71896	Q2898808			round3	agent	Silat al-Harithiya
+Sileh el Hartieh	Sileh el Hartieh	0	matched	71896	Q2898808			round3	agent	Silat al-Harithiya
+Jalameh	Jalameh	0	matched		Q4704113			round3	agent	al-Jalama of the Haifa sub-district: 'Haifa District Jalameh', 'Jalameh Police Station'
+Rummaneh	Rummaneh	0	matched	75571	Q7379315			round3	agent	Rummana by Umm al-Fahm: 'Rummaneh - Jenin S/D'
+Mazra'a	Mazra'a	0	matched	26615	Q2890424			round3	agent	al-Mazra'a by Acre: 'Mazra'a, Acre S/Dist.'
+Bineh	Bineh	0	matched	21303	Q2890909			round3	agent	al-Bi'na: 'Bineh - Acre District'
+Baka	Baka	0	matched		Q2916599			round3	agent	Baqa al-Gharbiyya: 'Baka Village, Tul-Karm S/D'
+Baqa al-Gharbiyye	Baqa al-Gharbiyye	0	matched		Q2916599			round3	agent	Baqa al-Gharbiyya
+Beit Dajan	Beit Dajan	0	matched		Q12200452			round3	agent	Beit Dajan of Nablus: 'Beit Dajan, Nablus S/Dist.'
+Rihaniya	Rihaniya	0	matched	23436	Q2916856			round3	agent	Rihaniyya in the Safad sub-district: 'Rihanieh. Safad s/o'
+Burka	Burka	0	matched		Q5000295			round3	agent	Burqa of Nablus: 'Burka Nablus S/D.'
+Nahr	Nahr	0	matched		Q4703015			round3	agent	al-Nahr: 'El Nahr. Acre Sub Dist.'
+Zib	Zib	0	matched		Q4831969			round3	agent	al-Zib: 'El Zib, Acre S/Dist'
+Salameh	Salameh	0	matched		Q7403531			round3	agent	Salama by Jaffa: 'c/o B/C. Jaffa. Salameh'
+Kabri	Kabri	0	matched	869	Q4702652			round3	agent	al-Kabri, the Mandate village (Kima's entry is the kibbutz on its land)
+Birweh	Birweh	0	matched		Q2914542			round3	agent	al-Birwa
+Sasa	Sasa	0	matched	27	Q12468030			round3	agent	Sa'sa', the Mandate village (Kima's entry is the kibbutz on its land)
+Hawassa	Hawassa	0	matched	791	Q41621			round3	agent	Harat al-Hawassa, a quarter of Haifa; drawn at Haifa
+Souk Shwam	Souk Shwam	0	matched	791	Q41621			round3	agent	Suq al-Shawam, a Haifa market street; drawn at Haifa
+Mt. Carmel|Mount Carmel	Mt. Carmel|Mount Carmel	0	matched	791	Q41621			round3	agent	Mount Carmel as a Haifa quarter, as Furas reads 'Mt Carmel'
+Haifa|Haifa Nazareth St	Haifa|Haifa Nazareth St	0	matched	791	Q41621			round3	agent	Haifa; Nazareth St. is the Haifa street
+Haifa|German Colony Haifa	Haifa|German Colony Haifa	0	matched	21139	Q2413425			round3	agent	the German Colony of Haifa: the finer reading
+Nazareth|Dept. of Police, Nazareth	Nazareth|Dept. of Police, Nazareth	0	matched	18	Q430776			round3	agent	Nazareth
+Nazareth|P & P Nazareth	Nazareth|P & P Nazareth	0	matched	18	Q430776			round3	agent	Nazareth
+Afula|Affuleh	Afula|Affuleh	0	matched	18417	Q152462			round3	agent	Afula
+Yamoun	Yamoun	0	matched	20986	Q4703350			round3	agent	al-Yamun (Jenin)
+Hebron	Hebron	0	matched	966	Q168225			round3	agent	Hebron
+Amka	Amka	0	matched	23142	Q2914984			round3	agent	Amqa (Acre)
+Ya'abad	Ya'abad	0	matched	75339	Q1828708			round3	agent	Ya'bad
+Reineh	Reineh	0	matched	26609	Q2655682			round3	agent	al-Reina by Nazareth
+Damascus	Damascus	0	matched	939	Q3766			round3	agent	Damascus
+Kafr Qari'	Kafr Qari'	0	matched	20116	Q1721086			round3	agent	Kafr Qara
+Kufr Qari'	Kufr Qari'	0	matched	20116	Q1721086			round3	agent	Kafr Qara
+Shweikeh	Shweikeh	0	matched	73073				round3	agent	Shuweika (Tulkarm): 'Shweikeh-Tulkarem S/D' (NB24 p99)
+Shuweika	Shuweika	0	matched	73073				round3	agent	Shuweika (Tulkarm)
+Beit She'an	Beit She'an	0	matched	613	Q152368			round3	agent	Beisan
+Cairo	Cairo	0	matched		Q85			round3	agent	Cairo
+Ajloun	Ajloun	0	matched	16141	Q1141858			round3	agent	Ajlun
+Kwikat	Kwikat	0	matched	21333	Q3545099			round3	agent	Kuwaykat (Acre)
+Kweikat	Kweikat	0	matched	21333	Q3545099			round3	agent	Kuwaykat (Acre)
+Kabatia	Kabatia	0	matched	73993	Q1899332			round3	agent	Qabatiya
+Kababir	Kababir	0	matched	22655	Q2897547			round3	agent	Kababir, Haifa
+Kisaria	Kisaria	0	matched	6936	Q1615560			round3	agent	Qisarya (Caesarea)
+Caesaria	Caesaria	0	matched	6936	Q1615560			round3	agent	Qisarya (Caesarea)
+Transj	Transj	0	matched	17467	Q867586			round3	agent	Transjordan, placed at Salt as Furas places it
+T. Jordan	T. Jordan	0	matched	17467	Q867586			round3	agent	Transjordan, placed at Salt as Furas places it
+Kisra	Kisra	0	matched	69497	Q2890184			round3	agent	Kisra (Galilee)
+Ludd	Ludd	0	matched	178	Q207540			round3	agent	Lydda
+London	London	0	matched		Q84			round3	agent	London
+Beyrouth	Beyrouth	0	matched	651	Q3820			round3	agent	Beirut
+Lubieh	Lubieh	0	matched	19876				round3	agent	Lubya
+Kafr Manda	Kafr Manda	0	matched	21581	Q2915534			round3	agent	Kafr Manda
+Kufr Manda	Kufr Manda	0	matched	21581	Q2915534			round3	agent	Kafr Manda
+Zababdeh	Zababdeh	0	matched	77797	Q136690			round3	agent	al-Zababida
+Nadel Yahud	Nadel Yahud	0	matched		Q12404212			round3	agent	Ard el-Yahud: Nadel/Abdel/Hadel are scan-verified garbles of Ardel (2026-08-06)
+Berkin	Berkin	0	matched	87581	Q286871			round3	agent	Burqin (Jenin)
+Birkin	Birkin	0	matched	87581	Q286871			round3	agent	Burqin (Jenin)
+Jezzin	Jezzin	0	matched	26946	Q25910			round3	agent	Jezzine
+Kafr Rai	Kafr Rai	0	matched	88748	Q2898490			round3	agent	Kafr Ra'i
+Bala'	Bala'	0	matched	74068	Q4849622			round3	agent	Bal'a (Tulkarm)
+Tarbikha	Tarbikha	0	matched		Q2777821			round3	agent	Tarbikha
+Attil	Attil	0	matched	70902	Q246431			round3	agent	Attil (Tulkarm)
+Safsaf	Safsaf	0	matched		Q1657002			round3	agent	Safsaf (Safad)
+Naqoura	Naqoura	0	matched		Q748504			round3	agent	Naqura, as Furas reads it
+Ramtha	Ramtha	0	matched	69636	Q31594			round3	agent	al-Ramtha
+Beersheba	Beersheba	0	matched	699	Q41843			round3	agent	Beersheba
+Kantara	Kantara	0	matched		Q1324574			round3	agent	El Qantara East, the Suez Canal terminus of Palestine Railways: Egyptian railway labourers, 'Kantara East', 'P. Railway Kantara'

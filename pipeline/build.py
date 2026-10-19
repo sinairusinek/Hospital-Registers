@@ -31,6 +31,10 @@ from datetime import date, timedelta
 from pathlib import Path
 
 from address_layers import classify as classify_address
+from address_layers import furas_labels, quarter_by_pattern, _key as furas_key
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "kimatch"))
+from place_resolver import place_in_address  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "public" / "hospital-registers-2025-08-10.tsv"
@@ -835,6 +839,7 @@ REVIEW_FLAGS = [
     ("classifier-debris", "Classifier error text where a diagnosis belongs"),
     ("procedure-only", "An operation named with no diagnosis behind it"),
     ("no-icd9-chapter", "No ICD-9 code the classification could place"),
+    ("city-read-from-address", "City was blank; filled from the place the Address names"),
 ]
 
 
@@ -1120,6 +1125,7 @@ def main() -> int:
     changes: Counter[tuple[str, str, str]] = Counter()
     kima_links = load_kima_decisions()
     haifa_cities = load_haifa_cities()
+    city_from_address = 0
     layered: Counter[str] = Counter()
     kima_linked = 0
     street_reseated = 0
@@ -1505,6 +1511,27 @@ def main() -> int:
                 changes[("City", "Ramleh (the address says village / Acre district)", "Rameh")] += 1
                 cleaned = "Rameh"
                 row["City"] = cleaned
+            # A blank City whose Address names a ruled place takes that place:
+            # the clerk wrote the village in the wrong column, or the town is
+            # the Haifa quarter or street the address gives. Flagged, and
+            # "City as written" stays blank so the clerk's own record shows.
+            if not cleaned and row.get("Address"):
+                address = row["Address"]
+                read, _ = place_in_address(address)
+                if not read:
+                    furas = furas_labels().get(furas_key(address))
+                    haifa_street = furas and (furas["city"] or "").strip() == "Haifa" and \
+                        (furas["type of geographical place"] or "").strip().lower() in ("street", "st.", "neighborhood")
+                    if haifa_street or quarter_by_pattern(address, "Haifa"):
+                        read = "Haifa"
+                if read:
+                    cleaned = read
+                    row["City"] = cleaned
+                    city_from_address += 1
+                    flags = [f for f in (row.get("Review Flags") or "").split("|") if f]
+                    flags.append("city-read-from-address")
+                    order = [name for name, _ in REVIEW_FLAGS]
+                    row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
             kima_id, qid = kima_links.get(cleaned, ("", ""))
             row["City Kima ID"] = kima_id
             row["City Wikidata"] = qid
@@ -1983,6 +2010,9 @@ def main() -> int:
         if kima_linked:
             writer.writerow(["derived", "City Kima ID", "reviewed match in kimatch/city-kima-decisions.tsv",
                              "Kima place id and Wikidata QID attached", kima_linked])
+        if city_from_address:
+            writer.writerow(["derived", "City", "blank City, place read from Address (kimatch/place_resolver.py)",
+                             "flagged city-read-from-address", city_from_address])
         for column, count in layered.most_common():
             writer.writerow(["derived", column, "read from Address (pipeline/address_layers.py)",
                              "Furas's label, or a pattern drawn from his labels", count])

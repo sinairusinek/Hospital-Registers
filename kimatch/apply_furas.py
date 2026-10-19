@@ -15,14 +15,19 @@ namesake, are kept as `held` and change nothing here.
 Each matched ruling updates the decision row for its normalized `city`, or
 appends one. Rerunning is idempotent.
 
-Usage: python3 kimatch/apply_furas.py
+Also applies kimatch/round3-rulings.tsv, the same format: rulings on the
+long tail (decided_by `agent`), each note citing the record evidence.
+
+Usage: python3 kimatch/apply_furas.py [rulings.tsv ...]
 """
 import csv
-from collections import defaultdict
+import sys
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-RULINGS = ROOT / "kimatch" / "furas-rulings.tsv"
+RULINGS = [ROOT / "kimatch" / "furas-rulings.tsv", ROOT / "kimatch" / "round3-rulings.tsv"]
+DATA = ROOT / "data" / "public" / "hospital-registers-normalized.tsv"
 DECISIONS = ROOT / "kimatch" / "city-kima-decisions.tsv"
 KIMA_DUMP = Path("/Users/sinairusinek/Documents/GitHub/Kimatch/20250126KimaPlacesCSVx.csv")
 DATE = "2026-10-18"
@@ -38,10 +43,18 @@ def main() -> None:
     by_city = {r["city"]: r for r in decisions}
 
     rulings = defaultdict(list)
-    with RULINGS.open(encoding="utf-8", newline="") as fh:
-        for r in csv.DictReader(fh, delimiter="\t"):
-            if r["decision"] == "matched":
-                rulings[r["city"]].append(r)
+    for path in [Path(a) for a in sys.argv[1:]] or RULINGS:
+        if not path.exists():
+            continue
+        with path.open(encoding="utf-8", newline="") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                if r["decision"] == "matched":
+                    rulings[r["city"]].append(r)
+    counts: Counter[str] = Counter()
+    csv.field_size_limit(10**9)
+    with DATA.open(encoding="utf-8", newline="") as fh:
+        for r in csv.DictReader(fh, delimiter="\t", quoting=csv.QUOTE_NONE):
+            counts[r["City"]] += 1
 
     updated = added = 0
     for city, group in rulings.items():
@@ -56,7 +69,7 @@ def main() -> None:
         if row is None:
             row = {f: "" for f in fields}
             row.update(city=city, spelling=city, grade="furas",
-                       n_records=str(sum(int(r["n_records"]) for r in group)))
+                       n_records=str(sum(int(r["n_records"]) for r in group) or counts[city]))
             decisions.append(row)
             by_city[city] = row
             added += 1

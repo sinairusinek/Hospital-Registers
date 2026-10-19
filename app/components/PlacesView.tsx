@@ -70,6 +70,11 @@ const QUEUES: { key: string; title: string; question: string }[] = [
     question: 'Places identified by Yoni Furas (University of Haifa), collaborator, in his annotation of the patient addresses: the Mandate villages of the Galilee and Carmel, the Haifa quarters, al-Tira as the village rather than Tirat Carmel. Entries he marked "check" are not applied. His sheet is published as data/public/furas-unique-addresses-2024.tsv.'
   },
   {
+    key: 'matched-variant',
+    title: 'Matched — new spellings of ruled places',
+    question: 'Spellings no review had seen, carried to a place already ruled on: the same loose form (articles, "village", "S/D" set aside), the same consonant skeleton with nothing else sharing it, or a "|" alternation whose readings all land on one place. Each note names the spelling it follows. Skeleton matches were read by eye and the doubtful ones refused (kimatch/variant_pass.py).'
+  },
+  {
     key: 'matched-auto',
     title: 'Matched — engine, geo-audited',
     question: 'Unambiguous exact-name matches from the kimatch engine, each checked to fall inside the Israel/Palestine region. The least likely to need attention.'

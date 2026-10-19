@@ -17,10 +17,13 @@ Zichron Yaakov	Zichron Yaakov	41	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump
 Kafr Yasif	Kafr Yasif	37	88951	Kafr Yasif (Israel)	Q2632879	furas		matched	furas		furas	Kafr Yasif - per Y. Furas	2026-10-18
 Julis	Julis	36	82237	Julis (Israel)	Q2601777	furas		matched	furas		furas	Julis - per Y. Furas	2026-10-18
 Yajour	Yajour	35	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent	Yagur; Mandate romanization	2026-08-06
+Kantara	Kantara	34			Q1324574	human		matched	furas		agent	El Qantara East, the Suez Canal terminus of Palestine Railways: Egyptian railway labourers, 'Kantara East', 'P. Railway Kantara'	2026-10-18
 Affikim	Affikim	31	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
+Jaba'	Jaba'	30			Q4118648	human		matched	furas		agent	Jaba' of the Haifa sub-district: the addresses say 'Jaba' Haifa s/o', 'Hfa S/Dist.'	2026-10-18
 Tel Aviv	Tel Aviv	30	272	Tel Aviv-Yafo (Israel)	Q33935	kima-dump	Q33935	matched	A_autolink		agent	Tel Aviv-Yafo city, not the district entity	2026-08-06
 Gaza	Gaza	29	12982	Gaza (Gaza Strip)	Q47492	furas		matched	furas		furas	Gaza - per Y. Furas	2026-10-18
 Wadi Salib	Wadi Salib	29	19522	Wadi Salib (Haifa, Israel)	Q2910153	furas		matched	furas		furas	Wadi Salib, Haifa - per Y. Furas	2026-10-18
+Hawassa	Hawassa	28	791	Haifa (Israel)	Q41621	human		matched	furas		agent	Harat al-Hawassa, a quarter of Haifa; drawn at Haifa	2026-10-18
 Karkur	Karkur	28	19149	Karkur (Israel)	Q2475182	kima-dump	Q123685287	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2475182 vs direct Wikidata Q123685287	2026-08-06
 Tamra	Tamra	28	20270	Tamra (Israel)	Q168176	furas		matched	furas		furas	Tamra - per Y. Furas	2026-10-18
 Bat Galim	Bat Galim	27	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	Q810685	matched	A_autolink	0.95	auto		2026-08-06
@@ -36,6 +39,7 @@ Yarka	Yarka	24	18267	Yirka (Israel)	Q2640151	furas		matched	furas		furas	Yarka -
 Jish	Jish	23	88554	Jish (Israel)	Q1527236	furas		matched	furas		furas	Jish - per Y. Furas	2026-10-18
 Nazareth	Nazareth	23	18	Nazareth (Israel)	Q430776	kima-dump	Q430776	matched	A_autolink	0.95	auto		2026-08-06
 Jerusalem	Jerusalem	22	691	Jerusalem (Israel)	Q1218	kima-dump	Q1218	matched	C_review		agent	city entry, not sancak/East	2026-08-06
+Umm al-Fahm	Umm al-Fahm	22	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-exact		variant	spelling of 'Umm el Fahm' (exact)	2026-10-19
 Abu Snan	Abu Snan	21	80956	Abu Sinan (Israel)	Q2572624	furas		matched	furas		furas	Abu Snan - per Y. Furas	2026-10-18
 Kfar Vitkin	Kfar Vitkin	20	825	Kefar Vitkin (Israel)	Q2495402	kima-dump		matched	C_review		agent		2026-08-06
 Amman	Amman	19	74	Amman (Jordan)	Q3805	furas		matched	furas		furas	Amman - per Y. Furas	2026-10-18
@@ -43,10 +47,12 @@ Deir Hanna	Deir Hanna	19	21739	Dair Hanna (Israel)	Q612483	furas		matched	furas	
 Mughar	Mughar	19	21974	Mughar (Israel)	Q930847	furas		matched	furas		furas	Mughar - per Y. Furas	2026-10-18
 Ara	Ara	17			Q2859313	furas		matched	furas		furas	'Ara (Arah), Wadi Ara - per Y. Furas; not Ar'ara	2026-10-18
 Tulkarem	Tulkarem	16	73472	Tulkarem (West Bank)	Q985531	kima-dump	Q985531	matched	C_review		agent		2026-08-06
+Kabri	Kabri	15	869	Kabri (Israel)	Q4702652	human		matched	furas		agent	al-Kabri, the Mandate village (Kima's entry is the kibbutz on its land)	2026-10-18
 Trans-Jordan	Trans-Jordan	15	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
 Yavniel	Yavniel	15	18477	Yavne'el (Israel)	Q1676894	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Zichron Jacob	Zichron Jacob	15	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Ardel Yahud	Ardel Yahud	14			Q12404212	furas		matched	C_review		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
+Birweh	Birweh	14			Q2914542	human		matched	furas		agent	al-Birwa	2026-10-18
 Fassuta	Fassuta	14	21519	Fassuta (Israel)	Q2917294	furas		matched	furas		furas	Fassouta - per Y. Furas	2026-10-18
 Isfiya	Isfiya	14	26671	Usafiye (Israel)	Q2890836	furas		matched	furas		furas	Asfia - per Y. Furas	2026-10-18
 Um el Fahm	Um el Fahm	14	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
@@ -57,28 +63,46 @@ Sha'ab	Sha'ab	13	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Sha
 Shaab	Shaab	13	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
 Damun	Damun	12			Q1186264	furas		matched	furas		furas	Damun - per Y. Furas	2026-10-18
 Ramel	Ramel	12	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Ya'bad	Ya'bad	12	75339	Ya'bad (West Bank)	Q1828708	furas		matched	variant-skeleton		variant	spelling of 'Yabed' (skeleton: same consonant skeleton as 'Yabed')	2026-10-19
+Yamoun	Yamoun	12	20986	Yamun	Q4703350	human		matched	furas		agent	al-Yamun (Jenin)	2026-10-18
 Ararah	Ararah	11	20918	Ar'ara (Israel)	Q2915935	furas		matched	furas		furas	Ararah - per Y. Furas	2026-10-18
 Daliet el Carmel	Daliet el Carmel	11	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	furas		furas	Daliet el Carmel - per Y. Furas	2026-10-18
 Ein Harod	Ein Harod	11	12370	En Harod (Israel)	Q1339887	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Hallisa	Hallisa	11	83220	al-Khalisa (Haifa, Israel)	Q7212307	human		matched	variant-skeleton		variant	spelling of 'Halisa' (skeleton: same consonant skeleton as 'Halisa')	2026-10-19
 Ibillin	Ibillin	11	21569	I'bilin (Israel)	Q2915647	furas		matched	furas		furas	Ibillin - per Y. Furas	2026-10-18
 Kfar Ata	Kfar Ata	11	477	Kiryat Ata (Israel)	Q152602	kima-dump	Q152602	matched	C_review		agent	Kfar Ata = pre-1965 name of Kiryat Ata	2026-08-06
+Mt. Carmel|Mount Carmel	Mt. Carmel|Mount Carmel	11	791	Haifa (Israel)	Q41621	human		matched	furas		agent	Mount Carmel as a Haifa quarter, as Furas reads 'Mt Carmel'	2026-10-18
 Ein Ghazal	Ein Ghazal	10	21329	Ein Ghazal (Israel)	Q2918965	furas		matched	furas		furas	Ain Ghazal - per Y. Furas	2026-10-18
+Ein Hod	Ein Hod	10	18441	En Hod (Israel)	Q991378	furas		matched	variant-skeleton		variant	spelling of 'Ain Hod' (skeleton: same consonant skeleton as 'Ain Hod')	2026-10-19
+Jalameh	Jalameh	10			Q4704113	human		matched	furas		agent	al-Jalama of the Haifa sub-district: 'Haifa District Jalameh', 'Jalameh Police Station'	2026-10-18
+Jenin|P.M.F. Jenin	Jenin|P.M.F. Jenin	10	79775	Jenin (West Bank)	Q374748	kima-dump		matched	variant-alternation		variant	spelling of 'Jenin' (alternation: all readings resolve to one place)	2026-10-19
 Kibutz Affikim	Kibutz Affikim	10	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Lajjun	Lajjun	10	16127	Lajjūn (Jordan)	Q3775368	human		matched	A_autolink		human	al-Lajjun in the Jenin sub-district; the Kima entry names it Jordan, which its own coordinate contradicts; point from Wikidata	2026-08-28
 Nesher	Nesher	10	20	Nesher (Israel)	Q135432	kima-dump	Q135432	matched	C_review		agent		2026-08-06
+Sileh	Sileh	10	71896	Silat al Harithiya (West Bank)	Q2898808	human		matched	furas		agent	Silat al-Harithiya: addresses 'Jenin Sub Dist.', 'Near Affuleh'	2026-10-18
 Tanturah	Tanturah	10	21005	Tantura (Israel)	Q2100836	furas		matched	furas		furas	Tanturah - per Y. Furas	2026-10-18
 Yokneam	Yokneam	10	18301	Yokne'am (Israel)	Q2890709	kima-dump	Q167582	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2890709 vs direct Wikidata Q167582	2026-08-06
+Acca	Acca	9	71	Acre (Israel)	Q126084	kima-dump		matched	variant-skeleton		variant	spelling of 'Akka' (skeleton: same consonant skeleton as 'Akka')	2026-10-19
+Eggim	Eggim	9			Q2918334	human		matched	furas		agent	Ijzim, south of Haifa ('Eggem - Haifa'); g for j	2026-10-18
+Im El Fahem	Im El Fahem	9	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-exact		variant	spelling of 'Umm el Fahem' (exact)	2026-10-19
 Subbarin	Subbarin	9			Q7395979	furas		matched	furas		furas	Subbarin - per Y. Furas	2026-10-18
 Zeita	Zeita	9			Q8068604	furas		matched	furas		furas	Zeita - per Y. Furas	2026-10-18
 Ahuza	Ahuza	8	21015	Ahuza (Haifa, Israel)	Q4159159	kima-dump	Q2889211	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q4159159 vs direct Wikidata Q2889211	2026-08-06
 Ain Harod	Ain Harod	8	12370	En Harod (Israel)	Q1339887	kima-dump		matched	C_review		agent	generic En Harod; Ihud/Me'uhad split is post-1948	2026-08-06
 Ard el Yahoud	Ard el Yahoud	8			Q12404212	furas		matched	furas		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
 Arraba	Arraba	8	21307	Arraba (Israel)	Q2568887	furas		matched	furas		furas	Arabeh - per Y. Furas	2026-10-18
+Beissan|Beisan	Beissan|Beisan	8	613	Bet She'an (Israel)	Q152368	kima-dump		matched	variant-alternation		variant	spelling of 'Beisan' (alternation: all readings resolve to one place)	2026-10-19
 Dejania	Dejania	8	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	C_review		human	unqualified Degania read as Alef	2026-08-06
+Hebron	Hebron	8	966	Hebron (West Bank)	Q168225	human		matched	furas		agent	Hebron	2026-10-18
 Isfia	Isfia	8	26671	Usafiye (Israel)	Q2890836	furas		matched	furas		furas	Asfia - per Y. Furas	2026-10-18
 Kfar Hassidim	Kfar Hassidim	8	830	Kefar Hasidim (Israel)	Q135425	kima-dump	Q135425	matched	C_review		agent		2026-08-06
+Rummaneh	Rummaneh	8	75571	Rummaneh (West Bank)	Q7379315	human		matched	furas		agent	Rummana by Umm al-Fahm: 'Rummaneh - Jenin S/D'	2026-10-18
+Sabbarine	Sabbarine	8			Q7395979	furas		matched	variant-skeleton		variant	spelling of 'Sabbarin' (skeleton: same consonant skeleton as 'Sabbarin')	2026-10-19
+Saffourieh	Saffourieh	8	85997	Saffuriya (Israel)	Q18192054	furas		matched	variant-skeleton		variant	spelling of 'Saffuria' (skeleton: same consonant skeleton as 'Saffuria')	2026-10-19
+Sindianeh	Sindianeh	8			Q4703260	furas		matched	variant-skeleton		variant	spelling of 'Sindiani' (skeleton: same consonant skeleton as 'Sindiani')	2026-10-19
 Stanton Street	Stanton Street	8	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Station Street: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Tantourah	Tantourah	8	21005	Tantura (Israel)	Q2100836	furas		matched	furas		furas	Tanturah - per Y. Furas	2026-10-18
+Amka	Amka	7	23142	Amka (Israel)	Q2914984	human		matched	furas		agent	Amqa (Acre)	2026-10-18
 Kineret	Kineret	7						unmatched-ambiguous	C_review		human		2026-08-06
 Lajjoun	Lajjoun	7	16127	Lajjūn (Jordan)	Q3775368	furas		matched	furas		furas	Lajoun - per Y. Furas	2026-10-18
 Nahariya	Nahariya	7	39	Nahariyya (Israel)	Q167749	kima-dump	Q167749	matched	A_autolink	0.95	auto		2026-08-06
@@ -86,8 +110,12 @@ Neveh Shaanan	Neveh Shaanan	7	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-
 Sabbarin	Sabbarin	7			Q7395979	furas		matched	furas		furas	Subbarin - per Y. Furas	2026-10-18
 Um el Fahem	Um el Fahem	7	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
 Wadi Rushmia	Wadi Rushmia	7	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Wadi Rushmia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Ya'abad	Ya'abad	7	75339	Ya'bad (West Bank)	Q1828708	human		matched	furas		agent	Ya'bad	2026-10-18
+Balad el Sheikh|Balad al-Sheikh	Balad el Sheikh|Balad al-Sheikh	6	21670	Balad al-Shaykh (Israel)	Q2776471	human		matched	variant-alternation		variant	spelling of 'Balad al-Sheikh' (alternation: all readings resolve to one place)	2026-10-19
 Benjamina	Benjamina	6	21551	Binyamina (Israel)	Q863886	kima-dump		matched	C_review		agent		2026-08-06
 Churches Quarter	Churches Quarter	6	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Churches Qrt: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Damascus	Damascus	6	939	Damascus (Syria)	Q3766	human		matched	furas		agent	Damascus	2026-10-18
+Eggem	Eggem	6			Q2918334	human		matched	furas		agent	Ijzim, south of Haifa ('Eggem - Haifa'); g for j	2026-10-18
 Emek	Emek	6						unmatched-ambiguous	C_review		human	region nickname without clean referent	2026-08-06
 Haifa|Hadar Hacarmel	Haifa|Hadar Hacarmel	6	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	Q41621	matched	C_review		human	pipe policy: prefer the finer reading	2026-08-06
 Kabatich	Kabatich	6	73993	Kabatiya (West Bank)	Q1899332	furas		matched	furas		furas	Kabatieh - per Y. Furas	2026-10-18
@@ -96,39 +124,60 @@ Kfar Atta	Kfar Atta	6	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_revie
 Kinereth	Kinereth	6						unmatched-ambiguous	C_review		human		2026-08-06
 Kinneret	Kinneret	6					Q5533392	unmatched-ambiguous	C_review		human	Kevutsa vs Moshava undecidable	2026-08-06
 Kiryat Haroshet	Kiryat Haroshet	6	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump	Q139304838	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q1743479 vs direct Wikidata Q139304838	2026-08-06
+Mazra'a	Mazra'a	6	26615	Mazra'a (Israel)	Q2890424	human		matched	furas		agent	al-Mazra'a by Acre: 'Mazra'a, Acre S/Dist.'	2026-10-18
 Netanya	Netanya	6	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	C_review		agent		2026-08-06
+Reineh	Reineh	6	26609	Raina (Israel)	Q2655682	human		matched	furas		agent	al-Reina by Nazareth	2026-10-18
 Rosh Pina	Rosh Pina	6	14873	Rosh Pina (Israel)	Q525649	kima-dump	Q525649	matched	A_autolink	0.95	auto		2026-08-06
+Sasa	Sasa	6	27	Sasa (Israel)	Q12468030	human		matched	furas		agent	Sa'sa', the Mandate village (Kima's entry is the kibbutz on its land)	2026-10-18
 Waldheim	Waldheim	6					Q1917497	unmatched-no-kima-entry	A_autolink		agent	Galilee Templer colony; Kima has only the Saxony Waldheim	2026-08-06
 Akka	Akka	5	71	Acre (Israel)	Q126084	kima-dump	Q126084	matched	C_review		agent	Arabic naming tradition of Acre; value kept distinct	2026-08-06
 Bassa	Bassa	5	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa, western Galilee; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
+Beit She'an	Beit She'an	5	613	Bet She'an (Israel)	Q152368	human		matched	furas		agent	Beisan	2026-10-18
+Bineh	Bineh	5	21303	Bi'ina (Israel)	Q2890909	human		matched	furas		agent	al-Bi'na: 'Bineh - Acre District'	2026-10-18
 HAIFA	HAIFA	5	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Haifa - per Y. Furas	2026-10-18
+Halissa	Halissa	5	83220	al-Khalisa (Haifa, Israel)	Q7212307	human		matched	variant-skeleton		variant	spelling of 'Halisa' (skeleton: same consonant skeleton as 'Halisa')	2026-10-19
 Hartel Kanayis	Hartel Kanayis	5	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Hartel Kanayis: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Iggim	Iggim	5			Q2918334	human		matched	furas		agent	Ijzim, south of Haifa; g for j	2026-10-18
+Kafr Qari'	Kafr Qari'	5	20116	Kafr Kara (Israel)	Q1721086	human		matched	furas		agent	Kafr Qara	2026-10-18
 Kfar Tabor	Kfar Tabor	5	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	Q1186956	matched	A_autolink	0.95	auto		2026-08-06
 Kibutz	Kibutz	5	791	Haifa (Israel)	Q41621	furas	Q586687	matched	C_review		furas	Kibutz: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Kufr Kanna	Kufr Kanna	5	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	variant-skeleton		variant	spelling of 'Kefr Kanna' (skeleton: same consonant skeleton as 'Kefr Kanna')	2026-10-19
 Mishmar HaEmek	Mishmar HaEmek	5	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Mount Carmel	Mount Carmel	5						unmatched-ambiguous	A_autolink		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
 Nathania	Nathania	5	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	C_review		agent		2026-08-06
 Nathanya	Nathanya	5	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	A_autolink	0.95	auto		2026-08-06
+Saffurieh	Saffurieh	5	85997	Saffuriya (Israel)	Q18192054	furas		matched	variant-skeleton		variant	spelling of 'Saffuria' (skeleton: same consonant skeleton as 'Saffuria')	2026-10-19
 Sha'b	Sha'b	5	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
+Shweikeh	Shweikeh	5	73073	Shuwaykah (Tulkarem, West Bank)		human		matched	furas		agent	Shuweika (Tulkarm): 'Shweikeh-Tulkarem S/D' (NB24 p99)	2026-10-18
+Souk Shwam	Souk Shwam	5	791	Haifa (Israel)	Q41621	human		matched	furas		agent	Suq al-Shawam, a Haifa market street; drawn at Haifa	2026-10-18
 Suhmata	Suhmata	5	21806	Suhmata (Israel)	Q2777621	furas		matched	furas		furas	Suhmata - per Y. Furas	2026-10-18
 Tire	Tire	5	756	Tirat Karmel (Israel)	Q4118776	human	Q630533	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Yabad	Yabad	5	75339	Ya'bad (West Bank)	Q1828708	furas		matched	variant-skeleton		variant	spelling of 'Yabed' (skeleton: same consonant skeleton as 'Yabed')	2026-10-19
 Zammarin	Zammarin	5	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Zikhron Yacov	Zikhron Yacov	5	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+Ajloun	Ajloun	4	16141	ʻAjlūn (Jordan)	Q1141858	human		matched	furas		agent	Ajlun	2026-10-18
 Arah	Arah	4			Q2859313	furas		matched	furas		furas	Arah - per Y. Furas	2026-10-18
 Ard el Yahud	Ard el Yahud	4			Q12404212	furas		matched	furas		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
+Baka	Baka	4			Q2916599	human		matched	furas		agent	Baqa al-Gharbiyya: 'Baka Village, Tul-Karm S/D'	2026-10-18
 Balad al-Sheikh / Haifa	Balad al-Sheikh / Haifa	4	21670	Balad al-Shaykh (Israel)	Q2776471	furas		matched	furas		furas	Balad el-Sheikh - per Y. Furas	2026-10-18
 Beirut	Beirut	4	651	Beirut (Lebanon)	Q3820	furas		matched	furas		furas	Beirut - per Y. Furas	2026-10-18
+Cairo	Cairo	4			Q85	human		matched	furas		agent	Cairo	2026-10-18
 Degania	Degania	4	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Deir el Asad	Deir el Asad	4	6077	Dair el Asad (Israel)	Q612599	furas		matched	furas		furas	Deir al-Asad - per Y. Furas	2026-10-18
 Fassouta	Fassouta	4	21519	Fassuta (Israel)	Q2917294	furas		matched	furas		furas	Fassouta - per Y. Furas	2026-10-18
 Gan Shmuel	Gan Shmuel	4	904	Gan Shemu'el (Israel)	Q166857	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Gedera	Gedera	4	858	Hadera (Israel)	Q471886	human	Q921505	matched	C_review		human	"Hadera - ""Gedera"" is an HTR misreading of Hedera (user ruling 2026-10-18)"	2026-10-18
 Had. Hac	Had. Hac	4	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
+Haifa|Haifa Nazareth St	Haifa|Haifa Nazareth St	4	791	Haifa (Israel)	Q41621	human		matched	furas		agent	Haifa; Nazareth St. is the Haifa street	2026-10-18
 Is	Is	4					Q189	unmatched-junk	C_review		agent		2026-08-06
+Kababir	Kababir	4	22655	Kababir (Haifa, Israel)	Q2897547	human		matched	furas		agent	Kababir, Haifa	2026-10-18
+Kabatia	Kabatia	4	73993	Kabatiya (West Bank)	Q1899332	human		matched	furas		agent	Qabatiya	2026-10-18
 Kafr Lam	Kafr Lam	4			Q6346183	furas		matched	furas		furas	Kafr Lam - per Y. Furas	2026-10-18
 Kakun	Kakun	4	19717	Qāqūn	Q2919625	furas		matched	furas		furas	Kakoun - per Y. Furas	2026-10-18
 Kannir	Kannir	4			Q7266495	furas		matched	furas		furas	Qannir - per Y. Furas	2026-10-18
+Kisaria	Kisaria	4	6936	Caesarea (Israel)	Q1615560	human		matched	furas		agent	Qisarya (Caesarea)	2026-10-18
 Kishon	Kishon	4						unmatched-no-kima-entry	C_review		human	Kishon harbour area; river entity rejected	2026-08-06
+Kwikat	Kwikat	4	21333	Kuwaykat (Israel)	Q3545099	human		matched	furas		agent	Kuwaykat (Acre)	2026-10-18
 Migdal	Migdal	4	6904	Migdal (Israel)	Q2916182	kima-dump	Q2916182	matched	C_review		agent	Galilee Migdal (catchment), not Ashkelon's	2026-08-06
 Mt. Carmel	Mt. Carmel	4	791	Haifa (Israel)	Q41621	furas	Q12894637	matched	C_review		furas	Mt Carmel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Naharia	Naharia	4	39	Nahariyya (Israel)	Q167749	kima-dump	Q167749	matched	C_review		agent		2026-08-06
@@ -136,51 +185,107 @@ Rihanieh	Rihanieh	4			Q2152846	furas		matched	furas		furas	Rihanieh - per Y. Fur
 Rishon LeZion	Rishon LeZion	4	493	Rishon Letsiyon (Israel)	Q201051	kima-dump	Q201051	matched	A_autolink	0.95	auto		2026-08-06
 Sdedera	Sdedera	4	858	Hadera (Israel)	Q471886	kima-dump		matched	C_review		human	user ruling: garbled Hadera	2026-08-06
 Shfaram	Shfaram	4	261	Shefar'am (Israel)	Q990657	furas		matched	furas		furas	Shefa Amr - per Y. Furas	2026-10-18
+Sileh el Hartieh	Sileh el Hartieh	4	71896	Silat al Harithiya (West Bank)	Q2898808	human		matched	furas		agent	Silat al-Harithiya	2026-10-18
+Silet el Hartieh	Silet el Hartieh	4	71896	Silat al Harithiya (West Bank)	Q2898808	human		matched	furas		agent	Silat al-Harithiya	2026-10-18
 Sindiani	Sindiani	4			Q4703260	furas		matched	furas		furas	Sindiyana - per Y. Furas	2026-10-18
 Tabor Street	Tabor Street	4						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Transj	Transj	4	17467	Salṭ (Jordan)	Q867586	human		matched	furas		agent	Transjordan, placed at Salt as Furas places it	2026-10-18
 Wadi Salib (Haifa)	Wadi Salib (Haifa)	4	19522	Wadi Salib (Haifa, Israel)	Q2910153	furas		matched	furas		furas	Wadi Salib, Haifa - per Y. Furas	2026-10-18
 Wadi el Hawareth	Wadi el Hawareth	4			Q13358574	furas		matched	C_review		furas	Wadi el Hawareth - per Y. Furas	2026-10-18
+Acre District	Acre District	3	71	Acre (Israel)	Q126084	kima-dump		matched	variant-exact		variant	spelling of 'Acre' (exact)	2026-10-19
+Acre S/Dist	Acre S/Dist	3	71	Acre (Israel)	Q126084	kima-dump		matched	variant-exact		variant	spelling of 'Acre' (exact)	2026-10-19
+Afula|Affuleh	Afula|Affuleh	3	18417	Afula (Israel)	Q152462	human		matched	furas		agent	Afula	2026-10-18
 Ain Hod	Ain Hod	3	18441	En Hod (Israel)	Q991378	furas		matched	furas		furas	Ain Hod - per Y. Furas	2026-10-18
+Akre	Akre	3	71	Acre (Israel)	Q126084	kima-dump		matched	variant-skeleton		variant	spelling of 'Acre' (skeleton: same consonant skeleton as 'Acre')	2026-10-19
 Athlit|Atlit	Athlit|Atlit	3	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Attil	Attil	3	70902	Attil (West Bank)	Q246431	human		matched	furas		agent	Attil (Tulkarm)	2026-10-18
+Bala'	Bala'	3	74068	Bal'a (West Bank)	Q4849622	human		matched	furas		agent	Bal'a (Tulkarm)	2026-10-18
+Balad el Sheikh|Balad al-Shaykh	Balad el Sheikh|Balad al-Shaykh	3	21670	Balad al-Shaykh (Israel)	Q2776471	human		matched	variant-alternation		variant	spelling of 'Balad al-Sheikh' (alternation: all readings resolve to one place)	2026-10-19
+Baqa al-Gharbiyye	Baqa al-Gharbiyye	3			Q2916599	human		matched	furas		agent	Baqa al-Gharbiyya	2026-10-18
 Bassah	Bassah	3	21539	Bassah (Israel)	Q2915875	furas		matched	furas		furas	Bassa - per Y. Furas	2026-10-18
+Beersheba	Beersheba	3	699	Beersheba (Israel)	Q41843	human		matched	furas		agent	Beersheba	2026-10-18
+Beit Dajan	Beit Dajan	3			Q12200452	human		matched	furas		agent	Beit Dajan of Nablus: 'Beit Dajan, Nablus S/Dist.'	2026-10-18
 Beit Galim	Beit Galim	3	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	Bat Galim	2026-08-06
 Beit Gan	Beit Gan	3						unmatched-no-kima-entry	C_review		human	Beit Gan by Yavne'el; no Kima entry	2026-08-06
+Berkin	Berkin	3	87581	Birkin (West Bank)	Q286871	human		matched	furas		agent	Burqin (Jenin)	2026-10-18
+Beyrouth	Beyrouth	3	651	Beirut (Lebanon)	Q3820	human		matched	furas		agent	Beirut	2026-10-18
+Birkin	Birkin	3	87581	Birkin (West Bank)	Q286871	human		matched	furas		agent	Burqin (Jenin)	2026-10-18
 Breikeh	Breikeh	3			Q2897020	furas		matched	furas		furas	Breikeh - per Y. Furas	2026-10-18
+Burka	Burka	3			Q5000295	human		matched	furas		agent	Burqa of Nablus: 'Burka Nablus S/D.'	2026-10-18
+Caesaria	Caesaria	3	6936	Caesarea (Israel)	Q1615560	human		matched	furas		agent	Qisarya (Caesarea)	2026-10-18
+Daliyat al-Karmel	Daliyat al-Karmel	3	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
+Damoun|Damun	Damoun|Damun	3			Q1186264	furas		matched	variant-alternation		variant	spelling of 'Damoun' (alternation: all readings resolve to one place)	2026-10-19
 Deir al-Asad	Deir al-Asad	3	6077	Dair el Asad (Israel)	Q612599	furas		matched	furas		furas	Deir al-Asad - per Y. Furas	2026-10-18
 Faradieh	Faradieh	3			Q5436211	furas		matched	furas		furas	Farradiyya - per Y. Furas	2026-10-18
 Freidis	Freidis	3	84891	Furaidis (Israel)	Q1011538	furas		matched	furas		furas	Fureidis - per Y. Furas	2026-10-18
 Had. Hac.|Hadar Hacarmel	Had. Hac.|Hadar Hacarmel	3	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
+Haifa|German Colony Haifa	Haifa|German Colony Haifa	3	21139	German Colony (Haifa, Israel)	Q2413425	human		matched	furas		agent	the German Colony of Haifa: the finer reading	2026-10-18
 Hartel Kashleh	Hartel Kashleh	3	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Harat al-Kishleh: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Hedera|Hadera	Hedera|Hadera	3	858	Hadera (Israel)	Q471886	kima-dump	Q471886	matched	A_autolink	0.95	auto		2026-08-06
 Ibellin	Ibellin	3	21569	I'bilin (Israel)	Q2915647	furas		matched	furas		furas	Ibillin - per Y. Furas	2026-10-18
+Jaffa|P. & P. Jaffa	Jaffa|P. & P. Jaffa	3	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump		matched	variant-alternation		variant	spelling of 'Jaffa' (alternation: all readings resolve to one place)	2026-10-19
 Jenin	Jenin	3	79775	Jenin (West Bank)	Q374748	kima-dump	Q374748	matched	C_review		agent		2026-08-06
+Jenin S/D	Jenin S/D	3	79775	Jenin (West Bank)	Q374748	kima-dump		matched	variant-exact		variant	spelling of 'Jenin' (exact)	2026-10-19
+Jenin|C.M.F. Jenin	Jenin|C.M.F. Jenin	3	79775	Jenin (West Bank)	Q374748	kima-dump		matched	variant-alternation		variant	spelling of 'Jenin' (alternation: all readings resolve to one place)	2026-10-19
+Jezzin	Jezzin	3	26946	Jezzine (Lebanon)	Q25910	human		matched	furas		agent	Jezzine	2026-10-18
+Kabul	Kabul	3	21578	Kabul (Israel)	Q1018884	furas		matched	variant-skeleton		variant	spelling of 'Kaboul' (skeleton: same consonant skeleton as 'Kaboul')	2026-10-19
+Kafr Manda	Kafr Manda	3	21581	Kafr Manda (Israel)	Q2915534	human		matched	furas		agent	Kafr Manda	2026-10-18
+Kafr Rai	Kafr Rai	3	88748	Kafr Ra'i (West Bank)	Q2898490	human		matched	furas		agent	Kafr Ra'i	2026-10-18
 Kakoun	Kakoun	3	19717	Qāqūn	Q2919625	furas		matched	furas		furas	Kakoun - per Y. Furas	2026-10-18
 Kefutz Mizra	Kefutz Mizra	3	224	Mizra (Israel)	Q2889536	kima-dump		matched	C_review		agent	kibbutz Mizra	2026-08-06
 Kfar Hasidim	Kfar Hasidim	3	830	Kefar Hasidim (Israel)	Q135425	kima-dump	Q135425	matched	C_review		agent		2026-08-06
 Kfar Kharoshet	Kfar Kharoshet	3	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		human	same place as Kiryat Kharoshet; the earlier reading kept them distinct, overruled 2026-08-28	2026-08-28
+Khalsa	Khalsa	3	485	Kiryat Shemona (Israel)	Q327413	kima-dump		matched	variant-skeleton		variant	spelling of 'Khalisa' (skeleton: same consonant skeleton as 'Khalisa')	2026-10-19
 Kibutz Affikim|Affikim	Kibutz Affikim|Affikim	3	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Kirjat Hayim	Kirjat Hayim	3	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		agent		2026-08-06
 Kiryat Kharoshet	Kiryat Kharoshet	3	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		agent		2026-08-06
 Kiryat Naim	Kiryat Naim	3	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		human	read as Kiryat Haim (H/N misreading)	2026-08-06
+Kisra	Kisra	3	69497	Kisra (Israel)	Q2890184	human		matched	furas		agent	Kisra (Galilee)	2026-10-18
+Kufr Manda	Kufr Manda	3	21581	Kafr Manda (Israel)	Q2915534	human		matched	furas		agent	Kafr Manda	2026-10-18
+Kufr Qari'	Kufr Qari'	3	20116	Kafr Kara (Israel)	Q1721086	human		matched	furas		agent	Kafr Qara	2026-10-18
+Kweikat	Kweikat	3	21333	Kuwaykat (Israel)	Q3545099	human		matched	furas		agent	Kuwaykat (Acre)	2026-10-18
 Lajoun	Lajoun	3	16127	Lajjūn (Jordan)	Q3775368	furas		matched	furas		furas	Lajoun - per Y. Furas	2026-10-18
+London	London	3			Q84	human		matched	furas		agent	London	2026-10-18
+Lubieh	Lubieh	3	19876	Lubiyā (Israel)		human		matched	furas		agent	Lubya	2026-10-18
+Ludd	Ludd	3	178	Lod (Israel)	Q207540	human		matched	furas		agent	Lydda	2026-10-18
+Mansi	Mansi	3			Q2368058	furas		matched	variant-skeleton		variant	spelling of 'Minsi' (skeleton: same consonant skeleton as 'Minsi')	2026-10-19
 Meshek Yagur	Meshek Yagur	3	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent		2026-08-06
 Mitzpa	Mitzpa	3	21700	Mitspa (Israel)	Q2776808	kima-dump	Q2776808	matched	C_review		agent	Mitzpa near Tiberias	2026-08-06
+Nadel Yahud	Nadel Yahud	3			Q12404212	human		matched	furas		agent	Ard el-Yahud: Nadel/Abdel/Hadel are scan-verified garbles of Ardel (2026-08-06)	2026-10-18
 Nahef	Nahef	3	26311	Naḥaf (Israel)	Q2390257	furas		matched	furas		furas	Nahef - per Y. Furas	2026-10-18
 Nahf	Nahf	3	26311	Naḥaf (Israel)	Q2390257	furas		matched	furas		furas	Nahef - per Y. Furas	2026-10-18
+Nahr	Nahr	3			Q4703015	human		matched	furas		agent	al-Nahr: 'El Nahr. Acre Sub Dist.'	2026-10-18
+Naqoura	Naqoura	3			Q748504	human		matched	furas		agent	Naqura, as Furas reads it	2026-10-18
+Nazareth|Dept. of Police, Nazareth	Nazareth|Dept. of Police, Nazareth	3	18	Nazareth (Israel)	Q430776	human		matched	furas		agent	Nazareth	2026-10-18
+Nazareth|P & P Nazareth	Nazareth|P & P Nazareth	3	18	Nazareth (Israel)	Q430776	human		matched	furas		agent	Nazareth	2026-10-18
+Ramtha	Ramtha	3	69636	Ramthā (Jordan)	Q31594	human		matched	furas		agent	al-Ramtha	2026-10-18
+Rihaniya	Rihaniya	3	23436	Raihaniyya (Israel)	Q2916856	human		matched	furas		agent	Rihaniyya in the Safad sub-district: 'Rihanieh. Safad s/o'	2026-10-18
 Roshpina	Roshpina	3	14873	Rosh Pina (Israel)	Q525649	furas		matched	furas		furas	Rosh Pina - per Y. Furas	2026-10-18
 Saffuriya	Saffuriya	3	85997	Saffuriya (Israel)	Q18192054	furas		matched	furas		furas	Saffurieh - per Y. Furas	2026-10-18
 Saffuriyya	Saffuriyya	3	85997	Saffuriya (Israel)	Q18192054	furas		matched	furas		furas	Saffurieh - per Y. Furas	2026-10-18
+Safsaf	Safsaf	3			Q1657002	human		matched	furas		agent	Safsaf (Safad)	2026-10-18
+Salameh	Salameh	3			Q7403531	human		matched	furas		agent	Salama by Jaffa: 'c/o B/C. Jaffa. Salameh'	2026-10-18
 Samakh	Samakh	3	16228	Tsemah (Israel)	Q2908710	kima-dump	Q2908710	matched	A_autolink	0.95	auto		2026-08-06
 Shafa	Shafa	3	261	Shefar'am (Israel)	Q990657	furas		matched	furas		furas	Shefa Amr - per Y. Furas	2026-10-18
+Shuweika	Shuweika	3	73073	Shuwaykah (Tulkarem, West Bank)		human		matched	furas		agent	Shuweika (Tulkarm)	2026-10-18
+T. Jordan	T. Jordan	3	17467	Salṭ (Jordan)	Q867586	human		matched	furas		agent	Transjordan, placed at Salt as Furas places it	2026-10-18
 Tamrah	Tamrah	3	20270	Tamra (Israel)	Q168176	furas		matched	furas		furas	Tamra - per Y. Furas	2026-10-18
+Tantoura|Tantura	Tantoura|Tantura	3	21005	Tantura (Israel)	Q2100836	kima-dump		matched	variant-alternation		variant	spelling of 'Tantoura' (alternation: all readings resolve to one place)	2026-10-19
+Tarbikha	Tarbikha	3			Q2777821	human		matched	furas		agent	Tarbikha	2026-10-18
 Tel Yosef	Tel Yosef	3	186	Tel-Yosef (Israel)	Q2917286	kima-dump	Q2917286	matched	A_autolink	0.95	auto		2026-08-06
+Tiberias|Dept of Police, Tiberias	Tiberias|Dept of Police, Tiberias	3	807	Tiberias (Israel)	Q151920	kima-dump		matched	variant-alternation		variant	spelling of 'Tiberias' (alternation: all readings resolve to one place)	2026-10-19
 Tirat Carmel	Tirat Carmel	3	756	Tirat Karmel (Israel)	Q4118776	human	Q168215	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
 Tiri	Tiri	3	756	Tirat Karmel (Israel)	Q4118776	furas		matched	furas		furas	Tireh - per Y. Furas	2026-10-18
+Tulkarm|Tul-Karm	Tulkarm|Tul-Karm	3	73472	Tulkarem (West Bank)	Q985531	kima-dump		matched	variant-alternation		variant	spelling of 'Tulkarem' (alternation: all readings resolve to one place)	2026-10-19
 Um El Fahim	Um El Fahim	3	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
+Umm az-Zinat	Umm az-Zinat	3			Q2255513	furas		matched	variant-skeleton		variant	spelling of 'Um El Zeinat' (skeleton: same consonant skeleton as 'Um El Zeinat')	2026-10-19
 Wadi Nisnas (Haifa)	Wadi Nisnas (Haifa)	3	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	furas		matched	furas		furas	Wadi Nisnas, Haifa - per Y. Furas	2026-10-18
 Wadi Rushmiya	Wadi Rushmiya	3	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Wadi Rushmia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Yanouh	Yanouh	3	18370	Yanoah (Israel)	Q2890238	human		matched	variant-skeleton		variant	spelling of 'Yanuh' (skeleton: same consonant skeleton as 'Yanuh')	2026-10-19
 Yanuh	Yanuh	3	18370	Yanoah (Israel)	Q2890238	human		matched	A_autolink		human	no Wikidata entity of its own; point is Yanuh-Jat, the council that now includes the village; Kima carries no coordinate	2026-08-28
 Yavne'el	Yavne'el	3	18477	Yavne'el (Israel)	Q1676894	kima-dump	Q1676894	matched	A_autolink	0.95	auto		2026-08-06
+Zababdeh	Zababdeh	3	77797	al-Zababida (West Bank)	Q136690	human		matched	furas		agent	al-Zababida	2026-10-18
+Zib	Zib	3			Q4831969	human		matched	furas		agent	al-Zib: 'El Zib, Acre S/Dist'	2026-10-18
 [ambiguous_city]	[ambiguous_city]	3						unmatched-junk	C_review		agent	pipeline marker	2026-08-06
 Affikin	Affikin	2	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Allenby	Allenby	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Allenby St: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
@@ -193,8 +298,10 @@ Athlit|Athlit Camp	Athlit|Athlit Camp	2	16036	Atlit (Israel)	Q757398	kima-dump		
 Athlit|Athlit Police station	Athlit|Athlit Police station	2	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Balad el Sheik	Balad el Sheik	2	21670	Balad al-Shaykh (Israel)	Q2776471	furas		matched	furas		furas	Balad el-Sheikh - per Y. Furas	2026-10-18
 Balfuria	Balfuria	2	20640	Balfuriyya (Israel)	Q2479614	kima-dump		matched	C_review		agent		2026-08-06
+Bassa N=1|Bassa	Bassa N=1|Bassa	2	21539	Bassah (Israel)	Q2915875	human		matched	variant-alternation		variant	spelling of 'Bassa' (alternation: all readings resolve to one place)	2026-10-19
 Bat Shlomo	Bat Shlomo	2	587	Bat Shelomo (Israel)	Q2889218	kima-dump	Q2889218	matched	C_review		agent		2026-08-06
 Beisan	Beisan	2	613	Bet She'an (Israel)	Q152368	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Beisan|Beisan P.P	Beisan|Beisan P.P	2	613	Bet She'an (Israel)	Q152368	kima-dump		matched	variant-alternation		variant	spelling of 'Beisan' (alternation: all readings resolve to one place)	2026-10-19
 Benyamina|Binyamina	Benyamina|Binyamina	2	21551	Binyamina (Israel)	Q863886	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Bethlehem	Bethlehem	2					Q5776	unmatched-ambiguous	C_review		agent	likely Bethlehem of Galilee (absent from Kima)	2026-08-06
 Carmel	Carmel	2						unmatched-ambiguous	A_autolink		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
@@ -202,7 +309,9 @@ Carmel Avenue	Carmel Avenue	2	791	Haifa (Israel)	Q41621	furas		matched	furas		fu
 Dalieh el Carmel	Dalieh el Carmel	2	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	furas		furas	Daliet el Carmel - per Y. Furas	2026-10-18
 Degania B	Degania B	2	893	Deganya Bet (Israel)	Q1022506	kima-dump		matched	C_review		agent	explicit Bet	2026-08-06
 Der Hanna	Der Hanna	2	21739	Dair Hanna (Israel)	Q612483	furas		matched	furas		furas	Deir Hanna - per Y. Furas	2026-10-18
+Ein Gazal	Ein Gazal	2	21329	Ein Ghazal (Israel)	Q2918965	furas		matched	variant-skeleton		variant	spelling of 'Ein Ghazal' (skeleton: same consonant skeleton as 'Ein Ghazal')	2026-10-19
 Ekron	Ekron	2	21515	Ekron (Israel)	Q1914736	wikidata-reconciled	Q1914736	matched	C_review		agent	modern Ekron village	2026-08-06
+Esfia	Esfia	2	26671	Usafiye (Israel)	Q2890836	furas		matched	variant-skeleton		variant	spelling of 'Isfia' (skeleton: same consonant skeleton as 'Isfia')	2026-10-19
 Fureidis	Fureidis	2	84891	Furaidis (Israel)	Q1011538	furas		matched	furas		furas	Fureidis - per Y. Furas	2026-10-18
 German Colony	German Colony	2	21139	German Colony (Haifa, Israel)	Q2413425	wikidata-reconciled	Q2413425	matched	C_review		agent	Haifa's German Colony (catchment)	2026-08-06
 Ghedera	Ghedera	2	858	Hadera (Israel)	Q471886	human		matched	C_review		human	Hadera - HTR misreading of Hedera (user ruling 2026-10-18); closes the Hadera-vs-Gedera hold	2026-10-18
@@ -219,7 +328,11 @@ Hartel Muballatta	Hartel Muballatta	2	71	Acre (Israel)	Q126084	furas		matched	fu
 Hartel Yahoud	Hartel Yahoud	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa	2026-10-18
 Herzl Street	Herzl Street	2						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Huleh	Huleh	2					Q5866252	unmatched-ambiguous	A_autolink		human	held for human review: Hula Valley region entity; suggested #3327	2026-08-06
+Im El Fahem|Umm al-Fahm	Im El Fahem|Umm al-Fahm	2	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-alternation		variant	spelling of 'Umm el Fahem' (alternation: all readings resolve to one place)	2026-10-19
+Im El Zinat	Im El Zinat	2			Q2255513	furas		matched	variant-skeleton		variant	spelling of 'Um El Zeinat' (skeleton: same consonant skeleton as 'Um El Zeinat')	2026-10-19
+Isifiya	Isifiya	2	26671	Usafiye (Israel)	Q2890836	furas		matched	variant-skeleton		variant	spelling of 'Isfia' (skeleton: same consonant skeleton as 'Isfia')	2026-10-19
 Jaffa|Co. C.I.D. Jaffa	Jaffa|Co. C.I.D. Jaffa	2	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	Q180294	matched	A_autolink	0.95	auto		2026-08-06
+Jenin|Jenin G	Jenin|Jenin G	2	79775	Jenin (West Bank)	Q374748	kima-dump		matched	variant-alternation		variant	spelling of 'Jenin' (alternation: all readings resolve to one place)	2026-10-19
 Kabatyeh	Kabatyeh	2	73993	Kabatiya (West Bank)	Q1899332	furas		matched	furas		furas	Kabatieh - per Y. Furas	2026-10-18
 Kaboul	Kaboul	2	21578	Kabul (Israel)	Q1018884	furas		matched	furas		furas	Kabul - per Y. Furas	2026-10-18
 Kfar Tavor	Kfar Tavor	2	1666	Kefar Tavor (Israel)	Q1186956	kima-dump	Q1186956	matched	A_autolink	0.95	auto		2026-08-06
@@ -229,7 +342,9 @@ Kibbutz Hashomer	Kibbutz Hashomer	2						unmatched-ambiguous	C_review		agent		20
 Kibutz Affiking|Kibutz Affikim	Kibutz Affiking|Kibutz Affikim	2	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Kineret|Kinneret	Kineret|Kinneret	2						unmatched-ambiguous	C_review		human		2026-08-06
 Kiryat Gesher	Kiryat Gesher	2						unmatched-ambiguous	C_review		agent		2026-08-06
+Kufr Kani	Kufr Kani	2	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	variant-skeleton		variant	spelling of 'Kefr Kanna' (skeleton: same consonant skeleton as 'Kefr Kanna')	2026-10-19
 Kurdaneh	Kurdaneh	2						unmatched-no-kima-entry	C_review		agent	Kurdani, by the Na'aman springs	2026-08-06
+Maghar Village	Maghar Village	2	21974	Mughar (Israel)	Q930847	furas		matched	variant-skeleton		variant	spelling of 'Mughar' (skeleton: same consonant skeleton as 'Mughar')	2026-10-19
 Majd el Krum	Majd el Krum	2	19615	Majd al-Kurum (Israel)	Q2777868	furas		matched	furas		furas	Majd al-Krum - per Y. Furas	2026-10-18
 Mishmar Haemek	Mishmar Haemek	2	214	Mishmar Ha'emek (Israel)	Q1938721	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Mt Carmel	Mt Carmel	2	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Mt Carmel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
@@ -240,14 +355,19 @@ Neve Shaanan	Neve Shaanan	2	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-du
 Nur El Shams|Nur Shams	Nur El Shams|Nur Shams	2	76253	Nur Shams Camp (West Bank)	Q7069998	kima-dump		matched	C_review		agent	Nur Shams detention camp	2026-08-06
 P. & P. Zichron Yacob	P. & P. Zichron Yacob	2	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Ras En Naqura	Ras En Naqura	2			Q748504	furas		matched	furas		furas	Naqura - per Y. Furas	2026-10-18
+Ras al-Naqoura	Ras al-Naqoura	2			Q748504	furas		matched	variant-skeleton		variant	spelling of 'Ras En Naqura' (skeleton: same consonant skeleton as 'Ras En Naqura')	2026-10-19
 Rehovot	Rehovot	2	562	Rehovot (Israel)	Q207350	kima-dump	Q207350	matched	C_review		agent		2026-08-06
+Rosh Pina|Rosh Pinna	Rosh Pina|Rosh Pinna	2	14873	Rosh Pina (Israel)	Q525649	furas		matched	variant-alternation		variant	spelling of 'Roshpina' (alternation: all readings resolve to one place)	2026-10-19
 Rosh Pinna	Rosh Pinna	2	14873	Rosh Pina (Israel)	Q525649	kima-dump	Q525649	matched	C_review		agent		2026-08-06
+Saffoury	Saffoury	2	85997	Saffuriya (Israel)	Q18192054	furas		matched	variant-skeleton		variant	spelling of 'Saffuria' (skeleton: same consonant skeleton as 'Saffuria')	2026-10-19
+Saffury	Saffury	2	85997	Saffuriya (Israel)	Q18192054	furas		matched	variant-skeleton		variant	spelling of 'Saffuria' (skeleton: same consonant skeleton as 'Saffuria')	2026-10-19
 Salfit	Salfit	2	82777	Salfīt (West Bank)	Q1972013	furas		matched	furas		furas	Salfit - per Y. Furas	2026-10-18
 Sdedead	Sdedead	2	858	Hadera (Israel)	Q471886	kima-dump		matched	C_review		human	user ruling: garbled Hadera	2026-08-06
 Sh.Khunat Oadim	Sh.Khunat Oadim	2	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Shkhunat Ovdim: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Shafa Amr	Shafa Amr	2	261	Shefar'am (Israel)	Q990657	kima-dump		matched	C_review		agent	Shefa-Amr	2026-08-06
 Shafr Amr	Shafr Amr	2	261	Shefar'am (Israel)	Q990657	furas		matched	furas		furas	Shefa Amr - per Y. Furas	2026-10-18
 Shaáb	Shaáb	2	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
+Sindyanah	Sindyanah	2			Q4703260	furas		matched	variant-skeleton		variant	spelling of 'Sindiani' (skeleton: same consonant skeleton as 'Sindiani')	2026-10-19
 Sulam	Sulam	2	86790	Sulam (Israel)	Q2777713	furas		matched	furas		furas	Sulam - per Y. Furas	2026-10-18
 Tantoura	Tantoura	2	21005	Tantura (Israel)	Q2100836	kima-dump		matched	C_review		agent	Tantura on the Carmel coast	2026-08-06
 Tireh (Acre Sub District)	Tireh (Acre Sub District)	2	756	Tirat Karmel (Israel)	Q4118776	human		matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
@@ -257,69 +377,110 @@ Um El Fahm	Um El Fahm	2	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		f
 Um el Zeinat	Um el Zeinat	2			Q2255513	furas		matched	furas		furas	Um el Zeinat - per Y. Furas	2026-10-18
 Umm el Fahm	Umm el Fahm	2	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
 Wadi Ara	Wadi Ara	2			Q7959216	furas		matched	furas		furas	Wadi arah - per Y. Furas	2026-10-18
+Wadi en Nisnas|Wadi Nisnas	Wadi en Nisnas|Wadi Nisnas	2	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled		matched	variant-alternation		variant	spelling of 'Wadi Nisnas' (alternation: all readings resolve to one place)	2026-10-19
 Yajouj	Yajouj	2	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent	garbled Yajour	2026-08-06
 Yajour|Yajur	Yajour|Yajur	2	771	Yagur (Israel)	Q586687	kima-dump		matched	C_review		agent		2026-08-06
 Yamoun / Jenin	Yamoun / Jenin	2	20986	Yamun	Q4703350	furas		matched	furas		furas	Yamun - per Y. Furas	2026-10-18
 Zichron Jacob|Zichron Yaakov	Zichron Jacob|Zichron Yaakov	2	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+Zichron Jacob|Zichron Yakov	Zichron Jacob|Zichron Yakov	2	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-alternation		variant	spelling of 'Zichron Jacob' (alternation: all readings resolve to one place)	2026-10-19
 'Arah	'Arah	1			Q2859313	furas		matched	furas		furas	Arah - per Y. Furas	2026-10-18
 002.2	002.2	1						unmatched-junk	C_review		agent		2026-08-06
+Aarabi	Aarabi	1	21307	Arraba (Israel)	Q2568887	furas		matched	variant-skeleton		variant	spelling of 'Arrabi' (skeleton: same consonant skeleton as 'Arrabi')	2026-10-19
+Abo Snan village	Abo Snan village	1	80956	Abu Sinan (Israel)	Q2572624	furas		matched	variant-skeleton		variant	spelling of 'Abu Snan' (skeleton: same consonant skeleton as 'Abu Snan')	2026-10-19
 Abu Khalil	Abu Khalil	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Abu Shousheh	Abu Shousheh	1						unmatched-ambiguous	C_review		agent	Kima's Abu Shusha is the Gezer one; the Mishmar Haemek village is absent	2026-08-06
+Acca (Acre)	Acca (Acre)	1	71	Acre (Israel)	Q126084	kima-dump		matched	variant-skeleton		variant	spelling of 'Akka' (skeleton: same consonant skeleton as 'Akka')	2026-10-19
+Acre (Acca)	Acre (Acca)	1	71	Acre (Israel)	Q126084	kima-dump		matched	variant-exact		variant	spelling of 'Acre' (exact)	2026-10-19
 Acre Gate	Acre Gate	1	71	Acre (Israel)	Q126084	furas		matched	furas		furas	Acre - per Y. Furas	2026-10-18
 Acre S/D	Acre S/D	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Acre|Acre S/Dist	Acre|Acre S/Dist	1	71	Acre (Israel)	Q126084	kima-dump		matched	variant-alternation		variant	spelling of 'Acre' (alternation: all readings resolve to one place)	2026-10-19
 Adel Yahud	Adel Yahud	1			Q12404212	human		matched	C_review		agent	Ard el-Yahud, Haifa - scan-verified variant (2026-08-06), QID per Y. Furas	2026-10-18
 Affula (Afula)	Affula (Afula)	1	18417	Afula (Israel)	Q152462	kima-dump		matched	C_review		agent		2026-08-06
 Affula|Affula Nugst	Affula|Affula Nugst	1	18417	Afula (Israel)	Q152462	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Affuleh|Afula	Affuleh|Afula	1	18417	Afula (Israel)	Q152462	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Afula|Affula	Afula|Affula	1	18417	Afula (Israel)	Q152462	kima-dump		matched	variant-alternation		variant	spelling of 'Afula' (alternation: all readings resolve to one place)	2026-10-19
 Afula|Affuleh Carea st	Afula|Affuleh Carea st	1	18417	Afula (Israel)	Q152462	kima-dump	Q152462	matched	A_autolink	0.95	auto		2026-08-06
 Afula|Afuleh	Afula|Afuleh	1	18417	Afula (Israel)	Q152462	kima-dump	Q152462	matched	A_autolink	0.95	auto		2026-08-06
 Ahava	Ahava	1						unmatched-ambiguous	C_review		agent	the Ahava children's home?	2026-08-06
+Akka (Acre)	Akka (Acre)	1	71	Acre (Israel)	Q126084	kima-dump		matched	variant-exact		variant	spelling of 'Akka' (exact)	2026-10-19
 Alliance Scool	Alliance Scool	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	alliance Scool: Haifa school per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Alya Street	Alya Street	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Amman|Amman Trans-Jordan	Amman|Amman Trans-Jordan	1	74	Amman (Jordan)	Q3805	furas		matched	variant-alternation		variant	spelling of 'Amman' (alternation: all readings resolve to one place)	2026-10-19
+Ara village|Ara	Ara village|Ara	1			Q2859313	furas		matched	variant-alternation		variant	spelling of 'Ara' (alternation: all readings resolve to one place)	2026-10-19
+Ara'arah	Ara'arah	1	20918	Ar'ara (Israel)	Q2915935	furas		matched	variant-exact		variant	spelling of 'Araarah' (exact)	2026-10-19
 Arab el Ramel	Arab el Ramel	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Arab el Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Araba	Araba	1	21307	Arraba (Israel)	Q2568887	furas		matched	furas		furas	Arabeh - per Y. Furas	2026-10-18
+Arabbi	Arabbi	1	21307	Arraba (Israel)	Q2568887	furas		matched	variant-skeleton		variant	spelling of 'Arrabi' (skeleton: same consonant skeleton as 'Arrabi')	2026-10-19
+Ard el Yahad	Ard el Yahad	1			Q12404212	furas		matched	variant-skeleton		variant	spelling of 'Ard el Yahud' (skeleton: same consonant skeleton as 'Ard el Yahud')	2026-10-19
+Ard el Yehud	Ard el Yehud	1			Q12404212	furas		matched	variant-skeleton		variant	spelling of 'Ard el Yahud' (skeleton: same consonant skeleton as 'Ard el Yahud')	2026-10-19
 Ardel Ramel	Ardel Ramel	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Ardel Ramel: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Arrabi	Arrabi	1	21307	Arraba (Israel)	Q2568887	furas		matched	furas		furas	Arabeh - per Y. Furas	2026-10-18
+Arraby	Arraby	1	21307	Arraba (Israel)	Q2568887	furas		matched	variant-skeleton		variant	spelling of 'Arrabi' (skeleton: same consonant skeleton as 'Arrabi')	2026-10-19
+Asfia	Asfia	1	26671	Usafiye (Israel)	Q2890836	furas		matched	variant-skeleton		variant	spelling of 'Isfia' (skeleton: same consonant skeleton as 'Isfia')	2026-10-19
 Ashadot Yakov	Ashadot Yakov	1	26521	Ashdot Yaakov (Israel)	Q2891543	kima-dump		matched	C_review		agent	generic Ashdot Ya'akov; Ihud/Me'uhad split post-1948	2026-08-06
 Ata village	Ata village	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
 Aten Village	Aten Village	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent	garbled Ata village	2026-08-06
+Athlit Haifa|Athlit	Athlit Haifa|Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	variant-alternation		variant	spelling of 'Athlit' (alternation: all readings resolve to one place)	2026-10-19
+Athlit I.|Athlit	Athlit I.|Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	variant-alternation		variant	spelling of 'Athlit' (alternation: all readings resolve to one place)	2026-10-19
+Athlit Police No 291|Athlit	Athlit Police No 291|Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	variant-alternation		variant	spelling of 'Athlit' (alternation: all readings resolve to one place)	2026-10-19
+Athlit c/o Police|Athlit	Athlit c/o Police|Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	variant-alternation		variant	spelling of 'Athlit' (alternation: all readings resolve to one place)	2026-10-19
 Athlit|Athlit C. Camps	Athlit|Athlit C. Camps	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Athlit|Athlit J.L.Co. 2	Athlit|Athlit J.L.Co. 2	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Athlit|Athlit Ol. Camp	Athlit|Athlit Ol. Camp	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	variant-alternation		variant	spelling of 'Athlit' (alternation: all readings resolve to one place)	2026-10-19
+Athlit|Athlit Police	Athlit|Athlit Police	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	variant-alternation		variant	spelling of 'Athlit' (alternation: all readings resolve to one place)	2026-10-19
 Athlit|Athlit Prison	Athlit|Athlit Prison	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Athlit|Cl. Camp - Athlit	Athlit|Cl. Camp - Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Atlit|Athlit	Atlit|Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump	Q757398	matched	A_autolink	0.95	auto		2026-08-06
 Atlit|Athlit C.R. Camp	Atlit|Athlit C.R. Camp	1	16036	Atlit (Israel)	Q757398	kima-dump	Q757398	matched	A_autolink	0.95	auto		2026-08-06
+Atlit|Athlit Prison	Atlit|Athlit Prison	1	16036	Atlit (Israel)	Q757398	kima-dump		matched	variant-alternation		variant	spelling of 'Athlit' (alternation: all readings resolve to one place)	2026-10-19
 Atlit|Atlit. House of Ofman	Atlit|Atlit. House of Ofman	1	16036	Atlit (Israel)	Q757398	kima-dump	Q757398	matched	A_autolink	0.95	auto		2026-08-06
 Atlit|Cl. Camp - Athlit	Atlit|Cl. Camp - Athlit	1	16036	Atlit (Israel)	Q757398	kima-dump	Q757398	matched	A_autolink	0.95	auto		2026-08-06
 Ayesdin	Ayesdin	1						unmatched-junk	C_review		agent		2026-08-06
+Balad Esh Sheikh	Balad Esh Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	human		matched	variant-exact		variant	spelling of 'Balad al-Sheikh' (exact)	2026-10-19
+Balad Sheikh|Balad al-Sheikh	Balad Sheikh|Balad al-Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	human		matched	variant-alternation		variant	spelling of 'Balad al-Sheikh' (alternation: all readings resolve to one place)	2026-10-19
 Balad al-Sheikh	Balad al-Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	human	Q2776471	matched	C_review		human	own entry; kept distinct from Nesher per project policy; Balad al-Shaykh as the Mandate village, not Nesher (Q135432) which succeeded it on the ground	2026-08-28
+Balad ash Sheikh	Balad ash Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	human		matched	variant-skeleton		variant	spelling of 'Balad al-Sheikh' (skeleton: same consonant skeleton as 'Balad al-Sheikh')	2026-10-19
+Balad ash-Sheikh	Balad ash-Sheikh	1	21670	Balad al-Shaykh (Israel)	Q2776471	human		matched	variant-skeleton		variant	spelling of 'Balad al-Sheikh' (skeleton: same consonant skeleton as 'Balad al-Sheikh')	2026-10-19
 Banks St	Banks St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Bar Galim	Bar Galim	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	or Kfar Gallim; Bat Galim more likely	2026-08-06
+Bassa (Al-Bassa)	Bassa (Al-Bassa)	1	21539	Bassah (Israel)	Q2915875	human		matched	variant-exact		variant	spelling of 'Bassa' (exact)	2026-10-19
 Bassa I.|Bassa	Bassa I.|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
 Bassa N.1 N.F.D	Bassa N.1 N.F.D	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
 Bassa No 1|Bassa	Bassa No 1|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	C_review		human	al-Bassa / Bassa Camp; al-Bassa = Q2915875; Kima 21539 has no coordinate, take it from Wikidata; al-Bassa, the depopulated village	2026-08-28
 Bassa No 2|Al-Bassa	Bassa No 2|Al-Bassa	1	6885	Shelomi (Israel)	Q135421	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Bassa. Deri.|Bassa	Bassa. Deri.|Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	variant-alternation		variant	spelling of 'Bassa' (alternation: all readings resolve to one place)	2026-10-19
+Bassa|Al-Bassa	Bassa|Al-Bassa	1	21539	Bassah (Israel)	Q2915875	human		matched	variant-alternation		variant	spelling of 'Bassa' (alternation: all readings resolve to one place)	2026-10-19
+Bassa|Bassa N:1	Bassa|Bassa N:1	1	21539	Bassah (Israel)	Q2915875	human		matched	variant-alternation		variant	spelling of 'Bassa' (alternation: all readings resolve to one place)	2026-10-19
+Bassa|Bassah	Bassa|Bassah	1	21539	Bassah (Israel)	Q2915875	human		matched	variant-alternation		variant	spelling of 'Bassa' (alternation: all readings resolve to one place)	2026-10-19
 Bat Shlomo near Zammaren|Bat Shlomo	Bat Shlomo near Zammaren|Bat Shlomo	1	587	Bat Shelomo (Israel)	Q2889218	kima-dump		matched	C_review		agent	Zammaren = Zummarin (Zichron)	2026-08-06
 Bat Yalem	Bat Yalem	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	garbled Bat Galim	2026-08-06
 Bath Galim|Bath Galim K. H. Bldg	Bath Galim|Bath Galim K. H. Bldg	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent		2026-08-06
 Bathelim K.butz|Bathelim	Bathelim K.butz|Bathelim	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Beisan, Police No 793|Beisan	Beisan, Police No 793|Beisan	1	613	Bet She'an (Israel)	Q152368	kima-dump		matched	variant-alternation		variant	spelling of 'Beisan' (alternation: all readings resolve to one place)	2026-10-19
+Beisan|Beisan Police	Beisan|Beisan Police	1	613	Bet She'an (Israel)	Q152368	kima-dump		matched	variant-alternation		variant	spelling of 'Beisan' (alternation: all readings resolve to one place)	2026-10-19
+Beisan|Beisan S/D	Beisan|Beisan S/D	1	613	Bet She'an (Israel)	Q152368	kima-dump		matched	variant-alternation		variant	spelling of 'Beisan' (alternation: all readings resolve to one place)	2026-10-19
+Beisan|Beisan c/o	Beisan|Beisan c/o	1	613	Bet She'an (Israel)	Q152368	kima-dump		matched	variant-alternation		variant	spelling of 'Beisan' (alternation: all readings resolve to one place)	2026-10-19
 Beisan|Dept. of Police, Beisan	Beisan|Dept. of Police, Beisan	1	613	Bet She'an (Israel)	Q152368	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Beit Alfa	Beit Alfa	1	563	Bet Alfa (Israel)	Q2900562	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Beit Alfa / Beisan	Beit Alfa / Beisan	1	563	Bet Alfa (Israel)	Q2900562	kima-dump		matched	C_review		agent	Beit Alfa lies in the Beisan sub-district	2026-08-06
 Beit Alpha	Beit Alpha	1	563	Bet Alfa (Israel)	Q2900562	kima-dump		matched	C_review		agent		2026-08-06
 Beit Anya	Beit Anya	1	16157	Betanyah (Israel)				matched	C_review		human		2026-08-06
 Beit Dagan	Beit Dagan	1	9783	Bet Dagan (Israel)	Q2920214	kima-dump	Q2920214	matched	A_autolink	0.95	auto		2026-08-06
+Beit Dagon	Beit Dagon	1	9783	Bet Dagan (Israel)	Q2920214	kima-dump		matched	variant-skeleton		variant	spelling of 'Beit Dagan' (skeleton: same consonant skeleton as 'Beit Dagan')	2026-10-19
 Beit Ibrahim	Beit Ibrahim	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Beit Ibrahim: Haifa house per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Beit Jan	Beit Jan	1	90226	Bait Jan (Israel)	Q814900	kima-dump	Q814900	matched	C_review		human		2026-08-06
 Beit Jann	Beit Jann	1	90226	Bait Jan (Israel)	Q814900	kima-dump	Q814900	matched	C_review		human	Druze village, Upper Galilee	2026-08-06
+Beit Jin	Beit Jin	1	90226	Bait Jan (Israel)	Q814900	kima-dump		matched	variant-skeleton		variant	spelling of 'Beit Jann' (skeleton: same consonant skeleton as 'Beit Jann')	2026-10-19
 Beit Olim	Beit Olim	1						unmatched-no-kima-entry	C_review		agent	immigrants' hostel	2026-08-06
 Beit tatikva	Beit tatikva	1						unmatched-no-kima-entry	C_review		agent	institution	2026-08-06
+Beit-Jan	Beit-Jan	1	90226	Bait Jan (Israel)	Q814900	kima-dump		matched	variant-exact		variant	spelling of 'Beit Jan' (exact)	2026-10-19
 Beit-Zerah	Beit-Zerah	1	599	Bet Zera (Israel)	Q2573500	kima-dump		matched	C_review		agent	Bet Zera	2026-08-06
 Ben Yehuda	Ben Yehuda	1						unmatched-ambiguous	C_review		agent	street vs Even Yehuda	2026-08-06
 Ben Yehuda St	Ben Yehuda St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Ben Yehuda Street	Ben Yehuda Street	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Beni Brak	Beni Brak	1	594	Bene Brak (Israel)	Q152467	kima-dump		matched	C_review		agent		2026-08-06
 Benjamin	Benjamin	1					Q817379	unmatched-ambiguous	C_review		agent	Benyamina? surname?	2026-08-06
+Benjaminah	Benjaminah	1	21551	Binyamina (Israel)	Q863886	kima-dump		matched	variant-skeleton		variant	spelling of 'Benjaminia' (skeleton: same consonant skeleton as 'Benjaminia')	2026-10-19
 Benjamina|Benyamina	Benjamina|Benyamina	1	21551	Binyamina (Israel)	Q863886	kima-dump		matched	C_review		agent		2026-08-06
 Benjaminia	Benjaminia	1	21551	Binyamina (Israel)	Q863886	kima-dump		matched	C_review		agent		2026-08-06
 Benyamina. & Beit-Sacaross	Benyamina. & Beit-Sacaross	1	21551	Binyamina (Israel)	Q863886	kima-dump		matched	C_review		agent	first reading Benyamina	2026-08-06
@@ -331,38 +492,62 @@ Bet Olim	Bet Olim	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
 Beth Shearim	Beth Shearim	1	616	Bet She'arim (Israel)	Q1269256	kima-dump		matched	C_review		agent	the moshav (f. 1936)	2026-08-06
 Biniamina|Binyamina	Biniamina|Binyamina	1	21551	Binyamina (Israel)	Q863886	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Binjamina|Binyamina	Binjamina|Binyamina	1	21551	Binyamina (Israel)	Q863886	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Bisany	Bisany	1	613	Bet She'an (Israel)	Q152368	kima-dump		matched	variant-skeleton		variant	spelling of 'Beisan' (skeleton: same consonant skeleton as 'Beisan')	2026-10-19
 Bithania|Bethania	Bithania|Bethania	1	16157	Betanyah (Israel)				matched	A_autolink		human		2026-08-06
 Blys	Blys	1						unmatched-junk	C_review		agent		2026-08-06
+Brekeh	Brekeh	1			Q2897020	furas		matched	variant-skeleton		variant	spelling of 'Breikeh' (skeleton: same consonant skeleton as 'Breikeh')	2026-10-19
 Brene Shaanan	Brene Shaanan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump		matched	C_review		agent	garbled Neve Shaanan	2026-08-06
 Buriq	Buriq	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Carmel - Haifa	Carmel - Haifa	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Carmel, Haifa: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Carmel Ahuza	Carmel Ahuza	1	21015	Ahuza (Haifa, Israel)	Q4159159	kima-dump		matched	C_review		agent	Ahuza on the Carmel	2026-08-06
 Carmel Station	Carmel Station	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Carmel Station: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Carmel Stn	Carmel Stn	1	791	Haifa (Israel)	Q41621	furas		matched	variant-skeleton		variant	spelling of 'Carmel Station' (skeleton: same consonant skeleton as 'Carmel Station')	2026-10-19
 Carmiel	Carmiel	1	162	Karmi'el (Israel)	Q152418	kima-dump	Q152418	matched	A_autolink	0.95	auto		2026-08-06
 Churipat Hayim	Churipat Hayim	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		agent	garbled Kiryat Haim	2026-08-06
 Coastal Watch Bath-Jalim	Coastal Watch Bath-Jalim	1	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	coastal-watch post at Bat Galim	2026-08-06
 Daganya	Daganya	1	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	C_review		human		2026-08-06
+Dalet el Carmel	Dalet el Carmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
+Daliat Il Carmel	Daliat Il Carmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
+Daliat al-Karmel	Daliat al-Karmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
+Daliat el Carmel	Daliat el Carmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
 Daliet El Carmel	Daliet El Carmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	furas		furas	Daliet el Carmel - per Y. Furas	2026-10-18
+Daliet el Karmel	Daliet el Karmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
+Daliet el-Karmel	Daliet el-Karmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
+Dalyat El Carmel	Dalyat El Carmel	1	73128	Daliyat al-Karmil (Israel)	Q2667061	furas		matched	variant-skeleton		variant	spelling of 'Daliet El Carmel' (skeleton: same consonant skeleton as 'Daliet El Carmel')	2026-10-19
+Dammoun Village	Dammoun Village	1			Q1186264	furas		matched	variant-skeleton		variant	spelling of 'Damun' (skeleton: same consonant skeleton as 'Damun')	2026-10-19
 Dantel Yahud	Dantel Yahud	1						unmatched-no-kima-entry	C_review		agent	garbled Ard/Harat el-Yahud	2026-08-06
 Dar Awwaj	Dar Awwaj	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Dar Hanna	Dar Hanna	1	21739	Dair Hanna (Israel)	Q612483	furas		matched	variant-skeleton		variant	spelling of 'Der Hanna' (skeleton: same consonant skeleton as 'Der Hanna')	2026-10-19
 Dar el Abyad	Dar el Abyad	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Darel abyad: Haifa house per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Defna	Defna	1	974	Dafna (Israel)	Q545232	kima-dump		matched	C_review		agent	Dafna	2026-08-06
 Degania|Tiberias S/D	Degania|Tiberias S/D	1	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Deganya	Deganya	1	892	Deganya Alef (Israel)	Q2371396	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Deir el Asaad	Deir el Asaad	1	6077	Dair el Asad (Israel)	Q612599	furas		matched	furas		furas	Deir al-Asad - per Y. Furas	2026-10-18
+Deir el-Asad	Deir el-Asad	1	6077	Dair el Asad (Israel)	Q612599	furas		matched	variant-exact		variant	spelling of 'Deir al-Asad' (exact)	2026-10-19
 Dejani	Dejani	1	892	Deganya Alef (Israel)	Q2371396	kima-dump	Q850106	matched	C_review		human	held for human review: QID conflict - kima-dump Q2371396 vs direct Wikidata Q850106	2026-08-06
+Dept of Survey Jaffa|Jaffa	Dept of Survey Jaffa|Jaffa	1	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump		matched	variant-alternation		variant	spelling of 'Jaffa' (alternation: all readings resolve to one place)	2026-10-19
 Doris St	Doris St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
 Drachla Tabor St	Drachla Tabor St	1						unmatched-no-kima-entry	C_review		agent	street	2026-08-06
+Egzeim Village	Egzeim Village	1			Q2918334	furas		matched	variant-skeleton		variant	spelling of 'Igzim' (skeleton: same consonant skeleton as 'Igzim')	2026-10-19
+Eibalin	Eibalin	1	21569	I'bilin (Israel)	Q2915647	furas		matched	variant-skeleton		variant	"spelling of ""I'billin"" (skeleton: same consonant skeleton as ""I'billin"")"	2026-10-19
 Eilut	Eilut	1	21697	Ilut (Israel)	Q2915756	furas		matched	furas		furas	Ilut - per Y. Furas	2026-10-18
 Ein Haron	Ein Haron	1	12370	En Harod (Israel)	Q1339887	kima-dump		matched	C_review		agent	garbled Ein Harod	2026-08-06
+Ein Harud	Ein Harud	1	12370	En Harod (Israel)	Q1339887	kima-dump		matched	variant-skeleton		variant	spelling of 'Ain Harod' (skeleton: same consonant skeleton as 'Ain Harod')	2026-10-19
 Ein Hashofet	Ein Hashofet	1	91	En Hashofet (Israel)	Q2890213	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Ein Shemer	Ein Shemer	1	69	En Shemer (Israel)	Q166865	kima-dump		matched	C_review		agent		2026-08-06
+Em El Fahim	Em El Fahim	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-skeleton		variant	spelling of 'Umm el Fahem' (skeleton: same consonant skeleton as 'Umm el Fahem')	2026-10-19
 Emek Hayarden	Emek Hayarden	1						unmatched-ambiguous	C_review		human	held for human review: Emek ha-Yarden regional entity; suggested #87167	2026-08-06
 Emek R	Emek R	1					Q7884739	unmatched-ambiguous	C_review		human		2026-08-06
 Emek R.|Emek	Emek R.|Emek	1						unmatched-ambiguous	C_review		human		2026-08-06
 Emek Zevouloun	Emek Zevouloun	1						unmatched-ambiguous	C_review		human	held for human review: Emek Zevulun region entity; suggested #86676	2026-08-06
 En Dor	En Dor	1	19136	En Dor (Israel)	Q2916646	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
+Faradi Village	Faradi Village	1			Q5436211	furas		matched	variant-skeleton		variant	spelling of 'Faradieh' (skeleton: same consonant skeleton as 'Faradieh')	2026-10-19
+Farradeh	Farradeh	1			Q5436211	furas		matched	variant-skeleton		variant	spelling of 'Faradieh' (skeleton: same consonant skeleton as 'Faradieh')	2026-10-19
+Farradieh	Farradieh	1			Q5436211	furas		matched	variant-skeleton		variant	spelling of 'Faradieh' (skeleton: same consonant skeleton as 'Faradieh')	2026-10-19
+Fassoutah	Fassoutah	1	21519	Fassuta (Israel)	Q2917294	furas		matched	variant-skeleton		variant	spelling of 'Fassouta' (skeleton: same consonant skeleton as 'Fassouta')	2026-10-19
 Fot Luq	Fot Luq	1						unmatched-junk	C_review		agent		2026-08-06
+Fraidis	Fraidis	1	84891	Furaidis (Israel)	Q1011538	furas		matched	variant-skeleton		variant	spelling of 'Fureidis' (skeleton: same consonant skeleton as 'Fureidis')	2026-10-19
+Fredis	Fredis	1	84891	Furaidis (Israel)	Q1011538	furas		matched	variant-skeleton		variant	spelling of 'Fureidis' (skeleton: same consonant skeleton as 'Fureidis')	2026-10-19
 Furn el Abyad	Furn el Abyad	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Furn el Abyad: Haifa place per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Galil	Galil	1						unmatched-ambiguous	C_review		human	held for human review: Galilee region entity; suggested #1475	2026-08-06
 Geda	Geda	1					Q1792	unmatched-junk	C_review		agent		2026-08-06
@@ -370,12 +555,14 @@ Gisr El Majami	Gisr El Majami	1						unmatched-ambiguous	C_review		agent	Jisr al
 Giv'at Ada	Giv'at Ada	1	18292	Giv'at Ada (Israel)	Q7189221	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Givat Adam	Givat Adam	1	18292	Giv'at Ada (Israel)	Q7189221	kima-dump		matched	C_review		agent	read as Giv'at Ada	2026-08-06
 Hadar	Hadar	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	human	Q2630079	matched	A_autolink	0.95	agent	Hadar HaCarmel (Retsof St, police billet); Kima id was Kefar Hadar (Hod HaSharon). Furas read Hedera but marked it check - his doubt left open, not applied	2026-10-18
+Hadar Carmel	Hadar Carmel	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	variant-skeleton		variant	spelling of 'Haddar Carmel' (skeleton: same consonant skeleton as 'Haddar Carmel')	2026-10-19
 Hadar Hacarmel (Haifa)	Hadar Hacarmel (Haifa)	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Hadar Hacarmel Haifa	Hadar Hacarmel Haifa	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Hadar Hacarmel|Had. Hac	Hadar Hacarmel|Had. Hac	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump	Q2630079	matched	C_review		agent		2026-08-06
 Hadar [Haifa]	Hadar [Haifa]	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Haddar Carmel	Haddar Carmel	1	21150	Hadar Hakarmel (Haifa, Israel)	Q2630079	kima-dump		matched	C_review		agent		2026-08-06
 Hadeira (Hadera)	Hadeira (Hadera)	1	858	Hadera (Israel)	Q471886	kima-dump		matched	C_review		agent		2026-08-06
+Hadera P. & P.|Hadera	Hadera P. & P.|Hadera	1	858	Hadera (Israel)	Q471886	kima-dump		matched	variant-alternation		variant	spelling of 'Hadera' (alternation: all readings resolve to one place)	2026-10-19
 Hadera|Hadera P. & P	Hadera|Hadera P. & P	1	858	Hadera (Israel)	Q471886	kima-dump	Q471886	matched	C_review		agent		2026-08-06
 Hadera|Hedera	Hadera|Hedera	1	858	Hadera (Israel)	Q471886	kima-dump	Q471886	matched	A_autolink	0.95	auto		2026-08-06
 Haifa (Nesher)	Haifa (Nesher)	1	20	Nesher (Israel)	Q135432	kima-dump		matched	C_review		agent	parenthetical = finer reading	2026-08-06
@@ -398,11 +585,15 @@ Haifa|Hedera	Haifa|Hedera	1					Q41621	unmatched-ambiguous	C_review		agent	two d
 Haifa|Mt. Carmel	Haifa|Mt. Carmel	1					Q41621	unmatched-ambiguous	C_review		human	held for human review: Mount Carmel entity; suggested #1156	2026-08-06
 Haifa|Nesher	Haifa|Nesher	1	20	Nesher (Israel)	Q135432	kima-dump	Q41621	matched	C_review		human	user ruling: Nesher	2026-08-06
 Haifa|Tireh	Haifa|Tireh	1	756	Tirat Karmel (Israel)	Q4118776	human	Q41621	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
+Haifa|Wad El Salib	Haifa|Wad El Salib	1	19522	Wadi Salib (Haifa, Israel)	Q2910153	furas		matched	variant-alternation		variant	spelling of 'Wadi Salib (Haifa)' (alternation: all readings resolve to one place)	2026-10-19
 Haim	Haim	1						unmatched-junk	C_review		agent	fragment	2026-08-06
 Halershert	Halershert	1						unmatched-junk	C_review		agent		2026-08-06
+Halesa	Halesa	1	83220	al-Khalisa (Haifa, Israel)	Q7212307	human		matched	variant-skeleton		variant	spelling of 'Halisa' (skeleton: same consonant skeleton as 'Halisa')	2026-10-19
 Halisa	Halisa	1	83220	al-Khalisa (Haifa, Israel)	Q7212307	human		matched	C_review		agent	Halisa, Haifa - same place as Furas Hallisa Qrt	2026-10-18
+Halleesa	Halleesa	1	83220	al-Khalisa (Haifa, Israel)	Q7212307	human		matched	variant-skeleton		variant	spelling of 'Halisa' (skeleton: same consonant skeleton as 'Halisa')	2026-10-19
 Hallesa	Hallesa	1					Q3473140	unmatched-no-kima-entry	C_review		agent		2026-08-06
 Hallisa Qrt	Hallisa Qrt	1	83220	al-Khalisa (Haifa, Israel)	Q7212307	furas		matched	C_review		furas	Halisa, Haifa - per Y. Furas	2026-10-18
+Hallisah	Hallisah	1	83220	al-Khalisa (Haifa, Israel)	Q7212307	human		matched	variant-skeleton		variant	spelling of 'Halisa' (skeleton: same consonant skeleton as 'Halisa')	2026-10-19
 Hallissa	Hallissa	1						unmatched-no-kima-entry	C_review		agent	Halisa neighborhood	2026-08-06
 Hammam El Basha	Hammam El Basha	1	71	Acre (Israel)	Q126084	furas		matched	furas		furas	Acre - per Y. Furas	2026-10-18
 Hammeh	Hammeh	1						unmatched-ambiguous	A_autolink		human	held for human review: el-Hamme spa, but Kima entity is the Hammat Gader archaeological site; suggested #4414	2026-08-06
@@ -410,26 +601,49 @@ Hanita	Hanita	1	799	Hanita (Israel)	Q2890402	kima-dump		matched	C_review		agent	
 Hart el Yahud	Hart el Yahud	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa	2026-10-18
 Hartel Ghazazwi	Hartel Ghazazwi	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Hartel Ghazazwi: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Hartel Yahud	Hartel Yahud	1	791	Haifa (Israel)	Q41621	furas		matched	C_review		furas	Harat al-Yahud, Haifa (Furas reading). His sheet carries Ard el-Yahud QID here; not applied - two places (Naor 2019). Drawn at Haifa	2026-10-18
+Hattin	Hattin	1	21331	Hittin (Israel)	Q1246960	kima-dump		matched	variant-skeleton		variant	spelling of 'Hittin' (skeleton: same consonant skeleton as 'Hittin')	2026-10-19
 Hazorea	Hazorea	1	986	Hazore'a (Israel)	Q1000893	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Heazelia	Heazelia	1	791	Haifa (Israel)	Q41621	human		matched	C_review		agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town	2026-10-18
 Hittin	Hittin	1	21331	Hittin (Israel)	Q1246960	kima-dump	Q1246960	matched	A_autolink	0.95	auto		2026-08-06
 I'billin	I'billin	1	21569	I'bilin (Israel)	Q2915647	furas		matched	furas		furas	Ibillin - per Y. Furas	2026-10-18
+Ibbellin	Ibbellin	1	21569	I'bilin (Israel)	Q2915647	furas		matched	variant-skeleton		variant	"spelling of ""I'billin"" (skeleton: same consonant skeleton as ""I'billin"")"	2026-10-19
+Ibbillin	Ibbillin	1	21569	I'bilin (Israel)	Q2915647	furas		matched	variant-skeleton		variant	"spelling of ""I'billin"" (skeleton: same consonant skeleton as ""I'billin"")"	2026-10-19
+Ibhilin	Ibhilin	1	21569	I'bilin (Israel)	Q2915647	furas		matched	variant-skeleton		variant	"spelling of ""I'billin"" (skeleton: same consonant skeleton as ""I'billin"")"	2026-10-19
+Ibillin Village	Ibillin Village	1	21569	I'bilin (Israel)	Q2915647	furas		matched	variant-exact		variant	"spelling of ""I'billin"" (exact)"	2026-10-19
+Ilut	Ilut	1	21697	Ilut (Israel)	Q2915756	furas		matched	variant-skeleton		variant	spelling of 'Eilut' (skeleton: same consonant skeleton as 'Eilut')	2026-10-19
+Im El Fahim	Im El Fahim	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-exact		variant	spelling of 'Um el Fahim' (exact)	2026-10-19
+Im el Fahim	Im el Fahim	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-exact		variant	spelling of 'Um el Fahim' (exact)	2026-10-19
 Irbed	Irbed	1						unmatched-ambiguous	C_review		agent	Irbid, Transjordan plausible; foreign location held for human review	2026-08-06
+Isfeyia	Isfeyia	1	26671	Usafiye (Israel)	Q2890836	furas		matched	variant-skeleton		variant	spelling of 'Isfia' (skeleton: same consonant skeleton as 'Isfia')	2026-10-19
+Isifia	Isifia	1	26671	Usafiye (Israel)	Q2890836	furas		matched	variant-skeleton		variant	spelling of 'Isfia' (skeleton: same consonant skeleton as 'Isfia')	2026-10-19
 Jaffa|Carmel Ahu K.bert	Jaffa|Carmel Ahu K.bert	1	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump	Q180294	matched	A_autolink	0.95	auto		2026-08-06
+Jaffa|Dept of Survey Jaffa	Jaffa|Dept of Survey Jaffa	1	629	Jaffa (Tel Aviv-Yafo, Israel)	Q180294	kima-dump		matched	variant-alternation		variant	spelling of 'Jaffa' (alternation: all readings resolve to one place)	2026-10-19
 Jalami	Jalami	1			Q4704113	furas		matched	furas		furas	Al-Jalama - per Y. Furas	2026-10-18
 Jarit Nahalal	Jarit Nahalal	1	38	Nahalal (Israel)	Q1724338	kima-dump		matched	C_review		agent	garbled; Nahalal	2026-08-06
+Jenin S/Dist	Jenin S/Dist	1	79775	Jenin (West Bank)	Q374748	kima-dump		matched	variant-exact		variant	spelling of 'Jenin' (exact)	2026-10-19
+Jeser El Zarka	Jeser El Zarka	1	21576	Jisr az-Zarka (Israel)	Q764601	furas		matched	variant-skeleton		variant	spelling of 'Jisr el-Zarka' (skeleton: same consonant skeleton as 'Jisr el-Zarka')	2026-10-19
+Jeser el Zarka	Jeser el Zarka	1	21576	Jisr az-Zarka (Israel)	Q764601	furas		matched	variant-skeleton		variant	spelling of 'Jisr el-Zarka' (skeleton: same consonant skeleton as 'Jisr el-Zarka')	2026-10-19
 Jisr El Zarka	Jisr El Zarka	1	21576	Jisr az-Zarka (Israel)	Q764601	furas		matched	furas		furas	Jisr al-Zarqa - per Y. Furas	2026-10-18
 Jisr el-Zarka	Jisr el-Zarka	1	21576	Jisr az-Zarka (Israel)	Q764601	furas		matched	furas		furas	Jisr al-Zarqa - per Y. Furas	2026-10-18
 Joknan	Joknan	1	18301	Yokne'am (Israel)	Q2890709	kima-dump		matched	C_review		agent	garbled Yokneam	2026-08-06
 Jokneam	Jokneam	1	18301	Yokne'am (Israel)	Q2890709	kima-dump	Q167582	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2890709 vs direct Wikidata Q167582	2026-08-06
+Kabaty	Kabaty	1	73993	Kabatiya (West Bank)	Q1899332	furas		matched	variant-skeleton		variant	spelling of 'Kabatyeh' (skeleton: same consonant skeleton as 'Kabatyeh')	2026-10-19
+Kabatya	Kabatya	1	73993	Kabatiya (West Bank)	Q1899332	furas		matched	variant-skeleton		variant	spelling of 'Kabatyeh' (skeleton: same consonant skeleton as 'Kabatyeh')	2026-10-19
+Kabul (Acre Sub District)	Kabul (Acre Sub District)	1	21578	Kabul (Israel)	Q1018884	furas		matched	variant-skeleton		variant	spelling of 'Kaboul' (skeleton: same consonant skeleton as 'Kaboul')	2026-10-19
 Kafaratta	Kafaratta	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
 Kafata	Kafata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	Q139204008	matched	C_review		agent	garbled Kfar Ata; held for human review: QID conflict - kima-dump Q152602 vs direct Wikidata Q139204008	2026-08-06
+Kafer Yousef	Kafer Yousef	1	88951	Kafr Yasif (Israel)	Q2632879	furas		matched	variant-skeleton		variant	spelling of 'Kafr Yasif' (skeleton: same consonant skeleton as 'Kafr Yasif')	2026-10-19
+Kafr 'Inan	Kafr 'Inan	1			Q6346161	furas		matched	variant-skeleton		variant	spelling of 'Kfar Inan' (skeleton: same consonant skeleton as 'Kfar Inan')	2026-10-19
 Kafr Branch	Kafr Branch	1						unmatched-ambiguous	C_review		agent	Kfar Baruch? Kfar Brandeis?	2026-08-06
+Kafr Enan	Kafr Enan	1			Q6346161	furas		matched	variant-skeleton		variant	spelling of 'Kfar Inan' (skeleton: same consonant skeleton as 'Kfar Inan')	2026-10-19
 Kafr Hittim	Kafr Hittim	1	21908	Kefar Hittim (Israel)	Q2916642	kima-dump		matched	C_review		agent		2026-08-06
 Kafr Yasin	Kafr Yasin	1	88951	Kafr Yasif (Israel)	Q2632879	kima-dump		matched	C_review		agent	read as Kafr Yasif	2026-08-06
+Kanner	Kanner	1			Q7266495	furas		matched	variant-skeleton		variant	spelling of 'Kannir' (skeleton: same consonant skeleton as 'Kannir')	2026-10-19
+Kaunir	Kaunir	1			Q7266495	furas		matched	variant-skeleton		variant	spelling of 'Kannir' (skeleton: same consonant skeleton as 'Kannir')	2026-10-19
 Kefa Tabor	Kefa Tabor	1	1666	Kefar Tavor (Israel)	Q1186956	kima-dump		matched	C_review		agent	Kfar Tavor	2026-08-06
 Kefar Ata	Kefar Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Kefar Bireim	Kefar Bireim	1						unmatched-ambiguous	C_review		agent	Bir'im? kibbutz Bar'am is post-1948	2026-08-06
+Kefr Etta	Kefr Etta	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	variant-skeleton		variant	spelling of 'Kufretta' (skeleton: same consonant skeleton as 'Kufretta')	2026-10-19
 Kefr Kanna	Kefr Kanna	1	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	furas		furas	Kafr Kanna - per Y. Furas	2026-10-18
 Kenereth	Kenereth	1						unmatched-ambiguous	C_review		human		2026-08-06
 Kfar Baroukh	Kfar Baroukh	1	815	Kefar Barukh (Israel)	Q2777518	kima-dump		matched	C_review		agent		2026-08-06
@@ -443,8 +657,10 @@ Kfar Inan	Kfar Inan	1			Q6346161	furas		matched	furas		furas	Kfar Inan - per Y. 
 Kfar Jeladim	Kfar Jeladim	1	21910	Kefar Yeladim (Israel)				matched	C_review		agent	Kfar Yeladim	2026-08-06
 Kfar Jeshuah	Kfar Jeshuah	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump		matched	C_review		agent		2026-08-06
 Kfar Joshua	Kfar Joshua	1	19294	Kefar Yehoshu'a (Israel)	Q2889616	kima-dump		matched	C_review		agent		2026-08-06
+Kfar Kanna	Kfar Kanna	1	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	variant-skeleton		variant	spelling of 'Kefr Kanna' (skeleton: same consonant skeleton as 'Kefr Kanna')	2026-10-19
 Kfar Kasidim	Kfar Kasidim	1	830	Kefar Hasidim (Israel)	Q135425	kima-dump		matched	C_review		agent		2026-08-06
 Kfar Khassidim	Kfar Khassidim	1	830	Kefar Hasidim (Israel)	Q135425	kima-dump		matched	C_review		agent		2026-08-06
+Kfar Lam	Kfar Lam	1			Q6346183	furas		matched	variant-skeleton		variant	spelling of 'Kafr Lam' (skeleton: same consonant skeleton as 'Kafr Lam')	2026-10-19
 Kfar Nachanesh	Kfar Nachanesh	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump		matched	C_review		agent	garbled Kfar Hahoresh	2026-08-06
 Kfar Nacharish / Nazareth	Kfar Nacharish / Nazareth	1	820	Kefar Hahoresh (Israel)	Q2777455	kima-dump		matched	C_review		agent	garbled Kfar Hahoresh	2026-08-06
 Kfar Saba	Kfar Saba	1	839	Kefar Sava (Israel)	Q152436	kima-dump	Q152436	matched	A_autolink	0.95	auto		2026-08-06
@@ -467,6 +683,7 @@ Kinneret (Kibbutz)	Kinneret (Kibbutz)	1	1669	Kinneret (Kevutsa) (Israel)	Q229610
 Kinnereth	Kinnereth	1						unmatched-ambiguous	C_review		human		2026-08-06
 Kiriat Haroshet	Kiriat Haroshet	1	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		agent		2026-08-06
 Kiriat Kinzet	Kiriat Kinzet	1						unmatched-junk	C_review		agent		2026-08-06
+Kiriyat Shmuel	Kiriyat Shmuel	1	22901	Kiryat Shemuel (Haifa, Israel)		human		matched	variant-skeleton		variant	spelling of 'Kiryat Shmuel' (skeleton: same consonant skeleton as 'Kiryat Shmuel')	2026-10-19
 Kiryat Amal	Kiryat Amal	1					Q12029237	unmatched-no-kima-entry	C_review		human	Kiryat Amal near Tivon; no Kima entry	2026-08-06
 Kiryat Ata	Kiryat Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	Q152602	matched	C_review		agent		2026-08-06
 Kiryat Eliahu	Kiryat Eliahu	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
@@ -477,20 +694,28 @@ Kiryat Kamal	Kiryat Kamal	1						unmatched-no-kima-entry	C_review		human	garbled
 Kiryat Shmuel	Kiryat Shmuel	1	22901	Kiryat Shemuel (Haifa, Israel)		human	Q185687	matched	A_autolink	0.95	agent	Kiryat Shmuel in Haifa bay (founded 1938), not Jerusalem's; Jewish patient, Nov 1939. Found by the sweep that followed the Rehavia ruling	2026-10-18
 Kiryat Yam	Kiryat Yam	1	480	Kiryat Yam (Israel)	Q152387	kima-dump	Q152387	matched	C_review		agent		2026-08-06
 Kiryat-Haim Tribune Amal	Kiryat-Haim Tribune Amal	1	479	Kiryat Hayyim (Haifa, Israel)	Q2655674	kima-dump		matched	C_review		agent		2026-08-06
+Kokun	Kokun	1	19717	Qāqūn	Q2919625	furas		matched	variant-skeleton		variant	spelling of 'Kakoun' (skeleton: same consonant skeleton as 'Kakoun')	2026-10-19
+Kufer Inan	Kufer Inan	1			Q6346161	furas		matched	variant-skeleton		variant	spelling of 'Kfar Inan' (skeleton: same consonant skeleton as 'Kfar Inan')	2026-10-19
+Kufer Kanna	Kufer Kanna	1	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	variant-skeleton		variant	spelling of 'Kefr Kanna' (skeleton: same consonant skeleton as 'Kefr Kanna')	2026-10-19
 Kufr 'Ata	Kufr 'Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
+Kufr 'Inan	Kufr 'Inan	1			Q6346161	furas		matched	variant-skeleton		variant	spelling of 'Kfar Inan' (skeleton: same consonant skeleton as 'Kfar Inan')	2026-10-19
 Kufr Ata	Kufr Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
+Kufr Inan	Kufr Inan	1			Q6346161	furas		matched	variant-skeleton		variant	spelling of 'Kfar Inan' (skeleton: same consonant skeleton as 'Kfar Inan')	2026-10-19
 Kufretta	Kufretta	1	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
 Kuryat el Yahu	Kuryat el Yahu	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
 Kvutzat Kinereth	Kvutzat Kinereth	1	1669	Kinneret (Kevutsa) (Israel)	Q2296107	kima-dump		matched	C_review		agent	explicit kevutsa	2026-08-06
+Lajjun|Lajjoun	Lajjun|Lajjoun	1	16127	Lajjūn (Jordan)	Q3775368	human		matched	variant-alternation		variant	spelling of 'Lajjun' (alternation: all readings resolve to one place)	2026-10-19
 Lydda	Lydda	1	178	Lod (Israel)	Q207540	kima-dump	Q207540	matched	A_autolink	0.95	auto		2026-08-06
 Maagan	Maagan	1	189	Ma'agan (Israel)	Q2916656	kima-dump	Q187979	matched	C_review		agent	held for human review: QID conflict - kima-dump Q2916656 vs direct Wikidata Q187979	2026-08-06
 Majamil	Majamil	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Majd al-Krum	Majd al-Krum	1	19615	Majd al-Kurum (Israel)	Q2777868	kima-dump	Q2777868	matched	A_autolink	0.95	auto		2026-08-06
+Majd el Kroom	Majd el Kroom	1	19615	Majd al-Kurum (Israel)	Q2777868	kima-dump		matched	variant-skeleton		variant	spelling of 'Majd al-Krum' (skeleton: same consonant skeleton as 'Majd al-Krum')	2026-10-19
 Majdal	Majdal	1	6904	Migdal (Israel)	Q2916182	kima-dump	Q12192298	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2916182 vs direct Wikidata Q12192298	2026-08-06
 Maloul	Maloul	1			Q2892972	furas		matched	furas		furas	Ma'alul - per Y. Furas	2026-10-18
 Mashmar Hyam	Mashmar Hyam	1						unmatched-ambiguous	C_review		agent	Mishmar HaYam vs Mishmar Haemek	2026-08-06
 Massada	Massada	1	219	Masada (Israel)	Q2888546	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Megiddo Road	Megiddo Road	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Megiddo Road: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Mejdal	Mejdal	1	6904	Migdal (Israel)	Q2916182	kima-dump		matched	variant-skeleton		variant	spelling of 'Majdal' (skeleton: same consonant skeleton as 'Majdal')	2026-10-19
 Menahemia Colony	Menahemia Colony	1	18297	Menahemya (Israel)	Q2917281	kima-dump		matched	C_review		agent	Menahemya	2026-08-06
 Merchavia	Merchavia	1	205	Merhavya (Israel)	Q2920170	kima-dump	Q1004796	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2920170 vs direct Wikidata Q1004796	2026-08-06
 Meron	Meron	1	236	Meron (Israel)		furas		matched	furas		furas	Meron - per Y. Furas	2026-10-18
@@ -499,10 +724,12 @@ Meshek Yagour	Meshek Yagour	1	771	Yagur (Israel)	Q586687	kima-dump		matched	C_re
 Minsi	Minsi	1			Q2368058	furas		matched	furas		furas	Mansi - per Y. Furas	2026-10-18
 Mizpa	Mizpa	1	21700	Mitspa (Israel)	Q2776808	kima-dump		matched	C_review		agent		2026-08-06
 Mizra	Mizra	1	224	Mizra (Israel)	Q2889536	kima-dump		matched	C_review		agent		2026-08-06
+Moghar|Mughar	Moghar|Mughar	1	21974	Mughar (Israel)	Q930847	furas		matched	variant-alternation		variant	spelling of 'Mughar' (alternation: all readings resolve to one place)	2026-10-19
 Mount Tabor	Mount Tabor	1					Q6923978	unmatched-ambiguous	A_autolink		human	held for human review: Mount Tabor entity; suggested #5765	2026-08-06
 Mt. Tabor	Mt. Tabor	1						unmatched-ambiguous	C_review		human	held for human review: Mount Tabor entity; suggested #5765	2026-08-06
 Na'an	Na'an	1	16	Na'an (Israel)	Q1026840	kima-dump		matched	C_review		agent		2026-08-06
 Nabi Sha'man Hagelil	Nabi Sha'man Hagelil	1						unmatched-ambiguous	C_review		agent		2026-08-06
+Nablus S/D	Nablus S/D	1	310	Nablus (West Bank)	Q214178	kima-dump		matched	variant-exact		variant	spelling of 'Nablus' (exact)	2026-10-19
 Naffuleh	Naffuleh	1	18417	Afula (Israel)	Q152462	kima-dump		matched	C_review		agent	garbled Affuleh (Afula)	2026-08-06
 Nahla	Nahla	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Nahlat Yacob	Nahlat Yacob	1						unmatched-ambiguous	C_review		agent		2026-08-06
@@ -525,23 +752,42 @@ Petach Tikva	Petach Tikva	1	426	Petah Tikva (Israel)	Q190828	kima-dump	Q190828	m
 Petah Tikva	Petah Tikva	1	426	Petah Tikva (Israel)	Q190828	kima-dump	Q190828	matched	A_autolink	0.95	auto		2026-08-06
 Petah Tikvah	Petah Tikvah	1	426	Petah Tikva (Israel)	Q190828	kima-dump	Q190828	matched	A_autolink	0.95	auto		2026-08-06
 Port Mason	Port Mason	1						unmatched-junk	C_review		agent		2026-08-06
+Qaqun	Qaqun	1	19717	Qāqūn	Q2919625	furas		matched	variant-skeleton		variant	spelling of 'Kakoun' (skeleton: same consonant skeleton as 'Kakoun')	2026-10-19
 Qiryat Ata	Qiryat Ata	1	477	Kiryat Ata (Israel)	Q152602	kima-dump	Q152602	matched	A_autolink	0.95	auto		2026-08-06
 Ramallah	Ramallah	1	453	Ramalla (West Bank)	Q158119	kima-dump	Q158119	matched	A_autolink	0.95	auto		2026-08-06
 Ramat Gan	Ramat Gan	1	777	Ramat Gan (Israel)	Q192807	kima-dump	Q192807	matched	C_review		agent		2026-08-06
 Ramatby	Ramatby	1						unmatched-junk	C_review		agent		2026-08-06
 Ramleh	Ramleh	1	456	Ramla (Israel)	Q221447	kima-dump	Q4518509	matched	C_review		agent	held for human review: QID conflict - kima-dump Q221447 vs direct Wikidata Q4518509	2026-08-06
 Ras El Ein	Ras El Ein	1					Q655065	unmatched-ambiguous	C_review		agent		2026-08-06
+Ras El Naqoura	Ras El Naqoura	1			Q748504	furas		matched	variant-skeleton		variant	spelling of 'Ras En Naqura' (skeleton: same consonant skeleton as 'Ras En Naqura')	2026-10-19
+Ras En Nakura	Ras En Nakura	1			Q748504	furas		matched	variant-skeleton		variant	spelling of 'Ras En Naqura' (skeleton: same consonant skeleton as 'Ras En Naqura')	2026-10-19
+Ras Naqura	Ras Naqura	1			Q748504	furas		matched	variant-exact		variant	spelling of 'Ras En Naqura' (exact)	2026-10-19
+Ras en Naqura	Ras en Naqura	1			Q748504	furas		matched	variant-exact		variant	spelling of 'Ras En Naqura' (exact)	2026-10-19
 Rechavia	Rechavia	1	205	Merhavya (Israel)	Q2920170	human		matched	A_autolink	0.95	human	"Merhavia - the ledger reads ""Rechavia, Affuleh S/D."" (NB24 p99, serial 642): the clerk's slip for Merhavia by Afula, not a Haifa or Jerusalem quarter (user ruling 2026-10-18)"	2026-10-18
+Rehovooth	Rehovooth	1	562	Rehovot (Israel)	Q207350	kima-dump		matched	variant-skeleton		variant	spelling of 'Rehovoth' (skeleton: same consonant skeleton as 'Rehovoth')	2026-10-19
 Rehovoth	Rehovoth	1	562	Rehovot (Israel)	Q207350	kima-dump	Q207350	matched	C_review		agent		2026-08-06
 Roy	Roy	1			Q11878352	human		matched	C_review		human	El-Ro'i by Kiryat Haroshet; no Kima entry, Wikidata only	2026-08-06
 Rumat Neshanan	Rumat Neshanan	1	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump		matched	C_review		agent	read as Ramat/Neve Shaanan	2026-08-06
+Rushpina	Rushpina	1	14873	Rosh Pina (Israel)	Q525649	kima-dump		matched	variant-skeleton		variant	spelling of 'Rosh Pinna' (skeleton: same consonant skeleton as 'Rosh Pinna')	2026-10-19
+S'abbarein	S'abbarein	1			Q7395979	furas		matched	variant-skeleton		variant	spelling of 'Sabbarin' (skeleton: same consonant skeleton as 'Sabbarin')	2026-10-19
+Sabbarien	Sabbarien	1			Q7395979	furas		matched	variant-skeleton		variant	spelling of 'Sabbarin' (skeleton: same consonant skeleton as 'Sabbarin')	2026-10-19
+Sabberin	Sabberin	1			Q7395979	furas		matched	variant-skeleton		variant	spelling of 'Sabbarin' (skeleton: same consonant skeleton as 'Sabbarin')	2026-10-19
+Safa Ram	Safa Ram	1	261	Shefar'am (Israel)	Q990657	furas		matched	variant-skeleton		variant	spelling of 'Shfaram' (skeleton: same consonant skeleton as 'Shfaram')	2026-10-19
+Safed|Safad	Safed|Safad	1	377	Tsefat (Israel)	Q188336	kima-dump		matched	variant-alternation		variant	spelling of 'Safad' (alternation: all readings resolve to one place)	2026-10-19
+Saffouri	Saffouri	1	85997	Saffuriya (Israel)	Q18192054	furas		matched	variant-skeleton		variant	spelling of 'Saffuria' (skeleton: same consonant skeleton as 'Saffuria')	2026-10-19
+Saffuri	Saffuri	1	85997	Saffuriya (Israel)	Q18192054	furas		matched	variant-skeleton		variant	spelling of 'Saffuria' (skeleton: same consonant skeleton as 'Saffuria')	2026-10-19
 Saffuria	Saffuria	1	85997	Saffuriya (Israel)	Q18192054	furas		matched	furas		furas	Saffurieh - per Y. Furas	2026-10-18
+Saffuriya (Nazareth)	Saffuriya (Nazareth)	1	85997	Saffuriya (Israel)	Q18192054	furas		matched	variant-exact		variant	spelling of 'Saffuriya' (exact)	2026-10-19
+Sahmata	Sahmata	1	21806	Suhmata (Israel)	Q2777621	furas		matched	variant-skeleton		variant	spelling of 'Suhmata' (skeleton: same consonant skeleton as 'Suhmata')	2026-10-19
 Sajour	Sajour	1	75033	Sajur (Israel)	Q732433	furas	Q732433	matched	C_review		furas	Sajur - per Y. Furas	2026-10-18
+Sajur	Sajur	1	75033	Sajur (Israel)	Q732433	furas		matched	variant-skeleton		variant	spelling of 'Sajour' (skeleton: same consonant skeleton as 'Sajour')	2026-10-19
 Sakhnin	Sakhnin	1	95	Sakhnin (Israel)	Q168330	kima-dump	Q168330	matched	C_review		agent		2026-08-06
 Salem	Salem	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Salt	Salt	1	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
 Sedjerah	Sedjerah	1	733	Ilaniyya (Israel)	Q2916589	kima-dump		matched	C_review		agent	Sejera = Ilaniyya	2026-08-06
 Shaab village	Shaab village	1	77238	Shaʻab (Israel)	Q2655669	furas		matched	furas		furas	Shaab - per Y. Furas	2026-10-18
+Shafo 'amr	Shafo 'amr	1	261	Shefar'am (Israel)	Q990657	kima-dump		matched	variant-skeleton		variant	spelling of 'Shafa Amr' (skeleton: same consonant skeleton as 'Shafa Amr')	2026-10-19
+Shafr 'Amr	Shafr 'Amr	1	261	Shefar'am (Israel)	Q990657	furas		matched	variant-exact		variant	spelling of 'Shafr Amr' (exact)	2026-10-19
 Shar Amakim	Shar Amakim	1	258	Sha'ar Ha'amakim (Israel)	Q135484	kima-dump		matched	C_review		agent	Sha'ar Ha'amakim	2026-08-06
 Shatel Yahud	Shatel Yahud	1						unmatched-no-kima-entry	C_review		agent		2026-08-06
 Shavei Tzion / Nahariya	Shavei Tzion / Nahariya	1						unmatched-ambiguous	C_review		agent		2026-08-06
@@ -549,11 +795,16 @@ Shavei Zion	Shavei Zion	1	21799	Shave Tsiyyon (Israel)	Q571191	kima-dump	Q571191
 Shenglia	Shenglia	1	791	Haifa (Israel)	Q41621	human		matched	C_review		agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town	2026-10-18
 Shezlia	Shezlia	1	791	Haifa (Israel)	Q41621	human		matched	C_review		agent	garbled Herzliya quarter of Haifa, following Furas on Herzlia (Qrt.); was linked to Herzliya town	2026-10-18
 Shunat Zarefin	Shunat Zarefin	1						unmatched-ambiguous	C_review		agent	Sarafand?	2026-08-06
+Sindiyani	Sindiyani	1			Q4703260	furas		matched	variant-skeleton		variant	spelling of 'Sindiani' (skeleton: same consonant skeleton as 'Sindiani')	2026-10-19
+Sindyaneh	Sindyaneh	1			Q4703260	furas		matched	variant-skeleton		variant	spelling of 'Sindiani' (skeleton: same consonant skeleton as 'Sindiani')	2026-10-19
 Smillel	Smillel	1						unmatched-junk	C_review		agent		2026-08-06
 Solam	Solam	1	86790	Sulam (Israel)	Q2777713	furas		matched	furas		furas	Solam - per Y. Furas	2026-10-18
+Souk Abyad	Souk Abyad	1	791	Haifa (Israel)	Q41621	furas		matched	variant-exact		variant	spelling of 'Souk El Abyad' (exact)	2026-10-19
 Souk El Abyad	Souk El Abyad	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Souk el Abyad: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 St. Hashomer	St. Hashomer	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Staerneck	Staerneck	1						unmatched-junk	C_review		agent		2026-08-06
+Subbarein	Subbarein	1			Q7395979	furas		matched	variant-skeleton		variant	spelling of 'Sabbarin' (skeleton: same consonant skeleton as 'Sabbarin')	2026-10-19
+Tantura (Dor)	Tantura (Dor)	1	21005	Tantura (Israel)	Q2100836	kima-dump		matched	variant-skeleton		variant	spelling of 'Tantoura' (skeleton: same consonant skeleton as 'Tantoura')	2026-10-19
 Tarshiha/Acre	Tarshiha/Acre	1	21809	Tarshiḥa (Israel)	Q134496896	furas		matched	furas		furas	Tarshiha - per Y. Furas	2026-10-18
 Tel Chai	Tel Chai	1	16154	Tel Hai (Israel)	Q2094886	kima-dump	Q2094886	matched	C_review		agent	Tel Hai	2026-08-06
 Tel Joseph	Tel Joseph	1	186	Tel-Yosef (Israel)	Q2917286	kima-dump		matched	C_review		agent		2026-08-06
@@ -579,23 +830,41 @@ Tireh/Athlit	Tireh/Athlit	1						unmatched-ambiguous	outside-queue		agent	altern
 Tires	Tires	1	756	Tirat Karmel (Israel)	Q4118776	human	Q25374396	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
 Tires|Tireh	Tires|Tireh	1	756	Tirat Karmel (Israel)	Q4118776	human	Q25374396	matched	outside-queue		agent	al-Tira, Haifa (Mandate village) - same family as Tireh, extending Y. Furas	2026-10-18
 Trans Jordan	Trans Jordan	1	17467	Salṭ (Jordan)	Q867586	furas		matched	furas		furas	Salt - per Y. Furas	2026-10-18
+Tulkarem S/D	Tulkarem S/D	1	73472	Tulkarem (West Bank)	Q985531	kima-dump		matched	variant-exact		variant	spelling of 'Tulkarem' (exact)	2026-10-19
+Tulkarem|Tul-Karm	Tulkarem|Tul-Karm	1	73472	Tulkarem (West Bank)	Q985531	kima-dump		matched	variant-alternation		variant	spelling of 'Tulkarem' (alternation: all readings resolve to one place)	2026-10-19
+Tulkarem|Tulkarem S/D	Tulkarem|Tulkarem S/D	1	73472	Tulkarem (West Bank)	Q985531	kima-dump		matched	variant-alternation		variant	spelling of 'Tulkarem' (alternation: all readings resolve to one place)	2026-10-19
+Tulkarm|Tulkarem	Tulkarm|Tulkarem	1	73472	Tulkarem (West Bank)	Q985531	kima-dump		matched	variant-alternation		variant	spelling of 'Tulkarem' (alternation: all readings resolve to one place)	2026-10-19
+Tulkharem	Tulkharem	1	73472	Tulkarem (West Bank)	Q985531	kima-dump		matched	variant-skeleton		variant	spelling of 'Tulkarem' (skeleton: same consonant skeleton as 'Tulkarem')	2026-10-19
 Turaan	Turaan	1						unmatched-no-kima-entry	C_review		agent	Tur'an village absent from Kima	2026-08-06
+Um El Fahem	Um El Fahem	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-exact		variant	spelling of 'Umm el Fahem' (exact)	2026-10-19
 Um El Zeinat	Um El Zeinat	1			Q2255513	furas		matched	furas		furas	Um el Zeinat - per Y. Furas	2026-10-18
+Um al-Fahm	Um al-Fahm	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-exact		variant	spelling of 'Umm el Fahm' (exact)	2026-10-19
 Um el Fahim	Um el Fahim	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
+Umm El Fahem	Umm El Fahem	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	variant-exact		variant	spelling of 'Umm el Fahem' (exact)	2026-10-19
+Umm al-Zaynat	Umm al-Zaynat	1			Q2255513	furas		matched	variant-skeleton		variant	spelling of 'Um El Zeinat' (skeleton: same consonant skeleton as 'Um El Zeinat')	2026-10-19
 Umm el Fahem	Umm el Fahem	1	743	Umm al-Fahm (Israel)	Q168245	furas		matched	furas		furas	Um el Fahm - per Y. Furas	2026-10-18
 Vilhelma	Vilhelma	1	26771	Wilhelma (Israel)	Q2906526	kima-dump		matched	C_review		agent	Wilhelma Templer colony	2026-08-06
+W. Nisnas	W. Nisnas	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled		matched	variant-skeleton		variant	spelling of 'W. el Nisnass' (skeleton: same consonant skeleton as 'W. el Nisnass')	2026-10-19
 W. el Nisnass	W. el Nisnass	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled		matched	C_review		agent	Wadi Nisnas	2026-08-06
+Wad Rushmia	Wad Rushmia	1	791	Haifa (Israel)	Q41621	furas		matched	variant-skeleton		variant	spelling of 'Wadi Rushumia' (skeleton: same consonant skeleton as 'Wadi Rushumia')	2026-10-19
+Wad Rushmya	Wad Rushmya	1	791	Haifa (Israel)	Q41621	furas		matched	variant-skeleton		variant	spelling of 'Wadi Rushumia' (skeleton: same consonant skeleton as 'Wadi Rushumia')	2026-10-19
 Wadi Arah	Wadi Arah	1			Q7959216	furas		matched	furas		furas	Wadi arah - per Y. Furas	2026-10-18
 Wadi Kavara	Wadi Kavara	1						unmatched-no-kima-entry	C_review		agent	Kabara marshes	2026-08-06
 Wadi Nasnas (Haifa)	Wadi Nasnas (Haifa)	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	furas		matched	furas		furas	Wadi Nisnas, Haifa - per Y. Furas	2026-10-18
 Wadi Nisnas	Wadi Nisnas	1	85346	Wadi Nisnas (Haifa, Israel)	Q2920415	wikidata-reconciled	Q2920415	matched	C_review		agent		2026-08-06
+Wadi Roshmia	Wadi Roshmia	1	791	Haifa (Israel)	Q41621	furas		matched	variant-skeleton		variant	spelling of 'Wadi Rushumia' (skeleton: same consonant skeleton as 'Wadi Rushumia')	2026-10-19
 Wadi Rushumia	Wadi Rushumia	1	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Wadi Rushumia: Haifa neighborhood per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
+Wady Rushmiyeh	Wady Rushmiyeh	1	791	Haifa (Israel)	Q41621	furas		matched	variant-skeleton		variant	spelling of 'Wadi Rushumia' (skeleton: same consonant skeleton as 'Wadi Rushumia')	2026-10-19
+Yaabed	Yaabed	1	75339	Ya'bad (West Bank)	Q1828708	furas		matched	variant-skeleton		variant	spelling of 'Yabed' (skeleton: same consonant skeleton as 'Yabed')	2026-10-19
 Yabed	Yabed	1	75339	Ya'bad (West Bank)	Q1828708	furas		matched	furas		furas	Ya'bad - per Y. Furas	2026-10-18
+Yaboud	Yaboud	1	75339	Ya'bad (West Bank)	Q1828708	furas		matched	variant-skeleton		variant	spelling of 'Yabed' (skeleton: same consonant skeleton as 'Yabed')	2026-10-19
 Yavne'el / Tiberias	Yavne'el / Tiberias	1						unmatched-ambiguous	C_review		agent		2026-08-06
 Yavneel	Yavneel	1	18477	Yavne'el (Israel)	Q1676894	kima-dump	Q1676894	matched	A_autolink	0.95	auto		2026-08-06
 Yavneel Colony	Yavneel Colony	1	18477	Yavne'el (Israel)	Q1676894	kima-dump		matched	C_review		agent		2026-08-06
 Yavniel Colony	Yavniel Colony	1	18477	Yavne'el (Israel)	Q1676894	kima-dump		matched	C_review		agent		2026-08-06
 Zamarin	Zamarin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	Q108785495	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q198399 vs direct Wikidata Q108785495	2026-08-06
+Zammarrin	Zammarrin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zamarin' (skeleton: same consonant skeleton as 'Zamarin')	2026-10-19
+Zammarrine	Zammarrine	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zamarin' (skeleton: same consonant skeleton as 'Zamarin')	2026-10-19
 Zeeb	Zeeb	1						unmatched-no-kima-entry	C_review		agent	al-Zib; only Tel Akhziv site in Kima	2026-08-06
 Zekra Yacov	Zekra Yacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent	garbled Zichron Yaakov	2026-08-06
 Zichron	Zichron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	Q198399	matched	A_autolink	0.95	auto		2026-08-06
@@ -605,6 +874,8 @@ Zichron Yaakov|Bat shlomo - Zichron Jacob	Zichron Yaakov|Bat shlomo - Zichron Ja
 Zichron Yacov	Zichron Yacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zichron Yakov|Zichron Yaakov	Zichron Yakov|Zichron Yaakov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zicron	Zicron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+Zikhron	Zikhron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zicron' (skeleton: same consonant skeleton as 'Zicron')	2026-10-19
 Zikhron Yaacov	Zikhron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	A_autolink	0.95	auto		2026-08-06
 Zikhron Yacob	Zikhron Yacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zikron Yaacov	Zikron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
+Zummarin	Zummarin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zamarin' (skeleton: same consonant skeleton as 'Zamarin')	2026-10-19
