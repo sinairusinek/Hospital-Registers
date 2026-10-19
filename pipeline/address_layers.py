@@ -153,6 +153,12 @@ def _key(text: str) -> str:
     return re.sub(r"[^a-z0-9]", "", (text or "").lower())
 
 
+# A slip in one cell: plain "Benyamina" carries Government-Harbour, which none
+# of his seven other Benyamina rows do. It is the settlement (user ruling
+# 2026-10-19).
+IGNORE_OTHER_CATEGORY = {"benyamina"}
+
+
 @lru_cache(maxsize=1)
 def furas_labels() -> dict[str, dict[str, str]]:
     """Address string (keyed loosely) -> Furas's row, for annotated strings."""
@@ -163,6 +169,9 @@ def furas_labels() -> dict[str, dict[str, str]]:
         for row in csv.DictReader(fh, delimiter="\t", quoting=csv.QUOTE_NONE):
             if not (row.get("type of geographical place") or "").strip():
                 continue
+            if _key(row["orig address"]) in IGNORE_OTHER_CATEGORY:
+                row["other category"] = ""
+
             for text in (row["orig address"], row["corrected name"]):
                 k = _key(text)
                 if len(k) >= 4:
