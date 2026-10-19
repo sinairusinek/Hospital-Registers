@@ -515,7 +515,11 @@ const TimelineView: React.FC = () => {
 
   useEffect(() => {
     let cancelled = false;
-    fetch(DATA_URL)
+    // no-cache: revalidate with the server every time (a 304 when unchanged).
+    // GitHub Pages serves max-age=600, and without this a redeploy that changes
+    // the file's shape is invisible for ten minutes even across a hard refresh,
+    // because the reload does not reach fetches the page makes itself.
+    fetch(DATA_URL, { cache: 'no-cache' })
       .then(r => {
         if (!r.ok) throw new Error(`${r.status}`);
         return r.json();
