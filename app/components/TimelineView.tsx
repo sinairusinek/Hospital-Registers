@@ -35,6 +35,8 @@ interface IntakeMonth { month: string; general: number; atlit: number; }
 interface Facet {
   key: string; label: string; values: string[];
   month: (number[] | null)[]; day: (number[] | null)[];
+  /** The Atlit book split the same way, keyed by month and by day. */
+  atlitMonth?: Record<string, number[]>; atlitDay?: Record<string, number[]>;
 }
 /** One dated day: [date, general] or [date, general, atlit]. Packed as arrays
  *  by pipeline/timeline_data.py — 3,530 of them, and objects would dominate
@@ -44,6 +46,8 @@ interface Gap { start: string; end: string; months: number; reason: string; }
 interface Notebook {
   notebook: string; start: string; end: string; months: number;
   records: number; firstPage: number | null; atlit: boolean;
+  /** The library's viewer for the whole notebook; null where it has none. */
+  url?: string | null;
 }
 interface InstitutionalEvent {
   date: string; label: string; src: string | null; note: string;
@@ -138,21 +142,17 @@ const longDate = (iso: string): string => {
 // everywhere else in the site. The event layers are deliberately outside that
 // scale: they are not categories of patient, and must not be read as any.
 const INTAKE = '#2a78d6';       // SERIES[0]
-const ATLIT = '#4a3aa7';        // SERIES[6] — a different institution
+// The Atlit book is coloured like the rest of the band and set apart by a fine
+// black frame: it is another institution's register, never part of the count.
+const ATLIT_FRAME = '#0f172a';
+const ATLIT = '#4a3aa7';        // SERIES[6]: the Atlit ledger in the notebooks strip
 const GAP = '#898781';          // NEUTRAL: an absence, not a category
 
 // The facet colours are the site's: Community keeps the fixed hues the
 // Statistics pie and the Map give it, and the other facets are coloured by
-// rank exactly as the Statistics pies are. The Atlit book's violet is also the
-// colour of some facet values, so while the band is split the Atlit bars are
-// drawn as an outline instead.
+// rank exactly as the Statistics pies are.
 const facetColors = (f: Facet): ColorScale =>
   colorsForRanked(f.key === 'community' ? GROUP_DIM : f.label, f.values);
-
-/** The Atlit bars: solid violet normally, an outline while the band is split. */
-const atlitStyle = (split: boolean) => (split
-  ? { fill: '#ffffff', stroke: ATLIT, strokeWidth: 0.8 }
-  : { fill: ATLIT });
 
 // The historical context is not a category of anything, and colouring it by
 // kind put a second legend beside the band's. One quiet ink for all of it.
@@ -459,22 +459,30 @@ const NotebookPanel: React.FC<{
           intake. It is excluded from every general statistic on this site.
         </p>
       )}
-      {scan ? (
-        <a href={scan.service ? pageImageUrl(scan, 1400) : '#'} target="_blank" rel="noopener noreferrer"
+      {/* The card opens the whole notebook in the library's viewer; the first
+          page is only its cover picture. Notebooks the library has no viewer
+          link for fall back to the first page's scan. */}
+      {notebook.url || scan ? (
+        <a href={notebook.url || (scan?.service ? pageImageUrl(scan, 1400) : '#')}
+          target="_blank" rel="noopener noreferrer"
           className="block border-t border-slate-100 hover:opacity-90">
-          <img
-            src={pageImageUrl(scan, 560)}
-            alt={`Notebook ${notebook.notebook}, page ${notebook.firstPage}`}
-            loading="lazy"
-            className="w-full h-36 object-cover object-top bg-slate-100"
-          />
+          {scan && (
+            <img
+              src={pageImageUrl(scan, 560)}
+              alt={`Notebook ${notebook.notebook}, page ${notebook.firstPage}`}
+              loading="lazy"
+              className="w-full h-36 object-cover object-top bg-slate-100"
+            />
+          )}
           <span className="flex items-center gap-1.5 px-4 py-2 text-[11px] font-mono text-indigo-600">
-            <BookOpen size={12} /> page {notebook.firstPage} · open the scan
+            <BookOpen size={12} />
+            {notebook.url ? 'open the whole notebook' : `page ${notebook.firstPage} · open the scan`}
+            <ExternalLink size={11} />
           </span>
         </a>
       ) : (
         <p className="px-4 pb-4 text-[11px] text-slate-400 leading-snug border-t border-slate-100 pt-2">
-          No scan is indexed for this notebook's first page.
+          No scan of this notebook is available online.
         </p>
       )}
     </div>
@@ -759,7 +767,6 @@ const TimelineView: React.FC = () => {
   const facets = data.facets ?? [];
   const facet = facets.find(f => f.key === facetKey) ?? null;
   const colorOf: ColorScale | null = facet ? facetColors(facet) : null;
-  const split = Boolean(facet);
 
   /**
    * One bar of the band, monthly or daily: the general intake, plain or split
@@ -768,30 +775,38 @@ const TimelineView: React.FC = () => {
    */
   const bar = (
     key: string, a: number, w: number, hoverX: number, label: string,
-    gen: number, atl: number, parts: number[] | null | undefined
+    gen: number, atl: number, parts: number[] | null | undefined,
+    atlParts: number[] | null | undefined
   ) => {
     const shownAtl = showAtlit ? atl : 0;
     const total = gen + shownAtl;
     if (!total) return null;
     const k = percent ? 100 / total : 1;
     const rects: React.ReactNode[] = [];
-    if (facet && colorOf && parts) {
-      let base = 0;
-      parts.forEach((n, i) => {
-        if (!n) return;
-        const y0 = barY(base * k);
-        base += n;
-        const y1 = barY(base * k);
-        rects.push(<rect key={i} x={a} y={y1} width={w} height={y0 - y1}
-          fill={colorOf(facet.values[i])} />);
-      });
-    } else if (gen) {
-      rects.push(<rect key="g" x={a} y={barY(gen * k)} width={w}
-        height={axisY - barY(gen * k)} fill={INTAKE} />);
-    }
+    // One segment of the bar from `from` upward: split by the facet when there
+    // is one and the counts for it, else the plain intake blue.
+    const segment = (tag: string, from: number, n: number, split?: number[] | null) => {
+      if (facet && colorOf && split) {
+        let base = from;
+        split.forEach((c, i) => {
+          if (!c) return;
+          const y0 = barY(base * k);
+          base += c;
+          const y1 = barY(base * k);
+          rects.push(<rect key={`${tag}${i}`} x={a} y={y1} width={w} height={y0 - y1}
+            fill={colorOf(facet.values[i])} />);
+        });
+      } else if (n) {
+        rects.push(<rect key={tag} x={a} y={barY((from + n) * k)} width={w}
+          height={barY(from * k) - barY((from + n) * k)} fill={INTAKE} />);
+      }
+    };
+    segment('g', 0, gen, parts);
     if (shownAtl) {
-      rects.push(<rect key="a" x={a} y={barY(total * k)} width={w}
-        height={barY(gen * k) - barY(total * k)} {...atlitStyle(split)} />);
+      segment('a', gen, atl, atlParts);
+      rects.push(<rect key="frame" x={a} y={barY(total * k)} width={w}
+        height={barY(gen * k) - barY(total * k)}
+        fill="none" stroke={ATLIT_FRAME} strokeWidth={0.75} />);
     }
     return (
       <g
@@ -1150,7 +1165,7 @@ const TimelineView: React.FC = () => {
               if (b < M.left || a > width - M.right) return null;
               const w = Math.max(1.2, dayW - (dayW > 4 ? 1 : 0.2));
               return bar(r[0], a, w, a + w / 2, longDate(r[0]),
-                r[1], r[2] ?? 0, facet?.day[i]);
+                r[1], r[2] ?? 0, facet?.day[i], facet?.atlitDay?.[r[0]]);
             })}
 
             {/* intake band — monthly */}
@@ -1160,7 +1175,7 @@ const TimelineView: React.FC = () => {
               if (b < M.left || a > width - M.right) return null;
               const w = Math.max(0.8, b - a - (b - a > 4 ? 1 : 0.2));
               return bar(m.month, a, w, (a + b) / 2, fromM(toM(m.month)),
-                m.general, m.atlit, facet?.month[i]);
+                m.general, m.atlit, facet?.month[i], facet?.atlitMonth?.[m.month]);
             })}
 
             {/* hover readout */}
@@ -1488,8 +1503,9 @@ const TimelineView: React.FC = () => {
             )}
             <p className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-sm"
-                style={split ? { background: '#fff', border: `1px solid ${ATLIT}` } : { background: ATLIT }} />
-              Notebook {data.meta.atlitNotebook}: the Atlit camp book
+                style={{ background: facet ? '#fff' : INTAKE, border: `1px solid ${ATLIT_FRAME}` }} />
+              Notebook {data.meta.atlitNotebook}: the Atlit camp book, coloured like the rest
+              and framed in black
             </p>
           </div>
           <div className="space-y-1.5">

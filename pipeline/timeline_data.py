@@ -79,15 +79,15 @@ def community(religion, nationality):
 
 # ---------------------------------------------------------------- facets
 #
-# The intake band can be coloured by any of these. Each is counted over the
-# general intake only (Atlit is another institution's book and stays its own
-# series), by month and by day, so the split always sums to the bar it splits.
+# The intake band can be coloured by any of these, by month and by day, so the
+# split always sums to the bar it splits. The general intake and the Atlit book
+# (another institution's register) are counted separately.
 #
 # A facet with many values keeps its TOP_N commonest and pools the rest as
 # "Others"; blanks are "Not recorded", never dropped. The ranking is taken over
 # the whole register, Atlit included, because that is the population the
 # Statistics page ranks its colours over — the same value should be the same
-# colour on both pages.
+# colour on both pages. The Atlit book is split too, but counted apart.
 
 UNKNOWN = "Not recorded"
 OTHERS = "Others"
@@ -188,6 +188,8 @@ def read_register():
     facet_rank = {key: Counter() for key, *_ in FACETS}
     nb_months = defaultdict(set)
     nb_first_page = {}
+    # The library's viewer for the whole notebook, one per book (tempLink).
+    nb_url = {}
     undated = 0
     total = 0
 
@@ -211,16 +213,20 @@ def read_register():
 
             if notebook == ATLIT_NOTEBOOK:
                 atlit[month] += 1
+                facet_rows.append((month, day, values, True))
                 if day:
                     atlit_day[day] += 1
             else:
                 general[month] += 1
-                facet_rows.append((month, day, values))
+                facet_rows.append((month, day, values, False))
                 if day:
                     general_day[day] += 1
 
             if notebook:
                 nb_months[notebook].add(month)
+                link = (row.get("tempLink") or "").strip()
+                if link and notebook not in nb_url:
+                    nb_url[notebook] = link
                 page = (row.get("Page_Number") or "").strip()
                 if page.isdigit():
                     cur = nb_first_page.get(notebook)
@@ -239,6 +245,7 @@ def read_register():
                 (atlit if nb == ATLIT_NOTEBOOK else general)[m] for m in ms
             ),
             "firstPage": nb_first_page.get(nb),
+            "url": nb_url.get(nb),
             "atlit": nb == ATLIT_NOTEBOOK,
         })
     notebooks.sort(key=lambda n: (n["start"], int(n["notebook"])))
@@ -264,15 +271,20 @@ def bucket_facets(rows, rank):
             values.append(UNKNOWN)
         index = {v: i for i, v in enumerate(values)}
         pooled = index.get(OTHERS)
-        by_month = defaultdict(lambda: [0] * len(values))
-        by_day = defaultdict(lambda: [0] * len(values))
-        for month, day, vals in rows:
+        # General and Atlit kept apart: the Atlit book is drawn as its own
+        # outlined segment of the bar, never merged into the general count.
+        tallies = {flag: (defaultdict(lambda: [0] * len(values)),
+                          defaultdict(lambda: [0] * len(values)))
+                   for flag in (False, True)}
+        for month, day, vals, is_atlit in rows:
             i = index.get(vals[key], pooled)
+            by_month, by_day = tallies[is_atlit]
             by_month[month][i] += 1
             if day:
                 by_day[day][i] += 1
         out.append({"key": key, "label": label, "values": values,
-                    "month": by_month, "day": by_day})
+                    "month": tallies[False][0], "day": tallies[False][1],
+                    "atlitMonth": tallies[True][0], "atlitDay": tallies[True][1]})
     return out
 
 
@@ -434,6 +446,10 @@ def build():
             "values": f["values"],
             "month": [f["month"].get(m) for m in span],
             "day": [f["day"].get(d) for d, *_ in daily],
+            # The Atlit book split the same way, sparse: only the months and
+            # days it covers, keyed by date, since it is one year of 220.
+            "atlitMonth": dict(sorted(f["atlitMonth"].items())),
+            "atlitDay": dict(sorted(f["atlitDay"].items())),
         }
         for f in facets
     ]
