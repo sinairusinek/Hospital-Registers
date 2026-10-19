@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ExternalLink, X, Loader2, BookOpen } from 'lucide-react';
 import { PageScan, PageScanIndex, usePageScans, pageImageUrl } from './ScanLink';
 import PersonnelStrip from './PersonnelStrip';
+import { semanticColor, NEUTRAL } from '../colors';
+import { GROUP_DIM } from '../groups';
 
 /**
  * The hospital's registers on one time axis, in four layers.
@@ -26,7 +28,11 @@ const DATA_URL = `${import.meta.env.BASE_URL}data/timeline.json`;
 
 // ---------------------------------------------------------------- types
 
-interface IntakeMonth { month: string; general: number; atlit: number; }
+interface IntakeMonth {
+  month: string; general: number; atlit: number;
+  /** The general count split by Community, in meta.communities order. */
+  community?: number[];
+}
 /** One dated day: [date, general] or [date, general, atlit]. Packed as arrays
  *  by pipeline/timeline_data.py — 3,530 of them, and objects would dominate
  *  the file. Only days the register reaches are present. */
@@ -53,9 +59,12 @@ interface TimelineData {
     first: string; last: string; records: number; dated: number;
     undated: number; generalRecords: number; atlitRecords: number;
     atlitNotebook: string; sourceOrigin: string | null;
+    communities?: string[];
   };
   intake: IntakeMonth[];
   daily: IntakeDay[];
+  /** Row for row with daily: that day's general count split by Community. */
+  dailyCommunity?: number[][];
   gaps: Gap[];
   notebooks: Notebook[];
   institutional: InstitutionalEvent[];
@@ -129,6 +138,35 @@ const longDate = (iso: string): string => {
 const INTAKE = '#2a78d6';       // SERIES[0]
 const ATLIT = '#4a3aa7';        // SERIES[6] — a different institution
 const GAP = '#898781';          // NEUTRAL: an absence, not a category
+
+// The Community split uses the fixed colours the Statistics pie and the Map
+// give each community. "Other" is the same violet as the Atlit book, so while
+// the band is split the Atlit bars are drawn as an outline instead.
+const communityColor = (k: string): string =>
+  k === 'Not recorded' ? NEUTRAL : semanticColor(GROUP_DIM, k);
+
+/** The Atlit bars: solid violet normally, an outline while the band is split. */
+const atlitStyle = (split: boolean) => (split
+  ? { fill: '#ffffff', stroke: ATLIT, strokeWidth: 0.8 }
+  : { fill: ATLIT });
+
+/** One bar, stacked from the axis up by Community. */
+const stack = (
+  key: string, a: number, w: number, counts: number[], names: string[],
+  barY: (v: number) => number
+) => {
+  let base = 0;
+  return counts.map((n, i) => {
+    if (!n) return null;
+    const y0 = barY(base);
+    base += n;
+    const y1 = barY(base);
+    return (
+      <rect key={`${key}-${i}`} x={a} y={y1} width={w} height={y0 - y1}
+        fill={communityColor(names[i])} />
+    );
+  });
+};
 
 const KIND_COLOR: Record<string, string> = {
   conflict: '#b2182b',
@@ -488,9 +526,11 @@ const TimelineView: React.FC = () => {
   const [openNotebook, setOpenNotebook] = useState<Notebook | null>(null);
   const [showNotebooks, setShowNotebooks] = useState(false);
   const [showAtlit, setShowAtlit] = useState(true);
+  const [byCommunity, setByCommunity] = useState(false);
   const [kinds, setKinds] = useState<Set<string> | null>(null);
   const [hover, setHover] = useState<
-    { x: number; y: number; label: string; general: number; atlit: number } | null
+    { x: number; y: number; label: string; general: number; atlit: number;
+      community?: number[] } | null
   >(null);
 
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -604,10 +644,12 @@ const TimelineView: React.FC = () => {
   // range so a drag does not walk 3,530 rows per frame.
   const visibleDaily = useMemo(() => {
     if (!data || !dayZoom) return [];
-    return data.daily.filter(r => {
-      const at = toM(r[0]);
-      return at >= lo - 0.05 && at <= hi + 0.05;
-    });
+    return data.daily
+      .map((r, i) => ({ r, c: data.dailyCommunity?.[i] }))
+      .filter(({ r }) => {
+        const at = toM(r[0]);
+        return at >= lo - 0.05 && at <= hi + 0.05;
+      });
   }, [data, dayZoom, lo, hi]);
 
   // Two scales, because one cannot serve both. A month peaks near 450 and a
@@ -620,7 +662,7 @@ const TimelineView: React.FC = () => {
     if (dayZoom) {
       return Math.max(
         1,
-        ...visibleDaily.map(r => r[1] + (showAtlit ? (r[2] ?? 0) : 0))
+        ...visibleDaily.map(({ r }) => r[1] + (showAtlit ? (r[2] ?? 0) : 0))
       );
     }
     return Math.max(
@@ -726,6 +768,9 @@ const TimelineView: React.FC = () => {
   const monthTicks = !dayZoom && hi - lo <= 48;
   const zoomed = Boolean(range) && (hi - lo) < (extent[1] - extent[0]) - 0.5;
   const kindsPresent: string[] = Array.from(new Set(data.external.map(e => e.kind)));
+  // An older timeline.json has no split; the toggle is then simply not offered.
+  const communities = data.meta.communities ?? [];
+  const split = byCommunity && communities.length > 0;
 
   return (
     <div className="h-full overflow-y-auto custom-scrollbar bg-slate-50">
@@ -783,6 +828,18 @@ const TimelineView: React.FC = () => {
           >
             Atlit camp book
           </button>
+          {communities.length > 0 && (
+            <button
+              onClick={() => setByCommunity(v => !v)}
+              title="Split the general intake by Community: religion crossed with nationality"
+              className={`px-2.5 py-1 rounded-full border transition-colors ${
+                byCommunity ? 'bg-white border-slate-300 text-slate-700'
+                            : 'bg-slate-100 border-slate-200 text-slate-400'
+              }`}
+            >
+              By community
+            </button>
+          )}
           <button
             onClick={() => setShowNotebooks(v => !v)}
             className={`px-2.5 py-1 rounded-full border transition-colors ${
@@ -1027,7 +1084,7 @@ const TimelineView: React.FC = () => {
               * the days on screen; the caption beside it says so, because the
               * same bar height means one thing per month and another per day.
               */}
-            {dayZoom && visibleDaily.map(r => {
+            {dayZoom && visibleDaily.map(({ r, c }) => {
               const at = toM(r[0]);
               const a = x(at);
               // One day in month units, from this day's own month: the same
@@ -1047,15 +1104,18 @@ const TimelineView: React.FC = () => {
                   key={r[0]}
                   onMouseEnter={() => setHover({
                     x: a + w / 2, y: barY(gen + (showAtlit ? atl : 0)),
-                    label: longDate(r[0]), general: gen, atlit: atl,
+                    label: longDate(r[0]), general: gen, atlit: atl, community: c,
                   })}
                 >
                   {showAtlit && atl > 0 && (
                     <rect
-                      x={a} y={barY(gen + atl)} width={w} height={ah} fill={ATLIT}
+                      x={a} y={barY(gen + atl)} width={w} height={ah}
+                      {...atlitStyle(split)}
                     />
                   )}
-                  <rect x={a} y={barY(gen)} width={w} height={gh} fill={INTAKE} />
+                  {split && c
+                    ? stack(r[0], a, w, c, communities, barY)
+                    : <rect x={a} y={barY(gen)} width={w} height={gh} fill={INTAKE} />}
                 </g>
               );
             })}
@@ -1075,57 +1135,70 @@ const TimelineView: React.FC = () => {
                   onMouseEnter={() => setHover({
                     x: (a + b) / 2, y: barY(m.general + ah),
                     label: fromM(toM(m.month)), general: m.general, atlit: m.atlit,
+                    community: m.community,
                   })}
                 >
                   {showAtlit && m.atlit > 0 && (
                     <rect
                       x={a} y={barY(m.general + m.atlit)} width={w} height={ah}
-                      fill={ATLIT}
+                      {...atlitStyle(split)}
                     />
                   )}
-                  <rect x={a} y={barY(m.general)} width={w} height={gh} fill={INTAKE} />
+                  {split && m.community
+                    ? stack(m.month, a, w, m.community, communities, barY)
+                    : <rect x={a} y={barY(m.general)} width={w} height={gh} fill={INTAKE} />}
                 </g>
               );
             })}
 
             {/* hover readout */}
-            {hover && (
-              <g pointerEvents="none">
-                <line
-                  x1={hover.x} y1={bandTop} x2={hover.x} y2={axisY}
-                  stroke="#0f172a" strokeWidth={0.6} opacity={0.3}
-                />
-                <rect
-                  x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124)}
-                  y={Math.max(bandTop + 2, hover.y - 42)}
-                  width={124} height={showAtlit && hover.atlit ? 50 : 36} rx={4}
-                  fill="#0f172a" opacity={0.9}
-                />
-                <text
-                  x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124) + 9}
-                  y={Math.max(bandTop + 2, hover.y - 42) + 15}
-                  fontSize={10.5} fill="#fff" className="font-mono"
-                >
-                  <tspan x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124) + 9}>
-                    {hover.label}
-                  </tspan>
-                  <tspan
-                    x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124) + 9}
-                    dy={14}
-                  >
-                    {hover.general.toLocaleString()} admissions
-                  </tspan>
-                  {showAtlit && hover.atlit > 0 && (
-                    <tspan
-                      x={Math.min(Math.max(hover.x - 62, M.left), width - M.right - 124) + 9}
-                      dy={14} fill="#c7d2fe"
-                    >
-                      {hover.atlit.toLocaleString()} at Atlit
-                    </tspan>
-                  )}
-                </text>
-              </g>
-            )}
+            {hover && (() => {
+              // One line per figure: the date, the total, then either the
+              // Atlit line or, when the band is split, a line per community.
+              const lines: { text: string; fill: string; swatch?: string }[] = [
+                { text: hover.label, fill: '#fff' },
+                { text: `${hover.general.toLocaleString()} admissions`, fill: '#fff' },
+              ];
+              if (split && hover.community) {
+                hover.community.forEach((n, i) => {
+                  if (n) lines.push({
+                    text: `${n.toLocaleString()} ${communities[i]}`,
+                    fill: '#e2e8f0', swatch: communityColor(communities[i]),
+                  });
+                });
+              }
+              if (showAtlit && hover.atlit > 0) {
+                lines.push({ text: `${hover.atlit.toLocaleString()} at Atlit`, fill: '#c7d2fe' });
+              }
+              const boxW = split ? 176 : 124;
+              const boxH = 8 + lines.length * 14;
+              const bx = Math.min(Math.max(hover.x - boxW / 2, M.left), width - M.right - boxW);
+              const by = Math.max(bandTop + 2, Math.min(hover.y - 42, axisY - boxH));
+              return (
+                <g pointerEvents="none">
+                  <line
+                    x1={hover.x} y1={bandTop} x2={hover.x} y2={axisY}
+                    stroke="#0f172a" strokeWidth={0.6} opacity={0.3}
+                  />
+                  <rect x={bx} y={by} width={boxW} height={boxH} rx={4}
+                    fill="#0f172a" opacity={0.9} />
+                  {lines.map((l, i) => (
+                    <g key={i}>
+                      {l.swatch && (
+                        <rect x={bx + 9} y={by + 7 + i * 14} width={7} height={7}
+                          rx={1.5} fill={l.swatch} />
+                      )}
+                      <text
+                        x={bx + 9 + (l.swatch ? 11 : 0)} y={by + 15 + i * 14}
+                        fontSize={10.5} fill={l.fill} className="font-mono"
+                      >
+                        {l.text}
+                      </text>
+                    </g>
+                  ))}
+                </g>
+              );
+            })()}
 
             {/* y axis
               *
@@ -1364,12 +1437,32 @@ const TimelineView: React.FC = () => {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-xs text-slate-500">
           <div className="space-y-1.5">
             <p className="font-semibold text-slate-700">The band</p>
+            {split ? (
+              <>
+                <p>Monthly admissions, general register, by community:</p>
+                <p className="flex flex-wrap gap-x-3 gap-y-1">
+                  {communities.map(k => (
+                    <span key={k} className="flex items-center gap-1.5">
+                      <span className="w-3 h-3 rounded-sm" style={{ background: communityColor(k) }} />
+                      {k}
+                    </span>
+                  ))}
+                </p>
+                <p className="leading-relaxed">
+                  Community is religion crossed with nationality, as on the Statistics
+                  page; <em>Not recorded</em> is a Muslim or Christian with no nationality,
+                  or no religion at all.
+                </p>
+              </>
+            ) : (
+              <p className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-sm" style={{ background: INTAKE }} />
+                Monthly admissions, general register
+              </p>
+            )}
             <p className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-sm" style={{ background: INTAKE }} />
-              Monthly admissions, general register
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-sm" style={{ background: ATLIT }} />
+              <span className="w-3 h-3 rounded-sm"
+                style={split ? { background: '#fff', border: `1px solid ${ATLIT}` } : { background: ATLIT }} />
               Notebook {data.meta.atlitNotebook}: the Atlit camp book
             </p>
           </div>

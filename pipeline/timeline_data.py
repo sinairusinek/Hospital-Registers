@@ -49,6 +49,33 @@ ATLIT_NOTEBOOK = "25"
 
 FIRST, LAST = "1930-01", "1948-04"
 
+# The site's Community grouping, religion crossed with nationality, exactly as
+# app/groups.ts derives it — the intake band can be split by it, and a split
+# that drew its lines differently from the Statistics pie would be two
+# groupings under one name. The order is the order the slices stack in.
+COMMUNITIES = ["Palestinian Arab", "Jewish", "British Christian", "Other", "Not recorded"]
+BRITISH_NAT = {"British", "Palestinian British"}
+ARAB_RELIGIONS = {"Muslim", "Christian", "Arab"}
+
+
+def community(religion, nationality):
+    """Index into COMMUNITIES. Mirrors groupOf in app/groups.ts."""
+    rel = (religion or "").strip()
+    nat = (nationality or "").strip()
+    if rel in ("", "null"):
+        return 4
+    if rel == "Jewish":
+        return 1
+    if rel == "Christian" and nat in BRITISH_NAT:
+        return 2
+    if rel in ARAB_RELIGIONS and nat == "Palestinian":
+        return 0
+    # A Muslim or Christian with no nationality cannot be put on either side
+    # of the Palestinian line: reported as unrecorded, not guessed.
+    if rel in ("Muslim", "Christian") and nat in ("", "null"):
+        return 4
+    return 3
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -97,6 +124,9 @@ def read_register():
     atlit = Counter()
     general_day = Counter()
     atlit_day = Counter()
+    # General intake only, split by Community: month -> [n per COMMUNITIES].
+    comm = defaultdict(lambda: [0] * len(COMMUNITIES))
+    comm_day = defaultdict(lambda: [0] * len(COMMUNITIES))
     nb_months = defaultdict(set)
     nb_first_page = {}
     undated = 0
@@ -122,8 +152,11 @@ def read_register():
                     atlit_day[day] += 1
             else:
                 general[month] += 1
+                c = community(row.get("Religion"), row.get("Nationality"))
+                comm[month][c] += 1
                 if day:
                     general_day[day] += 1
+                    comm_day[day][c] += 1
 
             if notebook:
                 nb_months[notebook].add(month)
@@ -149,7 +182,8 @@ def read_register():
         })
     notebooks.sort(key=lambda n: (n["start"], int(n["notebook"])))
 
-    return general, atlit, general_day, atlit_day, notebooks, total, undated
+    return (general, atlit, general_day, atlit_day, comm, comm_day,
+            notebooks, total, undated)
 
 
 # ---------------------------------------------------------------- sources
@@ -277,12 +311,16 @@ def read_external():
 # ---------------------------------------------------------------- build
 
 def build():
-    general, atlit, general_day, atlit_day, notebooks, total, undated = read_register()
+    (general, atlit, general_day, atlit_day, comm, comm_day,
+     notebooks, total, undated) = read_register()
     sources, source_origin = read_sources()
 
     span = months(FIRST, LAST)
     intake = [
-        {"month": m, "general": general.get(m, 0), "atlit": atlit.get(m, 0)}
+        {"month": m, "general": general.get(m, 0), "atlit": atlit.get(m, 0),
+         # The general count split by Community, in meta.communities order.
+         # Atlit is not split: it is another institution's book.
+         "community": comm[m] if m in comm else [0] * len(COMMUNITIES)}
         for m in span
     ]
 
@@ -298,6 +336,12 @@ def build():
         [d, general_day.get(d, 0)] if not atlit_day.get(d)
         else [d, general_day.get(d, 0), atlit_day[d]]
         for d in sorted(set(general_day) | set(atlit_day))
+    ]
+    # Aligned with daily, row for row: the general count of that day split by
+    # Community. A parallel array, so the packed daily rows keep their shape.
+    daily_community = [
+        comm_day[d] if d in comm_day else [0] * len(COMMUNITIES)
+        for d, *_ in daily
     ]
 
     # A gap is a month in which the register records nothing at all. The Atlit
@@ -350,9 +394,11 @@ def build():
             "atlitRecords": sum(atlit.values()),
             "atlitNotebook": ATLIT_NOTEBOOK,
             "sourceOrigin": source_origin,
+            "communities": COMMUNITIES,
         },
         "intake": intake,
         "daily": daily,
+        "dailyCommunity": daily_community,
         "gaps": gaps,
         "notebooks": notebooks,
         "institutional": institutional,
