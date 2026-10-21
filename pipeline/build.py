@@ -773,6 +773,57 @@ ICD9_NOT_DIAGNOSES = {
     "R29.89": "Sent in for Lumbar Puncture",           # ICD-10; procedure admission
 }
 
+# --------------------------------------------------------------- typhus
+#
+# ICD-9 splits typhus by the insect that carries it — 080 louse-borne, 081.0
+# murine (flea-borne) — and the classifier had to pick one even where the
+# register names none. It mostly picked louse-borne, and on 50 records it
+# picked murine, a reading the register cannot support: fleas and murine
+# typhus appear nowhere in the 29,879 records.
+#
+# The ruling (Sinai, 2026-10-21, after putting the question to an
+# epidemiologist) is to code exactly what the page says. Where the clerk wrote
+# a form that names the louse-borne disease — "exanthematicus", "exanthematic",
+# "exanthematous", "epidemic" — the record keeps 080. Where the clerk wrote
+# only "Typhus" or "Typhus Fever", the record goes to 081.9, typhus
+# unspecified. The silence is the register's, and the column now carries it
+# rather than resolving it.
+#
+# Deliberately left alone, because the rule does not reach them and each needs
+# a reading of the page rather than a rule:
+#   - "Typhus Rheumaticus" and "Typhus, Rheumatism" (12 records): "typhus" in
+#     older continental usage can mean a severe febrile state, so these may not
+#     be this disease at all.
+#   - negatives and queries, "Observation for Typhus, Negative" (11 records):
+#     the register specifies here, and what it specifies is absence.
+#   - typhus alongside another disease (19 records): which is primary is a
+#     separate question from which typhus it is.
+# Those 42 keep whatever code they carry; see data/archives/typhus_coding.md.
+TYPHUS_LOUSE = re.compile(r"exanth|erythematous|exanthimaticus|epidemic", re.I)
+TYPHUS_HELD = re.compile(
+    r"rheumat"
+    r"|negative|observ|susp|indet|examination|\?"
+    r"|typhoid|paratyph|relapsing|dengue|brucell|pneumonia|grippe|tubercul"
+    r"|cystitis|spondylitis|hemiplegia|hemopt|haemoph|psychosis|wound|elbow"
+    r"|convalescent|cured",
+    re.I,
+)
+
+
+def typhus_code(written: str, current: str) -> str:
+    """The code the register's own wording supports, or `current` if untouched.
+
+    Returns "" when the record is not a typhus record at all, so the caller can
+    tell "no change" from "not applicable".
+    """
+    if "typhus" not in (written or "").lower():
+        return ""
+    if TYPHUS_HELD.search(written):
+        return current
+    if TYPHUS_LOUSE.search(written):
+        return "080"
+    return "081.9"
+
 
 def icd9_chapter(code: str, fallback: str) -> str:
     """The chapter a primary ICD-9 code belongs to, or "" if it cannot be read."""
@@ -913,6 +964,7 @@ REVIEW_FLAGS = [
     ("serial-out-of-sequence", "Record number breaks the register's run and no safe repair exists"),
     ("icd9-low-confidence", "A second-pass code the classifier itself called speculative"),
     ("icd9-second-pass", "Coded by the second classification pass, not the first"),
+    ("typhus-recoded-from-register", "Typhus code set from the register's own wording, not the classifier's guess at the insect"),
     ("result-in-diagnosis", "A Result value standing in a diagnosis or code field"),
     ("classifier-debris", "Classifier error text where a diagnosis belongs"),
     ("procedure-only", "An operation named with no diagnosis behind it"),
@@ -1276,6 +1328,7 @@ def main() -> int:
     recording: Counter[str] = Counter()
     icd9_padded = 0
     icd9_refused = 0
+    typhus_recoded: Counter[tuple[str, str]] = Counter()
     review_counts: Counter[str] = Counter()
     classification = load_classification()
     second_pass = 0
@@ -1457,6 +1510,21 @@ def main() -> int:
                         flags.append("icd9-low-confidence")
                 except ValueError:
                     pass
+
+        # Typhus is recoded from the register's own wording, so the chapter and
+        # every count below are derived from the corrected code. See the note
+        # above TYPHUS_LOUSE for what this touches and what it leaves standing.
+        standardized_diag = (row.get("Standardized Diagnosis", "") or "").strip()
+        ruled = typhus_code(standardized_diag, (row.get("Primary-ICD9") or "").strip())
+        if ruled and ruled != (row.get("Primary-ICD9") or "").strip():
+            typhus_recoded[
+                ((row.get("Primary-ICD9") or "").strip() or "(none)", ruled)
+            ] += 1
+            row["Primary-ICD9"] = ruled
+            row["standardPrimaryICD9Name"] = (
+                "Epidemic louse-borne typhus" if ruled == "080" else "Typhus, unspecified"
+            )
+            flags.append("typhus-recoded-from-register")
 
         first_code = (row.get("Primary-ICD9", "") or "").split("|")[0].strip()
         if first_code in ICD9_NOT_DIAGNOSES:
@@ -2209,6 +2277,9 @@ def main() -> int:
             writer.writerow(["derived", "ICD-9 Chapter", "procedure code, not a diagnosis", "left without a chapter", icd9_refused])
         if chapters_unresolved:
             writer.writerow(["derived", "ICD-9 Chapter", "", "no readable code", chapters_unresolved])
+        for (before, after), count in sorted(typhus_recoded.items()):
+            writer.writerow(["rule", "ICD-9 Code", f"typhus {before}",
+                             f"recoded to {after} from the register's own wording", count])
         for label, count in recording.most_common():
             writer.writerow(["derived", "Diagnosis Recording", "", label, count])
         for name, count in sorted(component_repairs.items()):

@@ -625,10 +625,11 @@ review	Review Flags	serial-repaired	Record number repaired: a digit slip against
 review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	220
 review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	15
 review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	315
+review	Review Flags	typhus-recoded-from-register	Typhus code set from the register's own wording, not the classifier's guess at the insect	461
 review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	39
 review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	10
 review	Review Flags	procedure-only	An operation named with no diagnosis behind it	45
-review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1149
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1148
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	287
 review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	963
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
@@ -734,7 +735,7 @@ derived	Nationality	blank, recovered from a set-aside value	Russian	1
 derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	921
 derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3022
 derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	1970
-derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8772
+derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8773
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4654
 derived	ICD-9 Chapter		520-579 Digestive system	3260
 derived	ICD-9 Chapter		460-519 Respiratory system	2662
@@ -753,12 +754,20 @@ derived	ICD-9 Chapter		290-319 Mental disorders	156
 derived	ICD-9 Chapter		740-759 Congenital anomalies	115
 derived	ICD-9 Chapter		E800-E999 External causes of injury	24
 derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	18
-derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	211
+derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	206
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	51
-derived	ICD-9 Chapter		no readable code	1149
-derived	Diagnosis Recording		Classified	28730
+derived	ICD-9 Chapter		no readable code	1148
+rule	ICD-9 Code	typhus (none)	recoded to 081.9 from the register's own wording	1
+rule	ICD-9 Code	typhus 080	recoded to 081.9 from the register's own wording	11
+rule	ICD-9 Code	typhus 080|038.0	recoded to 080 from the register's own wording	1
+rule	ICD-9 Code	typhus 080|081.0	recoded to 080 from the register's own wording	16
+rule	ICD-9 Code	typhus 081.0|080	recoded to 080 from the register's own wording	143
+rule	ICD-9 Code	typhus 081.9|080	recoded to 081.9 from the register's own wording	283
+rule	ICD-9 Code	typhus 081.9|081.0|080	recoded to 080 from the register's own wording	1
+rule	ICD-9 Code	typhus 81.9	recoded to 081.9 from the register's own wording	5
+derived	Diagnosis Recording		Classified	28731
 derived	Diagnosis Recording		Not recorded	729
-derived	Diagnosis Recording		Recorded, not classified	420
+derived	Diagnosis Recording		Recorded, not classified	419
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
 date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	26
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
