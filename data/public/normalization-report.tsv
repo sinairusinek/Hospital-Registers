@@ -54,6 +54,7 @@ merged	City	Ar'ara	Arara	10
 merged	City	Shefa'amr	Shafa Amr	10
 merged	StandardNationality	Palst.	Palestinian	10
 merged	standardized Religion	Muh.	Muslim	10
+merged	City	Isfia	Isfiya	9
 merged	City	Safed	Safad	9
 merged	City	Zikhron Ya'akov	Zichron Yaakov	9
 merged	City	Tul Karm	Tulkarem	9
@@ -127,6 +128,7 @@ merged	City	Wadi en Nisnas	Wadi Nisnas	2
 merged	City	El Ghbayya	Ghbayya	2
 merged	City	Beisan|Beisan P.P.	Beisan|Beisan P.P	2
 merged	City	Acre S/Dist.	Acre S/Dist	2
+merged	City	Esfia	Isfiya	2
 merged	City	Afuleh	Afula	2
 merged	City	Yagour	Yajour	2
 merged	City	Kfar Yassif	Kafr Yasif	2
@@ -286,6 +288,7 @@ merged	City	El Imghar	Mughar	1
 merged	City	Jinin	Jenin	1
 merged	City	El Binch	Binch	1
 merged	StandardNationality	Syrian / Egyptian	Syrian Egyptian	1
+merged	City	Isifia	Isfiya	1
 merged	City	Kiriat Motzkin	Kiryat Motzkin	1
 merged	City	Balad el Sheikh Haifa Sp.	Balad el Sheikh Haifa Sp	1
 merged	City	Tantouria	Tantoura	1
@@ -491,6 +494,7 @@ merged	City	Jaffa Road (the address is Haifa's Jaffa Road-named street)	Haifa	1
 merged	StandardNationality	Palest. Egyptian	Palestinian Egyptian	1
 merged	StandardNationality	Palest. C.R.L.	Palestinian	1
 merged	StandardNationality	Palest. R.C.	Palestinian	1
+merged	City	Isifia - Haifa	Isfiya	1
 merged	City	Wadi Nisnass	Wadi Nisnas	1
 merged	City	C.P. St.	C.P. St	1
 merged	City	Carmel station	Carmel Station	1
@@ -636,7 +640,7 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		249
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22980
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22981
 derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	155
 derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	919
 derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2840

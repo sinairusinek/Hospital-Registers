@@ -386,6 +386,10 @@ CITY = {
     "afikim": "Affikim",
     "kiriat motzkin": "Kiryat Motzkin",
     "pardes hanna": "Pardess Hanna",
+    # Isfiya on the Carmel (Q2890836), under Wikidata's spelling rather than
+    # the register's commoner "Isfia", as asked.
+    "isfia": "Isfiya", "esfia": "Isfiya", "isifia": "Isfiya",
+    "isifia - haifa": "Isfiya",
 }
 
 # Stripped before the lookup: a stray leading pipe from the extraction, the
