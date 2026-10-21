@@ -8,3 +8,5 @@ city_regex	address_regex	target_city	note
 # Halisa, the Haifa quarter, against al-Khalisa in the Huleh: the register spells the village Khalsa, the quarter Hallisa/Hallissa/Hallesa.			
 ^\W*khalsa\b		Khalsa	al-Khalisa village (Huleh): the register's spelling for it
 ^\W*k?h?al+[eiy]+s+[aeiy]?h?\b|^al-khalisa		Halisa	Halisa, the Haifa quarter: every such spelling with a context places it in Haifa
+# Acre Gate is a Haifa quarter, not the town of Acre: the extraction read the address's namesake as the city. 38 records already write it with Haifa in full.			
+^\W*acre(\s*gate.*)?$	\bac(re|ri)'?s?\W*gate|\bgate of acre\b|\bakka gate	Haifa	Acre Gate, the Haifa quarter: the address names it
