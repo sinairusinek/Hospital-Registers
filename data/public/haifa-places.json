@@ -1,0 +1,330 @@
+{
+ "quarters": [
+  {
+   "name": "Hadar HaCarmel",
+   "qid": "Q2630079",
+   "relation": "identity",
+   "anchor": "Hadar HaCarmel",
+   "lat": 32.807764,
+   "lon": 34.99815,
+   "note": ""
+  },
+  {
+   "name": "Wadi Salib",
+   "qid": "Q2910153",
+   "relation": "identity",
+   "anchor": "Wadi Salib",
+   "lat": 32.8111,
+   "lon": 35,
+   "note": ""
+  },
+  {
+   "name": "Wadi Nisnas",
+   "qid": "Q2920415",
+   "relation": "identity",
+   "anchor": "Wadi Nisnas",
+   "lat": 32.8163,
+   "lon": 34.9963,
+   "note": ""
+  },
+  {
+   "name": "Ard el-Yahud",
+   "qid": "Q12404212",
+   "relation": "identity",
+   "anchor": "Ard el-Yahud",
+   "lat": 32.80609,
+   "lon": 35.006845,
+   "note": "Not Harat al-Yahud: two places (Naor 2019)."
+  },
+  {
+   "name": "Carmel Station",
+   "qid": "Q12412037",
+   "relation": "identity",
+   "anchor": "Tahanat HaCarmel",
+   "lat": 32.828056,
+   "lon": 34.9875,
+   "note": "Tahanat HaCarmel, the quarter named for the station."
+  },
+  {
+   "name": "Halisa",
+   "qid": "Q7212307",
+   "relation": "identity",
+   "anchor": "Halisa",
+   "lat": 32.801508,
+   "lon": 35.006764,
+   "note": ""
+  },
+  {
+   "name": "Mount Carmel",
+   "qid": "Q7217342",
+   "relation": "near",
+   "anchor": "Carmel Center",
+   "lat": 32.805556,
+   "lon": 34.986944,
+   "note": "Drawn at Carmel Center; the register's \"Mount Carmel\" is the whole ridge."
+  },
+  {
+   "name": "Wadi Rushmiya",
+   "qid": "Q4024328",
+   "relation": "near",
+   "anchor": "Nahal Giborim",
+   "lat": 32.799722,
+   "lon": 35.005,
+   "note": "Drawn on the wadi itself (Nahal Giborim); the quarter lay along it."
+  },
+  {
+   "name": "Bat Galim",
+   "qid": "Q810685",
+   "relation": "identity",
+   "anchor": "Bat Galim",
+   "lat": 32.833911,
+   "lon": 34.981714,
+   "note": ""
+  },
+  {
+   "name": "Harat al-Kanais",
+   "qid": "Q3390256",
+   "relation": "near",
+   "anchor": "Paris Square",
+   "lat": 32.8176,
+   "lon": 34.9997,
+   "note": "The churches' quarter of the old town, drawn at Hamra (Paris) Square, the \"Churches District\"."
+  },
+  {
+   "name": "Acre Gate",
+   "qid": "Q25488483",
+   "relation": "near",
+   "anchor": "Faisal Square, Haifa",
+   "lat": 32.81256,
+   "lon": 35.00396,
+   "note": "Drawn at Faisal Square, where the old town's eastern gate stood."
+  },
+  {
+   "name": "German Colony",
+   "qid": "Q2413425",
+   "relation": "identity",
+   "anchor": "German Colony",
+   "lat": 32.82,
+   "lon": 34.990556,
+   "note": ""
+  },
+  {
+   "name": "Hawassa",
+   "qid": "Q12407319",
+   "relation": "identity",
+   "anchor": "Hawass",
+   "lat": 32.776568,
+   "lon": 35.034574,
+   "note": "Khwasa: the workers' settlement laid out from 1937 west of Balad al-Sheikh (Goren 2006). Outside the municipality."
+  },
+  {
+   "name": "Khamra Square",
+   "qid": "Q3390256",
+   "relation": "identity",
+   "anchor": "Paris Square",
+   "lat": 32.8176,
+   "lon": 34.9997,
+   "note": "Hamra Square, today Paris Square."
+  },
+  {
+   "name": "Neve Sha'anan",
+   "qid": "Q2919842",
+   "relation": "identity",
+   "anchor": "Nave Sha'anan",
+   "lat": 32.790278,
+   "lon": 35.015833,
+   "note": ""
+  },
+  {
+   "name": "Kiryat Eliyahu",
+   "qid": "Q12029242",
+   "relation": "identity",
+   "anchor": "Kirjat Elijahu",
+   "lat": 32.824594,
+   "lon": 34.987231,
+   "note": ""
+  },
+  {
+   "name": "Old City",
+   "qid": "Q137399864",
+   "relation": "identity",
+   "anchor": "Old City of Haifa",
+   "lat": 32.815833,
+   "lon": 35.002222,
+   "note": "Zahir al-Umar's walled town, between Hamra and Faisal Squares."
+  },
+  {
+   "name": "Harat al-Yahud",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "The old town's Jewish quarter; no item, and not Ard el-Yahud."
+  },
+  {
+   "name": "Herzliya quarter",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "No Wikidata item found."
+  },
+  {
+   "name": "Ard el-Ramel",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "The tin-hut quarter east of the Wadi Rushmiya estuary, by the Shemen factory (Goren 2006); no item."
+  },
+  {
+   "name": "Harat al-Mukhallis",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "No item."
+  },
+  {
+   "name": "Burj",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "No item."
+  },
+  {
+   "name": "Sharqiyya",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "The eastern quarter; no item."
+  },
+  {
+   "name": "Harat al-Kishleh",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "The barracks quarter of the old town; no item."
+  },
+  {
+   "name": "Ghazazwa",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "No item."
+  },
+  {
+   "name": "Shawafna",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "No item."
+  },
+  {
+   "name": "Ahuza",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "Has an item (Q104418538) but no coordinates."
+  },
+  {
+   "name": "Abbasiyya",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "No item."
+  }
+ ],
+ "institutions": [
+  {
+   "name": "Palestine Railways",
+   "qid": "Q7223486",
+   "relation": "near",
+   "anchor": "Haifa East railway station",
+   "lat": 32.811111,
+   "lon": 35.005278,
+   "note": "Drawn at Haifa East, the railway's Haifa terminus.",
+   "from": null,
+   "to": null,
+   "icon": "🚂"
+  },
+  {
+   "name": "Government Hospital",
+   "qid": "Q2120867",
+   "relation": "identity",
+   "anchor": "Rambam Health Care Campus",
+   "lat": 32.833384,
+   "lon": 34.98584,
+   "note": "The seashore building at Bat Galim, today Rambam, from 31 Oct 1938.",
+   "from": "1938-10-31",
+   "to": null,
+   "icon": "✚"
+  },
+  {
+   "name": "Government Hospital",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "The old leased wards on Mountain Road, until 31 Oct 1938. Exact site unsourced. Undated records are counted here.",
+   "from": null,
+   "to": "1938-10-30",
+   "icon": "✚"
+  },
+  {
+   "name": "Harbour Works",
+   "qid": "Q1376739",
+   "relation": "near",
+   "anchor": "Port of Haifa",
+   "lat": 32.820118,
+   "lon": 35.00448,
+   "note": "Drawn at the port.",
+   "from": null,
+   "to": null,
+   "icon": "⚓"
+  },
+  {
+   "name": "Tilbury Contracting & Dredging",
+   "qid": "Q1376739",
+   "relation": "near",
+   "anchor": "Port of Haifa",
+   "lat": 32.820118,
+   "lon": 35.00448,
+   "note": "The harbour contractors; drawn at the port.",
+   "from": null,
+   "to": null,
+   "icon": "⚓"
+  },
+  {
+   "name": "Customs",
+   "qid": "Q6635580",
+   "relation": "near",
+   "anchor": "Haifa - Custom House railway station",
+   "lat": 32.816806,
+   "lon": 35.003444,
+   "note": "Drawn at the Custom House (by its railway halt).",
+   "from": null,
+   "to": null,
+   "icon": "▣"
+  }
+ ]
+}

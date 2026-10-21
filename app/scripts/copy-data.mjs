@@ -74,6 +74,15 @@ if (existsSync(coordsSrc)) {
   console.log(`Staged place coordinates → ${coordsDest}`);
 }
 
+// Points for the Haifa view's quarters and institutions, built by
+// pipeline/haifa_places.py. Optional: without it the view lists, not maps.
+const haifaSrc = resolve(here, '../../data/public/haifa-places.json');
+const haifaDest = resolve(here, '../public/data/haifa-places.json');
+if (existsSync(haifaSrc)) {
+  copyFileSync(haifaSrc, haifaDest);
+  console.log(`Staged Haifa places → ${haifaDest}`);
+}
+
 // The open place questions for Yoni Furas, built by kimatch/open_questions.py,
 // shown in the Review view's "Place questions" mode.
 const questionsSrc = resolve(here, '../../kimatch/open-questions.json');

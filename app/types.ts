@@ -23,7 +23,7 @@ export interface RegistryRecord {
   'standardprimaryICD9names'?: string;
 }
 
-export type ViewType = 'about' | 'history' | 'shared-space' | 'browse' | 'statistics' | 'review' | 'places' | 'timeline' | 'map';
+export type ViewType = 'about' | 'history' | 'shared-space' | 'browse' | 'statistics' | 'review' | 'places' | 'timeline' | 'map' | 'haifa';
 
 export interface RangeFilter {
   min: number;

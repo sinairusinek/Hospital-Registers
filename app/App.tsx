@@ -1,6 +1,6 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen, Users2 } from 'lucide-react';
+import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen, Users2, Building2 } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import { matchesFilters } from './filtering';
 import { addGroupColumn, GROUP_COLUMN } from './groups';
@@ -10,6 +10,7 @@ import StatisticsView from './components/StatisticsView';
 import ReviewView from './components/ReviewView';
 import PlacesView from './components/PlacesView';
 import MapView from './components/MapView';
+import HaifaView from './components/HaifaView';
 import TimelineView from './components/TimelineView';
 import HistoryView from './components/HistoryView';
 import SharedSpaceView from './components/SharedSpaceView';
@@ -317,6 +318,16 @@ const App: React.FC = () => {
                 <MapIcon size={16} />
                 Map
               </button>
+              <button
+                onClick={() => setActiveView('haifa')}
+                disabled={data.length === 0}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
+                  activeView === 'haifa' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Building2 size={16} />
+                Haifa
+              </button>
           </div>
           {data.length === 0 && (
             <label className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium cursor-pointer transition-colors shadow-lg shadow-indigo-100">
@@ -387,6 +398,9 @@ const App: React.FC = () => {
               // many records it cannot place, and a sidebar filter would make
               // that count mean two different things at once.
               <MapView data={data} />
+            ) : activeView === 'haifa' ? (
+              // Whole dataset, like the Map, for the same reason.
+              <HaifaView data={data} />
             ) : (
               <StatisticsView 
                 fullData={data} 
