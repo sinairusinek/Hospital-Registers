@@ -921,6 +921,7 @@ REVIEW_FLAGS = [
     ("city-set-by-record", "One spelling, two places: City set for this record from its address or its scan"),
     ("nationality-from-discarded", "Nationality was blank; recovered from a value the extraction set aside"),
     ("nationality-read-from-scan", "Nationality was blank; read off the page image"),
+    ("serial-shift-relabelled", "Record number was the dropped row above's; relabelled to the number the extraction set aside"),
 ]
 
 
@@ -1281,12 +1282,38 @@ def main() -> int:
     procedures: Counter[str] = Counter()
     out_rows = []
 
+    # The extraction sometimes dropped a ledger row and filed the next row's
+    # content under the dropped row's number, setting the true number aside
+    # among its discarded values: the record labelled 688 is really 689, and
+    # 688 itself is gone. The witness is a set-aside value equal to the
+    # record's own number plus one, where no record in the notebook carries
+    # that number. 16 of 16 such records were confirmed on the scan
+    # (paper/extraction-error-audit.md). Only the label is repaired; the
+    # dropped row stays dropped. A notebook spanning a January may hold the
+    # number twice legitimately, so any presence of it blocks the relabel.
+    numbers_held = Counter((row.get("Notebook_Number") or "", (row.get("Notebook Record ID") or "").strip())
+                           for row in rows)
+    shift_relabelled: set[int] = set()
+    for row in rows:
+        own = (row.get("Notebook Record ID") or "").strip()
+        if not own.isdigit():
+            continue
+        following = str(int(own) + 1)
+        notebook = row.get("Notebook_Number") or ""
+        set_aside = {v.strip().strip("'\"") for v in
+                     (row.get("discarded_values") or "").strip("[]").split(",")}
+        if following in set_aside and not numbers_held[(notebook, following)]:
+            row["Notebook Record ID"] = following
+            shift_relabelled.add(id(row))
+
     for row in rows:
         if is_repeated_header(row):
             dropped += 1
             continue
 
         flags: list[str] = []
+        if id(row) in shift_relabelled:
+            flags.append("serial-shift-relabelled")
 
         for column in RULES:
             if column not in row:
@@ -2159,6 +2186,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        if shift_relabelled:
+            writer.writerow(["derived", "Notebook Record ID", "dropped row above: number relabelled to the one set aside",
+                             "flagged serial-shift-relabelled", len(shift_relabelled)])
         for found, count in nationality_read.most_common():
             writer.writerow(["derived", "Nationality", "blank, read off the page image (nationality-readings.tsv)",
                              found, count])
