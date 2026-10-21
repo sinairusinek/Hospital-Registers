@@ -273,6 +273,26 @@ RELIGION = {
     "byzage": "Druze",  # a transcription failure, read against the page
 }
 
+# The upstream cleaning left the cleaned religion blank for every spelling it
+# did not know: the clerks' "Druz", "Durzi", "Druse" (some 400 Druze records,
+# against 24 it did know), and abbreviations ("Ch.", "Xian", "Mousl.").
+# Where the cleaned value is blank, the written one is read by its shape.
+RELIGION_WRITTEN = [
+    (re.compile(r"^(dru[sz]|durz|dou?r?z|drou?z|druiz)", re.I), "Druze"),
+    (re.compile(r"^(ch\.?$|chr|christ|x(t)?ian|r\.?\s?c\.?$|gr\.?\s*orth|orthodox|copt|cath)", re.I), "Christian"),
+    (re.compile(r"^(mou?sl|musl|mosl|moslem|sunn)", re.I), "Muslim"),
+    (re.compile(r"^(j\.?$|jew)", re.I), "Jewish"),
+    (re.compile(r"^(bah|beha)", re.I), "Bahai"),
+]
+
+
+def religion_from_written(value: str) -> str:
+    value = (value or "").strip()
+    for pattern, religion in RELIGION_WRITTEN:
+        if pattern.match(value):
+            return religion
+    return ""
+
 NATIONALITY = {
     # Palestinian, abbreviated by clerks in a dozen ways. The trailing tokens on
     # some of these ("R", "R.C.", record numbers) are dropped here but survive
@@ -1009,6 +1029,7 @@ REVIEW_FLAGS = [
     ("nationality-read-from-scan", "Nationality was blank; read off the page image"),
     ("serial-shift-relabelled", "Record number was the dropped row above's; relabelled to the number the extraction set aside"),
     ("row-read-from-scan", "A ledger row the extraction dropped, read off the page image"),
+    ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
 ]
 
 
@@ -1351,6 +1372,7 @@ def main() -> int:
                 nationality_readings.setdefault((reading["notebook"], reading["serial"]), []).append(
                     (reading["admission_date"], reading["nationality_as_written"]))
     nationality_read: Counter[str] = Counter()
+    religion_from_written_count: Counter[str] = Counter()
     ward_rehomed: Counter[tuple[str, str, str, str]] = Counter()
     ward_corrected = 0
     ward_degynecologised: Counter[tuple[str, str]] = Counter()
@@ -1461,6 +1483,13 @@ def main() -> int:
             row[column] = after
             if after:
                 final_values[column][after] += 1
+
+        if not (row.get("standardized Religion") or "").strip():
+            read = religion_from_written(row.get("Religion") or "")
+            if read:
+                row["standardized Religion"] = read
+                religion_from_written_count[read] += 1
+                flags.append("religion-from-written")
 
         if "StandardNationality" in row and not (row["StandardNationality"] or "").strip() \
                 and not (row.get("Nationality") or "").strip():
@@ -2335,6 +2364,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        for found, count in religion_from_written_count.most_common():
+            writer.writerow(["derived", "Religion", "blank cleaned value, read from the written spelling",
+                             found, count])
         if dropped_read:
             writer.writerow(["derived", "(row)", "dropped by the extraction, read off the page image (dropped-rows-read.tsv)",
                              "flagged row-read-from-scan", len(dropped_read)])
