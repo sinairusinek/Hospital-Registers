@@ -4,3 +4,4 @@ notebook	serial	admission_date	target_city	evidence
 27	3363	1944-07-18	Arrabat al-Battuf	scan NB27 p10: "Arrabet el Battof, Acre S/D" (extracted as "Arrabe Sel Balla / Qiere Po.")
 17	2393	1937-10-08	Arara	scan NB17 p80: "Ara'ra" — Ar'ara, not Arraba (extracted as "Arabe")
 19	986	1938-05-04	Arara	scan NB19 p44: "Arra'rah" — Ar'ara, not Arraba (extracted as "Arrabah")
+30	1475	1946-03-24	Haifa	scan NB30 p35: "12. Ahad Am Pl-" = Ahad Ha'am St., Hadar HaCarmel (extracted as "Road Ram", read as Ramallah); no city written
