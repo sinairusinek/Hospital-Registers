@@ -60,7 +60,10 @@ const SEMANTIC: Record<string, Record<string, string>> = {
     'Palestinian Arab': SERIES[3],  // yellow
     'British Christian': '#a8481a', // dark orange
     Jewish: SERIES[0],              // blue
-    Other: SERIES[6]                // violet
+    Other: SERIES[6],               // violet
+    // Plum, not green: green is Muslim on the Religion pie. Re-validated with
+    // it in the set: worst ΔE 12.4 protan, 20.5 normal.
+    Druze: '#7a1f5c'                // plum
   }
 };
 

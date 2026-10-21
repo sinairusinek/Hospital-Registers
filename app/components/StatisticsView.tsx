@@ -43,7 +43,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'Community: religion and nationality, crossed',
-    body: <p>The register records religion and nationality in separate columns, and their pies are kept as the clerks wrote them. The <em>Community</em> pie and facet cross the two columns, as an alternative reading of the same records rather than a replacement. <em>Christian</em> on its own pools British officials with Palestinian Arabs, so this grouping separates them into <em>Palestinian Arab</em> (Muslim or Christian, Palestinian nationality), <em>British Christian</em> (British or Palestinian British nationality), <em>Jewish</em> (any nationality) and <em>Other</em>. A Muslim or Christian whose nationality is blank cannot be placed on either side of the Palestinian line and counts as <em>{UNKNOWN}</em>. Compound nationalities such as <em>Palestinian Syrian</em> count as <em>Other</em>, as they do on the Shared Space page.</p>
+    body: <p>The register records religion and nationality in separate columns, and their pies are kept as the clerks wrote them. The <em>Community</em> pie and facet cross the two columns, as an alternative reading of the same records rather than a replacement. <em>Christian</em> on its own pools British officials with Palestinian Arabs, so this grouping separates them into <em>Palestinian Arab</em> (Muslim or Christian, Palestinian nationality), <em>British Christian</em> (British or Palestinian British nationality), <em>Jewish</em> (any nationality), <em>Druze</em> (any nationality) and <em>Other</em>. The Druze were Arab, and in 1930–48 they were counted as such; they are set apart here by religion only, as the Mandate census did, which listed Druzes as a religion beside Muslims and Christians, not as a nation. The non-Arab Druze category is the Israeli state's, from the 1950s on, and nothing on this site should be read as projecting it back. A Muslim or Christian whose nationality is blank cannot be placed on either side of the Palestinian line and counts as <em>{UNKNOWN}</em>. Compound nationalities such as <em>Palestinian Syrian</em> count as <em>Other</em>, as they do on the Shared Space page.</p>
   },
   {
     heading: 'Diagnosis is grouped by ICD-9 chapter',
@@ -804,7 +804,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
           <PieCard displayName="Group" title={GROUP_COLUMN}
                    icon={<Users2 size={18} className="text-amber-600" />}
                    chartData={stats.groupData}
-                   note="Palestinian Arab: Muslim or Christian of Palestinian nationality. British Christian: Christian of British or Palestinian British nationality. Jewish: any nationality. Other: everyone else recorded, e.g. Egyptian or Syrian Muslims, Armenian Christians, Druze, Bahai. Not recorded: no religion, or a Muslim or Christian with no nationality." />
+                   note="Palestinian Arab: Muslim or Christian of Palestinian nationality. British Christian: Christian of British or Palestinian British nationality. Jewish: any nationality. Other: everyone else recorded, e.g. Egyptian or Syrian Muslims, Armenian Christians, Bahai. Druze: any nationality; Arab, set apart here by religion only. Not recorded: no religion, or a Muslim or Christian with no nationality." />
           <PieCard displayName="Sex" title="Sex Distribution"
                    icon={<Users size={18} className="text-indigo-500" />}
                    chartData={stats.sexData} />

@@ -53,7 +53,7 @@ FIRST, LAST = "1930-01", "1948-04"
 # app/groups.ts derives it — the intake band can be split by it, and a split
 # that drew its lines differently from the Statistics pie would be two
 # groupings under one name. The order is the order the slices stack in.
-COMMUNITIES = ["Palestinian Arab", "Jewish", "British Christian", "Other", "Not recorded"]
+COMMUNITIES = ["Palestinian Arab", "Druze", "Jewish", "British Christian", "Other", "Not recorded"]
 BRITISH_NAT = {"British", "Palestinian British"}
 ARAB_RELIGIONS = {"Muslim", "Christian", "Arab"}
 
@@ -63,18 +63,21 @@ def community(religion, nationality):
     rel = (religion or "").strip()
     nat = (nationality or "").strip()
     if rel in ("", "null"):
-        return 4
+        return COMMUNITIES.index("Not recorded")
     if rel == "Jewish":
-        return 1
+        return COMMUNITIES.index("Jewish")
+    # Arab, set apart by religion only, as in app/groups.ts.
+    if rel == "Druze":
+        return COMMUNITIES.index("Druze")
     if rel == "Christian" and nat in BRITISH_NAT:
-        return 2
+        return COMMUNITIES.index("British Christian")
     if rel in ARAB_RELIGIONS and nat == "Palestinian":
-        return 0
+        return COMMUNITIES.index("Palestinian Arab")
     # A Muslim or Christian with no nationality cannot be put on either side
     # of the Palestinian line: reported as unrecorded, not guessed.
     if rel in ("Muslim", "Christian") and nat in ("", "null"):
-        return 4
-    return 3
+        return COMMUNITIES.index("Not recorded")
+    return COMMUNITIES.index("Other")
 
 
 # ---------------------------------------------------------------- facets

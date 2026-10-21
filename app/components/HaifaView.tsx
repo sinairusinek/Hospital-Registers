@@ -8,7 +8,7 @@ import { Building2, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp
 import { RegistryRecord } from '../types';
 import { UNKNOWN, facetValue } from '../facets';
 import { SERIES, semanticColor } from '../colors';
-import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
+import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
 
@@ -66,7 +66,7 @@ type BasemapKey = typeof BASEMAPS[number]['key'];
 // See MapView: the survey answers outside its sheets with a tiny black tile.
 const BLANK_TILE_BYTES = 700;
 
-const COMMUNITIES = [PALESTINIAN_ARAB, JEWISH, BRITISH_CHRISTIAN, OTHER, UNKNOWN];
+const COMMUNITIES = [PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER, UNKNOWN];
 const communityColor = (k: string) => semanticColor(GROUP_DIM, k);
 
 const FIELDS = ['Admission Date', 'Age', 'Sex', 'Religion', 'Nationality',

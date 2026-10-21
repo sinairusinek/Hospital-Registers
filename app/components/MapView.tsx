@@ -8,7 +8,7 @@ import { MapPin, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, D
 import { RegistryRecord, RangeFilter } from '../types';
 import { UNKNOWN, facetValue } from '../facets';
 import { SERIES, semanticColor } from '../colors';
-import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
+import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
 
@@ -90,7 +90,7 @@ const UNPLACED_LABEL: Record<string, string> = {
 // The slices, in a fixed order round the pie so the same community always sits
 // in the same place and two pies can be read against each other at a glance.
 // The unrecorded last, in the neutral grey every chart gives a blank.
-const COMMUNITIES = [PALESTINIAN_ARAB, JEWISH, BRITISH_CHRISTIAN, OTHER, UNKNOWN];
+const COMMUNITIES = [PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER, UNKNOWN];
 
 // The fixed colours the charts give each community, so a community is the
 // same hue here as on the Statistics pie whatever the filters leave.

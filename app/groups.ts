@@ -6,6 +6,12 @@
 // Shared Space view). This grouping crosses the two columns into the lines the
 // hospital itself drew: Palestinian Arab, British Christian, Jewish, other.
 //
+// Druze are split out of Palestinian Arab by religion, not by people: in
+// 1930–48 they were Arab, and the Mandate census listed "Druzes" as a religion
+// beside Muslims and Christians, not as a nation. A Druze group read as
+// non-Arab would project the Israeli state's post-1948 category back onto the
+// register.
+//
 // It is derived once at load time into its own column, so the sidebar facet,
 // the pie and its time series treat it like any other dimension, and Religion
 // and Nationality stay exactly as they were beside it.
@@ -34,6 +40,9 @@ export const linkedDimensions = (dim: string): string[] => [dim, ...(LINKED[dim]
 
 export const PALESTINIAN_ARAB = 'Palestinian Arab';
 export const BRITISH_CHRISTIAN = 'British Christian';
+// The clerks wrote it in the religion column 440 times; build.py folds Druz,
+// Durzi and Druse into it.
+export const DRUZE = 'Druze';
 export const JEWISH = 'Jewish';
 // Singular on purpose: "Others" is the pies' residue slice, which is not
 // clickable, and this is a real value that has to filter.
@@ -56,6 +65,9 @@ export const groupOf = (religion: unknown, nationality: unknown): string => {
   // Nationality does not change membership here: a Polish-born Jew and a
   // Palestinian-national one are both in the Jewish group.
   if (rel === 'Jewish') return JEWISH;
+  // Likewise any nationality: 416 of the 440 are Palestinian, the rest Syrian
+  // or Lebanese Druze from across the border.
+  if (rel === 'Druze') return DRUZE;
   if (rel === 'Christian' && BRITISH_NAT.has(nat)) return BRITISH_CHRISTIAN;
   if (ARAB_RELIGIONS.has(rel) && nat === PALESTINIAN_NAT) return PALESTINIAN_ARAB;
   // A Muslim or Christian with no nationality cannot be placed on either side
