@@ -116,7 +116,9 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         # The district outside the old town's eastern gate, not the town of
         # Acre (user ruling 2026-10-21). Furas's bare "Acre Gate" = Acre is
         # contradicted by his own "Haifa Acre gate" row, so read as a slip.
-        ("Acre Gate", r"\bac(re|ri)'?s?\W*gate|\bgate\s+of\s+acre\b|\bakka\s+gate"),
+        # Also the Arabic, Bawabet Akka (user ruling 2026-10-21), however spelled.
+        ("Acre Gate", r"\bac(re|ri)'?s?\W*gate|\bgate\s+of\s+acre\b|\bakka\s+gate"
+                      r"|\bbawab[\w\[\]]*\W+(st\.?\s+)?(el\s+)?(akka|acca|acre)\b"),
         # Khwasa (Goren 2006): the workers' settlement laid out from 1937 west
         # of Balad al-Sheikh for evacuees from the huts, outside the municipal
         # boundary but written "Haifa, Hawassa" by the clerks. Today Nesher.
@@ -247,6 +249,10 @@ def classify(address: str, city: str, haifa_family: bool) -> dict[str, str]:
                 name, kind = institution_by_pattern(f"{reading} {address}")
                 out["Address institution"], out["Address institution type"] = (name, kind) if name else FURAS_BROAD[lab]
                 break
+        # His "Bawabet akka" = an Acre quarter is the same slip as his bare
+        # "Acre Gate": the Haifa reading wins (user ruling 2026-10-21).
+        if label == "neighborhood" and quarter_by_pattern(address, "Haifa") == "Acre Gate":
+            label = ""
         if label == "neighborhood":
             ftown = (furas["city"] or "").strip() or town
             if ftown in ("Haifa", "Acre"):
