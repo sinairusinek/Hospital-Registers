@@ -677,9 +677,11 @@ interface TimelineViewProps {
   records?: RegistryRecord[];
   /** Send a range of days to the Browser, which then shows only those. */
   onOpenInBrowser?: (from: string, to: string) => void;
+  /** The same range to the Map, which recuts its pies for it. */
+  onOpenOnMap?: (from: string, to: string) => void;
 }
 
-const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrowser }) => {
+const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrowser, onOpenOnMap }) => {
   const [data, setData] = useState<TimelineData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const scans = usePageScans();
@@ -1108,7 +1110,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrows
             bar to zoom to it, any flag for its source; the arrows step back and forth by
             half the range on screen. Below two months on screen both the axis and the
             intake band count days, and clicking a day lists its admissions. <em>Open in
-            the Browser</em> takes whatever range is on screen to the table.
+            the Browser</em> takes whatever range is on screen to the table, <em>on the
+            Map</em> to the map of where those patients came from.
           </p>
         </header>
 
@@ -1203,6 +1206,17 @@ const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrows
                 : 'The register is still loading'}
               className="px-2.5 py-1 rounded-full border border-indigo-300 bg-white text-indigo-700 disabled:opacity-40">
               Open {screenCount.toLocaleString()} in the Browser →
+            </button>
+          )}
+          {zoomed && onOpenOnMap && (
+            <button
+              onClick={() => onOpenOnMap(screenFrom, screenTo)}
+              disabled={!records.length}
+              title={records.length
+                ? `Map where the admissions of ${longDate(screenFrom)} – ${longDate(screenTo)} came from`
+                : 'The register is still loading'}
+              className="px-2.5 py-1 rounded-full border border-indigo-300 bg-white text-indigo-700 disabled:opacity-40">
+              on the Map →
             </button>
           )}
 

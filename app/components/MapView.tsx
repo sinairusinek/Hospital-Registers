@@ -5,7 +5,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar
 } from 'recharts';
 import { MapPin, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Download } from 'lucide-react';
-import { RegistryRecord } from '../types';
+import { RegistryRecord, RangeFilter } from '../types';
 import { UNKNOWN, facetValue } from '../facets';
 import { SERIES, semanticColor } from '../colors';
 import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
@@ -32,7 +32,7 @@ const COORDS_URL = `${import.meta.env.BASE_URL}data/place-coords.tsv`;
 const HELP: HelpSection[] = [
   {
     heading: 'What a pie is',
-    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The slices follow the filters: narrow the years and every pie is recut for them. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
+    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The pies follow the admission dates: narrow them in the box at the top of the map, or send a range from the Timeline, and every pie is recut for those admissions alone. The range is the same one the Browser's Admission Date slider sets, so the two always show the same admissions. No other filter reaches the map. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
   },
   {
     heading: 'Solid pies and dashed ones',
@@ -181,9 +181,74 @@ const BASEMAPS = [
 
 type BasemapKey = typeof BASEMAPS[number]['key'];
 
-interface Props { data: RegistryRecord[]; }
+interface Props {
+  /** The records inside the admission-date range, and only that range. */
+  data: RegistryRecord[];
+  /** The shared Admission Date range, in ms; absent if the data has no dates. */
+  dateRange?: RangeFilter;
+  onDateRange?: (min: number, max: number) => void;
+}
 
-const MapView: React.FC<Props> = ({ data }) => {
+const isoOfMs = (ms: number): string => new Date(ms).toISOString().slice(0, 10);
+
+/** A typed date to ms: 1938, 1938-07 or 1938-07-06. `end` fills in upward, so
+ *  a bare 1938 as the "to" means the last day of 1938. Null if unreadable. */
+const parseDay = (text: string, end: boolean): number | null => {
+  const m = text.trim().match(/^(\d{4})(?:-(\d{1,2})(?:-(\d{1,2}))?)?$/);
+  if (!m) return null;
+  const y = Number(m[1]);
+  const mo = m[2] ? Number(m[2]) : (end ? 12 : 1);
+  if (mo < 1 || mo > 12) return null;
+  const last = new Date(Date.UTC(y, mo, 0)).getUTCDate();
+  const d = m[3] ? Number(m[3]) : (end ? last : 1);
+  if (d < 1 || d > last) return null;
+  return Date.UTC(y, mo - 1, d);
+};
+
+/**
+ * The admission dates the map is drawn for. Edits the same range the Browser's
+ * slider does; the fields are text so a half-typed date can stay on screen.
+ */
+const DateBox: React.FC<{ range: RangeFilter; onChange: (min: number, max: number) => void }> = ({ range, onChange }) => {
+  const [from, setFrom] = useState(isoOfMs(range.currentMin));
+  const [to, setTo] = useState(isoOfMs(range.currentMax));
+  // Follow changes made elsewhere — the Timeline, the Browser's slider.
+  useEffect(() => { setFrom(isoOfMs(range.currentMin)); }, [range.currentMin]);
+  useEffect(() => { setTo(isoOfMs(range.currentMax)); }, [range.currentMax]);
+  const narrowed = range.currentMin > range.min || range.currentMax < range.max;
+  const a = parseDay(from, false), b = parseDay(to, true);
+  const field = (bad: boolean) => `w-[7.5em] px-2 py-1 rounded-lg border bg-white font-mono text-[11px] ${
+    bad ? 'border-rose-300 text-rose-700' : 'border-slate-300 text-slate-700'}`;
+  return (
+    <form
+      className="flex flex-wrap items-center gap-1.5"
+      onSubmit={e => {
+        e.preventDefault();
+        if (a === null || b === null || a > b) return;
+        onChange(Math.max(range.min, a), Math.min(range.max, b));
+      }}
+    >
+      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mr-1">Admitted</span>
+      <input value={from} onChange={e => setFrom(e.target.value)} aria-label="Admitted from"
+        placeholder="1938" className={field(a === null)} />
+      <span className="text-slate-400 text-xs">–</span>
+      <input value={to} onChange={e => setTo(e.target.value)} aria-label="Admitted to"
+        placeholder="1938-07-31" className={field(b === null)} />
+      <button type="submit"
+        className="px-2.5 py-1 rounded-lg border border-slate-300 bg-white text-slate-700 text-[11px] font-bold">
+        Go
+      </button>
+      {narrowed && (
+        <button type="button" onClick={() => onChange(range.min, range.max)}
+          className="px-2.5 py-1 rounded-lg border border-indigo-300 bg-indigo-50 text-indigo-700 text-[11px] font-bold">
+          All years
+        </button>
+      )}
+    </form>
+  );
+};
+
+const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
   const [places, setPlaces] = useState<Place[] | null>(null);
   // City value -> the review's decision, for values with no point to draw.
   const [decisionOf, setDecisionOf] = useState<Map<string, string>>(new Map());
@@ -657,6 +722,13 @@ const MapView: React.FC<Props> = ({ data }) => {
             background: '#e8e4da'
           }}
         />
+
+        {/* The admission dates the pies are cut for */}
+        {dateRange && onDateRange && (
+          <div className="absolute top-4 left-14 max-w-[calc(100%-20rem)] z-[500] bg-white/95 backdrop-blur rounded-2xl border border-slate-200 shadow-lg px-3 py-2">
+            <DateBox range={dateRange} onChange={onDateRange} />
+          </div>
+        )}
 
         {/* Basemap toggle */}
         <div className="absolute top-4 right-4 z-[500] bg-white/95 backdrop-blur rounded-2xl border border-slate-200 shadow-lg p-2">

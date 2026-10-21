@@ -2,7 +2,7 @@
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen, Users2, Building2 } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
-import { matchesFilters } from './filtering';
+import { matchesFilters, matchesNonFacet } from './filtering';
 import { addGroupColumn, GROUP_COLUMN } from './groups';
 import AboutView from './components/AboutView';
 import DataBrowser from './components/DataBrowser';
@@ -229,6 +229,39 @@ const App: React.FC = () => {
     setActiveView('browse');
   }, []);
 
+  // The Admission Date range on its own. The Map follows it and nothing else:
+  // its footer counts what it cannot place, and the other filters would make
+  // that count mean two things at once.
+  const dateKey = useMemo(
+    () => Object.keys(filterState.ranges).find(k => k.toLowerCase().includes('admission date')),
+    [filterState.ranges]);
+  const dateRange = dateKey ? filterState.ranges[dateKey] : undefined;
+  const dateFilteredData = useMemo(() => {
+    if (!dateKey || !dateRange) return data;
+    const only: FilterState = { searchQuery: '', advancedSearch: [], facets: {}, ranges: { [dateKey]: dateRange } };
+    return data.filter(row => matchesNonFacet(row, only));
+  }, [data, dateKey, dateRange]);
+  const setDateRange = useCallback((min: number, max: number) => {
+    if (!dateKey) return;
+    setFilterState(prev => ({
+      ...prev,
+      ranges: { ...prev.ranges, [dateKey]: { ...prev.ranges[dateKey], currentMin: min, currentMax: max } }
+    }));
+  }, [dateKey]);
+
+  // The Timeline's range to the Map: only the dates change, since the Map
+  // reads nothing else, and the Browser's other filters are left as they were.
+  const openRangeOnMap = useCallback((from: string, to: string) => {
+    setFilterState(prev => {
+      const k = Object.keys(prev.ranges).find(c => c.toLowerCase().includes('admission date'));
+      if (!k) return prev;
+      const r = prev.ranges[k];
+      return { ...prev, ranges: { ...prev.ranges, [k]: {
+        ...r, currentMin: Math.max(r.min, Date.parse(from)), currentMax: Math.min(r.max, Date.parse(to)) } } };
+    });
+    setActiveView('map');
+  }, []);
+
   const toggleColumn = useCallback((key: string) => {
     setColumns(prev => prev.map(col => 
       col.key === key ? { ...col, visible: !col.visible } : col
@@ -370,7 +403,7 @@ const App: React.FC = () => {
         ) : activeView === 'timeline' ? (
           // The timeline stands on its own generated file, so like About it is
           // readable before — and without — the register TSV.
-          <TimelineView records={data} onOpenInBrowser={openRangeInBrowser} />
+          <TimelineView records={data} onOpenInBrowser={openRangeInBrowser} onOpenOnMap={openRangeOnMap} />
         ) : activeView === 'history' ? (
           // Likewise the history: a self-contained document in public/, framed
           // as it stands rather than ported into React.
@@ -419,10 +452,10 @@ const App: React.FC = () => {
               // with the view's own religion and nationality facets.
               <PlacesView data={data} />
             ) : activeView === 'map' ? (
-              // The map is of the whole dataset too: its own footer states how
-              // many records it cannot place, and a sidebar filter would make
-              // that count mean two different things at once.
-              <MapView data={data} />
+              // The map follows the admission dates and nothing else: its own
+              // footer states how many records it cannot place, and a sidebar
+              // facet would make that count mean two different things at once.
+              <MapView data={dateFilteredData} dateRange={dateRange} onDateRange={setDateRange} />
             ) : activeView === 'haifa' ? (
               // Whole dataset, like the Map, for the same reason.
               <HaifaView data={data} />
