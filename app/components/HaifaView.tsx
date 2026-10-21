@@ -77,6 +77,8 @@ const HAIFA_PREFIX = 'Haifa: ';
 interface Point {
   name: string; qid: string; relation: string; anchor: string;
   lat: number | null; lon: number | null; note: string;
+  /** The Kima gazetteer's entry, and whether it is the place or only near it. */
+  kima?: string; kimaRelation?: string;
 }
 interface Site extends Point { from: string | null; to: string | null; icon: string; }
 
@@ -416,12 +418,14 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       const mix: Mix = {};
       all.forEach(r => { const g = facetValue(r[GROUP_COLUMN]); mix[g] = (mix[g] || 0) + 1; });
       return { title: selection.name, subtitle: selection.community, rows, all: all.length, mix,
-               qid: q?.qid || '', note: q?.note || '', anchor: q?.relation === 'near' ? q.anchor : '' };
+               qid: q?.qid || '', note: q?.note || '', anchor: q?.relation === 'near' ? q.anchor : '',
+               kima: q?.kima || '', kimaNear: q?.kimaRelation === 'near' };
     }
     const inst = institutions.find(i => siteKey(i.site) === selection.key);
     if (!inst) return null;
     return { title: inst.site.name, subtitle: null, rows: inst.rows, all: inst.rows.length, mix: null,
-             qid: inst.site.qid, note: inst.site.note, anchor: inst.site.relation === 'near' ? inst.site.anchor : '' };
+             qid: inst.site.qid, note: inst.site.note, anchor: inst.site.relation === 'near' ? inst.site.anchor : '',
+             kima: '', kimaNear: false };
   }, [selection, byQuarter, quarters, institutions]);
 
   const records = selected?.rows || [];
@@ -543,6 +547,12 @@ const HaifaView: React.FC<Props> = ({ data }) => {
                        className="text-indigo-600 underline">{selected.qid}</a>
                   )}
                   {selected.anchor && <span>drawn at {selected.anchor}</span>}
+                  {selected.kima && (
+                    <a href={`https://data.geo-kima.org/Places/Details/${selected.kima}`} target="_blank" rel="noreferrer"
+                       className="text-indigo-600 underline">
+                      Kima #{selected.kima}{selected.kimaNear && ' (nearby)'}
+                    </a>
+                  )}
                 </p>
                 {selected.note && <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">{selected.note}</p>}
               </div>

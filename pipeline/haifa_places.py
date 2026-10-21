@@ -52,19 +52,32 @@ QUARTERS = [
     ("Neve Sha'anan", "Q2919842", "identity", ""),
     ("Kiryat Eliyahu", "Q12029242", "identity", ""),
     ("Old City", "Q137399864", "identity", "Zahir al-Umar's walled town, between Hamra and Faisal Squares."),
+    ("Harat al-Yahud", "Q16341015", "near", "The old town's Jewish quarter, built inside the Eastern Quarter; not Ard el-Yahud. Drawn at the al-Pasha compound on Hammam al-Pasha Street, which stood at its edge (hewiki) and housed its Talmud Torah until the quarter was evacuated on 18 Jul 1938."),
+    ("Herzliya quarter", "Q12019571", "identity", "Herzlia, on the lower Carmel slope between Hadar and Wadi Nisnas."),
+    ("Ahuza", "Q4159159", "identity", "Ahuzat Shmuel, on the Carmel ridge."),
+    ("Abbasiyya", "Q10374305", "identity", "The Abbas quarter, named for its streets, between the German Colony and Hadar."),
+    ("Burj", "Q12404415", "near", "Drawn at Burj al-Salam, Zahir al-Umar's citadel above the old town, opposite today's City Hall; the road up to it was called al-Burj."),
     # No item, and no landmark close enough to stand for them.
-    ("Harat al-Yahud", "", "", "The old town's Jewish quarter; no item, and not Ard el-Yahud."),
-    ("Herzliya quarter", "", "", "No Wikidata item found."),
     ("Ard el-Ramel", "", "", "The tin-hut quarter east of the Wadi Rushmiya estuary, by the Shemen factory (Goren 2006); no item."),
-    ("Harat al-Mukhallis", "", "", "No item."),
-    ("Burj", "", "", "No item."),
-    ("Sharqiyya", "", "", "The eastern quarter; no item."),
-    ("Harat al-Kishleh", "", "", "The barracks quarter of the old town; no item."),
-    ("Ghazazwa", "", "", "No item."),
+    ("Harat al-Mukhallis", "", "", "Named for the Church of the Saviour (\"near Kanisat el Mukhallis\"); no item for the quarter or the church."),
+    ("Sharqiyya", "", "", "Al-Harat al-Sharqiyya, the old town's Eastern Quarter (54 dunams, mostly Muslim); no item of its own."),
+    ("Harat al-Kishleh", "", "", "The barracks quarter of the old town, by the Ottoman kishla; no item."),
+    ("Ghazazwa", "", "", "Harat al-Ghazzawiyya, named for families from Gaza; no item. Not Khirbat al-Ghazazwa by Burayka."),
     ("Shawafna", "", "", "No item."),
-    ("Ahuza", "", "", "Has an item (Q104418538) but no coordinates."),
-    ("Abbasiyya", "", "", "No item."),
 ]
+
+# The Kima Historical Gazetteer's entry for each quarter, where it has one, and
+# whether that entry IS the quarter or only stands near it. Read from the Kima
+# dump (Kimatch/20250126KimaPlacesCSVx.csv), not looked up by name at run time.
+KIMA = {
+    "Wadi Salib": ("19522", "identity"), "Wadi Nisnas": ("85346", "identity"),
+    "Hadar HaCarmel": ("21150", "identity"), "Halisa": ("83220", "identity"),
+    "Bat Galim": ("21063", "identity"), "German Colony": ("21139", "identity"),
+    "Neve Sha'anan": ("21497", "identity"), "Ahuza": ("21015", "identity"),
+    "Mount Carmel": ("26805", "near"), "Wadi Rushmiya": ("86518", "near"),
+    "Khamra Square": ("70144", "identity"), "Harat al-Kanais": ("70144", "near"),
+    "Old City": ("26801", "near"),
+}
 
 # institution (as in the Address institution column), QID, relation, note,
 # and the admission window it holds for, where the site changed.
@@ -83,6 +96,11 @@ ICON = {  # a single glyph per institution for the map badge
 }
 
 
+# English names for anchors whose item has only a Hebrew or Arabic label, so
+# the view can say where a quarter is drawn in the language it is written in.
+ANCHOR_LABEL = {"Q12404415": "Burj al-Salam"}
+
+
 def coords(qids: list[str]) -> dict[str, tuple[float, float, str]]:
     out: dict[str, tuple[float, float, str]] = {}
     qids = sorted({q for q in qids if q})
@@ -97,7 +115,7 @@ def coords(qids: list[str]) -> dict[str, tuple[float, float, str]]:
             labels = e.get("labels", {})
             label = (labels.get("en") or labels.get("he") or next(iter(labels.values()), {})).get("value", q)
             if v:
-                out[q] = (round(v["latitude"], 6), round(v["longitude"], 6), label)
+                out[q] = (round(v["latitude"], 6), round(v["longitude"], 6), ANCHOR_LABEL.get(q, label))
     return out
 
 
@@ -106,8 +124,10 @@ def main() -> int:
     quarters, institutions = [], []
     for name, qid, rel, note in QUARTERS:
         lat, lon, label = pts.get(qid, (None, None, ""))
+        kima, kima_rel = KIMA.get(name, ("", ""))
         quarters.append({"name": name, "qid": qid, "relation": rel if lat is not None else "",
-                         "anchor": label, "lat": lat, "lon": lon, "note": note})
+                         "anchor": label, "lat": lat, "lon": lon, "note": note,
+                         "kima": kima, "kimaRelation": kima_rel})
     for name, qid, rel, note, start, end in INSTITUTIONS:
         lat, lon, label = pts.get(qid, (None, None, ""))
         institutions.append({"name": name, "qid": qid, "relation": rel if lat is not None else "",

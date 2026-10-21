@@ -7,7 +7,9 @@
    "anchor": "Hadar HaCarmel",
    "lat": 32.807764,
    "lon": 34.99815,
-   "note": ""
+   "note": "",
+   "kima": "21150",
+   "kimaRelation": "identity"
   },
   {
    "name": "Wadi Salib",
@@ -16,7 +18,9 @@
    "anchor": "Wadi Salib",
    "lat": 32.8111,
    "lon": 35,
-   "note": ""
+   "note": "",
+   "kima": "19522",
+   "kimaRelation": "identity"
   },
   {
    "name": "Wadi Nisnas",
@@ -25,7 +29,9 @@
    "anchor": "Wadi Nisnas",
    "lat": 32.8163,
    "lon": 34.9963,
-   "note": ""
+   "note": "",
+   "kima": "85346",
+   "kimaRelation": "identity"
   },
   {
    "name": "Ard el-Yahud",
@@ -34,7 +40,9 @@
    "anchor": "Ard el-Yahud",
    "lat": 32.80609,
    "lon": 35.006845,
-   "note": "Not Harat al-Yahud: two places (Naor 2019)."
+   "note": "Not Harat al-Yahud: two places (Naor 2019).",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Carmel Station",
@@ -43,7 +51,9 @@
    "anchor": "Tahanat HaCarmel",
    "lat": 32.828056,
    "lon": 34.9875,
-   "note": "Tahanat HaCarmel, the quarter named for the station."
+   "note": "Tahanat HaCarmel, the quarter named for the station.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Halisa",
@@ -52,7 +62,9 @@
    "anchor": "Halisa",
    "lat": 32.801508,
    "lon": 35.006764,
-   "note": ""
+   "note": "",
+   "kima": "83220",
+   "kimaRelation": "identity"
   },
   {
    "name": "Mount Carmel",
@@ -61,7 +73,9 @@
    "anchor": "Carmel Center",
    "lat": 32.805556,
    "lon": 34.986944,
-   "note": "Drawn at Carmel Center; the register's \"Mount Carmel\" is the whole ridge."
+   "note": "Drawn at Carmel Center; the register's \"Mount Carmel\" is the whole ridge.",
+   "kima": "26805",
+   "kimaRelation": "near"
   },
   {
    "name": "Wadi Rushmiya",
@@ -70,7 +84,9 @@
    "anchor": "Nahal Giborim",
    "lat": 32.799722,
    "lon": 35.005,
-   "note": "Drawn on the wadi itself (Nahal Giborim); the quarter lay along it."
+   "note": "Drawn on the wadi itself (Nahal Giborim); the quarter lay along it.",
+   "kima": "86518",
+   "kimaRelation": "near"
   },
   {
    "name": "Bat Galim",
@@ -79,7 +95,9 @@
    "anchor": "Bat Galim",
    "lat": 32.833911,
    "lon": 34.981714,
-   "note": ""
+   "note": "",
+   "kima": "21063",
+   "kimaRelation": "identity"
   },
   {
    "name": "Harat al-Kanais",
@@ -88,7 +106,9 @@
    "anchor": "Paris Square",
    "lat": 32.8176,
    "lon": 34.9997,
-   "note": "The churches' quarter of the old town, drawn at Hamra (Paris) Square, the \"Churches District\"."
+   "note": "The churches' quarter of the old town, drawn at Hamra (Paris) Square, the \"Churches District\".",
+   "kima": "70144",
+   "kimaRelation": "near"
   },
   {
    "name": "Acre Gate",
@@ -97,7 +117,9 @@
    "anchor": "Faisal Square, Haifa",
    "lat": 32.81256,
    "lon": 35.00396,
-   "note": "Drawn at Faisal Square, where the old town's eastern gate stood."
+   "note": "Drawn at Faisal Square, where the old town's eastern gate stood.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "German Colony",
@@ -106,7 +128,9 @@
    "anchor": "German Colony",
    "lat": 32.82,
    "lon": 34.990556,
-   "note": ""
+   "note": "",
+   "kima": "21139",
+   "kimaRelation": "identity"
   },
   {
    "name": "Hawassa",
@@ -115,7 +139,9 @@
    "anchor": "Hawass",
    "lat": 32.776568,
    "lon": 35.034574,
-   "note": "Khwasa: the workers' settlement laid out from 1937 west of Balad al-Sheikh (Goren 2006). Outside the municipality."
+   "note": "Khwasa: the workers' settlement laid out from 1937 west of Balad al-Sheikh (Goren 2006). Outside the municipality.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Khamra Square",
@@ -124,7 +150,9 @@
    "anchor": "Paris Square",
    "lat": 32.8176,
    "lon": 34.9997,
-   "note": "Hamra Square, today Paris Square."
+   "note": "Hamra Square, today Paris Square.",
+   "kima": "70144",
+   "kimaRelation": "identity"
   },
   {
    "name": "Neve Sha'anan",
@@ -133,7 +161,9 @@
    "anchor": "Nave Sha'anan",
    "lat": 32.790278,
    "lon": 35.015833,
-   "note": ""
+   "note": "",
+   "kima": "21497",
+   "kimaRelation": "identity"
   },
   {
    "name": "Kiryat Eliyahu",
@@ -142,7 +172,9 @@
    "anchor": "Kirjat Elijahu",
    "lat": 32.824594,
    "lon": 34.987231,
-   "note": ""
+   "note": "",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Old City",
@@ -151,25 +183,64 @@
    "anchor": "Old City of Haifa",
    "lat": 32.815833,
    "lon": 35.002222,
-   "note": "Zahir al-Umar's walled town, between Hamra and Faisal Squares."
+   "note": "Zahir al-Umar's walled town, between Hamra and Faisal Squares.",
+   "kima": "26801",
+   "kimaRelation": "near"
   },
   {
    "name": "Harat al-Yahud",
-   "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "The old town's Jewish quarter; no item, and not Ard el-Yahud."
+   "qid": "Q16341015",
+   "relation": "near",
+   "anchor": "Al Pasha Complex, Haifa",
+   "lat": 32.8134,
+   "lon": 35.002989,
+   "note": "The old town's Jewish quarter, built inside the Eastern Quarter; not Ard el-Yahud. Drawn at the al-Pasha compound on Hammam al-Pasha Street, which stood at its edge (hewiki) and housed its Talmud Torah until the quarter was evacuated on 18 Jul 1938.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Herzliya quarter",
-   "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "No Wikidata item found."
+   "qid": "Q12019571",
+   "relation": "identity",
+   "anchor": "הרצליה (שכונה)",
+   "lat": 32.813022,
+   "lon": 34.992247,
+   "note": "Herzlia, on the lower Carmel slope between Hadar and Wadi Nisnas.",
+   "kima": "",
+   "kimaRelation": ""
+  },
+  {
+   "name": "Ahuza",
+   "qid": "Q4159159",
+   "relation": "identity",
+   "anchor": "Achuza",
+   "lat": 32.774142,
+   "lon": 34.991325,
+   "note": "Ahuzat Shmuel, on the Carmel ridge.",
+   "kima": "21015",
+   "kimaRelation": "identity"
+  },
+  {
+   "name": "Abbasiyya",
+   "qid": "Q10374305",
+   "relation": "identity",
+   "anchor": "Abbas",
+   "lat": 32.8169,
+   "lon": 34.985533,
+   "note": "The Abbas quarter, named for its streets, between the German Colony and Hadar.",
+   "kima": "",
+   "kimaRelation": ""
+  },
+  {
+   "name": "Burj",
+   "qid": "Q12404415",
+   "relation": "near",
+   "anchor": "Burj al-Salam",
+   "lat": 32.814041,
+   "lon": 34.999813,
+   "note": "Drawn at Burj al-Salam, Zahir al-Umar's citadel above the old town, opposite today's City Hall; the road up to it was called al-Burj.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Ard el-Ramel",
@@ -178,7 +249,9 @@
    "anchor": "",
    "lat": null,
    "lon": null,
-   "note": "The tin-hut quarter east of the Wadi Rushmiya estuary, by the Shemen factory (Goren 2006); no item."
+   "note": "The tin-hut quarter east of the Wadi Rushmiya estuary, by the Shemen factory (Goren 2006); no item.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Harat al-Mukhallis",
@@ -187,16 +260,9 @@
    "anchor": "",
    "lat": null,
    "lon": null,
-   "note": "No item."
-  },
-  {
-   "name": "Burj",
-   "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "No item."
+   "note": "Named for the Church of the Saviour (\"near Kanisat el Mukhallis\"); no item for the quarter or the church.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Sharqiyya",
@@ -205,7 +271,9 @@
    "anchor": "",
    "lat": null,
    "lon": null,
-   "note": "The eastern quarter; no item."
+   "note": "Al-Harat al-Sharqiyya, the old town's Eastern Quarter (54 dunams, mostly Muslim); no item of its own.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Harat al-Kishleh",
@@ -214,7 +282,9 @@
    "anchor": "",
    "lat": null,
    "lon": null,
-   "note": "The barracks quarter of the old town; no item."
+   "note": "The barracks quarter of the old town, by the Ottoman kishla; no item.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Ghazazwa",
@@ -223,7 +293,9 @@
    "anchor": "",
    "lat": null,
    "lon": null,
-   "note": "No item."
+   "note": "Harat al-Ghazzawiyya, named for families from Gaza; no item. Not Khirbat al-Ghazazwa by Burayka.",
+   "kima": "",
+   "kimaRelation": ""
   },
   {
    "name": "Shawafna",
@@ -232,25 +304,9 @@
    "anchor": "",
    "lat": null,
    "lon": null,
-   "note": "No item."
-  },
-  {
-   "name": "Ahuza",
-   "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "Has an item (Q104418538) but no coordinates."
-  },
-  {
-   "name": "Abbasiyya",
-   "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "No item."
+   "note": "No item.",
+   "kima": "",
+   "kimaRelation": ""
   }
  ],
  "institutions": [
