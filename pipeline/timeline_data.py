@@ -376,9 +376,9 @@ INSTITUTIONAL = [
     ("1944-06", "The plague outbreak begins", "haretz19441117-01.2.59",
      "64 cases and 18 dead by November 1944."),
     ("1945-08", "An Isolation Section", None,
-     "The hospital still has an Isolation Section in 1945 — so the ward "
-     "value's disappearance from the register after Feb 1940 was a clerical "
-     "change, not the work leaving."),
+     "The hospital still has an Isolation Section in 1945, and so does the "
+     "register: after the gap the clerks write the pavilion letter (A-E) "
+     "instead of the word."),
     ("1947-07", "The Exodus deportees are landed", "hzh19470720-01.2.2",
      "The wounded from the intercepted ship come ashore at Haifa."),
     ("1947-12", "The Jewish staff walk out", "hmf19480126-01.2.34",
