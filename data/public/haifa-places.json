@@ -381,6 +381,54 @@
    "from": null,
    "to": null,
    "icon": "▣"
+  },
+  {
+   "name": "Municipality",
+   "qid": "Q6578210",
+   "relation": "identity",
+   "anchor": "Haifa City Hall",
+   "lat": 32.812561,
+   "lon": 34.999169,
+   "note": "Haifa City Hall on Hassan Shukri Street, from 29 Jun 1942 (the inception date Wikidata gives).",
+   "from": "1942-06-29",
+   "to": null,
+   "icon": "🏛"
+  },
+  {
+   "name": "Municipality",
+   "qid": "",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "The municipal offices before City Hall opened. Site unsourced. Undated records are counted here.",
+   "from": null,
+   "to": "1942-06-28",
+   "icon": "🏛"
+  },
+  {
+   "name": "Nesher cement works",
+   "qid": "Q18191988",
+   "relation": "identity",
+   "anchor": "Nesher Israel Cement Enterprises",
+   "lat": 32.763869,
+   "lon": 35.05815,
+   "note": "The Nesher cement factory below Yagur, outside the town; drawn where it stood.",
+   "from": null,
+   "to": null,
+   "icon": "🏭"
+  },
+  {
+   "name": "Iraq Petroleum Company",
+   "qid": "Q124285258",
+   "relation": "",
+   "anchor": "",
+   "lat": null,
+   "lon": null,
+   "note": "Linked to the Haifa refinery, which the I.P.C. pipeline fed from 1939. Its item has no coordinates, and the company's own Haifa terminal and offices have none either, so nothing is drawn.",
+   "from": null,
+   "to": null,
+   "icon": ""
   }
  ]
 }

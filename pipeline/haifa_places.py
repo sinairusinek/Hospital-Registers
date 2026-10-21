@@ -88,11 +88,16 @@ INSTITUTIONS = [
     ("Harbour Works", "Q1376739", "near", "Drawn at the port.", None, None),
     ("Tilbury Contracting & Dredging", "Q1376739", "near", "The harbour contractors; drawn at the port.", None, None),
     ("Customs", "Q6635580", "near", "Drawn at the Custom House (by its railway halt).", None, None),
+    ("Municipality", "Q6578210", "identity", "Haifa City Hall on Hassan Shukri Street, from 29 Jun 1942 (the inception date Wikidata gives).", "1942-06-29", None),
+    ("Municipality", "", "", "The municipal offices before City Hall opened. Site unsourced. Undated records are counted here.", None, "1942-06-28"),
+    ("Nesher cement works", "Q18191988", "identity", "The Nesher cement factory below Yagur, outside the town; drawn where it stood.", None, None),
+    ("Iraq Petroleum Company", "Q124285258", "", "Linked to the Haifa refinery, which the I.P.C. pipeline fed from 1939. Its item has no coordinates, and the company's own Haifa terminal and offices have none either, so nothing is drawn.", None, None),
 ]
 
 ICON = {  # a single glyph per institution for the map badge
     "Palestine Railways": "🚂", "Government Hospital": "✚", "Harbour Works": "⚓",
     "Tilbury Contracting & Dredging": "⚓", "Customs": "▣",
+    "Municipality": "🏛", "Nesher cement works": "🏭",
 }
 
 
