@@ -112,6 +112,13 @@ WARD_SCAN_WORDS = [
 ]
 
 
+# The move to Bat Galim (NB20 -> NB21). The lettered pavilions belong to the
+# new building; see the pavilion pass in the main loop.
+MOVE_DATE = "1938-10-01"
+PAVILION_BARE = re.compile(r"^(?P<letter>[A-E])\.?(\s*[IVX0-9][IVX0-9 .,/-]*)?$", re.I)
+PAVILION_ISOL = re.compile(r"^(is|isol|iso|isolation)\.?\s*(?P<letter>[A-E])\b\.?", re.I)
+
+
 def ward_from_scan(written: str) -> str:
     found: list[str] = []
     for part in written.split("/ "):
@@ -1083,6 +1090,7 @@ REVIEW_FLAGS = [
     ("nationality-from-discarded", "Nationality was blank; recovered from a value the extraction set aside"),
     ("nationality-read-from-scan", "Nationality was blank; read off the page image"),
     ("ward-read-from-scan", "Ward re-read off the page image (the extraction had British Section)"),
+    ("ward-pavilion-isolation", "Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section"),
     ("serial-shift-relabelled", "Record number was the dropped row above's; relabelled to the number the extraction set aside"),
     ("row-read-from-scan", "A ledger row the extraction dropped, read off the page image"),
     ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
@@ -1437,6 +1445,7 @@ def main() -> int:
                 ward_readings.setdefault((reading["notebook"], reading["serial"]), []).append(
                     (reading["admission_date"], reading["ward_as_written"], reading["ward"]))
     ward_read: Counter[tuple[str, str]] = Counter()
+    ward_pavilion: Counter[str] = Counter()
     ward_diag_readings: dict[str, dict[str, str]] = {}
     if WARD_DIAGNOSIS_READINGS.exists():
         with WARD_DIAGNOSIS_READINGS.open(newline="", encoding="utf-8") as handle:
@@ -1758,6 +1767,29 @@ def main() -> int:
                 row["Original Diagnosis"] = written_dx
                 diagnosis_read += 1
                 flags.append("diagnosis-read-from-scan")
+
+        # The lettered pavilions are the Isolation (Fever) section. In 1939-40
+        # the clerk wrote "Is. A" to "Is. E"; after the gap the word Isolation
+        # all but vanishes (34 records 1944-48) and the bare letter carries the
+        # fever case-mix that Medical and Surgical do not: pyrexia, typhoid,
+        # typhus, diphtheria, plague. The letter is kept in the cleaned value,
+        # because the pavilions differ (A tuberculosis, C 95% male, B 45%
+        # children, E the 1944 plague). Only after the October 1938 move, and
+        # only where the ward is blank or plain Isolation; G (2 records, not
+        # fever) is left alone. Ruled by the user 2026-10-22.
+        when = (row.get("Admission Date [ISO]") or "")[:10]
+        current = (row.get("standardized ward") or "").strip()
+        if when >= MOVE_DATE and current in ("", "Isolation"):
+            written = (row.get("Ward") or "").strip()
+            hit = PAVILION_BARE.match(written) or PAVILION_ISOL.match(written)
+            if hit:
+                target = f"Isolation-pavilion-{hit.group('letter').upper()}"
+                if current:
+                    final_values["standardized ward"][current] -= 1
+                final_values["standardized ward"][target] += 1
+                row["standardized ward"] = target
+                ward_pavilion[target] += 1
+                flags.append("ward-pavilion-isolation")
 
         # The derived chapter rides in a column of its own; the source's code
         # and three-digit category are both left exactly as they are.
@@ -2544,6 +2576,9 @@ def main() -> int:
         for (written, resolved), count in ward_read.most_common():
             writer.writerow(["derived", "Ward", f"British Section re-read off the page as {written!r}",
                              resolved, count])
+        for found, count in sorted(ward_pavilion.items()):
+            writer.writerow(["derived", "Ward", "lettered pavilion after the Oct 1938 move: Isolation section",
+                             found, count])
         for found, count in nationality_read.most_common():
             writer.writerow(["derived", "Nationality", "blank, read off the page image (nationality-readings.tsv)",
                              found, count])

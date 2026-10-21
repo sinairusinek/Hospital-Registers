@@ -635,6 +635,7 @@ review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	279
 review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1109
 review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	5273
+review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	1904
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
 review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	157
 review	Review Flags	religion-from-written	Religion was blank in the cleaned column; read from the spelling the clerk wrote	437
@@ -926,6 +927,11 @@ derived	Ward	British Section re-read off the page as 'P/B.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Pav. C'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Pav C'	(as written)	1
 derived	Ward	British Section re-read off the page as 'B. or C.'	(as written)	1
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-A	147
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-B	716
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-C	702
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-D	219
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-E	120
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Palestinian	614
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	German	112
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Roumanian	71
