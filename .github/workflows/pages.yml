@@ -9,6 +9,9 @@ on:
       - 'sources/**'
       - 'data/newspapers/heb_article_readings.md'
       - 'pipeline/build.py'
+      # build.py reads both: the address layer and the gazetteer rulings.
+      - 'pipeline/address_layers.py'
+      - 'kimatch/**'
       - 'pipeline/source_registry.py'
       - 'pipeline/timeline_data.py'
       - 'pipeline/personnel_data.py'
