@@ -630,6 +630,7 @@ review	Review Flags	classifier-debris	Classifier error text where a diagnosis be
 review	Review Flags	procedure-only	An operation named with no diagnosis behind it	45
 review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1149
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	289
+review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	966
 withheld	Next of Kin			29879
 withheld	discarded_values			29879
 withheld	splitDiscValues			29879
@@ -646,6 +647,63 @@ withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
 derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22987
 derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	162
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Palestinian	495
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	German	112
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Roumanian	70
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Transjordanian	32
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Czechoslovakian	28
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lebanese	20
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	British	20
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lithuanian	19
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Latvian	17
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yugoslavian	11
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Egyptian	11
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Armenian	10
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Turkish	10
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Polish	8
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	American	7
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Greek	7
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Persian	6
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yemeni	6
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Syrian	5
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Austrian	4
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Hungarian	4
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Belgian	4
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Dutch	4
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Iraqi	3
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Moroccan	3
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Swedish	3
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Sudan	3
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Undefined	3
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	South African	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Mexican	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	French	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Maltese	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Hijazi	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Salonic	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Norwegian	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Spanish	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Indian	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Chcko	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yamanit	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	T.Jordinian	2
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Burmese	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Sumatra	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Chinese	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	African	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Abyssinian	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Argentinian	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Salonick	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Bulgarian	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Italian	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Salonik	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Cypriot	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Deutch	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Sudanese	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Palesti	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Russian	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	B	1
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	T.Jordanian	1
 derived	Nationality	blank, recovered from a set-aside value	British	133
 derived	Nationality	blank, recovered from a set-aside value	Austrian	16
 derived	Nationality	blank, recovered from a set-aside value	Armenian	14

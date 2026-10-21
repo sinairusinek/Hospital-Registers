@@ -81,6 +81,9 @@ def load_kima_decisions() -> dict[str, tuple[str, str]]:
 
 RECORD_RULES = ROOT / "kimatch" / "record-rules.tsv"
 RECORD_READINGS = ROOT / "kimatch" / "record-readings.tsv"
+# Nationalities read off the scans where the extraction kept none, keyed by
+# notebook, serial and admission date (serials restart each January).
+NATIONALITY_READINGS = ROOT / "data" / "public" / "nationality-readings.tsv"
 
 
 def load_record_places() -> tuple[list[tuple[re.Pattern, re.Pattern, str]], dict[tuple[str, str], tuple[str, str]]]:
@@ -397,6 +400,50 @@ CITY = {
 # Arabic article, a trailing full stop, and the clerk's own question mark. The
 # uncertainty it marks is preserved in `City as written`.
 CITY_NOISE = re.compile(r"^\|+\s*|^(?:el|al|ed|es)[\s-]+|[.?]+$", re.IGNORECASE)
+
+
+# The clerks' spellings of a nationality as read off the scans
+# (nationality-readings.tsv), onto the forms the register's own cleaned column
+# already uses. A reading not listed here stands as written: "Hijaz",
+# "Haurani", "Gypsy", "Salonic" are the clerk's categories, not misspellings.
+READING_NATIONALITY = {
+    **{k: "Palestinian" for k in ("palest", "palestine", "palestinian", "palst", "pal", "palestian")},
+    **{k: "Roumanian" for k in ("rumanian", "romanian", "roumanian", "rumainian", "rumania")},
+    **{k: "Lithuanian" for k in ("lithuanian", "litwanian", "lithwanian", "lituanian")},
+    **{k: "Czechoslovakian" for k in ("chekoslovakian", "checoslovakian", "chechos", "chekoslovak", "cheko",
+                                      "chekian", "chekoslovakia", "cheekos", "chechoslovakian", "shekoslovakian",
+                                      "chechoslovakia", "checheslovak", "czechoslovakian")},
+    **{k: "Yugoslavian" for k in ("yugoslavian", "yougoslovakian", "yeugoslavian", "yughozlavian", "jugoslavia",
+                                  "yogoslavian", "jugoslavian")},
+    **{k: "Transjordanian" for k in ("t.j", "t. jordan", "t.jordan", "transjordan", "t-jordanian", "t. jordanian",
+                                     "transj", "trans-jordan", "shark el urdun")},
+    **{k: "Lebanese" for k in ("lebanese", "libanese", "lebanian", "labanese", "lebnani", "libanaise", "lebanis",
+                               "lebanon", "libanon")},
+    **{k: "Latvian" for k in ("latvian", "latvians", "letevian", "lativian")},
+    **{k: "German" for k in ("german", "germany", "bavarian")},
+    **{k: "Egyptian" for k in ("egyptian", "egyp", "egypt")},
+    **{k: "Polish" for k in ("polish", "poland", "polland")},
+    **{k: "Dutch" for k in ("dutch", "holand", "holland")},
+    **{k: "Greek" for k in ("greek", "greeck", "greec")},
+    **{k: "Yemeni" for k in ("yemani", "yemanese", "yamani", "yeman", "yemenite", "yemanite")},
+    **{k: "Moroccan" for k in ("marrakish", "morocan", "marocian", "marrocian")},
+    **{k: "Swedish" for k in ("swidish", "swedish", "sweden")},
+    **{k: "Iraqi" for k in ("iraqian", "iraquian")},
+    **{k: "Belgian" for k in ("belgian", "belgium")},
+    **{k: "Armenian" for k in ("armenian", "arminian")},
+    **{k: "Austrian" for k in ("austrian", "austria")},
+    **{k: "French" for k in ("french", "france")},
+    **{k: "Maltese" for k in ("maltese", "malta")},
+    **{k: "Sudan" for k in ("soudan", "sudan")},
+    **{k: "Hijazi" for k in ("hijaz", "hijazy")},
+    "serian": "Syrian", "syrian": "Syrian", "labanon": "Lebanese", "lebanon.": "Lebanese",
+    "cyprus": "Cypriot", "argantin": "Argentinian", "s. african": "South African", "brit": "British",
+}
+
+
+def reading_nationality(value: str) -> str:
+    key = value.strip().lower().rstrip(".")
+    return READING_NATIONALITY.get(key, value.strip().rstrip("."))
 
 
 def normalize_city(value: str) -> str:
@@ -873,6 +920,7 @@ REVIEW_FLAGS = [
     ("city-read-from-address", "City was blank; filled from the place the Address names"),
     ("city-set-by-record", "One spelling, two places: City set for this record from its address or its scan"),
     ("nationality-from-discarded", "Nationality was blank; recovered from a value the extraction set aside"),
+    ("nationality-read-from-scan", "Nationality was blank; read off the page image"),
 ]
 
 
@@ -1206,6 +1254,15 @@ def main() -> int:
     nationality_words.update(NATIONALITY)
     nationality_words = {k: v for k, v in nationality_words.items() if v != "Palestinian"}
     nationality_recovered: Counter[str] = Counter()
+    # (notebook, serial) -> [(admission date, nationality)]. The date only
+    # breaks ties where a serial recurs in one notebook across a January.
+    nationality_readings: dict[tuple[str, str], list[tuple[str, str]]] = {}
+    if NATIONALITY_READINGS.exists():
+        with NATIONALITY_READINGS.open(newline="", encoding="utf-8") as handle:
+            for reading in csv.DictReader(handle, delimiter="\t"):
+                nationality_readings.setdefault((reading["notebook"], reading["serial"]), []).append(
+                    (reading["admission_date"], reading["nationality_as_written"]))
+    nationality_read: Counter[str] = Counter()
     ward_rehomed: Counter[tuple[str, str, str, str]] = Counter()
     ward_corrected = 0
     ward_degynecologised: Counter[tuple[str, str]] = Counter()
@@ -1254,6 +1311,17 @@ def main() -> int:
                     nationality_recovered[found] += 1
                     flags.append("nationality-from-discarded")
                     break
+            else:
+                options = nationality_readings.get((row.get("Notebook_Number") or "",
+                                                     row.get("Notebook Record ID") or ""), [])
+                when = (row.get("Admission Date [ISO]") or "")[:10]
+                dated = [v for d, v in options if d == when]
+                written_nat = dated[0] if dated else (options[0][1] if len(options) == 1 else "")
+                if written_nat:
+                    row["Nationality"] = written_nat
+                    row["StandardNationality"] = reading_nationality(written_nat)
+                    nationality_read[row["StandardNationality"]] += 1
+                    flags.append("nationality-read-from-scan")
 
         # The written ward carries the same spurious gynaecology as the
         # standardized one, and in combinations besides ("Gyn|Gynecology",
@@ -2091,6 +2159,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        for found, count in nationality_read.most_common():
+            writer.writerow(["derived", "Nationality", "blank, read off the page image (nationality-readings.tsv)",
+                             found, count])
         for found, count in nationality_recovered.most_common():
             writer.writerow(["derived", "Nationality", "blank, recovered from a set-aside value",
                              found, count])
