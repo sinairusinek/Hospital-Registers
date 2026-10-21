@@ -630,7 +630,7 @@ review	Review Flags	classifier-debris	Classifier error text where a diagnosis be
 review	Review Flags	procedure-only	An operation named with no diagnosis behind it	45
 review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1149
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	289
-review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	962
+review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	963
 withheld	Next of Kin			29879
 withheld	discarded_values			29879
 withheld	splitDiscValues			29879
@@ -650,7 +650,7 @@ derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv,
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Palestinian	493
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	German	112
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Roumanian	70
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Transjordanian	31
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Transjordanian	32
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Czechoslovakian	28
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lebanese	20
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	British	20
