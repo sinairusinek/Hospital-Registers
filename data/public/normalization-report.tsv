@@ -326,6 +326,7 @@ merged	City	Kiryat-Haim Tribune Amal.	Kiryat-Haim Tribune Amal	1
 merged	City	Haifa - S/D.	Haifa - S/D	1
 merged	City	Haifa - B/S W.	Haifa - B/S W	1
 merged	City	Inn El Zinat.	Inn El Zinat	1
+merged	City	Hawassah Village	Hawassa	1
 merged	City	Khidera	Hadera	1
 merged	City	Tulkarem|Tulkarem S/D.	Tulkarem|Tulkarem S/D	1
 merged	City	Rameh. Acre	Rameh	1
@@ -334,6 +335,7 @@ merged	City	Al-Mansi	Mansi	1
 merged	City	El Roy	Roy	1
 merged	City	Bassa No1 N.F.G.	Bassa No1 N.F.G	1
 merged	City	Athlit|Athlit. P. J. & Co.?	Athlit|Athlit. P. J. & Co	1
+merged	City	Kawassa	Hawassa	1
 merged	City	Adam Afula?	Adam Afula	1
 merged	City	Bassa N.1 N.F.D.	Bassa N.1 N.F.D	1
 merged	City	Bassa|Bassa N:1.	Bassa|Bassa N:1	1
@@ -481,6 +483,7 @@ merged	StandardNationality	Palist.	Palestinian	1
 merged	StandardNationality	Palest. A 351	Palestinian	1
 merged	City	Nej. Rd.	Nej. Rd	1
 merged	StandardNationality	Palest. P	Palestinian	1
+merged	City	Upper Hawassa	Hawassa	1
 merged	StandardNationality	British 2234	British	1
 merged	StandardNationality	British 3332	British	1
 cleared	Sex	C		1
@@ -640,10 +643,10 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		249
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22981
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22986
 derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	155
-derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	919
-derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2943
+derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	921
+derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3005
 derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	1970
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8771
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4654

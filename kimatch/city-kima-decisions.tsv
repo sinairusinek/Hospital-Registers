@@ -24,7 +24,7 @@ Jaba'	Jaba'	30			Q4118648	human		matched	furas		agent	Jaba' of the Haifa sub-dis
 Tel Aviv	Tel Aviv	30	272	Tel Aviv-Yafo (Israel)	Q33935	kima-dump	Q33935	matched	A_autolink		agent	Tel Aviv-Yafo city, not the district entity	2026-08-06
 Gaza	Gaza	29	12982	Gaza (Gaza Strip)	Q47492	furas		matched	furas		furas	Gaza - per Y. Furas	2026-10-18
 Wadi Salib	Wadi Salib	29	19522	Wadi Salib (Haifa, Israel)	Q2910153	furas		matched	furas		furas	Wadi Salib, Haifa - per Y. Furas	2026-10-18
-Hawassa	Hawassa	28	791	Haifa (Israel)	Q41621	human		matched	furas		agent	Harat al-Hawassa, a quarter of Haifa; drawn at Haifa	2026-10-18
+Hawassa	Hawassa	28	791	Haifa (Israel)	Q41621	human		matched	furas		agent	Hawassa (Khwasa), workers' settlement W of Balad al-Sheikh, outside the municipality; no Kima entry; Wikidata Q12407319 carried as Neighbourhood Wikidata; drawn at Haifa	2026-10-21
 Karkur	Karkur	28	19149	Karkur (Israel)	Q2475182	kima-dump	Q123685287	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q2475182 vs direct Wikidata Q123685287	2026-08-06
 Tamra	Tamra	28	20270	Tamra (Israel)	Q168176	furas		matched	furas		furas	Tamra - per Y. Furas	2026-10-18
 Bat Galim	Bat Galim	27	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump	Q810685	matched	A_autolink	0.95	auto		2026-08-06

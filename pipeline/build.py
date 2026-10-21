@@ -390,6 +390,7 @@ CITY = {
     # the register's commoner "Isfia", as asked.
     "isfia": "Isfiya", "esfia": "Isfiya", "isifia": "Isfiya",
     "isifia - haifa": "Isfiya",
+    "hawassah village": "Hawassa", "kawassa": "Hawassa", "upper hawassa": "Hawassa",
 }
 
 # Stripped before the lookup: a stray leading pipe from the extraction, the

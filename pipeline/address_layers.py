@@ -117,6 +117,10 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         # Acre (user ruling 2026-10-21). Furas's bare "Acre Gate" = Acre is
         # contradicted by his own "Haifa Acre gate" row, so read as a slip.
         ("Acre Gate", r"\bac(re|ri)'?s?\W*gate|\bgate\s+of\s+acre\b|\bakka\s+gate"),
+        # Khwasa (Goren 2006): the workers' settlement laid out from 1937 west
+        # of Balad al-Sheikh for evacuees from the huts, outside the municipal
+        # boundary but written "Haifa, Hawassa" by the clerks. Today Nesher.
+        ("Hawassa", r"\bk?hawass?[ae]h?\b|\bkawassa\b|\bhawasch\b|\bkhwasa\b"),
         ("Hadar HaCarmel", r"\bhadar\b|\bhad\.\s*hac"),
         ("Wadi Salib", r"sal(i|ee|ea)b\b|\bwadi\s*sal[iu]b|\bsalile\b"),
         ("Wadi Nisnas", r"nis+na[sz]|nas+nas|nesnas"),
@@ -156,6 +160,7 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
 # link, not an identity — the register's Acre Gate is the district around it.
 QUARTER_WIKIDATA = {
     "Haifa: Acre Gate": "Q25488483",
+    "Haifa: Hawassa": "Q12407319",   # the settlement itself; no Kima entry
 }
 QUARTER_RE = {town: [(q, re.compile(p, re.IGNORECASE)) for q, p in rules] for town, rules in QUARTERS.items()}
 
