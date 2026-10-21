@@ -93,6 +93,35 @@ WARD_READINGS = ROOT / "data" / "public" / "ward-readings.tsv"
 DROPPED_ROWS = ROOT / "data" / "public" / "dropped-rows-read.tsv"
 # Religion and nationality read off the scans, keyed by the source Index.
 RELIGION_READINGS = ROOT / "data" / "public" / "religion-readings.tsv"
+# Ward and diagnosis read off the scans where the extraction left them blank.
+WARD_DIAGNOSIS_READINGS = ROOT / "data" / "public" / "ward-diagnosis-readings.tsv"
+
+# A ward as the clerk wrote it, onto the register's wards. Bed and room
+# numbers after the ward ("Surg 11.8", "Med W10", "D XII") are dropped; a
+# transfer ("Isol / Hut") keeps both. Lettered pavilions, "Hut", the Palestine
+# Mobile Force's ward and the lazaret have no cleaned category of their own
+# and are left as written.
+WARD_SCAN_WORDS = [
+    (re.compile(r"^(gen|gey|g)$"), "General"),
+    (re.compile(r"^(is|isol|iso|i|inf)$"), "Isolation"),
+    (re.compile(r"^(surg|surgical|sg|s/s)$"), "Surgical"),
+    (re.compile(r"^(med|medical|md)$"), "Medical"),
+    (re.compile(r"^(mat|matt|mt|maternity)$"), "Maternity"),
+    (re.compile(r"^(b/s|br|bs|b\.s|brit)$"), "British Section"),
+    (re.compile(r"^(p/w|p\.w|prison)$"), "Prison Ward"),
+]
+
+
+def ward_from_scan(written: str) -> str:
+    found: list[str] = []
+    for part in written.split("/ "):
+        head = part.replace('"', "").strip().split(" ")[0].lower().rstrip(".") if part.strip() else ""
+        for pattern, ward in WARD_SCAN_WORDS:
+            if head and pattern.match(head):
+                if ward not in found:
+                    found.append(ward)
+                break
+    return " | ".join(found)
 DROPPED_INDEX_BASE = 40000
 DROPPED_COLUMNS = {
     "Notebook_Number": "Notebook_Number",
@@ -1058,6 +1087,7 @@ REVIEW_FLAGS = [
     ("row-read-from-scan", "A ledger row the extraction dropped, read off the page image"),
     ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
     ("religion-read-from-scan", "Religion blank or misread (NB31); read off the page image"),
+    ("diagnosis-read-from-scan", "Diagnosis was blank; read off the page image (not yet ICD-9 coded)"),
 ]
 
 
@@ -1407,6 +1437,12 @@ def main() -> int:
                 ward_readings.setdefault((reading["notebook"], reading["serial"]), []).append(
                     (reading["admission_date"], reading["ward_as_written"], reading["ward"]))
     ward_read: Counter[tuple[str, str]] = Counter()
+    ward_diag_readings: dict[str, dict[str, str]] = {}
+    if WARD_DIAGNOSIS_READINGS.exists():
+        with WARD_DIAGNOSIS_READINGS.open(newline="", encoding="utf-8") as handle:
+            ward_diag_readings = {r["Index"]: r for r in
+                                  csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+    diagnosis_read = 0
     religion_from_written_count: Counter[str] = Counter()
     religion_read: Counter[str] = Counter()
     known_nationality = column_values.get("StandardNationality", Counter())
@@ -1688,6 +1724,40 @@ def main() -> int:
                 row["standardized ward"] = chosen[2]
                 ward_read[(chosen[1], chosen[2] or "(pavilion letter)")] += 1
                 flags.append("ward-read-from-scan")
+
+        # Wards and diagnoses read off the scans where the extraction left the
+        # ward blank or combined, or the diagnosis blank (ward-diagnosis-
+        # readings.tsv, keyed by Index). A reading fills; it does not replace
+        # a single ward or a written diagnosis. NB1's form has no ward column,
+        # so a ward there that the page leaves blank is cleared.
+        scan = ward_diag_readings.get(row.get("Index") or "")
+        if scan:
+            current = (row.get("standardized ward") or "").strip()
+            written_ward = scan["ward_as_written"].strip()
+            if written_ward and (not current or "|" in current):
+                target = ward_from_scan(written_ward)
+                if target != current:
+                    final_values["standardized ward"][current] -= 1 if current else 0
+                    if target:
+                        final_values["standardized ward"][target] += 1
+                row["Ward"] = written_ward
+                row["standardized ward"] = target
+                ward_read[(written_ward, target or "(as written)")] += 1
+                if "ward-read-from-scan" not in flags:
+                    flags.append("ward-read-from-scan")
+            elif not written_ward and row.get("Notebook_Number") == "1" and current \
+                    and scan["confidence"] == "h":
+                final_values["standardized ward"][current] -= 1
+                row["Ward"] = ""
+                row["standardized ward"] = ""
+                ward_read[("(none on NB1's form)", "")] += 1
+                if "ward-read-from-scan" not in flags:
+                    flags.append("ward-read-from-scan")
+            written_dx = scan["diagnosis_as_written"].strip()
+            if written_dx and not (row.get("Original Diagnosis") or "").strip():
+                row["Original Diagnosis"] = written_dx
+                diagnosis_read += 1
+                flags.append("diagnosis-read-from-scan")
 
         # The derived chapter rides in a column of its own; the source's code
         # and three-digit category are both left exactly as they are.
@@ -2456,6 +2526,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        if diagnosis_read:
+            writer.writerow(["derived", "Original Diagnosis", "blank, read off the page image (ward-diagnosis-readings.tsv)",
+                             "flagged diagnosis-read-from-scan", diagnosis_read])
         for found, count in religion_read.most_common():
             writer.writerow(["derived", "Religion", "blank or misread, read off the page image (religion-readings.tsv)",
                              found, count])
