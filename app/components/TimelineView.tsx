@@ -123,6 +123,48 @@ const fromM = (n: number): string => {
   return `${MONTH_NAMES[m]} ${y}`;
 };
 
+/**
+ * A date typed by hand, to a month number. Accepts what a person actually
+ * types: 1938, 1938-07, 7/1938, 6.7.1938, 1938-07-06. Day-first where it is
+ * unambiguous, because the registers themselves are written that way
+ * ("6.7.38"). Returns null for anything it cannot read, and the caller leaves
+ * the field alone rather than guessing.
+ *
+ * `end` fills in the missing precision upward — a bare 1938 as a "to" means
+ * the END of 1938, not its first instant — so "1938" in both fields is the
+ * whole year rather than a zero-width range.
+ */
+function parseDateInput(text: string, end: boolean): number | null {
+  const t = text.trim();
+  if (!t) return null;
+  const n = t.split(/[^0-9]+/).filter(Boolean).map(Number);
+  if (!n.length || n.length > 3) return null;
+  let y: number, mo: number, d: number | null = null;
+  if (n.length === 1) {
+    [y] = n; mo = end ? 12 : 1;
+  } else {
+    // Whichever part is four digits, or too large to be a month, is the year.
+    const yi = n.findIndex(v => v > 31);
+    if (yi === -1) return null;
+    y = n[yi];
+    const rest = n.filter((_, i) => i !== yi);
+    if (rest.length === 1) {
+      mo = rest[0];
+    } else if (yi === 0) {
+      [mo, d] = rest;              // 1938-07-06
+    } else {
+      [d, mo] = rest;              // 6.7.1938
+    }
+  }
+  if (y < 100) y += y < 50 ? 1900 : 0;   // "38" is 1938
+  if (y < 1800 || y > 2100 || mo < 1 || mo > 12) return null;
+  const dim = daysInMonth(y, mo - 1);
+  if (d !== null && (d < 1 || d > dim)) return null;
+  if (d === null) d = end ? dim : 1;
+  return toM(`${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`)
+    + (end ? 1 / dim : 0);   // a "to" date includes its own day
+}
+
 /** Month or day, according to how much of the axis is on screen. */
 const fromMDay = (n: number, span: number): string => {
   if (span > DAY_SPAN) return fromM(n);
@@ -497,6 +539,10 @@ const TimelineView: React.FC = () => {
   const scans = usePageScans();
 
   const [range, setRange] = useState<[number, number] | null>(null);
+  // The two date fields. Kept as text, not as parsed numbers: a half-typed
+  // "1938-07" must stay on screen while the user finishes it.
+  const [fromText, setFromText] = useState('');
+  const [toText, setToText] = useState('');
   const [drawer, setDrawer] = useState<{
     source: Source | null;
     event: { label: string; note: string; date: string; sub?: string } | null;
@@ -718,17 +764,25 @@ const TimelineView: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [extent, width, plotW]);
 
-  const zoom = (factor: number) => {
-    const mid = (lo + hi) / 2;
-    const span = Math.min(
-      extent[1] - extent[0],
-      Math.max(MIN_SPAN, (hi - lo) * factor)
-    );
-    let a = mid - span / 2;
-    let b = mid + span / 2;
+  /**
+   * A requested range, slid and clipped to sit inside the extent. Shared by
+   * every way in — the zoom buttons, a click on a bar, the date fields — so a
+   * range near 1930 or 1948 is nudged into view rather than clipped short and
+   * silently narrower than asked for.
+   */
+  const clampRange = useCallback((a0: number, b0: number): [number, number] => {
+    const span = Math.min(extent[1] - extent[0], Math.max(MIN_SPAN, b0 - a0));
+    let a = (a0 + b0) / 2 - span / 2;
+    let b = a + span;
     if (a < extent[0]) { b += extent[0] - a; a = extent[0]; }
     if (b > extent[1]) { a -= b - extent[1]; b = extent[1]; }
-    setRange([Math.max(a, extent[0]), Math.min(b, extent[1])]);
+    return [Math.max(a, extent[0]), Math.min(b, extent[1])];
+  }, [extent]);
+
+  const zoom = (factor: number) => {
+    const mid = (lo + hi) / 2;
+    const span = (hi - lo) * factor;
+    setRange(clampRange(mid - span / 2, mid + span / 2));
   };
 
   const openSource = (srcId: string | null, ev: InstitutionalEvent) => {
@@ -808,9 +862,27 @@ const TimelineView: React.FC = () => {
         height={barY(gen * k) - barY(total * k)}
         fill="none" stroke={ATLIT_FRAME} strokeWidth={0.75} />);
     }
+    // Clicking a bar zooms to it. The band is where you SEE the thing worth
+    // looking at — a spike, a gap — and before this the only way to act on
+    // that was seven presses of Zoom in, each one recentring on the middle of
+    // the view rather than on what you were pointing at. A month opens to the
+    // month; a day opens to a fortnight around itself, which is already inside
+    // day mode.
+    const focus = () => {
+      const at = toM(key);
+      const [a0, b0] = key.length > 7
+        ? [at - MIN_SPAN / 2, at + MIN_SPAN / 2]
+        : [at, at + 1];
+      setRange(clampRange(a0, b0));
+    };
     return (
       <g
         key={key}
+        className="cursor-zoom-in"
+        role="button"
+        tabIndex={-1}
+        aria-label={`Zoom to ${label}`}
+        onClick={focus}
         onMouseEnter={() => setHover({
           x: hoverX, y: barY(total * k), label, general: gen, atlit: atl,
           split: facet ? parts : null,
@@ -839,8 +911,9 @@ const TimelineView: React.FC = () => {
             context</em> and <em>Hospital history</em>. Colour the
             admissions by who the patients were or what became of them, and switch to
             percentages to compare the mix across years of very different size. Drag on
-            the strip at the foot to zoom; click any flag for its source. Zoom in past two
-            months and both the axis and the intake band count days.
+            the strip at the foot to zoom, or type a range into <em>Go to</em>; click any
+            bar to zoom to it, any flag for its source. Below two months on screen both
+            the axis and the intake band count days.
           </p>
         </header>
 
@@ -914,6 +987,49 @@ const TimelineView: React.FC = () => {
               Show all years
             </button>
           )}
+
+          <span className="w-px h-4 bg-slate-200 mx-1" />
+
+          {/* Go to a range. Seven presses of Zoom in is not a way to reach a
+            * date you already have in mind, and the overview strip cannot be
+            * dragged finer than a few months. Either field may be left empty:
+            * a "from" alone runs to the end of the register, a "to" alone from
+            * its start. */}
+          <form
+            className="flex items-center gap-1"
+            onSubmit={e => {
+              e.preventDefault();
+              const a = parseDateInput(fromText, false);
+              const b = parseDateInput(toText, true);
+              if (a === null && b === null) return;
+              setRange(clampRange(a ?? extent[0], b ?? extent[1]));
+            }}
+          >
+            <label className="text-slate-400" htmlFor="tl-from">Go to</label>
+            <input
+              id="tl-from" value={fromText} onChange={e => setFromText(e.target.value)}
+              placeholder="1938-07-06" size={10} inputMode="numeric"
+              aria-label="Range start"
+              className={`px-2 py-1 rounded-full border bg-white font-mono w-[9.5em] ${
+                fromText && parseDateInput(fromText, false) === null
+                  ? 'border-rose-300 text-rose-700' : 'border-slate-300 text-slate-700'
+              }`}
+            />
+            <span className="text-slate-400">–</span>
+            <input
+              id="tl-to" value={toText} onChange={e => setToText(e.target.value)}
+              placeholder="1938-07-31" size={10} inputMode="numeric"
+              aria-label="Range end"
+              className={`px-2 py-1 rounded-full border bg-white font-mono w-[9.5em] ${
+                toText && parseDateInput(toText, true) === null
+                  ? 'border-rose-300 text-rose-700' : 'border-slate-300 text-slate-700'
+              }`}
+            />
+            <button type="submit"
+              className="px-2.5 py-1 rounded-full border border-slate-300 bg-white text-slate-700">
+              Go
+            </button>
+          </form>
           <span className="font-mono text-slate-400 ml-1">
             {fromMDay(lo, hi - lo)} – {fromMDay(hi, hi - lo)}
           </span>
