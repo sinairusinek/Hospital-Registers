@@ -89,21 +89,23 @@ INSTITUTIONS = [
     ("Tilbury Contracting & Dredging", "Q1376739", "near", "The harbour contractors; drawn at the port.", None, None),
     ("Customs", "Q6635580", "near", "Drawn at the Custom House (by its railway halt).", None, None),
     ("Municipality", "Q6578210", "identity", "Haifa City Hall on Hassan Shukri Street, from 29 Jun 1942 (the inception date Wikidata gives).", "1942-06-29", None),
-    ("Municipality", "", "", "The municipal offices before City Hall opened. Site unsourced. Undated records are counted here.", None, "1942-06-28"),
+    ("Municipality", "Q3390256", "near", "The town hall at the corner of Allenby Road and Stanton Street (today Shivat Zion), from 1934: Palestine Post 18 Jun 1936; HaBoker 11 May 1939 (\"the municipality building on Allenby Street\"); HaBoker and Haaretz 4 Mar 1948 (\"the former municipality building\", bombed). Probably the old Italian Hospital building, which the municipality resolved in Dec 1933 to rent from 1934 (Filastin 7 Dec 1933). No item; drawn at Hamra (Paris) Square, from whose south-west corner Allenby Road leaves. The month of the move is not known.", "1934-01-01", "1942-06-28"),
+    ("Municipality", "", "", "Before 1934: an earlier building on Allenby Street, \"the old municipality building\" (Filastin 11 Apr 1937). Its site is not fixed. Undated records are counted here.", None, "1933-12-31"),
     ("Nesher cement works", "Q18191988", "identity", "The Nesher cement factory below Yagur, outside the town; drawn where it stood.", None, None),
-    ("Iraq Petroleum Company", "Q124285258", "", "Linked to the Haifa refinery, which the I.P.C. pipeline fed from 1939. Its item has no coordinates, and the company's own Haifa terminal and offices have none either, so nothing is drawn.", None, None),
+    ("Iraq Petroleum Company", "Q47466318", "near", "From 1939: the Haifa refinery (Q124285258, which has no coordinates) in Haifa Bay, completed in 1939 at the end of the Kirkuk pipeline. Drawn at its cooling towers, the Halebeniyot, in use from 1939.", "1939-01-01", None),
+    ("Iraq Petroleum Company", "", "", "Before 1939: pipeline construction (from 1932) and the Haifa terminal, where the first oil arrived on 14 Oct 1934. The terminal has no item, so nothing is drawn. Undated records are counted here.", None, "1938-12-31"),
 ]
 
 ICON = {  # a single glyph per institution for the map badge
     "Palestine Railways": "🚂", "Government Hospital": "✚", "Harbour Works": "⚓",
     "Tilbury Contracting & Dredging": "⚓", "Customs": "▣",
-    "Municipality": "🏛", "Nesher cement works": "🏭",
+    "Municipality": "🏛", "Nesher cement works": "🏭", "Iraq Petroleum Company": "🛢",
 }
 
 
 # English names for anchors whose item has only a Hebrew or Arabic label, so
 # the view can say where a quarter is drawn in the language it is written in.
-ANCHOR_LABEL = {"Q12404415": "Burj al-Salam"}
+ANCHOR_LABEL = {"Q12404415": "Burj al-Salam", "Q47466318": "the refinery cooling towers (Halebeniyot)"}
 
 
 def coords(qids: list[str]) -> dict[str, tuple[float, float, str]]:
