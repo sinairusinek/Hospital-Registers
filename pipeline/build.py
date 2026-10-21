@@ -84,6 +84,10 @@ RECORD_READINGS = ROOT / "kimatch" / "record-readings.tsv"
 # Nationalities read off the scans where the extraction kept none, keyed by
 # notebook, serial and admission date (serials restart each January).
 NATIONALITY_READINGS = ROOT / "data" / "public" / "nationality-readings.tsv"
+# The ward cell re-read off the scans for every record the extraction called
+# British Section (2026-10-21/22): the clerk's mark as written and the ward it
+# resolves to ("" for a bare pavilion letter, as elsewhere in the build).
+WARD_READINGS = ROOT / "data" / "public" / "ward-readings.tsv"
 # Ledger rows the extraction dropped behind a borrowed serial, read off the
 # scans; "as written" values only. Source column <- reading column.
 DROPPED_ROWS = ROOT / "data" / "public" / "dropped-rows-read.tsv"
@@ -1047,6 +1051,7 @@ REVIEW_FLAGS = [
     ("city-set-by-record", "One spelling, two places: City set for this record from its address or its scan"),
     ("nationality-from-discarded", "Nationality was blank; recovered from a value the extraction set aside"),
     ("nationality-read-from-scan", "Nationality was blank; read off the page image"),
+    ("ward-read-from-scan", "Ward re-read off the page image (the extraction had British Section)"),
     ("serial-shift-relabelled", "Record number was the dropped row above's; relabelled to the number the extraction set aside"),
     ("row-read-from-scan", "A ledger row the extraction dropped, read off the page image"),
     ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
@@ -1393,6 +1398,13 @@ def main() -> int:
                 nationality_readings.setdefault((reading["notebook"], reading["serial"]), []).append(
                     (reading["admission_date"], reading["nationality_as_written"]))
     nationality_read: Counter[str] = Counter()
+    ward_readings: dict[tuple[str, str], list[tuple[str, str, str]]] = {}
+    if WARD_READINGS.exists():
+        with WARD_READINGS.open(newline="", encoding="utf-8") as handle:
+            for reading in csv.DictReader(handle, delimiter="\t"):
+                ward_readings.setdefault((reading["notebook"], reading["serial"]), []).append(
+                    (reading["admission_date"], reading["ward_as_written"], reading["ward"]))
+    ward_read: Counter[tuple[str, str]] = Counter()
     religion_from_written_count: Counter[str] = Counter()
     religion_read: Counter[str] = Counter()
     known_nationality = column_values.get("StandardNationality", Counter())
@@ -1655,6 +1667,25 @@ def main() -> int:
                     final_values["standardized ward"][current] -= 1
                 final_values["standardized ward"][target] += 1
             ward_rehomed[(misfiled, target, source, column)] += 1
+
+        # A ward read off the page outranks every inference above: the clerk's
+        # mark replaces the extraction's expansion of it, and resolves as the
+        # readings file says ("B." after the October 1938 move is a pavilion,
+        # not the British Section; "Is." is Isolation).
+        options = ward_readings.get(key, [])
+        if options and (row.get("standardized ward") or "").strip() == "British Section":
+            when = (row.get("Admission Date [ISO]") or "")[:10]
+            dated = [o for o in options if o[0] == when]
+            chosen = dated[0] if dated else (options[0] if len(options) == 1 else None)
+            if chosen:
+                row["Ward"] = chosen[1]
+                if chosen[2] != "British Section":
+                    final_values["standardized ward"]["British Section"] -= 1
+                    if chosen[2]:
+                        final_values["standardized ward"][chosen[2]] += 1
+                row["standardized ward"] = chosen[2]
+                ward_read[(chosen[1], chosen[2] or "(pavilion letter)")] += 1
+                flags.append("ward-read-from-scan")
 
         # The derived chapter rides in a column of its own; the source's code
         # and three-digit category are both left exactly as they are.
@@ -2435,6 +2466,9 @@ def main() -> int:
         if shift_relabelled:
             writer.writerow(["derived", "Notebook Record ID", "dropped row above: number relabelled to the one set aside",
                              "flagged serial-shift-relabelled", len(shift_relabelled)])
+        for (written, resolved), count in ward_read.most_common():
+            writer.writerow(["derived", "Ward", f"British Section re-read off the page as {written!r}",
+                             resolved, count])
         for found, count in nationality_read.most_common():
             writer.writerow(["derived", "Nationality", "blank, read off the page image (nationality-readings.tsv)",
                              found, count])
