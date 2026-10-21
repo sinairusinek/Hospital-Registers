@@ -651,7 +651,6 @@ notebook	serial	admission_date	page	nationality_as_written	source
 31	3111	1947-05-21	65	Palest.	iiif
 31	3122	1947-05-21	66	Palest.	iiif
 31	3135	1947-05-22	67	Palest.	iiif
-31	3139	1947-05-22	68	Palest.	iiif
 31	3144	1947-05-22	68	Palest.	iiif
 31	3145	1947-05-22	68	Palest.	iiif
 31	3146	1947-05-23	68	Palest.	iiif
@@ -892,7 +891,6 @@ notebook	serial	admission_date	page	nationality_as_written	source
 30	1096	1946-03-04	4	T.Jordan	iiif
 30	1175	1946-03-07	11	British	iiif
 30	1183	1946-03-08	11	British	iiif
-30	1160	1946-03-07	10	Palestinian	iiif
 30	1246	1946-03-12	17	British	iiif
 30	1406	1946-03-21	29	T.Jordan	iiif
 30	1410	1946-03-21	29	TransJordan	iiif
@@ -924,7 +922,6 @@ notebook	serial	admission_date	page	nationality_as_written	source
 30	1875	1946-04-15	68	German	iiif
 30	1878	1946-04-16	69	T.Jordinian	iiif
 30	1850	1946-04-13	66	Palestinian	iiif
-30	2056	1946-04-24	84	Egyptian	iiif
 30	2059	1946-04-24	84	Labanon	iiif
 30	2119	1946-04-27	89	Palestinian	iiif
 30	2149	1946-04-29	91	T.Jordanian	iiif
