@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ExternalLink, X, Loader2, BookOpen } from 'lucide-react';
-import { PageScan, PageScanIndex, usePageScans, pageImageUrl } from './ScanLink';
+import ScanLink, { PageScan, PageScanIndex, usePageScans, pageImageUrl } from './ScanLink';
+import { RegistryRecord } from '../types';
 import PersonnelStrip from './PersonnelStrip';
 import { colorsForRanked, ColorScale } from '../colors';
 import { GROUP_DIM } from '../groups';
@@ -172,6 +173,12 @@ const fromMDay = (n: number, span: number): string => {
   return `${d} ${MONTH_NAMES[m]} ${y}`;
 };
 
+/** The calendar day a month number falls in, as YYYY-MM-DD. */
+const isoDay = (n: number): string => {
+  const { y, m, d } = fromMParts(n);
+  return `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+};
+
 const longDate = (iso: string): string => {
   const [y, m, d] = iso.split('-');
   if (!d) return m ? `${MONTH_NAMES[Number(m) - 1]} ${y}` : y;
@@ -318,6 +325,137 @@ function dayTicks(lo: number, hi: number, width: number):
   });
   return out;
 }
+
+// ---------------------------------------------------------------- day panel
+
+const ATLIT_NOTEBOOK = '25';
+
+const DAY_FIELDS = ['Age', 'Sex', 'Religion', 'Nationality', 'Occupation',
+  'City as written', 'Ward', 'Diagnosis', 'Days in Hospital', 'Result'];
+
+const cell = (row: RegistryRecord, key: string): string => {
+  const v = row[key];
+  if (v === null || v === undefined) return '';
+  const t = String(v).trim();
+  return t === 'null' || t === 'undefined' ? '' : t;
+};
+
+/**
+ * One day's admissions, read where the bar stands. A day is small enough to
+ * read whole — 51 records at the busiest — so it opens beside the timeline
+ * rather than sending the reader off to the Browser and back.
+ */
+const DayPanel: React.FC<{
+  day: string | null;
+  records: RegistryRecord[] | null;
+  loaded: boolean;
+  scans: PageScanIndex | null;
+  onClose: () => void;
+  onStep: (dir: -1 | 1) => void;
+  onOpenInBrowser?: () => void;
+}> = ({ day, records, loaded, scans, onClose, onStep, onOpenInBrowser }) => {
+  const open = Boolean(day);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (e: KeyboardEvent) => {
+      // Arrows typed into the date fields, or on the zoom strip, are theirs.
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === 'INPUT' || t.getAttribute('role') === 'slider')) return;
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowLeft') onStep(-1);
+      else if (e.key === 'ArrowRight') onStep(1);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, onClose, onStep]);
+
+  return (
+    <aside
+      aria-label="Admissions on this day"
+      className={`fixed top-16 right-0 bottom-0 w-[min(440px,94vw)] bg-white border-l border-slate-200
+        shadow-2xl z-30 flex flex-col transition-transform duration-200 ${
+        open ? 'translate-x-0' : 'translate-x-full'
+      }`}
+    >
+      {open && (
+        <>
+          <header className="px-5 pt-4 pb-3 border-b border-slate-200 shrink-0">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-[0.16em] mb-1">
+                  Admitted on
+                </p>
+                <h2 className="text-xl font-bold text-slate-900 leading-tight">
+                  {longDate(day!)}
+                </h2>
+                <p className="mt-1 text-xs text-slate-500">
+                  {!loaded ? 'Loading the records…'
+                    : `${records!.length} record${records!.length === 1 ? '' : 's'}`}
+                </p>
+              </div>
+              <div className="flex items-center gap-1 shrink-0">
+                <button onClick={() => onStep(-1)} aria-label="Previous day" title="Previous day"
+                  className="px-2 py-1 rounded-full border border-slate-300 bg-white text-slate-700 text-xs">←</button>
+                <button onClick={() => onStep(1)} aria-label="Next day" title="Next day"
+                  className="px-2 py-1 rounded-full border border-slate-300 bg-white text-slate-700 text-xs">→</button>
+                <button onClick={onClose} aria-label="Close"
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+                  <X size={18} />
+                </button>
+              </div>
+            </div>
+            {onOpenInBrowser && loaded && records!.length > 0 && (
+              <button onClick={onOpenInBrowser}
+                className="mt-2 text-xs font-bold text-indigo-600 hover:text-indigo-800">
+                Open this day in the Browser →
+              </button>
+            )}
+          </header>
+          <div className="flex-1 overflow-y-auto custom-scrollbar px-4 py-3 space-y-3">
+            {!loaded ? (
+              <div className="flex items-center gap-2 text-xs text-slate-400">
+                <Loader2 size={14} className="animate-spin" /> The register is still loading.
+              </div>
+            ) : records!.length === 0 ? (
+              <p className="text-xs text-slate-400">No admission is dated to this day.</p>
+            ) : records!.map((row, i) => {
+              const notebook = cell(row, 'Notebook_Number');
+              const page = cell(row, 'Page_Number');
+              return (
+                <div key={i} className="rounded-xl border border-slate-200 overflow-hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 bg-slate-50 border-b border-slate-200">
+                    <span className="text-[11px] text-slate-500">
+                      Notebook <span className="font-bold text-slate-700">{notebook || '—'}</span>
+                      , p. {page || '—'}
+                      {cell(row, 'Notebook Record ID') && <> · No. {cell(row, 'Notebook Record ID')}</>}
+                      {notebook === ATLIT_NOTEBOOK && <span className="ml-1 text-slate-400">(Atlit)</span>}
+                    </span>
+                    <ScanLink scans={scans} notebook={notebook} page={page}
+                      notebookUrl={cell(row, 'tempLink')} />
+                  </div>
+                  <dl className="px-3 py-2.5 grid grid-cols-2 gap-x-4 gap-y-1.5">
+                    {DAY_FIELDS.map(f => {
+                      const v = cell(row, f);
+                      return (
+                        <div key={f}>
+                          <dt className="text-[9px] font-bold uppercase tracking-wider text-slate-400">{f}</dt>
+                          <dd className={`text-[11px] mt-0.5 break-words ${v ? 'text-slate-700 font-medium' : 'text-slate-300 italic'}`}>
+                            {v || 'not recorded'}
+                          </dd>
+                        </div>
+                      );
+                    })}
+                  </dl>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
+    </aside>
+  );
+};
 
 // ---------------------------------------------------------------- drawer
 
@@ -533,7 +671,15 @@ const NotebookPanel: React.FC<{
 
 // ---------------------------------------------------------------- view
 
-const TimelineView: React.FC = () => {
+interface TimelineViewProps {
+  /** The register itself, for reading a day or a range. Empty while it loads:
+   *  the band stands on timeline.json and does not wait for it. */
+  records?: RegistryRecord[];
+  /** Send a range of days to the Browser, which then shows only those. */
+  onOpenInBrowser?: (from: string, to: string) => void;
+}
+
+const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrowser }) => {
   const [data, setData] = useState<TimelineData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const scans = usePageScans();
@@ -548,6 +694,8 @@ const TimelineView: React.FC = () => {
     event: { label: string; note: string; date: string; sub?: string } | null;
   } | null>(null);
   const [openNotebook, setOpenNotebook] = useState<Notebook | null>(null);
+  // The day whose admissions are open in the side panel.
+  const [day, setDay] = useState<string | null>(null);
   const [showNotebooks, setShowNotebooks] = useState(false);
   const [showAtlit, setShowAtlit] = useState(true);
   // The band's colouring: null for the plain intake, else a facet key.
@@ -794,6 +942,43 @@ const TimelineView: React.FC = () => {
   const atStart = lo <= extent[0] + 0.01;
   const atEnd = hi >= extent[1] - 0.01;
 
+  // The day panel reads the register, which arrives separately; the Atlit
+  // book follows the band's own toggle, so the panel lists what the bar drew.
+  const dayRecords = useMemo(() => {
+    if (!day || !records.length) return null;
+    return records
+      .filter(r => String(r['Admission Date'] ?? '').startsWith(day)
+        && (showAtlit || cell(r, 'Notebook_Number') !== ATLIT_NOTEBOOK))
+      .sort((a, b) => (Number(a['Notebook_Number']) - Number(b['Notebook_Number']))
+        || (Number(a['Notebook Record ID']) - Number(b['Notebook Record ID'])));
+  }, [day, records, showAtlit]);
+
+  // Previous or next day the register reaches, skipping empty ones, and the
+  // axis follows so the panel never describes a day off screen.
+  const stepDay = useCallback((dir: -1 | 1) => {
+    if (!data || !day) return;
+    const days = data.daily;
+    let i = days.findIndex(r => r[0] >= day);
+    if (i === -1) i = days.length;
+    const j = dir === 1 ? (days[i]?.[0] === day ? i + 1 : i) : i - 1;
+    const next = days[j];
+    if (!next) return;
+    setDay(next[0]);
+    const at = toM(next[0]);
+    if (at < lo || at >= hi) setRange(clampRange(at - (hi - lo) / 2, at + (hi - lo) / 2));
+  }, [data, day, lo, hi, clampRange]);
+
+  // The days on screen, as the Browser's date filter will read them, and the
+  // count of admissions inside them — the Atlit book included, as the Browser
+  // will include it.
+  const screenFrom = data ? (isoDay(lo) < data.meta.first ? data.meta.first : isoDay(lo)) : '';
+  const screenTo = data ? (isoDay(hi - 1e-6) > data.meta.last ? data.meta.last : isoDay(hi - 1e-6)) : '';
+  const screenCount = useMemo(() => {
+    if (!data) return 0;
+    return data.daily.reduce((n, r) => (r[0] >= screenFrom && r[0] <= screenTo
+      ? n + r[1] + (r[2] ?? 0) : n), 0);
+  }, [data, screenFrom, screenTo]);
+
   const openSource = (srcId: string | null, ev: InstitutionalEvent) => {
     setDrawer({
       source: srcId && data ? data.sources[srcId] ?? null : null,
@@ -875,22 +1060,21 @@ const TimelineView: React.FC = () => {
     // looking at — a spike, a gap — and before this the only way to act on
     // that was seven presses of Zoom in, each one recentring on the middle of
     // the view rather than on what you were pointing at. A month opens to the
-    // month; a day opens to a fortnight around itself, which is already inside
-    // day mode.
+    // month. A day is as far as the axis goes, so a day bar opens that day's
+    // admissions in the side panel instead.
+    const isDay = key.length > 7;
     const focus = () => {
+      if (isDay) { setDay(key); return; }
       const at = toM(key);
-      const [a0, b0] = key.length > 7
-        ? [at - MIN_SPAN / 2, at + MIN_SPAN / 2]
-        : [at, at + 1];
-      setRange(clampRange(a0, b0));
+      setRange(clampRange(at, at + 1));
     };
     return (
       <g
         key={key}
-        className="cursor-zoom-in"
+        className={isDay ? 'cursor-pointer' : 'cursor-zoom-in'}
         role="button"
         tabIndex={-1}
-        aria-label={`Zoom to ${label}`}
+        aria-label={isDay ? `Read the admissions of ${label}` : `Zoom to ${label}`}
         onClick={focus}
         onMouseEnter={() => setHover({
           x: hoverX, y: barY(total * k), label, general: gen, atlit: atl,
@@ -921,8 +1105,10 @@ const TimelineView: React.FC = () => {
             admissions by who the patients were or what became of them, and switch to
             percentages to compare the mix across years of very different size. Drag on
             the strip at the foot to zoom, or type a range into <em>Go to</em>; click any
-            bar to zoom to it, any flag for its source. Below two months on screen both
-            the axis and the intake band count days.
+            bar to zoom to it, any flag for its source; the arrows step back and forth by
+            half the range on screen. Below two months on screen both the axis and the
+            intake band count days, and clicking a day lists its admissions. <em>Open in
+            the Browser</em> takes whatever range is on screen to the table.
           </p>
         </header>
 
@@ -1006,6 +1192,17 @@ const TimelineView: React.FC = () => {
             <button onClick={() => setRange(null)}
               className="px-2.5 py-1 rounded-full border border-indigo-300 bg-indigo-50 text-indigo-700">
               Show all years
+            </button>
+          )}
+          {zoomed && onOpenInBrowser && (
+            <button
+              onClick={() => onOpenInBrowser(screenFrom, screenTo)}
+              disabled={!records.length}
+              title={records.length
+                ? `Show only the admissions of ${longDate(screenFrom)} – ${longDate(screenTo)} in the Browser`
+                : 'The register is still loading'}
+              className="px-2.5 py-1 rounded-full border border-indigo-300 bg-white text-indigo-700 disabled:opacity-40">
+              Open {screenCount.toLocaleString()} in the Browser →
             </button>
           )}
 
@@ -1680,6 +1877,17 @@ const TimelineView: React.FC = () => {
             different padding and every year drifts. */}
         <PersonnelStrip lo={lo} hi={hi} />
       </div>
+
+      <DayPanel
+        day={day}
+        records={dayRecords}
+        loaded={records.length > 0}
+        scans={scans}
+        onClose={() => setDay(null)}
+        onStep={stepDay}
+        onOpenInBrowser={onOpenInBrowser && day
+          ? () => onOpenInBrowser(day, day) : undefined}
+      />
 
       <SourceDrawer
         source={drawer?.source ?? null}

@@ -204,6 +204,31 @@ const App: React.FC = () => {
     [data, filterState]
   );
 
+  // The Timeline hands over a range of days; the Browser then shows exactly
+  // those admissions. Every other filter is cleared, since the Timeline has
+  // none of its own and the table should hold what the band drew. The Atlit
+  // book comes along whatever the Timeline's toggle: the sidebar has no notebook
+  // facet, and a filter the reader cannot see or undo would be worse.
+  const openRangeInBrowser = useCallback((from: string, to: string) => {
+    setFilterState(prev => {
+      const dateKey = Object.keys(prev.ranges).find(k => k.toLowerCase().includes('admission date'));
+      const ranges: Record<string, RangeFilter> = {};
+      for (const [k, r] of Object.entries(prev.ranges) as [string, RangeFilter][]) {
+        ranges[k] = { ...r, currentMin: r.min, currentMax: r.max };
+      }
+      if (dateKey) {
+        const r = ranges[dateKey];
+        ranges[dateKey] = {
+          ...r,
+          currentMin: Math.max(r.min, Date.parse(from)),
+          currentMax: Math.min(r.max, Date.parse(to))
+        };
+      }
+      return { searchQuery: '', advancedSearch: [], facets: {}, ranges };
+    });
+    setActiveView('browse');
+  }, []);
+
   const toggleColumn = useCallback((key: string) => {
     setColumns(prev => prev.map(col => 
       col.key === key ? { ...col, visible: !col.visible } : col
@@ -345,7 +370,7 @@ const App: React.FC = () => {
         ) : activeView === 'timeline' ? (
           // The timeline stands on its own generated file, so like About it is
           // readable before — and without — the register TSV.
-          <TimelineView />
+          <TimelineView records={data} onOpenInBrowser={openRangeInBrowser} />
         ) : activeView === 'history' ? (
           // Likewise the history: a self-contained document in public/, framed
           // as it stands rather than ported into React.

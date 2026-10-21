@@ -34,7 +34,12 @@ export const matchesNonFacet = (row: RegistryRecord, filterState: FilterState): 
       numericVal = Number(rowVal);
     }
 
-    if (!isNaN(numericVal) && (numericVal < range.currentMin || numericVal > range.currentMax)) {
+    if (isNaN(numericVal)) {
+      // An undated record cannot be said to fall inside a narrowed date range,
+      // so once the range is narrowed it is left out rather than shown with it.
+      const narrowed = range.currentMin > range.min || range.currentMax < range.max;
+      if (narrowed && col.toLowerCase().includes('date')) return false;
+    } else if (numericVal < range.currentMin || numericVal > range.currentMax) {
       return false;
     }
   }
