@@ -634,7 +634,7 @@ review	Review Flags	procedure-only	An operation named with no diagnosis behind i
 review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1294
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	279
 review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1109
-review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	5286
+review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	5304
 review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	1904
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
 review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	157
@@ -695,6 +695,7 @@ derived	Ward	British Section re-read off the page as 'PMF'	(as written)	39
 derived	Ward	British Section re-read off the page as 'Hut.'	(as written)	35
 derived	Ward	British Section re-read off the page as 'P.W.'	Prison Ward	35
 derived	Ward	British Section re-read off the page as 'B.'	British Section	29
+derived	Ward	British Section re-read off the page as 'S/S.'	Surgical	26
 derived	Ward	British Section re-read off the page as 'Gen'	General	25
 derived	Ward	British Section re-read off the page as 'Med'	Medical	24
 derived	Ward	British Section re-read off the page as 'Surg.'	Surgical	23
@@ -702,7 +703,6 @@ derived	Ward	British Section re-read off the page as 'I.'	Isolation	22
 derived	Ward	British Section re-read off the page as 'G'	General	22
 derived	Ward	British Section re-read off the page as 'Gen.'	General	19
 derived	Ward	British Section re-read off the page as 'P/W'	Prison Ward	19
-derived	Ward	British Section re-read off the page as 'S/S.'	Surgical	19
 derived	Ward	British Section re-read off the page as 'B/s'	British Section	16
 derived	Ward	British Section re-read off the page as 'G/S.'	(as written)	16
 derived	Ward	"British Section re-read off the page as '""C""'"	(as written)	14
@@ -712,6 +712,7 @@ derived	Ward	British Section re-read off the page as 'Isol'	Isolation	9
 derived	Ward	British Section re-read off the page as 'D.'	(pavilion letter)	8
 derived	Ward	British Section re-read off the page as 'MeS'	(as written)	8
 derived	Ward	British Section re-read off the page as 'D'	(pavilion letter)	7
+derived	Ward	British Section re-read off the page as 'S/S'	Surgical	7
 derived	Ward	British Section re-read off the page as 'Mat.'	Maternity	6
 derived	Ward	British Section re-read off the page as 'D XII'	(as written)	6
 derived	Ward	British Section re-read off the page as 'Mat'	Maternity	5
@@ -738,13 +739,14 @@ derived	Ward	British Section re-read off the page as 'A.'	(pavilion letter)	2
 derived	Ward	British Section re-read off the page as 'Surg W3'	Surgical	2
 derived	Ward	British Section re-read off the page as 'D. 1'	(as written)	2
 derived	Ward	British Section re-read off the page as 'D 7'	(as written)	2
+derived	Ward	British Section re-read off the page as 'S/S -'	Surgical	2
+derived	Ward	British Section re-read off the page as 'S/s.'	Surgical	2
 derived	Ward	British Section re-read off the page as 'c.'	(as written)	2
 derived	Ward	British Section re-read off the page as 'S B/S'	(as written)	2
 derived	Ward	British Section re-read off the page as 'Md'	Medical	2
 derived	Ward	British Section re-read off the page as 'Med X1'	Medical	2
 derived	Ward	British Section re-read off the page as 'Sg'	Surgical	2
 derived	Ward	British Section re-read off the page as 'P.M.F'	(as written)	2
-derived	Ward	British Section re-read off the page as 'S/S'	Surgical	2
 derived	Ward	British Section re-read off the page as 'Bar. B'	(as written)	2
 derived	Ward	British Section re-read off the page as 'C 6.'	(as written)	2
 derived	Ward	British Section re-read off the page as 'Pav. C.'	(as written)	2
@@ -806,6 +808,7 @@ derived	Ward	British Section re-read off the page as 'Med 4.'	Medical	1
 derived	Ward	British Section re-read off the page as 'Mat W9'	Maternity	1
 derived	Ward	British Section re-read off the page as 'M.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'B. / D'	(as written)	1
+derived	Ward	British Section re-read off the page as 's/s.'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Md.'	Medical	1
 derived	Ward	British Section re-read off the page as 'M.S.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'B/S / P.M.F.'	British Section	1
@@ -922,6 +925,7 @@ derived	Ward	British Section re-read off the page as 'C 3.3.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med W11.B12.'	Medical	1
 derived	Ward	British Section re-read off the page as 'Med. X.'	Medical	1
 derived	Ward	British Section re-read off the page as 'Med. R.9.'	Medical	1
+derived	Ward	British Section re-read off the page as 'S/S. 10,3.'	Surgical	1
 derived	Ward	British Section re-read off the page as 'S/S. 1.'	Surgical	1
 derived	Ward	British Section re-read off the page as 'P/B.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Pav. C'	(as written)	1
