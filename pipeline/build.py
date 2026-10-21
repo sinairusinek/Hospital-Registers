@@ -497,6 +497,8 @@ READING_NATIONALITY = {
     **{k: "Sudan" for k in ("soudan", "sudan")},
     **{k: "Hijazi" for k in ("hijaz", "hijazy")},
     "serian": "Syrian", "syrian": "Syrian", "labanon": "Lebanese", "lebanon.": "Lebanese",
+    # The clerk's abbreviation (NB24 p45, p59) and a second spelling of Salonic.
+    "chcko": "Czechoslovakian", "salonik": "Salonic",
     "cyprus": "Cypriot", "argantin": "Argentinian", "s. african": "South African", "brit": "British",
 }
 

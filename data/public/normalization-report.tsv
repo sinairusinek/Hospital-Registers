@@ -696,7 +696,7 @@ derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Pa
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	German	112
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Roumanian	71
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Transjordanian	40
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Czechoslovakian	28
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Czechoslovakian	30
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	British	24
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lebanese	23
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lithuanian	19
@@ -719,17 +719,16 @@ derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Ir
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Moroccan	3
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Swedish	3
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Sudan	3
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Salonic	3
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Undefined	3
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	South African	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Mexican	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	French	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Maltese	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Hijazi	2
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Salonic	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Norwegian	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Spanish	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Indian	2
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Chcko	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yamanit	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	T.Jordinian	2
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Burmese	1
@@ -741,7 +740,6 @@ derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Ar
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Salonick	1
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Bulgarian	1
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Italian	1
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Salonik	1
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Cypriot	1
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Deutch	1
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Sudanese	1
@@ -881,23 +879,20 @@ tail	StandardNationality	Norwegian		7
 tail	StandardNationality	Palestinian Egyptian		7
 tail	StandardNationality	Palestinian Transjordanian		6
 tail	StandardNationality	Indian		4
-tail	StandardNationality	Palestinian Polish		3
-tail	StandardNationality	Palestinian German		3
 tail	StandardNationality	Sudan		3
 tail	StandardNationality	Belgian		2
 tail	StandardNationality	Iraqi		2
-tail	StandardNationality	Palestinian Latvian		2
 tail	StandardNationality	Canadian		2
 tail	StandardNationality	Lithuanian		2
+tail	StandardNationality	Yemeni		2
+tail	StandardNationality	Palestinian German		2
 tail	StandardNationality	Esthonian		1
 tail	StandardNationality	Burmese		1
+tail	StandardNationality	Palestinian Latvian		1
 tail	StandardNationality	Chinese		1
-tail	StandardNationality	Yemeni		1
 tail	StandardNationality	Syrian Egyptian		1
 tail	StandardNationality	Kurd Palestinian		1
-tail	StandardNationality	German Austrian		1
-tail	StandardNationality	Roman./Yugsl		1
-tail	StandardNationality	'Refugee Palestine?'		1
+tail	StandardNationality	Undefined		1
 tail	StandardNationality	Lybian		1
 tail	StandardNationality	Palestinian/Bedu		1
 tail	StandardNationality	Tripolitanian		1
@@ -908,15 +903,15 @@ tail	StandardNationality	Palestinian Lebanese		1
 tail	StandardNationality	Hijazy		1
 tail	StandardNationality	Palestinian Cypriot		1
 tail	StandardNationality	British Polish		1
+tail	StandardNationality	Palestinian Polish		1
 tail	StandardNationality	Albanian		1
 tail	StandardNationality	Gruzinian		1
 tail	StandardNationality	Cypriot		1
 tail	StandardNationality	Police 12291		1
-tail	StandardNationality	Jew		1
 tail	StandardNationality	P.J.		1
 tail	StandardNationality	T.O.		1
 tail	StandardNationality	Yujazi		1
-tail	StandardNationality	Jewish		1
+tail	StandardNationality	Iranian		1
 tail	StandardNationality	Lincoln		1
 tail	StandardNationality	Soudian		1
 tail	StandardNationality	Syr.		1
