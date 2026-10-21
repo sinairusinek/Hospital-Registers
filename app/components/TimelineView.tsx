@@ -785,6 +785,15 @@ const TimelineView: React.FC = () => {
     setRange(clampRange(mid - span / 2, mid + span / 2));
   };
 
+  // Step to the previous or following slice, by half its width, so each new
+  // view keeps the later (or earlier) half of the last one on screen.
+  const pan = (dir: -1 | 1) => {
+    const shift = dir * (hi - lo) / 2;
+    setRange(clampRange(lo + shift, hi + shift));
+  };
+  const atStart = lo <= extent[0] + 0.01;
+  const atEnd = hi >= extent[1] - 0.01;
+
   const openSource = (srcId: string | null, ev: InstitutionalEvent) => {
     setDrawer({
       source: srcId && data ? data.sources[srcId] ?? null : null,
@@ -973,6 +982,18 @@ const TimelineView: React.FC = () => {
 
           <span className="w-px h-4 bg-slate-200 mx-1" />
 
+          <button onClick={() => pan(-1)} disabled={!zoomed || atStart}
+            title="Earlier: move back by half the range on screen"
+            aria-label="Earlier"
+            className="px-2.5 py-1 rounded-full border border-slate-300 bg-white text-slate-700 disabled:opacity-40 disabled:cursor-default">
+            ←
+          </button>
+          <button onClick={() => pan(1)} disabled={!zoomed || atEnd}
+            title="Later: move forward by half the range on screen"
+            aria-label="Later"
+            className="px-2.5 py-1 rounded-full border border-slate-300 bg-white text-slate-700 disabled:opacity-40 disabled:cursor-default">
+            →
+          </button>
           <button onClick={() => zoom(0.5)}
             className="px-2.5 py-1 rounded-full border border-slate-300 bg-white text-slate-700">
             Zoom in
