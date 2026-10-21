@@ -5,6 +5,7 @@ merged	Class standard	3rd	3	1194
 merged	Class standard	2nd	2	504
 merged	City	Hedera	Hadera	204
 merged	standardized ward	Infectious Diseases	Isolation	149
+merged	Sex	M	Male	120
 merged	standardized ward	Infectious	Isolation	111
 cleared	standardized ward	Venereal Diseases		90
 merged	City	Nazareth (the address is Haifa's Nazareth-named street)	Haifa	85
@@ -17,6 +18,7 @@ merged	standardized ward	Infectious Diseases Section	Isolation	51
 merged	City	Shefa-'Amr	Shafa Amr	46
 merged	standardized ward	Infectious Section	Isolation	44
 merged	City	Jaffa (the address is Haifa's Jaffa-named street)	Haifa	43
+merged	Sex	F	Female	37
 merged	Class standard	1st	1	33
 merged	standardized ward	Isolation|Infectious	Isolation	29
 merged	City	Haifa?	Haifa	29
@@ -118,6 +120,7 @@ merged	City	Al-Zeeb	Zeeb	3
 merged	City	Kefar Vitkin	Kfar Vitkin	3
 merged	City	Shifa Amr	Shafa Amr	3
 merged	City	Iggzim	Igzim	3
+merged	StandardNationality	T.J.	Transjordanian	3
 merged	StandardNationality	Palestinian-Syrian	Palestinian Syrian	3
 merged	StandardNationality	Pale.	Palestinian	3
 merged	StandardNationality	"Palest. ""R"""	Palestinian	3
@@ -172,7 +175,6 @@ merged	City	Baisan	Beisan	2
 merged	City	Shefa Amr Haifa F.	Shefa Amr Haifa F	2
 merged	City	Jenin F.	Jenin F	2
 merged	City	Irbed S/D.	Irbed S/D	2
-merged	StandardNationality	T.J.	Transjordanian	2
 merged	StandardNationality	Palest. Transj.	Palestinian Transjordanian	2
 merged	StandardNationality	Lebanon	Lebanese	2
 merged	StandardNationality	Czech	Czechoslovakian	2
@@ -534,8 +536,8 @@ recovered	Ward	Br	Ward: British Section, read from the clerk's written ward	6
 recovered	Ward	Br.	Ward: British Section, read from the clerk's written ward	10
 recovered	Ward	British Section	Ward: British Section, read from the clerk's written ward	25
 recovered	Ward	Children's Ward	Ward: Children's, read from the clerk's written ward	18
-recovered	Ward	Gen	Ward: General, read from the clerk's written ward	57
-recovered	Ward	Gen.	Ward: General, read from the clerk's written ward	36
+recovered	Ward	Gen	Ward: General, read from the clerk's written ward	59
+recovered	Ward	Gen.	Ward: General, read from the clerk's written ward	64
 recovered	Ward	General	Ward: General, read from the clerk's written ward	243
 recovered	Ward	General Ward	Ward: General, read from the clerk's written ward	26
 recovered	Ward	I.D.	Ward: Isolation, read from the clerk's written ward	14
@@ -546,7 +548,7 @@ recovered	Ward	Infectious Diseases	Ward: Isolation, read from the clerk's writte
 recovered	Ward	Infectious Diseases Section	Ward: Isolation, read from the clerk's written ward	15
 recovered	Ward	Infectious Diseases Ward	Ward: Isolation, read from the clerk's written ward	11
 recovered	Ward	Infectious Section	Ward: Isolation, read from the clerk's written ward	14
-recovered	Ward	Is.	Ward: Isolation, read from the clerk's written ward	485
+recovered	Ward	Is.	Ward: Isolation, read from the clerk's written ward	513
 recovered	Ward	Isol	Ward: Isolation, read from the clerk's written ward	373
 recovered	Ward	Isol.	Ward: Isolation, read from the clerk's written ward	46
 recovered	Ward	Isolation	Ward: Isolation, read from the clerk's written ward	2120
@@ -560,8 +562,8 @@ recovered	Ward	Mat	Ward: Maternity, read from the clerk's written ward	13
 recovered	Ward	Mat.	Ward: Maternity, read from the clerk's written ward	38
 recovered	Ward	Maternity	Ward: Maternity, read from the clerk's written ward	486
 recovered	Ward	Maternity Ward	Ward: Maternity, read from the clerk's written ward	4
-recovered	Ward	Med	Ward: Medical, read from the clerk's written ward	171
-recovered	Ward	Med.	Ward: Medical, read from the clerk's written ward	71
+recovered	Ward	Med	Ward: Medical, read from the clerk's written ward	173
+recovered	Ward	Med.	Ward: Medical, read from the clerk's written ward	92
 recovered	Ward	Medical	Ward: Medical, read from the clerk's written ward	28
 recovered	Ward	Medical Ward	Ward: Medical, read from the clerk's written ward	11
 recovered	Ward	Medical/Surgical	Ward: Medical | Surgical, read from the clerk's written ward	2
@@ -619,8 +621,8 @@ review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ra
 review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	10
 review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
 review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole from identical dates either side of it	2
-review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	970
-review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1320
+review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	974
+review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1323
 review	Review Flags	serial-repaired	Record number repaired: a digit slip against the register's own run	40
 review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	220
 review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	15
@@ -629,13 +631,14 @@ review	Review Flags	typhus-recoded-from-register	Typhus code set from the regist
 review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	39
 review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	10
 review	Review Flags	procedure-only	An operation named with no diagnosis behind it	45
-review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1148
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1305
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	287
 review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	963
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
-withheld	Next of Kin			29879
-withheld	discarded_values			29879
-withheld	splitDiscValues			29879
+review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	157
+withheld	Next of Kin			30036
+withheld	discarded_values			30036
+withheld	splitDiscValues			30036
 withheld	Address	value repeated the next of kin		236
 withheld	City	value repeated the next of kin		3
 withheld	Occupation	value repeated the next of kin		36
@@ -647,8 +650,9 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		249
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	22987
-derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	162
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23041
+derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	163
+derived	(row)	dropped by the extraction, read off the page image (dropped-rows-read.tsv)	flagged row-read-from-scan	157
 derived	Notebook Record ID	dropped row above: number relabelled to the one set aside	flagged serial-shift-relabelled	195
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Palestinian	493
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	German	112
@@ -732,9 +736,9 @@ derived	Nationality	blank, recovered from a set-aside value	Egyptian	2
 derived	Nationality	blank, recovered from a set-aside value	Dutch	1
 derived	Nationality	blank, recovered from a set-aside value	Sudan	1
 derived	Nationality	blank, recovered from a set-aside value	Russian	1
-derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	921
-derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3022
-derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	1970
+derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	978
+derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3048
+derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2001
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8773
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4654
 derived	ICD-9 Chapter		520-579 Digestive system	3260
@@ -756,7 +760,7 @@ derived	ICD-9 Chapter		E800-E999 External causes of injury	24
 derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	18
 derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	206
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	51
-derived	ICD-9 Chapter		no readable code	1148
+derived	ICD-9 Chapter		no readable code	1305
 rule	ICD-9 Code	typhus (none)	recoded to 081.9 from the register's own wording	1
 rule	ICD-9 Code	typhus 080	recoded to 081.9 from the register's own wording	11
 rule	ICD-9 Code	typhus 080|038.0	recoded to 080 from the register's own wording	1
@@ -766,8 +770,8 @@ rule	ICD-9 Code	typhus 081.9|080	recoded to 081.9 from the register's own wordin
 rule	ICD-9 Code	typhus 081.9|081.0|080	recoded to 080 from the register's own wording	1
 rule	ICD-9 Code	typhus 81.9	recoded to 081.9 from the register's own wording	5
 derived	Diagnosis Recording		Classified	28731
-derived	Diagnosis Recording		Not recorded	729
-derived	Diagnosis Recording		Recorded, not classified	419
+derived	Diagnosis Recording		Not recorded	731
+derived	Diagnosis Recording		Recorded, not classified	574
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
 date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	26
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
@@ -808,10 +812,10 @@ serial	Notebook Record ID	notebook 30: 3-13 between 2215 and 2229	no safe repair
 serial	Notebook Record ID	notebook 31: 2-13 between 2515 and 2529	no safe repair; flagged for review	12
 serial	Notebook Record ID	notebook 31: 3-13 between 2755 and 2769	no safe repair; flagged for review	11
 serial	Notebook Record ID	notebook 32: 6245-6249 between 6249 and 6250	no safe repair; flagged for review	5
-date	Admission Date [ISO]	upstream ISO	replaced	2522
-date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	894
+date	Admission Date [ISO]	upstream ISO	replaced	2679
+date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	898
 date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	492
-date	Discharge Date (ISO)	upstream ISO	replaced	34
+date	Discharge Date (ISO)	upstream ISO	replaced	187
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the other date	4
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
@@ -824,6 +828,7 @@ date	Admission Date [ISO]	year outside the one the library catalogued the notebo
 unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	1
 tail	standardized Religion	Arab		8
 tail	standardized Religion	Christian/Jewish?		2
+tail	standardized Religion	Christ. R/C		1
 tail	standardized Religion	Ch. Moslem		1
 tail	standardized Religion	S.		1
 tail	standardized Religion	Teh		1
@@ -859,8 +864,10 @@ tail	StandardNationality	Lybian		1
 tail	StandardNationality	Palestinian/Bedu		1
 tail	StandardNationality	Tripolitanian		1
 tail	StandardNationality	Palestinian Austrian		1
+tail	StandardNationality	Palestion		1
 tail	StandardNationality	Palestinian Druze		1
 tail	StandardNationality	Palestinian Lebanese		1
+tail	StandardNationality	Hijazy		1
 tail	StandardNationality	Palestinian Cypriot		1
 tail	StandardNationality	British Polish		1
 tail	StandardNationality	Albanian		1
@@ -887,8 +894,12 @@ tail	standardized ward	Surgical | General		2
 tail	standardized ward	Surgical | British Section		2
 tail	standardized ward	Maternity | British Section		2
 tail	standardized ward	Medical | Surgical		2
+tail	standardized ward	Gen. (Surg. added)		1
+tail	standardized ward	Is & Med.		1
 tail	standardized ward	Isolation | British Section		1
+tail	standardized ward	Surg Room 11		1
 tail	standardized ward	Medical | Maternity		1
+tail	standardized ward	?.M.T.		1
 tail	standardized ward	Obstetrics		1
 tail	standardized ward	Maternity Surgical		1
 tail	standardized ward	Private		1
@@ -900,7 +911,11 @@ tail	Class standard	3rd & 2nd		11
 tail	Class standard	2P		8
 tail	Class standard	BR.		3
 tail	Class standard	2S		3
+tail	Class standard	6/9/33 3rd.		1
+tail	Class standard	3rd. @ 050 mils		1
+tail	Class standard	3rd. @ 050 mils.		1
 tail	Class standard	1/2		1
+tail	Class standard	1st @ 500 ms.		1
 tail	Class standard	B.R.		1
 tail	Class standard	B.S.		1
 tail	Class standard	3S?		1

@@ -84,6 +84,40 @@ RECORD_READINGS = ROOT / "kimatch" / "record-readings.tsv"
 # Nationalities read off the scans where the extraction kept none, keyed by
 # notebook, serial and admission date (serials restart each January).
 NATIONALITY_READINGS = ROOT / "data" / "public" / "nationality-readings.tsv"
+# Ledger rows the extraction dropped behind a borrowed serial, read off the
+# scans; "as written" values only. Source column <- reading column.
+DROPPED_ROWS = ROOT / "data" / "public" / "dropped-rows-read.tsv"
+DROPPED_INDEX_BASE = 40000
+DROPPED_COLUMNS = {
+    "Notebook_Number": "Notebook_Number",
+    "Page_Number": "Page_Number",
+    "Notebook Record ID": "Notebook Record ID",
+    "Age": "Age",
+    "Age Unit": "Age Unit",
+    "Sex": "Sex",
+    "Religion": "Religion as written",
+    "Nationality": "Nationality as written",
+    "Occupation": "Occupation",
+    "Address": "Address",
+    "Ward": "Ward as written",
+    "Class": "Class as written",
+    "Rate": "Rate as written",
+    "Payment Status": "Payment Status",
+    "Admission Date (Orig)": "Admission Date as written",
+    "Discharge Date (Orig)": "Discharge Date as written",
+    "Days in Hospital (Rep)": "Days in Hospital as written",
+    "Original Diagnosis": "Diagnosis as written",
+    "Original Result": "Result as written",
+}
+# Written source column -> its cleaned twin, filled for the readings above.
+DROPPED_CLEANED = [
+    ("Religion", "standardized Religion"),
+    ("Nationality", "StandardNationality"),
+    ("Ward", "standardized ward"),
+    ("Class", "Class standard"),
+    ("Rate", "rateStandard"),
+    ("Original Result", "Standardized Result"),
+]
 
 
 def load_record_places() -> tuple[list[tuple[re.Pattern, re.Pattern, str]], dict[tuple[str, str], tuple[str, str]]]:
@@ -974,6 +1008,7 @@ REVIEW_FLAGS = [
     ("nationality-from-discarded", "Nationality was blank; recovered from a value the extraction set aside"),
     ("nationality-read-from-scan", "Nationality was blank; read off the page image"),
     ("serial-shift-relabelled", "Record number was the dropped row above's; relabelled to the number the extraction set aside"),
+    ("row-read-from-scan", "A ledger row the extraction dropped, read off the page image"),
 ]
 
 
@@ -1359,6 +1394,50 @@ def main() -> int:
             row["Notebook Record ID"] = following
             shift_relabelled.add(id(row))
 
+    # The dropped rows themselves, read off the scans (dropped-rows-read.tsv).
+    # Each goes in just above the record it was dropped from, so every later
+    # stage that reasons from register order sees it in place, and its
+    # verbatim values go into both the written and the cleaned columns, so the
+    # same rules normalize it as every other row.
+    dropped_read: set[int] = set()
+    # The source's cleaned columns were standardized before this script, so a
+    # reading's cleaned value is taken from the register itself: whatever the
+    # same written value most often became in every other row.
+    cleaned_as: dict[str, dict[str, str]] = {}
+    for written, cleaned in DROPPED_CLEANED:
+        seen: dict[str, Counter[str]] = {}
+        for row in rows:
+            value = (row.get(written) or "").strip()
+            if value:
+                seen.setdefault(value, Counter())[(row.get(cleaned) or "").strip()] += 1
+        cleaned_as[cleaned] = {value: c.most_common(1)[0][0] for value, c in seen.items()}
+    if DROPPED_ROWS.exists():
+        with DROPPED_ROWS.open(newline="", encoding="utf-8") as handle:
+            readings = {(r["Notebook_Number"], str(int(r["Notebook Record ID"]) + 1)): r
+                        for r in csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+        placed: list[dict[str, str]] = []
+        for row in rows:
+            key = (row.get("Notebook_Number") or "", (row.get("Notebook Record ID") or "").strip())
+            reading = readings.pop(key, None) if id(row) in shift_relabelled else None
+            if reading:
+                new = {field: "" for field in fieldnames}
+                for target, source in DROPPED_COLUMNS.items():
+                    new[target] = (reading.get(source) or "").strip()
+                for written, cleaned in DROPPED_CLEANED:
+                    value = new[written]
+                    new[cleaned] = cleaned_as[cleaned].get(value, cleaned_as[cleaned].get(value.rstrip("."), value))
+                new["Index"] = str(DROPPED_INDEX_BASE + len(dropped_read) + 1)
+                new["File"] = "dropped-rows-read.tsv"
+                new["tempLink"] = row.get("tempLink") or ""
+                new["Notebook-page"] = f"{new['Notebook_Number']}_{new['Page_Number']}"
+                placed.append(new)
+                dropped_read.add(id(new))
+            placed.append(row)
+        rows = placed
+        for key in readings:
+            print(f"dropped-rows-read: no relabelled record {key[0]}/{key[1]} to place a reading above",
+                  file=sys.stderr)
+
     for row in rows:
         if is_repeated_header(row):
             dropped += 1
@@ -1367,6 +1446,8 @@ def main() -> int:
         flags: list[str] = []
         if id(row) in shift_relabelled:
             flags.append("serial-shift-relabelled")
+        if id(row) in dropped_read:
+            flags.append("row-read-from-scan")
 
         for column in RULES:
             if column not in row:
@@ -2254,6 +2335,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        if dropped_read:
+            writer.writerow(["derived", "(row)", "dropped by the extraction, read off the page image (dropped-rows-read.tsv)",
+                             "flagged row-read-from-scan", len(dropped_read)])
         if shift_relabelled:
             writer.writerow(["derived", "Notebook Record ID", "dropped row above: number relabelled to the one set aside",
                              "flagged serial-shift-relabelled", len(shift_relabelled)])
