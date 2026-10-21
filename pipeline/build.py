@@ -1994,7 +1994,7 @@ def main() -> int:
         fieldnames.insert(fieldnames.index("City"), "City as written")
     if "Neighbourhood" not in fieldnames and "Address" in fieldnames:
         at = fieldnames.index("Address") + 1
-        for offset, name in enumerate(("Neighbourhood", "Address institution",
+        for offset, name in enumerate(("Neighbourhood", "Neighbourhood Wikidata", "Address institution",
                                        "Address institution type", "Address layer source")):
             fieldnames.insert(at + offset, name)
     if "City Kima ID" not in fieldnames and "City" in fieldnames:

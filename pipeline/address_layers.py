@@ -113,6 +113,10 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         # ran through Ard, so its garbled forms count there.
         ("Ard el-Yahud", r"\bar[dl]\W*(el|al|il)?\W*-?\s*yah|ardel\s*yah|y[ae]h?ou?dah?\s*(ha)?\s*le(vi|vin|ami|avy)"),
         ("Harat al-Yahud", r"\bh[ae]?r[ae]?t\W*(el|al|il)?\W*-?\s*yah|hartel\s*yah|jewish\s*q"),
+        # The district outside the old town's eastern gate, not the town of
+        # Acre (user ruling 2026-10-21). Furas's bare "Acre Gate" = Acre is
+        # contradicted by his own "Haifa Acre gate" row, so read as a slip.
+        ("Acre Gate", r"\bac(re|ri)'?s?\W*gate|\bgate\s+of\s+acre\b|\bakka\s+gate"),
         ("Hadar HaCarmel", r"\bhadar\b|\bhad\.\s*hac"),
         ("Wadi Salib", r"sal(i|ee|ea)b\b|\bwadi\s*sal[iu]b|\bsalile\b"),
         ("Wadi Nisnas", r"nis+na[sz]|nas+nas|nesnas"),
@@ -146,6 +150,12 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         ("Fakhura", r"fakh?ou?r"),
         ("Hammam al-Basha", r"hamm?am\s*(el|al)?\s*basha"),
     ],
+}
+# A quarter with a Wikidata item to stand for it. Acre Gate has none of its
+# own: Faisal Square is where the gate stood, so it is a "located near"
+# link, not an identity — the register's Acre Gate is the district around it.
+QUARTER_WIKIDATA = {
+    "Haifa: Acre Gate": "Q25488483",
 }
 QUARTER_RE = {town: [(q, re.compile(p, re.IGNORECASE)) for q, p in rules] for town, rules in QUARTERS.items()}
 
@@ -212,7 +222,7 @@ def town_of(city: str, haifa_family: bool) -> str:
 def classify(address: str, city: str, haifa_family: bool) -> dict[str, str]:
     """Institution and quarter named by one record's Address (and City)."""
     out = {"Address institution": "", "Address institution type": "",
-           "Neighbourhood": "", "Address layer source": ""}
+           "Neighbourhood": "", "Neighbourhood Wikidata": "", "Address layer source": ""}
     town = town_of(city, haifa_family)
     furas = furas_labels().get(_key(address))
     # His own doubts ("check", "?") are not taken as labels.
@@ -250,6 +260,7 @@ def classify(address: str, city: str, haifa_family: bool) -> dict[str, str]:
         if q:
             out["Neighbourhood"] = f"{town}: {q}"
             out["Address layer source"] = out["Address layer source"] or "pattern"
+    out["Neighbourhood Wikidata"] = QUARTER_WIKIDATA.get(out["Neighbourhood"], "")
     return out
 
 
