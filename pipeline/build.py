@@ -872,6 +872,7 @@ REVIEW_FLAGS = [
     ("no-icd9-chapter", "No ICD-9 code the classification could place"),
     ("city-read-from-address", "City was blank; filled from the place the Address names"),
     ("city-set-by-record", "One spelling, two places: City set for this record from its address or its scan"),
+    ("nationality-from-discarded", "Nationality was blank; recovered from a value the extraction set aside"),
 ]
 
 
@@ -1189,6 +1190,22 @@ def main() -> int:
         and not any(ch.isdigit() for ch in value)
         and place_vocabulary[value.strip()] < KIN_RARITY
     }
+    # The clerks wrote religion and nationality as two lines of one cell, and
+    # the extraction often kept the first and set the second aside among its
+    # discarded values ("British C/E P/C 4237", "Rumanian"). A blank
+    # Nationality is refilled from the first word of a set-aside value when that
+    # word is a nationality the register itself uses (three or more times, one
+    # word) or a spelling the NATIONALITY table already maps. Palestinian is
+    # left out: a set-aside "Pales." is as often the class-and-rate marker
+    # ("3rd Pales") as the nationality.
+    nationality_words = {
+        value.lower(): value
+        for value, n in column_values.get("StandardNationality", Counter()).items()
+        if n >= 3 and " " not in value and "|" not in value
+    }
+    nationality_words.update(NATIONALITY)
+    nationality_words = {k: v for k, v in nationality_words.items() if v != "Palestinian"}
+    nationality_recovered: Counter[str] = Counter()
     ward_rehomed: Counter[tuple[str, str, str, str]] = Counter()
     ward_corrected = 0
     ward_degynecologised: Counter[tuple[str, str]] = Counter()
@@ -1226,6 +1243,17 @@ def main() -> int:
             row[column] = after
             if after:
                 final_values[column][after] += 1
+
+        if "StandardNationality" in row and not (row["StandardNationality"] or "").strip() \
+                and not (row.get("Nationality") or "").strip():
+            for value in (row.get("splitDiscValues") or "").split(" | "):
+                first = re.split(r"[\s,;/]+", value.strip())[0].lower().rstrip(".?")
+                found = nationality_words.get(first) or nationality_words.get(first + ".")
+                if found:
+                    row["StandardNationality"] = found
+                    nationality_recovered[found] += 1
+                    flags.append("nationality-from-discarded")
+                    break
 
         # The written ward carries the same spurious gynaecology as the
         # standardized one, and in combinations besides ("Gyn|Gynecology",
@@ -2063,6 +2091,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        for found, count in nationality_recovered.most_common():
+            writer.writerow(["derived", "Nationality", "blank, recovered from a set-aside value",
+                             found, count])
         if city_from_address:
             writer.writerow(["derived", "City", "blank City, place read from Address (kimatch/place_resolver.py)",
                              "flagged city-read-from-address", city_from_address])
