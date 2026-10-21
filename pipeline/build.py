@@ -87,6 +87,8 @@ NATIONALITY_READINGS = ROOT / "data" / "public" / "nationality-readings.tsv"
 # Ledger rows the extraction dropped behind a borrowed serial, read off the
 # scans; "as written" values only. Source column <- reading column.
 DROPPED_ROWS = ROOT / "data" / "public" / "dropped-rows-read.tsv"
+# Religion and nationality read off the scans, keyed by the source Index.
+RELIGION_READINGS = ROOT / "data" / "public" / "religion-readings.tsv"
 DROPPED_INDEX_BASE = 40000
 DROPPED_COLUMNS = {
     "Notebook_Number": "Notebook_Number",
@@ -280,7 +282,7 @@ RELIGION = {
 RELIGION_WRITTEN = [
     (re.compile(r"^(dru[sz]|durz|dou?r?z|drou?z|druiz)", re.I), "Druze"),
     (re.compile(r"^(ch\.?$|chr|christ|x(t)?ian|r\.?\s?c\.?$|gr\.?\s*orth|orthodox|copt|cath)", re.I), "Christian"),
-    (re.compile(r"^(mou?sl|musl|mosl|moslem|sunn)", re.I), "Muslim"),
+    (re.compile(r"^(mou?sl|musl|mosl|moslem|sunn|mos?\.$)", re.I), "Muslim"),
     (re.compile(r"^(j\.?$|jew)", re.I), "Jewish"),
     (re.compile(r"^(bah|beha)", re.I), "Bahai"),
 ]
@@ -498,6 +500,24 @@ READING_NATIONALITY = {
 def reading_nationality(value: str) -> str:
     key = value.strip().lower().rstrip(".")
     return READING_NATIONALITY.get(key, value.strip().rstrip("."))
+
+
+# A scan reading keeps the clerk's third line, a denomination ("Palest. O",
+# "British C/E", 'Palest. "K."'), and the NB31 clerk's "Pelest.". Both are
+# dropped before the reading is compared with, or stands in for, a cleaned
+# nationality; the written column keeps them.
+DENOMINATION = re.compile(r"^(c|o|r|k|m|l|e|gr|c/e|c/s|r/c|r\.c|k/r|c\.e)\.?$", re.I)
+PELEST = {"pelest", "pelst", "pelestinian", "pales", "palest", "palestine", "palestinian", "pal"}
+
+
+def scan_nationality(value: str) -> str:
+    words = value.replace('"', " ").split()
+    while len(words) > 1 and DENOMINATION.match(words[-1]):
+        words.pop()
+    key = " ".join(words).lower().rstrip(".")
+    if key in PELEST:
+        return "Palestinian"
+    return NATIONALITY.get(key) or NATIONALITY.get(key + ".") or reading_nationality(" ".join(words))
 
 
 def normalize_city(value: str) -> str:
@@ -1030,6 +1050,7 @@ REVIEW_FLAGS = [
     ("serial-shift-relabelled", "Record number was the dropped row above's; relabelled to the number the extraction set aside"),
     ("row-read-from-scan", "A ledger row the extraction dropped, read off the page image"),
     ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
+    ("religion-read-from-scan", "Religion blank or misread (NB31); read off the page image"),
 ]
 
 
@@ -1373,6 +1394,13 @@ def main() -> int:
                     (reading["admission_date"], reading["nationality_as_written"]))
     nationality_read: Counter[str] = Counter()
     religion_from_written_count: Counter[str] = Counter()
+    religion_read: Counter[str] = Counter()
+    known_nationality = column_values.get("StandardNationality", Counter())
+    religion_readings: dict[str, dict[str, str]] = {}
+    if RELIGION_READINGS.exists():
+        with RELIGION_READINGS.open(newline="", encoding="utf-8") as handle:
+            religion_readings = {r["Index"]: r for r in
+                                 csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
     ward_rehomed: Counter[tuple[str, str, str, str]] = Counter()
     ward_corrected = 0
     ward_degynecologised: Counter[tuple[str, str]] = Counter()
@@ -1512,6 +1540,37 @@ def main() -> int:
                     row["StandardNationality"] = reading_nationality(written_nat)
                     nationality_read[row["StandardNationality"]] += 1
                     flags.append("nationality-read-from-scan")
+
+        # Religion and nationality read off the scans (religion-readings.tsv):
+        # every NB31 record, where one clerk's "Muslim" was read as Jew and
+        # "Pelest." as Israel, Leb. or Syrian, and every blank religion
+        # elsewhere. A reading fills a blank; it replaces a value only in
+        # NB31, and never a nationality already read off the scan.
+        reading = religion_readings.get(row.get("Index") or "")
+        if reading:
+            notebook31 = row.get("Notebook_Number") == "31"
+            written_rel = reading["religion_as_written"].strip()
+            read_rel = RELIGION.get(written_rel.lower()) or religion_from_written(written_rel)
+            current_rel = (row.get("standardized Religion") or "").strip()
+            if read_rel and (not current_rel or (notebook31 and read_rel != current_rel)):
+                row["Religion"] = written_rel
+                row["standardized Religion"] = read_rel
+                religion_read[read_rel] += 1
+                flags = [f for f in flags if f != "religion-from-written"]
+                flags.append("religion-read-from-scan")
+            written_nat = reading["nationality_as_written"].strip()
+            read_nat = scan_nationality(written_nat) if written_nat else ""
+            read_nat = {"T. J": "Transjordanian", "T/Jord": "Transjordanian"}.get(read_nat, read_nat)
+            current_nat = (row.get("StandardNationality") or "").strip()
+            # Only a nationality the register itself uses (three or more
+            # times) is taken; an odd spelling read off a scan is not.
+            if read_nat and known_nationality[read_nat] >= 3 and "nationality-read-from-scan" not in flags \
+                    and (not current_nat or (notebook31 and read_nat != current_nat)):
+                row["Nationality"] = written_nat
+                row["StandardNationality"] = read_nat
+                nationality_read[read_nat] += 1
+                flags = [f for f in flags if f != "nationality-from-discarded"]
+                flags.append("nationality-read-from-scan")
 
         # The written ward carries the same spurious gynaecology as the
         # standardized one, and in combinations besides ("Gyn|Gynecology",
@@ -2364,6 +2423,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        for found, count in religion_read.most_common():
+            writer.writerow(["derived", "Religion", "blank or misread, read off the page image (religion-readings.tsv)",
+                             found, count])
         for found, count in religion_from_written_count.most_common():
             writer.writerow(["derived", "Religion", "blank cleaned value, read from the written spelling",
                              found, count])

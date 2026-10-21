@@ -1,0 +1,1710 @@
+Index	notebook	page	serial	admission_date	religion_as_written	nationality_as_written	confidence
+1027	1	4	115	22.2.30	Xian	Palestinian	h
+1035	1	5	124	26.2.30	Xian	Palestinian	h
+1040	1	5	129	28.2.30	Xian	Palestinian	h
+1048	1	6	138	5.3.30	Xian	Palestinian	h
+1107	1	12	202	29.3.30	Xian	British	h
+1133	1	14	230	7.4.30	Xian	British	h
+1165	1	18	266	21.4.30	Christian	Palestinian	h
+1166	1	18	267	21.4.30	Christian	Palestinian	h
+1243	1	25	349	22.5.30	Druze	Palestinian	h
+1254	1	26	361	26.5.30	Druze	Palestinian	h
+1260	1	27	368	27.5.30	Druze.	Palestinian	h
+1417	1	42	528	8.7.30	Druze	Palestinian	h
+1581	2	8	603	27.7.31	Christian.	Palestinian.	h
+1695	2	18	718	25.8.31	J.	Palest.	h
+1735	2	23		1.9.31	Ch.	British	h
+1764	2	25	786	7.9.31	Druze	Palestinian	h
+1814	2	30	839	18.9.31	Druze.	Palestinian.	h
+1854	2	34	882	26.9.31	Druze	Palestinian.	h
+1901	2	39		9.10.31	J.	Palest.	h
+1905	2	39		10.10.31	Ch.	Palest.	h
+1955	2	44	984	24.10.31	Mos.	Palest.	h
+1956	2	44	985	25.10.31	Mos.	Palest.	h
+1957	2	44	986	26.10.31	Mos.	Palest.	h
+1958	2	44	987	26.10.31	Ch.	British	h
+1959	2	44	988	26.10.31	J.	Polish.	h
+1960	2	44	989	27.10.31	Mos.	Palest.	h
+1961	2	44	990	27.10.31	J.	Palest.	h
+1964	2	45	994	28.10.31	Ch.	Palestinian	h
+1965	2	45	995	28.10.31	Ch.	Palestinian	h
+1966	2	45	996	28.10.31	Ch.	Palestinian	h
+1967	2	45	997	28.10.31	Ch.	Palestinian	h
+1968	2	45	998	28.10.31	Ch.	Palestinian	h
+1969	2	45	999	28.10.31	Ch.	Palestinian	h
+1970	2	45	1000	28.10.31	Ch.	Palestinian	h
+1971	2	45	1001	28.10.31	Ch.	Palestinian	h
+1972	2	45	1002	28.10.31	Ch.	Palestinian	h
+1973	2	45	1003	28.10.31	Ch.	Palestinian	h
+1974	2	46		29.10.31	Mos.	Palestinian	h
+1976	2	46	1007	29.10.31	J.	Palestinian	h
+1977	2	46	1008	29.10.31	Ch.	Palestinian	h
+1979	2	46	1010	29.10.31	Ch.	Palestinian	h
+1980	2	46	1011	29.10.31	Ch.	Palestinian	h
+1981	2	46	1012	29.10.31	Mos.	Palest.	h
+1982	2	46	1013	29.10.31	J.	Polish.	h
+1983	2	46	1014	30.10.31	Mos.	Palest.	h
+1984	2	47	1016	30.10.31	J.	Palest.	h
+1985	2	47	1017	30.10.31	Ch.	Palestinian	h
+1986	2	47	1018	30.10.31	Mos.	Palest.	h
+1988	2	48	1020	1.11.31	Ch.	British	h
+1989	2	48	1021	1.11.31	J.	Polish.	h
+1991	2	48	1023	2.11.31	Mos.	Palest.	h
+1992	2	48	1024	3.11.31	Ch.	Palest.	h
+1994	2	48	1026	3.11.31	Mos.	Palest.	h
+1995	2	48	1027	3.11.31	Ch.	Palest.	h
+1996	2	48	1028	3.11.31	J.	Palest.	h
+1997	2	48	1029	3.11.31	Ch.	British	h
+1998	2	48	1030	4.11.31	J.	Palest.	h
+40047	2	49	1031	4.11.31	J.	Palest.	h
+1999	2	49	1032	4.11.31	Mos.	Palest.	h
+2000	2	49	1033	5.11.31	Mos.	Palest.	h
+2001	2	49	1034	5.11.31	J.	Palest.	h
+2002	2	49	1035	5.11.31	J.	Palest.	h
+2003	2	49	1036	5.11.31	J.	Palest.	h
+2004	2	49	1037	6.11.31	Mos.	Palest.	h
+2005	2	49	1038	7.11.31	Mos.	Palest.	h
+2006	2	49	1039	10.11.31	Ch.	Palest.	h
+2007	2	49	1040	9.11.31	Ch.	Palest.	h
+2008	2	49	1041	9.11.31	Ch.	Palest.	h
+2009	2	50	1043	10.11.31	Ch.	British	h
+2010	2	50	1044	9.11.31	Mos.	Palest.	h
+2011	2	50		9.11.31	J.	Palest.	h
+2012	2	50	1045	8.11.31	Mos.	Palest.	h
+2013	2	50	1046	10.11.31	Mos.	Palest.	h
+2014	2	50	1047	10.11.31	Ch.	Palest.	h
+2015	2	50	1048	10.11.31	Ch.	Palest.	h
+2016	2	50	1049	10.11.31	Ch.	Palest.	h
+2017	2	50	1050	10.11.31	Mos.	Palest.	h
+2018	2	50	1051	12.11.31	Ch.	British	h
+2019	2	50	1052	12.11.31	Ch.	Palest.	h
+2021	2	51	1054	13.11.31	Ch.	Palest.	h
+2022	2	51	1055	13.11.31	Mos.	Palest.	h
+2023	2	51	1056	13.11.31	Ch.	Palest.	h
+2024	2	51	1057	13.11.31	Mos.	Palest.	h
+2026	2	51	1059	13.11.31	J.	Palest.	h
+2027	2	51	1060	14.11.31	Mo.	Palest.	h
+2028	2	51	1061	14.11.31	Ch.	Palest.	h
+2029	2	51		14.11.31	Mo.	Palest	h
+2030	2	51	1062	15.11.31	Mos.	Palest.	h
+2031	2	51	1063	15.11.31	J.	Palest.	h
+2032	2	52		16.11.31	Mos.	Palest.	h
+2034	2	52	1067	17.11.31	Mos.	Palest.	h
+2035	2	52	1068	17.11.31	J.	Palest.	h
+2036	2	52	1069	17.11.31	J.	Palest.	h
+2037	2	52	1070	17.11.31	Mos.	Palest.	h
+2039	2	52	1072	18.11.31	Ch.	Palest.	h
+2040	2	52	1073	19.11.31	Ch.	Brit	m
+2190	3	16	1165	24.10.32	Durzi	Palestine	h
+2192	3	16	1167	24.10.32	Durzi	Palestine	h
+2242	3	21	1221	2.11.32	Christ.	British.	h
+2434	3	39	1419	20.12.32	Christian	Latvian	h
+2455	3	41	1440	28.12.32	Durzi	Palestine	m
+2489	3	45	24	9.1.33	Durzi	Palestine	h
+2539	3	50	79	26.1.33	Durzi	Palestine	h
+2582	4	4	122	10.2.33	Muslim	Palestine	h
+2614	4	6	155	21.2.33	Ch.	Palest.	h
+2962	4	41		6.6.33	Druze	Palestinian	h
+3029	4	47	593	20.6.33	Unknown	Unknown	m
+3370	5	29	955	15.8.33	Druze	Palestinian	h
+5769	10	5	1531	9.8.34	Druze	Palestinian	m
+5944	10	22	1715	1.9.34	Muslim	Palestinian	h
+5945	10	22	1716	1.9.34	Muslim	Palestinian	h
+5946	10	22	1717	2.9.34	Muslim	Palestinian	h
+5952	10	22	1723	3.9.34	Muslim	Palestinian	h
+5953	10	22	1724	3.9.34	Muslim	Palestinian	h
+5954	10	22	1725	3.9.34	Muslim	Palestinian	h
+5995	10	26	1768	11.9.34	Druze	Palestinian	m
+6081	10	35	1860	25.9.34	Druze	Palestinian	m
+6135	10	40	1918	2.10.34	Druze	Palestinian	m
+6229	10	49	2015	15.10.34	Druze	Palestinian	m
+6303	10	60	2092	25.10.34	Muslim	Palestinian	h
+6469	10	77	2270	20.11.34	Druze	Palestinian	m
+6524	10	86	2327	2.12.34	Muslim	Palestinian	h
+6536	10	87	2339	3.12.34	Muslim	Palestinian	h
+6537	10	87	2340	6.12.34	Muslim	Palestinian	h
+6558	10	89	2362	8.12.34	Muslim	Palestinian	h
+154	11	15	164	4.2.35	Muslim	Palestinian	h
+172	11	17	184	6.2.35	Druze	Palestinian	h
+321	11	32	342	14.3.35	Druze	Palestinian	h
+434	11	44	464	5.4.35	Druze	Palestinian	m
+504	11	50	538	20.4.35	Jew	Palestinian	h
+517	11	52	552	22.4.35	Druze	Palestinian	m
+522	11	52	557	24.4.35	Druze	Palestinian	m
+591	11	59	630	5.5.35	Druze	Palestinian	m
+665	11	66	708	13.5.35	Muslim	Palestinian	h
+690	11	69	736	15.5.35	Druze	Palestinian	h
+697	11	70		16.5.35	Muslim	Palestinian	h
+700	11	70	747	16.5.35	Druze	T. Jordan	h
+729	11	73	778	21.5.35	Druze	Palestinian	h
+730	11	73	779	21.5.35	Druze	Syrian	h
+768	11	76	818	25.5.35	Druze	Palestinian	h
+769	11	76	819	25.5.35	Druze	Palestinian	h
+787	11	78	839	27.5.35	Muslim	Palestinian	h
+799	11	79	852	28.5.35	Druze	Palestinian	h
+842	11	86	921	5.6.35	Druze	Palestinian	h
+847	11	87	926	5.6.35	Jew	Palestinian	h
+850	11	87	929	5.6.35	Druze	Palestinian	h
+852	11	87	931	6.6.35	Jew	Palestinian	h
+855	11	87	934	6.6.35	Jew	Palestinian	h
+957	11	97	1045	18.6.35	Druze	Palestinian	h
+968	11	98	1057	19.6.35	Druze	Palestinian	h
+973	11	99	1062	3.6.35	Druze	Palestinian	h
+981	11	100	1071		Druze	Palestinian	h
+6669	12	1	1095	24.6.35	Druze.	Palestinian	h
+6730	12	6	1155	1.7.35	Druzi	Palestinian	h
+6732	12	7	1157	1.7.35	Ch.	Palest.	h
+6736	12	7	1161	1.7.35	Ch.	British	h
+6754	12	9	1179	2.7.35	Ch.	British	h
+6760	12	9	1185	3.7.35	Druzi.	Palest.	h
+6767	12	10	1192	4.7.35	Ch.	Palest.	h
+6775	12	10	1200	5.7.35	Ch.	Palest.	h
+6786	12	11	1211	6.7.35	Druzi	Palestinian	h
+6798	12	13	1223	8.7.35	Dourzi	Palestinian	h
+6800	12	13	1225	8.7.35	Dourzi	Palest.	h
+6816	12	14	1241	9.7.35	Dourzi	Palestinian	m
+6835	12	16	1260	11.7.35	Durzy.	Palestinian	h
+6850	12	17	1275	13.7.35	Druzi	Palestinian	m
+6915	12	23	1340	19.7.35	Druze	Palestinian	h
+6924	12	28	1349	20.7.35	Durzy	Palestinian	h
+6976	12	42	1401	28.7.35	?	?	h
+6997	12	44	1422	29.7.35	Druze	Palestinian	h
+7108	12	58	1533	8.8.35	Druze	Palestinian	h
+7216	12	68	1641	17.8.35	Muslim	Palestinian	h
+7217	12	68	1642	17.8.35	Muslim	Palestinian	h
+7218	12	68	1643	18.8.35	Muslim	Palestinian	h
+7221	12	68	1646	18.8.35	Muslim	Palestinian	h
+7222	12	68	1647	19.8.35	Muslim	Palestinian	h
+7224	12	68	1649	19.8.35	Muslim	Palestinian	h
+7225	12	68	1650	19.8.35	Muslim	Palestinian	h
+7495	12	101	1920	13.9.35	Muslim	Palestinian	h
+7532	12	105	1957	17.9.35	Jew	Austrian	h
+7534	12	105	1959	17.9.35	Jew	Palestinian	h
+7537	12	105	1962	17.9.35	Jew	Palestinian	h
+7560	12	107	1985	20.9.35	Druze	Palestinian	h
+7604	12	111	2029	26.9.35	Druze	Palestinian	h
+7635	12	114	2060	28.9.35	Druze	Palestinian	h
+7665	12	117	2090	1.10.35	Others.	Chinese	m
+7694	12	119	2119	4.10.35	Druze	Palestinian	h
+9917	15	3	2641	7.11.36	Druze	Palestinian	h
+9929	15	4	2653	8.11.36	Druze	Palestinian	h
+9931	15	4	2655	9.11.36	Druze	Palestinian	h
+9943	15	5	2667	9.11.36	Druze	Palestinian	h
+9999	15	10	2723	15.11.36	Druze	Palestinian	h
+10021	15	12	2745	17.11.36	Christian	British	h
+10097	15	19	2821	25.11.36	Druze	Palestinian	h
+10123	15	24	2847	29.11.36	Durzi	Palestinian	h
+10200	15	32	2924	6.12.36	Durzi	Palestinian	h
+10227	15	34	2951	9.12.36	Durzi	Palestinian	h
+10256	15	37	2980	15.12.36	Druz	Palest.	h
+10262	15	38	2986	14.12.36	Druz	Palestinian	h
+10270	15	38	2994	12.12.36	Durzy	Palestinian	h
+10285	15	40	3009	16.12.36	Durzi	Palestinian	h
+10358	15	46	3082	26.12.36	Durzi	Palestinian	h
+10366	15	47	3090	26.12.36	Durzi	Palestinian	h
+10394	15	53	3118	30.12.36	Durzi	Palestinian	h
+10395	15	53	3119	30.12.36	Durzi	Palestinian	h
+10442	15	57	38	7.1.37	Durzi	Palestinian	h
+10461	15	59	57	10.1.37	Durzi	Palestinian	h
+10471	15	60	67	12.1.37	Durzi	Palest.	h
+10482	15	61	78	14.1.37	Moslem	Palest.	h
+10483	15	61	79	14.1.37	Moslem	Palest.	h
+10484	15	61	80	14.1.37	Moslem	Palest.	h
+10485	15	61	81	14.1.37	Moslem	Palest.	h
+10489	15	61	85	14.1.37	Moslem	Palest.	h
+10490	15	61	86	14.1.37	Moslem	Palest.	h
+10491	15	61	87	15.1.37	Moslem	Palest.	h
+10492	15	61	88	15.1.37	Moslem	Palest.	h
+10533	15	65	129	21.1.37	Christ	Palest.	h
+10546	15	66	142	23.1.37	Druze	Palest.	h
+10602	15	72	199	25.1.37	Druze	Palestinian	m
+10640	15	76	236	7.2.37	Christian	Armenian	h
+10694	15	81	290	14.2.37	Druze	Palestinian	h
+10720	15	83	316	18.2.37	Druze	Palestinian	h
+10721	15	83	317	18.2.37	Druze		h
+10729	15	84	325	20.2.37	Druz	Palestinian	h
+10799	15	91	393	3.3.37	Druze	Palestinian	h
+10818	15	92	412	6.3.37	Druze	Palestinian	h
+10820	15	93	414	6.3.37	Druze	Palestinian	h
+10821	15	93	415	6.3.37	Druze	Palestinian	h
+10850	15	95	444	10.3.37	Druze	Palestinian	h
+10897	15	100	491	17.3.37	Druze	Palestinian	h
+10909	15	101	503	18.3.37	Druz	Palestinian	h
+10936	15	103	530	22.3.37	Druze	Palestinian	h
+10955	15	105	549	23.3.37	Druz	Palestinian	m
+10960	15	105	554	25.3.37	Druz	Palestinian	h
+10984	16	1	577	28.3.37	Muslim	Palestinian	h
+10992	16	2	585	29.3.37	Jew	Polish	h
+11102	16	13	694	14.4.37	Druz	Palestinian	h
+11106	16	13	698	14.4.37	Moslem	Palestinian	h
+11107	16	13	699	14.4.37	Muslim	Palestinian	h
+11108	16	13	700	14.4.37	Persian	Bahaii	h
+11122	16	15	714	15.4.37	Druz	Palestinian	h
+11143	16	17	735	18.4.37	Muslim	Palestinian	h
+11146	16	17	738	18.4.37	Jew	Austrian	h
+11167	16	19	759	21.4.37	Muslim	Palestinian	h
+11170	16	19	762	21.4.37	Druz	Palestinian	h
+11190	16	21	782	24.4.37	Druz	Palestinian	h
+11199	16	22	791	26.4.37	Druz	Palestinian	h
+11212	16	23	804	28.4.37	Druz		h
+11245	16	26	837	1.5.37	Druz	Palestinian	h
+11290	16	30	881	6.5.37	Jewish	Hungarian	h
+11300	16	31	891	8.5.37	Druze	Palestinian	h
+11313	16	32	904	10.5.37	Jewish	Poland	h
+11343	16	35	934	13.5.37	Muslim	Palestinian	h
+11368	16	37	959	17.5.37	Muslim	Palestinian	h
+11379	16	38	970	7.5.37	Muslim	Palestinian	h
+11383	16	39	974	16.5.37	Muslim	Palestinian	h
+11385	16	39	976	19.5.37	Muslim	Palestinian	h
+11451	16	45	1244	16.6.37	Druz	Palestinian	h
+11460	16	46	1253	17.6.37	Muslim	Palestinian	h
+11484	16	48	1277	19.6.37	Druz	Palestinian	h
+11502	16	50	1294	21.6.37	Druz	Palestinian	h
+11514	16	51	1306	22.6.37	Muslim	Palestinian	h
+11542	16	53	1334	11.6.37	Muslim	Palestinian	h
+11700	16	71	1502	13.7.37	Muslim	Palestinian	h
+11718	16	73	1520	14.7.37	Druze	Palestinian	h
+11751	16	76	1553	18.7.37	Druze	Palestinian	h
+11767	16	77	1569	19.7.37	Muslim	Palestinian	h
+11779	16	81	1581	20.7.37	Muslim	Palestinian	h
+11821	16	85	1623	25.7.37	Muslim	Palestinian	h
+11863	17	2	1663	28.7.37	Muslim	Palestinian	h
+11866	17	2	1666	28.7.37	Muslim	Palestinian	h
+11910	17	11	1710	1.8.37	Druze	Palestinian	h
+11924	17	12	1724	2.8.37	Jewish		h
+11938	17	14	1738	3.8.37	Muslim	Palestinian	h
+11964	17	16	1764	5.8.37	Druze	Palestinian	h
+11973	17	17	1773	6.8.37	Muslim	Palestinian	h
+11989	17	18	1789	9.8.37	Druze	Palestinian	h
+12028	17	22	1828	12.8.37	Druze	Palestinian	h
+12133	17	31	1932	20.8.37	Muslim	Palestinian	h
+12139	17	32	1938	21.8.37	Muslim	Palestinian	h
+12147	17	33	1946	23.8.37	Druze	Palestinian	h
+12151	17	33	1950	22.8.37	Druze	Palestinian	h
+12184	17	36	1983	26.8.37	Muslim	Palestinian	h
+12191	17	37	1990	26.8.37	Druze	Palestinian	h
+12192	17	37	1991	26.8.37	Muslim	Palestinian	h
+12226	17	40	2025	30.8.37	Druz	Palestinian	m
+12232	17	40	2031	30.8.37	Muslim	Palestinian	h
+12242	17	41	2041	28.8.37	Druz	Palestinian	h
+12280	17	45	2078	4.9.37	Druz	Palestinian	h
+12341	17	50	2138	12.3.37	Muslim	Palestinian	h
+12365	17	59	2162	14.9.37	Muslim	Palestinian	h
+12380	17	60	2177	15.9.37	Muslim	Palestinian	h
+12390	17	61	2187	16.3.37	Druz	Lebanon	m
+12420	17	64	2217	19.9.37	Jew	Palestinian	h
+12485	17	70	2281	27.9.37	Muslim	Palestinian	h
+12506	17	71	2302	30.9.37	Muslim	Palestinian	h
+12584	17	79	2380	7.10.37	Druz	Palestinian	h
+12603	17	80	2399	9.10.37	Druz	Palestinian	h
+12606	17	81	2402	9.10.37	Druz	Palestinian	h
+12617	17	82	2413	10.10.37	Jewish	Polish	h
+12648	17	84	2444	12.10.37	Muslim	Palestinian	h
+12663	17	86	2459	13.10.37	Muslim	Palestinian	h
+12704	17	90	2500	16.10.39	Druz	Palestinian	h
+12723	17	91	2519	18.10.37	Muslim	Palestinian	h
+12836	17	102	2632	30.10.37	Druz	Palestinian	h
+12838	17	102	2634	30.10.37	Druz	Palestinian	h
+12858	17	104	2653	1.11.37	Druz	Palestinian	h
+12863	17	104	2658	1.11.37	Druz	Palestinian	h
+12883	17	106	2678	4.11.37	Druz	Palestinian	h
+12905	17	108	2700	6.11.37	Druze	Syrian	m
+12913	17	109	2708				h
+12925	17	110	2719	8.11.37	Druz	Palestinian	h
+12977	18	5	2770	11.11.37	Jewish	Poland	h
+13003	18	7	4	14.11.37	Muslim	Palestinian	h
+13009	18	7	10	15.11.37	Muslim	Palestinian	h
+13014	18	8	2807	15.11.37	Jewish	Polish	h
+13035	18	10	2828	17.11.37	Druze	Palestinian	h
+13045	18	11	2838	19.11.37	Muslim	Palestinian	h
+13062	18	12	2855	20.11.37	Muslim	Palestinian	h
+13065	18	13	2858	21.11.37	Muslim	Palestinian	h
+13079	18	14	2872	22.11.37	Muslim	Palestinian	h
+13092	18	15	2885	18.11.37	Muslim	Palestinian	h
+13095	18	15	2888	24.11.37	Druze	Palestinian	h
+13099	18	16	2892	24.11.37	Druze	Palestinian	h
+13107	18	16	2900	24.11.37	Muslim	Palestinian	h
+13110	18	17	2903	25.11.37	Druze	Palestinian	h
+13113	18	17	2906	25.11.37	Muslim	Palestinian	h
+13126	18	18	2919	26.11.37	Jewish	Rumanian	h
+13142	18	20	2935	26.11.37	Muslim	Palestinian	h
+13153	18	21	2946	29.11.37	Jewish	Poland	h
+13182	18	23	2975	2.12.37	Druze	Palestinian	h
+13199	18	25	2992	4.12.37	Muslim	Palestinian	h
+13208	18	26	3001	5.12.37	Muslim	Palestinian	h
+13213	18	26	3006	6.12.37	Muslim	Palestinian	h
+13214	18	26	3007	6.12.37	Muslim	Palestinian	h
+13241	18	29	3034	8.12.37	Christian	British	h
+13253	18	30	3046	8.12.37	Muslim	Palestinian	h
+13265	18	31	3058	10.12.37	Druze	Palestinian	h
+13336	18	37	3129	15.12.37	Muslim	Palestinian	h
+13338	18	38	3131	18.12.37	Muslim	Palestinian	h
+13341	18	38	3134	17.12.37	Jewish	Palestinian	h
+13347	18	38	3140	18.12.37	Muslim	Palestinian	h
+13360	18	40	3153	19.12.37	Muslim	Palestinian	h
+13399	18	43	3192	23.12.37	Druze	Palestinian	m
+13416	18	45	3209	25.12.37	Muslim	Palestinian	h
+13427	18	46	3220	27.12.37	Muslim	Palestinian	h
+13444	18	47	3237	28.12.37	Jewish	Poland	h
+13445	18	47	3238	28.12.37	Muslim	Palestinian	h
+13454	18	48	3247	29.12.37	Muslim	Palestinian	h
+13462	18	49	3255	30.12.37	Muslim	Palestinian	h
+13477	18	50	3270	31.12.37	Muslim	Palestinian	h
+13584	18	60	105	14.1.38	Muslim	Palestinian	h
+13601	18	62	122	16.1.38	Muslim	Palestinian	h
+13609	18	62	130	18.1.38	Muslim	Palestinian	h
+13613	18	63	134	18.1.38	Muslim	Palestinian	h
+13720	18	72	241	31.1.38	Druze	Palestinian	h
+13721	18	73	242	31.1.38	Druze	Palestinian	h
+13739	18	75	259	1.2.38	Druze	Palestinian	h
+13797	18	80	316	8.2.38	Muslim	Palestinian	h
+13802	18	81	321	8.2.38	Druz	Palestinian	m
+13803	18	81	322	8.2.38	Druz	Palestinian	m
+13807	18	81	326	9.2.38	Druz	Palestinian	m
+13884	18	88	403	19.2.38	Muslim	Palestinian	h
+13886	18	88	405	19.2.38	Muslim	Palestinian	h
+13974	18	97	493	5.3.38	Druz	Palestinian	m
+13983	18	98	502	6.3.38	Druz	Palestinian	m
+14015	19	1	533	10.3.38	Muslim	Palestinian	h
+14083	19	7	601	18.3.38	Druz	Palestinian	h
+14120	19	10	638	21.3.38	Muslim	Palestinian	h
+14188	19	17	705	12.3.38	Druz	Syrian	h
+14198	19	18	714	2.4.38	Druz	Palestinian	h
+14242	19	22	758	29.3.38	Druz	Palestinian	h
+14372	19	34	887	23.4.38	Druz	Palestinian	h
+14413	19	38	928	27.4.38	Druz	Palestinian	h
+14471	19	44	984	4.5.38	Christian	Palestinian	h
+14553	19	51	1067	14.5.38	Druz	Palestinian	h
+14593	19	55	1107	18.5.38	Druz	Palestinian	h
+14631	19	58	1145	22.5.38	Druz	Palestinian	h
+14648	19	60	1162	24.5.38	Druz		h
+14735	19	69	1249	3.6.38	Druz	Palestinian	h
+14762	19	71	1276	6.6.38	Druz	Palestinian	h
+14866	19	81	1380	17.6.38	Druze	Palestinian	h
+14940	19	87	1454	24.6.38	Druz	Palestinian	h
+15073	19	100	1586	6.7.38	Muslim	Palestinian	h
+15074	19	100	1587	6.7.38	Muslim	Palestinian	h
+15075	19	100	1588		Muslim	Palestinian	h
+15213	20	13	1736	25.7.38	Druz	Palestinian	h
+15232	20	14	1755	25.7.38	Druz	Palestinian	h
+15236	20	15	1759	25.7.38	Druz	Palestinian	h
+15305	20	21	1828				h
+15412	20	31	1934	14.8.38	Muslim	Palestinian	m
+15424	20	32	1946	15.8.38	Druz	Palestinian	h
+15545	20	43	2078	30.8.38	Druz	Palestinian	h
+15581	20	47	2114	2.9.38	Muslim	Palestinian	h
+15582	20	47	2115	2.9.38	Muslim	Palestinian	h
+15611	20	50	2144	5.9.38	Druz	Palestinian	h
+15645	20	53	2178	8.9.38	Druz	Palestinian	h
+15673	20	56	2206	11.9.38	Druz	Palestinian	h
+15832	20	70	2365	26.9.38	Druz	Palestinian	h
+15892	20	76	2423	3.10.38	Druz	Palestinian	h
+15909	20	77	2440	3.10.38	Druz	Palestinian	h
+16043	20	89	2574	18.10.38	Druz	Palestinian	h
+16076	20	92	2607	22.10.38	Druz	Palestinian	h
+16154	20	99	2685	31.10.38	Muslim	Palestinian	h
+16186	21	4	2716	3.XI.38	Behaian	Palestinian	h
+16193	21	5	2723	4.XI.38	Behaian.	Palestinian	h
+16376	21	21	2906	27.11.38	Druz	Palestinian	h
+16438	21	28	2967	4.12.38	Druz	Palestinian	h
+16623	21	44		30.12.38	Druz	Palestinian	h
+16654	21	48	17	3.1.39	Behaian	Palestinian	h
+16706	21	56	69	11.1.39	Muslim	Palestinian	h
+16754	21	60	117	17.1.39	Druz	Palestinian	h
+16848	21	69	211	30.1.39	Muslim	Palestinian	h
+16859	21	70	222	31.1.39	Druz	Palestinian	h
+16929	21	77	292	7.2.39	Druz	Palestinian	h
+16967	21	80	330	10.2.39	Druz	Palestinian	h
+16995	21	85	358	13.2.39	Druz	Palestinian	h
+17199	21	104		8.3.39	Muslim	Palestinian	h
+17295	22	7	657	17.3.39	Druz	Palestinian	h
+17297	22	7	659	18.3.39	Druz	Palestinian	h
+17392	22	19	754	28.3.39	Druz	Palestinian	h
+17438	22	23	800	1.4.39	Muslim	Palestinian	h
+17475	22	27	837	7.4.39	Druz	Palestinian	h
+17529	22	32	891	12.4.39	Muslim	Palestinian	h
+17621	22	43	983	20.4.39	Muslim	Palestinian	h
+17670	22	63	1032	25.4.39	Druz	Palestinian	h
+17717	22	67	1079	29.4.39	Druz	Palestinian	h
+17729	22	68	1091	1.5.39	Druz	Palestinian	h
+17877	22	81	1239	13.5.39	Druz	Palestinian	h
+17882	22	82	1344	14.5.39	Druz	Palestinian	h
+17913	22	86	1375	16.5.39	Druz	Palestinian	h
+17973	22	91	1435	22.5.39	Druz.	Palestinian	h
+18021	22	95	1483	25.5.39	Behaian	Palestinian	m
+18040	22	97	1501	26.5.39	Muslim	Palestinian	h
+18048	22	98	1509	27.5.39	Druz	Palestinian	h
+18137	22	107	1597	3.6.39	Druz	Palestinian	h
+18390	23	7	2925	17.9.39	Muslim	Palestinian	h
+18392	23	7	2927	17.9.39	Muslim	Palestinian	h
+18399	23	7	2934	18.9.39	Muslim	Palestinian	h
+18493	23	17	3028	24.9.38	Druz	Palestinian	h
+18495	23	17	3030	24.9.38	Druz	Palestinian	h
+18551	23	22	3086	27.9.39	Druz	Palestinian	h
+18650	23	34	3185	5.10.38	Druz	Palestinian	h
+18782	23	46	3317	13.10.39	Druz	Palestinian	h
+18796	23	48	3331	14.10.38	Druz	Palestinian	h
+18900	23	61	3435	23.10.39	Muslim	Palestinian	h
+19291	23	98	3825	21.11.39	Druze.	Palestinian	h
+22629	27	2	3286	15.7.44	Druze.	Palestinian	h
+22638	27	2	3295	15.7.44	Druze	Palestinian	h
+22655	27	4	3313	16.7.44	Druz	Palestinian	h
+22666	27	5	3313	16.7.44	Druz	Palestinian	h
+22686	27	7	3335	17.7.44	Druze	Palestinian	h
+22687	27	7	3336	17.7.44	Druze	Palestinian	h
+22777	27	16	3429	22.7.44	Druze	Palestinian	h
+22790	27	17	3442	23.7.44	Durzi	Palestinian	m
+22799	27	18	3452	24.7.44	Druze	Palestinian	h
+22952	27	33	3613	31.7.44	Muslem	Palestinian	h
+23049	27	42	3726	5.8.44	Druze	Palestinian	h
+23162	27	53	3849	12.8.44	Druze	Palestinian	h
+23308	27	68	4013	19.8.44	Muslim	Palestinian	h
+23354	27	73	4074	23.8.44	Druze	Palestinian	h
+23371	27	74	4091	23.8.44	Moslem	Palestinian	h
+23375	27	75	4096	23.8.44	Druze	Palestinian	m
+23404	27	77	4126	25.8.44	Druze	Palestinian	h
+23446	27	81	4170	27.8.44	Druze	Palestini	m
+23456	27	82	4181	28.8.44	Druze	Palestinian	h
+23546	27	92	4287	2.8.44	Druze	Palestinian	h
+23568	27	94	4311	3.9.44	Druze	Palestinian.	h
+23614	27	98	4359	6.9.44	Druze	Palestinian.	h
+23643	28	3	4389	7.9.44	Druze.	Palestinian.	h
+23691	28	7	4437	9.9.44			h
+23702	28	8	4449	9.9.44	Druz.	Palestini	h
+23709	28	9	4457	10.7.44	Druze.	Palestinian.	h
+23984	28	35	4741	21.9.44	Ch	Br	m
+23989	28	36	4746	27.9.44	Druze	Palestinian	h
+24005	28	37	4762	28.9.44	Druze	Lebanese	h
+24014	28	38	4772	29.9.44	Druze	Palestinian.	h
+24015	28	38	4773	29.9.44	Muslem	Palestinian.	h
+24016	28	38	4774	29.9.44	Christian	Palestinian.	h
+24127	28	49	4889	6.10.44	Christian	British R.C.	h
+24140	28	51	4904	7.10.44	Armenian	Palestini	h
+24165	28	53	4930	9.10.44	Druze	Palestinian	h
+24264	28	63		15.10.44	Muslem	Palestinian.	h
+24300	28	66	5072	18.10.44	Druze	Palestinian	h
+24321	28	68	5094	19.10.44	Durzy.	Palestinian	m
+24325	28	68	5097	19.10.44	Durzy	Palestinian	m
+24480	28	83	5259	28.10.44	Druze	Syrian	h
+24556	28	91	5337	1.11.44	Druze	Palestinian	h
+24597	28	96	3468		Druze	Palest.	h
+24645	29	6	1138	15.3.44	Druze	Palestinian	h
+24650	29	6	1143	15.3.44	Dorzi	Palestinian	h
+24662	29	8		16.3.44	Muslem	Palestinian	h
+24702	29	11	1198	19.3.44	Druze	Palestinian	h
+24708	29	13	1214	31.3.44	Druze	Palestinian	h
+24733	29	15	1240	22.3.44	Druze	Palestinian	h
+24767	29	19	1277	25.3.44	Muslem	Palestinian	h
+24774	29	19	1284	25.3.44	Christian	Palestinian	h
+25293	29	70	1832	27.4.44		Italian	h
+25317	29	73	1856	29.4.44	Druze	Palestinian	h
+25335	29	74			Moslem	Palestinian	m
+25382	29	79	1923	3.5.44	Druze	Palestinian	h
+25385	29	79	1926	3.5.44	Hindu	Salonic	m
+25489	29	89	2034	9.5.44	Druze	Palestinian	h
+25533	29	94	2082	12.5.44	Druze	Palestinian	h
+25536	29	94	2085	12.5.44	Druze	Palestinian	h
+25577	29	100	2130	15.5.44	Mouslem	Palestinian	h
+25578	29	100	2131	15.5.44	Mouslem	Palestinian	h
+26782	31	2	2347	19/4/47	Mosl.	Palest.	h
+26783	31	2	2348	19/4/47	Christian	Palest.	m
+26784	31	2	2349	19/4/47	Mosl.	Palest.	h
+26785	31	2	2350	19/4/47	Mosl.	Palest.	h
+26786	31	2	2351	19/4/47	Mosl.	Palest.	h
+26787	31	2	2352	19/4/47	Mosl.	Palest.	h
+26788	31	2	2353	19/4/47	Mosl.	Palest.	h
+26789	31	2	2354	19.4.47	Muslem	Palest.	h
+26790	31	2	2355	19.4.47	Muslem	Palest.	h
+26791	31	2	2356	19.4.47	Muslem	Palest.	h
+26792	31	2	2357	20.4.47	Musl.	Palest.	h
+26793	31	2	2358	20.4.47	Musl.	Palest.	h
+26794	31	3	2360	19.4.47	Christ.	British.	h
+26795	31	3	2361	19.4.47	Christ.	British	h
+26796	31	3	2362	19.4.47	Christ.	British.	h
+26797	31	3	2363	19.4.47	Christ.	British	h
+26798	31	3	2364	19.4.47	Musl.	Palest.	h
+26799	31	3	2365	19.4.47	Musl.	Palest.	h
+26800	31	3	2366	19.4.47	Musl.	Palest.	h
+26801	31	3	2367	19.4.47	Christ.	Palest.	h
+26802	31	3	2368	20.4.47	Musl.	Palest.	h
+26803	31	3	2369	20.4.47	Musl.	Palest.	h
+26804	31	3	2370	20.4.47	Muslem	Palest.	h
+26805	31	4	2372	20.4.47	Muslem	Palest.	h
+26806	31	4	2373	20.4.47	Jew	Palest.	h
+26807	31	4	2374	20.4.47	Muslem	Palest.	h
+26808	31	4	2375	21.4.47	Jew	Palest.	h
+26809	31	4	2376	21.4.47	Muslem	Palest.	h
+26810	31	4	2377	21.4.47	Muslem	Palest.	h
+26811	31	4	2378	21.X.47	Christ	Palest. O.	h
+26812	31	4	2379	21.4.47	Muslem	Palest.	h
+26813	31	4	2380	21.4.47	Muslim	Palest.	m
+26814	31	4	2381	21.4.47	Chris.	Palest. O	h
+26815	31	4	2382	21.4.47	Muslem	Palest.	h
+26816	31	5	2383	20.4.47	Muslem	Palest.	h
+26817	31	5	2384	20.4.47	Muslem	T.J.	h
+26818	31	5	2385	20.4.47	Muslem	Palest.	h
+26819	31	5	2386	21.4.47	Christ	Palest. C	m
+26820	31	5	2387	21.X.47	Muslem	Palest.	h
+26821	31	5	2388	21.4.47	Christian	Palest.	m
+26822	31	5	2389	21.4.47	Muslem	Palest.	h
+26823	31	5	2390	21.4.47	Jew	Palest.	h
+26824	31	5	2391	21.4.47	Christ.	Norwejan	h
+26825	31	5	2392	21.X.47	Christ.	British	h
+26826	31	5	2393	21.4.47	Musl.	Palest.	h
+26827	31	5	2394	21.4.47	Christ.	British	h
+26828	31	6	2396	22.4.47	Musl.	Palest.	h
+26829	31	6	2397	22.4.47	Muslem	Palest.	h
+26830	31	6	2398	22.4.47	Christ	Palest. O.	h
+26831	31	6	2399	22.4.47	Muslem	Palest.	h
+26832	31	6	2400	22.4.47	Jew	Che?kian	m
+26833	31	6	2401	22.4.47	Muslem	T.J.	h
+26834	31	6	2402	22.4.47	Muslem	Palest.	h
+26835	31	6	2403	22.4.47	Muslem	Palest.	h
+26836	31	6	2404	22.4.47	Muslem	Palest.	h
+26837	31	6	2405	22.4.47	Christ	Palest.	h
+26838	31	6	2406	22.4.47	Musl.	Palest.	h
+26839	31	7	2407	22.4.47	Musl.	Palest.	h
+26840	31	7	2408	22.4.47	Musl.	Palest.	h
+26841	31	7	2409	22.4.47	Christ.	Palest.	h
+26842	31	7	2410	22.4.47	Christ.	Brit.	h
+26843	31	7	2411	22.4.47	Christ.	Brit.	h
+26844	31	7	2412	22.4.47	Christ.	Brit.	h
+26845	31	7	2413	22.4.47	Christ.	Brit.	h
+26846	31	7	2414	23.4.47	Musl.	Palest.	h
+26847	31	7	2415	23.4.47	Christ.	Palest.	h
+26848	31	7	2416	23.4.47	Musl.	Palest.	h
+26849	31	7	2417	23.4.47	Musl.	Palest.	h
+26850	31	7	2418	23.4.47	Musl.	Syrian	h
+26851	31	8	2420	23.4.47	Christ.	Palest. C	h
+26852	31	8	2421	23.4.47	Muslem	Palest.	h
+26853	31	8	2422	23.4.47	Musl.	Palest.	h
+26854	31	8	2423	23.4.47	Musl.	Palest.	h
+26855	31	8	2424	23.4.47	Muslem	T.J.	h
+26856	31	8	2425	23.4.47	Muslem	Palest.	h
+26857	31	8	2426	23.4.47	Muslem	Palest.	h
+26858	31	8	2427	23.4.47	Jew.	Palest.	h
+26859	31	8	2428	23.4.47	Muslem	Palest.	h
+26860	31	8	2429	23.4.47	Muslem	Palest.	m
+26861	31	8	2430	23.4.47	Muslem	Palest.	h
+26862	31	9	2432	23.4.47	Christ.	Palest. R.	h
+26863	31	9	2433	23.4.47	Muslem	Palest.	h
+26864	31	9	2434	23.4.47	Muslem	Palest.	h
+26865	31	9	2435	23.4.47	Muslem	Palest.	h
+26866	31	9	2436	23.4.47	Muslem	Palest.	h
+26867	31	9	2437	23.4.47	Muslem	Palest.	h
+26868	31	9	2438	23.4.47	Muslem	Palest.	h
+26869	31	9	2439	23.4.47	Christ	British	h
+26870	31	9	2440	23.4.47	Christ	British C/E	h
+26871	31	9	2441	23.4.47	Jew	Palest.	h
+26872	31	9	2442	23.4.47	Muslem	Syrian	h
+26873	31	10		23.4.47	Jew	Palest.	h
+26874	31	10	2445	23.4.47	Christ.	British C/E	h
+26875	31	10	2446	23.4.47	Christ.	British	h
+26876	31	10	2447	23.4.47	Muslem	Palest.	h
+26877	31	10	2448	23.4.47	Muslem	Palest.	h
+26878	31	10	2449	23.4.47	Muslem	Palest.	h
+26879	31	10	2450	24.4.47	Christ.	Palest.	h
+26880	31	10	2451	24.4.47	Muslem	Palest.	h
+26881	31	10	2452	24.4.47	Muslem	Palest.	h
+26882	31	10	2453	24.4.47	Christ.	Palest.	h
+26883	31	10	2454	24.4.47	Muslem	Palest.	h
+40144	31	11	2455	24.4.47	Muslem	Palest.	h
+26884	31	11	2456	24.4.47	Christ.	Palest.	h
+26885	31	11	2457	24.4.47	Christ.	Palest.	h
+26886	31	11	2458	24.4.47	Musl.	Palest.	h
+26887	31	11	2459	24.4.47	Muslem	Palest.	h
+26888	31	11	2460	24.4.47	Muslem	Palest.	h
+26889	31	11	2461	24.4.47	Christ.	Palest. C	h
+26890	31	11	2462	24.4.47	Jew	Undefined	h
+26891	31	11	2463	24.4.47	Muslem	Palest.	h
+26892	31	11	2464	24.4.47	Christ.	British	h
+26893	31	11	2465	24.4.47	Muslem	Egypt.	h
+26894	31	11	2466	24.4.47	Muslem	Palest.	h
+26895	31	12	2467	25.4.47	Muslem	Palest.	h
+26896	31	12	2468	25.4.47	Christ.	British C/S	h
+26897	31	12	2469	25.4.47	Muslem	Palest.	h
+26898	31	12	2470	25.4.47	Musl.	Palest.	h
+26899	31	12	2471	25.4.47	Musl.	Palest.	h
+26900	31	12	2472	25.4.47	Jew	Palest.	h
+26901	31	12	2473	25.4.47	Musl.	Palest.	h
+26902	31	12	2474	25.4.47	Musl.	Palest.	h
+26903	31	12	2475	25.4.47	Musl.	Palest.	h
+26904	31	12	2476	25.4.47	Jew	Palest.	h
+26905	31	12	2477	25.4.47	Muslem	T.J.	h
+26906	31	12	2478	25.4.47	Mosl.	Egyptian	h
+26907	31	13		25.4.47	Muslem	Palest.	h
+26908	31	13	2481	25.4.47	Muslem	Palest.	h
+26909	31	13	2482	25.4.47	Muslem	Palest.	h
+26910	31	13	2483	25.4.47	Druze	Syrian	h
+26911	31	13	2484	25.4.47	Christ.	British R/C	h
+26912	31	13	2485	25.4.47	Christ.	British C/E.	h
+26913	31	13	2486	25.4.47	Muslem	Palest.	h
+26914	31	13	2487	25.4.47	Muslem	Palest.	h
+26915	31	13	2488	25.4.47	Muslem	Palest.	h
+26916	31	13	2489	22.4.47	Muslem	T.J.	h
+26917	31	13	2490	24.4.47	Christ.	Palest.	h
+26918	31	14	2491	24.4.47	Christ.	Palest.	h
+26919	31	14	2492	22.4.47	Muslem	Palest.	h
+26920	31	14	2493	22.4.47	Muslem	Palest.	h
+26921	31	14	2494	17.4.47	Muslem	Palest.	h
+26922	31	14	2495	26.4.47	Christ.	Palest.	h
+26923	31	14	2496	26.4.47	Muslem	Palest.	h
+26924	31	14	2497	26.4.47	Muslem	Palest.	h
+26925	31	14	2498	26.4.47	Christian	Egypt.	h
+26926	31	14	2499	26.4.47	Muslem	Palest.	h
+26927	31	14	2500	26.4.47	Muslem	Palest.	h
+26928	31	14	2501	26.4.47	Muslem	Palest.	h
+26929	31	14	2502	26.4.47	Muslem	Syrian	h
+26930	31	15		26.4.47	Christ.	Palest. C.	h
+26931	31	15	2505	26.4.47	Musl.	Palest.	h
+26932	31	15	2506	26.4.47	Muslem	Palest.	h
+26933	31	15	2507	26.4.47	Musl.	Syrian.	h
+26934	31	15	2508	26.4.47	Musl.	Palest.	h
+26935	31	15	2509	26.4.47	Musl.	Palest.	h
+26936	31	15	2510	26.4.47	Musl.	Palest.	h
+26937	31	15	2511	19.4.47	Muslem	Palest.	h
+26938	31	15	2512	12.4.47	Muslem	Palest.	h
+26939	31	15	2513	21.4.47	Muslem	Palest.	h
+26940	31	15	2514	13.4.47	Muslem	Palest.	h
+26941	31	16	2515	26.4.47	Christ.	Palest.	h
+26942	31	16	2	26.4.47	Christ.	Palest.	h
+26943	31	16	3	26.4.47	Christ.	British	h
+26944	31	16	4	26.4.47	Moslem	Palest.	h
+26945	31	16	5	26.4.47	Christ.	British	h
+26946	31	16	6	26.4.47	Moslem	Palest.	h
+26947	31	16	7	27.4.47	Christ.	Pal.	h
+26948	31	16	8	28.4.47	Jew	Palest.	h
+26949	31	16	9	27.4.47	Moslem	Transj.	m
+26950	31	16	10	27.4.47	Musl.	Palest.	h
+26951	31	16	11	27.4.47	Muslem	Palest.	h
+26952	31	16	12	27.4.47	Muslem	Palest.	h
+26953	31	17	13	27.4.47	Jew	Palest.	h
+26954	31	17	2529	26.4.47	Muslem	Egyptian	h
+26955	31	17	2530	26.4.47	Muslem	Palest.	h
+26956	31	17	2531	26.4.47	Muslem	Palest.	h
+26957	31	17	2532	27.4.47	Christ.	British C/E	h
+26958	31	17	2533	27.4.47	Christ.	British C/S.	h
+26959	31	17	2534	27.4.47	Muslem	Palest.	h
+26960	31	17	2535	27.4.47	Muslem	Palest.	h
+26961	31	17	2536	27.4.47	Muslem	Palest.	h
+26962	31	17	2537	28.4.47	Christ.	Palest.	h
+26963	31	17	2538	28.4.47	Muslem	Palest.	h
+26964	31	18	2539	28.4.47	Muslem	Palest.	h
+26965	31	18	2540	28.4.47	Christ.	Palest.	h
+26966	31	18	2541	28.4.47	Muslem	Palest.	h
+26967	31	18	2542	28.4.47	Musl.	Palest.	h
+26968	31	18	2543	28.4.47	Mosl.	Palest.	h
+26969	31	18	2544	28.4.47	Mosl.	Palest.	h
+26970	31	18	2545	28.4.47	Musl.	Palest.	h
+26971	31	18	2546	28.4.47	Musl.	Palest.	h
+26972	31	18	2547	28.4.47	Musl.	Palest.	h
+26973	31	18	2548	28.4.47	Christ.	Palest.	h
+26974	31	18	2549	28.4.47	Musl.	Palest.	h
+26975	31	18	2550	28.4.47	Muslem	Palest.	h
+40145	31	19	2551	28.4.47	Muslem	Palest.	h
+26976	31	19	2552	28.X.47	Muslem	Palest.	h
+26977	31	19	2553	28.4.47	Christ.	Palest. O.	h
+26978	31	19	2554	28.4.47	Muslem	Palest.	h
+26979	31	19	2555	28.4.47	Muslem	Palest.	h
+26980	31	19	2556	28.4.47	Muslem	Palest.	h
+26981	31	19	2557	28.4.47	Muslem	Palest.	h
+26982	31	19	2558	28.4.47	Christ.	Palest. C	h
+26983	31	19	2559	28.4.47	Muslem	Palest.	h
+26984	31	19	2560	28.X.47	Mosl.	Palest.	h
+26985	31	19	2561	28.Y.Y7	Christ.	Brit.	h
+26986	31	19	2562	28.X.47	Mosl.	Egyptian	h
+40146	31	20	2563	28.4.47	Christ.	British.	h
+26987	31	20	2564	28.4.47	Mosl.	Palest.	h
+26988	31	20	2565	26.4.47	Christ.	British.	h
+26989	31	20	2566	29.4.47	Christ.	Palest.	h
+26990	31	20	2567	29.4.47	Muslem	Palest.	m
+26991	31	20	2568	29.4.47	Christ.	Palest. M	h
+26992	31	20	2569	29.4.47	Jew	Palest.	h
+26993	31	20	2570	29.4.47	Muslem	Palest.	h
+26994	31	20	2571	29.4.47	Christ.	Palest.	h
+26995	31	20	2572	29.4.47	Muslem	Palest.	h
+26996	31	20	2573	29.4.47	Muslem	Palest.	h
+26997	31	20	2574	29.4.47	Christ.	Palest.	h
+26998	31	21		28.4.47	Muslem	Palest.	h
+26999	31	21	2577	28.4.47	Christ.	Palest. O.	h
+27000	31	21	2578	28.4.47	Christ.	Palest. M.	h
+27001	31	21	2579	28.4.47	Muslem	Palest.	h
+27002	31	21	2580	29.4.47	Muslem	Palest.	h
+27003	31	21	2581	29.4.47	Christ.	Palest.	h
+27004	31	21	2582	29.4.47	Christ.	Palest.	h
+27005	31	21	2583	28.4.47	Christ.	Palest.	h
+27006	31	21	2584	29.4.47	Muslem	Palest.	h
+27007	31	21	2585	29.4.47	Muslem	Palest.	h
+27008	31	21	2586	29.4.47	Muslem	Palest.	h
+27009	31	22		28.4.47	Mousl.	Palest.	m
+27010	31	22	2589	29.4.47	Mousl.	Palest.	h
+27011	31	22	2590	29.4.47	Muslem	Palest.	h
+27012	31	22	2591	29.4.47	Jew	Palest.	h
+27013	31	22	2592	29.4.47	Muslem	Palest.	h
+27014	31	22	2593	29.4.47	Muslem	Palest.	h
+27015	31	22	2594	29.4.47	Muslem	Palest.	h
+27016	31	22	2595	29.4.47	Muslem	Palest.	h
+27017	31	22	2596	29.4.47	Muslem	Palest.	h
+27018	31	22	2597	29.4.47	Muslem	Palest.	h
+27019	31	22	2598	29.4.47	Jew	Palest.	h
+27020	31	23	2599	29.4.47	Christ.	Palest.	h
+27021	31	23	2600	30.4.47	Muslem	Palest.	h
+27022	31	23	2601	30.4.47	Jew	Palest.	h
+27023	31	23	2602	30.4.47	Christ.	Palest.	h
+27024	31	23	2603	30.4.47	Muslem	Palest.	h
+27025	31	23	2604	30.4.47	Christ.	Palest.	h
+27026	31	23	2605	30.4.47	Christ.	Palest.	h
+27027	31	23		30.4.47	Jew	Palest.	h
+27028	31	23	2608	30.4.47	Muslem	T.J.	h
+27029	31	23	2609	30.4.47	Muslem	Palest.	h
+27030	31	23	2610	30.4.47	Muslem	(Palest.) T.J.	h
+27031	31	23	2611	30.4.47	Muslem	Palest.	h
+27032	31	24	2613	30.4.47	Muslem	T.J.	h
+27033	31	24	2614	26.4.47	Muslem	Palest.	h
+27034	31	24	2615	19.4.47	Muslem	Palest.	h
+27035	31	24	2616	16.4.47	Christ.	Palest.	h
+27036	31	24	2617	11.4.47	Muslem	Palest.	h
+27037	31	24	2618	26.4.47	Musl.	Palest.	h
+27038	31	24	2619	27.4.47	Musl.	Palest.	h
+27039	31	24	2620	30.4.47	Christ.	Palest.	h
+27040	31	24	2621	30.4.47	Musl.	Palest.	h
+27041	31	24	2622	30.4.47	Musl.	Palest.	h
+27042	31	24	2623	30.4.47	Muslem	Palest.	h
+27043	31	25	2624	1.5.47	Muslem	Palest.	h
+27044	31	25	2625	1.5.47	Druze	Palest.	h
+27045	31	25	2626	1.5.47	Christ.	Palest. L.	h
+27046	31	25	2627	1.5.47	Muslem	Palest.	h
+27047	31	25	2628	1.5.47	Christ.	Palest. C.	h
+27048	31	25	2629	1.5.47	Christ.	Palest. R	h
+27049	31	25	2630	1.5.47	Muslem	Palest.	h
+27050	31	25	2631	1.5.47	Jew	Palest.	h
+27051	31	25	2632	1.5.47	Jew	Palest.	h
+27052	31	25	2633	1.5.47	Muslem	Egyptian	m
+27054	31	26	2635	1.5.47	Muslem	Palest.	m
+27055	31	26	2636	1.5.47	Christ.	Palest. C	h
+27056	31	26	2637	1.5.47	Muslem	Palest.	h
+27057	31	26	2638	1.5.47	Christ	British	h
+27058	31	26	2639	1.5.47	Christ	Palest.	m
+27059	31	26	2640	2.5.47	Jew	Palest.	h
+27060	31	26	2641	1.5.47	Jew	Palest.	h
+27061	31	26	2642	1.5.47	Muslem	Palest.	h
+27062	31	26	2643	2.5.47	Jew	Palest.	h
+27063	31	26	2644	2.5.47	Muslem	Palest.	m
+27064	31	26	2645	2.5.47	Muslem	Palest.	m
+27065	31	26	2646	2.5.47	Muslem	Palest.	m
+27066	31	27	2648	2.5.47	Muslem	Palest.	m
+27067	31	27	2649	2.5.47	Druze	Palest.	h
+27068	31	27	2650	2.5.47	Muslem	Palest.	m
+27069	31	27	2651	2.5.47	Muslem	Palest.	h
+27070	31	27	2652	2.5.47	Muslem	Palestinian	h
+27071	31	27	2653	2.5.47	Muslem	Palestinian	h
+27072	31	27	2654	2.5.47	Muslem	Palest.	h
+27073	31	27	2655	2.5.47	Muslem	Palest.	h
+27074	31	27	2656	2.5.47	Christ	Palest.	h
+27075	31	27	2657	2.5.47	Christ	British	h
+27076	31	27	2658	2.5.47	Jew	German	h
+27077	31	28		3.5.47	Muslem	Palest.	m
+27078	31	28	2661	3.5.47	Muslem	Palest.	m
+27079	31	28	2662	3.5.47	Christ	Palest.	m
+27080	31	28	2663	3.5.47	Muslem	Palest.	h
+27081	31	28	2664	3.5.47	Christian	Palest.	m
+27082	31	28	2665	3.5.47	Musl.	Palest.	h
+27083	31	28	2666	3.5.47	Musl.	Palest.	h
+27084	31	28	2667	3.5.47	Muslem	Palest.	h
+27085	31	28	2668	3.5.47	Christ.	Palest.	h
+27086	31	28	2669	3.5.47	Muslem	Palest.	m
+27087	31	28	2670	3.5.47	Muslem	Palest.	h
+27088	31	29	2672	3.5.47	Muslem	T.J.	m
+27089	31	29	2673	3.5.47	Muslem	Palest.	m
+27090	31	29	2674	3.5.47	Christ	Palest.	m
+27091	31	29	2675	3.5.47	Christ.	Palest. O	h
+27092	31	29	2676	3.5.47	Muslem	Palest.	m
+27093	31	29	2677	3.5.47	Muslem	Palest.	h
+27094	31	29	2678	3.5.47	Druze	Syrian	h
+27095	31	29	2679	3.5.47	Muslem	Palest.	h
+27096	31	29	2680	3.5.47	Muslem	Palest.	h
+27097	31	29	2681	3.5.47	Muslem	Palest.	h
+27098	31	29	2682	3.5.47	Druze	Palest.	m
+27099	31	30		3.5.47	Muslem	Palest.	h
+27100	31	30	2685	3.5.47	Muslem	Palest.	h
+27101	31	30	2686	3.5.47		Palest.	m
+27102	31	30	2687	3.5.47	Druze	Palest.	h
+27103	31	30	2688	29.4.47	Muslem	Palest.	h
+27104	31	30	2689	3.5.47	Christian	Palest.	h
+27105	31	30	2690	4.5.47	Musl.	Palest.	h
+27106	31	30	2691	3.5.47	Christ.	British	h
+27107	31	30	2692	3.5.47	Christ.	British	h
+27108	31	30	2693	3.5.47	Christ.	British	h
+27109	31	30	2694	3.5.47	Musl.	Palest.	h
+27110	31	31		4.5.47	Christ	Palest.	h
+27111	31	31	2697	2.5.47	Muslem	Palest.	h
+27112	31	31	2698	4.5.47	Muslem	Palest.	h
+27113	31	31	2699	4.5.47	Muslem	Palest.	h
+27114	31	31	2700	4.5.47	Muslem	Palest.	h
+27115	31	31	2701	4.5.47	Muslem	T.J.	h
+27116	31	31	2702	4.5.47	Muslem	Palest.	h
+27117	31	31	2703	4.5.47	Christ.	Palest.	h
+27118	31	31	2704	4.5.47	Christ.	Palest.	h
+27119	31	31	2705	4.5.47	Muslem	Palest.	h
+27120	31	31	2706	4.5.47	Muslem	Palest.	h
+27121	31	32		4.5.47	Christ	Palest.	h
+27122	31	32	2709	4.5.47	Jew	Palest.	h
+27123	31	32	2710	4.5.47	Christ.	British	h
+27124	31	32	2711	4.5.47	Muslem	Palest.	m
+27125	31	32	2712	4.5.47	Muslem	Palest.	m
+27126	31	32	2713	4.5.47	Muslem	Palest.	m
+27127	31	32	2714	4.5.47	Muslem	Palest.	m
+27128	31	32	2715	4.5.47	Muslem	Palest.	m
+27129	31	32	2716	4.5.47	Christ	British Meth	m
+27130	31	32	2717	4.5.47	Muslem	Palest.	m
+27131	31	32	2718	4.5.47	Jewess	Palest.	m
+27132	31	33		5.5.47	Muslem	Palest.	h
+27133	31	33	2721	5.5.47	Jew	Palest.	h
+27134	31	33	2722	5.5.47	Jew	Palest.	h
+27135	31	33	2723	5.5.47	Jew	Palest.	h
+27136	31	33	2724	5.5.47	Jew	Palest.	h
+27137	31	33	2725	5.5.47	Jew	Palest.	h
+27138	31	33	2726	5.5.47	Jew	Palest.	h
+27139	31	33	2727	5.5.47	Jew	Palest.	h
+27140	31	33	2728	5.5.47	Jew	Palest.	h
+27141	31	33	2729	5.5.47	Jew	Palest.	h
+27142	31	33	2730	5.5.47	Jew	Palest.	h
+27143	31	34	2732	5.5.47	Muslem	T.J.	m
+27144	31	34	2733	5.5.47	Christ	British C/E	h
+27145	31	34	2734	5.5.47	Christ	Palest.	h
+27146	31	34	2735	5.5.47	Muslem	Palest.	m
+27147	31	34	2736	5.5.47	Muslem	Palest.	m
+27148	31	34	2737	5.5.47	Muslem	Palest.	h
+27149	31	34	2738	5.5.47	Jew	Palest.	h
+27150	31	34	2739	5.5.47	Muslem	Palest.	h
+27151	31	34	2740	5.5.47	Muslem	Syrian	h
+27152	31	34	2741	5.5.47	Christ	Palest.	h
+27153	31	34	2742	5.5.47	Muslem	Palest.	h
+27154	31	35		5.5.47	Muslem	Palest.	h
+27155	31	35	2745	5.5.47	Muslem	T.J.	h
+27156	31	35	2746	5.5.47	Muslem	Palest.	h
+27157	31	35	2747	5.5.47	Muslem	Egyp.	h
+27158	31	35	2748	5.5.47	Christ	British	h
+27159	31	35	2749	5.5.47	Christ	British	h
+27160	31	35	2750	5.5.47	Christ	Palest. R	m
+27161	31	35	2751	5.5.47	Muslem	Palest.	h
+27162	31	35	2752	5.5.47	Muslem	Syrian	h
+27163	31	35	2753	5.5.47	Muslem	Palest.	h
+27164	31	35	2754	5.5.47	Christ.	British	h
+27165	31	36	2755	5.5.47	Christ	British C/E	m
+27166	31	36	3	6.5.47	Muslem	Palest.	h
+27167	31	36	4	5.5.47	Christ	British R/C	h
+27168	31	36	5	6.5.47	Muslem	Palest.	m
+27169	31	36	6	6.5.47	Muslem	Palest.	m
+27170	31	36	7	6.5.47	Jew	Palest.	h
+27171	31	36	8	6.5.47	Muslem	Palest.	h
+27172	31	36	9	6.5.47	Muslem	Palest.	h
+27173	31	36	10	6.5.47	Muslem	Palest.	h
+27174	31	36	11	6.5.47	Muslem	Palest.	h
+27175	31	36	12	6.5.47	Muslem	Palest.	m
+27176	31	37	13	6.5.47	Muslem	T.J.	m
+27177	31	37	2769	6.5.47	Jew	Palest.	h
+27178	31	37	2770	6.5.47	Muslem	Palest.	m
+27179	31	37	2771	6.5.47	Muslem	Palest.	m
+27180	31	37	2772	6.5.47	Muslem	Palest.	h
+27181	31	37	2773	6.5.47	Muslem	Palestinian	h
+27182	31	37	2774	6.5.47	Muslem	Palest.	h
+27183	31	37	2775	6.5.47	Muslem	Palest.	h
+27184	31	37	2776	6.5.47	Muslem	Palest.	h
+27185	31	37	2777	6.5.47	Christ	Palest.	h
+27186	31	37	2778	6.5.47	Muslem	Palest.	h
+27187	31	38		7.5.47	Muslem	Palest.	h
+27188	31	38	2781	7.5.47	Christ.	Palest.	h
+27189	31	38	2782	7.5.47	Muslem	Palest.	m
+27190	31	38	2783	7.5.47	Muslem	Palest.	m
+27191	31	38	2784	7.5.47	Muslem	Palest.	m
+27192	31	38	2785	7.5.47	Muslem	Palest.	h
+27193	31	38	2786	7.5.47	Muslem	Palest.	h
+27194	31	38	2787	7.5.47	Muslem	Palest.	h
+27195	31	38	2788	7.5.47	Muslem	Labanian	m
+27196	31	38	2789	7.5.47	Muslem	palestinian	h
+27197	31	38	2790	7.5.47	Muslem	palestinian	h
+27198	31	39	2792	7.5.47	Muslem	Palest.	h
+27199	31	39	2793	7.5.47	Christ	Palest.	h
+27200	31	39	2794	7.5.47	Christ	British C/E	h
+27201	31	39	2795	7.5.47	Christ	British C/E	h
+27202	31	39	2796	7.5.47	Christ	Palest.	h
+27203	31	39	2797	8.5.47	Muslem	Palest.	h
+27204	31	39	2798	17.5.47	Muslem	Palest.	h
+27205	31	39	2799	7.5.47	Christ	British C/E	h
+27206	31	39	2800	7.5.47	Christ	British	h
+27207	31	39	2801	8.5.47	Muslem	Palest.	h
+27208	31	39	2802	8.5.47	Muslem	Palest.	m
+27209	31	40		8.5.47	Muslem	Palest.	m
+27210	31	40	2805	8.5.47	Muslem	Palest.	h
+27211	31	40	2806	8.5.47	Muslem	T.J.	h
+27212	31	40	2807	8.5.47	Muslem	Palest.	h
+27213	31	40	2808	8.5.47	Muslem	Palest.	h
+27214	31	40	2809	8.5.47	Muslem	Palest.	h
+27215	31	40	2810	8.5.47	Muslem	Palest.	h
+27216	31	40	2811	8.5.47	Muslem	Palest.	h
+27217	31	40	2812	8.5.47	Muslem	Palest.	h
+27218	31	40	2813	8.5.47	Muslem	Palest.	h
+27219	31	40	2814	8.5.47	Muslem	Palest.	h
+27220	31	41		9.5.47	Muslem	Palest.	h
+27221	31	41	2817	8.5.47	Christ	Palest.	h
+27222	31	41	2818	9.5.47	Christ	British	h
+27223	31	41	2819	8.5.47	Jew	Palest.	h
+27224	31	41	2820	8.5.47	Muslem	Palest.	h
+27225	31	41	2821	8.5.47	Christ	Palest.	h
+27226	31	41	2822	9.5.47	Muslem	Palest.	h
+27227	31	41	2823	9.5.47	Muslem	Palest.	h
+27228	31	41	2824	9.5.47	Muslem	Palest.	h
+27229	31	41	2825	9.5.47	Christ	Palest.	h
+27230	31	41	2826	9.5.47	Muslem	Palest.	h
+27231	31	42		5.5.47	Muslem	Palest.	h
+27232	31	42	2829	9.5.47	Muslem	Syrian	h
+27233	31	42	2830	10.5.47	Muslem	Palest.	h
+27234	31	42	2831	9.5.47	Christ	British C/E	h
+27235	31	42	2832	10.5.47	Christ	British	h
+27236	31	42	2833	9.5.47	Christ	Palest.	h
+27237	31	42	2834	10.5.47	Christ	Palest.	h
+27238	31	42	2835	9.5.47	Christ	Palest.	h
+27239	31	42	2836	10.5.47	Christ	British C/E	h
+27240	31	42	2837	10.5.47	Christ	British R/C	h
+27241	31	42	2838	10.5.47	Christ	Palest.	h
+27242	31	43		10.5.47	Christ	Palest.	h
+27243	31	43	2841	10.5.47	Christ	Palest.	h
+27244	31	43	2842	10.5.47	Muslem	Palest.	h
+27245	31	43	2843	10.5.47	Muslem	Palest.	h
+27246	31	43	2844	10.5.47	Muslem	Palest.	h
+27247	31	43	2845	10.5.47	Muslem	Palest.	h
+27248	31	43	2846	10.5.47	Muslem	Palest.	h
+27249	31	43	2847	10.5.47	Muslem	Palest.	h
+27250	31	43	2848	10.5.47	Muslem	Palest.	h
+27251	31	43	2849	10.5.47	Muslem	Palest.	h
+27252	31	43	2850	10.5.47	Muslem	Palest.	h
+27253	31	44	2852	10.5.47	Christ	Palest. K	m
+27254	31	44	2853	10.5.47	Muslem	Palest.	h
+27255	31	44	2854	10.5.47	Christ	Palest. K	m
+27256	31	44	2855	10.5.47	Muslem	Palest.	h
+27257	31	44	2856	10.5.47	Jew	Palest.	h
+27258	31	44	2857	10.5.47	Muslem	Palest.	h
+27259	31	44	2858	10.5.47	Christ	Palest.	h
+27260	31	44	2859	10.5.47	Muslem	Palest.	h
+27261	31	44	2860	1.5.47	Muslem	Palest.	h
+27262	31	44	2861	2.5.47	Muslem	Palest.	h
+27263	31	44	2862	10.5.47	Muslem	Palest.	h
+27264	31	45	2863	10.5.47	Muslem	Egyp.	h
+27265	31	45	2864	10.5.47	Muslem	Palest.	h
+27266	31	45	2865	10.5.47	Christ	British	h
+27267	31	45	2866	10.5.47	Druze	Palest.	h
+27268	31	45	2867	11.5.47	Muslem	Palest.	h
+27269	31	45	2868	11.5.47	Jew	Palest.	h
+27270	31	45	2869	11.5.47	Muslem	Palest.	h
+27271	31	45	2870	11.5.47	Muslem	Palest.	h
+27272	31	45	2871	11.5.47	Christ	Palest.	h
+27273	31	45	2872	11.5.47	Christ	British	h
+27274	31	45	2873	12.5.47	Muslem	Palest.	h
+27275	31	45	2874	12.5.47	Christ	British	m
+27276	31	46	2875	12.5.47	Muslem	Palest.	m
+27277	31	46	2876	12.5.47	Muslem	Palest.	m
+27278	31	46	2877	12.5.47	Muslem	Syrian	m
+27279	31	46	2878	12.5.47	Muslem	Syrian	m
+27280	31	46	2879	12.5.47	Muslem	Palest.	m
+27281	31	46	2880	12.5.47	Muslem	Palest.	m
+27282	31	46	2881	12.5.47	Muslem	Palest.	m
+27283	31	46	2882	12.5.47	Muslem	Palest.	m
+27284	31	46	2883	12.5.47	Muslem	Palest.	m
+27285	31	46	2884	12.5.47	Muslem	Palest.	h
+27286	31	46	2885	12.5.47	Muslem	Palest.	h
+27287	31	46	2886	12.5.47	Muslem	Palest.	h
+27288	31	47		12.5.47	Muslem	Palest.	h
+27289	31	47	2889	12.5.47	Christian	Syrian (R.)	h
+27290	31	47	2890	12.5.47	Muslem	Palestinian	h
+27291	31	47	2891	12.5.47	Muslem	Palestinian	h
+27292	31	47	2892	12.5.47	Muslem	Palest.	m
+27293	31	47	2893	13.5.47	Christ	Palest.	h
+27294	31	47	2894	12.5.47	Muslem	Palest.	m
+27295	31	47	2895	12.5.47	Christ	Palest. K	m
+27296	31	47	2896	12.5.47	Muslem	Palestinian	h
+27297	31	47	2897	12.6.47	Muslem	Palest.	h
+27298	31	47	2898	12.5.47	Christ	Palest.	h
+27299	31	48		12.5.47	Muslem	Palest.	m
+27300	31	48	2901	12.5.47	Muslem	Palest.	m
+27301	31	48	2902	12.5.47	Muslem	Palest.	m
+27302	31	48	2903	12.5.47	Christ	British	h
+27303	31	48	2904	12.5.47	Christ	British C/E	h
+27304	31	48	2905	12.5.47	Christ	British	h
+27305	31	48	2906	12.5.47	Christ	British R/C	h
+27306	31	48	2907	12.5.47	Christ	British C/E	h
+27307	31	48	2908	13.5.47	Muslem	Palest.	m
+27308	31	48		13.5.47	Muslem	Palest.	m
+27309	31	48		13.5.47	Muslem	Palest.	m
+40147	31	49	2911	12.5.47	Muslem	Palest.	h
+27310	31	49	2912	13.5.47	Muslem	Palest.	m
+27311	31	49	2913	13.5.47	Muslem	Palest.	h
+27312	31	49	2914	13.5.47	Muslem	Palest.	m
+27313	31	49	2915	13.5.47	Christ	Palest. C	h
+27314	31	49	2916	13.5.47	Muslem	Palest.	m
+27315	31	49	2917	13.5.47	Muslem	Palestinian	h
+27316	31	49	2918	13.5.47	Muslem	Palestinian	h
+27317	31	49	2919	13/5/47	Xian	Palest.	m
+27318	31	49	2920	13.5.47	Muslem	Palest.	h
+27319	31	49	2921	13.5.47	Christ.	British	h
+27320	31	49	2922	13.5.47	Christ	British	h
+27321	31	50		12.5.47	Muslem	Palest.	h
+27322	31	50	2925	13.5.47	Christ.	British	h
+27323	31	50	2926	13.5.47	Christ	British	h
+27324	31	50	2927	13.5.47	Christ	Palest.	h
+27325	31	50	2928	13.5.47	Muslem	Palest.	h
+27326	31	50	2929	14.5.47	Muslem	Palest.	h
+27327	31	50	2930	14.5.47	Muslem	Palest.	h
+27328	31	50	2931	14.5.47	Muslem	Palest.	h
+27329	31	50	2932	15.5.47	Muslem	Palest.	m
+27330	31	50	2933	15.5.47	Christ	Palest.	h
+27331	31	50	2934	15.5.47	Muslem	Palest.	m
+27332	31	51		14.5.47	Muslem	Palest.	m
+27333	31	51	2937	14.5.47	Muslem	Palest.	m
+27334	31	51	2938	14.5.47	Muslem	Palest.	m
+27335	31	51	2939	14.5.47	Muslem	Palest.	m
+27336	31	51	2940	14.5.47	Muslem	Palest.	m
+27337	31	51	2941	14.5.47	Muslem	Palest.	m
+27338	31	51	2942	14.5.47	Muslem	Palest.	m
+27339	31	51	2943	14.5.47	Muslem	Lebanese	h
+27340	31	51	2944	14.5.47	Druze	Palest.	h
+27341	31	51	2945	14.5.47	Muslem	Palest.	h
+27342	31	51	2946	14.5.47	Muslem	Palest.	h
+27343	31	52	2947	14.5.47	Muslem	Palest.	h
+27344	31	52	2948	14.5.47	Christ	British	h
+27345	31	52	2949	14.5.47	Christ	British	h
+27346	31	52	2950	14.5.47	Christ	Palest.	h
+27347	31	52	2951	14.5.47	Christ	Palest.	h
+27348	31	52	2952	14.5.47	Christ	British	h
+27349	31	52	2953	14.5.47	Christ	British	h
+27350	31	52	2954	15.5.47	Christ	Palest.	h
+27351	31	52	2955	15.5.47	Muslem	T.J.	h
+27352	31	52	2956	15.5.47	Muslem	Palest.	h
+27353	31	52	2957	15.5.47	Muslem	Palest.	h
+27354	31	52	2958	15.5.47	Jew	Palest.	h
+27355	31	53	2960	15.5.47	Muslem	Palest.	h
+27356	31	53	2961	15.5.47	Muslem	Palest.	h
+27357	31	53	2962	15.5.47	Muslem	Syrian	h
+27358	31	53	2963	15.5.47	Jew	Palest.	h
+27359	31	53	2964	15.5.47	Jew	Palest.	h
+27360	31	53	2965	15.5.47	Muslem	Palest.	h
+27361	31	53	2966	15.5.47	Muslem	Palest.	h
+27362	31	53	2967	15.5.47	Muslem	Palest.	h
+27363	31	53	2968	15.5.47	Muslem	Palest.	h
+27364	31	53	2969	15.5.47	Muslem	Palest.	h
+27365	31	53	2970	15.5.47	Jew	Palest.	h
+27366	31	54		15.5.47	Christian	Nor.	m
+27367	31	54	2973	15.5.47	Muslem	Palest.	h
+27368	31	54	2974	15.5.47	Muslem	Palest.	h
+27369	31	54	2975	16.5.47	Christ	Egyp.	m
+27370	31	54	2976	15.5.47	Muslem	Palest.	h
+27371	31	54	2977	16.5.47	Jew	Palest.	h
+27372	31	54	2978	16.5.47	Muslem	Palest.	m
+27373	31	54	2979	16.5.47	Muslem	Palest.	m
+27374	31	54	2980	16.5.47	Jew	Palest.	h
+27375	31	54	2981	16.5.47	Christ	British C/E	h
+27376	31	54	2982	16.5.47	Christ	British	h
+27377	31	55	2983	16.5.42	Muslem	Palest.	m
+27378	31	55	2984	16.5.42	Muslem	Palest.	m
+27379	31	55	2985	16.5.42	Muslem	Palest.	m
+27380	31	55	2986	16.5.42	Christ	Palest.	m
+27381	31	55	2987	16.5.42	Muslem	Syrian	m
+27382	31	55	2988	16.5.42	Muslem	Palest.	m
+27383	31	55	2989	16.5.42	Muslem	Syrian	m
+27384	31	55	2990	16.5.42	Muslem	Palest.	m
+27385	31	55	2991	16.5.42	Muslem	Syrian	m
+27386	31	55	2992	16.5.42	Muslem	Palest.	m
+27387	31	55	2993	16.5.42	Christian	Palest.	m
+27388	31	55	2994	16.5.42	Muslem	Palest.	m
+27389	31	56		16.5.47	Christ.	British	h
+27390	31	56	2997	16.5.47	Christ	Pelest.	h
+27391	31	56	2998	16.5.47	Christ	British	h
+27392	31	56	2999	16.5.47	Jewess	British	m
+27393	31	56	3000	17.5.47	Muslem	Pelest.	h
+27394	31	56	3001	17.5.47	Muslem	Pelest.	h
+27395	31	56	3002	17.5.47	Muslem	Pelest.	h
+27396	31	56	3003	17.5.47	Muslem	Pelest.	h
+27397	31	56	3004	17.5.47	Musl	Palest.	h
+27398	31	56	3005	17.5.47	Musl	Palestin.	h
+27399	31	56	3006	17.5.47	Christ	Pelest.	h
+27400	31	57	3008	17.5.47	Muslem	Pelest.	h
+27401	31	57	3009	17.5.47	Muslem	Pelest.	h
+27402	31	57	3010	18.5.47	Muslem	Pelest.	h
+27403	31	57	3011	18.5.47	Muslem	Pelest.	h
+27404	31	57	3012	17.5.47	Muslem	Pelest.	h
+27405	31	57	3013	17.5.47	Muslem	Pelest.	h
+27406	31	57	3014	17.5.47	Muslem	Pelest.	h
+27407	31	57	3015	17.5.47	Muslem	Syrian	h
+27408	31	57	3016	17.5.47	Christ	British	h
+27409	31	57	3017	17.5.47	Muslem	Palest.	h
+27410	31	57	3018	17.5.47	Musl	Palest.	m
+27411	31	58		17.5.47	Muslem	T. J.	h
+27412	31	58	3021	17.5.47	Muslem	T. J.	h
+27413	31	58	3022	17.5.47	Muslem	Palest.	h
+27414	31	58	3023	17.5.47	Muslem	Palest.	h
+27415	31	58	3024	17.5.47	Muslem	Palest.	h
+27416	31	58	3025	17.5.47	Muslem	Palest.	h
+27417	31	58	3026	18.5.47	Muslem	Palest.	h
+27418	31	58	3027	18.5.47	Jew	Palest.	h
+27419	31	58	3028	18.5.47	Christ	Palest.	h
+27420	31	58	3029	18.5.47	Muslem	Palest.	h
+27421	31	58	3030	18.5.47	Muslem	Palest.	h
+27422	31	59	3032	18.5.47	Muslem	Palest.	h
+27423	31	59	3033	18.5.47	Muslem	Palest.	h
+27424	31	59	3034	18.5.47	Muslem	Palest.	h
+27425	31	59	3035	18.5.47	Muslem	Palest.	h
+27426	31	59	3036	18.5.47	Muslem	Palest.	h
+27427	31	59	3037	17.5.47	Muslem	Syrian	h
+27428	31	59	3038	19.5.47	Christ.	Palest. "R."	h
+27429	31	59	3039	18.5.47	Muslem	Palest.	h
+27430	31	59	3040	18.5.47	Muslem	Palest.	h
+27431	31	59	3041	18.5.47	Muslem	Palest.	h
+27432	31	59	3042	18.5.47	Christ.	Palest.	h
+27433	31	60	3044	19.5.47	Muslem	Pelest.	h
+27434	31	60	3045	19.5.47	Christ	Pelest.	h
+27435	31	60	3046	19.5.47	Muslem	Pelest.	h
+27436	31	60	3047	19.5.47	Muslem	Pelest.	h
+27437	31	60	3048	19.5.47	Muslem	Pelest.	h
+27438	31	60	3049	19.5.47	Muslem	Pelest.	h
+27439	31	60	3050	19.5.47	Muslem	Pelest.	h
+27440	31	60	3051	19.5.47	Christ.	Pelest. C.	m
+27441	31	60	3052	19.5.47	Christ.	Pelest. Gr.	h
+27442	31	60	3053	19.5.47	Christ	Pelest. O.	h
+27443	31	60	3054	20.5.47	Muslem	Pelest.	h
+40148	31	61	3055	19.5.47	Muslem	Pelest.	h
+27444	31	61	3056	19.5.47	Muslem	Pelest.	h
+27445	31	61	3057	19.5.47	Muslem	Palest.	h
+27446	31	61	3058	19.5.47	Muslem	Palest.	h
+27447	31	61	3059	19.5.47	Muslem	Palest.	h
+27448	31	61	3060	19.5.47	Muslem	Pelest.	h
+27449	31	61	3061	19.5.47	Muslem	Pelest.	h
+27450	31	61	3062	19.5.47	Muslem	Pelest.	h
+27451	31	61	3063	19.5.47	Muslem	Pelest.	h
+27452	31	61	3064	19.5.47	Christ	Greek	h
+27453	31	61	3065	19.5.47	Muslem	Pelest.	h
+27454	31	61	3066	19.5.47	Christ	Pelest.	h
+27455	31	62	3068	19.5.47	Christ	British C/E	h
+27456	31	62	3069	19.5.47	Christ	British C/E	h
+27457	31	62	3070	19.5.47	Christ	British C/S	m
+27458	31	62	3071	19.5.47	Christ	British R/C	h
+27459	31	62	3072	19.5.47	Christ	British	h
+27460	31	62	3073	19.5.47	Christ	British C/E	h
+27461	31	62	3074	19.5.47	Muslem	Pelest.	h
+27462	31	62	3075	19.5.47	Druze	Palest	h
+27463	31	62	3076	20.5.47	Jew	Pelest.	h
+27464	31	62	3077	20.5.47	Jew	Undef.	m
+27465	31	62	3078	20.5.47	Druze	Pelest.	h
+27466	31	63	3079	20.5.47	Muslem	Pelest.	h
+27467	31	63	3080	20.5.47	Christ	Pelest. C	h
+27468	31	63	3081	20.5.47	Christ	Pelest. M.	h
+27469	31	63	3082	20.5.47	Muslem	Pelest.	h
+27470	31	63	3083	20.5.47	Muslem	Egyptian	h
+27471	31	63	3084	20.5.47	Muslem	Pelest.	h
+27472	31	63	3085	20.5.47	Christ	Pelest. C.	h
+27473	31	63	3086	20.5.47	Muslem	Pelest.	h
+27474	31	63	3087	20.5.47	Christ.	Palest.	h
+27475	31	63	3088	20.5.47	Muslem	Pelest.	h
+27476	31	63	3089	20.5.47	Muslem	Pelest.	h
+27477	31	63	3090	20.5.47	Muslem	Pelest.	h
+27478	31	64	3092	20.5.47	Muslem	Palest.	h
+27479	31	64	3093	20.5.47	Jew	Palest.	h
+27480	31	64	3094	20.5.47	Muslem	Pelest.	h
+27481	31	64	3095	20.5.47	Muslem	Pelest.	h
+27482	31	64	3096	20.5.47	Muslem	Pelest.	h
+27483	31	64	3097	20.5.47	Christ	British C/E	h
+27484	31	64	3098	17.5.47	Christ	Pelest.	h
+27485	31	64	3099	21.5.47	Musl.	Palest.	h
+27486	31	64	3100	21.5.47	Christ	Palest. "R."	h
+27487	31	64	3101	21.5.47	Christ	Palest.	h
+27489	31	65		21.5.47	Muslem	Pelest.	h
+27490	31	65	3105	21.5.47	Muslem	Pelest.	h
+27491	31	65	3106	21.5.47	Muslem	Pelest.	h
+27492	31	65	3107	21.5.47	Christ	Pelest.	h
+27493	31	65	3108	21.5.47	Christ	Pelest. M.	h
+27494	31	65	3109	21.5.47	Muslem	Pelest.	h
+27495	31	65	3110	21.5.47	Muslem	Pelest.	h
+27496	31	65	3111	21.5.47	Muslem	Pelest.	h
+27497	31	65	3112	21.5.47	Muslem	Pelest.	h
+27498	31	65	3113	21.5.47	Christ	Pelest.	h
+27499	31	65	3114	21.5.47	Muslem	Palest.	h
+40149	31	66	3115	21.5.47	Muslem	Palest.	h
+27500	31	66	3116	21.5.47	Muslem	Palest.	h
+27501	31	66	3117	21.5.47	Muslem	Palest.	h
+27502	31	66	3118	21.5.47	Muslem	Palest.	h
+27503	31	66	3119	21.5.47	Muslem	Palest.	h
+27504	31	66	3120	21.5.47	Muslem	Palest.	h
+27505	31	66	3121	21.5.47	Jew	Palest.	h
+27506	31	66	3122	21.5.47	Muslem	Palest.	h
+27507	31	66	3123	22.5.47	Christ	Palest. "K."	m
+27508	31	66	3124	21.5.47	Muslem	Palest.	h
+27509	31	66	3125	21.5.47	Muslem	Palest.	h
+27510	31	66	3126	21.5.47	Muslem	Palest.	h
+40150	31	67	3127	21.5.47	Jew	Palest.	h
+27511	31	67	3128	21.5.47	Jew	Palest.	h
+27512	31	67	3129	21.5.47	Christ	Palest.	h
+27513	31	67	3130	21.5.47	Muslem	Palest.	h
+27514	31	67	3131	21.5.47	Christ	British	h
+27515	31	67	3132	21.5.47	Muslem	Palest.	h
+27516	31	67	3133	21.5.47	Christ	British	h
+27517	31	67	3134	21.5.47	Christ	Palest.	h
+27518	31	67	3135	22.5.47	Muslem	Pelest.	h
+27519	31	67	3136	22.5.47	Muslem	Pelest.	h
+27520	31	67	3137	22.5.47	Muslem	Pelest.	h
+27521	31	67	3138	22.5.47	Muslem	Pelest.	h
+40151	31	68	3139	22.5.47	Muslem	Pelest.	h
+27522	31	68	3140	22.5.47	Christ	Pelest.	h
+27523	31	68	3141	22.5.47	Christ	Pelest.	h
+27524	31	68	3142	22.5.47	Musl.	Palest.	h
+27525	31	68	3143	22.5.47	Musl.	Palest.	h
+27526	31	68	3144	22.5.47	Muslem	Pelest.	h
+27527	31	68	3145	22.5.47	Muslem	Palest.	h
+27528	31	68	3146	23.5.47	Muslem	Palest.	h
+27529	31	68	3147	22.5.47	Musl.	Palest.	h
+27530	31	68	3148	22.5.47	Christ.	British.	h
+27531	31	68	3149	24.5.47	Jew	Palest.	h
+27532	31	68	3150	22.5.47	Musl.	Palest.	h
+27533	31	69	3151	22.5.47	Mosl.	Palest.	h
+27534	31	69	3152	22.5.47	Christ.	Brit.	h
+27535	31	69	3153	22.5.47	Christ.	British.	h
+27536	31	69	3154	22.5.47	Musl.	Palest.	h
+27537	31	69	3155	22.5.47	Muslem	Pelest.	h
+27538	31	69	3156	18.5.47	Muslem	Pelest.	h
+27539	31	69	3157	23.5.47	Muslem	Pelest.	h
+27540	31	69	3158	23.5.47	Muslem	Pelest.	h
+27541	31	69	3159	23.5.47	Muslem	Pelest.	h
+27542	31	69	3160	23.5.47	Christ	Pelest. C	h
+27543	31	69	3161	23.5.47	Muslem	Pelest.	h
+27544	31	69	3162	23.5.47	Muslem	Pelest.	h
+27545	31	70		23.5.47	Muslem	Egyptian	h
+27546	31	70	3165	23.5.47	Muslem	Lebanese	h
+27547	31	70	3166	23.5.47	Christ.	British C/E	h
+27548	31	70	3167	23.5.47	Christ	British	h
+27549	31	70	3168	23.5.47	Christ.	British	h
+27550	31	70	3169	23.5.47	Christ	British C/E	h
+27551	31	70	3170	23.5.47	Christ	British	h
+27552	31	70	3171	23.5.47	Christ	British C/E	h
+27553	31	70	3172	23.5.47	Jew	Hungarian	h
+27554	31	70	3173	23.5.47	Muslem	Pelest.	h
+27555	31	70	3174	24.5.47	Muslem	Pelest.	h
+27556	31	71		24.5.47	Muslem	Pelest.	h
+27557	31	71	3177	24.5.47	Jew	Pelest.	h
+27558	31	71	3178	24.5.47	Muslem	Palest.	h
+27559	31	71	3179	24.5.47	Muslem	Palest.	h
+27560	31	71	3180	24.5.47	Muslem	Palest.	h
+27561	31	71	3181	24.5.47	Muslem	Palest.	h
+27562	31	71	3182	24.5.47	Muslem	Palest.	h
+27563	31	71	3183	24.5.47	Muslem	Palest.	h
+27564	31	71	3184	24.5.47	Muslem	Pelest.	h
+27566	31	71	3186	24.5.47	Muslem	Palest.	h
+27567	31	72	3187	24.5.47	Muslem	Pelest.	h
+27568	31	72	3188	24.5.47	Muslem	Pelest.	h
+27569	31	72	3189	24.5.47	Muslem	Pelest.	h
+27570	31	72	3190	24.5.47	Muslem	Palest.	h
+27571	31	72	3191	24.5.47	Muslem	Palest.	h
+27572	31	72	3192	24.5.47	Muslem	Palest.	h
+27573	31	72	3193	24.5.47	Muslem	Palest.	h
+27574	31	72	3194	24.5.47	Christ.	British	h
+27575	31	72	3195	24.5.47	Christ.	British	h
+27576	31	72	3196	24.5.47	Christ.	British	h
+27577	31	72	3197	24.5.47	Moslem	Palest.	h
+27578	31	72	3198	24.5.47	Moslem	Palest.	h
+40152	31	73	3199	24.5.47	Christ.	British	h
+27579	31	73	3200	24.5.47	Moslem	Palest.	h
+27581	31	73	3202	25.5.47	Moslem	Syrian	h
+27582	31	73	3203	25.5.47	Moslem	Pal.	h
+27583	31	73	3204	25.5.47	Moslem	Palest.	h
+27584	31	73	3205	26.5.47	Mosl.	Palest.	h
+27585	31	73	3206	26.5.47	Christ.	Palest.	h
+27586	31	73	3207	26.5.47	Christ.	British?	m
+27587	31	73	3208	26.5.47	Mosl.	Palest.	h
+27588	31	73	3209	25.5.47	Mosl.	Palest.	h
+27589	31	73	3210	25.5.47	Christ.	Brit.	h
+27590	31	74	3212	25.5.47	Musl.	Palest.	h
+27591	31	74	3213	26.5.47	Christ.	Palest.	h
+27592	31	74	3214	25.5.47	Mosl.	Palest.	h
+27593	31	74	3215	26.5.47	Mosl.	Palest.	h
+27594	31	74	3216	26.5.47	Mosl.	Pales.	h
+27595	31	74	3217	26.5.47	Mosl.	Palest.	h
+27596	31	74	3218	26.5.47	Musl.	Palest.	h
+27597	31	74	3219	26.5.47	Christ.	Palest.	h
+27598	31	74	3220	26.5.47	Mosl.	Palest.	h
+27599	31	74	3221	26.5.47	Musl.	Palest.	h
+27600	31	74	3222	26.5.47	Musl.	Palest.	h
+27601	31	75	3223	26.5.47	Musl.	Palest.	h
+27602	31	75	3224	26.5.47	Muslem	Palest.	h
+27603	31	75	3225	20.5.47	Christ	Palest.	h
+27604	31	75	3226	26.5.47	Muslem	Palest.	h
+27605	31	75	3227	26.5.47	Muslem	Pelest.	h
+27606	31	75	3228	26.5.47	Druze	Pelest.	h
+27607	31	75	3229	26.5.47	Muslem	Egyptian	h
+27608	31	75	3230	27.5.47	Muslem	Egyp.	h
+27609	31	75	3231	27.5.47	Muslem	Pelest.	h
+27610	31	75	3232	27.5.47	Muslem	Pelest.	h
+27611	31	75	3233	27.5.47	Muslem	Pelest.	h
+27612	31	75	3234	27.5.47	Muslem	Pelest.	h
+27613	31	76	3235	27.5.47	Christ	T. Jordan O	h
+27614	31	76	3236	27.5.47	Muslem	Pelest.	h
+27615	31	76	3237	27.5.47	Muslem	Pelest.	h
+27616	31	76	3238	27.5.47	Muslem	Pelest.	h
+27617	31	76	3239	27.5.47	Muslem	Pelest.	h
+27618	31	76	3240	27.5.47	Muslem	Pelest.	h
+27619	31	76	3241	26.5.47	Muslem	Egypt.	h
+27620	31	76	3242	27.5.47	Muslem	Pelest.	h
+27621	31	76	3243	27.5.47	Christ	Pelest. P	m
+27622	31	76	3244	27.5.47	Muslem	Pelest.	h
+27623	31	76	3245	27.5.47	Muslem	Pelest.	h
+27624	31	76	3246	28.5.47	Christ	Pelest. C	h
+27625	31	77	3248	28.5.47	Druze	Pelest.	h
+27626	31	77	3249	28.5.47	Christ	Palest. R.	h
+27627	31	77	3250	28.5.47	Muslem	Palest	h
+27628	31	77	3251	28.5.47	Muslem	Pelest.	h
+27629	31	77	3252	28.5.47	Muslem	Pelest.	h
+27630	31	77	3253	28.5.47	Christ	Pelest.	h
+27631	31	77	3254	28.5.47	Muslem	Palest.	h
+27632	31	77	3255	28.5.47	Christ	Pelest.	h
+27633	31	77	3256	28.5.47	Christ	Pelest.	h
+27634	31	77	3257	28.5.47	Muslem	Pelest.	h
+27635	31	77	3258	28.5.47	Muslem	Pelest.	h
+27636	31	78	3260	28.5.47	Muslem	Palest.	h
+27637	31	78	3261	28.5.47	Muslem	Palest.	h
+27638	31	78	3262	28.5.47	Muslem	Palest.	h
+27639	31	78	3263	28.5.47	Muslem	Pelest.	h
+27640	31	78	3264	28.5.47	Muslem	Pelest.	h
+27641	31	78	3265	28.5.47	Muslem	Pelest.	h
+27642	31	78	3266	28.5.47	Christ.	British	h
+27643	31	78	3267	28.5.47	Muslem	Pelest.	h
+27644	31	78	3268	29.5.47	Muslem	Pelest.	h
+27645	31	78	3269	29.5.47	Muslem	Pelest.	h
+27646	31	78	3270	29.5.47	Muslem	Pelest.	h
+27647	31	79	3272	29.5.47	Muslem	Pelest.	h
+27648	31	79	3273	29.5.47	Muslem	Palest.	h
+27649	31	79	3274	29.5.47	Muslem	Palest.	h
+27650	31	79	3275	29.5.47	Muslem	Palest.	h
+27651	31	79	3276	29.5.47	Christ	Palest. "K."	m
+27652	31	79	3277	29.5.47	Muslem	Palest.	h
+27653	31	79	3278	29.5.47	Muslem	Palest.	h
+27654	31	79	3279	29.5.47	Muslem	T. J.	h
+27655	31	79	3280	29.5.47	Muslem	Palest.	h
+27657	31	79	3282	29.5.47	Muslem	Palest.	h
+27658	31	80	3283	29.5.47	Muslem	Palest.	h
+27659	31	80	3284	29.5.47	Muslem	Palest.	h
+27660	31	80	3285	29.5.47	Muslem	Palest.	h
+27661	31	80	3286	29.5.47	Musl.	Palest.	h
+27662	31	80	3287	29.5.47	Christ.	Palest.	h
+27663	31	80	3288	29.5.47	Mosl.	Palest.	h
+27664	31	80	3289	29.5.47	Christ.	Palest.	h
+27665	31	80	3290	29.5.47	Mosl.	Palest.	h
+27666	31	80	3291	29.5.47	Mosl.	Palest.	h
+27667	31	80	3292	29.5.47	Christ.	Brit.	h
+27668	31	80	3293	29.5.47	Christ.	Brit.	h
+27669	31	80	3294	29.5.47	Christ.	Brit.	h
+27670	31	81	3295	29.5.47	Mosl.	Palest.	h
+27671	31	81	3296	28.5.47	Christ.	Brit.	h
+27672	31	81	3297	30.5.47	Muslem	Pelest.	h
+27673	31	81	3298	30.5.47	Mosl.	Pales.	h
+27674	31	81	3299	30.5.47	Mosl.	Palest.	h
+27675	31	81	3300	30.5.47	Mosl.	Palest.	h
+27676	31	81	3301	30.5.47	Mosl.	Palest.	h
+27677	31	81	3302	30.5.47	Musl.	Palest.	h
+27678	31	81	3303	30.5.47	Muslem	Pelest.	h
+27679	31	81	3304	30.5.47	Muslem	Pelest.	h
+27680	31	81	3305	30.5.47	Muslem	Pelest.	h
+27681	31	81	3306	30.5.47	Muslem	Pelest.	h
+27682	31	82	3307	30.5.47	Muslem	(Pelest.) T.J.	h
+27683	31	82	3308	30.5.47	Jew.	Pelest.	h
+27684	31	82	3309	30.5.47	Musl.	Palest.	h
+27685	31	82	3310	30.5.47	Mosl.	Palest.	h
+27686	31	82	3311	30.5.47	Mosl.	Palest.	h
+27687	31	82	3312	30.5.47	Muslem	Pelest.	h
+27688	31	82	3313	30.5.47	Christ.	Brit.	h
+27689	31	82	3314	30.5.47	Mosl.	Pales.	h
+27690	31	82	3315	30.5.47	Mosl.	Palest.	h
+27691	31	82	3316	30.5.47	Musl.	Palest.	h
+27692	31	82	3317	30.5.47	Christ	Palest.	h
+27693	31	82	3318	30.5.47	Muslem	Palest.	h
+40153	31	83	3319	30.5.47	Muslem	Palest.	h
+27694	31	83	3320	30.5.47	Christ.	British	h
+27695	31	83	3321	31.5.47	Christ	Palest.	h
+27696	31	83	3322	31.5.47	Muslem	Pelest.	h
+27697	31	83	3323	31.5.47	Muslem	Pelest.	h
+27698	31	83	3324	31.5.47	Christ	Pelest. C	h
+27699	31	83	3325	31.5.47	Muslem	Pelest.	h
+27700	31	83	3326	31.5.47	Muslem	Pelest.	h
+27701	31	83	3327	31.5.47	Muslem	Pelest.	h
+27702	31	83	3328	31.5.47	Muslem	Palest.	h
+27703	31	83	3329	31/5/47	Musl.	Palest.	h
+27704	31	83	3330	31.5.47	Muslem	Pelest.	h
+27705	31	84	3332	31.5.47	Muslem	Pelest.	h
+27706	31	84	3333	31.5.47	Muslem	Pelest.	h
+27707	31	84	3334	31.5.47	Muslem	Pelest.	h
+27708	31	84	3335	31.5.47	Jew	Morocian	m
+27709	31	84	3336	31.5.47	Mosl.	Palest.	h
+27710	31	84	3337	31.5.47	Musl.	Palest.	h
+27711	31	84	3338	31.5.47	Mosl.	Palest.	h
+27712	31	84	3339	31.5.47	Jew	Romanian	h
+27713	31	84	3340	31.5.47	Mosl.	Palest.	h
+27714	31	84	3341	31.5.47	Mosl.	Palest.	h
+27715	31	84	3342	31.5.47	Muslem	Palest.	h
+40154	31	85	3343	31.5.47	Muslem	Palest.	h
+27716	31	85	3344	13.5.47	Christ	Palest.	h
+27717	31	85	3345	26.4.47	Muslem	Palest.	h
+27718	31	85	3346	22.5.47	Muslem	Palest	h
+27719	31	85		10.5.47	Muslem	Palest.	h
+27720	31	85		22.5.47	Muslem	Syrian	h
+27721	31	85		31.5.47	Muslem	Palest.	h
+27722	31	85		1.5.47	Moslem	Palest.	h
+27723	31	86	3347	1.6.47	Mosl.	Palest.	h
+27724	31	86	3348	1.6.47	Mosl.	Palest.	h
+27725	31	86	3349	1.6.47	Muslem	Palest.	h
+27726	31	86	3350	1.6.47	Musl.	Palest.	h
+27727	31	86	3351	1.6.47	Christ.	Palest.	h
+27728	31	86	3352	1.6.47	Mosl.	Palest.	h
+27729	31	86	3353	1.6.47	Druze	Palest.	h
+27730	31	86	3354	1.6.47	Muslem	Palest.	h
+27731	31	86	3355	1.6.47	Muslem	Palest.	m
+27732	31	86	3356	1.6.47	Muslem	Syrian	h
+27733	31	87	3357	1.6.47	Muslem	Syrian	h
+27734	31	87	3358	1.6.47	Christ.	Palest.	h
+27735	31	87	3359	2.6.47	Christ	Palest. O.	h
+27736	31	87	3360	4.6.47	Muslem.	Palest.	h
+27737	31	87	3361	4.6.47	Muslem	Egypt.	h
+27738	31	87	3362	1.6.47	Christ	Palest.	h
+27739	31	87	3363	2.6.47	Muslem	Palest.	h
+27740	31	87	3364	2.6.47	Jew	Palest.	h
+27741	31	87	3365	2.6.47	Jew	Palest.	h
+27742	31	87	3366	2.6.47	Muslem	Palest.	h
+27743	31	87	3367	2.6.47	Muslem	Palest.	h
+27744	31	87	3368	2.6.47	Muslem	Palest.	h
+27745	31	88	3369	2.6.47	Muslem	Palest.	h
+27746	31	88	3370	2.6.47	Christ	Palest.	h
+27747	31	88	3371	2.6.47	Muslem	Palest.	h
+27748	31	88	3372	2.6.47	Christ.	Palest.	h
+27749	31	88	3373	2.6.47	Muslem	Palest.	h
+27750	31	88	3374	2.6.47	Muslem	Palest.	h
+27751	31	88	3375	2.6.47	Moslem	Palest.	h
+27752	31	88	3376	2.6.47	Mosl.	Palest.	h
+27754	31	88	3378	2.6.47	Muslem	Palest.	h
+27755	31	88	3379	2.6.47	Jew	Palest.	h
+27756	31	88	3380	2.6.47	Christ	British C/E	h
+27757	31	89	3381	2.6.47	Christ	British C/E	h
+27758	31	89	3382	2.6.47	Christ	British C/E	h
+27759	31	89	3383	2.6.47	Christ	British C/E	h
+27760	31	89	3384	2.6.47	Christ	British	h
+27761	31	89	3385	2.6.47	Christ	British	h
+27762	31	89	3386	3.6.47	Muslem	Palest.	h
+27763	31	89	3387	3.6.47	Muslem	Palest.	h
+27764	31	89	3388	3.6.47	Muslem	Palest.	h
+27765	31	89	3389	3.6.47	Muslem	Palest.	h
+27766	31	89	3390	3.6.47	Muslem	Palest.	h
+27767	31	89	3391	3.6.47	Muslem	Palest.	h
+27768	31	89	3392	3.6.47	Muslem	Palest.	h
+27769	31	90		3.6.47	Muslem	Palest.	h
+27770	31	90	3395	3.6.47	Christ.	British	h
+27771	31	90	3396	3.6.47	Christ.	British	h
+27772	31	90	3397	3.6.47	Musl.	Palest.	h
+27773	31	90	3398	3.6.47	Musl.	Palest.	h
+27774	31	90	3399	3.6.47	Christ.	British	h
+27775	31	90	3400	3.6.47	Christ.	British	h
+27776	31	90	3401	3.6.47	Christ.	Bri.	h
+27777	31	90	3402	3.6.47	Christ.	Palest.	h
+27778	31	90	3403	3.6.47	Mosl.	Palest.	h
+27779	31	90	3404	3.6.47	Mosl.	Palest.	h
+27780	31	91		4.6.47	Muslem	Palest.	h
+27781	31	91	3408	4.6.47	Muslem	Palest.	h
+27782	31	91	3409	4.6.47	Muslem	Palest.	h
+27783	31	91	3410	4.6.47	Muslem	Palest.	h
+27784	31	91	3411	4.6.47	Muslem	Palest.	h
+27785	31	91	3412	4.6.47	Jew	Palest.	h
+27786	31	91	3413	4.6.47	Muslem	T.J.	m
+27787	31	91	3414	7.6.47	Muslem	Palest.	h
+27788	31	91	3415	4.6.47	Muslem	Palest.	h
+27789	31	91	3416	4.6.47	Muslem	Palest.	h
+27790	31	91	3417	4.6.47	Muslem	Palest.	h
+27791	31	92		4.6.47	Muslem	Palest.	h
+27792	31	92	3420	4.6.47	Muslem	Palest.	h
+27793	31	92	3421	4.6.47	Christ.	Palest.	h
+27794	31	92	3422	4.6.47	Mosl.	T.J.	m
+27795	31	92	3423	4.6.47	Muslem	Syrian	h
+27796	31	92	3424	4.6.47	Muslem	Palest.	h
+27797	31	92	3425	4.6.47	Muslem	Palest.	h
+27798	31	92	3426	4.6.47	Muslem	Syrian	h
+27799	31	92	3427	4.6.47	Christ.	British C/E	h
+27801	31	92	3429	4.6.47	Christ	British C/E	h
+40155	31	93	3430	4.6.47	Christ.	British R/C	h
+27802	31	93	3431	4.6.47	Christ.	British C/E	h
+27803	31	93	3432	5.6.47	Muslem	Egypt.	h
+27804	31	93	3433	5.6.47	Druze	Palest.	h
+27805	31	93	3434	5.6.47	Muslem	Palest.	h
+27806	31	93	3435	5.6.47	Muslem	Palest.	h
+27807	31	93	3436	5.6.47	Muslem	Palest.	h
+27808	31	93	3437	5.6.47	Muslem	Palest.	h
+27809	31	93	3438	5.6.47	Muslem	Palest.	h
+27810	31	93	3439	5.6.47	Muslem	Palest.	h
+27811	31	93	3440	5.6.47	Muslem	T.J.	h
+27812	31	93	3441	5.6.47	Jew	Palest.	h
+40156	31	94	3442	5.6.47	Muslem	T.J.	h
+27813	31	94	3443	5.6.47	Muslem	Palest.	h
+27814	31	94	3444	5.6.47	Muslem	Palest.	h
+27815	31	94	3445	5.6.47	Muslem	Palest.	h
+27816	31	94	3446	5.6.47	Muslem	Lebnani	m
+27817	31	94	3447	5.6.47	Muslem	Palest.	h
+27818	31	94	3448	5.6.47	Christ	British C/E	h
+27819	31	94	3449	5.6.47	Muslem	Palest.	h
+27820	31	94	3450	5.6.47	Christ	Palest.	h
+27821	31	94	3451	5.6.47	Christ	Palest. Gr.	m
+27822	31	94	3452	5.6.47	Muslem	Palest.	h
+27823	31	94	3453	5.6.47	Christ	British C/E	h
+27824	31	95	3454	5.6.47	Muslem	Palest.	h
+27825	31	95	3455	5.6.47	Muslem	Palest.	h
+27826	31	95	3456	5.6.47	Muslem	Palest.	h
+27827	31	95	3457	5.6.47	Muslem	Syrian	h
+27828	31	95	3458	5.6.47	Muslem	Palest.	h
+27829	31	95	3459	5.6.47	Muslem	Palest.	h
+27830	31	95	3460	5.6.47	Muslem	T.J.	h
+27831	31	95	3461	3.6.47	Muslem	Palest.	h
+27832	31	95	3462	6.6.47	Christ	Palest.	h
+27833	31	95	3463	6.6.47	Muslem	Palest.	h
+27834	31	95	3464	6.6.47	Christ	British C/E	h
+27835	31	95	3465	6.6.47	Muslem	Syrian	h
+27836	31	96	3466	5.5.47	Christian	Palest.	h
+27837	31	96	3467	6.6.47	Muslem	Palest.	h
+27838	31	96	3468	6.6.47	Muslem	Palest.	h
+27839	31	96	3469	4.6.47	Muslem	Palest.	h
+27840	31	96	3470	6.6.47	Muslem	Palest.	h
+27841	31	96	3471	6.6.47	Muslem	Palest.	h
+27842	31	96	3472	6.6.47	Muslem	Palest.	h
+27843	31	96	3473	6.6.47	Muslem	Palest.	h
+27844	31	96	3474	6.6.47	Muslem	Palest.	h
+27845	31	96	3475	6.6.47	Christ	Palest. O.	h
+27846	31	96	3476	6.6.47	Muslem	Labaninian	m
+27847	31	96	3477	6.6.47	Muslem	Palest.	h
+27848	31	97		6.6.47	Muslem	Palest.	m
+27849	31	97	3480	6.6.47	Muslem	Palest.	h
+27850	31	97	3481	6.6.47	Christ	Palest.	h
+27851	31	97	3482	6.6.47	Muslem	Palest.	h
+27852	31	97	3483	6.6.47	Christ.	British	h
+27853	31	97	3484	6.6.47	Jew	Palest.	h
+27854	31	97	3485	6.6.47	Muslem	Palest.	h
+27855	31	97	3486	6.6.47	Christ	Palest.	h
+27856	31	97	3487	6.6.47	Jew	Palest.	h
+27857	31	97	3488	7.6.47	Christ	Palest.	h
+27858	31	97	3489	7.6.47	Muslem	Palest.	h
+27859	31	98		7.6.47	Muslem	Palest.	h
+27860	31	98	3492	7.6.47	Muslem	Palest.	h
+27861	31	98	3493	7.6.47	Muslem	Palest.	h
+27862	31	98	3494	7.6.47	Muslem	Palest.	h
+27863	31	98	3495	7.6.47	Druze	Palest.	h
+27864	31	98	3496	7.6.47	Jew	Palest.	h
+27865	31	98	3497	7.6.47	Muslem	Palest.	h
+27866	31	98	3498	7.6.47	Muslem	Palest.	h
+27867	31	98	3499	7.6.47	Muslem	Palest.	h
+27868	31	98	3500	7.6.47	Muslem	Palest.	h
+27869	31	98	3501	7.6.47	Muslem	Palest.	h
+27870	31	99		7.6.47	Christ	Palest.	h
+27871	31	99	3504	7.6.47	Christ	Palest.	h
+27872	31	99	3505	7.6.47	Christ	Palest. O.	h
+27873	31	99	3506	7.6.47	Muslem	Palest.	h
+27874	31	99	3507	7.6.47	Muslem	Palest.	h
+27875	31	99	3508	7.6.47	Christ	Palest. O.	h
+27876	31	99	3509	7.6.47	Muslem	Palest.	h
+27877	31	99	3510	7.6.47	Muslem	Palest.	h
+27878	31	99	3511	7.6.47	Muslem	Palest.	h
+27879	31	99	3512	7.6.47	Muslem	Palest.	h
+27880	31	99	3513	7.6.47	Muslem	Palest.	h
+27881	31	100	3514	7.6.47	Mosl.	Palest.	h
+27882	31	100	3515	7.6.47	Muslem	Palest.	h
+27883	31	100	3516	7.6.47	Muslem	Palest.	h
+27884	31	100	3517	7.6.47	Muslem	Palest.	h
+27885	31	100	3518	7.6.47	Jew	Palest.	h
+27886	31	100	3519	7.6.47	Christ	British	h
+27887	31	100	3520	7.6.47	Christ	British	h
+27888	31	100	3521	7.6.47	Muslem	Palest.	h
+27889	31	100	3522	7.6.47	Muslem	Palest.	h
+27890	31	100	3523	7.6.47	Christ	British	h
+27891	31	100	3524	7.6.47	Christ	British	h
+27892	31	100	3525	7.6.47	Muslem	Palest.	h
+40157	31	101	3526	7.6.47	Jew	German	h
+27893	31	101	3527	5.6.47	Muslem	Palest.	h
+27894	31	101	3528	8.6.47	Muslem	Palest.	h
+27895	31	101	3529	8.6.47	Muslem	Palest.	h
+27896	31	101	3530	8.6.47	Muslem	Palest.	h
+27897	31	101	3531	8.6.47	Muslem	Palest.	h
+27898	31	101	3532	8.6.47	Muslem	Palest.	h
+27899	31	101	3533	8.6.47	Muslem	Palest.	h
+27900	31	101	3534	8.6.47	Muslem	Palest.	h
+27901	31	101	3535	8.6.47	Muslem	Palest.	h
+27902	31	101	3536	9.6.47	Muslem	Palest.	h
+27903	31	101	3537	9.6.47	Muslem	Palest.	h
+27964	32	7	5991		Moslem	Palest.	h
+27965	32	7	5992		Moslem	Palest.	h
+27966	32	7	5993		Christ.	Palest.	h
+27967	32	7	5994		Christ.	Palest.	h
+27968	32	7	5995		Moslem	Palest.	h
+27969	32	7	5996		Moslem	Palest.	h
+27970	32	7	5997		Moslem	Syria	h
+27971	32	7	5998		Mosl.	Palest.	h
+27972	32	7	5999		Moslem	Palest.	h
+27973	32	7	6000		Christ.	British	h
+27974	32	7	6001		Jewess	Palest.	h
+27975	32	7	6002		Moslem	Palest.	h
+27983	32	8	6010	13.9.47			h
+28037	32	13	6064	14.9.47	Jewess	Palest.	m
+28241	32	30	6260	22.9.47	Moslem	Palest.	h
+28242	32	30	6261	22.9.47	Moslem	Palest.	h
+28243	32	30	6262	22.9.47	Moslem	Egypt.	h
+28244	32	30	6263	22.9.47	Moslem	Pal.	h
+28245	32	30	6264	22.9.47	Moslem	Pal.	h
+28246	32	30	6265	22.9.47	Mos.	Pal.	h
+28247	32	30	6266	22.9.47	Christ.	Palest.	h
+28248	32	30	6267	22.9.47	Christ.	Palest.	h
+28249	32	30	6268	22.9.47	Christ.	Palest.	h
+28250	32	30	6269	22.9.47	Moslem	Palest.	h
+28251	32	30	6270	22.9.47	Moslem	Palest.	h
+28300	32	35	6318		Christ.	Palest.	h
+28301	32	35	6319		Muslem	Palest.	h
+28302	32	35	6320		Muslem	Palest.	h
+28303	32	35	6321		Muslem	Palest.	h
+28304	32	35	6322		Mos.	Pal.	h
+28305	32	35	6323?		Jew	Palest.	h
+28306	32	35	6324		Mos.	Pal.	h
+28307	32	35	6325		Christ.	Pal.	h
+28308	32	35	6326		Christ.	Pal.	h
+28309	32	35	6327		Muslem	Palest.	h
+28310	32	35	6328		Muslem	Palest.	h
+28311	32	35	6329		Muslem	Palest.	h
+28397	32	44	6427	27.9.47	Jew		h
+28505	32	53	6529	1-10-47		Polish	m
+28537	32	56	6561	3.10.47	Mos.	Pal.	h
+28538	32	56	6562	3.10.47	Mos.	Pal.	h
+28539	32	56	6563	3.10.47	Mos.	Pal.	h
+29071	32	100	7090	25.10.47	Muslem	Libaninean	h
+29222	33	12	146	22.1.48	Moslem	Palest.	h
+29258	33	15	182	26.1.48	Moslem	Palest.	h
+29259	33	15	183	26.1.48	Moslem	Palest.	h
+29260	33	15	184	26.1.48	Christ.	Palest.	h
+29261	33	15	185	26.1.48	Moslem	Palest.	h
+29262	33	15	186	26.1.48	Christ.	Palest. M	m
+29264	33	15	188	26.1.48	Moslem	Palest.	h
+29265	33	15	189	26.1.48	Moslem	Palest.	h
+29266	33	15	190	26.1.48	Moslem	Palest.	h
+29323	33	20	247		Muslem	Palest.	h
+29433	33	30	356	14.2.48	Muslem	Syrian	h
+29551	33	40	473	2.3.48	?		h
+29648	33	48	570	17.3.48	Christ.	Palest.	h
+29742	33	56	664	27.2.48	Christ.	Palest.	h
+29814	33	62	736	2.4.48	Christian	Palestinian	h
+29839	33	64	760	15.4.48			h
+29859	33	66	780		Muslem	T/Jord.	m
+29860	33	66	781		Muslem	Egyptian	h
+29861	33	66	782		Muslem	Palestinian	h
+29862	33	66	783		Moslem	Palestinian	h
+29863	33	66	784		Mosl	Palest.	m
+29864	33	66	785		Christian	Palestinian	h
+29865	33	66	786		Christian	Palestinian	h
+29866	33	66	787		Muslem	Palestinian	h
+29867	33	66	788		Muslem	Palestinian	h
+29868	33	66	789		Muslem	Egyptian	h
+29869	33	66	790		Muslem	Palestinian	h
+29870	33	66	791		Muslem	Palestinian	h
+29871	33	67	792		Muslem	Palestinian	h
+29872	33	67	793		Christ	Palest.	h
