@@ -136,6 +136,9 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         ("Halisa", r"\bk?h?al+[eiy]+s+[aeiy]?h?\b"),
         ("Harat al-Kanais", r"kana[iy]+s|churches?\s*(qr|qu|q\b|st)"),
         ("Harat al-Kishleh", r"kishl|kashl|barracks\s*q"),
+        # The Persian quarter and the Persian Colony are one place, around
+        # today's HaParsim Street (user ruling 2026-10-22).
+        ("Persian Colony", r"persian\s*(col|q)"),
         ("Sharqiyya", r"shar[kq]i"),
         ("Ard el-Ramel", r"\b(ard|arab)?\W*(el|al)?\W*ramel\b"),
         ("Kiryat Eliyahu", r"k[iy]r[iy]?y?at\s*eli"),

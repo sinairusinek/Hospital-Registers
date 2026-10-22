@@ -8,6 +8,7 @@
    "lat": 32.807764,
    "lon": 34.99815,
    "note": "",
+   "osm": "",
    "kima": "21150",
    "kimaRelation": "identity"
   },
@@ -19,6 +20,7 @@
    "lat": 32.8111,
    "lon": 35,
    "note": "",
+   "osm": "",
    "kima": "19522",
    "kimaRelation": "identity"
   },
@@ -30,6 +32,7 @@
    "lat": 32.8163,
    "lon": 34.9963,
    "note": "",
+   "osm": "",
    "kima": "85346",
    "kimaRelation": "identity"
   },
@@ -41,6 +44,7 @@
    "lat": 32.80609,
    "lon": 35.006845,
    "note": "Not Harat al-Yahud: two places (Naor 2019).",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -52,6 +56,7 @@
    "lat": 32.828056,
    "lon": 34.9875,
    "note": "Tahanat HaCarmel, the quarter named for the station.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -63,6 +68,7 @@
    "lat": 32.801508,
    "lon": 35.006764,
    "note": "",
+   "osm": "",
    "kima": "83220",
    "kimaRelation": "identity"
   },
@@ -74,6 +80,7 @@
    "lat": 32.805556,
    "lon": 34.986944,
    "note": "Drawn at Carmel Center; the register's \"Mount Carmel\" is the whole ridge.",
+   "osm": "",
    "kima": "26805",
    "kimaRelation": "near"
   },
@@ -85,6 +92,7 @@
    "lat": 32.799722,
    "lon": 35.005,
    "note": "Drawn on the wadi itself (Nahal Giborim); the quarter lay along it.",
+   "osm": "",
    "kima": "86518",
    "kimaRelation": "near"
   },
@@ -96,6 +104,7 @@
    "lat": 32.833911,
    "lon": 34.981714,
    "note": "",
+   "osm": "",
    "kima": "21063",
    "kimaRelation": "identity"
   },
@@ -107,6 +116,7 @@
    "lat": 32.8176,
    "lon": 34.9997,
    "note": "The churches' quarter of the old town, drawn at Hamra (Paris) Square, the \"Churches District\".",
+   "osm": "",
    "kima": "70144",
    "kimaRelation": "near"
   },
@@ -118,6 +128,7 @@
    "lat": 32.81256,
    "lon": 35.00396,
    "note": "Drawn at Faisal Square, where the old town's eastern gate stood.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -129,6 +140,7 @@
    "lat": 32.82,
    "lon": 34.990556,
    "note": "",
+   "osm": "",
    "kima": "21139",
    "kimaRelation": "identity"
   },
@@ -139,7 +151,8 @@
    "anchor": "Hawass",
    "lat": 32.776568,
    "lon": 35.034574,
-   "note": "Khwasa: the workers' settlement laid out from 1937 west of Balad al-Sheikh (Goren 2006). Outside the municipality.",
+   "note": "Khwasa: the workers' settlement laid out from 1937 west of Balad al-Sheikh (Goren 2006), outside the municipality, for the families evacuated from Ard el-Ramel. It stood where the Ben Dor quarter of Nesher is today (hewiki), which is where its point falls.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -151,6 +164,7 @@
    "lat": 32.8176,
    "lon": 34.9997,
    "note": "Hamra Square, today Paris Square.",
+   "osm": "",
    "kima": "70144",
    "kimaRelation": "identity"
   },
@@ -162,6 +176,7 @@
    "lat": 32.790278,
    "lon": 35.015833,
    "note": "",
+   "osm": "",
    "kima": "21497",
    "kimaRelation": "identity"
   },
@@ -173,6 +188,7 @@
    "lat": 32.824594,
    "lon": 34.987231,
    "note": "",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -184,6 +200,7 @@
    "lat": 32.815833,
    "lon": 35.002222,
    "note": "Zahir al-Umar's walled town, between Hamra and Faisal Squares.",
+   "osm": "",
    "kima": "26801",
    "kimaRelation": "near"
   },
@@ -195,6 +212,7 @@
    "lat": 32.8134,
    "lon": 35.002989,
    "note": "The old town's Jewish quarter, built inside the Eastern Quarter; not Ard el-Yahud. Drawn at the al-Pasha compound on Hammam al-Pasha Street, which stood at its edge (hewiki) and housed its Talmud Torah until the quarter was evacuated on 18 Jul 1938.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -206,17 +224,19 @@
    "lat": 32.813022,
    "lon": 34.992247,
    "note": "Herzlia, on the lower Carmel slope between Hadar and Wadi Nisnas.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
   {
    "name": "Ahuza",
-   "qid": "Q4159159",
-   "relation": "identity",
-   "anchor": "Achuza",
-   "lat": 32.774142,
-   "lon": 34.991325,
-   "note": "Ahuzat Shmuel, on the Carmel ridge.",
+   "qid": "Q7060877",
+   "relation": "near",
+   "anchor": "Horev Square",
+   "lat": 32.78452,
+   "lon": 34.987115,
+   "note": "Ahuzat Shmuel, on the Carmel ridge (Q4159159, whose point lies 1.2 km south, in the later Ramot HaCarmel district). Drawn at Horev Square, \"in the heart of old Ahuza\" (hewiki), where its first streets, Sinai, Moriah and Horev, were laid in 1924.",
+   "osm": "",
    "kima": "21015",
    "kimaRelation": "identity"
   },
@@ -228,6 +248,7 @@
    "lat": 32.8169,
    "lon": 34.985533,
    "note": "The Abbas quarter, named for its streets, between the German Colony and Hadar.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -239,28 +260,43 @@
    "lat": 32.814041,
    "lon": 34.999813,
    "note": "Drawn at Burj al-Salam, Zahir al-Umar's citadel above the old town, opposite today's City Hall; the road up to it was called al-Burj.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
   {
    "name": "Ard el-Ramel",
-   "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "The tin-hut quarter east of the Wadi Rushmiya estuary, by the Shemen factory (Goren 2006); no item.",
+   "qid": "Q12036875",
+   "relation": "near",
+   "anchor": "the Hof Shemen industrial zone",
+   "lat": 32.806499,
+   "lon": 35.017575,
+   "note": "The tin-hut quarter east of the Wadi Rushmiya estuary, by the Shemen factory (Goren 2006): 500 huts and 1,700 people in 1934-35, largely cleared from 1938. Wikidata gives it as an alias of the Haifa Bay quarter, whose point is 2.5 km east by the Check Post. Drawn instead at the Hof Shemen industrial zone (OpenStreetMap), on the beach that took the factory's name.",
+   "osm": "R2658680",
    "kima": "",
    "kimaRelation": ""
   },
   {
    "name": "Harat al-Mukhallis",
    "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "Named for the Church of the Saviour (\"near Kanisat el Mukhallis\"); no item for the quarter or the church.",
+   "relation": "near",
+   "anchor": "Y. L. Peretz Street",
+   "lat": 32.814766,
+   "lon": 34.9953,
+   "note": "Harat al-Mukhallis, \"the Saviour's quarter\", named for the Church of the Saviour (\"near Kanisat el Mukhallis\"). It lay around the street of that name, renamed Y. L. Peretz Street after 1948. No item for the quarter or the church; drawn on Peretz Street (OpenStreetMap).",
+   "osm": "W230743881",
+   "kima": "",
+   "kimaRelation": ""
+  },
+  {
+   "name": "Persian Colony",
+   "qid": "",
+   "relation": "near",
+   "anchor": "HaParsim Street",
+   "lat": 32.817712,
+   "lon": 34.991377,
+   "note": "The Persian quarter, also written the Persian Colony: one place, around the street now called HaParsim (\"the Persians\"), on the lower slope above Wadi Nisnas. No item; drawn on HaParsim Street (OpenStreetMap).",
+   "osm": "W62075104",
    "kima": "",
    "kimaRelation": ""
   },
@@ -272,6 +308,7 @@
    "lat": null,
    "lon": null,
    "note": "Al-Harat al-Sharqiyya, the old town's Eastern Quarter (54 dunams, mostly Muslim); no item of its own.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -282,7 +319,8 @@
    "anchor": "",
    "lat": null,
    "lon": null,
-   "note": "The barracks quarter of the old town, by the Ottoman kishla; no item.",
+   "note": "The barracks quarter of the old town, by the Ottoman kishla. The Kishle building stands at 24 Derech HaAtzmaut in the lower town, but neither Wikidata nor OpenStreetMap has it or that house number, so it is not yet drawn.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -294,6 +332,7 @@
    "lat": null,
    "lon": null,
    "note": "Harat al-Ghazzawiyya, named for families from Gaza; no item. Not Khirbat al-Ghazazwa by Burayka.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   },
@@ -305,6 +344,7 @@
    "lat": null,
    "lon": null,
    "note": "No item.",
+   "osm": "",
    "kima": "",
    "kimaRelation": ""
   }
@@ -318,6 +358,7 @@
    "lat": 32.811111,
    "lon": 35.005278,
    "note": "Drawn at Haifa East, the railway's Haifa terminus.",
+   "osm": "",
    "from": null,
    "to": null,
    "icon": "🚂"
@@ -330,6 +371,7 @@
    "lat": 32.833384,
    "lon": 34.98584,
    "note": "The seashore building at Bat Galim, today Rambam, from 31 Oct 1938.",
+   "osm": "",
    "from": "1938-10-31",
    "to": null,
    "icon": "✚"
@@ -337,11 +379,12 @@
   {
    "name": "Government Hospital",
    "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "The old leased wards on Mountain Road, until 31 Oct 1938. Exact site unsourced. Undated records are counted here.",
+   "relation": "near",
+   "anchor": "St Luke's Church, Mountain Road",
+   "lat": 32.817491,
+   "lon": 34.992721,
+   "note": "The old leased wards on Mountain Road (Tariq al-Jabal, today Sderot HaZiyonut), until 31 Oct 1938: \"the former hospital wards on Mountain Road\" (Palestine Post 8 Nov 1938). Which building is not known; drawn at St Luke's Church on that road (OpenStreetMap). Undated records are counted here.",
+   "osm": "W660034185",
    "from": null,
    "to": "1938-10-30",
    "icon": "✚"
@@ -354,6 +397,7 @@
    "lat": 32.820118,
    "lon": 35.00448,
    "note": "Drawn at the port.",
+   "osm": "",
    "from": null,
    "to": null,
    "icon": "⚓"
@@ -366,6 +410,7 @@
    "lat": 32.820118,
    "lon": 35.00448,
    "note": "The harbour contractors; drawn at the port.",
+   "osm": "",
    "from": null,
    "to": null,
    "icon": "⚓"
@@ -378,6 +423,7 @@
    "lat": 32.816806,
    "lon": 35.003444,
    "note": "Drawn at the Custom House (by its railway halt).",
+   "osm": "",
    "from": null,
    "to": null,
    "icon": "▣"
@@ -390,6 +436,7 @@
    "lat": 32.812561,
    "lon": 34.999169,
    "note": "Haifa City Hall on Hassan Shukri Street, from 29 Jun 1942 (the inception date Wikidata gives).",
+   "osm": "",
    "from": "1942-06-29",
    "to": null,
    "icon": "🏛"
@@ -402,6 +449,7 @@
    "lat": 32.8176,
    "lon": 34.9997,
    "note": "The town hall at the corner of Allenby Road and Stanton Street (today Shivat Zion), from 1934: Palestine Post 18 Jun 1936; HaBoker 11 May 1939 (\"the municipality building on Allenby Street\"); HaBoker and Haaretz 4 Mar 1948 (\"the former municipality building\", bombed). Probably the old Italian Hospital building, which the municipality resolved in Dec 1933 to rent from 1934 (Filastin 7 Dec 1933). No item; drawn at Hamra (Paris) Square, from whose south-west corner Allenby Road leaves. The month of the move is not known.",
+   "osm": "",
    "from": "1934-01-01",
    "to": "1942-06-28",
    "icon": "🏛"
@@ -414,6 +462,7 @@
    "lat": null,
    "lon": null,
    "note": "Before 1934: an earlier building on Allenby Street, \"the old municipality building\" (Filastin 11 Apr 1937). Its site is not fixed. Undated records are counted here.",
+   "osm": "",
    "from": null,
    "to": "1933-12-31",
    "icon": "🏛"
@@ -426,6 +475,7 @@
    "lat": 32.763869,
    "lon": 35.05815,
    "note": "The Nesher cement factory below Yagur, outside the town; drawn where it stood.",
+   "osm": "",
    "from": null,
    "to": null,
    "icon": "🏭"
@@ -438,6 +488,7 @@
    "lat": 32.793354,
    "lon": 35.051965,
    "note": "From 1939: the Haifa refinery (Q124285258, which has no coordinates) in Haifa Bay, completed in 1939 at the end of the Kirkuk pipeline. Drawn at its cooling towers, the Halebeniyot, in use from 1939.",
+   "osm": "",
    "from": "1939-01-01",
    "to": null,
    "icon": "🛢"
@@ -450,6 +501,7 @@
    "lat": null,
    "lon": null,
    "note": "Before 1939: pipeline construction (from 1932) and the Haifa terminal, where the first oil arrived on 14 Oct 1934. The terminal has no item, so nothing is drawn. Undated records are counted here.",
+   "osm": "",
    "from": null,
    "to": "1938-12-31",
    "icon": "🛢"

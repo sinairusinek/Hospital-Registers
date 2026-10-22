@@ -36,11 +36,11 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'Where a point comes from',
-    body: <p>Every point is a Wikidata item's own coordinate. Where the item is the quarter itself the pie is drawn solid. Where the quarter has no item, it is drawn at a landmark in or beside it, with a dashed rim — Acre Gate at Faisal Square, where the gate stood; the churches' quarter at Hamra Square. Two quarters drawn at the same landmark are set slightly apart. A quarter with no item and no landmark close enough is listed in the side panel, not guessed onto the map.</p>
+    body: <p>A point is a Wikidata item's own coordinate, or, where Wikidata has none or a wrong one for the period, an OpenStreetMap feature's (a street that kept the quarter's name; the industrial zone on the beach where the hut quarter stood). The side panel links to whichever was used. Where the item is the quarter itself the pie is drawn solid. Where the quarter has no item, it is drawn at a landmark in or beside it, with a dashed rim — Acre Gate at Faisal Square, where the gate stood; the churches' quarter at Hamra Square. Two quarters drawn at the same landmark are set slightly apart. A quarter with no item and no landmark close enough is listed in the side panel, not guessed onto the map.</p>
   },
   {
     heading: 'The institutions',
-    body: <p>The square badges are the institutions the addresses name — the railway, the port, the hospital itself. An institution in the address means the patient was <em>reached through</em> it, not necessarily employed by it: the hospital as address is usually its own staff. Only an institution with one site in Haifa is placed. The police, the army, the I.P.C. and the rest are many places, or places nobody has located; they are listed under the map's legend and in the side panel, and open their records the same way. The Government Hospital is two sites: the old leased wards on Mountain Road until 31 October 1938, and the seashore building at Bat Galim after it.</p>
+    body: <p>The square badges are the institutions the addresses name — the railway, the port, the hospital itself. An institution in the address means the patient was <em>reached through</em> it, not necessarily employed by it: the hospital as address is usually its own staff. Only an institution with one site in Haifa is placed. The police, the army, the I.P.C. and the rest are many places, or places nobody has located; they are listed under the map's legend and in the side panel, and open their records the same way. The Government Hospital is two sites: the old leased wards on Mountain Road until 31 October 1938, drawn at St Luke's Church on that road because the building itself is not known, and the seashore building at Bat Galim after it.</p>
   }
 ];
 
@@ -79,6 +79,8 @@ interface Point {
   lat: number | null; lon: number | null; note: string;
   /** The Kima gazetteer's entry, and whether it is the place or only near it. */
   kima?: string; kimaRelation?: string;
+  /** The OpenStreetMap feature the point was taken from, as W123 / N123 / R123, when it is not the item's own. */
+  osm?: string;
 }
 interface Site extends Point { from: string | null; to: string | null; icon: string; }
 
@@ -419,13 +421,13 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       all.forEach(r => { const g = facetValue(r[GROUP_COLUMN]); mix[g] = (mix[g] || 0) + 1; });
       return { title: selection.name, subtitle: selection.community, rows, all: all.length, mix,
                qid: q?.qid || '', note: q?.note || '', anchor: q?.relation === 'near' ? q.anchor : '',
-               kima: q?.kima || '', kimaNear: q?.kimaRelation === 'near' };
+               kima: q?.kima || '', kimaNear: q?.kimaRelation === 'near', osm: q?.osm || '' };
     }
     const inst = institutions.find(i => siteKey(i.site) === selection.key);
     if (!inst) return null;
     return { title: inst.site.name, subtitle: null, rows: inst.rows, all: inst.rows.length, mix: null,
              qid: inst.site.qid, note: inst.site.note, anchor: inst.site.relation === 'near' ? inst.site.anchor : '',
-             kima: '', kimaNear: false };
+             kima: '', kimaNear: false, osm: inst.site.osm || '' };
   }, [selection, byQuarter, quarters, institutions]);
 
   const records = selected?.rows || [];
@@ -547,6 +549,10 @@ const HaifaView: React.FC<Props> = ({ data }) => {
                        className="text-indigo-600 underline">{selected.qid}</a>
                   )}
                   {selected.anchor && <span>drawn at {selected.anchor}</span>}
+                  {selected.osm && (
+                    <a href={`https://www.openstreetmap.org/${({ W: 'way', N: 'node', R: 'relation' } as Record<string, string>)[selected.osm[0]]}/${selected.osm.slice(1)}`}
+                       target="_blank" rel="noreferrer" className="text-indigo-600 underline">OpenStreetMap</a>
+                  )}
                   {selected.kima && (
                     <a href={`https://data.geo-kima.org/Places/Details/${selected.kima}`} target="_blank" rel="noreferrer"
                        className="text-indigo-600 underline">
