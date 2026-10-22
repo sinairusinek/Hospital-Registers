@@ -549,9 +549,9 @@ recovered	Ward	Infectious Diseases Section	Ward: Isolation, read from the clerk'
 recovered	Ward	Infectious Diseases Ward	Ward: Isolation, read from the clerk's written ward	11
 recovered	Ward	Infectious Section	Ward: Isolation, read from the clerk's written ward	14
 recovered	Ward	Is.	Ward: Isolation, read from the clerk's written ward	513
-recovered	Ward	Isol	Ward: Isolation, read from the clerk's written ward	373
+recovered	Ward	Isol	Ward: Isolation, read from the clerk's written ward	372
 recovered	Ward	Isol.	Ward: Isolation, read from the clerk's written ward	46
-recovered	Ward	Isolation	Ward: Isolation, read from the clerk's written ward	2120
+recovered	Ward	Isolation	Ward: Isolation, read from the clerk's written ward	1962
 recovered	Ward	Isolation / British Section	Ward: Isolation | British Section, read from the clerk's written ward	1
 recovered	Ward	Isolation Section	Ward: Isolation, read from the clerk's written ward	17
 recovered	Ward	Isolation Ward	Ward: Isolation, read from the clerk's written ward	73
@@ -608,8 +608,8 @@ corrected	Ward as written	Nablus|Gynecology	Nablus | General — the register wr
 corrected	Ward as written	R.A.S.C.|Gynecology	R.A.S.C. | General — the register writes Gen., not Gyn.	1
 corrected	Ward as written	Surg / Gen | Surgical / Gynaecology	Surg | Gen | Surgical | General — the register writes Gen., not Gyn.	1
 corrected	Ward as written	Wadi Nisnas|Gynecology	Wadi Nisnas | General — the register writes Gen., not Gyn.	1
-derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	637
-derived	Procedure	operation named in the diagnosis column	Procedure only	57
+derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	645
+derived	Procedure	operation named in the diagnosis column	Procedure only	49
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	51
 review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	40
 review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	1
@@ -624,26 +624,26 @@ review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole fro
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	974
 review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1311
 review	Review Flags	serial-repaired	Record number repaired: a digit slip against the register's own run	40
-review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	217
-review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	15
-review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	326
+review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	216
+review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	16
+review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	762
 review	Review Flags	typhus-recoded-from-register	Typhus code set from the register's own wording, not the classifier's guess at the insect	461
 review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	39
 review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	13
-review	Review Flags	procedure-only	An operation named with no diagnosis behind it	57
-review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1294
+review	Review Flags	procedure-only	An operation named with no diagnosis behind it	49
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	862
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	275
 review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1152
-review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	6394
-review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	2340
+review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	6552
+review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	2537
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
 review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	157
 review	Review Flags	religion-from-written	Religion was blank in the cleaned column; read from the spelling the clerk wrote	436
 review	Review Flags	religion-read-from-scan	Religion blank or misread (NB31); read off the page image	437
 review	Review Flags	diagnosis-read-from-scan	Diagnosis was blank; read off the page image (not yet ICD-9 coded)	2759
-withheld	Next of Kin			30036
-withheld	discarded_values			30036
-withheld	splitDiscValues			30036
+withheld	Next of Kin			30038
+withheld	discarded_values			30038
+withheld	splitDiscValues			30038
 withheld	Address	value repeated the next of kin		236
 withheld	City	value repeated the next of kin		3
 withheld	Occupation	value repeated the next of kin		36
@@ -651,12 +651,12 @@ withheld	Original Diagnosis	value repeated the next of kin		1
 withheld	Original Result	value repeated the next of kin		1
 withheld	Payment Status	value repeated the next of kin		1
 withheld	Standardized Diagnosis	value repeated the next of kin		1
-withheld	Ward	value repeated the next of kin		3
+withheld	Ward	value repeated the next of kin		2
 withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		249
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23040
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23042
 derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	163
 derived	Page_Number	blank, read off the page images (page-readings.tsv)		5275
 derived	Original Diagnosis	blank, read off the page image (ward-diagnosis-readings.tsv)	flagged diagnosis-read-from-scan	2759
@@ -687,6 +687,7 @@ derived	Ward	British Section re-read off the page as 'B'	(pavilion letter)	139
 derived	Ward	British Section re-read off the page as 'P.M.F.'	(as written)	131
 derived	Ward	British Section re-read off the page as 'Med.'	Medical	124
 derived	Ward	British Section re-read off the page as 'B/s.'	British Section	119
+derived	Ward	British Section re-read off the page as 'Isol C'	Isolation	89
 derived	Ward	British Section re-read off the page as 'A'	(as written)	77
 derived	Ward	British Section re-read off the page as 'D.'	(as written)	74
 derived	Ward	British Section re-read off the page as 'A.'	(as written)	70
@@ -695,40 +696,41 @@ derived	Ward	British Section re-read off the page as 'Surg'	Surgical	56
 derived	Ward	British Section re-read off the page as 'PMF'	(as written)	52
 derived	Ward	British Section re-read off the page as 'E'	(as written)	52
 derived	Ward	British Section re-read off the page as 'P.W.'	Prison Ward	50
-derived	Ward	British Section re-read off the page as 'Isol C'	Isolation	38
+derived	Ward	British Section re-read off the page as 'Isol B'	Isolation	49
+derived	Ward	British Section re-read off the page as 'Isol A'	Isolation	44
 derived	Ward	British Section re-read off the page as 'S/S.'	Surgical	38
 derived	Ward	British Section re-read off the page as 'Hut.'	(as written)	35
 derived	Ward	British Section re-read off the page as 'I.'	Isolation	31
-derived	Ward	British Section re-read off the page as 'Isol B'	Isolation	30
 derived	Ward	British Section re-read off the page as 'B.'	British Section	29
 derived	Ward	British Section re-read off the page as 'Surg.'	Surgical	27
 derived	Ward	British Section re-read off the page as 'Med'	Medical	27
 derived	Ward	British Section re-read off the page as 'Gen'	General	25
-derived	Ward	British Section re-read off the page as 'Isol A'	Isolation	25
 derived	Ward	British Section re-read off the page as 'P.M.G.'	(as written)	22
 derived	Ward	British Section re-read off the page as 'G'	General	22
 derived	Ward	British Section re-read off the page as 'Gen.'	General	21
+derived	Ward	British Section re-read off the page as 'Isol E'	Isolation	21
 derived	Ward	British Section re-read off the page as 'P/W'	Prison Ward	20
+derived	Ward	British Section re-read off the page as 'Isol C.'	Isolation	18
 derived	Ward	British Section re-read off the page as 'Mat.'	Maternity	18
 derived	Ward	British Section re-read off the page as 'B/s'	British Section	16
 derived	Ward	British Section re-read off the page as 'G/S.'	(as written)	16
+derived	Ward	British Section re-read off the page as 'Isol D'	Isolation	15
 derived	Ward	British Section re-read off the page as 'P/W.'	Prison Ward	15
+derived	Ward	British Section re-read off the page as 'Isol B.'	Isolation	14
 derived	Ward	"British Section re-read off the page as '""C""'"	(as written)	14
+derived	Ward	British Section re-read off the page as 'Isol E.'	Isolation	13
 derived	Ward	British Section re-read off the page as 'G.M.W.'	(as written)	13
 derived	Ward	British Section re-read off the page as 'Is. C.'	Isolation	11
 derived	Ward	British Section re-read off the page as 'G.M.F.'	(as written)	11
+derived	Ward	British Section re-read off the page as 'Isol D.'	Isolation	10
 derived	Ward	British Section re-read off the page as 'S/S'	Surgical	10
 derived	Ward	British Section re-read off the page as 'Isol'	Isolation	9
 derived	Ward	British Section re-read off the page as 'P.W'	Prison Ward	9
-derived	Ward	British Section re-read off the page as 'Isol B.'	Isolation	8
+derived	Ward	British Section re-read off the page as 'Isol A.'	Isolation	8
 derived	Ward	British Section re-read off the page as 'D.'	(pavilion letter)	8
 derived	Ward	British Section re-read off the page as 'MeS'	(as written)	8
-derived	Ward	British Section re-read off the page as 'Isol E.'	Isolation	7
-derived	Ward	British Section re-read off the page as 'Isol E'	Isolation	7
 derived	Ward	British Section re-read off the page as 'D'	(pavilion letter)	7
-derived	Ward	British Section re-read off the page as 'Isol C.'	Isolation	6
 derived	Ward	British Section re-read off the page as 'Mat'	Maternity	5
-derived	Ward	British Section re-read off the page as 'Isol D'	Isolation	5
 derived	Ward	British Section re-read off the page as 'Mt.'	Maternity	5
 derived	Ward	British Section re-read off the page as 'D XII'	(as written)	5
 derived	Ward	British Section re-read off the page as 'C'	(pavilion letter)	4
@@ -736,6 +738,8 @@ derived	Ward	British Section re-read off the page as 'c'	(as written)	4
 derived	Ward	British Section re-read off the page as 'C.M.H.'	(as written)	4
 derived	Ward	British Section re-read off the page as 'P.M.F'	(as written)	4
 derived	Ward	British Section re-read off the page as 'Isol.'	Isolation	3
+derived	Ward	"British Section re-read off the page as 'Isol ""C""'"	Isolation	3
+derived	Ward	British Section re-read off the page as 'Is. D.'	Isolation	3
 derived	Ward	British Section re-read off the page as 'Mat. W1'	Maternity	3
 derived	Ward	British Section re-read off the page as 'D.R.12'	(as written)	3
 derived	Ward	"British Section re-read off the page as '""B""'"	(as written)	3
@@ -750,10 +754,7 @@ derived	Ward	British Section re-read off the page as 'Laz.'	(as written)	2
 derived	Ward	British Section re-read off the page as 'do.'	(as written)	2
 derived	Ward	British Section re-read off the page as 'Isol / Gen'	Isolation | General	2
 derived	Ward	British Section re-read off the page as 'Is'	Isolation	2
-derived	Ward	British Section re-read off the page as 'Isol A.'	Isolation	2
-derived	Ward	British Section re-read off the page as 'Isol D.'	Isolation	2
 derived	Ward	"British Section re-read off the page as 'Isol ""A""'"	Isolation	2
-derived	Ward	British Section re-read off the page as 'Is. D.'	Isolation	2
 derived	Ward	British Section re-read off the page as 'Surg. Cot.'	Surgical	2
 derived	Ward	British Section re-read off the page as 'I.S.'	(as written)	2
 derived	Ward	"British Section re-read off the page as '""A""'"	(as written)	2
@@ -794,12 +795,15 @@ derived	Ward	British Section re-read off the page as 'Isol / Med'	Isolation | Me
 derived	Ward	British Section re-read off the page as 'Isol / P.W.'	Isolation | Prison Ward	1
 derived	Ward	British Section re-read off the page as 'Isol / B/S'	Isolation | British Section	1
 derived	Ward	British Section re-read off the page as 'Iso / B/S'	Isolation | British Section	1
+derived	Ward	British Section re-read off the page as 'Isol. E'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Med / Isol A'	Medical | Isolation	1
 derived	Ward	British Section re-read off the page as 'Is. B.'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Isol P.W'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Isl D.'	(as written)	1
+derived	Ward	British Section re-read off the page as 'Isol. C'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Isd B'	Isolation	1
 derived	Ward	British Section re-read off the page as 'H B'	(as written)	1
+derived	Ward	British Section re-read off the page as 'Isol. E.'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Surg. Cot'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg Cot.'	Surgical	1
 derived	Ward	British Section re-read off the page as 'D R12'	(as written)	1
@@ -979,11 +983,11 @@ derived	Ward	British Section re-read off the page as 'P/B.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Pav. C'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Pav C'	(as written)	1
 derived	Ward	British Section re-read off the page as 'B. or C.'	(as written)	1
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-A	181
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-B	788
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-C	967
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-D	271
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-E	133
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-A	210
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-B	816
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-C	1049
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-D	300
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-E	162
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Palestinian	621
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	German	115
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Roumanian	71
@@ -1066,40 +1070,40 @@ derived	Nationality	blank, recovered from a set-aside value	Sudan	1
 derived	Nationality	blank, recovered from a set-aside value	Russian	1
 derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	978
 derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3048
-derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2001
-derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8773
-derived	ICD-9 Chapter		800-999 Injury and poisoning	4654
-derived	ICD-9 Chapter		520-579 Digestive system	3260
-derived	ICD-9 Chapter		460-519 Respiratory system	2662
-derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1694
-derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1352
-derived	ICD-9 Chapter		580-629 Genitourinary system	1294
-derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1158
-derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	869
-derived	ICD-9 Chapter		390-459 Circulatory system	768
-derived	ICD-9 Chapter		710-739 Musculoskeletal system and connective tissue	703
-derived	ICD-9 Chapter		320-389 Nervous system and sense organs	552
-derived	ICD-9 Chapter		140-239 Neoplasms	354
-derived	ICD-9 Chapter		280-289 Diseases of the blood	169
-derived	ICD-9 Chapter		240-279 Endocrine, nutritional and metabolic diseases	167
-derived	ICD-9 Chapter		290-319 Mental disorders	156
-derived	ICD-9 Chapter		740-759 Congenital anomalies	115
+derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2010
+derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8879
+derived	ICD-9 Chapter		800-999 Injury and poisoning	4743
+derived	ICD-9 Chapter		520-579 Digestive system	3313
+derived	ICD-9 Chapter		460-519 Respiratory system	2678
+derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1724
+derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1369
+derived	ICD-9 Chapter		580-629 Genitourinary system	1318
+derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1169
+derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	899
+derived	ICD-9 Chapter		390-459 Circulatory system	785
+derived	ICD-9 Chapter		710-739 Musculoskeletal system and connective tissue	710
+derived	ICD-9 Chapter		320-389 Nervous system and sense organs	561
+derived	ICD-9 Chapter		140-239 Neoplasms	367
+derived	ICD-9 Chapter		280-289 Diseases of the blood	171
+derived	ICD-9 Chapter		240-279 Endocrine, nutritional and metabolic diseases	170
+derived	ICD-9 Chapter		290-319 Mental disorders	161
+derived	ICD-9 Chapter		740-759 Congenital anomalies	117
 derived	ICD-9 Chapter		E800-E999 External causes of injury	24
 derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	18
 derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	206
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	51
-derived	ICD-9 Chapter		no readable code	1294
-rule	ICD-9 Code	typhus (none)	recoded to 081.9 from the register's own wording	1
+derived	ICD-9 Chapter		no readable code	862
 rule	ICD-9 Code	typhus 080	recoded to 081.9 from the register's own wording	11
 rule	ICD-9 Code	typhus 080|038.0	recoded to 080 from the register's own wording	1
 rule	ICD-9 Code	typhus 080|081.0	recoded to 080 from the register's own wording	16
 rule	ICD-9 Code	typhus 081.0|080	recoded to 080 from the register's own wording	143
 rule	ICD-9 Code	typhus 081.9|080	recoded to 081.9 from the register's own wording	283
 rule	ICD-9 Code	typhus 081.9|081.0|080	recoded to 080 from the register's own wording	1
+rule	ICD-9 Code	typhus 083.9	recoded to 081.9 from the register's own wording	1
 rule	ICD-9 Code	typhus 81.9	recoded to 081.9 from the register's own wording	5
-derived	Diagnosis Recording		Classified	28742
-derived	Diagnosis Recording		Recorded, not classified	755
-derived	Diagnosis Recording		Not recorded	539
+derived	Diagnosis Recording		Classified	29176
+derived	Diagnosis Recording		Not recorded	536
+derived	Diagnosis Recording		Recorded, not classified	326
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
 date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
@@ -1139,7 +1143,7 @@ serial	Notebook Record ID	notebook 28: 2-8 between 5317 and 5324	no safe repair;
 serial	Notebook Record ID	notebook 30: 2-13 between 1591 and 1604	no safe repair; flagged for review	12
 serial	Notebook Record ID	notebook 30: 3-13 between 2215 and 2229	no safe repair; flagged for review	11
 serial	Notebook Record ID	notebook 31: 2-13 between 2515 and 2529	no safe repair; flagged for review	12
-serial	Notebook Record ID	notebook 31: 3-13 between 2755 and 2769	no safe repair; flagged for review	11
+serial	Notebook Record ID	notebook 31: 4-13 between 2757 and 2769	no safe repair; flagged for review	10
 serial	Notebook Record ID	notebook 32: 6245-6249 between 6249 and 6250	no safe repair; flagged for review	5
 date	Admission Date [ISO]	upstream ISO	replaced	2719
 date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	898
