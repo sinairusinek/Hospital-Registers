@@ -611,20 +611,20 @@ corrected	Ward as written	Wadi Nisnas|Gynecology	Wadi Nisnas | General — the r
 derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	637
 derived	Procedure	operation named in the diagnosis column	Procedure only	57
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	51
-review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	38
+review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	40
 review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	1
 review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
 review	Review Flags	sex-contradicts-diagnosis	Sex reads Male on a record whose diagnosis is a birth	29
 review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	697
 review	Review Flags	date-year-off-catalogue	Year corrected: the admission fell outside the year the library gave the notebook	271
-review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	26
+review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	25
 review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	10
 review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
 review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole from identical dates either side of it	2
 review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	974
-review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1323
+review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1311
 review	Review Flags	serial-repaired	Record number repaired: a digit slip against the register's own run	40
-review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	220
+review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	217
 review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	15
 review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	326
 review	Review Flags	typhus-recoded-from-register	Typhus code set from the register's own wording, not the classifier's guess at the insect	461
@@ -634,7 +634,7 @@ review	Review Flags	procedure-only	An operation named with no diagnosis behind i
 review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	1294
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	275
 review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1152
-review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	6395
+review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	6394
 review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	2340
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
 review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	157
@@ -674,7 +674,7 @@ derived	Notebook Record ID	dropped row above: number relabelled to the one set a
 derived	Ward	British Section re-read off the page as 'Br.'	British Section	715
 derived	Ward	British Section re-read off the page as 'C'	(as written)	694
 derived	Ward	British Section re-read off the page as 'Is.'	Isolation	672
-derived	Ward	British Section re-read off the page as 'B/S'	British Section	560
+derived	Ward	British Section re-read off the page as 'B/S'	British Section	559
 derived	Ward	British Section re-read off the page as 'B/S.'	British Section	339
 derived	Ward	British Section re-read off the page as 'Hut'	(as written)	335
 derived	Ward	British Section re-read off the page as 'B.'	(as written)	313
@@ -1101,7 +1101,7 @@ derived	Diagnosis Recording		Classified	28742
 derived	Diagnosis Recording		Recorded, not classified	755
 derived	Diagnosis Recording		Not recorded	539
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
-date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	26
+date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -1	212
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +1	452
@@ -1133,21 +1133,22 @@ serial	Notebook Record ID	notebook 26: 2-13 between 2659 and 2672	no safe repair
 serial	Notebook Record ID	notebook 27: 3309-3318 between 3319 and 3320	no safe repair; flagged for review	10
 serial	Notebook Record ID	notebook 27: 3867-3875 between 3920 and 3922	no safe repair; flagged for review	9
 serial	Notebook Record ID	notebook 27: 4223-4223 between 4227 and 4231	no safe repair; flagged for review	1
-serial	Notebook Record ID	notebook 28: 7771-7780 between 4472 and 4482	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 28: 7771-7772 between 4472 and 4473	no safe repair; flagged for review	2
+serial	Notebook Record ID	notebook 28: 7776-7780 between 4475 and 4482	no safe repair; flagged for review	5
 serial	Notebook Record ID	notebook 28: 2-8 between 5317 and 5324	no safe repair; flagged for review	7
 serial	Notebook Record ID	notebook 30: 2-13 between 1591 and 1604	no safe repair; flagged for review	12
 serial	Notebook Record ID	notebook 30: 3-13 between 2215 and 2229	no safe repair; flagged for review	11
 serial	Notebook Record ID	notebook 31: 2-13 between 2515 and 2529	no safe repair; flagged for review	12
 serial	Notebook Record ID	notebook 31: 3-13 between 2755 and 2769	no safe repair; flagged for review	11
 serial	Notebook Record ID	notebook 32: 6245-6249 between 6249 and 6250	no safe repair; flagged for review	5
-date	Admission Date [ISO]	upstream ISO	replaced	2679
+date	Admission Date [ISO]	upstream ISO	replaced	2719
 date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	898
 date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	492
-date	Discharge Date (ISO)	upstream ISO	replaced	187
+date	Discharge Date (ISO)	upstream ISO	replaced	226
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the other date	4
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
-date	Days in Hospital (Calc)	discharge before admission	cleared	38
+date	Days in Hospital (Calc)	discharge before admission	cleared	40
 date	Admission Date [ISO]	year outside 1930-48, nothing on the record to repair it from	taken whole from the identical dates either side of it in the register	2
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by -1 year, the smallest shift that seats it in the notebook	1
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +1 year, the smallest shift that seats it in the notebook	268
