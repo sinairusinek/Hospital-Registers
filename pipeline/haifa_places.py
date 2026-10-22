@@ -64,9 +64,10 @@ QUARTERS = [
     ("Ard el-Ramel", "Q12036875", "near", "The tin-hut quarter east of the Wadi Rushmiya estuary, by the Shemen factory (Goren 2006): 500 huts and 1,700 people in 1934-35, largely cleared from 1938. Wikidata gives it as an alias of the Haifa Bay quarter, whose point is 2.5 km east by the Check Post. Drawn instead at the Hof Shemen industrial zone (OpenStreetMap), on the beach that took the factory's name."),
     ("Harat al-Mukhallis", "", "near", "Harat al-Mukhallis, \"the Saviour's quarter\", named for the Church of the Saviour (\"near Kanisat el Mukhallis\"). It lay around the street of that name, renamed Y. L. Peretz Street after 1948. No item for the quarter or the church; drawn on Peretz Street (OpenStreetMap)."),
     ("Persian Colony", "", "near", "The Persian quarter, also written the Persian Colony: one place, around the street now called HaParsim (\"the Persians\"), on the lower slope above Wadi Nisnas. No item; drawn on HaParsim Street (OpenStreetMap)."),
+    ("Harat al-Kishleh", "", "near", "The barracks quarter of the old town, named for the Ottoman kishla. The Kishle building stands at 24 Derech HaAtzmaut in the lower town (user, 2026-10-22). Neither Wikidata nor OpenStreetMap has the building or that house number, so the point is Google Maps' pin for the address, typed in."),
     # No item, and no landmark close enough to stand for them.
     ("Sharqiyya", "", "", "Al-Harat al-Sharqiyya, the old town's Eastern Quarter (54 dunams, mostly Muslim); no item of its own."),
-    ("Harat al-Kishleh", "", "", "The barracks quarter of the old town, by the Ottoman kishla. The Kishle building stands at 24 Derech HaAtzmaut in the lower town, but neither Wikidata nor OpenStreetMap has it or that house number, so it is not yet drawn."),
+
     ("Ghazazwa", "", "", "Harat al-Ghazzawiyya, named for families from Gaza; no item. Not Khirbat al-Ghazazwa by Burayka."),
     ("Shawafna", "", "", "No item."),
 ]
@@ -109,6 +110,7 @@ POINT = {
     "Ard el-Ramel": ("osm:R2658680", "the Hof Shemen industrial zone"),
     "Harat al-Mukhallis": ("osm:W230743881", "Y. L. Peretz Street"),
     "Persian Colony": ("osm:W62075104", "HaParsim Street"),
+    "Harat al-Kishleh": ("geo:32.816084,35.003165", "the Kishle, 24 Derech HaAtzmaut"),
     ("Government Hospital", None, "1938-10-30"): ("osm:W660034185", "St Luke's Church, Mountain Road"),
 }
 

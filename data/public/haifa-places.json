@@ -301,6 +301,18 @@
    "kimaRelation": ""
   },
   {
+   "name": "Harat al-Kishleh",
+   "qid": "",
+   "relation": "near",
+   "anchor": "the Kishle, 24 Derech HaAtzmaut",
+   "lat": 32.816084,
+   "lon": 35.003165,
+   "note": "The barracks quarter of the old town, named for the Ottoman kishla. The Kishle building stands at 24 Derech HaAtzmaut in the lower town (user, 2026-10-22). Neither Wikidata nor OpenStreetMap has the building or that house number, so the point is Google Maps' pin for the address, typed in.",
+   "osm": "",
+   "kima": "",
+   "kimaRelation": ""
+  },
+  {
    "name": "Sharqiyya",
    "qid": "",
    "relation": "",
@@ -308,18 +320,6 @@
    "lat": null,
    "lon": null,
    "note": "Al-Harat al-Sharqiyya, the old town's Eastern Quarter (54 dunams, mostly Muslim); no item of its own.",
-   "osm": "",
-   "kima": "",
-   "kimaRelation": ""
-  },
-  {
-   "name": "Harat al-Kishleh",
-   "qid": "",
-   "relation": "",
-   "anchor": "",
-   "lat": null,
-   "lon": null,
-   "note": "The barracks quarter of the old town, by the Ottoman kishla. The Kishle building stands at 24 Derech HaAtzmaut in the lower town, but neither Wikidata nor OpenStreetMap has it or that house number, so it is not yet drawn.",
    "osm": "",
    "kima": "",
    "kimaRelation": ""

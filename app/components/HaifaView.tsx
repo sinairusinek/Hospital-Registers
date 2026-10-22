@@ -36,7 +36,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'Where a point comes from',
-    body: <p>A point is a Wikidata item's own coordinate, or, where Wikidata has none or a wrong one for the period, an OpenStreetMap feature's (a street that kept the quarter's name; the industrial zone on the beach where the hut quarter stood). The side panel links to whichever was used. Where the item is the quarter itself the pie is drawn solid. Where the quarter has no item, it is drawn at a landmark in or beside it, with a dashed rim — Acre Gate at Faisal Square, where the gate stood; the churches' quarter at Hamra Square. Two quarters drawn at the same landmark are set slightly apart. A quarter with no item and no landmark close enough is listed in the side panel, not guessed onto the map.</p>
+    body: <p>A point is a Wikidata item's own coordinate, or, where Wikidata has none or a wrong one for the period, an OpenStreetMap feature's (a street that kept the quarter's name; the industrial zone on the beach where the hut quarter stood). Failing both, a pin is typed in and its note says where it came from (the Kishle). The side panel links to whichever was used. Where the item is the quarter itself the pie is drawn solid. Where the quarter has no item, it is drawn at a landmark in or beside it, with a dashed rim — Acre Gate at Faisal Square, where the gate stood; the churches' quarter at Hamra Square. Two quarters drawn at the same landmark are set slightly apart. A quarter with no item and no landmark close enough is listed in the side panel, not guessed onto the map.</p>
   },
   {
     heading: 'The institutions',
