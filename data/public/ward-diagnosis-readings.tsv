@@ -1147,7 +1147,7 @@ Index	notebook	page	serial	admission_date	ward_as_written	diagnosis_as_written	c
 10550	15	67	146	24.1.37	Gen	Achlorhydria	m
 10554	15	67	150	24.1.37	Isol.	Anthrax of face	h
 10555	15	67	151	25.1.37	Isol	Observed for Enteric negative	h
-10559	15	68	155	25.1.37	Mat	False labour	h
+10559	15	68	156	25.1.37	Mat	Confinement	h
 10567	15	68	164	27.1.37	Gen	Double Pneumonia	h
 10572	15	69	169	26.1.37	Mat.	Menstruation	m
 10573	15	69	170	28.1.37	Isol.	Observed for Undulant Fever negative	h
@@ -3152,7 +3152,7 @@ Index	notebook	page	serial	admission_date	ward_as_written	diagnosis_as_written	c
 27149	31	34	2738	5.5.47	P/W		h
 27162	31	35	2752	5.5.47	P/W	Septic Wd. Chest	h
 27164	31	35	2754	5.5.47	P.M.F.	Sand Fly Fever	h
-27165	31	36	2755	5.5.47	B.W.F.	Acute Mastitis	m
+27165	31	36	2756	5.5.47	P.M.F.	Acute Gonorrhoea	m
 27166	31	36	3	6.5.47	Med	No bed Available	h
 27167	31	36	4	5.5.47	P.M.F.	Gastric Neurosis	m
 27168	31	36	5	6.5.47	B.	Pneumonia Tetany	m
@@ -6060,10 +6060,10 @@ Index	notebook	page	serial	admission_date	ward_as_written	diagnosis_as_written	c
 8470	13	70	1177	3.6.36	Is.	Typhoid Fever	h
 8471	13	70	1178	3.6.36	Is.	Typhus Exanthimaticus	h
 8472	13	70	1179	3.6.36	Gen.	Gall stones observation	h
-8474	13	70	1181	4.6.36	Is.	Typhoid Fever	h
-8475	13	70	1182	4.6.36	Surg.	T.B. of Lt. Hip with ankylosis	h
-8476	13	70	1183	5.6.36	Surg.	Metals in both feet	m
-8477	13	71	1184	5.6.36	Surg.	Bruises of Lt. foot	h
+8474	13	70	1180	4.6.36	Is.	Enterocolitis Haemorrhagica	h
+8475	13	70	1181	4.6.36	Is.	Typhoid Fever	h
+8476	13	70	1182	5.6.36	Surg.	T.B. of Lt. Hip with ankylosis	m
+8477	13	70	1183	5.6.36	Surg.	Metals in both feet	h
 8480	13	71	1186	5.6.36	Is.	Typhus Exanthimaticus	h
 8481	13	71	1187	5.6.36	Is.	Observed for Typhoid Neg.	m
 8482	13	71	1188	5.6.36	Mat.	Normal Delivery	h
@@ -10650,7 +10650,7 @@ Index	notebook	page	serial	admission_date	ward_as_written	diagnosis_as_written	c
 26732	30	97	2211	2.5.46	B	Cholecystitis	m
 26733	30	97	2212	2.5.46	Med.	T.B. Peritonitis Ascitic Type	h
 26734	30	97	2213	2.6.46	S/S.	Concussion	m
-26736	30	98	2215	2.5.46	Mat.	Rt. Maxillary Sinusitis	h
+26736	30	98	2216	2.5.46	B/S.	Lobar Pneumonia	h
 26748	30	99	2229	3.5.46	C	Pleurisy Dry Lt.	m
 26749	30	99	2230	3.5.46	Mt.	Incomplete Abortion	m
 26750	30	99	2231	3.5.46	Surg.	Bruises of Back	h
@@ -10672,4 +10672,4 @@ Index	notebook	page	serial	admission_date	ward_as_written	diagnosis_as_written	c
 26766	30	100	2248	4.5.46	Med.	Amoebiasis	h
 26767	30	100	2249	4.5.46	B.	Pyelitis Neurasthenia	h
 26768	30	100	2250	4.5.46	Surg. Cot.	Hare Lip Congenital	m
-26769	30	101	2251	4.5.46	Surg.	Chr. Volvulus of Stomach	m
+26769	30	101	2252	4.5.46	Med.	Vesico Vaginal Fistula	m

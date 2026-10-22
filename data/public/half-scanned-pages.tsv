@@ -1,0 +1,11 @@
+notebook	page	half_in_scan	unrecoverable_fields	note
+11	1	right	Register No., Age, Sex, Religion and Nationality, Occupation, Address	torn left page not in the scan; the five ages the extraction gave were the days column
+14	1	right	Register No., Age, Sex, Religion and Nationality, Occupation, Address	serials 1535-1545 inferred from the run; three ages were the days column
+18	1	right	Register No., Age, Sex, Religion and Nationality, Occupation, Address	serials 2738-2748 inferred from the run; nine ages were the days column
+23	1	right	Register No., Age, Sex, Religion and Nationality, Occupation, Address	serials 2859-2869 inferred from the run; three ages were the days column
+33	1	right	Register No., Age, Sex, Religion and Nationality, Occupation, Address	serials 13-24 fit the run into p2
+11	100	left	Ward, Class, Admission and Discharge dates, Days, Diagnosis, Result	last page of the notebook
+13	102	left	Ward, Class, Admission and Discharge dates, Days, Diagnosis, Result	last page; canvas 103 absent
+14	111	left	Ward, Class, Admission and Discharge dates, Days, Diagnosis, Result	last page of the notebook
+24	102	left	Ward, Class, Admission and Discharge dates, Days, Diagnosis, Result	last page; serial cells torn, 667-677 inferred
+28	96	left	Ward, Class, Admission and Discharge dates, Days, Diagnosis, Result	right half not in this scan image; p97 has no rows

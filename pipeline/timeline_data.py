@@ -198,6 +198,9 @@ def read_register():
 
     with REGISTER.open(encoding="utf-8") as fh:
         for row in csv.DictReader(fh, delimiter="\t", quoting=csv.QUOTE_NONE):
+            # Entries the clerk struck, duplicated, or turned away are not admissions.
+            if "not-an-admission" in (row.get("Review Flags") or "").split("|"):
+                continue
             total += 1
             date = (row.get("Admission Date") or "").strip()
             if len(date) < 7 or not date[:4].isdigit():

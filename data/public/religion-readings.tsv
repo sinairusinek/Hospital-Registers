@@ -891,7 +891,7 @@ Index	notebook	page	serial	admission_date	religion_as_written	nationality_as_wri
 27162	31	35	2752	5.5.47	Muslem	Syrian	h
 27163	31	35	2753	5.5.47	Muslem	Palest.	h
 27164	31	35	2754	5.5.47	Christ.	British	h
-27165	31	36	2755	5.5.47	Christ	British C/E	m
+27165	31	36	2756	5.5.47	Christ	British R/C	m
 27166	31	36	3	6.5.47	Muslem	Palest.	h
 27167	31	36	4	5.5.47	Christ	British R/C	h
 27168	31	36	5	6.5.47	Muslem	Palest.	m
@@ -2401,10 +2401,10 @@ Index	notebook	page	serial	admission_date	religion_as_written	nationality_as_wri
 8470	13	70	1177	3.6.36	Moslem	Palestinian	h
 8471	13	70	1178	3.6.36	Jewish	German	h
 8472	13	70	1179	3.6.36	Christian	Palestinian	h
-8474	13	70	1181	4.6.36	Moslem	Palestinian	h
-8475	13	70	1182	4.6.36	Moslem	Palestinian	h
-8476	13	70	1183	5.6.36	Moslem	Palestinian	m
-8477	13	71	1184	5.6.36	Moslem	Palestinian	h
+8474	13	70	1180	4.6.36	Moslem	Palestinian	h
+8475	13	70	1181	4.6.36	Moslem	Palestinian	h
+8476	13	70	1182	5.6.36	Moslem	Palestinian	m
+8477	13	70	1183	5.6.36	Moslem	Palestinian	h
 8480	13	71	1186	5.6.36	Jewish	Austrian	h
 8481	13	71	1187	5.6.36	Jewish	Polish	m
 8482	13	71	1188	5.6.36	Christian	Palestinian	h
@@ -6991,7 +6991,7 @@ Index	notebook	page	serial	admission_date	religion_as_written	nationality_as_wri
 26732	30	97	2211	2.5.46	Muslem	Palestinian	m
 26733	30	97	2212	2.5.46	Muslem	T.J.	h
 26734	30	97	2213	2.6.46	Moslem	Palestinian	m
-26736	30	98	2215	2.5.46	Moslem	Egyptian	h
+26736	30	98	2216	2.5.46	Christian	British	h
 26748	30	99	2229	3.5.46	Muslem	Palestinian	m
 26749	30	99	2230	3.5.46	Muslem	Palestinian	m
 26750	30	99	2231	3.5.46	Muslem	Syrian	h
@@ -7013,4 +7013,4 @@ Index	notebook	page	serial	admission_date	religion_as_written	nationality_as_wri
 26766	30	100	2248	4.5.46	Muslem	Palestinian	h
 26767	30	100	2249	4.5.46	Muslem	Palestinian	h
 26768	30	100	2250	4.5.46	Muslem	Palestinian	m
-26769	30	101	2251	4.5.46	Muslem	Palestinian	m
+26769	30	101	2252	4.5.46	Muslem	Palestina	m

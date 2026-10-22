@@ -91,6 +91,24 @@ WARD_READINGS = ROOT / "data" / "public" / "ward-readings.tsv"
 # Ledger rows the extraction dropped behind a borrowed serial, read off the
 # scans; "as written" values only. Source column <- reading column.
 DROPPED_ROWS = ROOT / "data" / "public" / "dropped-rows-read.tsv"
+# Ledger rows the extraction never created, found by reading pages whole and
+# not behind a borrowed serial: same columns, plus the Index of the record each
+# follows in register order.
+MISSING_ROWS = ROOT / "data" / "public" / "missing-rows-read.tsv"
+MISSING_INDEX_BASE = 41000
+# Records the extraction created but left nearly empty (an API error, an empty
+# placeholder), filled from the scan where their cells are blank. Keyed by Index.
+ROW_COMPLETIONS = ROOT / "data" / "public" / "row-completions.tsv"
+# Entries the clerk registered that were never admissions: struck or cancelled,
+# a second entry for a patient already on the register ("See No. ..."), refused
+# admission, or turned away for want of a bed. Keyed by Index.
+NON_ADMISSIONS = ROOT / "data" / "public" / "non-admissions.tsv"
+# Records extracted from something that is not a ledger row: spreadsheet header
+# debris, a prompt's template row, empty placeholders, a page scanned twice.
+# Keyed by Index; dropped.
+PHANTOM_ROWS = ROOT / "data" / "public" / "phantom-rows.tsv"
+# Pages of which the library scanned only one half of the spread.
+HALF_SCANNED = ROOT / "data" / "public" / "half-scanned-pages.tsv"
 # Religion and nationality read off the scans, keyed by the source Index.
 RELIGION_READINGS = ROOT / "data" / "public" / "religion-readings.tsv"
 # Ward and diagnosis read off the scans where the extraction left them blank.
@@ -1095,6 +1113,9 @@ REVIEW_FLAGS = [
     ("ward-pavilion-isolation", "Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section"),
     ("serial-shift-relabelled", "Record number was the dropped row above's; relabelled to the number the extraction set aside"),
     ("row-read-from-scan", "A ledger row the extraction dropped, read off the page image"),
+    ("row-completed-from-scan", "A record the extraction left nearly empty; its blank cells read off the page image"),
+    ("not-an-admission", "Registered but not admitted: cancelled, a second entry, refused, or no bed; left out of counts"),
+    ("half-page-scanned", "Only one half of this spread is in the library's scan; the other half's fields cannot be checked"),
     ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
     ("religion-read-from-scan", "Religion blank or misread (NB31); read off the page image"),
     ("diagnosis-read-from-scan", "Diagnosis was blank; read off the page image (not yet ICD-9 coded)"),
@@ -1487,6 +1508,63 @@ def main() -> int:
     procedures: Counter[str] = Counter()
     out_rows = []
 
+    # Records that are not ledger rows at all (phantom-rows.tsv) go before any
+    # stage counts or numbers them; a phantom holding a serial would otherwise
+    # block the shift relabel below or stand as an admission.
+    phantoms: dict[str, str] = {}
+    if PHANTOM_ROWS.exists():
+        with PHANTOM_ROWS.open(newline="", encoding="utf-8") as handle:
+            phantoms = {r["Index"]: r["reason"] for r in
+                        csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+    phantoms_dropped = sum(1 for row in rows if (row.get("Index") or "") in phantoms)
+    rows = [row for row in rows if (row.get("Index") or "") not in phantoms]
+
+    # A reading's cleaned value is taken from the register itself: whatever the
+    # same written value most often became in every other row.
+    def cleaned_lookup() -> dict[str, dict[str, str]]:
+        lookup: dict[str, dict[str, str]] = {}
+        for written, cleaned in DROPPED_CLEANED:
+            seen: dict[str, Counter[str]] = {}
+            for row in rows:
+                value = (row.get(written) or "").strip()
+                if value:
+                    seen.setdefault(value, Counter())[(row.get(cleaned) or "").strip()] += 1
+            lookup[cleaned] = {value: c.most_common(1)[0][0] for value, c in seen.items()}
+        return lookup
+
+    def as_cleaned(lookup: dict[str, dict[str, str]], cleaned: str, value: str) -> str:
+        return lookup[cleaned].get(value, lookup[cleaned].get(value.rstrip("."), value))
+
+    # Records the extraction left nearly empty (row-completions.tsv): only
+    # blank cells are filled, so nothing the extraction did read is overwritten.
+    completed: set[int] = set()
+    if ROW_COMPLETIONS.exists():
+        with ROW_COMPLETIONS.open(newline="", encoding="utf-8") as handle:
+            completions = {r["Index"]: r for r in
+                           csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+        lookup = cleaned_lookup()
+        for row in rows:
+            reading = completions.get(row.get("Index") or "")
+            if not reading:
+                continue
+            # An API error the extraction wrote where the diagnosis belongs is
+            # not a reading; it and the codes it attracted are cleared first.
+            if (row.get("Original Diagnosis") or "").startswith("VALIDATION ERROR"):
+                for column in ("Original Diagnosis", "Standardized Diagnosis", "Primary-ICD9",
+                               "StandardICDInteger", "OrigPrimConf", "Primary-Confidence",
+                               "origPrimICD9Name", "standardPrimaryICD9Name"):
+                    if column in row:
+                        row[column] = ""
+            for target, source in DROPPED_COLUMNS.items():
+                value = (reading.get(source) or "").strip()
+                if value and not (row.get(target) or "").strip():
+                    row[target] = value
+                    for written, cleaned in DROPPED_CLEANED:
+                        if written == target and not (row.get(cleaned) or "").strip():
+                            row[cleaned] = as_cleaned(lookup, cleaned, value)
+            row["Notebook-page"] = f"{row.get('Notebook_Number') or ''}_{row.get('Page_Number') or ''}"
+            completed.add(id(row))
+
     # The extraction sometimes dropped a ledger row and filed the next row's
     # content under the dropped row's number, setting the true number aside
     # among its discarded values: the record labelled 688 is really 689, and
@@ -1555,6 +1633,49 @@ def main() -> int:
             print(f"dropped-rows-read: no relabelled record {key[0]}/{key[1]} to place a reading above",
                   file=sys.stderr)
 
+    # Rows the extraction never created, found by reading pages whole
+    # (missing-rows-read.tsv). Each goes in after the record it follows on the
+    # page, in the same way and with the same flag as the dropped rows above.
+    non_admissions: dict[str, str] = {}
+    if NON_ADMISSIONS.exists():
+        with NON_ADMISSIONS.open(newline="", encoding="utf-8") as handle:
+            non_admissions = {r["Index"]: r["kind"] for r in
+                              csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+    half_scanned: set[tuple[str, str]] = set()
+    if HALF_SCANNED.exists():
+        with HALF_SCANNED.open(newline="", encoding="utf-8") as handle:
+            half_scanned = {(r["notebook"], r["page"]) for r in
+                            csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+    missing_read: set[int] = set()
+    if MISSING_ROWS.exists():
+        with MISSING_ROWS.open(newline="", encoding="utf-8") as handle:
+            missing = list(csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE))
+        after: dict[str, list[dict[str, str]]] = {}
+        for reading in missing:
+            after.setdefault(reading["after_index"], []).append(reading)
+        lookup = cleaned_lookup()
+        placed = []
+        added = 0
+        for row in rows:
+            placed.append(row)
+            for reading in after.pop(row.get("Index") or "", []):
+                new = {field: "" for field in fieldnames}
+                for target, source in DROPPED_COLUMNS.items():
+                    new[target] = (reading.get(source) or "").strip()
+                for written, cleaned in DROPPED_CLEANED:
+                    new[cleaned] = as_cleaned(lookup, cleaned, new[written])
+                added += 1
+                new["Index"] = str(MISSING_INDEX_BASE + added)
+                new["File"] = "missing-rows-read.tsv"
+                new["tempLink"] = row.get("tempLink") or ""
+                new["Notebook-page"] = f"{new['Notebook_Number']}_{new['Page_Number']}"
+                placed.append(new)
+                missing_read.add(id(new))
+        rows = placed
+        for index in after:
+            print(f"missing-rows-read: no record with Index {index} to place a reading after",
+                  file=sys.stderr)
+
     for row in rows:
         if is_repeated_header(row):
             dropped += 1
@@ -1563,8 +1684,14 @@ def main() -> int:
         flags: list[str] = []
         if id(row) in shift_relabelled:
             flags.append("serial-shift-relabelled")
-        if id(row) in dropped_read:
+        if id(row) in dropped_read or id(row) in missing_read:
             flags.append("row-read-from-scan")
+        if id(row) in completed:
+            flags.append("row-completed-from-scan")
+        if (row.get("Index") or "") in non_admissions:
+            flags.append("not-an-admission")
+        if ((row.get("Notebook_Number") or ""), (row.get("Page_Number") or "").strip()) in half_scanned:
+            flags.append("half-page-scanned")
         # Notebooks 13, 14, 24, 26 and 30 carry almost no page numbers; the
         # page each record sits on was read off the scans (page-readings.tsv).
         page = page_readings.get(row.get("Index") or "")
@@ -2598,6 +2725,15 @@ def main() -> int:
         if dropped_read:
             writer.writerow(["derived", "(row)", "dropped by the extraction, read off the page image (dropped-rows-read.tsv)",
                              "flagged row-read-from-scan", len(dropped_read)])
+        if missing_read:
+            writer.writerow(["derived", "(row)", "never created by the extraction, read off the page image (missing-rows-read.tsv)",
+                             "flagged row-read-from-scan", len(missing_read)])
+        if completed:
+            writer.writerow(["derived", "(row)", "left nearly empty by the extraction, blank cells read off the page image (row-completions.tsv)",
+                             "flagged row-completed-from-scan", len(completed)])
+        if phantoms_dropped:
+            writer.writerow(["derived", "(row)", "not a ledger row: header debris, template, placeholder or a page scanned twice (phantom-rows.tsv)",
+                             "dropped", phantoms_dropped])
         if shift_relabelled:
             writer.writerow(["derived", "Notebook Record ID", "dropped row above: number relabelled to the one set aside",
                              "flagged serial-shift-relabelled", len(shift_relabelled)])

@@ -1,0 +1,70 @@
+Notebook_Number	Page_Number	Notebook Record ID	Age	Age Unit	Sex	Religion as written	Nationality as written	Occupation	Address	Ward as written	Class as written	Rate as written	Payment Status	Admission Date as written	Discharge Date as written	Days in Hospital as written	Diagnosis as written	Result as written	Remarks	recovered_by	after_index
+11	14	144	40	Years	M	Muslim	Palestinian	Nil	Saffuria, Nazareth S/Dist.	Is.	3rd		Gratis	30.1.35	5.2.35	6	Erysipelas of Face	Recovered.	Bill: -; remark: Infectious	scan-read-missing	135
+1	4	110	28	Years	M	Moslem	Palestinian	Shunter No. 180	Harbour Works Haifa		3rd cl			19.2.30	22.2.30	3	Contusion	cured	bill no. 44; class cell second line unclear	scan-read-missing	1022
+1	8	154			F	Jewess	Palestinian	-	Tiberias		3rd cl		Gratis	11.3.30	14.3.30	3	Under observation cured	cured	Isolation H. [age cell under the redaction]	scan-read-missing	1062
+1	26	351		Years	M	Jew	Palestinian	Immigration Office	Immigration Office Kantara		2nd	120		23.5.30	26.5.30	3	Peritonsillar abscess	Much Improved	Bill 156; remark: One week off duty. [age digits under redaction; no ward column on this page]	scan-read-missing	1244
+2	5	567	46	Years	M	Moslem	Palestinian	Labourer	Subbarin village	Gen.	3rd		Gratis	17.7.31	1.8.31	15	Injuries face & skull	Improved	Gratis - Certified unable to pay anything [Died ?.?.31 added in blue under the result]	scan-read-missing	1545
+3	46	34	27	Years	F	Jewess	Palestine	-	Haifa c/o [name]	Gen.	3rd		Gratis	13.1.33	16.1.33	3	Abdominal Colic	Recovered.	Bill: free; remark: Gratis certified unable to pay anything	scan-read-missing	2498
+5	16	815	7	Years	F	Jew	Palestinian	Nil	c/o [name], Haifa	Is.	3rd		Gratis	26.7.33	5.9.33	41	Typhoid Fever	Recovered.	Bill: -; remark: Gratis - Infectious	scan-read-missing	3237
+5	43	1097	27	Years	M	Moslem	Palestinian	Labourer No. 14567	Palestine Railways, Haifa	Is.	3rd		P.R.	31.8.33	3.9.33	3	Enterocolitis haemorrhagia	Recovered.	Bill: -; remark: P.R. employee	scan-read-missing	3504
+10	58	2064	24	Years	F	Jewess	Polish		Hadar Hacarmel Nachla	Is.	3rd		Gratis	21.10.34	31.10.34	10	Entero colitis Haemorrhagica (Clinical Dysentery)		Infectious	scan-read-missing	6274
+10	63	2119	25	Years	M	Muslim	Palest.		c/o [name], Acre	Isol.	3rd cl.		Gratis	29.10.34	6.11.34	8	Pneumonia Cruposa	Recovered	Bill: -; remark: Infection	scan-read-missing	6327
+13	40	890	30	Years	M	Moslem	Palestinian	-	Nazareth Street Haifa	Surg.	3rd		Gratis	1.5.36	6.6.36	36	Fracture of Lt. Femur	Improved	Certified unable to pay anything	scan-read-missing	8193
+13	40	891	12	Years	M	Moslem	Palestinian		Barahiat el Abed Haifa	Gen.	3rd		Gratis	1.5.36	4.5.36	3	Contused wound of head	Improved	Bill: -; remark: Certified unable to pay anything [struck: occupation Lab. 3459; address I.P.C. Haifa]	scan-read-missing	8193
+13	40	892	40	Years	M	Moslem	Palestinian	Lab. 3459	I.P.C. Haifa	Gen.	3rd	175		1.5.36	15.5.36	14	Broncho Pneumonia	Cured	Bill 2149; Rec. 19007 of 5.6.36	scan-read-missing	8193
+13	40	893	28	Years	M	Moslem	Palestinian	-	Yajour	Gen.	3rd		Gratis	1.5.36	5.5.36	4	Contused wounds of Head	Cured	Bill: -; remark: casualty. Certified unable to pay anything	scan-read-missing	8193
+13	40	894	30	Years	M	Moslem	Palestinian	Nil	Haifa	Surg.	3rd		Gratis	1.5.36	4.5.36	3	Cont. wound of Rt. Eyebrow	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+13	40	895	35	Years	M	Moslem	Palestinian	-	Ard el Raml	Surg.	3rd		Gratis	1.5.36	2.5.36	one	Contused wound of scalp	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+13	40	896	30	Years	M	Moslem	Palestinian	-	Customs House c/o [name]	Surg.	3rd		Gratis	1.5.36	2.5.36	one	Contused wound of legs	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+13	40	897	25	Years	F	Christian	Palestinian	-	Wadi Nasnas Haifa	Mat.	3rd		Gratis	2.5.36	9.5.36	7	Delivery Normal Labor	Cured	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+13	40	898	80	Years	F	Christian	Palestinian	-	Mount Carmel Haifa	Mat.	3rd		Gratis	1.5.36	9.5.36	8	Fracture of neck of left Femur	I.S.Q.	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+13	40	899	21	Years	M	Moslem	Palestinian	-	Kafr Kadum	Is.	3rd		Gratis	1.5.36	2.5.36	one	General Weakness	Recovered	Bill: -; remark: Certified unable to pay anything [Certified struck and rewritten]	scan-read-missing	8193
+13	40	900	2	Years	M	Christian	Palestinian	-	Wadi Nasnas	Is.	3rd		Gratis	1.5.36	24.5.36	23	Scarlatina	Cured	Bill: -; remark: Infectious [age digit partly under redaction; read with hint]	scan-read-missing	8193
+15	68	155	27	Years	F	Christ	Palest.	/	Haifa Hart el Shawamni	Mat	3rd		Gratis	25.1.37	28.1.37	3	False labor	I.S.Q.	Certified unable to pay anything [quarter name partly legible]	scan-read-missing	10558
+19	51	1058	28	Years	F	Muslim	Palestinian	-	Haifa	Gen	3rd		Gratis	12.5.38	18.5.38	6	Incomplete Abortion	Operated cured	Certified unable to pay anything	scan-read-missing	14544
+24	102	667				Christian	Palestinian	-	Shefa'amr										[right half not scanned] [not on worklist: top row, serial/age/sex torn away; serial inferred from 666 on p101 and 670 below] [address reads Shefa-amr]	scan-read-missing	20454
+24	102	670	65	Years	M	Muslim	Palestinian	-	Ara										[right half not scanned] Dataset serials on this page are shifted: its unlabelled 60y M Hawassa row is scan 668 and its "671" (25 M, T.A.P. 9915, Athlit Clearance Camp) is scan 669; hint for 669 (25 M) matches that existing row	scan-read-missing	20456
+24	102	671	27	Years	M	Muslim	Palestinian	-	Haifa. Beit [name]										[right half not scanned] [not on worklist: dataset 671 is actually scan 669, so the real 671 is missing]	scan-read-missing	20456
+27	6	3319	8	Years	M	Muslem	Palestinian		Haifa - Kanayes St.	Surg.	3rd		Gratis	16.7.44	29.7.44	13	Comp. Depressed Fracture of Skull	Operation Recovery	Certified unable to pay anything	scan-read-missing	22660
+27	23	3502	32	Years	F	Muslem	Palestinian		Zeeb - Acre S/D	Mat.	3rd		Gratis	26.7.44	2.8.44	7	Foot Presentation Dead Baby	Recovery	Bill: -; remark (stamp): Certified unable to pay anything; pencil "M." under occupation	scan-read-missing	22846
+27	32	3601	17	Years	F	Muslem	Palestinian		Prophets Stairs, house of [name]	B	3rd		Gratis	31.7.44	19.8.44	19	Typhus	Died	Infectious	scan-read-missing	22941
+27	47	3777	55	Years	M	Christian	Palestinian		Haifa ?a?er? Bakery - Tel 2130	C	3rd		Gratis	8.8.44	10.8.44	2	Transferred to C.M.S. Hospital Nazareth	Chart in C.M.S. Hosp.	Bill: -; remark: Infectious [diagnosis cell holds the transfer note]	scan-read-missing	23095
+27	86	4227	12	Years	F	Moslem	Palestinian		Stanton Street No 42 Haifa	B	3rd		Gratis	30.8.44	12.9.44	13	Brucellosis	much Improved	Infectious	scan-read-missing	23488
+28	96	3466	25	Years	F	Moslem	Palest.		Acre [name] Garden										[right half not scanned] (right page of spread is blank in this image)	scan-read-missing	24595
+29	78	1907	30		M	Christian	Greek	A.B.	65405 Greek Navy	8	3rd	175		2.5.44	8.5.44	6	Chicken Pox	Cured	Bill 162/44 [ward glyph looks like "8"; probably B]	scan-read-missing	25367
+29	98	2103	55	Years	M	Moslem	Palestinian		?ahoud Qt. Beit [name] Haifa	"C"	3rd		Gratis	13.5.44	18.5.44	5	Scrotal Cellulitis	Died	Bill: -; remark (stamp): Certified unable to pay anything [address first word probably Yahoud]	scan-read-missing	25552
+30	5	1099	32	Years	M	Muslim	Palestinian	W.S.B. 4331	?.P.Co. Hfa.	C	3rd	175		4.3.46	11.3.46	7	Pneumonia Rt. upper lobe	Recovery	Bill 633/45?; remark: £P1.225 m	scan-read-missing	25658
+30	6	1111	57	Years	M	Christian	British	P.R.	Haifa	B/S.	2nd		P.R.	4.3.46	14.3.46	10	Septic Ingrowing Toe Nail & Toes	Improved	Bill: -; remark: P.R.	scan-read-missing	25669
+30	8	1135	20	Years	F	Christian	Palestinian		Wady St. Hse [name]	Med.	2nd	350		6.3.46	16.3.46	10	Acute Appendicitis	operation Recovery	Bill: -; remark: Rec. A896851 16.3.46 £P3.500	scan-read-missing	25692
+30	50	1650	48	Years	F	Christian	Palestinian		Acre - Ras?a?yeh	Med.	2nd	350		3.4.46	11.4.46	8	Advanced Cancer of Uterus	I.S.Q.	Bill: -; remark: Rec. A90527? 11.4.46 £P2.800; "O" under nationality	scan-read-missing	26194
+30	52	1674	28	Years	M	Muslim	Palestinian		Jabaa - Haifa S/D	Med.	3rd		Gratis	4.4.46	15.5.46	41	Banti's Disease	I.S.Q.	Bill: -; [serial digits 3rd place overwritten (6/9?), reads 1674]	scan-read-missing	26217
+30	54	1698	57	Years	M	Jew	British	P.R.	Haifa	B/S.	1st		P.R.	5.4.46	15.5.46	40	Hypertrophied Prostate (Prostatectomy)	Rec	Bill: -; remark: P.R.	scan-read-missing	26239
+30	59	1758	50	Years	M	Muslim	Syrian		Naz. Rd. Hse [name]	Surg.	3rd		Gratis	9.4.46	10.4.46	one	Contusion of Back	Imp.	Bill: -; [nationality: "Palestinian" written, "Syrian" added beneath - which is final unclear]	scan-read-missing	26294
+30	63	1806	36	Years	M	Christian	British		M/V Empire Cross c/o ?.P.Co.	B/S.	1st	500		11.4.46	22.4.46	11	B.T. Malaria	Rec.	Bill 37/46; ["Prot."? written under nationality]	scan-read-missing	26340
+30	71	1900	32	Years	M	Moslem	palestinian		Kanayes Dur. Haifa	Surg.	3rd		Gratis	15.4.46	22.4.46	5	Fracture of Base of Skull + Forearm Lt.	Imp.	[struck in occupation cell: Moslem]	scan-read-missing	26432
+30	72	1912	23.	Years	F	Christian	Palestinian		Sefam?	Med.	2nd	350		12.3.46	6.4.46	25	Rectal Cancer	per Rec.	Rec. A897328 6.4.46. £8.750	scan-read-missing	26443
+30	73	1924	19	Years	F	Jew.	Palestinian	S/Nurse	Govt. Hospital.	B/S.	2nd		Gratis	15.4.46	18.4.46	3	Dental Sepsis c Ruptured Ear Drum.	Imp.	P/N.	scan-read-missing	26454
+30	77	1972	31	Years	M	Moslem	Palestinian		Mizraa Acre S/D	A/S.	3rd		Gratis	20.4.46	1.5.46	11	Sub Acute Appendicitis	oper. Rec.		scan-read-missing	26501
+30	78	1984	16	Years	M	Moslem	Palestinian		German Colony	C.	3rd		Gratis	20.4.46	23.4.46	3	Relapsing fever.	Rec.	Inf.	scan-read-missing	26512
+30	79	1996	7.	Years	F	Moslem	Palestinian		Haifa Nazareth str. house of [name]	Med.	3rd		Gratis	21.4.46	18.5.46	27	Lac. Wd. of Lt. Leg	Greatly Imp.		scan-read-missing	26523
+30	82	2032	14	Years	M	Moslem	Palestinian		Kufer Lam?	C.	3rd		Gratis	23.4.46	23.4.46	-	Tetanus	Died	Inf. [address: "Lam?" added in different ink]	scan-read-missing	26556
+30	83	2044	19	Years	M	Moslem	Palestinian	M/A. Lives In.	Govt. Hospital Haifa	Med.	3rd		Gratis	22.4.46	2.5.46	10	Acute Appendicitis	oper Rec	M/A [occupation: "Lives In." added in blue ink]	scan-read-missing	26567
+30	85	2068	19.	Years	M	Christian	Egyptian	P.R. R4/7048	Haifa	C	3rd		P.R.	25.4.46	3.5.46	8	Ing. Adenitis.	Rec	P.R. [small mark "R." under nationality]	scan-read-missing	26589
+30	90	2128	17.	Years	F	Moslem	Palestinian		Tireh. Haifa S/D	Mat.	3rd		Gratis	28.4.46	1.5.46	3	Abortion	Rec		scan-read-missing	26645
+30	91	2140	22	Years	M	Muslim	Palestinian	T.A.C. 4886.	P.C.R.D. Haifa	C	3rd	050		28.4.46	9.5.46	11	Pyrexia	Rec.	Rec A905457 9.5.46. £P.-.550 [rate written "@ 050 mils"]	scan-read-missing	26656
+30	92	2152	30	Years	F	Muslim	Palestinian		Wady Saleh Own House Haifa	Mat.	3rd		Gratis	29.4.46	3.5.46	4	Incomplete Abortion	oper. Rec.		scan-read-missing	26667
+30	93	2164	2 6/12	Years	F	Muslim	Palestinian		Sindyaneh - Haifa S/D	B.	3rd		Gratis	30.4.46	5.5.46	5	Measles.	Rec	Inf.	scan-read-missing	26678
+30	95	2180	30	Years	F	Muslem	Palestinian		Der Ghassoun Tul Karm S/D	Mat.	3rd		Gratis	1.5.46	17.6.46	47	Caesarian Section	oper Rec.		scan-read-missing	26702
+30	97	2203	19.	Years	F	Christian	Palestinian		Bisan.	Med.	2nd	350		2.5.46	5.5.46	3	Adnexitis	Imp.	Rec 905394. 2.5.46. £4.- [religion cell reads "Christian L."]	scan-read-missing	26724
+30	98	2215	48	Years	F	Muslem	Egyptian		c/o Egyptian Consolate Haifa	Mat.	1st	500 mils		2.5.46	8.5.46	6	Rt. Maxillary Sinusitis	oper Rec	Rec. 905443 8.5.46. £P3	scan-read-missing	26735
+30	99	2227	60	Years	F	Christian	Palestinian		Mijeidel Naz S/D	Med.				3.5.46					[incomplete ledger row: only ward and admission date filled on right half]	scan-read-missing	26746
+30	100	2239	3	Years	M	Moslem	Palestinian		Em El Shoff. Haifa S/D	Med.	3rd		Gratis	3.5.46	4.5.46	2	Septicaemia due to Tonsillar Abscess.	Died	Inf.	scan-read-missing	26757
+30	101	2251	23	Years	M	Muslem	Palestinian		Tul Karm	Surg.	1st	500 mils		4.5.46	9.5.46	5	Chr. Volvulus of Stomach	I.S.Q.	Rec. A905419 ?/4.5.46 £P5 Ref.	scan-read-missing	26768
+31	15	2503	45	Years	M	Muslim	Palest.		Naz. Rd. house of [name]	Surg.	3rd		Gratis	26.4.47	10.5.47	14	Recurrent Scrotal Hernia	oper Rec		scan-read-missing	26929
+31	17	2527	23	Years	M	Jew	Palest.		Shejerah Tiberias S/D	Surg	3rd		Gratis	27.4.47	28.4.47	one	Lac. Wd. of Lt. leg	Transferred to Hadassah(?)	[result second word unclear]	scan-read-missing	26952
+31	21	2575	5	Years	M	Muslim	Palest.		B. Sheikh house of [name]	Surg.	3rd		Gratis	29.4.47	29.4.47		Fract. of Skull + Intra Cranial Haemorrhage	Died.	[days cell: "One" struck through]	scan-read-missing	26997
+31	36	2755	32	Years	M	Christ	British C/E	B/C 834	P.M. Haifa	P.M.F.	2nd		Gratis	5.5.47	7.5.47	2	Acute Mastitis	Rec.	B/C [ward cell overwritten]	scan-read-missing	27164
+31	37	2767	1 3/12	Years	F	Muslim	Palest.		see No. 2766	Med.	3rd		Gratis	6.5.47					[incomplete ledger row: discharge, days, diagnosis, result blank]	scan-read-missing	27175
+31	40	2803	2 2/12	Years	M	Christ.	Palest.		Acre	D	1st	350		8.5.47	11.5.47	3	Pyrexia	Imp.	R.N. 188769. 12.5.47 £1.050	scan-read-missing	27208
+30	87	2092	20	Years	M	Christian	British	B/C 2011	P.M.F. Kufr S..	B/S	2nd		Gratis	26.4.46	3.5.46	7	Sprain of Knee Lt.	Rec	B/C [nationality: Palestinian struck, British written above; ward: earlier entry struck]	scan-read-missing	26611
+30	89	2116	22	Years	M	Muslem	Palestinian		Baqa Gharbiyeh Tulkarm	Surg.	3rd	£2 all period		27.4.46	4.5.46	7	Infected Haematoma of Abd. Wall	oper Rec	Rec. A905343 of 27.4.46 £2	scan-read-missing	26634

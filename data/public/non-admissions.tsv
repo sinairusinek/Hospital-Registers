@@ -1,0 +1,91 @@
+Index	notebook	page	serial	admission_date	kind	see	evidence	source
+540	11	54	576	27.4.35	refused		register text: "Refused to remain in Hospital Left Against Advice 27.4.35 ["	dataset-text
+626	11	63		8.5.35	duplicate	683	scan: NB11 p63 667: "See 683" (blank-serial row)	scan-read
+1216	1	23	321	12.5.30	refused		scan: row struck in red; "Refused to remain in Hospital"	scan-read
+1262	1	27	370	28.5.30	refused		scan: row struck; "Refused to stay in Hospital M.O."; register text: "Refused to stay in Hospital M.O."	scan-read
+1484	1	48	596	29.7.30	refused		register text: "Refused to remain in Hospital Patient refused to remain in hospital 29.7.30 ["	dataset-text
+1541	2		562	17.7.31	duplicate	445	scan: NB2 p4 562: "See entry No. 445"	scan-read
+1545	2		566	17.7.31	refused		scan: NB2 p4 566: "Refused to stay in Hospital"	scan-read
+1546	2				cancelled		scan: NB2 p5 568: row struck through (F Christian British), no dates	scan-read
+1558	2	6	581	21.7.31	duplicate	623	register text: "See No. 623"	dataset-text
+1901	2	39		9.10.31	cancelled		scan: NB2 p39 931: row struck through in red; 931A written below	scan-read
+2643	4	9	185		cancelled		scan: ward and class struck; no dates, diagnosis or result	scan-read
+3168	5	9	741	17.7.33	duplicate	734	scan: row struck; "D. Entry See no. 734"; register text: "see No. 738"	scan-read
+3616	6	1		17.9.33	refused		register text: "Refused to stay in Hospital. No chart made. Refused Hospital Stay 17.9.33 ["	dataset-text
+4410	7	25	107	20.1.34	refused		register text: "Refused to stay in Hospital"	dataset-text
+4542	7	38	249	15.2.34	refused		register text: "Refused to stay in Hospital"	dataset-text
+4543	7	38	250	15.2.34	refused		register text: "Refused to stay in Hospital"	dataset-text
+5833	10	11	1600	18.8.34	cancelled		scan: struck in red, "Cancelled"; register text: "Cancelled."	scan-read
+5910	10	18	1680	27.8.34	duplicate	1674	scan: struck; "See case No. 1674"; register text: "See case No. 1674"	scan-read
+5957	10	23	1729	3.9.34	refused		register text: "Refused to stay in Hospital"	dataset-text
+6005	10	27	1778	12.9.34	duplicate	1760	scan: struck in red; "See No. 1760"	scan-read
+6023	10	29	1798	14.9.34	refused		register text: "Refused to stay in Hospital"	dataset-text
+6910	12		1335	18.7.35	duplicate	1376	register text: "See 1376"	dataset-text
+6921	12	28	1346	12.7.35	duplicate	1346/1335	register text: "see No. 1346/1335"	dataset-text
+7293	12		1718	25.8.35	duplicate	1698	register text: "See No. 1698."	dataset-text
+7385	12	85	1810	3.9.35	duplicate	1809	scan: "See No. 1809"; register text: "See No 1809"	scan-read
+8110	13		806	19.4.36	refused		register text: "Refused to remain in Hospital."	dataset-text
+8473	13	70	1180		cancelled	1179	scan: NB13 p70 1180: empty row struck diagonally, "See entry 1179"; 1180 re-entered below	scan-read
+9363	14		2078	11.9.36	cancelled		scan: "Cancel" in red; register text: "Cancelled"	scan-read
+9462	14	63	2177	19.8.36	duplicate	1848	scan: struck in blue; "See 1848"; register text: "See 1848"	scan-read
+10094	15	19	2818	25.11.36	cancelled		scan: "Cancelled" across the row; register text: "Cancelled"	scan-read
+12913	17	109	2708		duplicate	2701	scan: "See no. 2701"; register text: "See no. 2701"	scan-read
+13256	18	30	3049	9.12.37	duplicate	139/38	scan: "Cancelled See No. 139/38": re-entered in 1938; register text: "Cancelled See No. 139/38 Cancelled 13.1.38 ["	scan-read
+16379	21	21	2909	22.11.38	cancelled		scan: "Cancelled" across the diagnosis	scan-read
+18029	22	96	1491		duplicate	1466	scan: 1491 struck; "See No 1466"; 1491 re-used on the next line; register text: "See No 1466"	scan-read
+21454	26		2288	5.5.46	duplicate	2235	scan: "See No. 2235" across the row; register text: "See No. 2235"	scan-read
+22126	26		2956	3.6.46	refused		register text: "Refused admission"	dataset-text
+22136	26		2966	3.6.46	no-bed		register text: result "No Beds Available" (read off the scan in commit 763fc05; paper/historical-leads-2026-10.md section 1)	scan-read
+22140	26		2970	3.6.46	no-bed		register text: result "No Beds Available" (read off the scan in commit 763fc05; paper/historical-leads-2026-10.md section 1)	scan-read
+22173	26		3002	5.6.46	refused		scan: NB26 p66 3002: 'Refused admission' (21 M Syrian)	scan-read
+22187	26		3016	5.6.46	duplicate	3002	scan: diagonal stroke; "See 3002"	scan-read
+22325	26	78	3154	11.6.46	cancelled		scan: "Cancelled" in red	scan-read
+22494	26		3322	19.6.46	refused		register text: "Refused admission Refused Admission 19.6.46 ["	dataset-text
+22514	26		3342	20.6.46	no-bed		register text: "No bed available"	dataset-text
+22523	26		3351	30.6.46	refused		scan: NB26 p96 3351: 'Refused admission'	scan-read
+23325	27	70	4032	21.8.44	no-bed		register text: result "No Beds Available" (read off the scan in commit 763fc05; paper/historical-leads-2026-10.md section 1)	scan-read
+23350	27	72	4058	22.8.44	no-bed		register text: "No bed available"	dataset-text
+23388	27		4110	24.8.44	duplicate	4109/44	register text: "Cancelled. See number 4109/44."	dataset-text
+23523	27	89	4265	1.9.44.	duplicate	4272	scan: serial struck; "Cancelled see No. 4272"; register text: "Cancelled See No. 4272"	scan-read
+23646	28	3	4392	7.9.44	no-bed		scan: NB28 p3 4392: 'No Bed is available', 7.9.44	scan-read
+23719	28		4467	11.9.44	refused		scan: NB28 p10 4467: 'Left against advise. Refused treatment', 11.9.44	scan-read
+23720	28		4468	11.9.44.	no-bed		scan: NB28 p10 4468: 'Cancelled' / 'No beds available'	scan-read
+23721	28		4469	11.9.44.	no-bed		scan: NB28 p10 4469: struck, 'Cancelled' / 'No beds available'	scan-read
+23818	28	19	4566	16.9.44	no-bed		register text: result "No Beds Available" (read off the scan in commit 763fc05; paper/historical-leads-2026-10.md section 1)	scan-read
+23823	28	20	4572	17.9.44	no-bed		register text: result "No Beds Available" (read off the scan in commit 763fc05; paper/historical-leads-2026-10.md section 1)	scan-read
+23827	28	20	4576	17.9.44	refused		register text: "Refused to stay."	dataset-text
+23887	28	26	4641	21.9.44	no-bed		register text: "No bed available"	dataset-text
+23888	28	26	4642	21.9.44	refused		register text: "Refused Admission"	dataset-text
+23974	28	34	4731	26.9.44	no-bed		scan: serial struck, "Cancelled"; "No bed available"; register text: "No bed available"	scan-read
+24320	28		5093	19.10.44	no-bed		scan: NB28 p68 5093: struck, 'Cancelled', 'No Bed Available'	scan-read
+24914	29		1433	4.4.44	refused		register text: "Refused admission Refused Admission  ["	dataset-text
+25036	29		1564	6.4.44	duplicate	1478	register text: "See No. 1478"	dataset-text
+25097	29			15.4.44	refused		register text: "Refused Admission"	dataset-text
+25143	29	56	1677	18.4.44	refused		register text: "Refused Admission"	dataset-text
+25158	29	58	1694	19.4.44	refused		register text: "Refused Admission"	dataset-text
+25229	29	64	1766	25.4.44	refused		register text: "Refused Admission"	dataset-text
+25253	29	67	1791	25.4.44	duplicate	1796	scan: whole row struck; "See 1796"; register text: "See 1796"	scan-read
+25327	29	74	1866	30.4.44	refused		register text: "Refused admission"	dataset-text
+25335	29	74			cancelled		scan: NB29 p74 1873A: whole row struck through	scan-read
+25447	29	85	1991	6.5.44	refused		register text: "Refused admission"	dataset-text
+26002	30		1458	23.3.46	cancelled		scan: "Cancelled see No. 146?" (last digit cut); register text: "CANCELLED"	scan-read
+26712	30		2190	1.5.46	refused		scan: NB30 p95 2190: 'Refused Admission'; the dataset's diagnosis and result are not on the scan	scan-read
+27052	31	25	2633	1.5.47	duplicate	2562	register text: "See No. 2562 ["	dataset-text
+27166	31	36	3	6.5.47	no-bed		scan: NB31 p36 2757: 'No bed Available', 6.5.47, one day	scan-read
+27248	31	43	2846	10.5.47	no-bed		register text: result "No Beds Available" (read off the scan in commit 763fc05; paper/historical-leads-2026-10.md section 1)	scan-read
+28063	32	15	6090		cancelled		scan: whole row struck	scan-read
+28198	32	26	6222	12.9.47	duplicate	6006	scan: cancelled in red; "See 6006"	scan-read
+28201	32	26	6224	17.9.47	duplicate	6156	scan: cancelled in red; "See 6156/1?"	scan-read
+28207	32	27	6229	18.9.47	duplicate	6167	scan: cancelled in red; "See 6167/47"	scan-read
+28215	32	27	6236	12.9.47	duplicate	6008	scan: cancelled in red; "See 6008"	scan-read
+28217	32	28	6237	17.9.47	duplicate	6049	scan: cancelled in red; "See 6049/47"	scan-read
+28285	32	33	6304	24.9.47	cancelled		scan: whole row struck; serial re-used on the next line	scan-read
+28300	32	35	6318		refused		scan: "Refused admission" (batch C read)	scan-read
+28384	32	43	6414	27.9.47	no-bed		register text: result "No Beds Available" (read off the scan in commit 763fc05; paper/historical-leads-2026-10.md section 1)	scan-read
+28444	32	48	6474	29.9.47	duplicate	6471	scan: struck, "Repeated"; "See No. 6471"	scan-read
+28445	32	48	6475	29.9.47	duplicate	6472	scan: struck, "Repeated"; "See 6472"	scan-read
+28461	32	49	6491	6.9.47	cancelled		scan: whole row struck; serial re-used on the next line	scan-read
+28486	32	51	6514	1.10.47	cancelled		scan: row struck; no diagnosis	scan-read
+28715	32	70	6735	11.10.47	duplicate	6738	scan: "See 6738" across the row	scan-read
+29344	33	22	267	3.2.48	refused		scan: "Refused admission"; register text: "Refused admission 4.2.48"	scan-read
+29826	33	63	748		cancelled		scan: ward struck; no admission date	scan-read

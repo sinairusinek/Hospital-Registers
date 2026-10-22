@@ -20,6 +20,13 @@ declare const Papa: any;
 // The consolidated dataset ships with the site; see scripts/copy-data.mjs.
 const DEFAULT_DATASET_URL = `${import.meta.env.BASE_URL}data/hospital-registers.tsv`;
 
+// Entries the clerk registered that were never admissions (struck, a second
+// entry for the same patient, refused, no bed) stay in the file for review but
+// are left out of everything that counts admissions.
+const NOT_ADMITTED_FLAG = 'not-an-admission';
+const isAdmission = (row: RegistryRecord) =>
+  !String(row['Review Flags'] ?? '').split('|').includes(NOT_ADMITTED_FLAG);
+
 // Column 45 of the source spreadsheets carries a corrupted header, an artifact of
 // the original export. By position and content it is the standardized ICD-9 label
 // for the primary diagnosis: it sits between origPrimICD9Name and Additional-ICD9,
@@ -47,6 +54,8 @@ const cleanSex = (rows: RegistryRecord[], keys: string[]) => {
 
 const App: React.FC = () => {
   const [data, setData] = useState<RegistryRecord[]>([]);
+  // Every record, non-admissions included: the Review view's queues need them.
+  const [allData, setAllData] = useState<RegistryRecord[]>([]);
   // About is the landing view: a visitor meets the project before the table.
   // "#yoni" lands on the place questions in the Review view, so the link can be sent.
   const [activeView, setActiveView] = useState<ViewType>(
@@ -171,7 +180,8 @@ const App: React.FC = () => {
           });
         }
         // Set after cleaning, so no view ever renders the raw values.
-        setData(rawData);
+        setAllData(rawData);
+        setData(rawData.filter(isAdmission));
         setIsLoading(false);
       },
       error: (error: any) => {
@@ -446,7 +456,7 @@ const App: React.FC = () => {
               // The review queues are of the whole dataset, not the current
               // selection: a filter that happened to exclude a flagged record
               // would quietly shrink the work left to do.
-              <ReviewView data={data} />
+              <ReviewView data={allData} />
             ) : activeView === 'places' ? (
               // Same principle: the gazetteer queues cover the whole dataset,
               // with the view's own religion and nationality facets.

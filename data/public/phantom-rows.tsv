@@ -1,0 +1,48 @@
+Index	notebook	page	serial_as_extracted	reason
+22662	27	5	3309	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22663	27	5	3310	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22664	27	5	3311	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22665	27	5	3312	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22666	27	5	3313	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22667	27	5	3314	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22668	27	5	3315	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22669	27	5	3316	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22670	27	5	3317	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+22671	27	5	3318	duplicate scan: IIIF canvas 5 repeats canvas 4, and the extraction read 3309-3318 a second time
+12966	18	4		duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12967	18	4	2760	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12968	18	4	2761	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12969	18	4	2762	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12970	18	4	2763	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12971	18	4	2764	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12972	18	4	2765	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12973	18	4	2766	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12974	18	4	2767	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12975	18	4	2768	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+12976	18	4	2769	duplicate scan: IIIF canvas 4 repeats canvas 3 (2759-2769), and the extraction read the page a second time
+3276	5		856	empty placeholder ('entire row missing') numbered 856; the real 856 is Index 3277
+2938	4		499	empty placeholder ('Row appears empty') numbered 499-501; the real rows are 2941-2943
+2939	4		500	empty placeholder ('Row appears empty') numbered 499-501; the real rows are 2941-2943
+2940	4		501	empty placeholder ('Row appears empty') numbered 499-501; the real rows are 2941-2943
+26781	31		1	read off the book cover ('book_cover_image_with_1947')
+29323	33	20	247	no such row: p20 ends at 246 ('Closed'); the real 247 is Index 29324 on p21
+9893	15		2618	fabricated template row: 'Flu', 5.2.30-5.2.31, 'Recovered', in a 1936-37 notebook; a prompt example copied into the data
+14010	19		528	fabricated template row: 'Flu', 5.2.30-5.2.31, 'Recovered', in a 1938 notebook; a prompt example copied into the data
+4156	7			spreadsheet header debris: an empty row whose set-aside values are the column names
+4683	8			spreadsheet header debris: an empty row whose set-aside values are the column names
+6664	12			spreadsheet header debris: an empty row whose set-aside values are the column names
+7772	13			spreadsheet header debris: an empty row whose set-aside values are the column names
+8829	14			spreadsheet header debris: an empty row whose set-aside values are the column names
+10974	16			spreadsheet header debris: an empty row whose set-aside values are the column names
+11847	17			spreadsheet header debris: an empty row whose set-aside values are the column names
+12932	18			spreadsheet header debris: an empty row whose set-aside values are the column names
+15079	20			spreadsheet header debris: an empty row whose set-aside values are the column names
+16155	21			spreadsheet header debris: an empty row whose set-aside values are the column names
+17221	22			spreadsheet header debris: an empty row whose set-aside values are the column names
+18322	23			spreadsheet header debris: an empty row whose set-aside values are the column names
+19411	24			spreadsheet header debris: an empty row whose set-aside values are the column names
+20463	25			spreadsheet header debris: an empty row whose set-aside values are the column names
+21428	26			spreadsheet header debris: an empty row whose set-aside values are the column names
+22628	27			spreadsheet header debris: an empty row whose set-aside values are the column names
+24607	29			spreadsheet header debris: an empty row whose set-aside values are the column names
+26780	31			spreadsheet header debris: an empty row whose set-aside values are the column names

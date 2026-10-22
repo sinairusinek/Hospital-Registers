@@ -121,6 +121,18 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Notebook Record ID', 'Admission Date', 'Discharge Date', 'Sex', 'Age', 'Religion', 'City']
   },
   {
+    flag: 'not-an-admission',
+    title: 'Registered but never admitted',
+    question: 'The clerk struck the entry, cross-referred it to another ("See No. ..."), or wrote that the patient refused admission or was turned away for want of a bed. These records are left out of every count. Is each one really not an admission, and where a second entry is involved, is the other one on the register?',
+    fields: ['Notebook Record ID', 'Admission Date', 'Discharge Date', 'Ward', 'Diagnosis as written', 'Result as written']
+  },
+  {
+    flag: 'half-page-scanned',
+    title: 'Only half the spread was scanned',
+    question: 'The library imaged one page of the opening, not both. Whatever the record holds for the other half cannot be checked against this scan. Does a better image of the page exist?',
+    fields: ['Notebook Record ID', 'Age', 'Sex', 'Religion', 'Admission Date', 'Diagnosis as written']
+  },
+  {
     flag: 'result-in-diagnosis',
     title: 'A Result value in the diagnosis column',
     question: 'The diagnosis or code field holds "Cured", "Died" or another outcome — the Result column\'s content one field to the left. This is a column misalignment in the source, not a missing diagnosis, so nothing has been classified from it. What does the page have in the diagnosis column?',

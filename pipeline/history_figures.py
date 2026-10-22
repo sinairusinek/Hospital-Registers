@@ -69,7 +69,9 @@ def load():
     """Every non-Atlit register row, read the one way that does not lose 153."""
     with TSV.open(encoding="utf-8", newline="") as fh:
         rows = list(csv.DictReader(fh, delimiter="\t", quoting=csv.QUOTE_NONE))
-    return [r for r in rows if (r["Notebook_Number"] or "").strip() != ATLIT_NOTEBOOK]
+    # Entries the clerk struck, duplicated, or turned away are not admissions.
+    return [r for r in rows if (r["Notebook_Number"] or "").strip() != ATLIT_NOTEBOOK
+            and "not-an-admission" not in (r.get("Review Flags") or "").split("|")]
 
 
 def ym(row):

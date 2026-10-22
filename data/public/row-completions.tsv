@@ -1,0 +1,46 @@
+Index	Notebook_Number	Page_Number	Notebook Record ID	Age	Age Unit	Sex	Religion as written	Nationality as written	Occupation	Address	Ward as written	Class as written	Rate as written	Payment Status	Admission Date as written	Discharge Date as written	Days in Hospital as written	Diagnosis as written	Result as written	Remarks	recovered_by
+3275	5	20	855	43	Years	M	Christian	Palestinian	Nil	Bassa, Acre S/District	Is.	3rd		Gratis	1.8.33	7.8.33	6	Typhoid Fever	Died	Gratis - Infectious	scan-read-complete
+6518	10	86	2321	50	Years	F	Christian	Palestinian	-	Shafa-Amr	Med.	3rd		Gratis	1.12.34	17.12.34	16	Contusion head + neck	Recovered	Not M.L.C. Certified unable to pay anything	scan-read-complete
+8954	14	12	1670	30	Years	M	Jewish	German	-	Yavniel	Is.	3rd		Gratis	1.8.36	19.8.36	18	Typhus Exanthematicus	Recovered	Bill: -; remark: Infectious	scan-read-complete
+8955	14	12	1671	25	Years	M	Moslem	Palestinian	-	Haifa	Is.	3rd		Gratis	1.8.36	4.8.36	3	Grippe	Cured	Bill: -; remark: Infectious	scan-read-complete
+8956	14	12	1672	48	Years	M	Moslem	Palestinian	-	Nazareth Street	Is.	3rd		Gratis	1.8.36	8.8.36	7	Boil of nose (Furuncle)	Recovered	Bill: -; remark: Certified unable to pay anything	scan-read-complete
+8957	14	12	1673	39	Years	M	Christian	Palestinian	Foreman 521	Haifa Harbour Land Dept.	Is.	3rd	175		1.8.36	4.8.36	3	Erysipelas	Recovered	Bill 2222; remark: 375150 5.11.36	scan-read-complete
+8958	14	12	1674	27	Years	M	Christian	British	-	c/o N.A.A.F.I. Newton House	Br.	2nd	350		1.8.36	13.8.36	12	Gun shot wound of chest	Recovered	Bill 2231; remark: 375149 4.11.36	scan-read-complete
+27964	32	7	5991	20	Years	M	Moslem	Palest.		Benyehuda Le?i Street 8 Haifa	C	3rd		Gratis	12.9.47	16.9.47	4	Bronchitis	Rec	Inf.	scan-read-complete
+27965	32	7	5992	1½	Years	M	Moslem	Palest.		Carmel Avenue 148	B	3rd		Gratis	12.9.47	16.9.47	4	Kerosene Poisoning	Rec		scan-read-complete
+27966	32	7	5993	11	Years	M	Christ.	Palest.		Rameh Acre s/d.	Med.				12.9.47					[right half blank after admission date]	scan-read-complete
+27967	32	7	5994	2	Years	F	Christ.	Palest.		Kafr Yassif Acre Dist	B.	3rd		Gratis	12.9.47	13.9.47	1	Faucial Diphtheria	Died.	Inf.	scan-read-complete
+27968	32	7	5995	40	Years	F	Moslem	Palest.		Khirbet Mikdawi Tulkarm s/d	Med	2nd		Gratis	12.9.47	24.9.47	12	Cystocele	Oper. Rec.		scan-read-complete
+27969	32	7	5996	35	Years	F	Moslem	Palest.		Ghabsiyeh Acre s/d	Mat	3rd		Gratis	12.9.47	17.9.47	5	Abortion	Rec		scan-read-complete
+27970	32	7	5997	14	Years	M	Moslem	Syria		Asfour Street. house of [name]	Surg	3rd		Gratis	12.9.47	15.9.47	3	Fract. lt. Tibia	In Plaster		scan-read-complete
+27971	32	7	5998	45	Years	M	Mosl.	Palest.		Hawassa house of [name]	"C"	3rd		Gratis	12.9.47	13.9.47	1	Anthrax Face	Died	[overwrite: S/S->"C"]	scan-read-complete
+27972	32	7	5999	24	Years	F	Moslem	Palest.		Kishleh Quarter house of [name]	Mat	3rd		Gratis	12.9.47	18.9.47	6	Normal Childbirth	Rec		scan-read-complete
+27973	32	7	6000	36	Years	F	Christ.	British		C.R.L. Haifa	Br.	1st	750		12.9.47	19.9.47	7	Incomplete Abortion	Cured	Bill 403/47	scan-read-complete
+27974	32	7	6001			F	Jewess	Palest.	Nurse	Govt. Hospital Haifa	Br.	2nd		Gratis	12.9.47	13.9.47	1	Acute Gastro Enteritis	Cured	Nurse	scan-read-complete
+27975	32	7	6002	30	Years	F	Moslem	Palest.		Wadi Nisnas own house	Med.	3rd		Gratis	12.9.47	17.9.47	5	Amoebic Colitis	Treated		scan-read-complete
+28300	32	35	6318	30	Years	M	Christ.	Palest.		Mt. Carmel 25. Haifa	A	3rd		Gratis	24.9.47	24.9.47		Refused admission			scan-read-complete
+28301	32	35	6319	20	Years	F	Moslem	Palest.		Safsaf Safad s/d	Med	3rd		Gratis	24.9.47	6.10.47	12	Amoebiasis	Rec		scan-read-complete
+28302	32	35	6320	30	Years	F	Moslem	Palest.		Um Zenat Haifa s/d	Med	3rd		Gratis	24.9.47	7.10.47	13	Gastritis	Rec	[diagnosis added in different ink]	scan-read-complete
+28303	32	35	6321	35	Years	F	Moslem	Palest.		Nez. Rd [name] Haifa	B	3rd		Gratis	24.9.47	1.10.47	7	Giardiasis	Imp.		scan-read-complete
+28304	32	35	6322	55	Years	M	Mos.	Pal.		Shuqam Market house of [name]	D.	3rd		Gratis	24.9.47	29.9.47	5	Pneumonia	Rec	Inf.	scan-read-complete
+28305	32	35	6323	19	Years	M	Jew	Palest.	Nurse	Govt. Hospital, Haifa	Br	2nd		Gratis	24.9.47	6.10.47	12	Appendicitis	oper Rec	Nursing staff; [left half on a slip pasted over the original line]	scan-read-complete
+28306	32	35	6324	26	Years	M	Mos.	Pal.		Assistant Cook, Police Depot Jenin	Surg.	3rd		Gratis	24.9.47	2.10.47	8	Ing. Hernia Rt.	oper Rec		scan-read-complete
+28307	32	35	6325	42	Years	M	Christ	Pal.	P. Railways G/3449	Wadi Nesnas 34 Haifa	Surg.	2nd		P.R.	24.9.47	20.10.47	26	Abscess of Rt. Leg	oper Rec	P. Railways	scan-read-complete
+28308	32	35	6326	14	Years	M	Christ.	Pal.		128 Kingsway	Surg	3rd		Gratis	24.9.47	27.9.47	3	Pott's Disease	In Plaster		scan-read-complete
+28309	32	35	6327	40	Years	F	Moslem	Palest.		Um El Faham Jenin s/d	Mat	3rd		Gratis	24.9.47	11.10.47	17	General implantation of Hydatiform Mole	oper Rec		scan-read-complete
+28310	32	35	6328	6		F	Moslem	Palest.		Nez. Rd. c/o [name] Haifa	Med	3rd		Gratis	24.9.47	24.9.47		Harelip	Oper Rec.	[age unit not written]	scan-read-complete
+28311	32	35	6329	50	Years	F	Moslem	Palest.		Zeitah Tulkarm s/d.	Mat	3rd		Gratis	24.9.47	4.10.47	10	Haemorrhoids	oper Rec		scan-read-complete
+29859	33	66	780	25	Years	M	Muslem	T/Jord.		Tall El Fukhar Acre	B.				18.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29860	33	66	781	55	Years	M	Muslem	Egyptian		c/o S/S. Zamalek Khedivial Mail Line.	D.				18.4.48					[overwrite: Palestinian struck->Egyptian]; [right half: only ward and admission date entered]	scan-read-complete
+29861	33	66	782	22	Years	F	Muslem	Palestinian		Tireh - Haifa s/D.	C				18.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29862	33	66	783	20	Years	M	Moslem	Palestinian		Tireh - Haifa	C				18.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29863	33	66	784	30.	Years	M	Mosl	Palest.	Lab.	Bawabet Akka Haif	C				19/4/48					[sex written 'Mal.']; [right half: only ward and admission date entered]	scan-read-complete
+29864	33	66	785	23	Years	M	Christian	Palestinian		Jaffa Road Haifa	Med.				20.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29865	33	66	786	40	Years	M	Christian	Palestinian		Jewish Carmel Haifa	Med.				20.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29866	33	66	787	21	Years	M	Muslem	Palestinian		Tireh - Hfa s/D.	Surg.				20.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29867	33	66	788	14	Years	M	Muslem	Palestinian		[name] house own house Haifa	C.				18.4.48					[admission date overwritten, reads 18.4.48]; [right half: only ward and admission date entered]	scan-read-complete
+29868	33	66	789	32	Years	M	Muslem	Egyptian		Salah Eddein St. [name], Haifa	C.				20.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29869	33	66	790	75	Years	M	Muslem	Palestinian		Hassan st. own house Haifa	C.				20.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29870	33	66	791	2	Years	M	Muslem	Palestinian		Acre Gate Haifa	S/S.				21.4.48					[right half: only ward and admission date entered]	scan-read-complete
+29871	33	67	792	5	Years	F	Muslem	Palestinian		Souk El Shwam own house Hfa.	B. or C.				21.4.48					[right half: only ward, class and admission date entered]	scan-read-complete
+29872	33	67	793	55	Years	M	Christ	Palest.		Bawabet Deir Hfa	B	3rd		Gratis	21.4.48					[right half: only ward, class and admission date entered]	scan-read-complete
