@@ -119,6 +119,9 @@ def parse_reply(text: str, expected: set[str]) -> list[dict[str, str]]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0, help="only the N commonest, for a trial run")
+    parser.add_argument("--from", dest="from_file", type=Path,
+                        help="classify the diagnoses listed in this file, one per line, instead of "
+                             "the artifact's uncoded ones (e.g. scan readings proposed as corrections)")
     args = parser.parse_args()
 
     if not os.environ.get("GOOGLE_API_KEY"):
@@ -135,7 +138,11 @@ def main() -> int:
     # the artifact, a string classified last time is no longer uncoded this time
     # and would silently drop out of the very file that supplies its code.
     existing = load_existing()
-    counts = uncoded_diagnoses()
+    if args.from_file:
+        lines = (l.strip() for l in args.from_file.read_text(encoding="utf-8").splitlines())
+        counts = Counter(l for l in lines if l and not NOT_A_DIAGNOSIS.search(l))
+    else:
+        counts = uncoded_diagnoses()
     pending = Counter({d: n for d, n in counts.items() if d not in existing})
     items = pending.most_common(args.limit or None)
     if existing:

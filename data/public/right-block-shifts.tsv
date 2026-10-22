@@ -1,0 +1,4 @@
+notebook	page	first_serial	last_serial	first_ward	first_admission	evidence
+29	66	1778	1787		24.4.44	1778 has only a struck ward letter and 24.4.44; every block from Hydatid of the Lung down is one row up (age/sex/religion on the left page match the serial, the right block the row below)
+31	73	3202	3208			3201 and 3202 have only ward and admission written; 3203-3209 content filed under 3202-3208; the block on 3209 (Index 27588) duplicates 3210. 3201 itself is absent from the dataset
+32	66	6680	6687	Br.	8.10.47	6680 has only Br. and 8.10.47; 6681 Upward disl. Rt. shoulder down to 6688 (Amoebiasis) filed one row up

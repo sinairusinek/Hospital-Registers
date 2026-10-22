@@ -115,6 +115,29 @@ RELIGION_READINGS = ROOT / "data" / "public" / "religion-readings.tsv"
 WARD_DIAGNOSIS_READINGS = ROOT / "data" / "public" / "ward-diagnosis-readings.tsv"
 # Page numbers read off the scans for notebooks the extraction left unpaged.
 PAGE_READINGS = ROOT / "data" / "public" / "page-readings.tsv"
+# Written diagnoses the scans contradict, keyed by the source Index: invented
+# where the cell is blank, a neighbouring row's, or misread. A blank
+# `corrected` clears the diagnosis. Each row says which class it is.
+DIAGNOSIS_CORRECTIONS = ROOT / "data" / "public" / "diagnosis-corrections.tsv"
+# Pages where the right-hand block (ward to result) sits one row up against
+# the left: the record numbered S carries ledger row S+1's ward, dates,
+# diagnosis and result. Read off the scans; see the pre-pass in main().
+RIGHT_BLOCK_SHIFTS = ROOT / "data" / "public" / "right-block-shifts.tsv"
+RIGHT_BLOCK = (
+    "Ward", "standardized ward", "Class", "Class standard", "Rate", "rateStandard", "Payment Status",
+    "final date quality flag", "Date Status Flag", "Date Post-Correction Flag",
+    "Days at hospital absolute value mismatch", "Days in Hospital (Rep)", "Admission Date (Orig)",
+    "Admission Date [ISO]", "Discharge Date (Orig)", "Discharge Date (ISO)", "Days in Hospital (Calc)",
+    "Original Diagnosis", "Standardized Diagnosis", "Primary-ICD9", "StandardICDInteger", "OrigPrimConf",
+    "Primary-Confidence", "origPrimICD9Name", "standardPrimaryICD9Name", "Additional-ICD9",
+    "addionalICD-9Integer", "Original Result", "Standardized Result",
+)
+# The source's code columns, emptied when a diagnosis is corrected so that the
+# corrected string is coded afresh from diagnosis-classification.tsv.
+DIAGNOSIS_CODE_COLUMNS = (
+    "Primary-ICD9", "StandardICDInteger", "OrigPrimConf", "Primary-Confidence",
+    "origPrimICD9Name", "standardPrimaryICD9Name", "Additional-ICD9", "addionalICD-9Integer",
+)
 
 # A ward as the clerk wrote it, onto the register's wards. Bed and room
 # numbers after the ward ("Surg 11.8", "Med W10", "D XII") are dropped; a
@@ -935,7 +958,12 @@ ICD9_NOT_DIAGNOSES = {
 #   - typhus alongside another disease (19 records): which is primary is a
 #     separate question from which typhus it is.
 # Those 42 keep whatever code they carry; see data/archives/typhus_coding.md.
+#
+# One record does name the flea-borne disease: NB31 #2455 (24 Apr 1947),
+# "Typhus Murine.", a row the extraction dropped and the scan re-read
+# recovered. It keeps 081.0, by the same rule.
 TYPHUS_LOUSE = re.compile(r"exanth|erythematous|exanthimaticus|epidemic", re.I)
+TYPHUS_MURINE = re.compile(r"murine", re.I)
 TYPHUS_HELD = re.compile(
     r"rheumat"
     r"|negative|observ|susp|indet|examination|\?"
@@ -958,6 +986,8 @@ def typhus_code(written: str, current: str) -> str:
         return current
     if TYPHUS_LOUSE.search(written):
         return "080"
+    if TYPHUS_MURINE.search(written):
+        return "081.0"
     return "081.9"
 
 
@@ -1116,9 +1146,12 @@ REVIEW_FLAGS = [
     ("row-completed-from-scan", "A record the extraction left nearly empty; its blank cells read off the page image"),
     ("not-an-admission", "Registered but not admitted: cancelled, a second entry, refused, or no bed; left out of counts"),
     ("half-page-scanned", "Only one half of this spread is in the library's scan; the other half's fields cannot be checked"),
+    ("right-block-shifted", "Ward-to-result had slid one row up against the left block; moved back from the scan"),
     ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
     ("religion-read-from-scan", "Religion blank or misread (NB31); read off the page image"),
-    ("diagnosis-read-from-scan", "Diagnosis was blank; read off the page image (not yet ICD-9 coded)"),
+    ("diagnosis-read-from-scan", "Diagnosis was blank; read off the page image"),
+    ("diagnosis-not-on-page", "The page's diagnosis cell is blank; the diagnosis the extraction supplied is cleared"),
+    ("diagnosis-corrected-from-scan", "Written diagnosis replaced by the page's (misread, or a neighbouring row's)"),
 ]
 
 
@@ -1475,6 +1508,12 @@ def main() -> int:
             ward_diag_readings = {r["Index"]: r for r in
                                   csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
     diagnosis_read = 0
+    diagnosis_corrections: dict[str, dict[str, str]] = {}
+    if DIAGNOSIS_CORRECTIONS.exists():
+        with DIAGNOSIS_CORRECTIONS.open(newline="", encoding="utf-8") as handle:
+            diagnosis_corrections = {r["Index"]: r for r in
+                                     csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+    diagnosis_corrected: Counter[str] = Counter()
     page_readings: dict[str, str] = {}
     if PAGE_READINGS.exists():
         with PAGE_READINGS.open(newline="", encoding="utf-8") as handle:
@@ -1676,6 +1715,34 @@ def main() -> int:
             print(f"missing-rows-read: no record with Index {index} to place a reading after",
                   file=sys.stderr)
 
+    # On a few pages the extraction slid the right-hand block up one row from
+    # a ledger row whose right side is (nearly) empty: the record numbered S
+    # holds row S+1's ward-to-result, the block on the last record of the run
+    # duplicates the row below it, and the first row's own empty block is
+    # lost. Each run is moved back down; the first row keeps only the ward
+    # and admission date the page shows. The left block is right throughout.
+    right_shifted: set[int] = set()
+    if RIGHT_BLOCK_SHIFTS.exists():
+        with RIGHT_BLOCK_SHIFTS.open(newline="", encoding="utf-8") as handle:
+            runs = list(csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE))
+        by_place = {((row.get("Notebook_Number") or ""), (row.get("Page_Number") or "").strip(),
+                     (row.get("Notebook Record ID") or "").strip()): row for row in rows}
+        for run in runs:
+            first, last = int(run["first_serial"]), int(run["last_serial"])
+            chain = [by_place.get((run["notebook"], run["page"], str(s))) for s in range(first, last + 2)]
+            if any(r is None for r in chain):
+                print(f"right-block-shifts: run {run['notebook']}/{run['page']} {first}-{last} "
+                      "not found whole; left alone", file=sys.stderr)
+                continue
+            blocks = [{c: r.get(c, "") for c in RIGHT_BLOCK} for r in chain]
+            for target, block in zip(chain[1:], blocks[:-1]):
+                target.update(block)
+            chain[0].update({c: "" for c in RIGHT_BLOCK})
+            chain[0]["Ward"] = run["first_ward"]
+            chain[0]["Admission Date (Orig)"] = run["first_admission"]
+            chain[0]["Admission Date [ISO]"] = parse_written_date(run["first_admission"])
+            right_shifted.update(id(r) for r in chain)
+
     for row in rows:
         if is_repeated_header(row):
             dropped += 1
@@ -1684,6 +1751,8 @@ def main() -> int:
         flags: list[str] = []
         if id(row) in shift_relabelled:
             flags.append("serial-shift-relabelled")
+        if id(row) in right_shifted:
+            flags.append("right-block-shifted")
         if id(row) in dropped_read or id(row) in missing_read:
             flags.append("row-read-from-scan")
         if id(row) in completed:
@@ -1887,6 +1956,20 @@ def main() -> int:
         # readings.tsv, keyed by Index). A reading fills; it does not replace
         # a single ward or a written diagnosis. NB1's form has no ward column,
         # so a ward there that the page leaves blank is cleared.
+        # A written diagnosis the page contradicts is replaced, or cleared where
+        # the cell is blank, before anything reads it. Its old codes go with
+        # it, so the classification below codes the page's words, not the
+        # extraction's.
+        fix = diagnosis_corrections.get(row.get("Index") or "")
+        if fix:
+            corrected = fix["corrected"].strip()
+            row["Original Diagnosis"] = corrected
+            row["Standardized Diagnosis"] = corrected
+            for column in DIAGNOSIS_CODE_COLUMNS:
+                row[column] = ""
+            diagnosis_corrected[fix["class"]] += 1
+            flags.append("diagnosis-corrected-from-scan" if corrected else "diagnosis-not-on-page")
+
         scan = ward_diag_readings.get(row.get("Index") or "")
         if scan:
             current = (row.get("standardized ward") or "").strip()
@@ -1958,7 +2041,8 @@ def main() -> int:
                 row["standardPrimaryICD9Name"] = proposed.get("Primary-ICD9-Name", "")
                 row["Primary-Confidence"] = proposed.get("Primary-Confidence", "")
                 if not (row.get("Additional-ICD9") or "").strip():
-                    row["Additional-ICD9"] = proposed.get("Additional-ICD9", "")
+                    # "-" is the classifier's "no additional code", not a code.
+                    row["Additional-ICD9"] = proposed.get("Additional-ICD9", "").strip(" -")
                 second_pass += 1
                 flags.append("icd9-second-pass")
                 try:
@@ -1970,7 +2054,9 @@ def main() -> int:
         # Typhus is recoded from the register's own wording, so the chapter and
         # every count below are derived from the corrected code. See the note
         # above TYPHUS_LOUSE for what this touches and what it leaves standing.
-        standardized_diag = (row.get("Standardized Diagnosis", "") or "").strip()
+        # A diagnosis read off the scan has no standardized form; its written
+        # one is read instead, or the classifier's guess at the insect stands.
+        standardized_diag = (row.get("Standardized Diagnosis", "") or "").strip() or written_diag
         ruled = typhus_code(standardized_diag, (row.get("Primary-ICD9") or "").strip())
         if ruled and ruled != (row.get("Primary-ICD9") or "").strip():
             typhus_recoded[
@@ -1978,7 +2064,8 @@ def main() -> int:
             ] += 1
             row["Primary-ICD9"] = ruled
             row["standardPrimaryICD9Name"] = (
-                "Epidemic louse-borne typhus" if ruled == "080" else "Typhus, unspecified"
+                {"080": "Epidemic louse-borne typhus", "081.0": "Murine (endemic) typhus"}
+                .get(ruled, "Typhus, unspecified")
             )
             flags.append("typhus-recoded-from-register")
 
@@ -2716,6 +2803,10 @@ def main() -> int:
         if diagnosis_read:
             writer.writerow(["derived", "Original Diagnosis", "blank, read off the page image (ward-diagnosis-readings.tsv)",
                              "flagged diagnosis-read-from-scan", diagnosis_read])
+        for found, count in diagnosis_corrected.most_common():
+            writer.writerow(["derived", "Original Diagnosis",
+                             f"contradicted by the page image, class {found} (diagnosis-corrections.tsv)",
+                             "flagged diagnosis-corrected-from-scan / diagnosis-not-on-page", count])
         for found, count in religion_read.most_common():
             writer.writerow(["derived", "Religion", "blank or misread, read off the page image (religion-readings.tsv)",
                              found, count])
