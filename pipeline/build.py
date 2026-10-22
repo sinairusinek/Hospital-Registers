@@ -95,6 +95,8 @@ DROPPED_ROWS = ROOT / "data" / "public" / "dropped-rows-read.tsv"
 RELIGION_READINGS = ROOT / "data" / "public" / "religion-readings.tsv"
 # Ward and diagnosis read off the scans where the extraction left them blank.
 WARD_DIAGNOSIS_READINGS = ROOT / "data" / "public" / "ward-diagnosis-readings.tsv"
+# Page numbers read off the scans for notebooks the extraction left unpaged.
+PAGE_READINGS = ROOT / "data" / "public" / "page-readings.tsv"
 
 # A ward as the clerk wrote it, onto the register's wards. Bed and room
 # numbers after the ward ("Surg 11.8", "Med W10", "D XII") are dropped; a
@@ -1452,6 +1454,12 @@ def main() -> int:
             ward_diag_readings = {r["Index"]: r for r in
                                   csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
     diagnosis_read = 0
+    page_readings: dict[str, str] = {}
+    if PAGE_READINGS.exists():
+        with PAGE_READINGS.open(newline="", encoding="utf-8") as handle:
+            page_readings = {r["Index"]: r["page"] for r in
+                             csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+    pages_read = 0
     religion_from_written_count: Counter[str] = Counter()
     religion_read: Counter[str] = Counter()
     known_nationality = column_values.get("StandardNationality", Counter())
@@ -1557,6 +1565,13 @@ def main() -> int:
             flags.append("serial-shift-relabelled")
         if id(row) in dropped_read:
             flags.append("row-read-from-scan")
+        # Notebooks 13, 14, 24, 26 and 30 carry almost no page numbers; the
+        # page each record sits on was read off the scans (page-readings.tsv).
+        page = page_readings.get(row.get("Index") or "")
+        if page and not (row.get("Page_Number") or "").strip():
+            row["Page_Number"] = page
+            row["Notebook-page"] = f"{row.get('Notebook_Number') or ''}_{page}"
+            pages_read += 1
 
         for column in RULES:
             if column not in row:
@@ -1607,7 +1622,13 @@ def main() -> int:
         # NB31, and never a nationality already read off the scan.
         reading = religion_readings.get(row.get("Index") or "")
         if reading:
-            notebook31 = row.get("Notebook_Number") == "31"
+            # NB31 was read whole for its misread hand; NB13, 14, 24, 26 and 30
+            # were read whole for their missing page numbers, and there a
+            # clearly read religion also replaces a disagreeing one (most are
+            # clerk overwrites where the extraction took the struck word).
+            notebook31 = row.get("Notebook_Number") == "31" or (
+                row.get("Notebook_Number") in ("13", "14", "24", "26", "30")
+                and reading.get("confidence") == "h")
             written_rel = reading["religion_as_written"].strip()
             read_rel = RELIGION.get(written_rel.lower()) or religion_from_written(written_rel)
             current_rel = (row.get("standardized Religion") or "").strip()
@@ -1743,7 +1764,11 @@ def main() -> int:
         if scan:
             current = (row.get("standardized ward") or "").strip()
             written_ward = scan["ward_as_written"].strip()
-            if written_ward and (not current or "|" in current):
+            # A bare pavilion letter already written stands: the pavilion pass
+            # below reads it, and one clerk's ticked "B." reads like "I.S.".
+            bare_letter = re.fullmatch(r"[A-Fa-f]\.?", (row.get("Ward") or "").strip())
+            readable = re.fullmatch(r'"?[A-Fa-f]"?\.?', written_ward) or ward_from_scan(written_ward)
+            if written_ward and (readable or not bare_letter) and (not current or "|" in current):
                 target = ward_from_scan(written_ward)
                 if target != current:
                     final_values["standardized ward"][current] -= 1 if current else 0
@@ -2558,6 +2583,9 @@ def main() -> int:
         if city_by_record:
             writer.writerow(["derived", "City", "one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)",
                              "flagged city-set-by-record", city_by_record])
+        if pages_read:
+            writer.writerow(["derived", "Page_Number", "blank, read off the page images (page-readings.tsv)",
+                             "", pages_read])
         if diagnosis_read:
             writer.writerow(["derived", "Original Diagnosis", "blank, read off the page image (ward-diagnosis-readings.tsv)",
                              "flagged diagnosis-read-from-scan", diagnosis_read])
