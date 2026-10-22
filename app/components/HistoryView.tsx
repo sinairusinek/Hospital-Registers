@@ -14,9 +14,9 @@ import WorkInProgress from './WorkInProgress';
  * Like About and Timeline, it stands on its own file and so is readable before
  * — and without — the register TSV.
  */
-const HistoryView: React.FC = () => {
+const HistoryView: React.FC<{ hash?: string }> = ({ hash = '' }) => {
   const [loaded, setLoaded] = useState(false);
-  const src = `${import.meta.env.BASE_URL}hospital-history.html`;
+  const src = `${import.meta.env.BASE_URL}hospital-history.html${hash ? `#${hash}` : ''}`;
 
   return (
     <div className="h-full flex flex-col bg-white">

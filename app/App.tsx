@@ -1,6 +1,6 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen, Users2, Building2 } from 'lucide-react';
+import { Upload, Table, BarChart3, Info, ClipboardCheck, MapPin, CalendarClock, Map as MapIcon, BookOpen, Users2, Building2, Hospital } from 'lucide-react';
 import { RegistryRecord, ViewType, FilterState, ColumnConfig, RangeFilter } from './types';
 import { matchesFilters, matchesNonFacet } from './filtering';
 import { addGroupColumn, GROUP_COLUMN } from './groups';
@@ -13,6 +13,7 @@ import MapView from './components/MapView';
 import HaifaView from './components/HaifaView';
 import TimelineView from './components/TimelineView';
 import HistoryView from './components/HistoryView';
+import BuildingsView from './components/BuildingsView';
 import SharedSpaceView from './components/SharedSpaceView';
 
 declare const Papa: any;
@@ -60,6 +61,26 @@ const App: React.FC = () => {
   // "#yoni" lands on the place questions in the Review view, so the link can be sent.
   const [activeView, setActiveView] = useState<ViewType>(
     () => (window.location.hash.startsWith('#yoni') ? 'review' : 'about'));
+  // Which section the framed documents (History, Buildings) open at. The
+  // documents link to each other and to the other tabs by posting a message
+  // to this window, since a link inside an iframe cannot change the tab.
+  const [docHash, setDocHash] = useState('');
+  const openDocument = useCallback((view: ViewType, hash = '') => {
+    setDocHash(hash);
+    setActiveView(view);
+  }, []);
+  useEffect(() => {
+    const allowed: ViewType[] = ['history', 'buildings', 'shared-space', 'timeline'];
+    const onMessage = (e: MessageEvent) => {
+      if (e.origin !== window.location.origin) return;
+      const msg = e.data;
+      if (!msg || msg.type !== 'hr-open-view' || !allowed.includes(msg.view)) return;
+      openDocument(msg.view, typeof msg.hash === 'string' ? msg.hash : '');
+    };
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
+  }, [openDocument]);
+
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [columns, setColumns] = useState<ColumnConfig[]>([]);
@@ -319,13 +340,22 @@ const App: React.FC = () => {
                 Timeline
               </button>
               <button
-                onClick={() => setActiveView('history')}
+                onClick={() => openDocument('history')}
                 className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
                   activeView === 'history' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <BookOpen size={16} />
                 History
+              </button>
+              <button
+                onClick={() => openDocument('buildings')}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  activeView === 'buildings' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Hospital size={16} />
+                Buildings
               </button>
               <button
                 onClick={() => setActiveView('shared-space')}
@@ -413,11 +443,16 @@ const App: React.FC = () => {
         ) : activeView === 'timeline' ? (
           // The timeline stands on its own generated file, so like About it is
           // readable before — and without — the register TSV.
-          <TimelineView records={data} onOpenInBrowser={openRangeInBrowser} onOpenOnMap={openRangeOnMap} />
+          <TimelineView records={data} onOpenInBrowser={openRangeInBrowser} onOpenOnMap={openRangeOnMap}
+            onOpenDossier={() => openDocument('buildings', 'd01')} />
         ) : activeView === 'history' ? (
           // Likewise the history: a self-contained document in public/, framed
           // as it stands rather than ported into React.
-          <HistoryView />
+          <HistoryView hash={docHash} />
+        ) : activeView === 'buildings' ? (
+          // The buildings and wards dossier: the evidence file behind the
+          // history, framed the same way.
+          <BuildingsView hash={docHash} />
         ) : activeView === 'shared-space' ? (
           // The article's figures stand on their own generated JSON, so like the
           // timeline they are readable without the register TSV.

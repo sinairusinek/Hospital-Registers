@@ -103,3 +103,14 @@ if (existsSync(historySrc)) {
   copyFileSync(historySrc, historyDest);
   console.log(`Staged institutional history → ${historyDest}`);
 }
+
+// The buildings and wards dossier behind the Buildings tab, the same way: the
+// authored file is paper/buildings-dossier.html (gitignored), its figures are
+// injected by pipeline/buildings_figures.py, and the copy in public/ is the
+// tracked one CI ships.
+const dossierSrc = resolve(here, '../../paper/buildings-dossier.html');
+const dossierDest = resolve(here, '../public/buildings-dossier.html');
+if (existsSync(dossierSrc)) {
+  copyFileSync(dossierSrc, dossierDest);
+  console.log(`Staged buildings dossier → ${dossierDest}`);
+}

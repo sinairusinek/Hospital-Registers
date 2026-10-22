@@ -679,9 +679,11 @@ interface TimelineViewProps {
   onOpenInBrowser?: (from: string, to: string) => void;
   /** The same range to the Map, which recuts its pies for it. */
   onOpenOnMap?: (from: string, to: string) => void;
+  /** Open the Buildings tab: the evidence behind the hospital band. */
+  onOpenDossier?: () => void;
 }
 
-const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrowser, onOpenOnMap }) => {
+const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrowser, onOpenOnMap, onOpenDossier }) => {
   const [data, setData] = useState<TimelineData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const scans = usePageScans();
@@ -1137,6 +1139,15 @@ const TimelineView: React.FC<TimelineViewProps> = ({ records = [], onOpenInBrows
           >
             Hospital history {showHospital ? '▾' : '▸'}
           </button>
+          {showHospital && onOpenDossier && (
+            <button
+              onClick={onOpenDossier}
+              className="px-2.5 py-1 rounded-full border border-slate-200 bg-white text-indigo-600 hover:border-indigo-300 transition-colors"
+              title="The premises, beds, wards and pavilions behind these flags, with their sources"
+            >
+              Buildings &amp; wards →
+            </button>
+          )}
 
           <span className="w-px h-4 bg-slate-200 mx-1" />
 
