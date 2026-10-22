@@ -92,8 +92,13 @@ def year(row):
 
 
 def ward(row):
-    """The ward as a single unit, or '' for blank and compound labels."""
+    """The ward as a single unit, or '' for blank and compound labels.
+
+    The lettered pavilions ("Isolation-pavilion-A" to "-E") are the Isolation
+    section, recorded by letter after 1940; here they count as Isolation."""
     w = g(row, "Ward")
+    if w.startswith("Isolation-pavilion-"):
+        return "Isolation"
     return w if w in WARD_ORDER else ""
 
 
@@ -169,7 +174,8 @@ def fig_page_mixing(rows):
     register was kept in admission order, so a page is a slice of real time. The
     adjacency test asks whether consecutive admissions to the same ward share a
     religion more often than the ward's own composition would produce by chance
-    — the null is sum(p^2), and a ward that clusters sits well above it.
+    — the null is sum(p^2) within each year, and a ward that clusters sits
+    well above it.
     """
     pages = defaultdict(list)
     for r in rows:
@@ -178,22 +184,38 @@ def fig_page_mixing(rows):
     full = [p for p in pages.values() if len(p) >= 8]
     spread = Counter(len(set(g(r, "Religion") for r in p)) for p in full)
 
+    # The null is taken year by year. A ward whose composition drifts over the
+    # decades — Isolation, Jewish for half its admissions in the 1930s and an
+    # eighth by 1947 — puts like next to like simply because neighbours share a
+    # year, and a whole-period sum(p^2) reads that drift as clustering (+8.2 for
+    # Isolation once its pavilions are counted, +3.7 within years). Pairs are
+    # counted within a year only, against that year's own composition; years
+    # with fewer than 20 admissions to the ward are left out.
     adjacency = []
     for w in WARD_ORDER:
         sub = [r for r in rows if ward(r) == w and g(r, "Religion") in MCJ]
         if len(sub) < 200:
             continue
-        sub.sort(key=lambda r: (g(r, "Admission Date"), g(r, "Notebook_Number"),
-                                g(r, "Page_Number"), g(r, "Index")))
-        same = sum(1 for a, b in zip(sub, sub[1:])
-                   if g(a, "Religion") == g(b, "Religion"))
-        c = Counter(g(r, "Religion") for r in sub)
-        chance = sum((v / len(sub)) ** 2 for v in c.values())
+        by_year = defaultdict(list)
+        for r in sub:
+            by_year[year(r)].append(r)
+        pairs = same = 0
+        expected = 0.0
+        for yr, ys in by_year.items():
+            if not yr or len(ys) < 20:
+                continue
+            ys.sort(key=lambda r: (g(r, "Admission Date"), g(r, "Notebook_Number"),
+                                   g(r, "Page_Number"), g(r, "Index")))
+            same += sum(1 for a, b in zip(ys, ys[1:])
+                        if g(a, "Religion") == g(b, "Religion"))
+            c = Counter(g(r, "Religion") for r in ys)
+            expected += (len(ys) - 1) * sum((v / len(ys)) ** 2 for v in c.values())
+            pairs += len(ys) - 1
         adjacency.append({
             "ward": w, "n": len(sub),
-            "observed": round(100 * same / (len(sub) - 1), 1),
-            "chance": round(100 * chance, 1),
-            "excess": round(100 * same / (len(sub) - 1) - 100 * chance, 1),
+            "observed": round(100 * same / pairs, 1),
+            "chance": round(100 * expected / pairs, 1),
+            "excess": round(100 * (same - expected) / pairs, 1),
         })
     return {
         "pages": {"n": len(full),

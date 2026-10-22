@@ -186,9 +186,9 @@ const HELP: HelpSection[] = [
         The ward column is blank for about one admission in six, and the blanks are concentrated in
         the register's last years — not spread evenly. They also fall unevenly by group there: in
         1947 the ward is missing for 33% of Muslim admissions and 58% of Jewish ones. Ward shares
-        for 1944–48 are therefore the weakest numbers in this view, and the Isolation label all but
-        disappears from the column after 1940, so no late comparison is possible for it. The gaps
-        panel gives the full profile.
+        for 1944–48 are therefore the weakest numbers in this view. After 1940 the clerks stopped
+        writing "Isolation" and wrote the fever pavilion's letter instead (A–E); those admissions are
+        counted here as Isolation. The gaps panel gives the full profile.
       </p>
     )
   },
@@ -415,8 +415,8 @@ const SharedSpaceView: React.FC = () => {
     return () => { live = false; };
   }, []);
 
-  // The adjacency chart's scale: the largest excess sets the bar width, so the
-  // British Section's outlier is read against the others rather than clipped.
+  // The adjacency chart's scale: the largest excess sets the bar width, so
+  // every ward is read against the most clustered one rather than clipped.
   const maxExcess = useMemo(
     () => data ? Math.max(...data.mixing.adjacency.map(a => a.excess)) : 1,
     [data]
@@ -580,8 +580,8 @@ python3 pipeline/shared_space_figures.py</pre>
           <Caveat>
             Ward is blank for roughly one admission in six, and the blanks cluster in the register's
             last years rather than spreading evenly — so these shares describe the period up to 1940
-            far better than the period after it. The Isolation label itself all but leaves the column
-            after 1940.
+            far better than the period after it. After 1940 Isolation is recorded by pavilion letter
+            (A–E), and those admissions are counted here as Isolation.
           </Caveat>
           <TableView>
             <table className="w-full text-xs border-collapse">
@@ -619,17 +619,20 @@ python3 pipeline/shared_space_figures.py</pre>
             <Stat value={`${mixing.pages.singlePct}%`}
                   label="carry only one"
                   note={`${mixing.pages.single} pages — the exceptions, not the rule`} />
-            <Stat value={`+${mixing.adjacency.find(a => a.ward === 'British Section')?.excess ?? 0}`}
-                  label="pts of same-religion clustering, British Section"
-                  note="every other ward sits within 4.3 points of chance" />
+            <Stat value={`+${maxExcess}`}
+                  label="pts of same-religion clustering, the most in any ward"
+                  note={`${mixing.adjacency.find(a => a.excess === maxExcess)?.ward ?? ''}; British Section +${mixing.adjacency.find(a => a.ward === 'British Section')?.excess ?? 0}`} />
           </div>
 
           <h3 className="text-sm font-semibold text-slate-700 mb-1">
             Same-religion neighbour, against chance
           </h3>
           <p className="text-xs text-slate-500 mb-4 max-w-3xl">
-            Bars show the excess over each ward's own expected rate. A ward that placed patients by
-            community would stand well clear of the rest; one ward does.
+            Bars show the excess over each ward's own expected rate, taken year by year so that a
+            ward whose make-up changed over the decades is not mistaken for one that sorted its
+            patients. A ward that placed patients by community would stand well clear of the rest;
+            none does. Not even the British Section: its admissions were overwhelmingly British by
+            design, so like already sat next to like by chance, and it clusters no more than that.
           </p>
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             {mixing.adjacency.map(a => {
@@ -679,13 +682,16 @@ python3 pipeline/shared_space_figures.py</pre>
               The British Section was designed for {bs.designedBeds} beds, and the 1935 memorandum
               says plainly what for: "the increase of British Officials, Police and Residents for the
               hospitalisation of whom no adequate facilities exist". It is the hospital's only
-              national enclosure — and it was never sealed.{' '}
+              national enclosure — and it was never quite sealed.{' '}
               {bs.nonBritish.n.toLocaleString()} of its {bs.total.toLocaleString()} admissions were
-              not British nationals at all, including {bs.nonBritish.byReligion.Muslim} Muslims and{' '}
-              {bs.nonBritish.byReligion.Jewish} Jews. They were not admitted as fee-paying
-              equivalents: {bs.nonBritish.byClass['3']} of them were third class. Where an
-              occupation is recorded it is overwhelmingly the hospital's own nursing staff — and the
-              ward ran at well under half its designed capacity, which is how there was room.
+              not British nationals, including {bs.nonBritish.byReligion.Muslim} Muslims and{' '}
+              {bs.nonBritish.byReligion.Jewish} Jews; {bs.nonBritish.byClass['3']} of them were third
+              class. Where an occupation is recorded it is overwhelmingly the hospital's own nursing
+              staff, and the ward never ran above half its designed capacity, which is how there was
+              room. The leak is smaller than it first looked: re-read off the scans in October 2026,
+              a bare "B." after the 1938 move proved to be the fever pavilion B, "Is." proved to be
+              Isolation and "S/S" the Surgical Section, which took several hundred non-British
+              patients out of this ward.
             </p>
           }
         >
@@ -694,7 +700,7 @@ python3 pipeline/shared_space_figures.py</pre>
                   note={`${bs.designedBeds} beds in the 1936 schedule`} />
             <Stat value={`${Math.max(...bs.occupancy.map(o => o.pctOf24))}%`}
                   label="peak mean occupancy of those beds"
-                  note="1944, the fullest year in the register" />
+                  note={`${bs.occupancy.reduce((a, o) => (o.pctOf24 > a.pctOf24 ? o : a), bs.occupancy[0])?.year}, the fullest year in the register`} />
             <Stat value={bs.nonBritish.n.toLocaleString()} label="admissions of non-British nationals"
                   note={`${bs.nonBritish.staff} carry a nursing or medical title`} />
           </div>
@@ -728,9 +734,9 @@ python3 pipeline/shared_space_figures.py</pre>
               </h3>
               <p className="text-xs text-slate-500 mb-4">
                 Share of each group's ward-known admissions that went to it. British-national
-                Christians are the ward's population; everyone else gets in at the margin — except
-                Palestinian Jews, at nearly three times the rate of Muslims and Palestinian
-                Christians, which the nursing corps explains.
+                Christians are the ward's population; everyone else gets in at the margin. Palestinian
+                Jews reach it more often than Muslims or Palestinian Christians, which the nursing
+                corps explains.
               </p>
               {bs.reach.map(r => (
                 <div key={r.group} className="grid grid-cols-[10rem_1fr_3.5rem] gap-3 items-center py-1">
@@ -880,9 +886,10 @@ python3 pipeline/shared_space_figures.py</pre>
               <Num v={withdrawal.years[0]?.Jewish} suffix="%" /> in {withdrawal.years[0]?.year} to{' '}
               <Num v={withdrawal.years[withdrawal.years.length - 1]?.Jewish} suffix="%" /> in 1948.
               The turn is 1936–37, not 1947: a decade before the war, and contemporaneous with the
-              Arab Revolt and the build-out of separate Jewish provision in Haifa. While the
-              Isolation ward is still recorded, Jewish patients hold near half of it even as their
-              overall share halves — compulsory notification did not let them leave. What collapsed
+              Arab Revolt and the build-out of separate Jewish provision in Haifa. Jewish
+              patients hold about half of the Isolation ward into 1936 and some 40% to 1939, even as
+              their overall share halves, and after the war they are still there at nearly twice
+              their overall share — compulsory notification did not let them leave. What collapsed
               first was elective use of a shared institution.
             </p>
           }
