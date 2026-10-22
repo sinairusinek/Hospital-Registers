@@ -620,30 +620,29 @@ review	Review Flags	date-year-off-catalogue	Year corrected: the admission fell o
 review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	25
 review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	10
 review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
-review	Review Flags	date-seated-by-order	A date outside 1930-48, taken whole from identical dates either side of it	2
-review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	974
+review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	951
 review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1311
 review	Review Flags	serial-repaired	Record number repaired: a digit slip against the register's own run	40
-review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	216
+review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	215
 review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	16
 review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	762
 review	Review Flags	typhus-recoded-from-register	Typhus code set from the register's own wording, not the classifier's guess at the insect	461
 review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	39
 review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	13
 review	Review Flags	procedure-only	An operation named with no diagnosis behind it	49
-review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	862
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	857
 review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	275
-review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1152
+review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1151
 review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	6552
 review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	2537
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
 review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	157
 review	Review Flags	religion-from-written	Religion was blank in the cleaned column; read from the spelling the clerk wrote	436
-review	Review Flags	religion-read-from-scan	Religion blank or misread (NB31); read off the page image	437
+review	Review Flags	religion-read-from-scan	Religion blank or misread (NB31); read off the page image	436
 review	Review Flags	diagnosis-read-from-scan	Diagnosis was blank; read off the page image (not yet ICD-9 coded)	2759
-withheld	Next of Kin			30038
-withheld	discarded_values			30038
-withheld	splitDiscValues			30038
+withheld	Next of Kin			30012
+withheld	discarded_values			30012
+withheld	splitDiscValues			30012
 withheld	Address	value repeated the next of kin		236
 withheld	City	value repeated the next of kin		3
 withheld	Occupation	value repeated the next of kin		36
@@ -656,11 +655,11 @@ withheld	splitDiscValues	value repeated the next of kin		4
 withheld	Address	value is a name known from the kin column		249
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23042
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23039
 derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	163
 derived	Page_Number	blank, read off the page images (page-readings.tsv)		5275
 derived	Original Diagnosis	blank, read off the page image (ward-diagnosis-readings.tsv)	flagged diagnosis-read-from-scan	2759
-derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Muslim	272
+derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Muslim	271
 derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Christian	87
 derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Jewish	44
 derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Druze	24
@@ -684,7 +683,7 @@ derived	Ward	British Section re-read off the page as 'Br'	British Section	213
 derived	Ward	British Section re-read off the page as 'C.'	(as written)	185
 derived	Ward	British Section re-read off the page as 'D'	(as written)	160
 derived	Ward	British Section re-read off the page as 'B'	(pavilion letter)	139
-derived	Ward	British Section re-read off the page as 'P.M.F.'	(as written)	131
+derived	Ward	British Section re-read off the page as 'P.M.F.'	(as written)	132
 derived	Ward	British Section re-read off the page as 'Med.'	Medical	124
 derived	Ward	British Section re-read off the page as 'B/s.'	British Section	119
 derived	Ward	British Section re-read off the page as 'Isol C'	Isolation	89
@@ -872,7 +871,6 @@ derived	Ward	British Section re-read off the page as 'B/S / P.M.F.'	British Sect
 derived	Ward	British Section re-read off the page as 'Med. / C.'	Medical	1
 derived	Ward	British Section re-read off the page as 'D. R.I.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'B / C'	(as written)	1
-derived	Ward	British Section re-read off the page as 'B.W.F.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'D R.XII'	(as written)	1
 derived	Ward	"British Section re-read off the page as ""'C'"""	(as written)	1
 derived	Ward	British Section re-read off the page as 'B.S'	British Section	1
@@ -997,7 +995,7 @@ derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Cz
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lebanese	28
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lithuanian	19
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Latvian	17
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Egyptian	17
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Egyptian	16
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Polish	12
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yugoslavian	11
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Turkish	11
@@ -1068,31 +1066,31 @@ derived	Nationality	blank, recovered from a set-aside value	Egyptian	2
 derived	Nationality	blank, recovered from a set-aside value	Dutch	1
 derived	Nationality	blank, recovered from a set-aside value	Sudan	1
 derived	Nationality	blank, recovered from a set-aside value	Russian	1
-derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	978
+derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	977
 derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3048
 derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2010
-derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8879
-derived	ICD-9 Chapter		800-999 Injury and poisoning	4743
-derived	ICD-9 Chapter		520-579 Digestive system	3313
+derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8876
+derived	ICD-9 Chapter		800-999 Injury and poisoning	4742
+derived	ICD-9 Chapter		520-579 Digestive system	3312
 derived	ICD-9 Chapter		460-519 Respiratory system	2678
 derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1724
-derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1369
+derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1364
 derived	ICD-9 Chapter		580-629 Genitourinary system	1318
 derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1169
-derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	899
+derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	897
 derived	ICD-9 Chapter		390-459 Circulatory system	785
-derived	ICD-9 Chapter		710-739 Musculoskeletal system and connective tissue	710
+derived	ICD-9 Chapter		710-739 Musculoskeletal system and connective tissue	709
 derived	ICD-9 Chapter		320-389 Nervous system and sense organs	561
 derived	ICD-9 Chapter		140-239 Neoplasms	367
 derived	ICD-9 Chapter		280-289 Diseases of the blood	171
-derived	ICD-9 Chapter		240-279 Endocrine, nutritional and metabolic diseases	170
+derived	ICD-9 Chapter		240-279 Endocrine, nutritional and metabolic diseases	162
 derived	ICD-9 Chapter		290-319 Mental disorders	161
 derived	ICD-9 Chapter		740-759 Congenital anomalies	117
 derived	ICD-9 Chapter		E800-E999 External causes of injury	24
 derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	18
 derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	206
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	51
-derived	ICD-9 Chapter		no readable code	862
+derived	ICD-9 Chapter		no readable code	857
 rule	ICD-9 Code	typhus 080	recoded to 081.9 from the register's own wording	11
 rule	ICD-9 Code	typhus 080|038.0	recoded to 080 from the register's own wording	1
 rule	ICD-9 Code	typhus 080|081.0	recoded to 080 from the register's own wording	16
@@ -1101,9 +1099,9 @@ rule	ICD-9 Code	typhus 081.9|080	recoded to 081.9 from the register's own wordin
 rule	ICD-9 Code	typhus 081.9|081.0|080	recoded to 080 from the register's own wording	1
 rule	ICD-9 Code	typhus 083.9	recoded to 081.9 from the register's own wording	1
 rule	ICD-9 Code	typhus 81.9	recoded to 081.9 from the register's own wording	5
-derived	Diagnosis Recording		Classified	29176
-derived	Diagnosis Recording		Not recorded	536
-derived	Diagnosis Recording		Recorded, not classified	326
+derived	Diagnosis Recording		Classified	29155
+derived	Diagnosis Recording		Not recorded	533
+derived	Diagnosis Recording		Recorded, not classified	324
 date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
 date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
 date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
@@ -1113,11 +1111,11 @@ date	Admission Date [ISO]	ran backwards against the register's order	year shifte
 serial	Notebook Record ID	notebook 11: 1146-1150 between 144 and 151	repaired to 146-150	5
 serial	Notebook Record ID	notebook 11: 6445-6449 between 643 and 651	repaired to 645-649	5
 serial	Notebook Record ID	notebook 1: 2-11 between 99 and 112	repaired to 102-111	10
+serial	Notebook Record ID	notebook 6: 23-23 between 1302 and 1304	no safe repair; flagged for review	1
 serial	Notebook Record ID	notebook 6: 3-11 between 1401 and 1414	repaired to 1403-1411	9
 serial	Notebook Record ID	notebook 7: 13-1772 between 1772 and 1773	no safe repair; flagged for review	2
-serial	Notebook Record ID	notebook 8: 5-5 between 407 and 408	no safe repair; flagged for review	1
 serial	Notebook Record ID	notebook 9: 2-12 between 1058 and 1071	no safe repair; flagged for review	11
-serial	Notebook Record ID	notebook 10: 2-2 between 2063 and 2066	no safe repair; flagged for review	2
+serial	Notebook Record ID	notebook 10: 2-2 between 2063 and 2066	no safe repair; flagged for review	1
 serial	Notebook Record ID	notebook 10: 2010-2010 between 2108 and 2111	no safe repair; flagged for review	1
 serial	Notebook Record ID	notebook 10: 2-2 between 2280 and 2282	no safe repair; flagged for review	1
 serial	Notebook Record ID	notebook 12: 1969-1969 between 1368 and 1370	no safe repair; flagged for review	1
@@ -1145,15 +1143,13 @@ serial	Notebook Record ID	notebook 30: 3-13 between 2215 and 2229	no safe repair
 serial	Notebook Record ID	notebook 31: 2-13 between 2515 and 2529	no safe repair; flagged for review	12
 serial	Notebook Record ID	notebook 31: 4-13 between 2757 and 2769	no safe repair; flagged for review	10
 serial	Notebook Record ID	notebook 32: 6245-6249 between 6249 and 6250	no safe repair; flagged for review	5
-date	Admission Date [ISO]	upstream ISO	replaced	2719
-date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	898
-date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	492
+date	Admission Date [ISO]	upstream ISO	replaced	2717
+date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	875
+date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	471
 date	Discharge Date (ISO)	upstream ISO	replaced	226
 date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the other date	4
-date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
 date	Days in Hospital (Calc)	discharge before admission	cleared	40
-date	Admission Date [ISO]	year outside 1930-48, nothing on the record to repair it from	taken whole from the identical dates either side of it in the register	2
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by -1 year, the smallest shift that seats it in the notebook	1
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +1 year, the smallest shift that seats it in the notebook	268
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +6 year, the smallest shift that seats it in the notebook	1
