@@ -7,3 +7,4 @@ notebook	serial	admission_date	target_city	evidence
 30	1475	1946-03-24	Haifa	scan NB30 p35: "12. Ahad Am Pl-" = Ahad Ha'am St., Hadar HaCarmel (extracted as "Road Ram", read as Ramallah); no city written
 3	1329	1932-11-27	Karkur	scan NB3 p31: "Hadera / Karkur" (extracted as "Kfar saba Karkur", read as Kfar Saba)
 31	3090	1947-05-20	Haifa	scan NB31 p63: "Yehuda Levy. 46" = Yehuda HaLevi St. 46, Haifa (extracted as "Kfar Saba Hosp."); no city written
+31	2945	1947-05-14	Kafr al-Labad	scan NB31 p51: "Kufr Labad / Tulkarm S/D" (extracted as "Kafr Saba")

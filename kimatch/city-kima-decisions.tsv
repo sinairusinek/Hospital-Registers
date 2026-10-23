@@ -882,3 +882,4 @@ Zikhron Yacob	Zikhron Yacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		m
 Zikron Yaacov	Zikron Yaacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
 Zummarin	Zummarin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zamarin' (skeleton: same consonant skeleton as 'Zamarin')	2026-10-19
 Arraba (Jenin)	Arraba (Jenin)	0	71763	Arraba (West Bank)	Q2463999	human		matched	furas		agent	Arraba of the Jenin sub-district; set per record from the address (kimatch/record-rules.tsv)	2026-10-18
+Kafr al-Labad	Kafr al-Labad	0	82252	Kafr al-Labad (West Bank)	Q6346227	human	Q6346227	matched	outside-queue		agent	Kafr al-Labad of the Tulkarm sub-district; set per record from the scan (kimatch/record-readings.tsv)	2026-10-24
