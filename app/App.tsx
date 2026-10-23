@@ -500,7 +500,7 @@ const App: React.FC = () => {
               // The map follows the admission dates and nothing else: its own
               // footer states how many records it cannot place, and a sidebar
               // facet would make that count mean two different things at once.
-              <MapView data={dateFilteredData} dateRange={dateRange} onDateRange={setDateRange} />
+              <MapView data={dateFilteredData} fullData={data} dateRange={dateRange} onDateRange={setDateRange} />
             ) : activeView === 'haifa' ? (
               // Whole dataset, like the Map, for the same reason.
               <HaifaView data={data} />

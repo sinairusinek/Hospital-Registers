@@ -6,9 +6,10 @@ import {
 } from 'recharts';
 import { MapPin, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Download } from 'lucide-react';
 import { RegistryRecord, RangeFilter } from '../types';
-import { UNKNOWN, facetValue } from '../facets';
-import { SERIES, semanticColor } from '../colors';
-import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
+import { UNKNOWN } from '../facets';
+import { SERIES } from '../colors';
+import { PieScheme, communityScheme, chapterScheme, usePieMode } from '../pieSchemes';
+import { PieModeSwitch, PieLegend } from './PieControls';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
 
@@ -32,7 +33,7 @@ const COORDS_URL = `${import.meta.env.BASE_URL}data/place-coords.tsv`;
 const HELP: HelpSection[] = [
   {
     heading: 'What a pie is',
-    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The pies follow the admission dates: narrow them in the box at the top of the map, or send a range from the Timeline, and every pie is recut for those admissions alone. The range is the same one the Browser's Admission Date slider sets, so the two always show the same admissions. No other filter reaches the map. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
+    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The <em>Pies show</em> switch at the top right recuts every pie by <em>diagnosis</em> instead: the ICD-9 chapter, in the colours the Statistics page gives it. The eight commonest chapters in the whole registry keep their own slice; the other eleven share a pale <em>Other chapters</em> slice, and grey is records with no ICD-9 code — a diagnosis not yet coded, or none written. The pies follow the admission dates: narrow them in the box at the top of the map, or send a range from the Timeline, and every pie is recut for those admissions alone. The range is the same one the Browser's Admission Date slider sets, so the two always show the same admissions. No other filter reaches the map. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
   },
   {
     heading: 'Solid pies and dashed ones',
@@ -87,32 +88,24 @@ const UNPLACED_LABEL: Record<string, string> = {
   matched: 'identified, no coordinates'
 };
 
-// The slices, in a fixed order round the pie so the same community always sits
-// in the same place and two pies can be read against each other at a glance.
-// The unrecorded last, in the neutral grey every chart gives a blank.
-const COMMUNITIES = [PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER, UNKNOWN];
-
-// The fixed colours the charts give each community, so a community is the
-// same hue here as on the Statistics pie whatever the filters leave.
-const communityColor = (k: string) => semanticColor(GROUP_DIM, k);
-
 type Mix = Record<string, number>;
 
-/** A pie as an SVG string, for a Leaflet divIcon. */
-const pieSvg = (mix: Mix, r: number, provisional: boolean, selected: boolean): string => {
+/** A pie as an SVG string, for a Leaflet divIcon. The slices go round in the
+ *  scheme's fixed order, so two pies can be read against each other at a glance. */
+const pieSvg = (scheme: PieScheme, mix: Mix, r: number, provisional: boolean, selected: boolean): string => {
   const stroke = selected ? 2.5 : provisional ? 1.75 : 1.25;
   const size = Math.ceil(2 * (r + stroke));
   const c = size / 2;
-  const total = COMMUNITIES.reduce((s, k) => s + (mix[k] || 0), 0) || 1;
+  const total = scheme.keys.reduce((s, k) => s + (mix[k] || 0), 0) || 1;
   // A provisional place is faded and dashed — visibly not the same kind of claim
   // as a ruled one — but keeps its slices, since its records are real.
   const opacity = provisional && !selected ? 0.5 : 0.88;
   let a0 = -Math.PI / 2;
   const parts: string[] = [];
-  COMMUNITIES.forEach(k => {
+  scheme.keys.forEach(k => {
     const n = mix[k] || 0;
     if (!n) return;
-    const fill = communityColor(k);
+    const fill = scheme.color(k);
     if (n === total) {
       parts.push(`<circle cx="${c}" cy="${c}" r="${r}" fill="${fill}"/>`);
       return;
@@ -131,11 +124,11 @@ const pieSvg = (mix: Mix, r: number, provisional: boolean, selected: boolean): s
     + `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${rim}" stroke-width="${stroke}"${dash}/></svg>`;
 };
 
-const pieIcon = (mix: Mix, r: number, provisional: boolean, selected: boolean): L.DivIcon => {
+const pieIcon = (scheme: PieScheme, mix: Mix, r: number, provisional: boolean, selected: boolean): L.DivIcon => {
   const stroke = selected ? 2.5 : provisional ? 1.75 : 1.25;
   const size = Math.ceil(2 * (r + stroke));
   return L.divIcon({
-    html: pieSvg(mix, r, provisional, selected),
+    html: pieSvg(scheme, mix, r, provisional, selected),
     className: 'map-pie',
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2]
@@ -184,6 +177,9 @@ type BasemapKey = typeof BASEMAPS[number]['key'];
 interface Props {
   /** The records inside the admission-date range, and only that range. */
   data: RegistryRecord[];
+  /** Every record, so the diagnosis pies rank and colour their chapters on the
+   *  whole registry rather than on whatever the range leaves. */
+  fullData: RegistryRecord[];
   /** The shared Admission Date range, in ms; absent if the data has no dates. */
   dateRange?: RangeFilter;
   onDateRange?: (min: number, max: number) => void;
@@ -248,8 +244,12 @@ const DateBox: React.FC<{ range: RangeFilter; onChange: (min: number, max: numbe
   );
 };
 
-const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
+const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) => {
   const [places, setPlaces] = useState<Place[] | null>(null);
+  const [pieMode, setPieMode] = usePieMode();
+  const scheme = useMemo(
+    () => (pieMode === 'chapter' ? chapterScheme(fullData) : communityScheme),
+    [pieMode, fullData]);
   // City value -> the review's decision, for values with no point to draw.
   const [decisionOf, setDecisionOf] = useState<Map<string, string>>(new Map());
   const [selected, setSelected] = useState<string | null>(null);
@@ -356,7 +356,7 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
         const mix: Mix = {};
         let n = 0;
         p.cities.forEach(c => (byCity.get(c) || []).forEach(row => {
-          const g = facetValue(row[GROUP_COLUMN]);
+          const g = scheme.bucket(row);
           mix[g] = (mix[g] || 0) + 1;
           n++;
         }));
@@ -364,7 +364,7 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
       })
       .filter(p => p.n > 0)
       .sort((a, b) => b.n - a.n);
-  }, [places, byCity]);
+  }, [places, byCity, scheme]);
   const counted = useMemo(() => withCounts.filter(p => MAP_BOUNDS.contains([p.lat, p.lon])), [withCounts]);
   const abroad = useMemo(() => withCounts.filter(p => !MAP_BOUNDS.contains([p.lat, p.lon])), [withCounts]);
 
@@ -578,7 +578,7 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
       const radius = radiusOf(p.n);
       const provisional = p.standing === 'provisional';
       const marker = L.marker([p.lat, p.lon], {
-        icon: pieIcon(p.mix, radius, provisional, false),
+        icon: pieIcon(scheme, p.mix, radius, provisional, false),
         // Leaflet stacks markers by latitude; a pie has to stack by size
         // instead, smaller over larger, or Haifa buries its own suburbs.
         // counted runs largest first, so a later index sits higher.
@@ -586,10 +586,10 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
         riseOnHover: true,
         keyboard: false
       });
-      const breakdown = COMMUNITIES
+      const breakdown = scheme.keys
         .filter(k => p.mix[k])
-        .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${communityColor(k)}"></span>`
-          + `${k} ${p.mix[k].toLocaleString()} (${Math.round(100 * p.mix[k] / p.n)}%)`)
+        .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${scheme.color(k)}"></span>`
+          + `${scheme.label(k)} ${p.mix[k].toLocaleString()} (${Math.round(100 * p.mix[k] / p.n)}%)`)
         .join('<br>');
       marker.bindTooltip(
         `<strong>${p.label}</strong><br>${p.n.toLocaleString()} record${p.n === 1 ? '' : 's'}`
@@ -607,7 +607,7 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
     if (!fittedRef.current) fitToPoints(true);
 
     return () => { markersRef.current.forEach(m => m.remove()); };
-  }, [counted, radiusOf, mapReady, fitToPoints]);
+  }, [counted, radiusOf, mapReady, fitToPoints, scheme]);
 
   // The selected pie is redrawn with a dark rim and lifted to the top; the
   // marker itself is kept, so the map does not flicker on every selection.
@@ -617,10 +617,10 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
       const marker = markersRef.current.get(key);
       if (!marker) return;
       const on = key === selected;
-      marker.setIcon(pieIcon(p.mix, radiusOf(p.n), p.standing === 'provisional', on));
+      marker.setIcon(pieIcon(scheme, p.mix, radiusOf(p.n), p.standing === 'provisional', on));
       marker.setZIndexOffset(on ? 10000000 : i * 10000);
     });
-  }, [selected, counted, radiusOf]);
+  }, [selected, counted, radiusOf, scheme]);
 
   // ------------------------------------------------------- the selection
 
@@ -750,6 +750,7 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
               </button>
             ))}
           </div>
+          <PieModeSwitch mode={pieMode} onChange={setPieMode} />
         </div>
 
         {/* What the map does and does not carry */}
@@ -773,14 +774,7 @@ const MapView: React.FC<Props> = ({ data, dateRange, onDateRange }) => {
               {provisionalCount} of them unreviewed candidates, drawn faded with a dashed rim
             </p>
           )}
-          <ul className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1">
-            {COMMUNITIES.map(k => (
-              <li key={k} className="flex items-center gap-1.5 text-[11px] text-slate-600">
-                <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: communityColor(k) }} />
-                {k}
-              </li>
-            ))}
-          </ul>
+          <PieLegend scheme={scheme} />
           <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
             Not on the map: {offMap.noCity.toLocaleString()} records with no City recorded,
             and {offMap.unmatched.toLocaleString()} whose City has no point

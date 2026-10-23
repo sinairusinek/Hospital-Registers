@@ -6,9 +6,10 @@ import {
 } from 'recharts';
 import { Building2, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Download, MapPinOff } from 'lucide-react';
 import { RegistryRecord } from '../types';
-import { UNKNOWN, facetValue } from '../facets';
-import { SERIES, semanticColor } from '../colors';
-import { GROUP_COLUMN, GROUP_DIM, PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER } from '../groups';
+import { UNKNOWN } from '../facets';
+import { SERIES } from '../colors';
+import { PieScheme, communityScheme, chapterScheme, usePieMode } from '../pieSchemes';
+import { PieModeSwitch, PieLegend } from './PieControls';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
 
@@ -32,7 +33,7 @@ const PLACES_URL = `${import.meta.env.BASE_URL}data/haifa-places.json`;
 const HELP: HelpSection[] = [
   {
     heading: 'What a pie is',
-    body: <p>One quarter of Haifa, sized by how many admissions give it as the address, and cut by <em>Community</em> in the colours the other charts use. <strong>Click a slice</strong> for that community's records from that quarter; the panel can then be widened to the whole quarter. The quarter is read from the address the clerk wrote, so a record counts here only where the address names a quarter — most Haifa records give a street or nothing at all, and the box at the bottom left says how many.</p>
+    body: <p>One quarter of Haifa, sized by how many admissions give it as the address, and cut by <em>Community</em> in the colours the other charts use. <strong>Click a slice</strong> for that community's records from that quarter; the panel can then be widened to the whole quarter. The <em>Pies show</em> switch at the top right recuts the pies by <em>diagnosis</em> — the ICD-9 chapter, as on the Statistics page, with the eight commonest chapters in the registry kept apart and the rest pooled as <em>Other chapters</em> — and a slice then opens that chapter's records from the quarter. The choice is shared with the Map tab. The quarter is read from the address the clerk wrote, so a record counts here only where the address names a quarter — most Haifa records give a street or nothing at all, and the box at the bottom left says how many.</p>
   },
   {
     heading: 'Where a point comes from',
@@ -66,8 +67,6 @@ type BasemapKey = typeof BASEMAPS[number]['key'];
 // See MapView: the survey answers outside its sheets with a tiny black tile.
 const BLANK_TILE_BYTES = 700;
 
-const COMMUNITIES = [PALESTINIAN_ARAB, DRUZE, JEWISH, BRITISH_CHRISTIAN, OTHER, UNKNOWN];
-const communityColor = (k: string) => semanticColor(GROUP_DIM, k);
 
 const FIELDS = ['Admission Date', 'Age', 'Sex', 'Religion', 'Nationality',
                 'Occupation', 'Address', 'Neighbourhood', 'Address institution', 'Ward', 'Diagnosis', 'Result'];
@@ -87,7 +86,8 @@ interface Site extends Point { from: string | null; to: string | null; icon: str
 type Mix = Record<string, number>;
 
 type Selection =
-  | { kind: 'quarter'; name: string; community: string | null }
+  // slice: the pie slice clicked, in whichever cut the pies show.
+  | { kind: 'quarter'; name: string; slice: string | null }
   | { kind: 'institution'; key: string };
 
 const val = (row: RegistryRecord, key: string): string => {
@@ -109,20 +109,20 @@ const inWindow = (row: RegistryRecord, s: Site) => {
   return true;
 };
 
-/** A pie whose slices carry their community, so a click can tell which. */
-const pieSvg = (mix: Mix, r: number, near: boolean, selected: string | null | undefined): string => {
-  const total = COMMUNITIES.reduce((s, k) => s + (mix[k] || 0), 0) || 1;
+/** A pie whose slices carry their key, so a click can tell which. */
+const pieSvg = (scheme: PieScheme, mix: Mix, r: number, near: boolean, selected: string | null | undefined): string => {
+  const total = scheme.keys.reduce((s, k) => s + (mix[k] || 0), 0) || 1;
   const stroke = selected !== undefined ? 2.5 : 1.5;
   const size = Math.ceil(2 * (r + stroke + 3));
   const c = size / 2;
   let a0 = -Math.PI / 2;
   const parts: string[] = [];
-  COMMUNITIES.forEach(k => {
+  scheme.keys.forEach(k => {
     const n = mix[k] || 0;
     if (!n) return;
     // The chosen slice pulls out a little from the centre.
     const pull = selected === k ? 3 : 0;
-    const fill = communityColor(k);
+    const fill = scheme.color(k);
     const dim = selected && selected !== k ? ' fill-opacity="0.35"' : '';
     if (n === total) {
       parts.push(`<circle data-k="${k}" cx="${c}" cy="${c}" r="${r}" fill="${fill}"${dim} style="cursor:pointer"/>`);
@@ -144,9 +144,9 @@ const pieSvg = (mix: Mix, r: number, near: boolean, selected: string | null | un
     + `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${rim}" stroke-width="${stroke}"${dash} pointer-events="none"/></svg>`;
 };
 
-const pieIcon = (mix: Mix, r: number, near: boolean, selected: string | null | undefined) => {
+const pieIcon = (scheme: PieScheme, mix: Mix, r: number, near: boolean, selected: string | null | undefined) => {
   const size = Math.ceil(2 * (r + (selected !== undefined ? 2.5 : 1.5) + 3));
-  return L.divIcon({ html: pieSvg(mix, r, near, selected), className: 'map-pie',
+  return L.divIcon({ html: pieSvg(scheme, mix, r, near, selected), className: 'map-pie',
                      iconSize: [size, size], iconAnchor: [size / 2, size / 2] });
 };
 
@@ -168,6 +168,16 @@ const HaifaView: React.FC<Props> = ({ data }) => {
   const [quarters, setQuarters] = useState<Point[] | null>(null);
   const [sites, setSites] = useState<Site[]>([]);
   const [selection, setSelection] = useState<Selection | null>(null);
+  const [pieMode, setPieModeState] = usePieMode();
+  // data is the whole registry here, so the chapters rank on it directly.
+  const scheme = useMemo(
+    () => (pieMode === 'chapter' ? chapterScheme(data) : communityScheme),
+    [pieMode, data]);
+  // A chosen slice belongs to the old cut; the quarter stays open, whole.
+  const setPieMode = (m: typeof pieMode) => {
+    setPieModeState(m);
+    setSelection(s => (s?.kind === 'quarter' ? { ...s, slice: null } : s));
+  };
   const [basemap, setBasemap] = useState<BasemapKey>('historic');
   const [page, setPage] = useState(1);
   const [infoOpen, setInfoOpen] = useState<boolean>(() => {
@@ -251,7 +261,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       .map(q => {
         const rows = byQuarter.get(q.name) || [];
         const mix: Mix = {};
-        rows.forEach(r => { const g = facetValue(r[GROUP_COLUMN]); mix[g] = (mix[g] || 0) + 1; });
+        rows.forEach(r => { const g = scheme.bucket(r); mix[g] = (mix[g] || 0) + 1; });
         const key = `${q.lat!.toFixed(4)},${q.lon!.toFixed(4)}`;
         const k = seen.get(key) || 0;
         seen.set(key, k + 1);
@@ -261,7 +271,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
                  lat: q.lat! + shift * Math.sin(angle), lon: q.lon! + shift * 1.2 * Math.cos(angle) };
       })
       .sort((a, b) => b.n - a.n);
-  }, [quarters, byQuarter]);
+  }, [quarters, byQuarter, scheme]);
 
   // Quarters the address layer reads but the map cannot place.
   const unplacedQuarters = useMemo(() => {
@@ -368,13 +378,13 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       const r = radiusOf(q.n);
       const isSel = selection?.kind === 'quarter' && selection.name === q.name;
       const marker = L.marker([q.lat, q.lon], {
-        icon: pieIcon(q.mix, r, q.relation === 'near', isSel ? selection.community : undefined),
+        icon: pieIcon(scheme, q.mix, r, q.relation === 'near', isSel ? selection.slice : undefined),
         zIndexOffset: isSel ? 1000000 : i * 1000,
         riseOnHover: true, keyboard: false
       });
-      const breakdown = COMMUNITIES.filter(k => q.mix[k])
-        .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${communityColor(k)}"></span>`
-          + `${k} ${q.mix[k].toLocaleString()} (${Math.round(100 * q.mix[k] / q.n)}%)`).join('<br>');
+      const breakdown = scheme.keys.filter(k => q.mix[k])
+        .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${scheme.color(k)}"></span>`
+          + `${scheme.label(k)} ${q.mix[k].toLocaleString()} (${Math.round(100 * q.mix[k] / q.n)}%)`).join('<br>');
       marker.bindTooltip(
         `<strong>${q.name}</strong><br>${q.n.toLocaleString()} record${q.n === 1 ? '' : 's'}`
         + (q.relation === 'near' ? `<br><em>drawn at ${q.anchor}</em>` : '')
@@ -385,7 +395,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       );
       marker.on('click', (e: L.LeafletMouseEvent) => {
         const target = (e.originalEvent?.target as Element | null)?.closest?.('[data-k]');
-        setSelection({ kind: 'quarter', name: q.name, community: target?.getAttribute('data-k') || null });
+        setSelection({ kind: 'quarter', name: q.name, slice: target?.getAttribute('data-k') || null });
         setPage(1);
       });
       marker.addTo(group);
@@ -406,7 +416,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       marker.on('click', () => { setSelection({ kind: 'institution', key }); setPage(1); });
       marker.addTo(group);
     });
-  }, [placedQuarters, placedSites, selection, radiusOf, mapReady]);
+  }, [placedQuarters, placedSites, selection, radiusOf, mapReady, scheme]);
 
   // ------------------------------------------------------- the selection
 
@@ -414,21 +424,22 @@ const HaifaView: React.FC<Props> = ({ data }) => {
     if (!selection) return null;
     if (selection.kind === 'quarter') {
       const all = byQuarter.get(selection.name) || [];
-      const rows = selection.community
-        ? all.filter(r => facetValue(r[GROUP_COLUMN]) === selection.community) : all;
+      const rows = selection.slice
+        ? all.filter(r => scheme.bucket(r) === selection.slice) : all;
       const q = (quarters || []).find(x => x.name === selection.name);
       const mix: Mix = {};
-      all.forEach(r => { const g = facetValue(r[GROUP_COLUMN]); mix[g] = (mix[g] || 0) + 1; });
-      return { title: selection.name, subtitle: selection.community, rows, all: all.length, mix,
+      all.forEach(r => { const g = scheme.bucket(r); mix[g] = (mix[g] || 0) + 1; });
+      return { title: selection.name, subtitle: selection.slice && scheme.label(selection.slice),
+               slice: selection.slice, rows, all: all.length, mix,
                qid: q?.qid || '', note: q?.note || '', anchor: q?.relation === 'near' ? q.anchor : '',
                kima: q?.kima || '', kimaNear: q?.kimaRelation === 'near', osm: q?.osm || '' };
     }
     const inst = institutions.find(i => siteKey(i.site) === selection.key);
     if (!inst) return null;
-    return { title: inst.site.name, subtitle: null, rows: inst.rows, all: inst.rows.length, mix: null,
+    return { title: inst.site.name, subtitle: null, slice: null, rows: inst.rows, all: inst.rows.length, mix: null,
              qid: inst.site.qid, note: inst.site.note, anchor: inst.site.relation === 'near' ? inst.site.anchor : '',
              kima: '', kimaNear: false, osm: inst.site.osm || '' };
-  }, [selection, byQuarter, quarters, institutions]);
+  }, [selection, byQuarter, quarters, institutions, scheme]);
 
   const records = selected?.rows || [];
 
@@ -453,7 +464,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
   const exportRows = () => {
     if (!records.length || !selected) return;
     const cols = ['Notebook_Number', 'Page_Number', 'Notebook Record ID', ...FIELDS,
-                  'City', 'Neighbourhood Wikidata', GROUP_COLUMN, 'tempLink'];
+                  'City', 'Neighbourhood Wikidata', ...scheme.exportColumns, 'tempLink'];
     const csv = Papa.unparse(records.map(r => {
       const out: Record<string, string> = {};
       cols.forEach(c => { out[c] = val(r, c); });
@@ -497,6 +508,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
               </button>
             ))}
           </div>
+          <PieModeSwitch mode={pieMode} onChange={setPieMode} />
         </div>
 
         <div className="absolute bottom-6 left-4 z-[500] bg-white/95 backdrop-blur rounded-2xl border border-slate-200 shadow-lg px-4 py-3 max-w-xs">
@@ -509,14 +521,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
                       : <ChevronUp size={14} className="text-slate-400 shrink-0" />}
           </button>
           {infoOpen && <>
-            <ul className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1">
-              {COMMUNITIES.map(k => (
-                <li key={k} className="flex items-center gap-1.5 text-[11px] text-slate-600">
-                  <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: communityColor(k) }} />
-                  {k}
-                </li>
-              ))}
-            </ul>
+            <PieLegend scheme={scheme} />
             <p className="text-[11px] text-slate-500 mt-2 leading-relaxed">
               Dashed rim: drawn at a landmark, the quarter has no point of its own.
               Square badges: institutions the addresses name.
@@ -568,20 +573,20 @@ const HaifaView: React.FC<Props> = ({ data }) => {
               </button>
             </div>
             {/* The quarter's slices as chips, so the reader can move between
-                communities, or back to the whole quarter, without the map. */}
+                slices, or back to the whole quarter, without the map. */}
             {selection?.kind === 'quarter' && selected.mix && (
               <div className="flex flex-wrap gap-1.5 mt-3">
-                <button onClick={() => pick({ ...selection, community: null })}
+                <button onClick={() => pick({ ...selection, slice: null })}
                         className={`px-2 py-1 rounded-md text-[11px] font-bold border ${
-                          !selection.community ? 'bg-slate-800 text-white border-slate-800' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}>
+                          !selection.slice ? 'bg-slate-800 text-white border-slate-800' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}>
                   All {selected.all.toLocaleString()}
                 </button>
-                {COMMUNITIES.filter(k => selected.mix![k]).map(k => (
-                  <button key={k} onClick={() => pick({ ...selection, community: k })}
+                {scheme.keys.filter(k => selected.mix![k]).map(k => (
+                  <button key={k} onClick={() => pick({ ...selection, slice: k })}
                           className={`flex items-center gap-1.5 px-2 py-1 rounded-md text-[11px] font-bold border ${
-                            selection.community === k ? 'bg-slate-800 text-white border-slate-800' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}>
-                    <span className="w-2 h-2 rounded-sm" style={{ background: communityColor(k) }} />
-                    {k} {selected.mix![k].toLocaleString()}
+                            selection.slice === k ? 'bg-slate-800 text-white border-slate-800' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}>
+                    <span className="w-2 h-2 rounded-sm" style={{ background: scheme.color(k) }} />
+                    {scheme.label(k)} {selected.mix![k].toLocaleString()}
                   </button>
                 ))}
               </div>
@@ -605,7 +610,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
                       <Tooltip cursor={{ fill: '#f1f5f9' }}
                                contentStyle={{ fontSize: 12, borderRadius: 10, border: '1px solid #e2e8f0' }}
                                formatter={(v: number) => [v.toLocaleString(), 'admissions']} />
-                      <Bar dataKey="n" fill={selected.subtitle ? communityColor(selected.subtitle) : SERIES[0]}
+                      <Bar dataKey="n" fill={selected.slice ? scheme.color(selected.slice) : SERIES[0]}
                            radius={[3, 3, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
@@ -684,7 +689,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
             {placedQuarters.map(q => (
               <li key={q.name}>
                 <button onClick={() => {
-                          pick({ kind: 'quarter', name: q.name, community: null });
+                          pick({ kind: 'quarter', name: q.name, slice: null });
                           mapRef.current?.setView([q.lat, q.lon], Math.max(mapRef.current.getZoom(), 14));
                         }}
                         className="w-full flex items-baseline justify-between gap-3 px-3 py-1.5 rounded-lg hover:bg-slate-50 text-left">
@@ -704,7 +709,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
             <ul className="p-2">
               {unplacedQuarters.map(q => (
                 <li key={q.name}>
-                  <button onClick={() => pick({ kind: 'quarter', name: q.name, community: null })} title={q.note}
+                  <button onClick={() => pick({ kind: 'quarter', name: q.name, slice: null })} title={q.note}
                           className="w-full flex items-baseline justify-between gap-3 px-3 py-1.5 rounded-lg hover:bg-slate-50 text-left">
                     <span className="text-xs text-slate-500 truncate italic">{q.name}</span>
                     <span className="text-xs font-bold tabular-nums text-slate-400 shrink-0">{q.n.toLocaleString()}</span>
