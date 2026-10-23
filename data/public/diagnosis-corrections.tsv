@@ -1096,3 +1096,5 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 29572	33	42	494	[illegible]		debris	h	out_Q17.tsv: diagnosis blank; adm on scan 6.3.48
 29657	33	49	579	[illegible]		debris	h	out_Q17.tsv: diagnosis blank
 29672	33	50	594	-		debris	h	out_Q17.tsv: diagnosis blank
+2345	3	31	1328	Endocarditis.	Entero-colitis	misread	h	scan NB3 p31: reads Entero-colitis, as the next row
+2346	3	31	1329	Endocarditis.	Entero-colitis	misread	h	scan NB3 p31: reads Entero-colitis
