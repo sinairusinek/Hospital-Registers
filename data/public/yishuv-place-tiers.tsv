@@ -1,12 +1,12 @@
 key_type	key	label	n_jewish	tier	note	status	basis	scope
-wikidata	Q180294	Jaffa	32	ambiguous	Jaffa had an old Sephardi community but also served as an address for Tel Aviv; nationality mix in the 40-55% band cannot separate old from mixed	proposed	place	
+wikidata	Q180294	Jaffa	32	arab_or_mixed	Jaffa: 7,209 Jews in 1931 (census), but its patients are European-heavy with no Middle-Eastern nationals: a mixed-town group, not the old community (ruled 2026-10-24)	ruled	place	
 city_text_regex	Bethania|Beit Anya|Bithania	Bethania	20	labour	Bitanya: 0/20 Palestinian, German/Latvian adults, all 1933-40: immigrant workers group	proposed	nationality	
 wikidata	Q1743479	Kiryat Haroshet	15	ambiguous	workers settlement or quarter, 1930s; rule; nationality mix in the 40-55% band cannot separate old from mixed	proposed	place	
 neighbourhood	Haifa: German Colony	Haifa	10	arab_or_mixed	Templer quarter, mixed by the 1930s; 42-50% Palestinian, no Middle-Eastern nationals: matches arab_or_mixed (45%)	proposed	nationality	
 city_text_regex	^Emek	Emek	10	ambiguous	"""the Valley"": region, not a place"	proposed	place	
 neighbourhood	Haifa: Khamra Square	Haifa	9	arab_or_mixed	downtown commercial centre, mixed; 42-50% Palestinian, no Middle-Eastern nationals: matches arab_or_mixed (45%)	proposed	nationality	
 wikidata	Q2413425	German Colony	6	arab_or_mixed	Templer quarter, mixed by the 1930s; 42-50% Palestinian, no Middle-Eastern nationals: matches arab_or_mixed (45%)	proposed	nationality	
-neighbourhood	Haifa: Carmel Station	Carmel Station	1	ambiguous		proposed	place	
+neighbourhood	Haifa: Carmel Station	Carmel Station	1	arab_or_mixed	Tahanat HaCarmel (Q12412037): 184 register residents, 128 Christian, 52 Muslim, 1 Jewish (ruled 2026-10-24)	ruled	place	
 wikidata	Q985531	Tulkarem	16	arab_or_mixed	Arab-majority town or village; city reads already checked 2026-10-24	proposed	place	
 neighbourhood	Haifa: Wadi Nisnas	Haifa	8	arab_or_mixed		proposed	place	
 wikidata	Q2920415	Wadi Nisnas	7	arab_or_mixed	Haifa Arab quarter	proposed	place	
@@ -61,7 +61,7 @@ wikidata	Q41621	Haifa	1670	haifa_unplaced	Haifa with no quarter recorded	propose
 wikidata	Q757398	Athlit	83	institutional	camp / prison / police post: residence not meaningful	proposed	place	
 wikidata	Q2915875	Bassa	8	institutional	camp / prison / police post: residence not meaningful	proposed	place	
 wikidata	Q7069998	Nur El Shams|Nur Shams	4	institutional	camp / prison / police post: residence not meaningful	proposed	place	
-wikidata	Q586687	Yajour	56	labour	"Kibbutz Yagur (1922); ""Yajour"" is also the Arab village, so spot-check"	proposed	place	
+wikidata	Q586687	Yajour	56	labour	"Kibbutz Yagur: all 56 Jewish records; the 58 non-Jewish ""Yajour"" records are the Arab village al-Yajur, wrongly sharing this QID"	proposed	place	
 wikidata	Q383280	Affikim	51	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 wikidata	Q2495402	Kfar Vitkin	29	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 wikidata	Q943058	Tel Amal	29	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
@@ -143,22 +143,23 @@ wikidata	Q152387	Kiryat Yam	1	new_urban	Jewish town or quarter founded after 190
 wikidata	Q151920	Tiberias	154	old_core		proposed	place	
 wikidata	Q188336	Safad	27	old_core		proposed	place	
 wikidata	Q1218	Jerusalem	23	old_core		proposed	place	
-wikidata	Q990657	Shafa Amr	1	old_core	Jewish community dispersed by the 1920s; check the one record	proposed	place	
-wikidata	Q126084	Acre	94	ambiguous	"""Acre"" mostly means Acre Prison or the sub-district (Nahariya, Kiryat Motzkin, stud farm): 48 prisoners, 8 police; town Jews not separable; nationality mix in the 40-55% band cannot separate old from mixed"	proposed	place	
+wikidata	Q990657	Shafa Amr	1	arab_or_mixed	1931 census: one Jew in Shefa-Amr; the community had dispersed, one resident is not a cohort (ruled 2026-10-24)	ruled	place	
+wikidata	Q126084	Acre	94	ambiguous	"""Acre"" mostly means Acre Prison or the sub-district (Nahariya, Kiryat Motzkin, stud farm): 48 prisoners, 8 police; town Jews not separable; nationality mix in the 40-55% band cannot separate old from mixed (kept ambiguous, ruled 2026-10-24)"	ruled	place	
 wikidata	Q12404212	Ardel Yahud	31	old_local	Ottoman-era Jewish community	proposed	place	
 neighbourhood	Haifa: Harat al-Yahud	Haifa	17	old_local		proposed	place	
 neighbourhood	Haifa: Ard el-Yahud	Haifa	10	old_local		proposed	place	
 city_text_regex	Ardel|Ard al|Hart el Yahud|Hartel Yahud|Dantel Yahud|Adel Yahud|Shatel Yahud	Dantel Yahud	3	old_local	misspelt Ard / Harat al-Yahud	proposed	place	
 city_text_regex	Waldheim	Waldheim	6	other	Templer colony	proposed	place	
 wikidata	Q2906526	Vilhelma	1	other	Templer colony	proposed	place	
+page	26:91	NB26 p91	7	institutional	seven Jews from Jaffa on one page in 1946, ages 22-74, CID address, four flagged prisoner: a detainee group (ruled 2026-10-24)	ruled	page	Q180294
 address_regex	Rehov Jaffa|Jaffa (St|Rd|Road|Street)			haifa_unplaced	Haifa's own Jaffa Road read as the city of Jaffa	proposed	address	Q180294
 address_regex	S/S |\bship\b			other	ship's address, not a residence	proposed	address	
 address_regex	Camp|Barracks|Frontier Force|Police|Prison|Jail|Detention|P\. ?& ?P\.|P\.\+P\.|D\. ?H\. ?Q			institutional	camp / police / prison address	proposed	address	
 address_regex	Hadar			new_urban	Hadar HaCarmel street address, overrides the city	proposed	address	
 address_regex	Kiri?a?t Sh?a?muel|Kiryat Shmuel			new_urban	new Jewish quarter of Tiberias (1920s)	proposed	address	
 address_regex	Kin+e?re?th?|K[ov]u?t?zat|Koutzat|Gesher|Degani|Afikim|Affikim			labour	sub-district kibbutz written under its town	proposed	address	
-address_regex	[YJ]avn[ie]e?l|Beit Gan|Bet Gan|Melchemia|Menahemia|Sajara|Sejera|Rosh Pin|Metou?l|Kfar Dayagin			early_moshava	sub-district moshava written under its town	proposed	address	
+address_regex	[YJ]avn[ie]e?l|Beit Gan|Bet Gan|Melchemia|Menahemia|Sajara|Sejera|Rosh Pin|Metou?l|Kfar Dayagin|Mlabbas			early_moshava	sub-district moshava written under its town; Mlabbas = Petah Tikva	proposed	address	
 address_regex	Kfar Hasidim			later_moshava		proposed	address	
 address_regex	Nahar[iy]+a|Kiri?a?t Motzkin			new_urban	sub-district town written under Acre	proposed	address	
-address_regex	S/ ?Dist|S/D\b|Sub-?dist|\bDist\.|Stud Farm|Stead Farm|Experimental Station|[Nn]ear [A-Z]			ambiguous	sub-district or rural address: not the town itself	proposed	address	
+address_regex	S/ ?Dist|S/D\b|Sub-?dist|\bDist\.|Stud Farm|Stead Farm|Experimental Station|[Nn]ear (?!The\b)[A-Z]			ambiguous	sub-district or rural address: not the town itself	proposed	address	
 wikidata	Q2900552	Beit Gan	2	early_moshava	Yavneel-area moshava (1904)	proposed	place	

@@ -51,11 +51,13 @@ def load_tiers():
     """Each ruling is (tier, basis). basis "nationality" marks a place tiered
     by its patients' nationality mix; those rows must stay out of the test of
     whether nationality follows place, or the test is circular."""
-    by_qid, by_quarter, by_regex, by_address = {}, {}, [], []
+    by_qid, by_quarter, by_regex, by_address, by_page = {}, {}, [], [], {}
     with TIERS.open(encoding="utf-8", newline="") as fh:
         for t in csv.DictReader(fh, delimiter="\t"):
             ruling = (t["tier"], t["basis"])
-            if t["key_type"] == "wikidata":
+            if t["key_type"] == "page":
+                by_page[tuple(t["key"].split(":"))] = (t["scope"], ruling)
+            elif t["key_type"] == "wikidata":
                 by_qid[t["key"]] = ruling
             elif t["key_type"] == "neighbourhood":
                 by_quarter[t["key"]] = ruling
@@ -63,16 +65,20 @@ def load_tiers():
                 by_address.append((re.compile(t["key"]), t["scope"], ruling))
             else:
                 by_regex.append((re.compile(t["key"]), ruling))
-    return by_qid, by_quarter, by_regex, by_address
+    return by_qid, by_quarter, by_regex, by_address, by_page
 
 
 def place_tier(r, tiers):
     """Address rules first (in file order): clerks wrote a town for its whole
     sub-district, so "Kinereth. Tiberias" is a kibbutz, not the old city. A
-    rule with a scope applies only under that City Wikidata ID."""
-    by_qid, by_quarter, by_regex, by_address = tiers
+    rule with a scope applies only under that City Wikidata ID. Page rules
+    (notebook:page) come before everything, for groups admitted together."""
+    by_qid, by_quarter, by_regex, by_address, by_page = tiers
     q, n, c = (r["City Wikidata"] or "").strip(), (r["Neighbourhood"] or "").strip(), (r["City"] or "").strip()
     a = r["Address"] or ""
+    page = by_page.get((r["Notebook_Number"], r["Page_Number"]))
+    if page and (not page[0] or page[0] == q):
+        return page[1]
     for rx, scope, ruling in by_address:
         if (not scope or scope == q) and rx.search(a):
             return ruling
