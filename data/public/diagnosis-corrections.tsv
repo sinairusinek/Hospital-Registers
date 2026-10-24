@@ -1,21 +1,32 @@
 Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 170	11	17	182	Influenza & Enlarged Glands Fever	Influenza Inoculation Fever	misread	m	out_R04.tsv: preceded by tick mark; second line reads Inoculation not Enlarged Glands; word after Influenza may be a stray mark
 254	11	25	269	Haematemesis & melaena	Haematuria	misread	h	out_R04.tsv: preceded by tick mark; scan reads Haematuria, not Haematemesis & melaena
+270	11	27	287	Diptheria Disch.	Diphtheria	wording	h	out_R04.tsv: preceded by tick mark; age 2 1/2 y; result column Died (dataset Disch. is wrong)
 976	11	99	1065	Typhoid & Exanthem. Fever	Typhoid Fever	misread	h	out_Q00.tsv: tick mark before ward; no 'Exanthem.' in this cell (dataset borrowed from 1064)
+1009	1	2	96	Colitis ac.	Colitis	wording	m	out_R00.tsv: no ward column; letters after Colitis overwritten (ac.?); remarks: Isolation H.
 1016	1	3	105	Appendicitis acute attack	appendicitis	misread	m	out_R00.tsv: SCAN SERIAL 103; "acute attack" appears to be in Result cell (cured after acute attack)
+1029	1	4	117	Malarial fever	Malarial cfinic	wording	m	out_R00.tsv: no ward column; remarks: Isolation
 1047	1	6	137	Bronchitis (acute)	Bronchitis	misread	h	out_R00.tsv: no ward column; "(acute)" not seen
+1062	1	7	153	Child birth normal, mother healthy	Child birth	wording	h	out_R00.tsv: no ward column; Result cell reads approx "children born dead? mother healthy" - dataset's "normal" not seen
 1067	1	8	159	Courio	Colitis	misread	h	out_R00.tsv: no ward column; dataset "Courio" is a misread of Colitis
 1080	1	9	173	Laceratg toe nail	Ingrowing toe nail	misread	m	out_R00.tsv: no ward column; ward_now "2nd Railway Employee" is the Class cell (2nd cl. Railway Employee)
+1084	1	10	178	Malaria Cured	Malaria chron.	wording	m	out_R00.tsv: no ward column; dataset "Cured" is the Result cell; remarks: Isolation H.
 1089	1	10	183	Several Para types	General Paralysis	misread	m	out_R00.tsv: no ward column; dataset "Several Para types" is a misread; result died; remarks: Isolation H.
+1096	1	11	190	Injured Abdomen	Injured Elbow	wording	m	out_R00.tsv: no ward column; dataset "Abdomen" doubtful, reads Elbow
 1111	1	12	206	Orchitis Rheumatism	Articular Rheumatism	misread	m	out_R00.tsv: no ward column; dataset "Orchitis" is a misread of Articular
+1130	1	14	227	Appendicitis? Symptoms abated	Appendicitis ?	wording	h	out_R00.tsv: no ward column; "Symptoms abated" is the Result cell; class 1st cl over 3rd
 1146	1	16	245	Phlebitis	In observation	misread	m	out_R00.tsv: no ward column; dataset "Phlebitis" doubtful, cell reads In observation
 1170	1	18	271	R. Inguinal Hernia.	L. Inguinal Hernia	lr-swap	m	out_R00.tsv: no ward column; first letter looks L. not R.
+1195	1	21	299	R. Inguinal Hernia. Operation Postponed.	R. Inguinal Hernia	wording	h	out_R00.tsv: no ward column; "Operation Postponed" is the Result cell
+1197	1	21	301	Adhesions of neck. due to burns. Operation Postponed.	Adhesions neck due to burns	wording	h	out_R00.tsv: no ward column; "Operation Postponed" is Result; row has NoK "Husband" though sex M - check sex
 1250	1	26	357	Dyspesia	Pyrexia	misread	h	out_R00.tsv: no ward column; dataset "Dyspesia" is wrong, cell reads Pyrexia
 1268	1	28	376	Tuberculosis of the R. Tibia	Tuberculosis of the L. Tibia	lr-swap	m	out_R00.tsv: no ward column; side letter looks L.; remarks: Free. Isolation
+1429	1	43	539	Chronic Colitis|Free. for Typhoid observation.	Chronic Colitis	wording	h	out_R01.tsv: no ward column; Remarks: Free. for Typhoid observation.
 1431	1	43	541	Stab wound of back	Typhoid Fever.	shifted	h	out_R01.tsv: M; dataset gives 541 the diagnosis of 542 (Stab wound) — from 541 to 548A dataset diagnoses are shifted one row against serials; Remarks: Free. Infectious.
 1432	1	43	542	Acute Bronchitis.	Stab wound of back	shifted	h	out_R01.tsv: dataset puts it under 541; Result: Left the hospital; Remarks: Left the Hospital Run away. Certified unable to pay anything
 1433	1	43	543	Lacerated wound fracture of left leg.	Acute Bronchitis	shifted	h	: 
 1434	1	43	544	Malaria Clinical.|Free. for Typhoid observation.	Lacerated wound fracture of left leg.	shifted	h	out_R01.tsv: dataset puts it under 543; Remarks: Excused duty five days.
+1435	1	43	545	Clinical Malaria|Free. Suspected Typhoid	Malaria Clinical.	wording	h	out_R01.tsv: F; dataset puts it under 544; Remarks: Free. for Typhoid observation.
 1436	1	43	546	Wound of the left foot ankle.	Malaria Clinic.	misread	h	: 
 1437	1	43	547	Abcess Rt. leg.	Wound of the left foot ankle.	shifted	h	out_R01.tsv: dataset puts it under 546; Remarks blank
 1438	1	43	548	Typhoid Fever.	Abcess Rt. leg.	shifted	h	out_R01.tsv: dataset puts it under 547; Remarks blank
@@ -23,28 +34,57 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 1498	1	49	610	Cl. Malaria	Typhoid Fever.	shifted	h	out_R01.tsv: dataset gives 610 the diagnosis of 611 (Cl. Malaria); dataset 610-612 shifted one row; Remarks: Free. Infectious.
 1499	1	49	611	Typhoid Fever	Cl. Malaria.	shifted	h	out_R01.tsv: dataset puts it under 610; Remarks: Free. Isolation suspected Infection.
 1500	1	49	612	Tonsilitis double	Typhoid Fever.	shifted	h	out_R01.tsv: F Jewess; dataset puts it under 611; Remarks: Free. Infectious.
+1788	2	28	811	Fracture 2nd. Rt. rib & Chest plastered.	Fracture 2nd & 3rd Rt. ribs.	wording	h	out_R01.tsv: no "B." or British Section mark on scan; "Chest plastered." is the Result cell
+2053	3	2	1008	Contusion back. Excused duty.	Contusion of back.	wording	h	out_R01.tsv: dataset "Gen. B.175" merges class rate "@175" into ward; no B. on scan; "Three days excused duty" is in Result cell
+2247	3	22	1225	Common Cold	Cold.	wording	h	out_R02.tsv: 
 2280	3	25	1260	Endocervicitis.	Entero-colitis	misread	h	out_R02.tsv: dataset "Endocervicitis" is a misread
+2306	3	27	1287	Typhus Rheumatica.	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
+2345	3	31	1328	Endocarditis.	Entero-colitis	misread	h	scan NB3 p31: reads Entero-colitis, as the next row
+2346	3	31	1329	Endocarditis.	Entero-colitis	misread	h	scan NB3 p31: reads Entero-colitis
+2982	4	43	543	Bacillary Dysentery	Bacillary Dysentery Flexner Y	wording	m	out_R02.tsv: third line "Flexner Y" probable
+3083	5	1	651	Erysepelas Cured	Erysepelas	wording	h	out_R02.tsv: "Cured" in dataset diagnosis is the Result column
+5802	10	8	1567	Ana Typhoid Fever	Typhoid Fever.	wording	h	out_R03.tsv: tick before Is.; days cell reads "one" (likely source of Ana Typhoid)
+5803	10	8	1568	Gastro Enteritis	Gastro Enteritis febrilis	wording	h	out_R03.tsv: tick before Is.
+5958	10	23	1730	Typhoid Fever, both ?Lungs (Stools)	Typhoid Fever	wording	h	out_R03.tsv: tick before Is.; overwrite: Fractures both forearms (Lower) struck -> Typhoid Fever; discharge/days also corrected
 6094	10	36	1874	Typhoid Fever & Otitis Med.	Typhoid Fever & Abortus ????	misread	m	out_Q00.tsv: tick mark before ward; last word small and illegible (not Otitis Med.); age 24
 6128	10	40		S.V. Fever	S.F. Fever	misread	h	: 
+6129	10	40	1912	Typhus Examination & Emetics	Typhus Exanthematicus	wording	h	out_Q00.tsv: tick mark before ward
 6234	10	50	2021	Anemia of Face	Anthrax of Face	misread	h	out_Q00.tsv: tick mark before ward; dataset 'Anemia' is a misread
 6772	12	10	1197	Typhoid Sand fly fever	Typhoid Fever	misread	h	out_Q01.tsv: dataset 'Sand fly fever' bled from row 1198
 6807	12	13	1232	blank		debris	h	out_Q01.tsv: row left incomplete: only ward and admission date filled; diagnosis blank
+6891	12	21	1316	Paratyphoid "B" Immunisation	Paratyphoid B.	wording	h	out_Q01.tsv: no 'Immunisation' on scan; tick mark
+6896	12	21	1321	Paratyphoid "B" Immunisation	Paratyphoid "B"	wording	h	out_Q01.tsv: no 'Immunisation' on scan; discharge/days overwritten
+6935	12	29	1360	Susp. Typhus negative	Susp. Typhus	wording	m	out_R06.tsv: ward glyph script I; "negative" belongs to Result column (Healthy negative)
+6945	12	30	1370	Observation Healthy for Typhoid Negative	Observation for Typhoid	wording	m	out_R06.tsv: Healthy negative is Result column
+6946	12	30	1371	Typhoid Cured	Typhoid Fever	wording	m	out_R06.tsv: Cured is Result
+6947	12	30	1372	Typhoid Cured	Typhoid Fever	wording	m	out_R06.tsv: age written 4 1/2 y.; Cured is Result
 6956	12	31	1381	Typhoid Fev.	Typhoid Fever	misread	m	out_R06.tsv: age 4 1/2 y.
+6958	12	31	1383	B.T. Malaria comited?	B.T. Malaria	wording	m	out_R06.tsv: Cured is Result (not comited)
 7024	12	46	1449	Kiryat		debris	h	out_R06.tsv: diagnosis blank; row incomplete (no discharge, days or result)
 7252	12	73	1677	Obsen for Typhoid- Changed Negative	Observation for Typhoid Negative	shifted	h	out_R06.tsv: Unchanged is Result
+7334	12	80	1759	Childbirth/Delivery	Confinement	wording	h	out_R06.tsv: ward is Surg. not Suspected Ward
+7363	12	83	1788	Enteric Fever	Enteric Fever Clinically	wording	h	out_Q01.tsv: tick mark
 7366	12	83	1791	Venereal Disease	S.F.F.	misread	h	out_Q01.tsv: diagnosis is S.F.F. (sand fly fever), NOT Venereal Disease; tick mark
 7615	12	112	2040	Pripelitis	Pyelitis	misread	m	out_R07.tsv: tick before ward; remarks Susp. Infectious
 7623	12	113	2048	Obs. for Typhoid Repative|Observation for Typhoid Repative	Obs. for Typhoid Fever. Negative	misread	h	out_R07.tsv: tick before ward
+7692	12	119	2117	Meningitis Pneumococcal	Meningitis Purulenta	wording	m	out_R07.tsv: tick before ward; second word Purulenta not Pneumococcal
 7765	12	126	2190	Paratyphoid A Purulent Dupley	Parotitis Purulenta Duplex	misread	h	out_R07.tsv: tick before ward; dataset "Paratyphoid A Purulent Dupley" is a misread
 7816	13	4	506	F.B. Asthcomylitis Rt. Foot.	T.B. Osteomyelitis Rt. foot	misread	m	: 
 7831	13	6	521	Septic Abortion	Septic Abortion Septicaemia	misread	h	: 
 7849	13	7	539	T. B. Orchitis	T.B. Arthritis	misread	m	: 
+7869	13	9	559	T. B. Rt. Wrist	T.B. Rt. Wrist	wording	h	: 
 7878	13	10	568	Abscess of Nostrils	Atresia of Nostrils	misread	h	: 
 7937	13	16	628	Cazon of scrotum	Eczema of scrotum	misread	h	: 
+7938	13	16	629	Bactennal Piles	External piles	wording	h	: 
+7939	13	16	630	T. B. of wrist	T.B. of Rt. wrist	wording	h	: 
 7951	13	17	642	anchasto... Haemoptoe	Haemoptoe	misread	m	: 
+7984	13	20	680	Empyema Rt	Empyema Lt.	wording	h	: 
+8001	13	21	697	T. B. Knee Rt.	T.B. Rt. Knee	wording	h	: 
+8006	13	22	702	Ascaris luned	Ascaris	wording	h	: 
 8025	13	24	721	V.D.	Observed for Dy. - negative	misread	h	: 
 8094	13	30	790	Metro insury insu fficiency	Mitral insufficiency	misread	h	out_F01.tsv: first spelling struck and rewritten
 8107	13	31	803	acute Hepatitis Operation	Acute Cystitis	misread	h	out_F01.tsv: class 2nd overwritten, Gratis struck, @350 mils
+8124	13	33	820	Fracture of Suprawing(?) Left Fibula	Fracture of Left Fibula	wording	h	out_F01.tsv: 
 8173	13	37	869	Observation for Tetanus, Typhoid ruled out|Observed for Tetanus Typhoid Negative	Observed for Tetanus Negative	misread	h	out_F01.tsv: overwrite: Typhoid struck -> Tetanus
 8179	13	38	875	Specific I.S.Q. of rt. leg	Specific ulcer of Rt. leg	misread	h	out_F01.tsv: adm 11.4.36 fits 18 days to 29.4.36
 8202	13	41	909	Piece of metal Operation in rt. thigh Cured	Piece of Metal in rt. thigh	misread	h	out_F01.tsv: 
@@ -56,6 +96,8 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 8210	13	42	917	Typhoid Fever	Typhus Fever	misread	h	cell-corrections.tsv 2026-10-22 (logged, never applied); scan: Typhus Fever
 8211	13	42	918	Typhoid Fever	Typhus Fever	misread	h	cell-corrections.tsv 2026-10-22 (logged, never applied); scan: Typhus Fever
 8212	13	42	919	Typhoid Fever	Typhus Fever	misread	h	cell-corrections.tsv 2026-10-22 (logged, never applied); scan: Typhus Fever
+8215	13	42	922	Hyper T. Hypertrophic Tonsils	Hyper Trophied Tonsils	wording	h	out_F01.tsv: first attempt struck and rewritten; occupation Clerk; class 2nd @120 mils
+8228	13	44	935	Hydrocele Rt. aspiration	Hydrocele Rt.	wording	h	out_F01.tsv: 
 8230	13	44	937	Severe Stomatitis & Otitis Media	Severe stomatitis with Caustic	misread	h	out_F01.tsv: 
 8265	13	47	972	Contused wound of body & bruises	Contused wound & bruise of body	misread	h	out_F01.tsv: 
 8275	13	48	982	Rhinitsm Improved Rheumatism	Rheumatism	misread	m	out_F01.tsv: age digits faint; first diagnosis word struck
@@ -64,59 +106,97 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 8311	13	51	1018	NO. sign of Typhoid|No Signs of Typhoid Fever	No Sign of Typhoid	misread	h	out_F02.tsv: class P.R.; result Healthy
 8321	13	52	1028	Typhoid Fever	Typhus Fever	misread	h	out_F02.tsv: serial circled
 8322	13	52	1029	Typhoid Fever	Typhus Fever	misread	h	out_F02.tsv: 
+8325	13	52	1032	Contusion of nose & f nasal bone	Contused wound of nose + fracture of nasal bone	wording	h	out_F02.tsv: Police; adm year looks like 31 (= 36)
+8326	13	53	1033	Paraplegia I.S.Q.	Paraplegia	wording	h	out_F02.tsv: 
+8328	13	53	1035	Sterility I.S.Q.	Sterility	wording	h	out_F02.tsv: 
+8332	13	53	1039	Fracture of Rt. Great Rod's & Ulna	Fracture of Lt. Radius + Ulna	wording	m	out_F02.tsv: 
 8336	13	53	1043	Typhoid Fever	Typhus Fever	misread	h	out_F02.tsv: 
 8360	13	60	1067	Typhoid Fever	Typhus Fever	misread	m	out_F02.tsv: 
 8364	13	60	1071	Typhoid Fever	Typhus Fever	misread	h	out_F02.tsv: 
 8385	13	62	1092	I.D.		ward-or-header-in-diagnosis	h	out_F02.tsv: diagnosis and result cells blank; days 30 struck -> 16
+8390	13	62	1097	Pyrexia Pharyngitis	Pharyngitis	wording	h	out_F02.tsv: overwrite: Pyrexia struck -> Pharyngitis
+8397	13	63	1104	T.B. Cervical glands	T. B. Cervical glands	wording	h	out_F02.tsv: female in Mat. with TB glands
+8421	13	65	1128	Empyema	Empyema Rt.	wording	h	out_F02.tsv: 
 8431	13	66	1138	Contused wound of base of foot	Contused wound of Dorsum of both feet	misread	h	out_F02.tsv: 
+8441	13	67	1148	Bacillary Dysentery	Bacillary Dy. Shiga	wording	h	out_F02.tsv: Police
 8474	13	70	1181	Enterocolitis Haemorrhagica	Typhoid Fever	shifted	h	out_F02.tsv: 
 8475	13	70	1182	Typhoid Fever	T.B. of Lt. Hip with ankylosis	shifted	h	: 
 8476	13	70	1183	T.B. of rt. hip with ankylosis	Metals in both feet	shifted	m	out_F02.tsv: occupation Porter
 8477	13	71	1184	metal in both feet	Bruises of Lt. foot	misread	h	out_F02.tsv: 
+8494	13	72	1200	T. B. gland Lt. groin	T.B. gland Lt. groin	wording	h	out_F02.tsv: 
 8496	13	72	1202	Concussion of the liver	Cancer of the Liver	misread	h	out_F02.tsv: 
 8497	13	72	1203	Lt. T. B. Orchitis	Lt. T.B. Otitis	misread	m	out_F02.tsv: 
 8498	13	72	1204	G. S. Sinus ribs (Rt. side)	T.B. Sinus ribs (Rt. side)	misread	h	out_F02.tsv: 
 8524	13	75	1230	Lt. appendicitis	Lt. Mastoiditis	misread	h	out_F02.tsv: 
 8525	13	75	1231	Double Hernia	Double Ing. Hernia	misread	h	out_F02.tsv: 
+8534	13	76	1240	Empyema Rt. Operation	Empyema Rt.	wording	m	out_F02.tsv: age digit faint
+8535	13	76	1241	Acute Appendicitis Operation	Acute Appendicitis	wording	h	out_F02.tsv: class 2nd @ 120 mils
+8536	13	76	1242	T.B. of Rt. Buttocks Abscess	T.B. Abscess of Rt. Buttock	wording	h	out_F02.tsv: 
 8540	13	76	1246	Fracture of Rt humerus 10th + 11th ribs	Fracture of Lt. 10th + 11th ribs	misread	h	out_F02.tsv: 
+8557	13	78	1263	Burns rt. Leg	Burn Lt. Leg	wording	h	out_F02.tsv: occupation Lab. with struck number; Gratis in black ink
 8559	13	78	1265	Bronchitis Convalestive	Bronchitis Exudativa	misread	h	out_F02.tsv: 
 8565	13	78	1271	Orbital Cellulitis rt. upper lid	Orbital Cellulitis Lt. upper Lid	lr-swap	h	out_F02.tsv: occupation messenger; class Gratis struck -> @ 050 mils
 8575	13	79	1281	Typhoid Exanthemations	Typhus Exanthematicus	misread	h	out_F02.tsv: 
 8588	13	81	1294	Contusio Colitis	Entero Colitis	misread	h	out_F03.tsv: occupation Const. 1245
+8593	13	81	1299	Piperias	Pyrexia	wording	h	out_F03.tsv: class overwritten -> Gratis
 8600	13	82	1306	Abscess after Opn. Tibia	Abscess of Rt. Tibia	misread	h	out_F03.tsv: 
 8617	13	83	1323	Vesical Calculus (storing?)	Vesical Calculus (stone in bladder)	misread	h	out_F03.tsv: 
 8628	13	84	1334	Fracture of Humerus & 5th ribs	Fracture of the Rt. 4th. & 5th ribs	misread	h	out_F03.tsv: occupation Lab. 1893; class 3rd. P.R.
 8644	13	86	1350	Left Bubo	Left Bubonocele	misread	h	out_F03.tsv: occupation Lab. 255
+8651	13	86	1357	Ingro toenail big toe both	Ingrowing toe nails both big toes	wording	h	out_F03.tsv: occupation Grade "O"
 8652	13	86	1358	Coryza & Epistaxis Erysepelas leg-Diabetis	Erysipelas of leg - Diabetes	misread	m	out_F03.tsv: 
 8655	13	87	1361	Wounds	Worms	misread	m	out_F03.tsv: age first digit faint; occupation Prisoner
 8656	13	87	1362	Septic ulcer over Rt. knee	Septic Ulcer on Lt. Knee	misread	h	out_F03.tsv: 
 8665	13	88	1371	bullet in the chest	Bullet in the Rt. chest	misread	h	out_F03.tsv: 
+8671	13	88	1377	Haematoma of Rt. Rectus Nell?	Haematoma of Lt. Rectus Muscle	wording	m	out_F03.tsv: 
+8697	13	91	1403	Cancer Cervix of pt. operation	Cancer of Rt. Cervix	wording	h	out_F03.tsv: result Operation Died
+8717	13	92	1423	Endolent fever	Undulant Fever	wording	m	out_F03.tsv: age written without unit
 8720	13	93	1426	Tripper	Grippe	misread	h	out_F03.tsv: occupation struck through; class rate struck -> Gratis
+8722	13	93	1428	Sterility I.S.Q.	Sterility	wording	h	out_F03.tsv: 
 8726	13	93	1432	Dislocation rt. shoulder	Dislocation of Lt. Shoulder	lr-swap	h	out_F03.tsv: occupation Prisoner
 8728	13	93	1434	Typhus exanthematicus Scrotalis	Typhus Abdominalis	misread	h	out_F03.tsv: overwrite: Exanthematicus struck -> Abdominalis
 8751	13	95	1457	wound rt. angle of eyebrow	Wound Ext. angle of Lt. eyebrow	misread	h	out_F03.tsv: occupation overwritten -> Lab.
 8759	13	96	1465	Bronchitis Cyst Bed sores	Bronchitis Cyst Sebaceus	misread	h	out_F03.tsv: occupation Warder 258
+8764	13	97	1470	Abscess thigh t. otitis T.B.	Abscess Lt. thigh c T.B. otitis	wording	m	out_F03.tsv: 
 8768	13	97	1474	G. B. Peritonitis	T.B. Peritonitis	misread	h	out_F03.tsv: 
+8770	13	97	1476	Frac. of both ulves & 10th rib	Frac. of both ulnas Frac. Lt. 10th. rib	wording	h	out_F03.tsv: 
+8785	13	99	1491	Fract. of 11th rib & delayed relarged	Fract. of 11th. rib & fund. retalaryeal?	wording	m	out_F03.tsv: second diagnosis line unclear
 8845	14	2	1550	Fracture operation of skull	Fracture of skull	misread	h	out_F04.tsv: 
 8853	14	3	1558	Erysipelas	Grippe	misread	h	out_F04.tsv: 
 8867	14	4	1572	Vesical Calculus Operation	Vesical Calculus	misread	m	out_F04.tsv: age 3½ probable
+8889	14	6	1594	Haemorrhoids Operation	Haemorrhoids	wording	h	out_F04.tsv: occupation Police 65
 8895	14	6	1600	Compound fract. L fibula	Compound fract. of Rt. Fibula	lr-swap	h	out_F04.tsv: 
 8905	14	7	1610	Perinephric Operation ulcer	Perinephric ulcer	misread	h	out_F04.tsv: occupation Lab. 3864; class 3rd P.R.
 8908	14	8	1613	Accident Rt. Shoulder	Accident Lt. Shoulder	lr-swap	h	out_F04.tsv: 
 8917	14	8	1622	Cutaneous Ulcer of Abd. wall	Exten. burn Ulcer of Abd. wall	misread	h	out_F04.tsv: 
 8924	14	9	1629	? Typhoid Fever	7 days Fever	misread	h	out_F04.tsv: 
 8941	14	11	1646	Lacerated wound forehead & Rt forearm by [illegible]	Lacerated wound of Rt. forearm & hand by	misread	h	out_F04.tsv: 
+8942	14	11	1647	Sandfly fever	3 days Fever (Sand fly)	wording	m	out_F04.tsv: occupation Warder 245; age 2nd digit unclear
 8947	14	11	1652	Polyp of Uterus	Polips of Gums	misread	m	out_F04.tsv: occupation Lab. 1943; class 3rd P.R.
+8962	14	13	1678	Sterility Insufflation	Sterility	wording	h	out_F04.tsv: 
 8968	14	13	1684	duration_calc_impossible		debris	h	out_F04.tsv: diagnosis/class/discharge blank; days "30" struck
+8973	14	14	1689	Acute Appendicitis Operation	Acute Appendicitis	wording	h	out_F04.tsv: occupation Nurse; class 2nd Gratis
+8976	14	14	1692	Linna Cinhosis	Liver Cirrhosis	wording	h	out_F04.tsv: 
 8983	14	15	1699	Menorrhagia & therapo?	Menopause	misread	h	out_F04.tsv: 
 8997	14	16	1713	Dislocation of Rt. Shoulder	Dislocation of Lt. Shoulder	lr-swap	h	out_F04.tsv: 
+8998	14	16	1714	Fever	7 days Fever	wording	h	out_F04.tsv: 
 9002	14	16	1718	Arthrosis	Status p. Anthracis	misread	h	out_F04.tsv: 
+9006	14	17	1722	T. B. arthritis operation of Rt. Ist Tarsol	T.B. ostritis of Rt. 1st meta Tarsal	wording	h	out_F04.tsv: 
 9015	14	17	1731	Severe Bruise of Rt Shoulder	Severe Bruise of Lt. Shoulder	lr-swap	h	out_F04.tsv: occupation Prisoner
+9016	14	18	1732	Fever	7 days Fever	wording	h	out_F04.tsv: religion written "Jewess"
+9019	14	18	1735	Fever	7 days Fever	wording	h	out_F04.tsv: 
 9037	14	19	1753	Post. Debility	Post-Ing. Debility	misread	h	out_F04.tsv: 
+9039	14	20	1755	Lt Renal operation Calculus	Lt. Renal Calculus	wording	m	out_F04.tsv: age probable
+9048	14	20	1764	Anaemia S.D.Q.	Anaemia	wording	h	out_F04.tsv: 
+9064	14	22	1780	Typhus rheumaticus	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
+9066	14	22	1782	Typhus rheumaticus	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
 9078	14	23	1794	Otitis media Lt. middle finger	Necrosis Lt. middle finger	misread	h	out_F04.tsv: occupation Lab. 1935; class 175 mils
+9085	14	24	1801	Susp. fract. of Rt. Tarsus	Simp. fract. of Lt. Tarsus	wording	h	out_F04.tsv: 
 9090	14	24	1806	Multiple G. S. Wounds	Multiple T.B. Sinus	misread	h	out_F04.tsv: 
 9093	14	25	1809	Typhoid Rheumatism	Typhus Exanthematicus	misread	h	out_F04.tsv: occupation "O"; class 0.50 mils
 9099	14	25	1815	Haemorrhogica	Menorrhagia	misread	h	out_F04.tsv: 
+9105	14	26	1821	Internal operation Haemorrhoid	Internal Haemorrhoid	wording	h	out_F05.tsv: 
+9118	14	27	1834	Gastropelosis S.Q.	Gastroptosis	wording	h	out_F05.tsv: 
 9120	14	27	1836	Fract. of the Rt. Tibia & Fibula	Fract. of the Lt. Tibia & Fibula	lr-swap	h	out_F05.tsv: 
 9124	14	27	1840	Rheumatism	Typhus Exanthematicus	misread	h	out_F05.tsv: 
 9149	14	31	1865	Gastro enteritis Haemorrhagica	Enterocolitis Haemorrhagica	misread	h	out_F05.tsv: 
@@ -124,7 +204,11 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 9185	14	34	1901	Typhoid Fever	Typhus Fever	misread	h	out_F05.tsv: diagnosis: Exanthematicus struck, Fever written
 9190	14	34	1906	Tonsilitis	Anaemia	misread	m	out_F05.tsv: adm reads 22.8.36 (5 days to 27.8), out of serial date order
 9192	14	35	1908	Bullet in Lt. Arm operation	Bullet in Lt. Arm	misread	h	out_F05.tsv: 
+9227	14	38	1943	Appendicit operation Abscess	Appendix abscess	wording	h	out_F05.tsv: 
+9253	14	40	1969	Appendicitis S.S.Q.	Appendicitis	wording	h	out_F05.tsv: 
+9258	14	41	1974	1) Wound of scalp 2) Lacerated Rt. Knee	1) wound scalp 2) Swelling Lt. knee	wording	h	out_F05.tsv: 
 9260	14	41	1976	Fract. of rt. Humerus	Fract. of Lt. Humerus	lr-swap	h	out_F05.tsv: class overwritten: 2nd struck, Gratis
+9279	14	43	1994	Erysipelas of face	Erysepelas of face Comp. by Septicaemia	wording	h	out_F05.tsv: ward written as bare 'I.'-like mark with tick; discharge date overwritten
 9280	14	43	1995	Sarcoma upper end of Humerus L. 12	Sarcoma upper end of Lt. Humerous	misread	h	out_F05.tsv: 
 9295	14	45	2010	V.D.		ward-or-header-in-diagnosis	h	out_F05.tsv: class, discharge, diagnosis, result blank; days cell has a pencil mark
 9297	14	45	2012	V.D.	Typhoid fever	misread	h	: 
@@ -133,116 +217,229 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 9316	14	47	2031	Entero colitis Haem...	Enterocolitis haemorrhagica	misread	h	out_F05.tsv: 
 9331	14	48	2046	Longitudinal tract of append. & numerous	Longitudenal fract. of upper end of Lt. humerous	misread	h	out_F05.tsv: 
 9333	14	48	2048	Pyalgia (Syphilis)	Pyodermia (Syphilis)	misread	h	out_F05.tsv: (Syphilis) added in pencil
+9334	14	48	2049	Flexner Dysentery (Shigella flexneri)	Flexner Bac. Y.	wording	h	out_F05.tsv: 
 9344	14	49	2059	Gangrene rt. arm operation	Gangrene Rt. Arm	misread	h	out_F05.tsv: 
 9349	14	50	2064	Superficial Bullet wound of rt. foot	Superficial Bullet wound of Lt. foot	lr-swap	h	out_F05.tsv: 
 9352	14	50	2067	visceris L.S.Q	Ascaris	misread	h	out_F05.tsv: 
 9374	14	52	2089	Contusion of Abdomen	Abrasion of Abdomen	misread	h	out_F06.tsv: 
+9375	14	52	2090	Doublalabon Pneumonia	Double Lobar Pneumonia	wording	h	out_F06.tsv: 
 9377	14	52	2092	Gonorrhoea haemorrhagica	Enterocolitis haemorrhagica	misread	h	out_F06.tsv: 
 9380	14	52	2095	Gonorrhoea haemarrhagica Malaria	B.T. Malaria	misread	m	out_F06.tsv: diagnosis overwrite: Enterocolitis haemorrhagica struck -> B.T. Malaria
 9401	14	54	2116	Observation for Typhus, Negative|Obsor. for Typhus negative	Observed for Typhus negative	misread	h	out_F06.tsv: 
+9411	14	55	2126	Gastritis - I.S.Q.	Gastritis - Bleeding (Hysterical)	wording	h	out_F06.tsv: "Bleeding (Hysterical)" added in blue ink
 9416	14	56	2131	Infectious Diseases	Observed for Typhoid negative	misread	m	out_F06.tsv: sex cell overwritten (final M.)
 9418	14	56	2133	Menorrhagia I.Q.	Menopause	misread	m	out_F06.tsv: ward reads "Gyn." (not Gen.)
+9421	14	56	2136	Fract. of the ribs Rtside	Fract. of the 3rd, 4th ribs Rt side	wording	h	out_F06.tsv: 
 9422	14	56	2137	Chronic Gastritis	Chronic Malaria	misread	h	out_F06.tsv: 
 9423	14	56	2138	Chronic Gastritis I.Q.	Chronic Enteritis	shifted	h	out_F06.tsv: 
+9432	14	57	2147	Typhoid Cassa	Typhoid	wording	h	out_F06.tsv: second word struck (Cured)
+9436	14	57	2151	Superficial greatly wound of Rt. elbow	Superficial shot wound of Lt. Elbow	wording	h	out_F06.tsv: 
 9455	14	62	2170	Enterocolitis Helminthologia	Enterocolitis Haemorrhagica	misread	h	out_F06.tsv: 
+9456	14	62	2171	Trichiasis operated	Trichiasis	wording	h	out_F06.tsv: 
+9459	14	63	2174	Talnia? + Enterocolitis Sajinata? haemorrhagica?	Taenia Saginata + Enterocolitis haemorrhagica	wording	h	out_F06.tsv: 
+9496	14	66	2211	Ovarian cyst? Investigated	Ovarian cyst	wording	h	out_F06.tsv: age written as "?" by clerk
 9518	14	68	2233	Contused wound of Rt Knee? Yodossis?	Contused wound of Rt. side of forehead	misread	m	out_F06.tsv: diagnosis overwrite: struck word (Abdomen?) -> forehead in blue
+9519	14	68	2234	Sandfly Fever	S.F.F.	wording	h	out_F06.tsv: 
+9532	14	69	2247	Fract. rib	Fract. of Lt. rib + tear of Lung	wording	h	out_F06.tsv: diagnosis overwrite: struck word -> Lung
 9533	14	69	2248	Incomplete operation Abortion	Incomplete Abortion	misread	h	out_F06.tsv: 
 9536	14	70	2251	Amenorrhoea L. S. Q.	Menopause	misread	h	out_F06.tsv: 
 9545	14	70	2260	Appendicitis operation	Appendicitis	misread	h	out_F06.tsv: 
+9550	14	71	2265	Hydrocele Left Operation	Hydrocele Left	wording	h	out_F06.tsv: 
+9553	14	71	2268	Acute Appendicitis Operation	Acute Appendicitis	wording	h	out_F06.tsv: occupation column holds 6121
+9569	14	73	2284	Typhus Rheumaticus	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
 9572	14	73	2287	T. B. of ribs	T.B. of ribs	misread	h	out_F06.tsv: 
 9597	14	76	2311	Stab wound rt. Scapular region Fract. of Scapula	Stab wound of Lt. scapular region + Fract. of scapula	lr-swap	h	out_F06.tsv: 
+9601	14	76	2315	Gun shot wound rt. Loin operation	Gun shot wound Lt. Loin	wording	h	out_F06.tsv: 
 9610	14	77	2324	Endometritis operation	Endometritis	misread	h	out_F06.tsv: 
+9616	14	78	2330	Appendix Abscess operation	Appendix Abscess	wording	h	out_F06.tsv: age cell blank
 9659	14	82	2373	Gunshot wound of Rt. Thigh	Gunshot wound of Lt. thigh	lr-swap	h	out_F07.tsv: 
+9660	14	82	2374	Rt. Ing. Hernia Operation	Lt. Ing. Hernia	wording	h	out_F07.tsv: 
 9662	14	82	2376	Severe Bruise of Rt. Ankle + Fracture of Astragalus	Severe Bruise of Lt. ankle c Fract. of Astragalus	lr-swap	m	out_F07.tsv: 
 9692	14	85	2406	Typhoid fever & Inf.	Typhoid Fever + Influenza	misread	m	out_F07.tsv: 
 9710	14	86	2424	Amputation of 2nd Lt. Toe & 3rd Improved	Amputation of 1st-2nd Lt. Toes	misread	h	out_F07.tsv: 
 9732	14	95	2446	Enterocolitis amoebogica	Enteric Fever	misread	h	out_F07.tsv: 
+9761	14	98	2475	Leucaemia Myelsica Anaemia unchanged	Leucaemia Myelsica	wording	m	out_F07.tsv: overwrite: adm day corrected; diagnosis first written then struck and rewritten above
+9786	14	100	2500	Typhus rheumaticus	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
 9801	14	101	2515	Rabies Bite Fever	Rat Bite Fever	misread	h	out_F07.tsv: 
 9815	14	104	2529	Mixed lesion? of compensation	Mitral lesion Class of Compensation	misread	m	out_F07.tsv: 
+9816	14	104	2530	Vesico Calculus Operation	Vesical Calculus	wording	m	out_F07.tsv: sex cell overwritten (M./F. superimposed), final unclear
+9848	14	107	2562	? Porresties / Tumur	? Pancreatic Tumour	wording	m	out_F07.tsv: 
 9858	14	108	2572	Folliculitis Low villili's improved.	Follicular Tonsillitis	misread	h	out_F07.tsv: 
+9985	15	9	2709	Typhus Exanthematous|Typhus Exanthematicus	Typhus Exanthematicus	wording	h	out_R07.tsv: tick mark before ward
+10123	15	24	2847	Stone in Rt Kidney after operation	Stone in Pelvis of Lt Kidney	wording	h	out_Q01.tsv: result 'Died after Operation' (dataset diagnosis merged result); adm 29.11.36
+10493	15	62	89	Typhus Rheumatism	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
+10887	15	99	481	Typhoid Rheumatism|Typhoid Rtheumatius	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
+11004	16	3	597	Typhus Rheumatismus	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
+11107	16	13	699	Typhus Rheumatism	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
 11584	16	57	1376	Suprapubic Lithotrimy due to Retained Secundines.	Supraemia Due to Retained secondines.	misread	m	out_R10.tsv: first word reads Supraemia (= sapraemia), not Suprapubic Lithotomy
+11600	16	59	1391	Abscess of Thigh. Operation	Abscess of Lt. Thigh	wording	h	out_R10.tsv: "Operation cured" is the result column
+11898	17	9	1698	Typhus rheumaticus	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
+12067	17	25	1866	Typhoid Rheumatismus	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
 12084	17	27	1883	duration_calc_impossible		debris	h	out_R11.tsv: diagnosis, class, discharge, result blank on scan; faint pencil "60"? in days column
+12324	17	49	2122	Typhus (Cured) & Rheumatism	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
+12411	17	63	2208	Typhus & Rheumatism	Typhus Exanthematicus	misread	h	read off the scan 2026-10-24: the held "Typhus Rheumaticus" group is misread "Exanthematicus" in all 13 cases
 12606	17	81	2402	Labanacu Sinthesis of chest	Tuberculous Sinuses of chest	misread	m	out_R12.tsv: 
 12610	17	81	2406	Dyspepsia Improved	Dyspepsia	misread	h	out_R12.tsv: Improved is the Result column
 12656	17	85	2452	Typhus Rheumatism	Typhus Exanthematicus	misread	h	out_R12.tsv: not Typhus Rheumatism
 12681	17	87	2477	Lobar Pneumonia Empyema	Tabes Dorsales	misread	m	out_R12.tsv: not Lobar Pneumonia Empyema; Result Same
 12900	17	108	2695	Lymphoid Cembait	Typhoid Convalescence	misread	m	out_Q02.tsv: clerk's T looks like L; dataset 'Lymphoid Cembait' is misread
 12941	18	1	9	F.B. do stylitis Operation of Rt. little finger	T.B. dactylitis of Rt. little finger	misread	m	out_Q02.tsv: p1 lone right-hand page; matched as 9th row; 'Operation' belongs to Result
+13120	18	18	2913	Relapsing Attack Fever	Relapsing Fever	wording	h	out_R13.tsv: result "Attack Cured"
+13130	18	18	2923	Gall. Stones Operation	Gall. Stones	wording	h	out_R13.tsv: "Operation Cured" is in result column
+13405	18	44	3198	Haemorrhoids Improved	Haemorrhoids	wording	h	out_R13.tsv: overwrite: Surg. struck through, Is. written below; "Improved" is result
 13661	18	67	182	Ulcer Left leg	Ulcer of Lower lip	misread	m	out_R14.tsv: diagnosis reads lip not leg
+13700	18	71	221	Abscess of lung	Abscess of Rt Lung	wording	h	out_R14.tsv: 
+13733	18	74		T. B. Laryngitis J. S. Q.	T.B. Laryngitis	wording	h	: 
 13818	18	82	337	T.B. of left Ankle joint	T.B. of left lung	misread	m	out_R14.tsv: diagnosis reads lung not ankle joint
+13849	18	85	368	T. B. Shoulder	T.B. Lt. shoulder	wording	h	out_R14.tsv: 
 13868	18	87	387	Contused wound Rt Nostril.	Contused wound Lt Nostril.	lr-swap	m	out_R14.tsv: Lt vs Rt uncertain
+13901	18	90	420	Hydatid cyst of liver - Operation	Hydatid cyst of Liver	wording	h	out_R14.tsv: Operation is in Result column
+14228	19	21	744	Wound of leg. left.	Wound of lft. leg.	wording	h	out_R15.tsv: 
 14347	19	32	862	Died	Pott's Disease. ? T.B.C. Mediastinitis	misread	m	out_R15.tsv: age written 3y (dataset 48Y); no Died visible, result cell has a ? mark only
 14426	19	39	941	Mitral (Stenosis & Insufficiency) same	Mitral (Stenosis) Insufficient (Incompensation)	misread	m	out_R16.tsv: result "same"; stamp INFECTIO
+14670	19	62	1184	-	Normal delivery	wording	h	out_R16.tsv: 
 14730	19	68	1244	cured	Diarrhoea	misread	h	out_R16.tsv: diagnosis_now "cured" is the result col; class 3rd P.R.
 16008	20	86	2539	Fract. Dislocation of Rt. Elbow Joint	Fract. Dislocation of Lt. Elbow Joint	lr-swap	m	out_R19.tsv: Lt vs Rt: initial looks like the clerk L
+16996	21	85	359	P.T. Malaria Attack	B.T. Malaria	wording	h	out_R20.tsv: result "Attack cured"; B.T. (benign tertian) not P.T.
+17527	22	32	889	Adenoids Operation	Adenoids	wording	h	out_Q03.tsv: Operation is in Result column (Operation cured)
 19029	23	73	3564	Acute Appendicitis	Nasal Diphtheria	shifted	h	out_R21.tsv: scan adm 1.11.39; dataset Isol Surg/Acute Appendicitis belongs to next row 3565 (Isol struck -> Surg)
 19416	24	1	3948	Stab wound of chest. Improving	Stab wound of chest.	misread	h	out_F08.tsv: 
 19419	24	1	3951	Septic Pneumonia & ?Quinkna poriging	Pyrexia of unknown origin	misread	h	out_F08.tsv: 
+19426	24	2	3958	M.T. Attack Malaria	M.T. Malaria	wording	h	out_F08.tsv: occupation P.R 1857; P.R also under class; no pavilion letter
 19433	24	2	3965	Paralytic Agnimia - Operation	Paralytic Equino Varus	misread	m	out_F08.tsv: diagnosis spelling uncertain
 19435	24	3	3967	Psoas abscess. Infund.	Psoas abscess	misread	m	out_F08.tsv: second line of diagnosis partly illegible (Sh.?)
+19446	24	4	3978	Strangulated Rt. Ing Hernia. Operation	Strangulated Lt. Ing Hernia	wording	h	: 
 19451	24	4	3983	Snake bite Rt foot	Snake bite Lt foot	lr-swap	h	: 
+19452	24	4	3984	Haemorrhoids. Operation External	Haemorrhoids External	wording	h	: 
+19457	24	5	3989	Lymphangitis Ft Heel	Lymphangitis of Arm	wording	h	: 
+19462	24	5	3994	Pulmonary T.B. @ Infiltrated	Pulmonary T.B.C.	wording	h	: 
+19464	24	5	3996	M.T Attack Malaria	M.T Malaria	wording	h	: 
 19482	24	7	4014	Typhus Attack|Typhus Fever	Typhus fever	misread	h	out_F08.tsv: overwrite: M.T. Malaria->Typhus fever (struck through, result Attack struck)
+19483	24	7	4015	M.T Attack Malaria	M.T Malaria	wording	h	out_F08.tsv: 
+19484	24	7	4016	B.T. Attack Malaria	B.T. Malaria	wording	h	out_F08.tsv: 
+19485	24	7	4017	Paratyphoid 'B', Dysentery Flexner	Paratyphoid 'B'	wording	h	out_F08.tsv: overwrite: Bacillary Dysentery Flexner->Paratyphoid 'B'; occupation J.S.P. No 7585; class 3rd c 050mils (Gratis struck)
+19492	24	8	4024	Pulmonary T.B.C. much improved	Pulmonary T.B.C.	wording	h	out_F08.tsv: 
 19501	24	9	4033	Cyst of Rt Gluteal Region - Operation - Recovery	Cyst of Rt. Gluteal Region	misread	m	out_F08.tsv: occupation Prisoner; ward abbreviation read P.W. (prison ward?)
 19503	24	9	4035	Sub Acute Appendicitis - Operation - Recovery	Sub Acute Appendicitis	misread	h	out_F08.tsv: 
+19504	24	9	4036	Maxillary Sinusitis. Persistence of symptoms & roof of mouth. Operation 18/7/24/39. Recovery.	Maxillary Sinusitis c Persistent sinus of roof of mouth	wording	m	out_F08.tsv: occupation I.P.C. T.J.626; adm day overwritten (6 or 8); class 3rd c 175mils
 19505	24	9	4037	Perineal L.S.R Tear - Recovery	Perineal Tear	misread	h	out_F08.tsv: 
 19506	24	9	4038	Forceps Delivery - Operation Recovery	Forceps Delivery	misread	h	out_F08.tsv: 
+19507	24	9	4039	Normal Delivery Recovery	Normal Delivery	wording	h	out_F08.tsv: 
 19510	24	9	4042	Sub Acute Appendicitis - Operation - Recovery	Sub Acute Appendicitis	misread	h	out_F08.tsv: class 2nd c 350mils
+19511	24	10	4043	Amœliasis	Amoebiasis	wording	h	out_F08.tsv: 
+19513	24	10	4045	Puerpiral Febver	Puerperal fever	wording	h	out_F08.tsv: result Died
+19522	24	11	4054	Rt Hydrocele. Operation.	Rt Hydrocele	wording	h	out_F08.tsv: surgical case under Med
+19523	24	11	4055	Rupture of the uterus Operation.	Rupture of the Uterus	wording	h	out_F08.tsv: obstetric case written Med (not Mat)
+19524	24	11	4056	Retained Secundines. Operation.	Retained secundity	wording	h	out_F08.tsv: obstetric case written Med (not Mat)
+19529	24	11	4061	M.T. Attack Malaria	M.T. Malaria	wording	h	out_F08.tsv: 
+19547	24	13	4079	B.T. Malaria Attack	B.T. Malaria	wording	h	out_F08.tsv: 
+19549	24	13	4081	Observation, Typhoid Fever ruled out|Sent for Observation as No Typhoid	Sent for Observation	wording	h	out_F08.tsv: result No Typhoid
+19550	24	13	4082	M.T. Malaria Attack	M.T. Malaria	wording	h	out_F08.tsv: 
+19560	24	14	4092	Diphtheria nasal	Diphtheria	wording	h	out_F08.tsv: 
 19563	24	14	4095	Atresia Vagina P. P. S. R. Fistula Vesica Vaginalea.	Atresia of Vagina - Vesica fistula	misread	h	out_F08.tsv: result I.S.Q
+19571	24	15	4103	Chronic Osteomyeltis of St. [illegible]	Chronic Osteomyelitis of Lt. ???	wording	m	out_F08.tsv: occupation P.R L.6090; class 3rd P.R; last word unclear
+19582	24	16	4114	Fibroid Uterus Operation Recovery	Fibroid Uterus	wording	h	: 
+19587	24	16	4119	Gastric Carcinoma Operation	Gastric Carcinoma	wording	h	out_F08.tsv: result Operation
 19588	24	17	4120	Fracture Left Humerus S.S.G.	Fracture of Left Ilium	misread	m	out_F08.tsv: result I.S.Q
 19595	24	17	4127	Bruise Rt Chest.	Bruise of Lt Chest.	lr-swap	h	out_F08.tsv: occupation P.C. 1178; class 3rd c 050mils
+19600	24	18	4132	M.T. Malaria Attack	M.T. Malaria	wording	h	out_F08.tsv: 
+19602	24	18	4134	M.T. Malaria Attack	M.T. Malaria	wording	h	out_F08.tsv: 
 19619	24	19	4151	Fracture Rt Clavicle & ribs	Fracture of Lt Clavicle ribs	lr-swap	h	: 
+19623	24	20	4155	Otitis Media. w.th Sup[p]hadenitis	Otitis Media with ?, Lymphadenitis	wording	m	out_F08.tsv: class 1st c 500mils; non-British in B/S
+19627	24	20	4159	Rt. Ing. Hernia. Operation Recovery	Lt. Ing. Hernia	wording	h	out_F08.tsv: class 2nd c 350mils
+19628	24	20	4160	External Hemorrhoids Operation Recovery	External Hemorrhoids	wording	h	out_F08.tsv: occupation P.C. 560; class 3rd c 050mils
 19638	24	21	4170	Fracture The Rt Radius & Ulna	Fracture of the Lt Radius & Ulna.	lr-swap	h	out_F08.tsv: 
 19646	24	22	4178	Cystitis Operation of 2nd Finger Rt Middle finger	Cystic Ostitis of 2nd Phalanx of Rt Middle finger	misread	m	out_F08.tsv: surgical case under Med
+19648	24	22	4180	M.T. Malaria Attack	M.T. Malaria	wording	h	out_F08.tsv: 
 19660	24	23	4192	Chronic Empyema Rt.	Chronic Empyema Lt.	lr-swap	h	out_F08.tsv: 
+19676	24	25	4208	B. T. Malaria Attack	B.T. Malaria	wording	h	out_F08.tsv: occupation T.A.C. 5861; class 3rd c 050mils
+19699	24	27	4231	Rt. Hydrocoele. Operation	Rt. Hydrocele	wording	h	out_F09.tsv: 
+19701	24	27	4233	B. T. Malaria attack	B.T. Malaria	wording	h	out_F09.tsv: occupation T.A.P. No.9351
 19703	24	27	4235	Gunshot wound Arm & Right Leg	Gunshot wound Right Arm & Left leg	lr-swap	h	out_F09.tsv: British Constable
 19704	24	27	4236	Hysteria. InfraRed	Hyptenia?	misread	m	out_F09.tsv: occupation Wardmaid; diagnosis uncertain
+19713	24	28	4245	M. T. Malaria Attack	M.T. Malaria	wording	h	out_F09.tsv: 
+19716	24	28	4248	Left Ov. Cyst. Operation	Left Ovarian Cyst	wording	h	out_F09.tsv: 
 19720	24	29	4252	Sepsis cause unknown wound of foot	Sepsis contused wound of forehead	misread	h	out_F09.tsv: 
 19732	24	30	4264	Infected Finger of Lt. foot	Infected Eczema of Lt. foot	misread	h	out_F09.tsv: 
 19754	24	32	4286	Suspicion Pulmonary (M.Tar T.B)	Incipient Pulmonary (Miliary T.B)	misread	m	out_F09.tsv: 
 19759	24	32	4291	Post partal Haemorrhage	Prolapsed Haemorrhoids	misread	h	out_F09.tsv: 
+19804	24	37	16	Fibro-thyoma Uteri Operation	Fibro-myoma Uteri	wording	h	out_F09.tsv: 
+19809	24	37	21	Vesical Calculus Operation	Vesical Calculus	wording	h	out_F09.tsv: 
 19835	24	40	47	Post Pleurisic Symptoms	Post Climacteric Symptoms.	misread	h	out_F09.tsv: 
 19840	24	40	52	Infarcted Omental patch & Rr Femur	Impacted fract. of neck of Rt femur	misread	h	out_F09.tsv: 
 19856	24	42	68	Crushed wounds of Rt Hand	Crushed wounds of Lt Hand	lr-swap	h	out_F09.tsv: P.R. 1377
 19857	24	42	69	Fract. Rt Lower 3rd femur	Fract. of Lt lower 3rd femur.	lr-swap	h	out_F09.tsv: 
 19873	24	43	85	Myalgia & Rt foot.	Myelo Sarcoma of Rt foot.	misread	h	out_F09.tsv: 
+19874	24	43	86	Enlarged Tonsils & Sarcoma?	Enlarged Tonsils	wording	h	out_F09.tsv: 
 19886	24	44	98	Incomplete Abortion. Operation	Incomplete Abortion	misread	h	out_F09.tsv: 
 19890	24	45	102	Chronic Disarging Rt Ear Region & T.B. sinus	Chronic Discharging T.B. sinus Rt Iliac Region	misread	h	out_F09.tsv: P.R 6230
+19893	24	45	105	Diphtheria aurid	Diphtheria	wording	h	out_F09.tsv: nationality as written Chcko (Czech)
 19895	24	45	107	SubAcute Appendicitis Operation	Sub Acute Appendicitis	misread	h	out_F09.tsv: male in Mat ward; sex clear M, surgical diagnosis
 19903	24	46	115	Incomplete Abortion Operation Recovery	Incomplete Abortion	misread	h	out_F09.tsv: 
 19917	24	47	129	Siver Cachexia & Ascitis	Liver Cirrhosis c Ascitis.	misread	h	out_F09.tsv: P.R. E.11280; died
+19921	24	48	133	T. B. Peritonitis	T.B. Peritonitis	wording	h	out_F09.tsv: 
 19938	24	49	150	Tenotomy (Bilateral)	Tenotomy Both	misread	h	out_F09.tsv: 
+19962	24	51	174	Childbirth satisfactory	Childbirth	wording	h	out_F10.tsv: age cell blank
+19995	24	54	207	Haemorrhoids Operation	Haemorrhoids	wording	h	out_F10.tsv: 
 20016	24	56	228	Left Ovarian Cyst.	Fibroid Uterus - Left Ovarian Cyst	misread	h	out_F10.tsv: 
 20020	24	57	232	Osteomyelitis & upper end of Rt. Tibia	Osteomyelitis of upper end of Lt. Tibia	lr-swap	h	out_F10.tsv: 
 20028	24	57	240	Fracture of Rt Femur	Fracture of Lt femur	lr-swap	h	out_F10.tsv: 
+20029	24	57	241	Strangulated Rt. Femoral Hernia	Strangulated Rt. Recurrent Ing. Hernia	wording	h	out_F10.tsv: 
 20031	24	58	243	Lacerated wound of Rt middle finger & Fracture	Lacerated wound of Lt middle finger c fracture	lr-swap	h	out_F10.tsv: class Gratis struck, P.R. added; occupation P.R Rly 523
+20032	24	58	244	Celulitis of operation Rt axilla	Cellulitis of Lt axilla	wording	h	out_F10.tsv: 
 20040	24	58	252	Foreign body - R Knee I.S.G.	Foreign body Rt Arm	misread	h	out_F10.tsv: result I.S.D
+20041	24	58	253	Influenza	Influency	wording	m	out_F10.tsv: probably Influenza as written oddly
+20052	24	59	264	Glands of Rt Inguinal & Operation	Glands of Lt Inguinal ring	wording	h	out_F10.tsv: 
 20093	24	63	305	Hepatitis much	Hepatitis	misread	h	out_F10.tsv: 
 20104	24	64	316	Acute Mystic tympanitis	Acute Myelitis hemiparesis	misread	m	out_F10.tsv: died
+20116	24	70	328	Synovial Cysts of Knee - Operation	Synovial Cysts of Lt knee	wording	h	out_F10.tsv: non-obstetric case in Mat as written
+20131	24	72	343	Nazal Polyps & Operation	Nazal Polyps	wording	h	out_F10.tsv: 
+20132	24	72	344	Hypertrophy of Tonsils Operation	Hypertrophy of Tonsils	wording	h	out_F10.tsv: 
+20138	24	73	350	Normal Confinement / Childbirth	Normal Confinement	wording	h	out_F10.tsv: 
 20142	24	73	354	Operation Recovery	Schirrous Cancer of ascending colon	misread	m	out_F10.tsv: 
 20173	24	76	385	Gangrene of Rt leg	Gangrene of Lt. Arm	misread	h	out_F10.tsv: result I.S.D
+20224	24	81	436	Hydatid Cyst of liver. Operation	Hydatid Cyst of Liver	wording	h	out_F11.tsv: 
 20250	24	83	462	Bruises & Laceration Rt Knee	Bruises of Rt Knee	misread	h	out_F11.tsv: 
 20287	24	86	499	T.B. Osteomyelitis Rt. humerus + Elbow Joint.	T.B. Osteomyelitis of Rt. humerus & Rt Elbow Joint.	lr-swap	h	out_F11.tsv: 
+20290	24	87	502	For observation watching	For Observation	wording	h	out_F11.tsv: 
+20301	24	88	513	Enlarged Tonsils & operation	Enlarged Tonsils	wording	h	out_F11.tsv: 
+20311	24	88	523	Adhesant Placenta & Operation	Adherent Placenta	wording	h	out_F11.tsv: obstetric diagnosis in Med
+20314	24	89	526	Appendicitis Sacration?	Appendicitis	wording	h	out_F11.tsv: 
+20322	24	89	534	Umbelical Hernia - Operation	Umbilical Hernia	wording	h	out_F11.tsv: 
+20323	24	90	535	Syndoctylism - operation of both hands	Syndactylism of both hands	wording	h	out_F11.tsv: 
 20363	24	93	575	Hydatid Cyst of Rt. lobe liver	Hydatid Cyst of Lt lobe of Lt. liver	lr-swap	m	out_F11.tsv: 
 20364	24	93	576	Appendicitis - Operation	Appendicitis	misread	h	out_F11.tsv: result Refused Operation
 20369	24	94	581	Pleirisy S.F.	Empyema Lt.	misread	m	out_F11.tsv: diagnosis smudged
+20378	24	95	590	Fract. of L and conf[?] Rt. femur	Fract. of Lt femur and comp fract of Rt. femur	wording	h	out_F11.tsv: 
+20380	24	95	592	Plastic Operation, Appendicitis	Plastic Appendicitis	wording	h	out_F11.tsv: 
 20394	24	96	606	Gastis	Goiter	misread	m	out_F11.tsv: occupation Prisoner
+20403	24	97	615	Retained Secundines, Operation	Retained Secundum	wording	h	out_F11.tsv: obstetric diagnosis in Med
 20407	24	97	619	Chifting St. Tibiae	Chipping of Lt Tibia	misread	h	out_F11.tsv: occupation T.A.P 7307; class 3rd c 050 mils
+20412	24	98	624	Ostemyelitis of rt. Sec. phule.	Osteomyelitis of Lt. Scapula	wording	h	out_F11.tsv: 
+20446	24	101	658	Erysipelas Cured	Erysipelas	wording	h	out_F11.tsv: "March 1940" month header written below this row
+20447	24	101	659	Dislocation of Lt hip - Jaceration	Dislocation of Lt Hip.	wording	h	out_F11.tsv: 
 21429	26	1	2263	Stone Rt Kidney & Pyonephrosis	Stone Rt Ureter & Rt Pyonephrosis	misread	h	out_F12.tsv: 
 21432	26	1	2266	Hernia oper Rec. Lt.	Hernia Lt.	misread	h	out_F12.tsv: religion clearly Druze (dataset Jewish)
 21433	26	1	2267	Dyspepsia Lt.	Hydrocele Lt.	misread	h	out_F12.tsv: diagnosis Hydrocele (dataset Dyspepsia); T.A.C. 5037 in occupation
 21434	26	1	2268	Fract. of Stk vertebral Lt.	Fract. of 5th Metatarsal Lt.	misread	h	out_F12.tsv: 
+21437	26	1	2271	Nonbanchs Stab W S Abs.?	Non-penetr. Stab W of Abd.	wording	h	out_F12.tsv: 
 21441	26	2	2275	Deep wound gr. gluteal Region	Deep Abscess of R. Gluteal Region	misread	h	out_F12.tsv: 
 21443	26	2	2277	Gastrilis of Skin	Pustules of Skin	misread	h	out_F12.tsv: 
+21444	26	2	2278	? Dysentery & Ascending...	Diarrhoea ? Dysentery	wording	h	out_F12.tsv: occupation B/P 631
+21445	26	2	2279	Influenza	N.Y.D. Influenza	wording	h	out_F12.tsv: occupation B/P 461
+21446	26	2	2280	Placenta Praevia Non Bleeding, Undelivered 7 mths.	Placenta Praevia	wording	h	out_F12.tsv: 
 21448	26	2	2282	Intestinal Colic ?passed ?wound	Intestinal Colic (Parasites)	misread	h	out_F12.tsv: occupation T.A.C. 6533; diagnosis word struck and replaced
 21449	26	2	2283	Penetr. Wound Abd. & Thorax oper	Penetr. Stab Wd. of Abdomen	misread	h	out_F12.tsv: 
 21451	26	2	2285	Vitalds Sclir losis	Multiple Sclerosis	misread	h	out_F12.tsv: 
 21456	26	3	2290	Forceps Delivery Post partum Haemorrhage	Forceps Delivery - Cord round Neck	misread	h	out_F12.tsv: age blank
 21460	26	3	2294	Fracture Lower Rt Radius Colles	Fracture of Two Lower Ribs of Chest Wall	misread	m	out_F12.tsv: 
 21464	26	3	2298	Neuro Atropine ht. lf	Neuro-Atrophic Rt. Leg	misread	m	out_F12.tsv: 
+21466	26	4	2300	Ch. Kelapsing fever?	Cl. Relapsing Fever	wording	h	out_F12.tsv: 
 21468	26	4	2302	Poisoning much? Bronxy? tis Imp.	Poisoning Sod. Hydroxyde	misread	m	out_F12.tsv: 
 21470	26	4	2304	Comp. Back oper.? & Sarc... ill.?	Comp. Fract. of Skull	misread	m	out_F12.tsv: ward reads Med. though diagnosis surgical
 21473	26	4	2307	General Cellulitis	Generalized Peritonitis	misread	h	out_F12.tsv: occupation Seaman
 21476	26	4	2310	Asca...? Trich...?	Ascites	misread	h	out_F12.tsv: 
+21478	26	5	2312	Pleurisy Rt Base & Rheum. rt.	Pleurisy Adhesive Rt.	wording	h	out_F12.tsv: occupation B/Sgt. 3505
 21480	26	5	2314	Pysaria? much better	Pyrexia - Rheumatic Arthritis	misread	h	out_F12.tsv: age dash
 21481	26	5	2315	Pleurisy B.T. rt.	Malaria B.T. Cl.	misread	h	out_F12.tsv: occupation B/C 3742
 21484	26	5	2318	Cervicitis Polypo.	Cervical Polypus	misread	h	out_F12.tsv: 
@@ -251,21 +448,30 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 21494	26	6	2328	Generalis Paralysis + Ureamia	Generalized Glandular T.B. + Uremia	misread	m	out_F12.tsv: 
 21499	26	6	2333	Fract. Tibia & Fibula R L.	Fract. Tibia & Fibula Rt.	lr-swap	h	out_F12.tsv: occupation B/C 135
 21502	26	7	2336	Right Inguinal H.	Big Haematoma of thigh Rt.	misread	h	out_F12.tsv: 
+21510	26	7	2344	Amabic Dysentery Colitis	Amoebic Hepatitis + Colitis	wording	h	out_F12.tsv: 
 21511	26	7	2345	T.B. Mellitus of Vague(?)	T.B. Ulcer of Tongue	misread	h	out_F12.tsv: 
+21512	26	7	2346	Furuncular Abcess Lt. Neck	Furunculosis of Neck	wording	h	out_F12.tsv: 
 21514	26	8	2348	Stomps.	Mumps	misread	h	out_F12.tsv: 
+21515	26	8	2349	Large Ovarian / S & L Simulating Recti Bili	Large Ovarian Cyst Simulating Ascites	wording	h	out_F12.tsv: 
 21516	26	8	2350	Drug Infusion? WS Infant. Zymoticin? P.	Dog Bite Infected Injection Wd.	misread	h	out_F12.tsv: 
 21517	26	8	2351	Pregnancy Wose Placenta Praevia Brain Tumor.	Pregnancy 7 Months / Brain Tumor	misread	h	out_F12.tsv: 
 21520	26	8	2354	Luc Scabies? Rectal Ne...s?	Luetic Aortitis	misread	h	out_F12.tsv: word struck in diagnosis
+21521	26	8	2355	Comp Depres Psuchu Skull.	Comp. Depressed Fracture of Skull	wording	h	out_F12.tsv: 
 21525	26	9	2359	Fract. of Rt Femur	Fract. of the Lt. Femur	lr-swap	h	out_F12.tsv: 
 21534	26	9	2368	Tacs Ulcer	Gastric Ulcer	misread	h	out_F12.tsv: occupation B/Sgt. 3108
 21535	26	9	2369	Puerpural Sepsis degree?	1st & 2nd Degree Burns of body	misread	m	out_F12.tsv: 
+21537	26	10	2371	A.chory Dephteria	Ac. Laryngeal Diphtheria	wording	h	out_F12.tsv: 
+21538	26	10	2372	Normal Child Birth	Normal Childbirth	wording	m	out_F12.tsv: 
 21541	26	10	2375	ISL Burns L. F Lower Extr	1st & 2nd Burns of Trunk & Lower Extr.	misread	h	out_F12.tsv: 
 21544	26	10	2378	Pyrexia Pulfe Rock	Pyrexia Sulfa Rash	misread	m	out_F12.tsv: 
+21550	26	11	2384	Relapsing Feuer Observed	Relapsing Fever & Periostitis	wording	h	out_F12.tsv: 
+21554	26	11	2388	Enlarged Tonsils & Adenoids.	Enlarged Tonsils	wording	h	out_F12.tsv: occupation Teacher Gr III; ward Mat. for tonsillectomy
 21556	26	11	2390	Fracture rt. Bladder	Fracture of Leg Lt.	misread	m	out_F12.tsv: 
 21557	26	11	2391	Ceriliac - Renal failure	Cardio-Renal failure	misread	h	out_F12.tsv: 
 21559	26	11	2393	Nephrexie	Asphyxia	misread	h	out_F12.tsv: 
 21560	26	11	2394	Fract. of leg & head	Fract. of both Legs & Lt. Forearm	misread	h	out_F12.tsv: 
 21561	26	12	2395	Maxillary Sinusitis + Osteomyelitis	Maxillary Sinusitis + Otitis Externa	misread	h	out_F12.tsv: occupation B/C 579
+21562	26	12	2396	Osteomyelitis ? Scia Rt. Bone	Osteomyelitis of Sciatic Bone Rt.	wording	m	out_F12.tsv: sex glyph heavy, read M
 21563	26	12	2397	Abrasion Buttocks & T.B	Advanced Bilat. Pulm. T.B.	misread	h	out_F12.tsv: age blank; overwrite ward: Surg. struck -> A
 21564	26	12	2398	Kerosene Poisoning	Extensive Burns of Body	misread	h	out_F12.tsv: 
 21569	26	12	2403	Appendicitis	Hypertension	misread	h	out_F12.tsv: 
@@ -273,38 +479,57 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 21575	26	13	2408	Obscure Gastritis	Ulcerated Gastritis	misread	m	out_F12.tsv: 
 21576	26	13	2409	Retention Endocervicitis	Pyelitis - Endocervicitis	misread	h	out_F12.tsv: 
 21577	26	13	2410	Enlargitis	Enteritis	misread	h	out_F12.tsv: occupation T.A.C. 9231
+21582	26	13	2415	Haemorrh B.I.S.O.	Haemorrhoids	wording	h	out_F12.tsv: occupation B/Sgt. 132
 21587	26	14	2420	Gunshot Abd. Skel Wd Penetrating	Penetrating Stab Wd. of Abdomen	misread	h	out_F12.tsv: 
+21589	26	14	2422	Talipes Equinus & Lo. hip.	Talipes Equinus & Lt. Ing. Hernia	wording	h	out_F12.tsv: 
 21592	26	14	2425	Bladder obstruction	Bladder Diverticulum	misread	h	out_F12.tsv: occupation Retired Teacher
+21595	26	14	2428	Empyema Acute lt. Chest puncture	Empyema Lt. Acute Heart Failure	wording	h	out_F12.tsv: 
 21599	26	15	2432	Deep Bursa / menal plexus	Deep Abdominal Abscess	misread	h	out_F12.tsv: 
 21601	26	15	2434	Ulcerated / Plan Is / Neck	Ulcerating Glands of Neck	misread	h	out_F12.tsv: 
 21609	26	16	2442	Osteomyelitis of femur Rt.	Osteomyelitis of Femur Lt.	lr-swap	h	out_F12.tsv: 
+21622	26	17	2455	Chr. appendicitis oper. Shantab(?)	Chr. Appendicitis	wording	h	out_F12.tsv: 
 21623	26	17	2456	Congenital Hernia	Congenital Lues	misread	m	out_F12.tsv: ward written with a leading tick (√B.)
 21629	26	17	2462	Deep stab oper Wd(?) of Lt. Thigh	Deep Stab Wd. of Forearm Lt. - Bleeding	misread	h	out_F12.tsv: 
+21630	26	17	2463	Fract. L. Leg & R. Cl.(?)	Fract. of Leg Lt.	wording	h	out_F12.tsv: 
 21631	26	17	2464	Insect Bite Poisoning	Snake Bite (Non Poisonous)	misread	h	out_F12.tsv: 
 21632	26	17	2465	Bilateral Pneumonia & Bronch. Pleu(?)	Bilateral Pneumonia Empl. Measles	misread	m	out_F12.tsv: 
+21633	26	18	2466	Phimosis oper	Phimosis	wording	h	out_F12.tsv: occupation Clerk P.O.
 21636	26	18	2469	Lac. W. Rt. Thumb	Lac. Wd. of Head	misread	h	out_F12.tsv: 
 21637	26	18	2470	Typhoid	Myelitis	misread	m	out_F12.tsv: 
 21641	26	18	2474	Cl. Related fever	Cl. Relaps. Fever	misread	h	out_F12.tsv: occupation P/Cpl. 1057
 21642	26	18	2475	G.B.S.	G.C.I.	misread	m	out_F12.tsv: 
 21648	26	19	2481	Infection ? Depositis	Infectious Hepatitis	misread	h	out_F12.tsv: occupation Ex-Serviceman 2228; transfer C -> D as from 20/5/46
+21652	26	19	2485	Fracture ?Polvis Ischium	Fracture of Pelvis	wording	h	out_F12.tsv: 
 21653	26	19	2486	Ist.& 2d T Fall & Exh.	1st + 2nd Burns of Extr.	misread	h	out_F12.tsv: 
+21660	26	20	2493	Pneumonia kind	Pneumonia	wording	h	out_F12.tsv: occupation P.O.
 21661	26	20	2494	Chr. C. C. Ulitis?	Chr. G.C. Urethritis	misread	h	out_F12.tsv: 
 21664	26	20	2497	Fracture of Costarum Rt. Pleuster?	Fracture of Forearm Rt.	misread	h	out_F12.tsv: 
+21665	26	20	2498	Tumor lglandulae lacrym. Sup.?	Tumour Rt. Lung Agranulocytosis	wording	m	out_F12.tsv: 
 21669	26	21	2502	Abscess / Severe lymph gle..	Stenosis Severe Pyloric	misread	h	out_F12.tsv: 
 21671	26	21	2504	Bladder issue?	Snake Bite Lt. Hand	misread	h	out_F12.tsv: 
 21672	26	21	2505	Amenorragia	Haemorrhage	misread	h	out_F12.tsv: 
 21675	26	21	2508	Hemiparesis Rt S?	Meniere's Disease N.Y.D.	misread	h	out_F12.tsv: occupation Ex Serviceman 788
+21678	26	21	2511	A.t.S. Concussion.	N.Y.D. Concussion	wording	h	out_F12.tsv: 
 21679	26	21	2512	?Paresis Fever	? Pappataci Fever	misread	m	out_F12.tsv: occupation B/C 2526
+21680	26	21	2513	Den?? Empy? Colitis	Acute Entero Colitis	wording	h	out_F12.tsv: occupation B/Sgt. 1411
+21681	26	22	2514	Chr. Appendicitis Investigat.	Chr. Appendicitis	wording	h	out_F12.tsv: occupation B/C 1350
+21701	26	23	2534	Gonorrhea Cervicitis Rt	Gonorrhoeal Adnexitis	wording	m	out_F12.tsv: 
 21702	26	23	2535	Ist degree Burns of Body	1st & 2nd Burns of Body	misread	h	out_F12.tsv: 
 21705	26	24	2538	Bruises rt. Elbow	Bruises of Lt. Elbow	lr-swap	h	out_F12.tsv: 
 21706	26	24	2539	Synovitis G.V.T?	Pyrexia	misread	m	out_F12.tsv: nationality: Palestinian struck, Syrian written below
 21711	26	24	2544	Pleurisy Exudative?	Pharyngitis	misread	m	out_F12.tsv: occupation Non-Com. Prisoner
 21713	26	24	2547	Bacillary Tubercolosis?	Ascitis Tuberculous	misread	h	out_F12.tsv: occupation T.A.C. 5356
 21718	26	25	2552	Abscess of Rt. Buttock	Abscess of Lt. Buttock	lr-swap	h	out_F12.tsv: occupation P.O.
+21727	26	25	2561	Scabies & Secondary Infection	Scabies + 2ndry Dermatitis of face	wording	h	out_F12.tsv: 
+21730	26	26	2564	Rheumatic Myositis & Left Inguinal Hernia	Rheumatic Myositis Thigh & Leg Muscles	wording	m	out_F13.tsv: nationality line 2 small "c/s"
+21733	26	26	2567	Scorpion Bite Rt. Thigh.	Scorpion Bite	wording	h	out_F13.tsv: 
 21737	26	26	2571	duration_calc_impossible		debris	h	out_F13.tsv: discharge/diagnosis blank
 21738	26	26	2572	Genchoma? W.S.? Forehead & Rt. Arm & Humerus.	Penetr. Gun Shot W. of Rt. Arm, Forearm & Humerus	misread	m	out_F13.tsv: 
+21743	26	27	2577	Diabetes Mellitus + Rt. Shoulder Lesion	Diabetes Mellitus Carbuncle Rt. Shoulder	wording	m	out_F13.tsv: ward could be J.S.; sex glyph odd
 21745	26	27	2579	Fract. Radius & ulna. Rt.	Fract. Radius + Ulna Lt.	lr-swap	h	out_F13.tsv: 
 21746	26	27	2580	Acute Bronchitis (Non Corr.)	Snake Bite (Non Poison)	misread	h	out_F13.tsv: 
+21749	26	27	2583	Normal Child Birth	Normal Childbirth	wording	m	out_F13.tsv: ward glyph Med./Mat. ambiguous in this hand
+21752	26	27	2586	Backache Inys	Backache	wording	m	out_F13.tsv: ward left edge cut in crop; read as P.M.F. by match with clear p36 hand
 21754	26	28	2588	Duodelis / Incipitis / Nephritis	Diabetes Incipiens Encephalitis	misread	m	out_F13.tsv: 
 21755	26	28	2589	Carious / Unerupted / Molar Lt.	Gonorrhoeal Urethritis	misread	m	: 
 21756	26	28	2590	? Conjiz.	Pyrexia ? Origin	misread	m	: 
@@ -316,6 +541,7 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 21771	26	29	2605	Post oper orchitis testis	Post operative Orchitis Double	misread	h	out_F13.tsv: 
 21775	26	29	2609	Paraly tic Prof. H. Plesia	Paralytic Club Foot Lt.	misread	m	out_F13.tsv: 
 21777	26	30	2611	Hepatitis Amoebic	Hepatitis Anaemia	misread	h	out_F13.tsv: 
+21783	26	30	2617	Rectocele Oper.	Rectocele	wording	h	out_F13.tsv: 
 21784	26	30	2618	? Dyptheria	? Hepatitis	misread	h	: 
 21786	26	30	2620	Cont. Liver Rt. Back Bruises.	Cont. W.S. Rt. Ear Auricles	misread	m	out_F13.tsv: 
 21788	26	30	2622	Laryngitis much Temp.	Pharyngitis	misread	m	out_F13.tsv: ward "J.S."/"I.S."; occupation Ill. Imgt.
@@ -323,13 +549,17 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 21794	26	34	2628	Parasitis	Pericarditis	misread	m	out_F13.tsv: age blank
 21795	26	34	2629	Haematuria Extia Renal	Anaemia Extra Renal	misread	m	out_F13.tsv: 
 21808	26	35	2642	Delivery / Version / Pain	Delivery by Version Childbirth	misread	m	out_F13.tsv: ward glyph Med./Mat. ambiguous in this hand
+21809	26	35	2643	Disloca / J head / of humerus Rt.	Dislocation of head of Humerus Lt.	wording	h	out_F13.tsv: 
 21812	26	35	2646	Rytsta / Cystitis / - bung / abcess	Hydatid Cyst + Lung Abscess	misread	h	out_F13.tsv: died
 21815	26	36	2649	Foreign Body Rt. Leg	Foreign Body Lt. Eye	misread	h	out_F13.tsv: occupation B/C 4213
 21820	26	36	2654	Fract. Lt. Femur	Fract. of Rt. Femur	lr-swap	h	out_F13.tsv: occupation Teacher Education E.3
+21821	26	36	2655	Tumor Lung	Tumour Lt. Lung	wording	h	out_F13.tsv: 
 21825	26	37	2659	Cont. & Ab.[?] Lt. Th. Bursitis Subacromial Rt.	Cont. W.S. of Post-Auricular Lt.	misread	m	out_F13.tsv: small "C." under nationality
+21843	26	38	2677	Duodenal Ulcer + Oper.	Duodenal Ulcer + Stenosis	wording	h	out_F13.tsv: 
 21850	26	39	2684	Anaemia (Naboth?)	Snake Bite (Non Pois.)	misread	h	out_F13.tsv: 
 21851	26	39	2685	Oedema anas	Tetanus	misread	h	out_F13.tsv: died
 21852	26	39	2686	Infantil Diarrhoea & Vomiting	Infected Haematoma Arm Rt.	misread	h	out_F13.tsv: 
+21858	26	39	2692	Fever grade II (Reed?)	Fever Low Grade (Recurrent)	wording	h	out_F13.tsv: occupation P.R. T.3284
 21861	26	40	2695	Cystitis	Pyelitis	misread	m	out_F13.tsv: age reads "1 1/12"?; ward "J.S."/"I.S."
 21862	26	40	2696	Acut Retention Fract. Femur	Fract. of Neck Rt. Femur	misread	h	out_F13.tsv: overwrite: Heat Exhaustion struck -> Fract. of Neck Rt. Femur; discharge 24.5.46 struck -> 15.6.46
 21867	26	40	2701	Haematemesis Anaemia Second.	Haemorrhoids Anaemia Severe Secondary	misread	h	out_F13.tsv: 
@@ -341,14 +571,19 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 21881	26	41	2716	Cellulitis / rt leg	Colitis Mucous	misread	m	out_F13.tsv: occupation B/C 1153
 21886	26	42	2721	Appendix Hernia Rt.	Appendicitis Acute	misread	h	out_F13.tsv: occupation Messenger
 21890	26	42	2725	Fracture lower 1/3 of Humerus	Fracture Infer. of Nose	misread	h	out_F13.tsv: diagnosis on pasted pink slip
+21892	26	42	2727	Amebic Colitis Dysentry	Amoebic Colitis + Hepatitis	wording	h	out_F13.tsv: 
+21893	26	42	2728	Stomatitis muclis Imp.	Stomatitis	wording	h	out_F13.tsv: small "C" under nationality
 21896	26	42	2731	Pyrexia (Rkttsen)	Pyrexia (Short Fev.)	misread	h	out_F13.tsv: 
 21912	26	44	2747	Haematuria	Haemorrhoids	misread	h	out_F13.tsv: 
 21916	26	44	2751	Osteosarcoma of Rt. leg	Osteosarcoma of Lt. Leg	lr-swap	h	out_F13.tsv: 
+21921	26	45	2756	Hernia Rt. lg.	Hernia Lt. Ing.	wording	h	out_F13.tsv: 
+21931	26	45	2766	Colles' Fract. Scaphoid. ?	Colles Fract. Lt. + Fract. of Scaphoid	wording	h	out_F13.tsv: occupation B/C No 2954
 21933	26	46	2768	duration_calc_impossible		debris	h	out_F13.tsv: class, discharge, diagnosis blank
 21934	26	46	2769	Cont. Lt Foot	Cont. W.S. of Scalp	misread	h	: 
 21936	26	46	2771	Abscess ?Back	Bruises of Back	misread	h	out_F13.tsv: 
 21937	26	46	2772	?Bronchitis	Gonorrhoea	misread	h	out_F13.tsv: overwrite: Palestinian struck -> British
 21939	26	46	2774	Congest. Heart Failure (Viam?)	Engorgement of Breast (Fever)	misread	m	out_F13.tsv: ward glyph D./S.
+21941	26	46	2776	Chr. Fib. T. B.	Chr. Fibroid T.B.	wording	m	out_F13.tsv: ward glyph D./S.
 21948	26	47	2783	Retention Urine	Retroverted Uterus	misread	h	out_F13.tsv: sex clearly M on scan but ward Mat. and gynaecological diagnosis: clerk sex error or row misalignment
 21952	26	47	2787	Imp. C.T.	Concussion	misread	h	out_F13.tsv: 
 21957	26	48	2792	Fract. leg externity Parietal Wall	Fract. lower extremity Radius Cut wound	misread	m	out_F13.tsv: occupation B/C 3751
@@ -356,6 +591,8 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 21959	26	48	2794	Tonsilitis Urethritis	Gonorrhoeal Urethritis	misread	h	out_F13.tsv: late entry adm 14.5.46
 21966	26	48	2801	Puerperal Endometritis	Endometritis	misread	m	out_F13.tsv: ward glyph Med./Mat. ambiguous
 21970	26	49	2805	Chr. Anx. Neurosis & lenren?	Chr. Amoebic Dysentery	misread	h	out_F13.tsv: occupation P.R. Sect. Clerk; class 1st P.R.
+21971	26	49	2806	Inguinal Hernia? Uterine Haemorrhage Curettage	Irregular Uterine Haemorrhage	wording	h	out_F13.tsv: 
+21972	26	49	2807	Emphysema. Ac cardiac failure	Emphysema Heart failure	wording	h	out_F13.tsv: overwrite: sex glyph struck -> M.
 21977	26	49	2812	Acute Tonsilitis. Colitis	Acute Entero Colitis	misread	h	out_F13.tsv: occupation B/C 4385
 21979	26	49	2814	Post Fistula in ano Chronic Colitis	Post Febrile Debility	misread	h	out_F13.tsv: occupation B/C 2526
 21983	26	50	2818	Tonsillitis?	Tonsillectomy	misread	h	out_F13.tsv: 
@@ -369,59 +606,87 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 21996	26	51	2831	Fract. Humerus Rt.	Bone Abscess of Rt. Humerus	misread	h	out_F13.tsv: occupation Tractor Driver
 21999	26	51	2834	Ischio Rectal Abscess Repair	Deep Abscess of Rt. Gluteal Region	misread	m	out_F13.tsv: sex glyph with stroke ("√M")
 22016	26	52	2851	Pulm T.B. Rt.	Pulm. T.B. Lt.	lr-swap	h	out_F13.tsv: 
+22024	26	53	2858	Fract. Lt. Ribs & R Lb.	Fract. Lt. Ribs 11th & 12th	wording	h	out_F13.tsv: occupation P.R. L/8141; margin note "c/ Indexed"
 22026	26	53	2860	Pyrexia of Unknown Origin (PUO) / Fever	High Haemorrhoids Injected	misread	h	out_F13.tsv: occupation B/C 3355
 22044	26	55	2878	Pyesis (?)	Pyrexia	misread	h	out_F14.tsv: 
 22049	26	55	2882	Bronchitis Shock	Shock	misread	h	out_F14.tsv: diagnosis Bronchitis struck -> Shock; died same day
 22051	26	55	2884	Paratyphoid Fever Vac (?)	Paroxysmal Tachycardia	misread	h	out_F14.tsv: 
+22055	26	56	2888	Bacillary Dysentry Cadio?	Bacillary Dysentery Gastritis Acute	wording	m	out_F14.tsv: sex letter overwritten (F->M?); ward letter D probable
 22057	26	56	2890	Rech. Stung? Umbilical + Bronchitis Hernia?	Rachitis + Bronchitis	misread	m	out_F14.tsv: ward glyph tick+B. (same hand as p60 B/S.); diagnosis Strangulated Umbilical Hernia + Gangrene struck
 22062	26	56	2895	Fract. of Rt. Humerus		invented	h	out_F14.tsv: diagnosis and discharge blank
+22077	26	58	2907	Sciatica	Sciatica Rt.	wording	h	out_F14.tsv: JUNE heading above
+22078	26	58	2908	Hydatiform Mole & Relieving	Hydatidiform Mole Delivery	wording	h	out_F14.tsv: 
 22080	26	58	2910	Pleurisy severe	Enteric fever	misread	h	out_F14.tsv: 
 22081	26	58	2911	Empyema Nodosa?	Erythema Nodosum	misread	h	out_F14.tsv: 
 22084	26	58	2914	Fract. Rt. Humerus	Fract. of Lt. Humerus	lr-swap	h	out_F14.tsv: 
 22086	26	58	2916	Sacral + Dermoid Cyst Rec	Sacral Sinus + Dermoid Cyst	misread	h	out_F14.tsv: 
 22088	26	59	2918	Rt. leg Hernia	Rt. Ing. Hernia	misread	h	out_F14.tsv: 
+22093	26	59	2923	Hernia Rt. Ingu.	Hernia Lt. Ing.	wording	h	out_F14.tsv: 
 22094	26	59	2924	Rt. leg Hernia Swelling	Rt. Ing. Swelling	misread	h	out_F14.tsv: Hernia struck -> Swelling
 22095	26	59	2925	Kalitis Cyst & Rt. Kidn	Solitary Cyst of Lt. Kidney	misread	h	out_F14.tsv: 
+22097	26	59	2927	Rt leg Swelling	Rt. Ing. Swelling	wording	h	out_F14.tsv: 
 22102	26	60	2932	Haem. of Thigh	Abscess of Thigh	misread	h	out_F14.tsv: 
 22106	26	60	2936	Hernia Rt. leg.	Hernia Rt. Ing.	misread	h	out_F14.tsv: 
+22109	26	60	2939	Adnexitis Rt Much Imp.	Adnexitis Lt.	wording	m	out_F14.tsv: age blank; adm 29 overwritten
+22111	26	60	2941	Pneumonia Toxemia	Pneumonia Toxicosis	wording	m	: 
 22113	26	61	2943	Stab wound of chest	Cont. Wound of Head	misread	m	out_F14.tsv: serials 2943-2949 overwritten (corrected by one); ward S/s
 22115	26	61	2945	Contusion of leg rt.	Penetrating Wound of Chest	misread	m	out_F14.tsv: serial overwritten
 22120	26	61	2950	Fract. f Etteming [?] Rt.	Fract. of Skull c Meningitis	misread	h	out_F14.tsv: died
 22124	26	62	2954	Pneumonia Rt. Base	Pneumonia Lt. Base	lr-swap	h	out_F14.tsv: 
+22127	26	62	2957	Pulm. T.b. + Haemoptysis?	Pulm. T.B. + Heart failure	wording	h	out_F14.tsv: 
 22137	26	63	2967	Ileus Fever	Malta Fever	misread	m	out_F14.tsv: 
 22139	26	63	2969	Cyst of Scalp Excission	Cyst of the lip	misread	h	out_F14.tsv: 
+22141	26	63	2971	Osteomy of Rt. Humerus	Osteomyelitis of Lt. Humerus	wording	h	out_F14.tsv: 
 22143	26	63	2973	Empyema of Face	Erysipelas of Face	misread	h	out_F14.tsv: 
 22144	26	63	2974	Psoas Abscess	Pyrexia	misread	m	out_F14.tsv: ward B (looped glyph)
+22152	26	64	2982	Haemol Typhoid fever	Haemorrhage Typhoid Fever	wording	h	: 
 22158	26	64	2988	duration_calc_impossible		debris	h	out_F14.tsv: rest blank
 22163	26	65	2993	Vacan. Injection	Ascaris Infection	misread	m	out_F14.tsv: age blank; occupation Prob. Nurse
 22164	26	65	2994	Pansinusitis Colitis	Amoebic Colitis	misread	h	out_F14.tsv: 
 22165	26	65	2995	Synovitis kn.	Dysentery	misread	h	out_F14.tsv: 
 22176	26	66	3005	Aborted + Sepsis	Deviated Nasal Septum	misread	h	out_F14.tsv: 
+22177	26	66	3006	Hernia Rt. Inguinal Oper.	Hernia Lt. Ing.	wording	h	out_F14.tsv: occupation Priest
 22178	26	66	3007	Hypostatic bronchitis	Hyposystole (toxic Myocarditis)	misread	m	out_F14.tsv: 
+22181	26	66	3010	Erysipelas following Nephritis	Erysipelas following dog bite	wording	h	out_F14.tsv: 
 22187	26	67	3016	Xa 3002	See 3002	misread	h	out_F14.tsv: row cancelled, diagonal stroke, "See 3002" written across
 22208	26	69	3037	Phlecentuis?, Centuri Convulsion	Lacerations, Contusion, Concussion	misread	h	out_F14.tsv: 1st class
+22217	26	69	3046	Fracture Ribs Rt	Fracture Rib Lt.	wording	h	out_F14.tsv: 
 22226	26	70	3055	Rec		debris	h	out_F14.tsv: rest blank
+22229	26	70	3058	Non-healing ulcer left leg	Non Healing Ulcer of Leg Rt.	wording	h	out_F14.tsv: overwrite: Br. struck -> PMF
 22232	26	71	3061	Bronchitis?	Drowning	misread	m	out_F14.tsv: ward cell: Surg / W5 (W8 struck?) / third word illegible
 22234	26	71	3063	Hepatic Abscess	Hepatitis Amoebic	misread	h	out_F14.tsv: 
 22235	26	71	3064	Supurating lu.	Dysentery	misread	h	out_F14.tsv: 
+22237	26	71	3066	Chr. Appundis	Chr. Appendicitis	wording	h	out_F14.tsv: 
 22241	26	71	3070	Vulvario Clinical	Malaria Clinical	misread	h	out_F14.tsv: 
+22245	26	72	3074	Anal Fistula	Anal Fissure	wording	h	out_F14.tsv: 
 22258	26	73	3087	Broncho Pneumonia	Pleuro pneumonia	misread	m	out_F14.tsv: ward tick+B.; Broncho Pneumonia and Died struck
 22263	26	73	3092	Rheumatiz Myocysto	Rheumatic Myocarditis	misread	h	: 
+22264	26	73	3093	Amoebic Colitis	Amoebic Colitis Secondary Anaemia	wording	h	out_F14.tsv: 
 22287	26	75	3116	Pleurisy + effusion rt.	Pleurisy c effusion Lt.	lr-swap	m	out_F14.tsv: 1st class @350
+22297	26	76	3126	Peptic ulcer allegpend	Peptic Ulcer	wording	h	out_F14.tsv: 
 22298	26	76	3127	Wound bullet burn of face	1st & 2nd degree burn of Face	misread	h	out_F14.tsv: 
+22335	26	79	3164	?Inguinoma -> Perforated Appendix	Acute Gangrenous Perforated Appendix	wording	m	out_F15.tsv: second date 16.6.46 written under adm
 22346	26	80	3175	Rt. Ing. Hernia	Lt. Ing. Hernia	lr-swap	m	out_F15.tsv: age could be 22
+22354	26	81	3183	Relapsed Fever	Relapsing Fever	wording	h	out_F15.tsv: age blank; W2B5 bed annotation under ward
 22357	26	81	3186	Dissica Toxicaemia	Dessication Toxicosis	misread	m	out_F15.tsv: age 3 mos probable
 22359	26	81	3188	Toxicaemia	Toxicosis	misread	m	out_F15.tsv: age 7 mos probable
+22367	26	82	3196	Dermatitis L.S.A.	Dermatitis	wording	m	out_F15.tsv: ward PMF as written
 22368	26	82	3197	Urticaria GRS-181 + Scabies + Father.	Myositis of Rt. Buttock	misread	m	out_F15.tsv: 
 22374	26	82	3203	Perforated Ulcer + Gastro-enterostomy	Perforating Ulcer Lt. foot + Cerebral Concussion	misread	h	out_F15.tsv: 
+22376	26	83	3205	Epilepsy Traumatic Relapse	Epilepsy Trauma Rt. Eye	wording	m	out_F15.tsv: adm out of sequence (31.5.46)
 22378	26	83	3207	Carcinom Sclerosis	Coronary Sclerosis	misread	h	out_F15.tsv: 
 22380	26	83	3209	Cellulitis R Ankle lt.	Cellulitis of Ankle Lt.	lr-swap	h	out_F15.tsv: occupation Illegal Immigrant
 22393	26	84	3222	Malinated tract. Nerve	Malunited Fract. Nose	misread	h	out_F15.tsv: 
+22399	26	84	3228	Scarlet Fever otitis media	Scarlet Fever - Osteomyelitis	wording	m	out_F15.tsv: 
 22406	26	85	3235	Exchaustion Brain f...	Extensive Burns of body	misread	h	out_F15.tsv: 
 22413	26	86	3242	Abscess Complete	Abortion Complete	misread	h	out_F15.tsv: 
 22415	26	86	3244	Heart Failure	Late Secondary Lues	misread	h	out_F15.tsv: occupation struck through; class overwritten
+22421	26	86	3250	Empyema Rec	Empyema Rt.	wording	h	out_F15.tsv: 
 22429	26	87	3258	Lumbago	Sunburn	misread	h	out_F15.tsv: 
+22436	26	88	3265	Rheumatic fever. &? Endocarditis? Temp	Rheumatic fever c ????	wording	m	out_F15.tsv: second line of diagnosis unread
 22441	26	88	3270	Heumaturia round Worms	Haematoma around Lt. knee	misread	h	out_F15.tsv: 
+22446	26	88	3274	P. U. O.	P.U.O.	wording	h	out_F15.tsv: 
+22447	26	88	3275	P. U. O.	P.U.O.	wording	m	out_F15.tsv: overwrite: Palest. struck -> Br.
 22455	26	89	3283	Wound back Bullet & other L. L.	Wound Lacerated Bullet of Rt. Elbow	misread	m	out_F15.tsv: ward edge cut; reads Med
 22460	26	91	3288	Pyrexia (Convulsion? Encephalitis?)	Pyrexia (Erysipelas?) Encephalitis	misread	m	out_F15.tsv: age written 1 m(onth)?; Erysipelas? struck through
 22462	26	91	3290	Multiple Wounds + Rt. Femur	Multiple Lacerated Wounds + Fract. Rt. Femur	misread	h	out_F15.tsv: age blank; died same day
@@ -433,9 +698,12 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 22472	26	92	3300	duration_calc_impossible		debris	h	out_F15.tsv: only ward and adm written; rest blank
 22473	26	92	3301	duration_calc_impossible		debris	h	out_F15.tsv: only ward and adm written; rest blank
 22475	26	92	3303	Barbites Gangrene	Diabetic Gangrene	misread	h	out_F15.tsv: 
+22476	26	92	3304	Jachea bites	Snake bite	wording	h	out_F15.tsv: 
 22477	26	92	3305	duration_calc_impossible		debris	h	out_F15.tsv: only ward, class, adm written; class circled; occupation Sup. Police 2578
+22491	26	93	3319	Laryngotracheo Bronchitis / Diptheria	Laryngeal Diphtheria - Pneumonia	wording	h	out_F15.tsv: 
 22492	26	93	3320	Infection of finger & Rr.	Infection of thenar space Rt.	misread	m	out_F15.tsv: 
 22502	26	94	3330	Anchrostoma Oedema	Cerebral Oedema	misread	h	out_F15.tsv: adm 6.6.46 as written (out of sequence); died
+22503	26	94	3331	Eczema des wets T.F.	Eczematoid Dermatitis	wording	h	out_F15.tsv: 
 22520	26	96	3348	duration_calc_impossible		debris	h	: 
 22523	26	96	3351	Repaue Hernia	Refused admission	misread	m	: 
 22529	26	96	3356	Pneumonia Bronc	Pneumonia Base Rt. L.	misread	m	: 
@@ -458,17 +726,22 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 22599	26	105	3425	Contusion of Head	Cont. Wound of Head	misread	m	out_F15.tsv: ward faint, reads Med.
 22609	26	106	3435	Deep Cold Abscess Rt. Groin	Deep Cold Abscess Lt. Groin	lr-swap	h	out_F15.tsv: 
 22616	26	107	3442	Typhoid Fever		invented	h	out_F15.tsv: only ward, class (3rd P.R.), adm written; occupation P.R. PC5967
+22617	26	107	3443	Typhoid Hepatitic Rel. Inf. Fever	Typhoid Fever	wording	m	out_F15.tsv: overwrite: Strangulated Lt. Ing. Hernia struck -> Typhoid Fever
 22618	26	107	3444	Seranfula Lt. Inf. Neck	Strangulated Lt. Ing. Hernia	misread	h	out_F15.tsv: class overwritten
+22627	26	107	3453	Typhoid Recov.	Typhoid Fever	wording	m	out_F15.tsv: sex overwritten (F); class changed from 18.7.46
 22736	27	12	3384	Encefelitis Empyema	Encysted Empyema	misread	m	out_R22.tsv: age 7 1/2
 22743	27	12	3391	Tuberculo Classic Pleur.	Tubercular Plastic Peritonitis	misread	m	out_R22.tsv: 
 22760	27	14	3410	Dyspepsia	Erysipelas	misread	h	out_R22.tsv: dataset has Dyspepsia; scan clearly Erysipelas; remarks Infectious
 22784	27	17	3436	Racialom Venerea	Granuloma Venereum.	misread	m	out_R22.tsv: ward letter E underlined; dataset "Racialom Venerea" is a misread
+22852	27	23	3508	Lung Abscess Thoracoscopy operation	Lung Abscess Lt. Thoracoplasty	wording	m	out_R22.tsv: 
 22864	27	24	3520	Septicemia Sepsis tiss	Peptic Ulcer Hepatitis Amebic	misread	m	out_R22.tsv: dataset "Septicemia Sepsis" is a misread; remarks Susp. Infectious
 22981	27	35	3644	B.J.J. Talalgia	B.T. Malaria	misread	h	out_Q04.tsv: dataset diagnosis 'B.J.J. Talalgia' is a misread
 23002	27	37	3677	Ascariasis Worms	Ascariasis	misread	h	out_Q04.tsv: result column 'Passed Worms'
 23092	27	46	3773	Catalepsy	Paraty.	misread	h	out_R23.tsv: dataset diagnosis Catalepsy is a misread of Paraty.; remarks: Infection
 23149	27	52	3835	Haematemesis Rt(Fungos)	Haemathorax Rt (Fungus Infection)	misread	m	out_R23.tsv: "(L.C.1-) all periods" is in the Class & Rate cell, not ward; dataset diagnosis Haematemesis is a misread
 23176	27	54	3863	Syphalis	Hepatitis	misread	m	out_R23.tsv: dataset diagnosis Syphalis looks like a misread of Hepatitis
+23180	27	56	3879	Amebic Dysenteria	Amebic Hepatitis.	wording	h	out_R23.tsv: dataset "Amebic Dysenteria" is a misread of Amebic Hepatitis; remarks: Infection
+23229	27	60	3875	Pyosalpynx operation	Pyosalpinx	wording	m	out_Q04.tsv: spelling roughly 'Pyosalpinx'; operation recovery
 23242	27	62	3943	Diagnosis		ward-or-header-in-diagnosis	h	out_Q04.tsv: diagnosis blank on scan (dataset 'Diagnosis' is header leak)
 23271	27	65		Pyuria	Pyrexia	misread	m	: 
 23272	27	65	3976	Coryza.	Psycosis.	misread	m	out_Q04.tsv: first letter is this clerk's P (as in Pyrexia); dataset 'Coryza' unlikely; remark Susp. Infection
@@ -476,53 +749,88 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 23325	27	70	4032	No Cas Plewaitis sent to French Hosp. Nazareth	No Bed Available sent to French Hosp. Nazareth	misread	h	out_Q04.tsv: not a diagnosis; 'NIL' days
 23462	27	83	4199	Strep Local Anaemia. Sep Licin	Strep Local Septicemia	misread	m	out_R24.tsv: 
 23565	27	93	4307	Jaundice from drinking water intoxication	Faintness following the drinking of Ink.	misread	m	out_Q05.tsv: first word could be read otherwise; ink not water
+23574	27	94	4317	Typhoid Fever (Pas for).	Typhoid fever (Perfor.)	wording	m	out_Q05.tsv: ward letter oddly formed, probably D; result Died; remark Infectious
 23591	27	96	4335	Caral. O.B.	Parat. B.	misread	h	out_Q05.tsv: Paratyphoid B, not "Caral. O.B."
+23665	28	5	4410	Diphtheria cured	Diphtheria	wording	h	out_Q05.tsv: result cured
+23714	28	10	4462	Amabie Colitis Adhesions - Gregariasis	Amoebic Colitis Adnexitis - Adhesions to Uterus - Oxyuriasis	wording	m	out_R25.tsv: class 2nd B; last word possibly Oxyuriasis
 23761	28	14	4506	Eye		debris	h	out_R25.tsv: ward E. and adm date only; rest of row blank
 23773	28	15	4518	duration_calc_impossible		debris	h	out_R25.tsv: ward written 'Mat.' with '5.' below; diagnosis blank
+23796	28	17	4543	Tubercular Peritonitis Failed Heart	Tubercular Peritonitis - Heart Failure	wording	h	out_R25.tsv: 
+23817	28	19	4565	Frac Lunate Carpals & semi lumar Bone & Dislocation	Fractured Carpals Scaphoid + Dislocation of Semilunar Bone	wording	m	out_R25.tsv: scan adm 12.9.44 (disch 15.9.44, 3 days)
+23837	28	21	4587	San I.G. fever	Sandfly fever	wording	h	out_R25.tsv: remarks: Infectious
+23859	28	23	4611	Left Coxitis. In Plaster.	Left Coxitis	wording	h	out_Q05.tsv: "In Plaster" is in the Result column
 23900	28	27	4652	Typhus Recov.	Typhus.	misread	h	out_Q05.tsv: "Recovery" is the Result column
 24081	28	45	4841	Dyspepsia	Pyrexia	misread	h	out_Q06.tsv: remarks: Susp. Infectious; result "same"
 24131	28	50	4894	Lymphadenitis Rt. Axilla (C.C.)	Lymphadenitis Lt. Axilla (C.C.)	lr-swap	m	out_Q06.tsv: Lt./Rt. side uncertain
+24136	28	50	4899	Plague Bubonic. Grovel	Plague Bubonic. Cervical	wording	h	out_Q06.tsv: remarks: Infectious
 24145	28	51	4909	Pleurisy ē much Effusion	Pleurisy ē much Effusion (T.B.C.) Lt.	misread	m	out_Q06.tsv: 20Y M row
+24179	28	55		Expatration Dermatitis	Exfoliative Dermatitis	wording	m	: 
 24182	28	55	4949	Double Urethral much Ceisure failure	Double Mitral lesion & failure	misread	m	out_Q06.tsv: result much Improved
+24187	28	55	4954	AnaBiDis of the Colon.	Amoebiasis of the Colon.	wording	h	out_Q06.tsv: 
+24192	28	56	4960	Ceriosditis Femur	Periostitis of Rt. Femur	wording	h	out_Q06.tsv: 
 24202	28	57	4970	Otitis		invented	h	out_Q06.tsv: diagnosis cell blank on scan (row has only ward, class, admission); dataset Otitis not on page
 24265	28	63	5035	Multiple Abcesses of Insite	Multiple Abscesses at site of Injection	misread	m	out_Q06.tsv: 
 24273	28	63	5043	Astorance Disease + fracture	Advanced Mitral Disease + failure	misread	h	out_Q06.tsv: Died; remarks Susp. Infectious
 24294	28	65	5065	Lymphad(CEL)	Lymphadenitis (C.C.)	misread	h	out_Q06.tsv: remarks Susp. Infectious
 24376	28	73	5150	Lymphad Rt. Axillary.	Lymphadenitis Lt. Axillary.	misread	h	out_Q07.tsv: bare letter E.; side is Lt. not Rt. as in dataset
 24392	28	75	5167	Lymphadenitis Axillary (Rt) (C.C.)	Lymphadenitis Axillary Lt (C.C.)	lr-swap	m	out_Q07.tsv: ward: a struck/overwritten letter above, E below; side reads Lt not Rt; serial overwritten
+24430	28	79	5207	P.V. Malaria	M.T. Malaria	wording	h	out_Q07.tsv: dataset "P.V." is a misread of M.T.; admission reads 26.10.44
 24442	28	80	5220	Bubonic Plague Rt. Ing.	Bubonic Plague Lt. Ing.	lr-swap	h	out_Q07.tsv: side Lt. not Rt. as in dataset
+24445	28	80	5223	Pneumonia Rt.	Pneumonia Lt.	wording	h	out_Q07.tsv: side Lt. not Rt. as in dataset
 24449	28	80	5227	duration_calc_impossible		debris	h	out_Q07.tsv: row unfinished: only ward C and admission 27.10.44 written; diagnosis blank
 24529	28	88	5311	Lymphadenitis Rt. Ing.	Lymphadenitis Lt. Ing.	lr-swap	h	out_Q07.tsv: side Lt. not Rt. as in dataset
 24532	28	88	5314	Fracture Tibia & Fibula Amoebic Hepatitis	Amoebic Hepatitis	misread	h	out_Q07.tsv: overwrite: "Fracture of Tibia Fibula" struck through (and "Plaster" in result struck), replaced by "Amoebic Hepatitis"; sex cell looks M (dataset F)
 24544	28	90	5324	Lymphad. Rt. Ing. (T.B.C).	Lymphadenitis Rt. Ing. (C.C.)	misread	h	out_Q07.tsv: bracket reads (C.C.) not (T.B.C)
 24548	28	90	5328	Plague Bubonic Rt.Ing.	Plague Bubonic Lt. Ing.	lr-swap	h	out_Q07.tsv: side Lt. not Rt. as in dataset
+24583	28	93	5365	Abscess Axilla Rt.	Abscess of Lt. Axilla	wording	m	out_Q07.tsv: letter B written within quote marks; side reads Lt. not Rt.; admission overwritten 3.11.44
+24643	29	6	1136	Waterbrash Amoebic Hepatitis	Amoebic Hepatitis	wording	h	out_Q07.tsv: overwrite: first line struck through ("Water brash"?), replaced by "Amoebic Hepatitis"; P.R. railway employee
 24686	29	10	1181	Submersion	Inobservation	misread	h	out_Q08.tsv: remarks: Susp. Typhoid
 24736	29	16	1244	Hernia Rt. Operation	Hernia Lt.	misread	h	out_Q08.tsv: diagnosis says Lt., not Rt.; "Operation" is in Result column
+24841	29	26	1355	Ameb. Dysentry	Ameb Hepatitis	wording	h	out_Q08.tsv: diagnosis is Hepatitis, not Dysentery
 25335	29	74		[uncertain_diagnosis]		debris	h	: 
 25341	29	75	1879	Pleurisy Effusion Rt.	Pleurisy c Effusion Lt.	lr-swap	h	out_Q08.tsv: "c" = c-bar (with); side reads Lt. not Rt.; ward bare letter E
 25422	29	83	1965	A		debris	h	out_Q09.tsv: diagnosis blank; A underlined; pencil discharge 6.5.44
 25436	29	84	1979	Typhus		invented	h	out_Q09.tsv: diagnosis, class, discharge, result all blank on scan; dataset Typhus not supported
+25624	30	2	1063	Recurrent Osteomy of Femur Rt.	Recurrent Osteomyelitis of femur Lt.	wording	h	out_F16.tsv: 
 25626	30	2	1065	Cellulitis Brachial Plexus Brachial Nervs.	Cutting of Rt. Brachial Artery & Brachial Nerves	misread	m	out_F16.tsv: 
 25627	30	2	1066	Swell Rt. Leg	Small Wound of Leg Rt.	misread	m	out_F16.tsv: ward could be S/c
 25629	30	2	1068	Incised Wound Rt. Iris	Insect Bites	misread	m	out_F16.tsv: 
 25635	30	2	1074	T.B. Sacrum	Tetanus	misread	h	: 
 25636	30	3	1075	Stone R. Ureteric operation. Urethral Rupture	Stone Prostatic Urethra	misread	h	out_F16.tsv: 
+25637	30	3	1076	Ventral Hernia operation. Dermal Rupture	Ventral Hernia	wording	h	out_F16.tsv: 
 25638	30	3	1077	Empyema Sinus - c Colp operation.	Endometritis c Polypus	misread	m	out_F16.tsv: 
 25644	30	3	1083	Demyelinating Encephalomyelitis? Purpura.	Hemiplegia ? Purpura	misread	m	out_F16.tsv: result Died
 25660	30	5	1101	Anaemia Depresion & Colitis	Amoebic Hepatitis & Colitis	misread	m	out_F16.tsv: 
 25665	30	5	1106	P.P. Haemorh	Osteoporosis	misread	m	out_F16.tsv: 
 25666	30	5	1107	P.P. Haemorh & Sepsis. Chr. Pyelitis	Amoebiasis c 2° Hypertension Chr. Nephritis	misread	m	out_F16.tsv: first word of diagnosis struck
+25667	30	5	1108	Normal Child Birth	Normal Childbirth	wording	h	out_F16.tsv: 
+25673	30	6	1115	Warts of Plantar	Warts of Hands	wording	m	: 
+25680	30	6	1122	Empyema (R.T.)	Empyema (Lt)	wording	h	out_F16.tsv: different hand
+25681	30	7	1123	Lymphadenitis Lt. Axilan & Mandibular Impaired?	Lymphadenitis Lt. Submandibular	wording	h	out_F16.tsv: occupation Clerk P.H.D.
+25683	30	7	1125	Bite of Culm. TB.	Bilateral Pulm. T.B.	wording	m	: 
+25690	30	7	1132	Gunshot wound Rt. Thigh & Rt. Cheek & Chest. Bullet found in Rt. Adhesive	Penetrating Bullet Wd. of Rt. Chest	wording	h	out_F16.tsv: 
 25692	30	7	1134	GSW Burns of food. Rt.	3rd Degree Burns of foot Rt.	misread	h	out_F16.tsv: 
 25694	30	8	1137	Retroversion Uterus operation	Fibroids of Uterus	misread	m	out_F16.tsv: 
 25697	30	8	1140	Chr. Bilateral Inguinal Hernia Radical Appendicitis operation	Chr. Adherent Retrocaecal Appendicitis	misread	h	out_F16.tsv: occupation Teacher E.II
 25701	30	8	1145	Embolism? Tonsils	Enlarged Tonsils	misread	m	out_F16.tsv: ward Med./Mat. ambiguous
 25702	30	8	1146	Pleurisy?	Ascariasis	misread	m	out_F16.tsv: ward Med./Mat. ambiguous
+25706	30	9	1150	Myositis Gluteals.	Myositis of Chest Muscles	wording	h	out_F16.tsv: occupation B/Sgt. C.I.D. 734
+25707	30	9	1151	Coolingue + Oedema	Foot Fatigue & Oedema	wording	h	out_F16.tsv: occupation Prob. Nurse
 25712	30	9	1156	Scrotiozio	Scoliosis	misread	h	out_F16.tsv: occupation Not Convicted Prisoner
+25718	30	10	1163	Gangrene finger	Gangrene Toes	wording	h	out_F16.tsv: 
+25720	30	10	1165	Hit by Concussion	Mild Concussion	wording	h	out_F16.tsv: 
+25723	30	10	1168	Normal Delivery Breach	Normal Breech Delivery	wording	h	out_F16.tsv: 
+25728	30	11	1173	Pneumonia Rt.	Pneumonia Lt.	wording	h	out_F16.tsv: 
 25729	30	11	1174	Incomplete Fracture of Clavicle Rt. Side	Incomplete Fracture of Rt. Tibia	misread	m	out_F16.tsv: occupation P.R. E/4449?
 25731	30	11	1176	Nonbehaling Swelly P of wall Rt	Non-penetrating Stab Wd. of Chest Wall Rt.	misread	m	out_F16.tsv: readmitted 14.3.46, disch. 20.3.46 (written across row)
 25732	30	11	1177	Streptococcal Tonsillitis & Cellulitis of Pharynx	Staphylococcic Infection ?ulna	misread	m	: 
+25733	30	11	1178	Pneumonia Rt.	Pneumonia Lt.	wording	h	out_F16.tsv: 
+25735	30	11	1180	Lung Abscess Rt.	Lung Abscess Lt.	wording	h	out_F16.tsv: 
+25737	30	11	1182	Normal Child Birth	Normal Childbirth	wording	h	out_F16.tsv: 
 25745	30	12	1190	Chron. Chole bi. Do.	Thrombo-Phlebitis	misread	m	out_F16.tsv: ward Med./Mat. ambiguous
 25746	30	12	1191	Biemist Ulceration Stomach	Bismuth Ulcerative Stomatitis	misread	h	out_F16.tsv: 
+25751	30	13	1196	Hydrocele operation	Hydrocele Rt.	wording	h	out_F16.tsv: 
+25752	30	13	1197	Tumour Rt. Inguinal R. Hernia	Rt. Ing. Hernia	wording	h	out_F16.tsv: overwrite: struck "Tumor of Rt. Testis" -> Rt. Ing. Hernia
 25754	30	13	1199	Tumour Rt. / Inguinal / Hernia	Tumor of Testis Rt.	misread	h	out_F16.tsv: 
 25755	30	13	1200	Pepsic Ulcer / Wrack / Ulcer	Persistent Urachus	misread	m	out_F16.tsv: overwrite: struck "Rt. Ing. Hernia" -> Persistent Urachus; ward Med./Mat. ambiguous
 25766	30	14	1211	Spondylo-Artheitis Rt. Foot	Spondylolisthesis	misread	m	out_F16.tsv: result "in Pl. Jacket"
@@ -535,12 +843,17 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 25800	30	17	1245	Rt. Pleural Effusion Pneumonia	Lt. Pleuro Pneumonia	misread	h	out_F16.tsv: 
 25803	30	17	1248	Tubcel. Peritonitis Ascites much improved	Intest. Parasites - Avitaminosis	misread	m	out_F16.tsv: 
 25809	30	17	1254	Chilblains?	?? Childbirth	misread	m	out_F16.tsv: first diagnosis word unreadable; margin "See 191?" between 1254 and 1255
+25813	30	18	1258	Rt. Ing Hernia operation	Lt. Ing. Hernia	wording	h	out_F16.tsv: 
+25815	30	18	1260	Hydrocele Lt. operation	Hydrocele Lt.	wording	h	out_F16.tsv: 
 25817	30	18	1262	Bronc Myoc & Scl.	Chronic Myocarditis	misread	h	out_F16.tsv: 
 25818	30	18	1263	Acute Indigestitis?	Acute Gastric Indigestion	misread	m	out_F16.tsv: age written 32 over 57 (or vice versa); occupation S.R.C. S.F.?
 25819	30	18	1264	Tonsillitis & Phypical Practis?	Tonsillitis c Atypical Scarlet Fever	misread	h	out_F16.tsv: 
+25820	30	18	1265	Phimosis operation	Phimosis	wording	h	out_F16.tsv: occupation B/C 3776
 25835	30	20	1280	Left Contusion	Coxitis Lt.	misread	h	out_F16.tsv: 
+25836	30	20	1281	Chr. Ostiomyelitis Rt Tibia	Chr. Osteomyelitis of Tibia Rt.	wording	h	out_F16.tsv: 
 25837	30	20	1282	Penetrating Injury Rt Thigh	Penetrating Gun Shot Wd. of Thigh Rt.	misread	m	out_F16.tsv: 
 25844	30	20	1289	Cond. Heart Disease & Dropsy U.S? Fracture mala Rt.	Cont. Wd. of Head & Fracture of Scapula Rt.	misread	h	out_F16.tsv: 
+25847	30	21	1292	Empyema operation	Empyema Lt.	wording	h	out_F16.tsv: result operation Died
 25849	30	21	1294	Bruises L Leg Rt	Bruises of Leg Rt.	lr-swap	h	out_F16.tsv: 
 25850	30	21	1295	Retention (?) Bladder Cholera passage	Retention of Urine (False passage)	misread	m	out_F16.tsv: diagnosis partly overwritten
 25855	30	21	1300	Cellulagra?	Pellagra	misread	h	out_F16.tsv: 
@@ -549,35 +862,53 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 25860	30	22	1305	Tumps Oschlit Rt.	Mumps Orchitis Lt.	misread	h	out_F16.tsv: 
 25863	30	22	1308	Pertussis & Hyperae...?	Gastritis c Hyperacidity	misread	m	out_F16.tsv: occupation P.R. 4/7440 Fitter Class?
 25866	30	22	1311	Ulcers Osleno? R. Bids.	Ulcerating Haemorrhoids	misread	m	out_F16.tsv: ward Mat./Med. ambiguous
+25869	30	22	1314	Left Axillary Lymphadenopathy	Lt. Axillary Glands	wording	m	out_F16.tsv: ward Mat./Med. ambiguous
 25871	30	23	1316	Tuberculous Dermatitis?	Muscle Herniation	misread	m	out_F16.tsv: occupation T.A.C. 3814
 25872	30	23	1317	Sub acute operatis Appendicatis	Sub Acute Appendicitis	misread	h	out_F16.tsv: occupation P/C 2589
+25875	30	23	1320	Vesico Calculus operation	Vesical Calculus	wording	h	out_F16.tsv: 
+25890	30	24	1335	Amoebic Dysentry Hepatitis	Amoebic Dysentery & Malaria	wording	h	out_F16.tsv: 
 25892	30	24	1337	Contusio Wd. Rt. Chest	Contused Wd. of Head	misread	h	out_F16.tsv: 
 25893	30	24	1338	Comp. fracture Rt Tibia & Fib.	Comp. Depressed Fracture of Skull	misread	h	out_F16.tsv: 
 25904	30	25	1349	Pseudo Leukemia treatment|Typhoid Refusal	Acute Myeloid Leukaemia	misread	h	out_F16.tsv: result Refused Treatment
 25908	30	26	1354	Contused ?Dea?	Contused Wd. of Head	misread	h	out_F16.tsv: 
+25909	30	26	1355	Bruising ?Body?	Bruises of Body	wording	h	out_F16.tsv: margin "See 1?" below row
+25911	30	26	1357	Liver Cirrhosis C Bilharzia	Liver Cirrhosis c Malnutrition	wording	h	out_F16.tsv: result Died
 25916	30	26	1372	Pneumonia & Heart Disease c ?Ensag?.	Rheumatic Heart Disease c 2ndary Anaemia	misread	h	out_F16.tsv: 
 25922	30	27	1378	Measles	Pleurodinia	misread	m	out_F17.tsv: ward could be P.M.H.; diagnosis not Measles
 25924	30	27	1380	Italmitis Imperson?	Helminthiasis	misread	h	out_F17.tsv: age written c42
+25928	30	27	1384	Stabsy Embolism further treat.	Multiple Embolism	wording	m	out_F17.tsv: ward written like "M.S."
+25934	30	28	1390	Rheumatic Fever?	Rheumatic Arthritis	wording	h	out_F17.tsv: 
+25943	30	29	1399	Acuse depresion?	Mental Depression	wording	h	out_F17.tsv: 
+25945	30	29	1401	Athlels FooJ	Athlete's Foot	wording	h	out_F17.tsv: 
+25946	30	29	1402	Amaebic Colitis	Amoebic Colitis c Secondary Gastritis	wording	m	out_F17.tsv: age cell blank
 25958	30	30	1414	Oka Pains. Impr.	Headaches	misread	h	out_F17.tsv: 
+25960	30	30	1416	Acute Rheum Lymphad Abscess.	Acute Staph. Lymphadenitis Abscess Ing.	wording	h	out_F17.tsv: 
 25963	30	30	1419	Nausea	Nursing her Baby	misread	m	out_F17.tsv: sex glyph odd (M/F?); diagnosis implies mother of 1418
 25967	30	31	1423	Nephritis & Degenerative Arthritis	1. Hepatitis 2. Degenerative Arthritis Dorsalis	misread	m	out_F17.tsv: 
 25969	30	31	1425	Post Boil Cellulitis Ear ?	Rat Bite & Cellulitis of Ear	misread	h	out_F17.tsv: 
 25970	30	31	1426	K-Fracture rt Clavicle	Fracture of Humerus Rt.	misread	h	out_F17.tsv: 
 25971	30	31	1427	Dementia		invented	h	out_F17.tsv: only ward (G, purple ink) and adm date written; rest blank
+25972	30	31	1428	Eczema Pjan	Eczema of face	wording	h	out_F17.tsv: 
 25974	30	31	1430	Bilat Tubo Ooph C.B. N empyema	Bilat. Pulm. T.B. c Haemoptysis	misread	h	out_F17.tsv: 
 25976	30	31	1432	Fracture Cont. Lt Scalp	Fracture of Ribs & Cont. Wd. of Scalp	misread	h	out_F17.tsv: 
 25977	30	31	1433	Fracture Sutured Rt. Clavicle	Fracture of Ankle Rt.	misread	h	out_F17.tsv: age cell blank
+25978	30	31	1434	Haemorrhoids operation	Haemorrhoids	wording	h	out_F17.tsv: occupation Telegraph..
 25979	30	32	1435	Died Before Admission	Died Before Admission "LYMPHOSARCOMA"	misread	h	out_F17.tsv: result Death
 25980	30	32	1436	Arthritis Rt. Hip. Plaster. "LYMPHOSARCOMA" "MISSR"	Arthritis Rt. Hip	misread	h	out_F17.tsv: 
 25982	30	32	1438	T.B. Glands. Psoas Abcess	T.B. Glands of Neck	misread	h	out_F17.tsv: 
+25988	30	32	1444	Nephrolithiasis. Double. Removal of Stone Rt. Kidney	Nephrolithiasis Double	wording	h	out_F17.tsv: 
+25990	30	32	1446	Obscure Susp.T.B.	Observation Susp. R.F.	wording	h	out_F17.tsv: 
 25991	30	33	1447	Abscess	Measles	misread	h	out_F17.tsv: 
 25994	30	33	1450	Malignant tumour / S. Maxilla	Malignant Tumor of Lt. Testicle	misread	h	out_F17.tsv: 
 25996	30	33	1452	Abscess	Measles	misread	h	out_F17.tsv: 
+26005	30	34	1461	Dyspepsia Investigation	Dyspepsia	wording	h	out_F17.tsv: 
+26011	30	34	1467	Compound Fracture Leg Rt. Bullet? operation?	Compound Fracture of Lt. Leg By Bullet	wording	h	out_F17.tsv: surgical case in Med.
 26016	30	35	1472	Cont. Wd. Face Scalp? Rt.	Cont. Wd. of Rt. foot?	misread	m	out_F17.tsv: 
 26017	30	35	1473	Recid. Septic Cellulitis?	Acidity Peptic Ulcer	misread	h	out_F17.tsv: occupation Internee
 26020	30	35	1476	Typhoid fever	Typhus fever	misread	h	out_F17.tsv: 
 26022	30	35	1478	Old Comp. frac. of shall Rt.	Old Comp. dep. Fract. of Skull	misread	m	out_F17.tsv: ward P/W; occupation Prisoner
 26026	30	35	1482	Ac. Bronchitis Costochondritis ?	Ac. Bronchitis Post Morbilli (Measles)	misread	h	out_F17.tsv: 
+26027	30	36	1483	Perinephric Abscess operation	Perinephric Abscess	wording	h	out_F17.tsv: 
 26028	30	36	1484	Ist. O. Body	1st ° Burns of Body	misread	h	out_F17.tsv: 
 26030	30	36	1486	Encume[?] Pneumonia haber RF	Pneumonia Lobar Rt.	misread	h	out_F17.tsv: 
 26035	30	36	1491	Sore foot ?Chyompothlastie	Sore foot c Lymphadenitis	misread	h	out_F17.tsv: 
@@ -585,8 +916,13 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26042	30	37	1498	Menorrhagia Interstitial Salpingitis	Menorrhagia Fibroid Uterus	misread	h	out_F17.tsv: 
 26043	30	37	1499	Cellulitis index finger	Multiple Lac. Wds. of finger	misread	h	out_F17.tsv: 
 26044	30	37	1500	Cont. L. Index finger	Cont. Wd. of Head	misread	h	out_F17.tsv: 
+26046	30	37	1502	Devia Septum Submuc Resection	Deviated Septum / 2ndry Otitis Media	wording	h	out_F17.tsv: 
 26048	30	37	1504	Pneumonia Rt. L.	Pneumonia Lt.	lr-swap	h	out_F17.tsv: occupation House Keeper
+26049	30	37	1505	Pneumonic Typhoid /paraty.	Pneumonia Lt. Typhoid fever	wording	h	out_F17.tsv: overwrite: Palestinian struck -> Yemenite
+26050	30	37	1506	Epidermophytosis? Scabies	Pyodermia c Scabies	wording	h	out_F17.tsv: 
+26052	30	38	1508	Bilvan Pulm. T. B. C Heart failure	Advanced Pulm. T.B. c Heart failure	wording	h	out_F17.tsv: result Died
 26054	30	38	1510	Laryngitis regat	Pharyngitis	misread	h	out_F17.tsv: occupation P/Nurse (nurse in B/S)
+26059	30	38	1515	Bilat. Pul. TB.	Bilat. T.B. Pulm.	wording	h	out_F17.tsv: 
 26060	30	38	1516	Pleurisy? Dyspepsia?	Bleeding Peptic Ulcer	misread	h	out_F17.tsv: 
 26061	30	38	1517	Phlebitis? Proctalgia? Right leg?	Multiple Fractures of Rt. Leg	misread	h	out_F17.tsv: 
 26062	30	38	1518	Congenital Heart Disease?	Cong. Heart failure	misread	h	out_F17.tsv: result Died
@@ -594,12 +930,20 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26064	30	39	1520	Pneumonia rt base	Pneumonia Measles	misread	h	out_F17.tsv: 
 26066	30	39	1522	Contused Chest Wall	Contused Wd. of Head & Shock	misread	h	out_F17.tsv: 
 26071	30	39	1527	Malignant Growth Blade	Malignant Prostate	misread	h	out_F17.tsv: 
+26076	30	40	1532	Burns of face	Burns Septic of face	wording	h	out_F17.tsv: 
+26083	30	40	1539	Contusion Chest Wall|Contusion F.Wall?	Contusion of Abd. Wall	wording	h	out_F17.tsv: 
+26097	30	41	1553	Normal Child Birth	Normal Childbirth	wording	h	out_F17.tsv: 
 26100	30	42	1556	Contusion & Neurasthenia	Contused Wd. of Head & face	misread	m	out_F17.tsv: "Syrian" written/struck above Palestinian - final reading uncertain
 26102	30	42	1558	Dry pleurisie	Dyspepsia - Cystitis	misread	m	out_F17.tsv: 
+26103	30	42	1559	Chr. Endometritis Parametritis	Chr. Endometritis	wording	h	out_F17.tsv: 
+26106	30	42	1562	Erythema Mult. Bullosum	Erythema Multiforme	wording	h	out_F17.tsv: 
 26114	30	43	1570	Apostle Colitis	Spastic Colitis	misread	h	out_F17.tsv: occupation Insp.
+26119	30	43	1575	Lymphosarcoma Bilat ovaries?	Lymphosarcoma Advanced	wording	h	out_F17.tsv: result Died
 26122	30	43	1578	Osteomyelitis Rt femur	Osteomyelitis of Lt. femur	lr-swap	h	out_F17.tsv: 
 26126	30	44	1582	Recurrt Myelitis	Ascending Myelitis	misread	h	out_F17.tsv: result Died
 26130	30	44	1586	Clinical Dyspepsia	Clinical Diphtheria	misread	h	out_F17.tsv: tick before B.
+26131	30	44	1587	Appendicitis pur. Abscess Rec.	Appendicial Abscess	wording	h	out_F17.tsv: ward overwritten
+26132	30	44	1588	Contusion C.S.? Head	Contused Wd. of Head	wording	h	out_F17.tsv: 
 26149	30	46	1605	Gun Shot Thorax & Dura... Spinal Cord?	Gunshot Wd. of Thorax c Severance of Spinal Cord	misread	h	out_F17.tsv: result Died
 26150	30	46	1606	Concussion / S.Q?	Concussion of Rectum	misread	m	out_F17.tsv: diagnosis as read
 26151	30	46	1607	Septic of Supra Pubic	Septic Operation Supra Pubic	misread	h	out_F17.tsv: S/S on a surgical case
@@ -610,23 +954,33 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26163	30	47	1618	Tonsillitis pustular	Tonsillectomy	misread	h	out_F17.tsv: surgical case in Mat.
 26171	30	48	1626	D&T (?) + Clot	Wd. of Head & Cheek	misread	h	out_F17.tsv: 
 26172	30	48	1627	Functional (?) Weakness	Functional Heart	misread	h	out_F17.tsv: 
+26173	30	48	1628	Chr. Nephritis 2° Anaemia + hypoproteinemia	Chr. Nephritis 2° Anaemia ? Hyperacidity	wording	m	out_F17.tsv: British patient in Med., not B/S
 26174	30	48	1629	Em[?]oe[?]a rt subphrenic abs	Endocarditis Rheumatic	misread	h	out_F17.tsv: 
 26177	30	48	1632	Puep. Phom(?)	Susp. Gall Stones	misread	h	out_F17.tsv: 
 26179	30	48	1634	Dyspepsia?	Hepatitis ?	misread	h	out_F17.tsv: 
+26180	30	48	1635	Influenza - Urticaria	Influenza & Furunculosis	wording	h	: 
 26185	30	49	1640	Insuff. Mitral. Heart. Hypertr? (Cardiac)	Indolent Ulcer Lt. Leg (Tropical)	misread	h	out_F17.tsv: 
 26186	30	49	1641	Omental Hernia?	Pneumonia	misread	h	out_F17.tsv: 
 26194	30	49	1649	Umblical Hernia Incision	Umbilical Hernia Incarcerated	misread	h	out_F17.tsv: margin "see 1868"; surgical case in Mat.
+26200	30	50	1656	Norm. Chldbirth (Obst.)	Normal Childbirth	wording	h	out_F17.tsv: 
 26203	30	50	1659	Cicatricial Contracture of Rt. Arm	Cicatricial Contraction of Penis	misread	h	out_F17.tsv: 
 26212	30	51	1668	Bullet Wd. of Rt. foot. Rec.	Bullet Wd. of Lt. foot	misread	h	: 
+26215	30	51	1671	Furuncle Neck.	Furuncle of Face	wording	h	: 
 26220	30	52	1677	TBC of the Uterus	Tear of the Urethra	misread	h	out_F18.tsv: 
 26221	30	52	1678	Infected Bursitis Rt Elbow	Infected Bursitis Lt Elbow	lr-swap	h	out_F18.tsv: 
+26224	30	52	1681	Abscess of Groin	Abscess of Epigastrium	wording	m	out_F18.tsv: 
 26227	30	52	1684	Kidney Pain	Relapsing fever	misread	h	out_F18.tsv: 
+26228	30	52	1685	Fracture Ulna Plaster	Fracture of Lt Ulna	wording	h	out_F18.tsv: 
 26229	30	53	1687	Scabies & Phlebitis & Fract. Ribs.	Stab Wds of Head & Back & Fracture of Ribs	misread	h	out_F18.tsv: 
+26230	30	53	1688	Otitis Ext. very much Eczema Resch. Boil of Nose. & Ears.	Otitis Ext. Eczematoid React. of face & ears	wording	m	out_F18.tsv: ward read P.M.F. by comparison with clearer hand on p64
+26231	30	53	1689	Ch. Typhoid fever.	Ab. Typhoid fever	wording	h	out_F18.tsv: class note: ex from 8/4/46
 26236	30	53	1694	Desiccation & xeria.	Dessicatory Toxicosis	misread	h	out_F18.tsv: 
 26237	30	53	1695	Incomplete Abor & Sin.Rect.	Incomplete Abortion	misread	m	out_F18.tsv: 
 26241	30	54	1700	Incomplete operation Abortion (Curing)	Incomplete Abortion	misread	h	out_F18.tsv: 
 26244	30	54	1703	Phtisis Lungs	Mild Mumps	misread	h	out_F18.tsv: marginal 'see ...43' below serial
 26245	30	54	1704	Pen Pleurisy & Cong. Lt. Lower Lobe Rt.	Gun Shot Wd c Comp. Fract of Foot Rt.	misread	h	out_F18.tsv: 
+26251	30	55	1711	Acute Append. operation	Acute Appendicitis	wording	h	out_F18.tsv: 
+26256	30	55	1716	T.B. of Nodes operation	T.B. Glands of Neck	wording	h	out_F18.tsv: 
 26257	30	55	1717	Depressed Frac. Rt. Parietal	Hepatitis	misread	h	out_F18.tsv: 
 26266	30	56	1727	Dysentery & Opt. Neuritis Rt.	Cyst of Ovary	misread	m	: 
 26268	30	56	1729	Recent Infectin	Ascaris Infection	misread	h	out_F18.tsv: overwrite: Surg struck -> B/S; occupation Prob. Nurse
@@ -639,12 +993,20 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26285	30	58	1748	Dermatitis Seborrhoeic & Bleph.	Dermatitis sensitivity to a Brand of Soap	misread	m	out_F18.tsv: ward read P.M.F. by comparison with clearer hand on p64
 26300	30	59	1764	Comp.Fract. Tibia & Fibula Rt. Amputation. By Bullet	Comp. Fract. of Forearm Rt by Bullet	misread	h	out_F18.tsv: 
 26309	30	60	1773	Appendicitis acute. oper.	Appendicitis Sub-Acute	misread	h	out_F18.tsv: 
+26313	30	60	1777	Chr. Recur. Appendicitis. Oper.	Chr. Retrocaecal Appendicitis	wording	h	out_F18.tsv: 
+26315	30	60	1779	Potts Disease Jacket	Pott's Disease	wording	m	out_F18.tsv: 
 26323	30	61	1787	Abors. B4. Mths.	Abortion at 4 Mths.	misread	m	out_F18.tsv: 
 26325	30	61	1789	Swol. Testicle Rt. Anah.	Snake Bite of Ankle Lt.	misread	m	out_F18.tsv: 
 26326	30	61	1790	Bullet Frac. of Rt. Femur	Bullet Fract. of Lt. Femur	lr-swap	h	out_F18.tsv: 
+26327	30	61	1791	Pyrexia √ Rec.	Pyrexia	wording	h	out_F18.tsv: 
+26331	30	62	1796	Ankylostomiasis Anaemia Impr.	Ankylostomiasis Albuminuria	wording	h	out_F18.tsv: diagnosis on pasted pink slip covering original; discharge overwritten 21.4.46 -> 5.5.46
+26333	30	62	1798	Neurosthenia Islē	Neurasthenia	wording	h	out_F18.tsv: 
 26334	30	62	1799	Chronic EmStoma	Chronic Endometritis	misread	m	out_F18.tsv: ward Med./Mat. ambiguous
+26337	30	62	1802	Osteomyelitis Rt Tibia Operation - Vitreous Drainage To Chests	Osteomyelitis of Rt Ilium	wording	m	out_F18.tsv: original diagnosis struck (Sub Arachnoid Haemorrhage?); readmitted 27.4.46
 26340	30	62	1805	Prostr. Haemorrhage	Gastric Haemorrhage	misread	h	out_F18.tsv: 
 26350	30	63	1816	Pleurisy Rt. S. Hel Lo?	Pleurisy Lt. Malta fever?	misread	m	out_F18.tsv: 
+26358	30	64	1825	Prol. Tibiae Totale	Fract. of Lt Tibia & Fibula	wording	h	out_F18.tsv: 
+26359	30	64	1826	Big W. Scalp	Big Lac. Wds of Scalp	wording	h	out_F18.tsv: 
 26361	30	64	1828	Scabies Dermatitis	Sensitivity Dermatitis	misread	h	out_F18.tsv: 
 26364	30	65	1832	Inst O' Ap. Foot	2nd° Athlete's foot	misread	h	out_F18.tsv: occupation Insp.
 26365	30	65	1833	Rt. Ing Hernia	Lt. Ing Hernia	lr-swap	h	out_F18.tsv: occupation Prisoner
@@ -652,26 +1014,37 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26393	30	67	1861	Icterus Neonatorum	Marasmus	misread	h	out_F18.tsv: 
 26394	30	67	1862	Prol. of H. Lumbar Vertebrae	Fract. of 4th Lumbar Vertebrae	misread	h	out_F18.tsv: 
 26396	30	67	1864	Bruised Lt. Hypogastric Region	Bruises of Lt Hip Region	misread	h	out_F18.tsv: 
+26400	30	68	1868	Osteomyelitis Humerus Rt. Imp.	Osteomyelitis of Femur Lt.	wording	h	out_F18.tsv: discharge overwritten
 26402	30	68	1870	Infantile Paralysis	Intestinal Parasites	misread	h	out_F18.tsv: 
 26404	30	68	1872	Sub. COS. Sacrum & R. Page.	Sub Arachnoid Haemorrhage	misread	h	out_F18.tsv: nationality written above religion
+26405	30	68	1873	Vesical Calculus. Oper. Rec.	Vesical Calculus	wording	h	out_F18.tsv: nationality written above religion
 26407	30	68	1875	Renal Insufficiency Uraemia	Acute Indigestion Vomiting	misread	h	out_F18.tsv: nationality written above religion
+26408	30	68	1876	Comp. Fract. Lt. Tib. & Fib.	Comp. Fract. of Leg Lt.	wording	h	out_F18.tsv: nationality written above religion; sex overwritten; occupation T.A.C. 8124
 26422	30	70	1889	Plasmo Diem	Haematemesis	misread	m	: 
 26424	30	70	1891	Puerh Ureth	Gonorrheal Urethritis	misread	h	: 
 26426	30	70	1893	Cyclitis	Pyelitis	misread	h	: 
+26428	30	70	1895	Osteomyelitis 7th finger.	Osteomyelitis of Lt Femur	wording	h	: 
 26430	30	70	1897	COPSI C Jakt Sa + Elbow.	Old Fract. of Lt Shoulder + Elbow	misread	h	: 
+26434	30	71	1902	Bruises Rt Hip.	Bruises of Lt Hip	wording	h	: 
 26442	30	71	1910	Sub Bronchial Haemorhage	Sub Arachnoid Haemorrhage	misread	h	: 
 26445	30	72	1914	Abscess of Scrotum End. Lt. Clavicle	Dislocation of Acromioclavicular Joint of Rt. Clavicle	misread	m	out_F18.tsv: ward S/S with looped S (could read A/S)
+26446	30	72	1915	Normal Del. Child B.A	Normal Childbirth	wording	m	out_F18.tsv: overwrite: sex M -> F; religion word underlined/struck
 26447	30	72	1916	Tract. Dislocation Rt. Ankle	Fract. Dislocation of Ankle Rt.	misread	m	: 
+26449	30	72	1918	Normal Delivery, Child Born Alive	Normal Childbirth	wording	h	out_F18.tsv: nationality struck/overwritten
+26451	30	72	1920	Athl. C. Foot.	Athlete's Foot	wording	m	out_F18.tsv: occupation B/C 364
 26454	30	72	1923	Abd. Cont. Concussion	Mild Cerebral Concussion	misread	m	out_F18.tsv: 
 26463	30	73	1933	CC. DyspeHeria.	C.C. Diphtheria	misread	h	: 
 26467	30	74	1937	W.St. Leg + Lymphangitis.	Wd. Leg Rt + Lymphangitis	misread	h	out_F18.tsv: occupation T.A.C. 410; adm day overwritten
 26473	30	74	1943	Gastro Enteritis	Gastritis Colitis	misread	h	out_F18.tsv: 
+26478	30	75	1948	C.L. Birth Normal	Childbirth Normal	wording	h	: 
 26479	30	75	1949	Intestinal much <B.	Intestinal T.B.	misread	h	: 
 26480	30	75	1950	Pneumonia very sever mal. hyp.	Rheumatic fever	misread	h	: 
 26482	30	75	1952	Trumminy oper. Rt. Inguinal Hernia. Cellul. Capd.	Trimming of Fingers due to Bullet Injury	misread	h	: 
+26483	30	75	1953	Cellulitis Lt. uft. v.z n os Ascess	Cellulitis of Leg Lt.	wording	h	: 
 26485	30	75	1955	Clinical Typhus G.S.	Clinical Typhoid?	misread	h	: 
 26486	30	75	1956	Typhus fever.	Typhoid fever	misread	h	: 
 26487	30	75	1957	Cont. W.S. Chest.	Cont. Wd. of Rt. Cheek	misread	h	: 
+26488	30	75	1958	Alleg. Abor.	Alleged Abortion	wording	h	: 
 26489	30	75	1959	Transf. of Wrist Rt. P.	Fracture of Wrist Rt.	misread	h	: 
 26490	30	76	1960	Puerperal Sepsis	Anal Fissure	misread	h	out_F18.tsv: 
 26491	30	76	1961	Dyspepsia & Gastric Ulcer & Adenoids	Old Perforated Peptic Ulcer + Pyloric Stenosis	misread	h	out_F18.tsv: 
@@ -679,6 +1052,8 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26506	30	77	1977	Cont. Abd. Wall Pkas No Vomiting of Blood	Conc. with Haem. & Crack of Base of Skull	misread	m	out_F19.tsv: age overwritten
 26507	30	77	1978	Duodenal Ulcer (Ulcus)	Duodenitis (Ulcer?)	misread	h	out_F19.tsv: 
 26514	30	78	1986	Bilateral Salpingitis [highly speculative]	B.T. Malaria	misread	m	out_F19.tsv: overwrite sex: M.->F.; age 28 or 18
+26515	30	78	1987	Pneumonia Rt.	Pneumonia	wording	h	out_F19.tsv: 
+26517	30	78	1989	G.C. Orchitis	G.C. Arthritis	wording	h	out_F19.tsv: 
 26523	30	78	1995	Gonorh. J.Rt. & Frac. L.F.2.3.4.5 Fingers	Penetr. Wd. of Rt. Hand c Fract. of 2,3,4,5 fingers	misread	m	out_F19.tsv: 
 26527	30	79	2000	Meningitis Bt. was taken away without permission	Meningitis	misread	m	out_F19.tsv: ward faint
 26532	30	79	2005	Cond. U.S.S of Bladder	Cont. Wds. of Head	misread	h	out_F19.tsv: 
@@ -686,6 +1061,7 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26535	30	80	2009	Rheumatic Spasmodic Norhich Regurgitation	Rheumatic Spondylitis Aortic Regurgitation	misread	m	out_F19.tsv: age overwritten
 26536	30	80	2010	Fract. Rt Femur & Sternum Heminger	Fract. of Base of Skull c Meningitis	misread	h	out_F19.tsv: 
 26537	30	80	2011	Cellulitis Base of Skull	Fracture of Base of Skull	misread	h	out_F19.tsv: age cell blank
+26543	30	80	2017	Schectomiasis	Schistosomiasis	wording	h	out_F19.tsv: 
 26545	30	80	2019	Abdominal Poisoning	Ptomaine Poisoning	misread	h	out_F19.tsv: adm day overwritten
 26546	30	81	2021	Cholera Poisoning	Ptomaine Poisoning	misread	h	: ; written "Do." (ditto) under Ptomaine Poisoning
 26547	30	81	2022	Compl. fract. of S. In Bl.	Comp. Fract. of Foot Rt.	misread	h	: 
@@ -694,6 +1070,8 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26551	30	81	2026	Gastro Adhesio. Enteroptosio	Gastritis Cholecystitis	misread	h	: 
 26553	30	81	2028	Pleurisy & Effusion	Pleurisy c Effusion - T.B.	misread	h	: 
 26556	30	81	2031	Exchmosis Lac. Wd. lower Body & S.C.	Extensive Lac. Wds. of Lower Body. Shock	misread	h	out_F19.tsv: 
+26561	30	82	2037	Dysphiteria	Diphtheria	wording	h	: 
+26562	30	82	2038	Osteomyelitis Tibia. Knee left no fluid. Rt. side	Osteomyelitis of Lt. Knee	wording	h	: 
 26566	30	82	2042	Cont. Wd. Scalp. Rt. Arm & Grains.	Cont. Wds. of Head & Bruises of Arms	misread	h	: 
 26571	30	83	2048	Chr. Adenophleg. Lt.	Chr. Osteomyelitis of Leg Lt.	misread	m	out_F19.tsv: 
 26581	30	84	2059	Fistula in Ano Dermal.	Generalised Dermatitis	misread	h	out_F19.tsv: 
@@ -702,57 +1080,76 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26592	30	85	2071	Malaria SyAestivo Autumnal	Kala-Azar	misread	h	out_F19.tsv: age 16/12 (months)
 26595	30	85	2074	Scabies fever	Scarlet fever	misread	h	out_F19.tsv: 
 26596	30	85	2075	Scabies fever	Scarlet fever	misread	h	out_F19.tsv: 
+26598	30	85	2077	Pneumonia muc Bilat. level.	Pneumonia Bilateral	wording	m	out_F19.tsv: overwrite ward: Med.->B.
 26600	30	85	2079	Ascariasis Asthma.	Arteriosis? Asthma	misread	m	out_F19.tsv: 
 26604	30	86	2084	Swollen Rt. Eyelids.	Lac. Wd. Rt. Eyebrow	misread	h	: 
 26605	30	86	2085	Abd. Pains + Bruises of Face	Mild Concussion & Bruises of Face	misread	h	: 
 26606	30	86	2086	Pneumonia Pleusy	Pneumonia Measles	misread	h	out_F19.tsv: 
 26615	30	87	2096	Bleeding Cephalgia Uter.	Bleeding Peptic Ulcer	misread	h	out_F19.tsv: 
 26620	30	87	2101	Cystitis Sand Fl.F.?	Pyrexia Sandfly f.?	misread	h	out_F19.tsv: serial overwritten
+26621	30	87	2102	Obst Duodenal Ulcer + Adenoma	Old Duodenal Ulcer & Stenosis	wording	h	out_F19.tsv: 
 26624	30	88	2105	Subc. B...	Snake Bite	misread	h	out_F19.tsv: 
 26626	30	88	2107	Cotton Sponges of Bladder	Pott's Disease of Dorsal Spine	misread	m	out_F19.tsv: "T.J." written below Palestinian
 26627	30	88	2108	V.B. - Epistaxis	T.B. of Rt. Elbow	misread	h	out_F19.tsv: 
 26633	30	88	2114	V.B. - Strum.	T.B. Sternum	misread	h	out_F19.tsv: 
+26637	30	89	2119	Rt. Ing. Hernia + Hydrocele	Rt. Ing. Hernia & S.A. Appendicitis	wording	h	out_F19.tsv: occupation P.R.
 26640	30	89	2122	Abscess R. side Neck	Advanced Rickets	misread	h	out_F19.tsv: 
 26642	30	89	2124	Rt. Cellulitis Penis	Rt. Renal Calculus	misread	h	out_F19.tsv: 
 26645	30	89	2127	Comp. Fracture D. Thumb	Comp. Depr. Fracture of Skull	misread	h	out_F19.tsv: "see 18.." in margin
 26651	30	90	2134	Peripheral Senile	Perianal Sinus	misread	m	out_F19.tsv: "T.J." written below Palestinian
 26652	30	90	2135	Crush Injury Chest & Back	Crush of Chest Wall	misread	h	out_F19.tsv: 
 26656	30	90	2139	Secondary Liver. Treat.	Secondary Lues	misread	h	out_F19.tsv: 
+26664	30	91	2148	B.V. (Cerebral Form)	B.T. Malaria (Cerebral Form)	wording	h	out_F19.tsv: 
 26665	30	91	2149	Pyrexia Schwart.	Pyloric Stenosis	misread	h	out_F19.tsv: 
 26666	30	91	2150	Gluteal Neuritis Rt.	Gluteal Sinus Lt. & Hernia Lt.	misread	m	out_F19.tsv: ward letter faint, D. probable
 26670	30	92	2155	C Cholistit. R.F. ?	Childbirth	misread	h	out_F19.tsv: 
 26671	30	92	2156	Ilyon Thio-Cod Satis	Myositis Ilio-Costalis Rt.	misread	m	out_F19.tsv: ward abbreviation uncertain (G.M.W./S.M.W.)
+26673	30	92	2158	Furunculosis very much Obese.	Furunculosis of Back	wording	m	out_F19.tsv: ward abbreviation uncertain (G.M.W./S.M.W.)
 26676	30	92	2161	B.T. Melaena	B.T. Malaria	misread	h	out_F19.tsv: 
+26677	30	92	2162	Rlt Sided Pleurisy	Adhesive Pleurisy	wording	h	out_F19.tsv: 
 26681	30	93	2167	Card. J. Rt. Sciatica	Fract. of Rt. Femur	misread	h	out_F19.tsv: 
 26686	30	93	2172	Nervous Vomiting of Ursine.	Nervous Retention of Urine	misread	m	out_F19.tsv: age and sex overwritten
 26703	30	95	2181	Dyslipidsin & tole.	Hydatidiform Mole	misread	h	out_F19.tsv: 
+26704	30	95	2182	Abscess R. Thigh & Cured	Abscess Sole & Car Acc.	wording	m	out_F19.tsv: 
+26706	30	95	2184	Cercl. Concus.	Cerebral Concussion	wording	h	out_F19.tsv: 
 26708	30	95	2186	Fract. 2 Fibula Rt.	Fract. of Lt. Tibia & Fibula	misread	h	out_F19.tsv: 
 26711	30	95	2189	Dyspep Arthri Op	Hypertrophic Arthritis of Spine	misread	h	out_F19.tsv: 
 26712	30	95	2190	Cardial Asthma	Refused Admission	misread	h	out_F19.tsv: 
+26714	30	96	2192	M.P. Cereb. Concus.	Mild Cereb. Concussion	wording	h	out_F19.tsv: religion overwritten
 26716	30	96	2194	Anaemia	Amoebiasis	misread	m	out_F19.tsv: age cell only a faint mark; ward abbreviation uncertain (G.M.W./S.M.W.)
 26719	30	96	2197	Vesical Calculus	Tetanus	misread	h	out_F19.tsv: 
 26728	30	97	2207	Sepsund Fust. of Skull	Depressed Fract. of Skull	misread	h	out_F19.tsv: 
 26729	30	97	2208	Appdicitis Acrobic Anot Condylomata	Syphilis of Scrotum & Anal Condylomata	misread	h	out_F19.tsv: 
 26736	30	98	2215	Lobar Pneumonia	Rt. Maxillary Sinusitis	misread	h	out_F19.tsv: 
 26749	30	99	2230	Incomplete oper. / Abortion oper.	Incomplete Abortion	misread	m	out_F19.tsv: ward written Mt. (Mat.?)
+26750	30	99	2231	Brucie / of Buck	Bruises of Back	wording	h	out_F19.tsv: 
 26751	30	99	2232	Inflt. / Rt Sea / Region	Infiltration Rt. Scapular Region	misread	h	out_F19.tsv: 
 26756	30	99	2237	Proctitis / End Distal / Rectum	Fract. Distal End of Lt. Radius & Bruises	misread	h	out_F19.tsv: 
+26762	30	100	2244	Rheumatism Ac. up.	Rheumatism	wording	m	out_F19.tsv: occupation Prisoner; ward glyph read as P/W. (prisoners' ward)
 26763	30	100	2245	Encephalitis. Empyema Rt. Base	Encapsulated Empyema Rt. Base	misread	h	out_F19.tsv: 
 26769	30	101	2251	Vesico Vaginal Fistula	Chr. Volvulus of Stomach	misread	m	out_F19.tsv: 
+26784	31	2	2349	Rt. Femoral Hernia oper.	Rt. Ing. Hernia	wording	m	nb31/out: dataset has Femoral; script reads Ing.
+26786	31	2	2351	Rt. Femoral Hernia oper	Rt. Ing. Hernia	wording	m	nb31/out: dataset has Femoral; script reads Ing.
 26790	31	2	2355	Rt neuritis Subm. Tr.	Pulm. T.B.	misread	m	nb31/out: overwrite: ????itis (Rt. neuritis?) struck -> Pulm. T.B.; discharge 27 overwritten
 26794	31	3	2360	Wrist injury	Urethritis	misread	h	nb31/out: dataset misreads "Wrist injury"
 26799	31	3	2365	Typhoid fever.	Typhus fever.	misread	m	nb31/out: dataset has Typhoid
 26808	31	4	2375	Puerp. Delirium	Premature Delivery	misread	m	nb31/out: dataset misreads "Puerp. Delirium"
+26809	31	4	2376	Dyspetheria	Diphtheria	wording	h	nb31/out: 
 26817	31	5	2384	Haematoma Imp.	Haematuria	misread	h	nb31/out: dataset misreads Haematoma and merges result Imp.
 26823	31	5	2390	Chol. Neph. With Bilk	Childbirth N.	misread	h	nb31/out: dataset misreads "Chol. Neph. With Bilk"
 26824	31	5	2391	Abd. Pain Discharge Bleedanotome	G.S.W. of Arm c Large Haematoma	misread	m	nb31/out: dataset misreads "Abd. Pain Discharge Bleedanotome"
 26825	31	5	2392	Bruises Abrasion.	Bruises of Lt. Arm & Forearm.	misread	m	nb31/out: dataset misreads "Bruises Abrasion."
+26830	31	6	2398	Enteritis Itaben	Enteritis - Malnutrition	wording	m	nb31/out: dataset misreads Itaben
 26831	31	6	2399	Thrombosis Deep C.R.V.	Thrombosed Haemorrhoids	misread	h	nb31/out: dataset misreads "Thrombosis Deep C.R.V."
 26834	31	6	2402	Bronchitis & Deformans	Spondylosis Deformans	misread	h	nb31/out: dataset misreads Bronchitis
 26835	31	6	2403	Lymphosarcoma T.K. / L. Scf	Lymphosarcoma of Neck.	misread	h	nb31/out: 
 26836	31	6	2404	Clinical B.Py.	Clinical Typhoid	misread	m	nb31/out: dataset misreads B.Py.
+26838	31	6	2406	Amoebic Colitis + Worms	Amoebic Colitis + Taeniasis	wording	m	nb31/out: third word read as Taeniasis; dataset has Worms
 26840	31	7	2408	Chl. Cellulitis N.	Childbirth N.	misread	h	nb31/out: dataset misreads "Chl. Cellulitis N."
 26842	31	7	2410	Cont. & Abrasion leg & hand.	Boil on ???? of Neck.	misread	m	nb31/out: dataset invents "Cont. & Abrasion leg & hand."
+26843	31	7	2411	Scabies Impeitgo	Scabies 2ndary Impetigo	wording	m	nb31/out: 
+26844	31	7	2412	Abscess Of jaw.	Abscess of Groin.	wording	m	nb31/out: dataset reads jaw
+26845	31	7	2413	Gysses Sand fly fever.	Pyrexia Sandfly Fever.	wording	m	nb31/out: dataset misreads Gysses
 26846	31	7	2414	Bleeding	Healthy	misread	h	nb31/out: dataset misreads Bleeding
 26847	31	7	2415	Chl. Cellulitis N.	Childbirth N.	misread	h	nb31/out: dataset misreads "Chl. Cellulitis N."
 26853	31	8	2422	Measles & Bronch.	Miscarriage	misread	h	nb31/out: dataset invents "Measles & Bronch."; ward Mt.
@@ -760,18 +1157,25 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26859	31	8	2428	Burns Butt & Leg	Bruises of Lt. Leg.	misread	h	nb31/out: dataset misreads "Burns Butt & Leg"
 26861	31	8	2430	T.B. Pulv & Rt. Pleu Eff	T.B. Glands of Rt. Axilla	misread	m	nb31/out: dataset misreads "T.B. Pulv & Rt. Pleu Eff"
 26862	31	9	2432	Diorebitis Surg.	Aortitis	misread	m	nb31/out: dataset misreads Diorebitis + ward
+26863	31	9	2433	Erysepelas Pec.	Erysipelas	wording	h	nb31/out: 
 26866	31	9	2436	Pneum. fever	Rheumat. Fever.	misread	h	nb31/out: dataset misreads Pneum.
 26867	31	9	2437	Duosh Amot Pneum	Duodenitis Amoebiasis	misread	m	nb31/out: dataset garbles
 26868	31	9	2438	Forceps Del.	Forceps Delivery	misread	h	nb31/out: 
 26871	31	9	2441	Acu Le Chesti?	Acute Gastritis	misread	m	nb31/out: dataset garbles
 26874	31	10	2445	Bronchitis Headache Neurasthenia	Headache of Neurotic origin.	misread	m	nb31/out: overwrite: Bronchitis struck -> Headache of Neurotic origin; dataset keeps struck Bronchitis
+26876	31	10	2447	Thyrotoxicosis m. Jaun.	Thyrotoxicosis c Heart failure.	wording	h	nb31/out: dataset misreads "m. Jaun."
 26881	31	10	2452	Coryz Convalg	Food Poisoning	misread	h	nb31/out: dataset misreads "Coryz Convalg"
+26883	31	10	2454	G.C. Urethritis	G.C. Orchitis	wording	m	nb31/out: dataset reads Urethritis
+26884	31	11	2456	Chr. Tonsilletis Adenoids? Oper.	Chr. Tonsillitis Hypert. Adenoids	wording	m	nb31/out: oper. in Result col
+26886	31	11	2458	Erysipelas Celos. C An.	Erysipelas.	wording	h	nb31/out: dataset adds "Celos. C An."
 26887	31	11	2459	Thrombophlebitis Haemerrhoids Oper.	Thrombosed Haemorrhoids	misread	h	nb31/out: dataset misreads Thrombophlebitis
 26889	31	11	2461	Derm. R.I.	Hernia Rt.	misread	h	nb31/out: dataset misreads "Derm. R.I."
 26891	31	11	2463	Malingering Abdl. Pains J.B.	Multiple Abr. Wds of Body	misread	m	nb31/out: dataset misreads "Malingering Abdl. Pains"; second word uncertain (Abr./Abd.)
+26892	31	11	2464	Effort Syndrome reclining	Effort Syndrome Tachycardia	wording	h	nb31/out: dataset misreads reclining
 26893	31	11	2465	Cellulitis Arm.	Undulant Fever	misread	h	nb31/out: dataset invents "Cellulitis Arm."
 26894	31	11	2466	Photophobia Lt. Illeo Sac. Bone.	Shot Fract. Lt. Thigh Bone.	misread	h	nb31/out: dataset misreads "Photophobia Lt. Illeo Sac. Bone."
 26898	31	12	2470	Acute Rectal Bleeding Op	Acute Mastoiditis Lt.	misread	m	nb31/out: dataset misreads "Acute Rectal Bleeding Op"
+26899	31	12	2471	Fibroid Uteri I.S.Y.	Fibroid Uterus.	wording	h	nb31/out: dataset merges Result (T.S.?)
 26906	31	12	2478	Tuberc. B. Knee	Pulm. T.B.	misread	h	nb31/out: dataset misreads "Tuberc. B. Knee"; result Died
 26911	31	13	2484	M. Cresol Poisoning? Self Inflicted. Interval.	Ac. Catarrhal Otitis Media Bilateral	misread	m	nb31/out: dataset invents "M. Cresol Poisoning? Self Inflicted"
 26914	31	13	2487	Cricum + Cauterization Papil.	Poisoning + Caustic Soda	misread	m	nb31/out: dataset misreads "Cricum + Cauterization Papil."
@@ -780,32 +1184,52 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 26929	31	14	2502	Syphilis	Pyrexia	misread	m	nb31/out: dataset misreads Syphilis
 26931	31	15	2505	Abnes Scardis Ascariasis	Amoebiasis Giardiasis Ascariasis	misread	h	nb31/out: dataset garbles first two words
 26933	31	15	2507	Malignant Tumour Rec.	Malignant Tumor of Axilla.	misread	h	nb31/out: dataset drops "of Axilla", adds Rec.
+26934	31	15	2508	Kebe Azar.	Kala Azar.	wording	h	nb31/out: dataset misreads Kebe
 26944	31	16	2518	Infected Colon. Process.	Fibrotic Pulm. Process.	misread	h	nb31/out: dataset misreads "Infected Colon. Process."; serial garbled as 4
+26952	31	16	2526	Fract. Jaws & Scalp W.	Fracture of Jaw	wording	h	nb31/out: dataset invents "& Scalp W."; result "Referred to Dentist"; serial garbled as 12
 26953	31	17	2527	Abscess Rht leg	Lac. Wd of Lt. Leg	misread	h	nb31/out: dataset misreads "Abscess Rht leg", serial garbled as 13; result Transferred to Hadassah
 26955	31	17	2530	Contusio W. Rt. foot	Contused Wd of Chest	misread	m	nb31/out: dataset reads "W. Rt. foot"
 26958	31	17	2533	Removal I.S.B. / S.Y. Arm	Raynaud's Disease	misread	h	nb31/out: dataset misreads "Removal I.S.B. / S.Y. Arm"
+26959	31	17	2534	Erysipelas R. leg & oedema	Erysipelas of Thigh & Scrotum	wording	m	nb31/out: dataset misreads "R. leg & oedema"
 26964	31	18	2539	Incomplete Abortion	Pneumonia	misread	h	nb31/out: dataset has the diagnosis of 2545 (Incomplete Abortion); Pneumonia misplaced onto 2546
 26971	31	18	2546	Pneumonia.	Haemorrhoids	misread	h	nb31/out: dataset has Pneumonia (row 2539's diagnosis); oper. in Result
+26972	31	18	2547	Acute Arthritis Rt. Ankle.	Acute Arthritis of Knee Lt.	wording	h	nb31/out: dataset misreads "Rt. Ankle"
+26973	31	18	2548	ExLema Burns Body.	Extensive Burns of Body	wording	h	nb31/out: 
 26977	31	19	2553	Refused Op. Pilon.	Refused 3rd Class ??	misread	m	nb31/out: not a diagnosis: refusal written in Diagnosis col (refused 3rd class / rate?); dataset reads "Refused Op. Pilon."
 26978	31	19	2554	B.goc. Poisoning	Food Poisoning	misread	h	nb31/out: dataset misreads "B.goc."
 26982	31	19	2558	Xerosis Conj.	Marasmus	misread	h	nb31/out: dataset misreads "Xerosis Conj."
 26987	31	20	2564	Iner. Bite	Snake Bite.	misread	h	nb31/out: dataset misreads "Iner."
 26993	31	20	2570	Ext. Adnexion R & Prolapsus Uteri	Ext. Haemorrhoids + Anal fissures	misread	h	nb31/out: dataset invents "Ext. Adnexion R & Prolapsus Uteri"
 26994	31	20	2571	Sub-Acute Appendicitis Operation	Sub-Acute Appendix	misread	h	nb31/out: Result "operation Recovery"
+27000	31	21	2578	I T I L S ? Concussion	Mild Concussion	wording	h	nb31/out: days "one" struck; dataset garbles first word
+27001	31	21	2579	Chr. Hypo. Gastritis Intestinal	Chr. Hypertroph. Gastritis Intestinal Amoebiasis	wording	h	nb31/out: dataset drops Amoebiasis; ink smear across cell
 27002	31	21	2580	Up. C. Epididymo. Orchitis Amelioro.	G.C. Epid. Orchitis	misread	h	nb31/out: 
+27005	31	21	2583	Lunacy Recovery	Lunacy	wording	h	nb31/out: 
+27006	31	21	2584	Rt. Inq. Hernia Oper.	Lt. Ing. Hernia Oper.	wording	h	nb31/out: dataset swaps to Rt.
 27010	31	22	2589	Fracture of Lt. 5th Rib	Fracture of Lt. 5th Metatarsal	misread	m	nb31/out: dataset reads Rib
 27013	31	22	2592	Vincent's Angina Pharyngitis	Vincent's Angina	misread	h	nb31/out: dataset adds Pharyngitis
 27014	31	22	2593	Corgs' Corsion	Food Poisoning	misread	h	nb31/out: dataset garbles
 27016	31	22	2595	Cont. of Scalp	Cont. Wd of Head	misread	h	nb31/out: dataset reads "of Scalp"
+27022	31	23	2601	Spontaneous Pneumothorax Emphysema	Spontaneous Pneumothorax Amoebiasis	wording	h	nb31/out: dataset misreads Emphysema
+27024	31	23	2603	Gastritis much	Gastritis	wording	h	nb31/out: dataset merges result "much"
 27026	31	23	2605	Bronchitis	Uraemia.	misread	h	nb31/out: dataset invents Bronchitis
+27027	31	23	2607	Tuber. (Closed)	Pulm. T.B. (Closed)	wording	h	nb31/out: dataset serial blank; page serial 2607 (2606 skipped by ledger, row follows 2605 directly); discharge 8.6.47 not 28.6.47
+27028	31	23	2608	Retroversion Uterus	Retroversion + Retroflexion of Uterus	wording	h	nb31/out: dataset drops Retroflexion
 27029	31	23	2609	V.D.G. J.U.S. / S.H.	T.B. Glands of Neck	misread	h	nb31/out: dataset garbles "V.D.G. J.U.S."
+27031	31	23	2611	Hyper. Tenosis / S.H. Sepsis	Hypertension Hemiplegia	wording	h	nb31/out: dataset garbles "Hyper. Tenosis / S.H. Sepsis"
+27038	31	24	2619	Amoebic Hepatitis Sub. Diaph. Abscess	Amoebic Hepatitis c 2nd Pleurisy	wording	m	nb31/out: dataset reads "Sub. Diaph. Abscess"
 27045	31	25	2626	Diphtheria B. Car.	Septicaemia B. Pyocyan.	misread	h	nb31/out: dataset misreads "Diphtheria B. Car."
 27047	31	25	2628	Fractured Ribs Scemalt Oleum	Irreducible Hernia Lt.	misread	h	nb31/out: dataset invents "Fractured Ribs Scemalt Oleum"
 27052	31	25	2633	Lung	See No. 2562	misread	h	nb31/out: line written across row, not a diagnosis (cross-reference); dataset puts it in discharge and "Lung" (ward Surg. misread) in diagnosis
+27055	31	26	2636	Pyrexia Imp.	Pyrexia	wording	h	nb31/out: dataset merges result Imp.
+27060	31	26	2641	Amorbiasis Ku	Amoebiasis	wording	h	nb31/out: 
+27064	31	26	2645	Cellulitis Femur+Abcess Rt.	Cellulitis Rt. femur + abscess	wording	h	nb31/out: days overwritten (struck date -> 4)
 27067	31	27	2649	Haemoptysis Pleural Eff.	Haemangioma of Lt. Cheek	misread	m	nb31/out: dataset misreads "Haemoptysis Pleural Eff."
+27069	31	27	2651	Pyrexia Obs.	Pyrexia	wording	h	nb31/out: dataset adds Obs.
 27074	31	27	2656	Fracture of Lt. Humerus	Fracture of Lt. forearm	misread	m	nb31/out: dataset reads Humerus
 27075	31	27	2657	Vagotomy Rhinitis Dyspepsia	Vasomotor Rhinitis Sycosis Barbae	misread	h	nb31/out: dataset misreads "Vagotomy ... Dyspepsia"; result Transferred
 27076	31	27	2658	Allergy Urticaria	Allergic Dermatitis	misread	m	nb31/out: dataset reads "Allergy Urticaria"
+27077	31	28	2660	Amœbic Dys.	Amœbiasis	wording	m	nb31/out: dataset serial blank; Index matched on dates+diagnosis
 27079	31	28	2662	Inguin. Oster	Inguinal Adenitis	misread	m	nb31/out: dataset misread
 27080	31	28	2663	Amicr S. Congin. Chistes Eyelids & Daily	Quick Lime Conjunctivitis	misread	m	nb31/out: dataset garbles diagnosis and merges result
 27081	31	28	2664	Rheumatic Myocarditis & Impys.	Rheumatic Arthritis	misread	h	nb31/out: dataset has Myocarditis
@@ -813,19 +1237,28 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27084	31	28	2667	Incomp. Abor.	Incomplete Abortion	misread	h	nb31/out: 
 27088	31	29	2672	?Ca. Oesophagus Ulcerating Mass	? Ca. of Stomach Uraemia	misread	m	nb31/out: dataset has Oesophagus Ulcerating Mass
 27090	31	29	2674	Tab. B. appendicitis	Sub Ac. Appendicitis	misread	h	nb31/out: dataset misreads Sub Ac.; ward on page is Med
+27091	31	29	2675	Chr. Appendx Opn.	Chr. Appendicitis Oper.	wording	h	nb31/out: 
 27093	31	29	2677	Hernia Opn. UI	Hernia Rt	misread	h	nb31/out: dataset merges result
 27095	31	29	2679	Chronic Prostatitis Rheumatism	Chronic Muscular Rheumatism	misread	h	nb31/out: dataset has Prostatitis
 27096	31	29	2680	Marasmus Due to Bil. Osteomyelitis	Marasmus due to Abscesses T.B. + Osteomyelitis	misread	m	nb31/out: result Death
 27098	31	29	2682		Ascariasis	blank-filled	m	nb31/out: dataset blank
 27101	31	30	2686	Bronchitis asthmatic	Bronchiectasis c 2ndary Heart failure	misread	m	nb31/out: dataset has Bronchitis asthmatic
 27102	31	30	2687	Gebangitis L.S.O.	Pyelonephritis	misread	h	nb31/out: dataset garbles
+27105	31	30	2690	W.D. Append.	W.S. of Upper Legs	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27112	31	31	2698	Rt. Pleurisy	Recurrent Rt Hernia	misread	h	nb31/out: dataset has Rt. Pleurisy
+27116	31	31	2702	Abscess R. Groin	Abscess	wording	h	nb31/out: dataset adds R. Groin (not on page)
+27117	31	31	2703	Pleba Pyor	Kala Azar	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27121	31	32	2708	Chl. Breast N.	Childbirth N.	misread	h	nb31/out: dataset serial blank; dataset has Chl. Breast
+27124	31	32	2711	Indir. Amoebiasis Abscess.	Intestinal Amœbiasis Ascariasis	wording	m	nb31/out: dataset misreads
 27125	31	32	2712	L. Inguinal Hernia Wds.	Shrapnel Wds of Body	misread	m	nb31/out: dataset has L. Inguinal Hernia Wds.
 27126	31	32	2713	Fracture Base of Skull	Fracture of Pelvis	misread	h	nb31/out: dataset has Base of Skull; result Died
+27132	31	33	2720	Phot. W.S. Both Thighs.	Shot Wd. of Both Thighs	wording	h	nb31/out: dataset serial blank; matched on diagnosis
+27133	31	33	2721	Phot.W.S.Abdomen Lt. Shoulder Rt. Forearm Lt. Wrist Lt. Buttock	Shot Wds. Shoulder Rt. Abdomen R.U.Q. Lac. Wd. Lt. Wrist Shot Wd. of Lt Buttock	wording	m	nb31/out: dataset misreads Shoulder Rt./Forearm
 27135	31	33	2723	Gun shot W.S. of Chest	Gun Shot Wd. of Rt Chest	misread	h	nb31/out: dataset drops Rt
 27136	31	33	2724	Phot. W.S. Rt. Buttock Lt. Forearm.	Shot Fract. of Lt Radius	misread	h	nb31/out: dataset invents Rt. Buttock Lt. Forearm
 27137	31	33	2725	Phot. W.S. Lt. Leg & Rt. Thighs.	Shot Wd. of Lt Gluteal Region	misread	h	nb31/out: dataset has Lt. Leg & Rt. Thighs
+27138	31	33	2726	Phot. W.S. Rt. Thigh.	Shot Wd. of Rt. Thigh	wording	h	nb31/out: 
+27139	31	33	2727	Punc. W. Abdomen (Oper.) Bowel Injury	Gun Shot of Abdomen Bowel Injury	wording	m	nb31/out: result Died (oper)
 27140	31	33	2728	Punc. W.S. Ribs & Back	Fracture of Ribs c Jaw	misread	m	nb31/out: dataset has Punc. W.S. Ribs & Back
 27141	31	33	2729	Cont. W.S. Lt. Chest	Cont. Wd. of Head	misread	h	nb31/out: dataset has Lt. Chest
 27142	31	33	2730	Cont. W.S. Head & Chest Lt. Vault	Cont. Wd. of Head Fract. of Vault	misread	h	nb31/out: 
@@ -837,12 +1270,16 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27155	31	35	2745	Tub. T.B. L.iel	Pulm. T.B.	misread	h	nb31/out: dataset garbles
 27158	31	35	2748	Papilloma Vagina	Papilloma of Tongue	misread	h	nb31/out: dataset has Vagina
 27161	31	35	2751	Caesarian Section Puerp. Sepsis Recenta	Caesarian Section due to Placenta	misread	m	nb31/out: dataset adds Puerp. Sepsis
+27163	31	35	2753	Wound on foot	Wound on L. Foot	wording	m	nb31/out: dataset drops L.
 27165	31	36	2755	Acute Urethritis	Acute Mastitis	misread	h	nb31/out: dataset has Acute Urethritis (resembles row below, Acute Gonorrhoea); dataset sex M may also belong to 2756
 27167	31	36	2758	Cretinism & Neurasthenia	Gastric Neurosis	misread	m	nb31/out: dataset serial truncated to 4; dataset has Cretinism & Neurasthenia
+27168	31	36	2759	Pneumonia Rt base	Pneumonia Tetany	wording	m	nb31/out: dataset serial truncated to 5; dataset has Rt base
 27169	31	36	2760	Pleurisy & Bilharzia	Snake Bite	misread	h	nb31/out: dataset serial truncated to 6; dataset has Pleurisy & Bilharzia
 27175	31	36	2766	Defective Visioning	Ac. Food Poisoning	misread	h	nb31/out: dataset serial truncated to 12; dataset has Defective Visioning
+27179	31	37	2771	Cardiac Calcification	Ureteric Calcification	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27186	31	37	2778	Rheu. I Pains of body	1st & 2nd° Burns of Body	misread	h	nb31/out: dataset has Rheu. Pains of body
 27189	31	38	2782	Metrorr L.S.C.P. Growth Uterus	Metastatic Growth L.I. Primary in Uterus	misread	m	nb31/out: dataset has Metrorr L.S.C.P.
+27192	31	38	2785	Duodenal ulcer Comabiosed?	Duodenal Ulcer c Amœbiasis	wording	h	nb31/out: dataset garbles
 27193	31	38	2786	Fract. Phum Cl.	Fract. Lt Humerus	misread	h	nb31/out: dataset garbles; merges result
 27194	31	38	2787	Abscess Ischio Rec.	Abscess of the Sacrum	misread	m	nb31/out: dataset has Ischio Rec.
 27199	31	39	2793	Chest N.O.S.	Childbirth	misread	h	nb31/out: dataset has Chest N.O.S.
@@ -852,15 +1289,23 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27206	31	39	2800	Epitheliod fit-Nevrotic	Epileptoid fit Neurotic	misread	h	nb31/out: 
 27207	31	39	2801	Colitis & Dysentry	Colitis c Pyrexia	misread	h	nb31/out: dataset has & Dysentry
 27209	31	40	2804	Fracture femur Snell	Fracture of Base of Skull	misread	h	nb31/out: dataset serial blank; dataset has Fracture femur, discharge 28.5 (page 8.5); result Died
+27214	31	40	2809	Pneumonia Rt.	Pneumonia Lt	wording	h	nb31/out: dataset swaps Lt -> Rt
 27216	31	40	2811	Pleurisy Rt. Sided.	Periarthritis Rt Knee	misread	h	nb31/out: dataset has Pleurisy Rt. Sided
+27217	31	40	2812	Chr. Nephritis & Try Pleurisy.	Chr. Nephritis 2ndry Heart failure	wording	h	nb31/out: dataset has Try Pleurisy
 27219	31	40	2814	Bruises Upper & L. Extr.	Bruises of Upper Ext. Lt.	misread	h	nb31/out: 
 27226	31	41	2822	Hemoptysis	Menopause	misread	m	nb31/out: dataset has Hemoptysis
+27228	31	41	2824	Burn I leg O	Burns of Legs	wording	h	nb31/out: 
 27229	31	41	2825	Cancer Pharynx	Cancer of Liver	misread	h	nb31/out: dataset has Pharynx; result Died
 27232	31	42	2829	S. Stab Lt. Upy Chest	Stab Wd. Lt. Upper Chest	misread	h	nb31/out: 
+27233	31	42	2830	Constr. per. Abdomen & Injury to bowel	Penetr. Gun Shot Wd. of Abdomen c Injury to bowels	wording	m	nb31/out: dataset misreads; result Died
+27234	31	42	2831	Nervous Debility	Nervous fatigue	wording	m	nb31/out: second word overwritten; dataset has Debility
 27238	31	42	2835	Incomp. Abort.	Incomplete Abortion	misread	h	nb31/out: 
 27243	31	43	2841	Infect. T.N.T	Infect. T.B.	misread	h	nb31/out: dataset has T.N.T; result Died
+27251	31	43	2849	Anal Fistula	Anal fissures	wording	h	nb31/out: dataset has Fistula
 27252	31	43	2850	Hydrocele	Left Ing. Hernia	misread	h	nb31/out: dataset has Hydrocele
+27254	31	44	2853	Rt. I. Hernia Oper.	Rt. Ing. Hernia	wording	h	nb31/out: dataset merges result
 27255	31	44	2854	Dyspepsia Cystitis	Hydatid Cyst of Rt Lung	misread	h	nb31/out: dataset has Dyspepsia Cystitis and discharge 18.5/8 days (page 18.7/69)
+27256	31	44	2855	Cellulitis Rt. Hand Incis!	Cellulitis Lt Hand	wording	h	nb31/out: dataset swaps Lt -> Rt
 27259	31	44	2858	Cyclitis iritis	Pyelitis	misread	h	nb31/out: dataset has Cyclitis iritis
 27260	31	44	2859	Hallux condition	B.T. Malaria	shifted	h	nb31/out: dataset has Hallux condition
 27263	31	44	2862	Fresh Burn Scalp	Fracture Base of Skull	misread	h	nb31/out: dataset has Fresh Burn Scalp; result Died
@@ -869,39 +1314,55 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27266	31	45	2865	Acq. B. Colitis	Ac. Entero-Colitis	misread	h	nb31/out: dataset garbles
 27267	31	45	2866	Perforated Ulcer. Sefstic Ulcer Recov.	Perforated Peptic Ulcer	misread	h	nb31/out: dataset garbles + merges result; admission overwritten
 27268	31	45	2867	Intest. Sepsis m Tp.	Infect. Amœbiasis Hepatitis	misread	m	nb31/out: dataset has Intest. Sepsis
+27269	31	45	2868	Furuncl K ve	Furuncle Nose	wording	h	nb31/out: 
+27270	31	45	2869	Cep. Ulcer.	Peptic Ulcer	wording	h	nb31/out: 
 27271	31	45	2870	Deby Sro P St. Ingestion	Dehydration Post Infection	misread	h	nb31/out: dataset garbles
 27272	31	45	2871	Depres. Pneu. ebor.	Hepatitis Amœbic	misread	m	nb31/out: dataset garbles
+27273	31	45	2872	Perforating Visceral Ulcer L.H. Rec.	Perforating ? Wd. Lt. Eye	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27276	31	46	2875	Post. Abortion incomplete	Post. Abortion Anaemia	misread	h	nb31/out: dataset has incomplete
+27277	31	46	2876	Kala Azar Treated	Kala Azar	wording	h	nb31/out: dataset merges result
 27280	31	46	2879	Gmyalgia	Influenza	misread	h	nb31/out: dataset has Gmyalgia
 27289	31	47	2889	Tuberculosis Lt.	Pulm. T.B. Lt.	misread	h	nb31/out: 
 27292	31	47	2892	Perineorraphy and cervicitis and ...	Perimetritis	misread	m	nb31/out: result Cured; dataset garbles
 27294	31	47	2894	Acute Tonsilitis Tuberculosis Intercurrent	Acute Miliary Tuberculosis	misread	h	nb31/out: dataset has Tonsilitis; result Died
+27298	31	47	2898	Polyhydramnios Mole	Hydatidiform Mole	wording	h	nb31/out: dataset has Polyhydramnios; dataset discharge 21.5/9 (page 31.5/19)
+27300	31	48	2901	Rheum. Fever	Rheumatic Fever	wording	h	nb31/out: 
 27302	31	48	2903	Commo. Ca Secr. Lt arm	Common Catarrhal Jaundice	misread	h	nb31/out: dataset garbles
 27305	31	48	2906	Pan M. Fel.	Sand Fly Fever	misread	h	nb31/out: dataset garbles
 27311	31	49	2913	T.A.B. fever	T.A.B. Inj. Fever	misread	h	nb31/out: 
 27313	31	49	2915	Bacillary Dysentry	Sacral Sinus	misread	m	nb31/out: dataset has Bacillary Dysentry
+27316	31	49	2918	Green Stick Rt. Tibia	Fract. Rt Fibula	wording	m	nb31/out: dataset has Green Stick Rt. Tibia
 27320	31	49	2922	Pain in Enteric Colon	Acute Entero Colitis	misread	h	nb31/out: dataset has Pain in Enteric Colon
+27321	31	50	2924	Ac. follicular Appendicitis	Ac. Gangrenous Appendicitis	wording	h	nb31/out: dataset serial blank; dataset has follicular
 27323	31	50	2926	Seborr. Dermatitis	Scabies Dermatitis	misread	m	nb31/out: dataset has Seborr.
 27326	31	50	2929	Psoriasis ?	Aortitis ?	misread	m	nb31/out: dataset has Psoriasis ?
 27327	31	50	2930	Cellulitis floor of mouth	Cellulitis Floor of Mouth & Cyst of Mouth	misread	m	nb31/out: 
 27329	31	50	2932	Hyperpyrexia Rt. limb	Hypertrophic Rhinitis	misread	h	nb31/out: dataset has Hyperpyrexia Rt. limb; dataset admission 15.5 (page 14.5)
+27334	31	51	2938	Ameobic Dysentery	Amœbiasis Ascariasis	wording	h	nb31/out: dataset has Ameobic Dysentery
 27335	31	51	2939	Ln. Adenitis	For observation	misread	h	nb31/out: dataset has Ln. Adenitis
+27336	31	51	2940	R. Ing. Hernia Bilateral Pleurisy - Closed	Epig. Hernia Bilateral Specific Pleurisy - Closed	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27338	31	51	2942	Septic tonsils B.N. Laryngitis	Septic Contused Wd. of Scalp	misread	h	nb31/out: dataset has Septic tonsils B.N. Laryngitis
 27341	31	51	2945	Pilonidal Sinus L.I.	Perinephritis Lt.	misread	h	nb31/out: dataset has Pilonidal Sinus
 27352	31	52	2956	Burns Chest	Bruises of Chest	misread	h	nb31/out: dataset has Burns
 27359	31	53	2964	Amputation R. Leg Ind F. Dose	Amputation of Tip of Lt Index	misread	m	nb31/out: dataset has Amputation R. Leg
 27361	31	53	2966	Amputation R. Fgt T.D. Nil	Amputation of Tip of Lt Index	misread	m	nb31/out: dataset swaps Lt -> R.
+27364	31	53	2969	H.S. Concussion.	Mild Concussion	wording	m	nb31/out: dataset H.S.
 27368	31	54	2974	H.M.Bronch. Pneun.	M.T.A. Cerebral Concussion	misread	m	nb31/out: dataset has a different diagnosis (H.M.Bronch. Pneun.)
 27372	31	54	2978	EnSophalitis post partum.	Endometritis Septic.	misread	m	nb31/out: dataset misread (EnSophalitis post partum)
 27373	31	54	2979	Peritonsillar abscess	German measles	misread	h	nb31/out: dataset Peritonsillar abscess
 27375	31	54	2981	Burns. Arm & Face.	Burns I Deg. of Face.	misread	m	nb31/out: dataset Burns. Arm & Face.
+27377	31	55	2983	Gracia Diptheria	Diphtheria	wording	h	nb31/out: overwrite: Pyrexia struck -> Diphtheria; result Died; dataset year 42 for 47 on whole page
 27380	31	55	2986	Gonorrhoeal Rt. Knee	Pyonephrosis Lt.	misread	m	nb31/out: dataset misread (Gonorrhoeal Rt. Knee)
+27383	31	55	2989	Lac. hd. Fronto-Parietal	Lac. Wd. of Tongue	wording	m	nb31/out: dataset misread (Fronto-Parietal)
 27384	31	55	2990	Small wound Abd. Wall	Small metal Body ? Lt. Patella	misread	m	nb31/out: dataset misread (Small wound Abd. Wall)
 27385	31	55	2991	Fenehe Rx Phot. Chest	Penetrating gun shot Wd. of Rt. Chest	misread	m	nb31/out: dataset garbled
+27386	31	55	2992	Graco J Pelvis.	Fracture of Pelvis.	wording	h	nb31/out: 
 27387	31	55	2993	Bromo Chest & Lung	Bruises Chest & of Legs	misread	m	nb31/out: dataset garbled
 27388	31	55	2994	Prac. F. L.L. Haem.	Frac. of Lt. Humerus	misread	m	nb31/out: dataset garbled
 27390	31	56	2997	Anaerobic Bronchitis	Snake Bite	misread	h	nb31/out: dataset invents (Anaerobic Bronchitis)
+27395	31	56	3002	Bilat. Hernia T.B. m. Excised	Bilat. Pulm. T.B. + ? T.B.C.	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27396	31	56	3003	Tubinc. Paresis. T.B.	Pulm. T.B. c Haemoptysis	misread	h	nb31/out: dataset misread (Tubinc. Paresis)
+27397	31	56	3004	Marasmus Imps	Marasmus	wording	m	nb31/out: could be Measles (ward B pavilion); letters fit Marasmus
 27398	31	56	3005	Reten. Urine & Strict.	Retention of Urine due to Prostate.	misread	h	nb31/out: dataset has Strict.
 27407	31	57	3015	Rt. Sided Pleurisy on Emphysema Rt. side	Ch. Malaria Splenomegaly Subtert.	misread	m	nb31/out: dataset invents (Pleurisy/Emphysema); third word uncertain
 27410	31	57	3018	Urticaria Adenitis Hyperpyrexia	Mitral Stenosis & Hypertension	misread	h	nb31/out: dataset misread (Urticaria Adenitis Hyperpyrexia)
@@ -909,6 +1370,7 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27423	31	59	3033	Chr. Abscess	Chr. Malaria	misread	h	nb31/out: dataset misread Abscess; days 5 on page
 27425	31	59	3035	Cl. Abscess	Ch. Malaria	misread	h	nb31/out: dataset misread Abscess; result Died
 27426	31	59	3036	Tuberc. Clinc. col.	Malaria Clinical	misread	h	nb31/out: dataset misread (Tuberc.)
+27427	31	59	3037	P.N. Halaria / relapse	B.T. Malaria (relapse)	wording	h	nb31/out: 
 27430	31	59	3040	Abd. Wall Ab. Cl.	Shot Bullet Lt. femur	misread	m	nb31/out: dataset misread (Abd. Wall Ab.)
 27431	31	59	3041	Burns & frac.	Bruises of Face	misread	h	nb31/out: dataset misread (Burns & frac.)
 27438	31	60	3049	Adenitis Rt. en Neck	Stone in Lr. end of Ureter	misread	m	nb31/out: dataset misread (Adenitis Rt. en Neck)
@@ -916,17 +1378,23 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27442	31	60	3053	Fracture R. Bosom CK	Fracture of Base of Skull.	misread	h	nb31/out: result Died
 27444	31	61	3056	Bilateral Salmbutionary TBC	Bilateral Advanced Pulmonary T.B.C	misread	h	nb31/out: dataset garbled; discharge reads 14.6 (dataset 21.6)
 27445	31	61	3057	Haemorrhoids Cys Ischio rectal spen	Haemorrhagic Cysts of the Spleen.	misread	m	nb31/out: dataset misread (Haemorrhoids Ischio rectal)
+27451	31	61	3063	VSH + Z Burns of Body.	1st & 2nd° Burns of Body	wording	h	nb31/out: 
 27453	31	61	3065	Bronch. Pneum. Ltme.	Bronch. Asthma.	misread	h	nb31/out: dataset misread Pneum.
+27454	31	61	3066	Chr. Tonsils	Chr. Septic Tonsils	wording	m	nb31/out: 
+27455	31	62	3068	Ac. Sinusitis / Inf. Aly	Ac. Catarrhal Rhinitis - Inf. Hepatitis	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27456	31	62	3069	Rupt Urethra	Anterior Urethritis	misread	h	nb31/out: dataset invents (Rupt Urethra)
 27457	31	62	3070	Drunkenness / Alcoholism	Anterior Urethritis	misread	h	nb31/out: dataset invents (Drunkenness/Alcoholism)
 27461	31	62	3074	Lymphad. R. Groin	Lymphadenitis	misread	m	nb31/out: dataset adds R. Groin (not on page)
 27462	31	62	3075	Enteritis Susp.	Enteritis	misread	h	nb31/out: dataset adds Susp. (result Imp. misread)
+27464	31	62	3077	Inflam. T.B.	Pulm. T.B.	wording	h	nb31/out: dataset misread Inflam.; result Died
 27466	31	63	3079	Mitral Congestion Heart F.	Mitral Stenosis Congestive Heart Failure	misread	h	nb31/out: 
 27467	31	63	3080	Diebetes Daniplex Lt. C(urib?)	Diabetes Hemiplegia Lt. (Cerebral Thrombosis)	misread	h	nb31/out: discharge and days overwritten
+27468	31	63	3081	For Observation (Pelvic Thromboid)	For observation.	wording	h	nb31/out: dataset appends text from row above
 27473	31	63	3086	Prote. Bile.	Snake Bite.	misread	h	nb31/out: dataset misread Prote. Bile
 27476	31	63	3089	Ch. Dysentry & Leu... G.A.	Chr. Osteomyelitis of femur	misread	h	nb31/out: dataset misread (Ch. Dysentry)
 27480	31	64	3094	Anaemia an. Imp.	Haematemesis	misread	h	nb31/out: dataset misread (Anaemia)
 27482	31	64	3096	Paraintestinal	Parametritis	misread	h	nb31/out: dataset misread Paraintestinal
+27485	31	64	3099	Opst true Rhell Jaw S.	Abr. Fract. Rt. Elbow & Jaw	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27486	31	64	3100	Epiles Crosis Died	Enlarged Prostate Diabetes	misread	h	nb31/out: dataset misread (Epiles Crosis Died); result Imp.
 27497	31	65	3112	Amoebic Dysentery	Amoebiasis Hypertension.	misread	h	nb31/out: dataset misread (Amoebic Dysentery)
 27502	31	66	3118	Tular F.B.	Pulm. T.B.	misread	h	nb31/out: dataset misread Tular F.B.; result Same
@@ -938,30 +1406,39 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27517	31	67	3134	Brain U.Q.	Pain Rt. U.Q.	misread	h	nb31/out: dataset Brain; result N.Y.D.
 27518	31	67	3135	Abscess Thigh Drews	Hodgkins Disease	misread	h	nb31/out: dataset invents (Abscess Thigh)
 27519	31	67	3136	Fibromyositis Vocall Lt.	Fibroma Vocal Cord Lt.	misread	h	nb31/out: 
+27520	31	67	3137	Carcinoma Base of Tongue Preop. Schlitt.	Carcinoma Base of Skull Breaking ? Lt.	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27523	31	68	3141	Lib. Rheu. Appendicitis.	Sub Ac. Appendicitis	misread	h	nb31/out: dataset misread Lib. Rheu.
+27526	31	68	3144	Laparotomy Bension Ovarian Cyst.	Papillary Pseudomucinous Ovarian Cyst.	wording	m	nb31/out: dataset Laparotomy Bension
 27527	31	68	3145	Bronaio Rt. L. Pleural Effusion.	Bruises Rt. Shoulder.	misread	h	nb31/out: dataset invents Pleural Effusion
 27528	31	68	3146	Fract. Leg. Bloody.	Fract. Lt. Leg.	misread	h	nb31/out: dataset drops Lt.; merges result In Plaster; adm 22.5 (dataset 23.5)
+27535	31	69	3153	Secondary S Syphilis and Clinic.	Secondary ???? of Syphilis	wording	m	nb31/out: dataset merges result (to V.D. Clinic)
 27545	31	70	3164	Bruc. Jht. Fever	Bruises of Lt. Forearm.	misread	h	nb31/out: serial inferred (dataset blank); dataset misread (Bruc. Jht. Fever)
 27546	31	70	3165	Multiple Cellulitis of Back	Multiple Cold Abscesses of Body	misread	h	nb31/out: dataset misread (Cellulitis of Back)
 27547	31	70	3166	Infected Impetigo & Bullae	Infected Prepatellar Bursa.	misread	h	nb31/out: dataset misread (Impetigo & Bullae)
+27550	31	70	3169	Amoebic Dysentery	Amoebiasis	wording	h	nb31/out: dataset Amoebic Dysentery
 27551	31	70	3170	Acute Arthritis	Anterior Urethritis.	misread	h	nb31/out: dataset misread Acute Arthritis
 27555	31	70	3174	Dyspepsia & Myocardial Degeneration	Hypertension Early Heart Failure.	misread	h	nb31/out: dataset misread (Dyspepsia & Myocardial Degeneration)
 27556	31	71	3176	Blee Sinus Cephie Iller.	Bleeding Peptic Ulcer.	misread	h	nb31/out: serial inferred (dataset blank); dataset garbled
 27559	31	71	3179	Hydropes Chorii. & Fell Bir.	Hydrops of Gall Bladder.	misread	h	nb31/out: dataset garbled
 27562	31	71	3182	Sprain	Pyrexia	misread	h	nb31/out: dataset invents Sprain
 27563	31	71	3183	Ciculi Ren	Acute Colitis.	misread	h	nb31/out: dataset garbled (Ciculi Ren)
+27564	31	71	3184	Rt Ingu. Hernia & Adherent Skin	Rt. Ing. Hernia	wording	h	nb31/out: dataset adds Adherent Skin (result oper. Rec.)
 27566	31	71	3186	Per Tonsiler Abscess Appendic.	Perforated Appendix	misread	h	nb31/out: dataset invents Tonsiler Abscess
 27567	31	72	3187	Trauma Rt. Inguinal Reg.	Traumatic Gangrene Lt. Foot.	misread	h	nb31/out: dataset misread (Trauma Rt. Inguinal Reg.); result Died
 27568	31	72	3188	Pul. Tbc. Appendicitis	Sub Acute Appendicitis	misread	h	nb31/out: dataset misread Pul. Tbc.
+27569	31	72	3189	Chr. Appendicitis	Chr. Appendix.	wording	h	nb31/out: 
 27570	31	72	3190	Dolmonitis Spn.	Haemorrhoids.	misread	h	nb31/out: dataset garbled
 27571	31	72	3191	Bleeding Per Demonitis	Bleeding Haemorrhoids.	misread	h	nb31/out: dataset garbled
 27575	31	72	3195	Comp. fract. Rt. Tib. Fibula. Colles's Fract. Concussion	Comp. fract. Lt. Elbow - Colle's Fract. Rt. Concussion	misread	h	nb31/out: dataset invents Rt. Tib. Fibula; result Cured, Ankylosis Lt. Elbow
 27578	31	72	3198	Haemotoma Rt. L.L. Abrasion.	Haematoma Lt. Lr. Abdomen	misread	h	nb31/out: dataset has Rt. and Abrasion: side swapped
+27579	31	73	3200	Oprenal Pyrexia	Pyrexia	wording	h	nb31/out: 
 27584	31	73	3205	Frels Lobe	False Labor.	misread	h	nb31/out: row-shift: dataset labels this serial 3204; dataset misread Frels Lobe
 27586	31	73	3207	Gunshot Wd. Rt. Thigh	Gunshot Wd. of Chest.	misread	h	nb31/out: row-shift: dataset labels serial 3206; dataset invents Rt. Thigh
 27589	31	73	3210	Acute Tonsilitis	Acute Enteritis	misread	m	nb31/out: dataset Acute Tonsilitis; 27588 (labelled 3209) duplicates this row
+27591	31	74	3213	Prels. Labor.	False Labor.	wording	h	nb31/out: 
 27594	31	74	3216	[duration_calc_impossible]		debris	h	out_Q12.tsv: diagnosis and discharge blank
 27596	31	74	3218	Pneumonia Fever.	Rheumatic Fever.	misread	h	nb31/out: dataset misread Pneumonia
+27597	31	74	3219	Diabetic Gangrene Rt. K.	Diabetic Gangrene of Lt. 3rd Toe.	wording	m	nb31/out: dataset has Rt.: side swapped
 27599	31	74	3221	Refused Op.	Refused Ad?.	misread	m	nb31/out: refusal written in diagnosis cell; second word Ad./Op. uncertain
 27602	31	75	3224	Syphilis Ict. Champ.	Syphilis Latent	misread	m	nb31/out: second word uncertain; dataset garbled
 27604	31	75	3226	Bursitis Lt.Clav. Thygl.	Bruises Lt. Chest & Thigh.	misread	h	nb31/out: dataset misread Bursitis
@@ -969,9 +1446,14 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27606	31	75	3228	Ret. Hernia Rt. & Embroid.	Shot fract. Rt. Femur Embolism.	misread	h	nb31/out: dataset invents Hernia; result Died
 27607	31	75	3229	Adnexitis T.B.	Miliary T.B.	misread	h	nb31/out: dataset misread Adnexitis; result Died; discharge 2.7 (dataset 22.7)
 27611	31	75	3233	Complic. Inc.	Comp. Fract. of Nose	misread	h	nb31/out: dataset garbled
+27618	31	76	3240	Penetrating oper. Abd. Wd with Protrusion Omentum	Penetrating Stab W. of Abdomen	wording	m	nb31/out: Stab/Shell uncertain (same form as p59 serial 3039); dataset invents Protrusion Omentum
 27619	31	76	3241	Chip Fx Scaphoid	Hip Joint Pain Rt.	misread	h	nb31/out: dataset misread Chip Fx Scaphoid
 27623	31	76	3245	X Epis Severely Infected	Relapsing Fever.	misread	h	nb31/out: dataset garbled (X Epis Severely Infected); discharge overwritten, days one
 27624	31	76	3246	Traps. Primaria Laceration	Paraphimosis	misread	h	nb31/out: dataset garbled; result Refused?
+27625	31	77	3248	Blepsing fever	Relapsing Fever.	wording	h	nb31/out: dataset misread Blepsing
+27627	31	77	3250	Appendicitis Abscess.	Appendicular Abscess.	wording	h	nb31/out: 
+27629	31	77	3252	Essential Hypertension (Bronchitis)	Essential Hypertension (Haemorrhoids)	wording	h	nb31/out: dataset has Bronchitis in brackets
+27631	31	77	3254	Double Pneumonia Recovered	Double Pneumonia Abscess of Breast.	wording	m	nb31/out: dataset misread Recovered
 27632	31	77	3255	Vomiting Pregnancy. Acc. delivered.	Taenia Saginata. Ascariasis.	misread	m	nb31/out: dataset misread (Vomiting Pregnancy)
 27638	31	78	3262	Pneumonia Fever	Rheumatic Fever.	misread	h	nb31/out: dataset misread Pneumonia
 27639	31	78	3263	Bruise Thorax & Fract. Lt. Rib	Bruises Lt. Iliac Region. Fract. Lt. Iliac Bone.	misread	m	nb31/out: dataset misread (Thorax, Rib)
@@ -979,12 +1461,15 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27642	31	78	3266	Synovitis Contagious Divisae	Impetigo Contagiosa	misread	h	nb31/out: dataset misread Synovitis
 27643	31	78	3267	Cond. of Thorax	Cont. Wd. of Head.	misread	h	nb31/out: dataset misread Thorax
 27646	31	78	3270	Pneumonia Carditis	Rheumatic Carditis	misread	h	nb31/out: dataset misread Pneumonia
+27648	31	79	3273	Lymphadenitis N.M.	Lymphadenitis	wording	h	nb31/out: "Home" written under it, with result R.?R. (discharged home); not part of diagnosis
+27650	31	79	3275	Pneumonia Sarcoma.	Pneumonia Marasmus	wording	h	nb31/out: dataset misread Sarcoma; result Died
 27652	31	79	3277	Haemorrhoids Rt. J Ch.	Penetrating Wd. of Chest.	misread	h	nb31/out: dataset invents Haemorrhoids
 27658	31	80	3283	Dysentery Cyst ?Lung	Hydatid Cyst of Rt. Lung	misread	h	nb31/out: dataset has: Dysentery Cyst ?Lung
 27659	31	80	3284	Obstetrics		debris	h	out_Q12.tsv: diagnosis and discharge blank
 27661	31	80	3286	Chilblains Buttocks	Childbirth	misread	h	nb31/out: dataset has: Chilblains Buttocks
 27662	31	80	3287	Chilblains N.	Childbirth N.	misread	h	nb31/out: dataset has: Chilblains N.
 27665	31	80	3290	Congs. L. Lt. Hand? C.L.	Comp. Fract. Lt. Hand	misread	m	nb31/out: dataset has: Congs. L. Lt. Hand? C.L.
+27667	31	80	3292	Boils. R.	Boils	wording	h	nb31/out: dataset has: Boils. R.
 27673	31	81	3298	Pneubron	Amoebiasis	misread	h	nb31/out: dataset has: Pneubron
 27675	31	81	3300	Abd. 2° Burns & Delis	1st + 2nd Burns of Face & Hands	misread	m	nb31/out: dataset has: Abd. 2° Burns & Delis
 27676	31	81	3301	Psoria Dermohitis	Arsenic Dermatitis	misread	h	nb31/out: dataset has: Psoria Dermohitis
@@ -998,8 +1483,11 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27698	31	83	3324	L. Inguinal Hernia / ?V. Hitting	Calculus Rt. Kidney	misread	h	nb31/out: dataset has: L. Inguinal Hernia / ?V. Hitting
 27700	31	83	3326	Osteomyelitis / Lt. Tibia / Cumen ?peg	Osteochondroma Lt. Femur	misread	h	nb31/out: dataset has: Osteomyelitis / Lt. Tibia / Cumen ?peg
 27708	31	84	3335	Orchitis Rt. Syphilis	Orchitis Rt. Suppurative	misread	m	nb31/out: dataset has: Orchitis Rt. Syphilis
+27709	31	84	3336	Abortion Inactive.	Abortion	wording	h	nb31/out: dataset has: Abortion Inactive.
 27711	31	84	3338	Dyspnea Heart Failure	Depressed Fract. of Skull	misread	m	nb31/out: dataset has: Dyspnea Heart Failure
+27716	31	85	3344	Fracture Ribs Pleuresy	Fracture Ribs	wording	h	nb31/out: dataset has: Fracture Ribs Pleuresy
 27718	31	85	3346	Chilblirth R	Childbirth	misread	h	nb31/out: dataset has: Chilblirth R
+27719	31	85		Lee.W? of Scalp	Lac. Wd. of Scalp	wording	h	nb31/out: dataset has: Lee.W? of Scalp
 27721	31	85		Abscess	Malaria	misread	h	nb31/out: dataset has: Abscess
 27722	31	85		Pyuria	Pyrexia	misread	m	nb31/out: faint mark after Pyrexia (N.Y.D.?) unread
 27724	31	86	3348	Cont. W. of J. Bridge	Cont. Wd. of Scalp	misread	h	nb31/out: page discharge 2.6.47 days one; dataset 4.6.47/3 belongs to row above (3346)
@@ -1009,6 +1497,8 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27733	31	87	3357	Rt. Salpingo Abdom. Adhes.	Kick on Abdomen. Shock.	misread	h	nb31/out: dataset has: Rt. Salpingo Abdom. Adhes.
 27734	31	87	3358	Pyelitis Preg.		invented	h	nb31/out: dataset invents: cell blank (dataset has Pyelitis Preg.)
 27738	31	87	3362	Sepsis P. Regnancy	Rupt. Ectopic Pregnancy	misread	m	nb31/out: dataset has: Sepsis P. Regnancy
+27740	31	87	3364	Amoebic Dysentery	Amoebiasis	wording	h	nb31/out: dataset has: Amoebic Dysentery
+27741	31	87	3365	Eden. Tonsilitis	Follic. Tonsillitis	wording	h	nb31/out: dataset has: Eden. Tonsilitis
 27745	31	88	3369	Psoriasis Imp.	Stomatitis	misread	h	nb31/out: dataset has: Psoriasis Imp.
 27747	31	88	3371	Chr. Rheum. Lt. Knee	Chr. Mastoiditis Lt.	misread	h	nb31/out: dataset has: Chr. Rheum. Lt. Knee
 27748	31	88	3372	Neurosis neurasthenia	Pleuropneumonia	misread	h	nb31/out: dataset has: Neurosis neurasthenia
@@ -1018,6 +1508,8 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27756	31	88	3380	Axillary Abscess	Axillary Adenitis	misread	h	nb31/out: dataset has: Axillary Abscess
 27759	31	89	3383	Septic tonsillitis	Septic Tonsillitis Nephritis	misread	h	nb31/out: dataset has: Septic tonsillitis
 27760	31	89	3384	Cellulitis foot	Mild Gastritis	misread	h	nb31/out: dataset has: Cellulitis foot
+27761	31	89	3385	Aquada Pharyngitis	Acute Pharyngitis	wording	h	nb31/out: dataset has: Aquada Pharyngitis
+27766	31	89	3390	Coxitis & Appen.	Coxitis Syphilis	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27767	31	89	3391	Tumor Ulna Lt.	Tumor Ulna Rt.	misread	h	nb31/out: dataset has: Tumor Ulna Lt.
 27768	31	89	3392	Dysentery	Hysteria	misread	h	nb31/out: dataset has: Dysentery
 27770	31	90	3395	Contusion Brachial Lumbar Articular Rt. side	Contusion Back Fracture Lumbar Articular Process	misread	m	nb31/out: dataset has: Contusion Brachial Lumbar Articular Rt. side
@@ -1026,6 +1518,7 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27775	31	90	3400	Erosio In Utero Vig Salpi.	Erosio Interdigitalis	misread	h	nb31/out: dataset has: Erosio In Utero Vig Salpi.
 27777	31	90	3402	Empyema Rt.	Enterocolitis	misread	h	nb31/out: dataset has: Empyema Rt.
 27778	31	90	3403	Tonsilitis	Tetanus	misread	h	nb31/out: dataset has: Tonsilitis
+27779	31	90	3404	B.P. + H.T. Malaria	B.T. + M.T. Malaria	wording	h	nb31/out: dataset has: B.P. + H.T. Malaria
 27781	31	91	3408	Lipoma Lt. Flank	Septic Lt. Hand	misread	h	nb31/out: dataset has: Lipoma Lt. Flank
 27783	31	91	3410	DMT Colic & SFL	Ant. Poliomyelitis	misread	h	nb31/out: dataset has: DMT Colic & SFL
 27784	31	91	3411	Chr. Bronchitis & Nephritis	Chr. Glomerular Nephritis	misread	h	nb31/out: dataset has: Chr. Bronchitis & Nephritis
@@ -1034,8 +1527,11 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27789	31	91	3416	Shock Burns Breast	Shock - Bruises Back	misread	h	nb31/out: dataset has: Shock Burns Breast
 27790	31	91	3417	Bilat. Salpingitis	Bilat. Pneumonia	misread	h	nb31/out: dataset has: Bilat. Salpingitis
 27793	31	92	3421	Abcess Rt. Leg	Ununited Fract. Lt. Leg	misread	m	nb31/out: dataset has: Abcess Rt. Leg
+27794	31	92	3422	Depygh. & C.Vaginitis	Pyelitis c Pregnancy	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27795	31	92	3423	Punctured Wound facial.	Ununited Fract. Lt. Femur	misread	m	nb31/out: dataset has: Punctured Wound facial.
+27796	31	92	3424	Fracture Ribs Rt. Chest	Fracture Ribs	wording	h	nb31/out: dataset has: Fracture Ribs Rt. Chest
 27798	31	92	3426	Comp. Frac. Rt. Parietal	Comp. Fract. Rt. Os Naviculare	misread	h	nb31/out: dataset has: Comp. Frac. Rt. Parietal
+27799	31	92	3427	Fibrositis Back & Both Shoulders. + Old symphisis.	Fibrositis Back Muscles + Abd. Symptoms	wording	m	nb31/out: dataset has: Fibrositis Back & Both Shoulders. + Old symphisis.
 27800	31	92	3428	Acute Salpingitis & Oopheritis	Acute Rheumatism	misread	m	nb31/out: dataset has: Acute Salpingitis & Oopheritis
 27802	31	93	3431	Circumcision	Furunculosis	misread	h	nb31/out: dataset has: Circumcision
 27803	31	93	3432	Bilharziasis	Helminthiasis	misread	h	nb31/out: dataset has: Bilharziasis
@@ -1044,23 +1540,32 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27808	31	93	3437	Fract. Injured Leg Rt.	Fract. Spine & Injury to Cord	misread	h	nb31/out: dataset has: Fract. Injured Leg Rt.
 27811	31	93	3440	Normal delivery	Amoebic Dysentery	misread	h	nb31/out: dataset has: Normal delivery
 27812	31	93	3441	Rheum. Arthritis	Haemiplegia (Luetic ?)	misread	h	nb31/out: dataset has: Rheum. Arthritis
+27813	31	94	3443	Chr. Ulcer R.L. Tibia	Chr. Ulcer of Rt. Little Toe	wording	m	nb31/out: page discharge 7.6.47 days 2 (dataset 27.6.47/22)
 27814	31	94	3444	Tetanus	Tetany	misread	h	nb31/out: dataset has: Tetanus
+27816	31	94	3446	Cont. L. Thigh Aut	Cont. of Lt. Ankle	wording	h	nb31/out: dataset has: Cont. L. Thigh Aut
 27818	31	94	3448	? Pelvic Perit.	? Malaria	misread	h	nb31/out: dataset has: ? Pelvic Perit.
 27819	31	94	3449	Dyspepsia Food Intox.	Septic Foot	misread	h	nb31/out: dataset has: Dyspepsia Food Intox.
 27821	31	94	3451	Right Ing. Ca	Kidney Pathology	misread	h	nb31/out: dataset has: Right Ing. Ca
 27825	31	95	3455	Tenches. Stab W. Back	Penetrating Stab Wd. of Back	misread	h	nb31/out: dataset has: Tenches. Stab W. Back
+27827	31	95	3457	Contusion Thigh Rt. foot	Contusion Foot Rt.	wording	h	nb31/out: dataset has: Contusion Thigh Rt. foot
 27828	31	95	3458	Non Cen. Probable Ul.	Non Penetr. Stab Wd.	misread	h	nb31/out: dataset has: Non Cen. Probable Ul.
 27830	31	95	3460	Abscess Colic	Abdominal Colic	misread	h	nb31/out: dataset has: Abscess Colic
 27831	31	95	3461	Postritis & cul.	Gastritis	misread	h	nb31/out: dataset has: Postritis & cul.
 27833	31	95	3463	Bronchitis Bil.	Snake Bite	misread	h	nb31/out: dataset has: Bronchitis Bil.
+27835	31	95	3465	Trach. Ribs.	Fract. Ribs	wording	h	nb31/out: page discharge 11.6.47 days 5 (dataset 21.6.47/15)
 27839	31	96	3469	Sciamp Rt. leg	Osteomyelitis Rt. Leg	misread	h	nb31/out: dataset has: Sciamp Rt. leg
 27840	31	96	3470	Contusion Back Pain R.T. Rt. shoulder.	Contusion Crack Fract. Rt. Trochanter	misread	m	nb31/out: dataset has: Contusion Back Pain R.T. Rt. shoulder.
+27842	31	96	3472	Broncho monie	Bronchopneumonia	wording	h	nb31/out: dataset has: Broncho monie
 27849	31	97	3480	Cont. of Hips Rt.	Cont. Wd. of Head	misread	h	nb31/out: dataset has: Cont. of Hips Rt.
+27851	31	97	3482	Pyelitis toxa. Preg.	Pyelitis Stones of Rt. Kidney	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
 27856	31	97	3487	Hyper-Keratosis feet	Typhus Fever	misread	m	nb31/out: dataset has: Hyper-Keratosis feet
 27858	31	97	3489	Dyspepsia	?Pyonephrosis	misread	m	nb31/out: dataset has: Dyspepsia
 27859	31	98		Ol. Bronchitis Dysentery	??. Bac. Dysentery	misread	m	nb31/out: serial blank in dataset; inferred 3491
 27862	31	98	3494	Pulm. T.B.		invented	h	out_Q12.tsv: diagnosis and discharge blank; dataset Pulm. T.B. not on scan
+27863	31	98	3495	Amoebic Dysentery	Amoebic Hepatitis	wording	h	nb31/out: dataset has: Amoebic Dysentery
 27865	31	98	3497	Rehovo / Ulcer / Venous	Retroverted Uterus	misread	h	nb31/out: dataset has: Rehovo / Ulcer / Venous
+27869	31	98	3501	Systolic Murmur / Cancelled	Cystitis? Amoebiasis	misread	m	low-confidence reading re-read on the scan 2026-10-24 at higher resolution
+27871	31	99	3504	Abscess / Ulna	Abscess Rt. Ulna	wording	h	nb31/out: dataset has: Abscess / Ulna
 27872	31	99	3505	Puerperal / Fever	Ventral Hernia	misread	h	nb31/out: dataset has: Puerperal / Fever
 27874	31	99	3507	P.Aphyxia / & Appendicitis	Rt. Hydrosalpinx + Appendix	misread	m	nb31/out: dataset has: P.Aphyxia / & Appendicitis
 27875	31	99	3508	Neuritis / Lt. Sciatic / Adhes	Recurrent Lt. Ing. Hernia	misread	h	nb31/out: dataset has: Neuritis / Lt. Sciatic / Adhes
@@ -1070,9 +1575,12 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 27884	31	100	3517	Threatened Abortion Adherent Placenta	Threatening Antepartum Haemorrhage	misread	h	nb31/out: dataset has: Threatened Abortion Adherent Placenta
 27885	31	100	3518	Chl. Ibitis N.	Childbirth N.	misread	h	nb31/out: dataset has: Chl. Ibitis N.
 27886	31	100	3519	Suppurating Prepat. V.	Suppurating Sacral Cyst	misread	h	nb31/out: dataset has: Suppurating Prepat. V.
+27887	31	100	3520	Salpingitis & Impaction of Uterus	Salpingitis ???? Retroverted Uterus	wording	m	nb31/out: dataset has: Salpingitis & Impaction of Uterus
+27888	31	100	3521	Lt Renal Colic Rt Pleurisy Adhesions	Lt. Renal Colic (Stone in Ureter)	wording	h	nb31/out: dataset has: Lt Renal Colic Rt Pleurisy Adhesions
 27889	31	100	3522	Inf. Bursitis Rt. Rect.	2nd° Burns of Rt. Chest	misread	h	nb31/out: dataset has: Inf. Bursitis Rt. Rect.
 27894	31	101	3528	Retained Secundines	Morning Sickness	misread	h	nb31/out: dataset has: Retained Secundines
 27895	31	101	3529	Mal. Abd. Peristalsis	Lac. Wd. of Scrotum	misread	h	nb31/out: dataset has: Mal. Abd. Peristalsis
+27899	31	101	3533	Amoebic Dysentry	Amoebic Hepatitis	wording	h	nb31/out: dataset has: Amoebic Dysentry
 27900	31	101	3534	Allergic Bleeding Chest	Alleged Beating to Chest	misread	h	nb31/out: dataset has: Allergic Bleeding Chest
 27903	31	101	3537	Rt.Abd. Pain P.U.O.	Stab Wd. of Abdomen	misread	h	nb31/out: dataset has: Rt.Abd. Pain P.U.O.
 28134	32	21	6160	[illegible]		debris	h	out_Q13.tsv: diagnosis blank
@@ -1096,5 +1604,3 @@ Index	notebook	page	serial	as_extracted	corrected	class	confidence	evidence
 29572	33	42	494	[illegible]		debris	h	out_Q17.tsv: diagnosis blank; adm on scan 6.3.48
 29657	33	49	579	[illegible]		debris	h	out_Q17.tsv: diagnosis blank
 29672	33	50	594	-		debris	h	out_Q17.tsv: diagnosis blank
-2345	3	31	1328	Endocarditis.	Entero-colitis	misread	h	scan NB3 p31: reads Entero-colitis, as the next row
-2346	3	31	1329	Endocarditis.	Entero-colitis	misread	h	scan NB3 p31: reads Entero-colitis

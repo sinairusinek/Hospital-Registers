@@ -46,6 +46,7 @@ Abortion Incom.	634.91	Spontaneous abortion, Unspecified, incomplete, without me
 Abortion at 4 Mths.	634.90	Spontaneous abortion, without mention of complication, unspecified	0.9			1	
 Abortus fever - Bang.	023.9	Brucellosis, unspecified	1.0			1	
 Abortus fever Bang	023.9	Brucellosis, unspecified	1.0			1	
+Abr. Fract. Rt. Elbow & Jaw	812.40	Fracture of lower end of humerus, unspecified part, closed	0.9	802.20	Fracture of mandible, unspecified site, closed	0.9	1
 Abrasion of Abdomen	911.0	Abrasion or friction burn of trunk	1.0			1	
 Abscess	682.9	Cellulitis and abscess of unspecified site	0.7			1	
 Abscess Lt. thigh c T.B. otitis	682.6	Cellulitis and abscess of leg, except foot	1.0	017.50	Tuberculosis of ear, unspecified	1.0	1
@@ -69,6 +70,7 @@ Abscesses thigh Rt. & Shoulder Lt.	682.6	Cellulitis and abscess of leg, except f
 Ac. Bronchitis Post Morbilli (Measles)	055.79	Measles with other specified complications	0.9			1	
 Ac. Catarrhal Jaundice - Inf. Hepatitis	070.1	Viral hepatitis A without mention of hepatic coma	1.0			1	
 Ac. Catarrhal Otitis Media Bilateral	381.00	Acute serous otitis media, unspecified	0.9			1	
+Ac. Catarrhal Rhinitis - Inf. Hepatitis	070.1	Viral hepatitis A without mention of hepatic coma	1.0	460	Acute nasopharyngitis [common cold]	0.9	1
 Ac. Congestive Heart failure	428.0	Congestive heart failure, unspecified	1.0			1	
 Ac. Entero-Colitis	009.0	Infectious colitis, enteritis, and gastroenteritis	0.8			1	
 Ac. Food Poisoning	005.9	Food poisoning, unspecified	1.0			1	
@@ -249,6 +251,7 @@ Big Wound of Scalp	873.0	Open wound of scalp without mention of complication	1.0
 Bilabia. olitis. Khedia					1		
 Bilat. Pneumonia	486	Pneumonia, organism unspecified	1.0			1	
 Bilat. Pulm. T.B. & Exam? T.B.C.	011.9	Pulmonary tuberculosis, unspecified	0.9			1	
+Bilat. Pulm. T.B. + ? T.B.C.	011.9	Pulmonary tuberculosis, unspecified	1.0				
 Bilat. Pulm. T.B. c Haemoptysis	011.90	Pulmonary tuberculosis, unspecified, without mention of bacteriological or histological examination	0.9	786.3	Hemoptysis	0.9	1
 Bilat. T.B. Pulm.	011.90	Pulmonary tuberculosis, unspecified, without mention of bacteriological or histological examination	1.0			1	
 Bilateral Advanced Pulmonary T.B.C	011.9	Pulmonary tuberculosis, unspecified	1.0			1	
@@ -356,6 +359,7 @@ Cancer of the Tonsil	146.0	Malignant neoplasm of tonsil	1.0			1
 Car accident	959.9	Injury, other and unspecified	0.7	E819.9	Motor vehicle traffic accident of unspecified nature, unspecified person	1.0	3
 Caral. O.B.	680.9	Carbuncle and furuncle, unspecified site	0.3			0	
 Carbuncle of Back	680.2	Carbuncle and furuncle of trunk	1.0			1	
+Carcinoma Base of Skull Breaking ? Lt.	170.0	Malignant neoplasm of bones of skull and face	0.9				
 Carcinoma Base of Skull Breaking ???? Lt.	170.0	Malignant neoplasm of bones of skull and face	0.7			1	
 Carcinoma of Prostate.	185	Malignant neoplasm of prostate	1.0			1	
 Cardiac neurosis	306.2	Psychogenic cardiovascular disorder	1.0			1	
@@ -1558,6 +1562,7 @@ Peptic Ulcer Hepatitis Amebic	006.3	Amebic liver abscess	0.9	533.9	Peptic ulcer,
 Peptic Ulcer c Occlusion	533.20	Peptic ulcer of unspecified site with obstruction	1.0			1	
 Perforated Appendix	540.0	Acute appendicitis with generalized peritonitis	1.0			1	
 Perforated Peptic Ulcer	533.10	Peptic ulcer, site unspecified, with perforation	1.0			1	
+Perforating ? Wd. Lt. Eye	871.1	Laceration of eyeball with prolapse or loss of intraocular tissue	0.8				
 Perforating ????? Wd. Lt Eye						1	
 Perforating Ulcer Lt. foot + Cerebral Concussion	850.9	Concussion, unspecified	1.0	707.14	Ulcer of foot	1.0	1
 Perianal Sinus	565.1	Anal fistula	0.8			1	
@@ -2251,6 +2256,7 @@ Volvulus of the Colon	560.2	Volvulus	1.0			1
 Vulnus capitis et contusio genu.	873.0	Open wound of scalp	0.8	924.11	Contusion of knee	0.8	1
 Vulvario Clinical	616.10	Vaginitis and vulvovaginitis, unspecified	0.4			0	
 W.D. Append.	540.9	Acute appendicitis without mention of peritonitis	0.9			0.0	1
+W.S. of Upper Legs							
 W.S.? Upper Legs					0.0		
 Warts of Hands	078.10	Viral warts, site unspecified	1.0	-	-	-	1
 Wd. Leg Rt + Lymphangitis	891.1	Open wound of knee, leg, and ankle, complicated	0.9	682.6	Other cellulitis and abscess, leg, except foot	0.8	1

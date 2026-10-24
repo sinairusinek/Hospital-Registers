@@ -952,7 +952,9 @@ ICD9_NOT_DIAGNOSES = {
 # a reading of the page rather than a rule:
 #   - "Typhus Rheumaticus" and "Typhus, Rheumatism" (12 records): "typhus" in
 #     older continental usage can mean a severe febrile state, so these may not
-#     be this disease at all.
+#     be this disease at all. (Read off the scans 2026-10-24: all 13 such
+#     records say "Typhus Exanthematicus"; diagnosis-corrections.tsv now
+#     carries the page's words, so the rule codes them 080.)
 #   - negatives and queries, "Observation for Typhus, Negative" (11 records):
 #     the register specifies here, and what it specifies is absence.
 #   - typhus alongside another disease (19 records): which is primary is a
@@ -989,6 +991,89 @@ def typhus_code(written: str, current: str) -> str:
     if TYPHUS_MURINE.search(written):
         return "081.0"
     return "081.9"
+
+
+# Malaria is coded by the species the clerk wrote. The first pass put "B.T."
+# (benign tertian, vivax) at 084.0, falciparum, in some 210 records and gave
+# others a contradictory "084.1|084.0"; it put malaria with no species at
+# 084.9, which in ICD-9 is "other pernicious complications", where the
+# unspecified code is 084.6. Only records already in 084 are touched, and only
+# the written diagnosis is read: the standardized one sometimes contradicts it.
+MALARIA_BT = re.compile(r"\bb\.?\s?tr?\.?(?![a-z])|benign|vivax", re.I)
+MALARIA_MT = re.compile(r"\bm\.?\s?t\.?(?![a-z])|malig|sub-?tertian|falcip|aestiv", re.I)
+MALARIA_QUARTAN = re.compile(r"quartan", re.I)
+MALARIA_PERNICIOUS = re.compile(r"pernic|cerebral|algid|blackwater|black water", re.I)
+
+
+def malaria_code(written: str, current: str) -> str:
+    """The 084 code the written species supports, or "" if not a malaria record."""
+    first = (current or "").split("|")[0].strip()
+    if not first.startswith("084"):
+        return ""
+    if MALARIA_PERNICIOUS.search(written or ""):
+        return first
+    benign, malignant = MALARIA_BT.search(written or ""), MALARIA_MT.search(written or "")
+    if benign and malignant:
+        return "084.5"
+    if benign:
+        return "084.1"
+    if malignant:
+        return "084.0"
+    if MALARIA_QUARTAN.search(written or ""):
+        return "084.2"
+    return "084.6" if first == "084.9" else first
+
+
+MALARIA_NAMES = {
+    "084.0": "Falciparum malaria [malignant tertian]", "084.1": "Vivax malaria [benign tertian]",
+    "084.2": "Quartan malaria", "084.5": "Mixed malaria", "084.6": "Malaria, unspecified",
+}
+
+
+# "Observed for Typhoid negative", "In obs. for Typhoid", "No sign of
+# Typhoid": the clerk recorded a suspicion under observation, or its absence,
+# not the disease. The first pass coded some of these as the disease itself
+# (002.0, 080, 099.9), which put ruled-out cases into the counts, and gave
+# others V71.01, observation for antisocial behaviour. They go to V71.89
+# (observation for a suspected condition, not found) or, where no condition is
+# named, V71.9. "Suspected X" alone is the clerk's working diagnosis and is
+# left alone, as is anything naming a second condition ("Obs. for Typhoid.
+# Megacolon") and "observation as to Pyrexia", where the fever was present.
+OBSERVED_FOR = re.compile(
+    r"^\s*(?:(?:in|sent|kept|admitted|under)\s+(?:for\s+)?)?(?:obs\.?|obse?rv\w*|obsen\w*|obsor\w*)"
+    r"\s*(?:for|as to|of)\s*\??\s*(?P<what>[a-z'\"]+\.?(?:\s+fever\.?)?)"
+    r"\s*(?:[-,.]?\s*(?:neg\w*|ruled out|not found|nil)\.?)?\s*$"
+    r"|^\s*(?:susp\w*\.?|suspected)\s*(?P<what2>[a-z'\"]+\.?(?:\s+fever\.?)?)"
+    r"\s*[-,.]?\s*(?:neg\w*|ruled out|not found)\.?\s*$"
+    r"|^\s*no\s+signs?\s+of\s+(?P<what3>[a-z ]+?)\.?\s*$",
+    re.I,
+)
+OBSERVATION_ONLY = re.compile(
+    r"^\s*(?:nil\.?\s*)?(?:in|for|under|sent for|kept for)?\s*observ\w*\.?(?:\s+(?:cured|only))?\s*$", re.I)
+
+
+def observation_code(written: str) -> str:
+    """V71.89 / V71.9 for an entry that records observation, not a disease; else ""."""
+    first = (written or "").split("|")[0].strip()
+    if OBSERVATION_ONLY.match(first):
+        return "V71.9"
+    hit = OBSERVED_FOR.match(first)
+    if hit and not re.match(r"pyrex", hit.group("what") or "", re.I):
+        return "V71.89"
+    return ""
+
+
+def icd9_category(code: str) -> str:
+    """The three-character ICD-9 category of a code (002.0 -> 002, V71.89 -> V71, E922.1 -> E922)."""
+    match = re.match(r"([EV]?)(\d+)", (code or "").strip(), re.I)
+    if not match or code.strip() in ICD9_NOT_DIAGNOSES:
+        return ""
+    prefix, digits = match.group(1).upper(), match.group(2)
+    if prefix == "V":
+        return "V" + digits.zfill(2)
+    if prefix == "E":
+        return "E" + digits.zfill(3)
+    return digits.zfill(3)
 
 
 def icd9_chapter(code: str, fallback: str) -> str:
@@ -1131,6 +1216,8 @@ REVIEW_FLAGS = [
     ("icd9-low-confidence", "A second-pass code the classifier itself called speculative"),
     ("icd9-second-pass", "Coded by the second classification pass, not the first"),
     ("typhus-recoded-from-register", "Typhus code set from the register's own wording, not the classifier's guess at the insect"),
+    ("malaria-recoded-from-register", "Malaria code set from the species the clerk wrote (B.T. vivax, M.T. falciparum), or unspecified"),
+    ("observation-not-diagnosis", "The entry records observation for a condition, or its absence; coded V71.89/V71.9, not the disease"),
     ("result-in-diagnosis", "A Result value standing in a diagnosis or code field"),
     ("classifier-debris", "Classifier error text where a diagnosis belongs"),
     ("procedure-only", "An operation named with no diagnosis behind it"),
@@ -1541,6 +1628,8 @@ def main() -> int:
     icd9_padded = 0
     icd9_refused = 0
     typhus_recoded: Counter[tuple[str, str]] = Counter()
+    observation_recoded: Counter[tuple[str, str]] = Counter()
+    malaria_recoded: Counter[tuple[str, str]] = Counter()
     review_counts: Counter[str] = Counter()
     classification = load_classification()
     second_pass = 0
@@ -2069,12 +2158,39 @@ def main() -> int:
             )
             flags.append("typhus-recoded-from-register")
 
+        species = malaria_code(written_diag or standardized_diag, (row.get("Primary-ICD9") or "").strip())
+        if species and species != (row.get("Primary-ICD9") or "").strip():
+            malaria_recoded[((row.get("Primary-ICD9") or "").strip(), species)] += 1
+            row["Primary-ICD9"] = species
+            row["standardPrimaryICD9Name"] = MALARIA_NAMES.get(species, row.get("standardPrimaryICD9Name", ""))
+            flags.append("malaria-recoded-from-register")
+
+        observed = observation_code(written_diag)
+        if observed and observed != (row.get("Primary-ICD9") or "").strip():
+            observation_recoded[((row.get("Primary-ICD9") or "").strip()[:3] or "(none)", observed)] += 1
+            row["Primary-ICD9"] = observed
+            row["standardPrimaryICD9Name"] = (
+                "Observation for other specified suspected conditions" if observed == "V71.89"
+                else "Observation for unspecified suspected condition"
+            )
+            flags.append("observation-not-diagnosis")
+
         first_code = (row.get("Primary-ICD9", "") or "").split("|")[0].strip()
         if first_code in ICD9_NOT_DIAGNOSES:
             icd9_refused += 1
             flags.append("procedure-not-diagnosis")
         elif re.fullmatch(r"\d{1,2}(\.\d{1,2})?", first_code):
             icd9_padded += 1
+
+        # The source's three-digit category was derived from the first pass's
+        # code. Where this script supplied or changed the code (second pass,
+        # scan corrections, the typhus, malaria and observation rules), or the
+        # category is missing, it is derived again from the code now held, so
+        # the two columns never disagree. Untouched records keep the source's.
+        recoded = {"icd9-second-pass", "typhus-recoded-from-register", "malaria-recoded-from-register",
+                   "observation-not-diagnosis", "diagnosis-corrected-from-scan", "diagnosis-not-on-page"}
+        if recoded & set(flags) or not (row.get("StandardICDInteger") or "").strip():
+            row["StandardICDInteger"] = icd9_category(first_code)
 
         row["ICD-9 Chapter"] = icd9_chapter(
             row.get("Primary-ICD9", ""), row.get("StandardICDInteger", "")
@@ -2857,6 +2973,12 @@ def main() -> int:
         for (before, after), count in sorted(typhus_recoded.items()):
             writer.writerow(["rule", "ICD-9 Code", f"typhus {before}",
                              f"recoded to {after} from the register's own wording", count])
+        for (before, after), count in sorted(malaria_recoded.items()):
+            writer.writerow(["rule", "ICD-9 Code", f"malaria {before}",
+                             f"recoded to {after} from the species written", count])
+        for (before, after), count in sorted(observation_recoded.items()):
+            writer.writerow(["rule", "ICD-9 Code", f"observation entry coded {before}",
+                             f"recoded to {after}: observation, not the disease", count])
         for label, count in recording.most_common():
             writer.writerow(["derived", "Diagnosis Recording", "", label, count])
         for name, count in sorted(component_repairs.items()):
