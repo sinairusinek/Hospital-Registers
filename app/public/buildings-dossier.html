@@ -170,11 +170,12 @@ dl.cat .where{font-family:var(--mono);font-size:11.5px;color:var(--ink3);display
 .ia-haifa{fill:var(--ink);opacity:.035;stroke:var(--hair)}
 .ia-coast{fill:none;stroke:var(--ink3);stroke-width:1;stroke-dasharray:1 3;opacity:.7}
 .ia-in{stroke:var(--ink);opacity:.72;cursor:default} .ia-out{stroke:var(--rubric);opacity:.85;cursor:default}
-.ia-in:hover,.ia-out:hover{opacity:1}
+.ia-int{stroke:var(--ink3);opacity:.9;cursor:default}
+.ia-in:hover,.ia-out:hover,.ia-int:hover{opacity:1}
 .ia-press{stroke-width:1.3;stroke-dasharray:4 3;opacity:.6}
-.ia-in-h{fill:var(--ink)} .ia-out-h{fill:var(--rubric)}
+.ia-in-h{fill:var(--ink)} .ia-out-h{fill:var(--rubric)} .ia-int-h{fill:var(--ink3)}
 .ia-n{font-family:var(--mono);font-size:10px;paint-order:stroke;stroke:var(--surface);stroke-width:3px}
-.ia-n-in{fill:var(--ink)} .ia-n-out{fill:var(--rubric)}
+.ia-n-in{fill:var(--ink)} .ia-n-out{fill:var(--rubric)} .ia-n-int{fill:var(--ink3)}
 .ia-node{fill:var(--surface);stroke:var(--ink);stroke-width:1.4} .ia-edge{stroke-dasharray:2 2}
 .ia-self{fill:var(--ink);stroke:none} .ia-sl{font-family:var(--mono);font-size:11.5px;fill:var(--paper);letter-spacing:.04em}
 .ia-l{font-family:var(--mono);font-size:10.5px;fill:var(--ink2);paint-order:stroke;stroke:var(--surface);stroke-width:3px}
@@ -1864,57 +1865,59 @@ dl.cat .where{font-family:var(--mono);font-size:11.5px;color:var(--ink3);display
       <div class="chart">
 <!-- fig:inst-map -->
 <svg viewBox="0 0 1000 650" role="img" aria-label="Schematic map of patient movements between the Government Hospital and other institutions, 1930 to 1948. Arrow width is the number of register records.">
-<defs><marker id="ah-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-out-h"/></marker><marker id="ah-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-in-h"/></marker></defs>
+<defs><marker id="ah-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-out-h"/></marker><marker id="ah-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-in-h"/></marker><marker id="ah-int" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-int-h"/></marker></defs>
 <rect x="210" y="150" width="420" height="330" rx="18" class="ia-haifa"/>
 <text x="222" y="170" class="axis">HAIFA</text>
 <text x="20" y="24" class="axis">NOT PLACED</text>
 <line x1="20" y1="32" x2="20" y2="560" class="grid"/>
-<line x1="300.5" y1="250.3" x2="386.8" y2="293.5" class="ia-in" stroke-width="3.5" marker-end="url(#ah-in)" data-t="Quarantine &amp; lazaret → Government Hospital · 5 records|quarantine / lazaret: 5|press also: immigrant ships 1939: the sick to the hospital, the rest to the quarantine station"/>
-<text x="311.6" y="266.9" class="ia-n ia-n-in" text-anchor="middle">5</text>
-<line x1="390.9" y1="285.4" x2="304.5" y2="242.2" class="ia-out" stroke-width="3.5" marker-end="url(#ah-out)" data-t="Government Hospital → Quarantine &amp; lazaret · 5 records|quarantine / lazaret: 5"/>
-<text x="322.1" y="246.0" class="ia-n ia-n-out" text-anchor="middle">5</text>
-<line x1="397.1" y1="342.5" x2="335.5" y2="416.4" class="ia-out" stroke-width="5.8" marker-end="url(#ah-out)" data-t="Government Hospital → Military hospitals, Haifa · 32 records|military hospital, not named: 25|42 General Hospital: 6|Military Reception Station: 1"/>
-<text x="340.2" y="402.5" class="ia-n ia-n-out" text-anchor="middle">32</text>
-<line x1="438.6" y1="264.6" x2="443.2" y2="214.3" class="ia-out" stroke-width="2.6" marker-end="url(#ah-out)" data-t="Government Hospital → German &amp; Italian hospitals · 2 records|German Hospital: 2|press also: 6 July 1938: 6 wounded to the German, 12 to the Italian hospital (Filastin)"/>
-<text x="448.9" y="233.9" class="ia-n ia-n-out" text-anchor="middle">2</text>
-<line x1="575.3" y1="255.3" x2="472.0" y2="290.8" class="ia-in ia-press" marker-end="url(#ah-in)" data-t="Hadassah · Rothschild → Government Hospital · press / reports only|from Hadassah 1930, 1935; from Rothschild with measles 1944 (press)"/>
-<line x1="475.0" y1="299.3" x2="578.2" y2="263.8" class="ia-out" stroke-width="3.9" marker-end="url(#ah-out)" data-t="Government Hospital → Hadassah · Rothschild · 7 records|Hadassah (town not written): 6|Rothschild Hospital: 1"/>
-<text x="565.4" y="278.8" class="ia-n ia-n-out" text-anchor="middle">7</text>
-<line x1="535.7" y1="373.6" x2="471.0" y2="331.4" class="ia-in" stroke-width="6.4" marker-end="url(#ah-in)" data-t="Haifa prison → Government Hospital · 54 records|Haifa prison: 54"/>
-<text x="526.3" y="361.8" class="ia-n ia-n-in" text-anchor="middle">54</text>
-<line x1="442.3" y1="354.5" x2="470.8" y2="428.5" class="ia-out" stroke-width="3.3" marker-end="url(#ah-out)" data-t="Government Hospital → Police · 4 records|arrested or deported: 4"/>
-<text x="458.3" y="419.2" class="ia-n ia-n-out" text-anchor="middle">4</text>
-<line x1="549.1" y1="94.9" x2="449.1" y2="267.9" class="ia-in" stroke-width="8.4" marker-end="url(#ah-in)" data-t="Acre → Government Hospital · 253 records|Acre Central Prison: 234|Reformatory School, Acre: 19|press also: Mandate report 1931; Acre Government Hospital closed 1933"/>
-<text x="534.9" y="108.1" class="ia-n ia-n-in" text-anchor="middle">253</text>
-<line x1="456.9" y1="272.4" x2="556.9" y2="99.4" class="ia-out" stroke-width="3.5" marker-end="url(#ah-out)" data-t="Government Hospital → Acre · 5 records|Acre prison hospital: 3|Government Hospital, Acre: 1|civil prison: 1"/>
-<text x="555.1" y="119.8" class="ia-n ia-n-out" text-anchor="middle">5</text>
-<line x1="471.0" y1="288.7" x2="790.7" y2="81.4" class="ia-out" stroke-width="3.0" marker-end="url(#ah-out)" data-t="Government Hospital → Safad · 3 records|Hadassah, Safad: 2|Safad (hospital not named): 1"/>
-<text x="781.2" y="99.1" class="ia-n ia-n-out" text-anchor="middle">3</text>
-<line x1="890.3" y1="174.5" x2="473.0" y2="293.1" class="ia-in ia-press" marker-end="url(#ah-in)" data-t="Tiberias → Government Hospital · press / reports only|Mandate report 1931: an ambulance service brings Tiberias and Acre cases to Haifa"/>
-<line x1="476.1" y1="306.1" x2="742.0" y2="257.0" class="ia-out" stroke-width="2.6" marker-end="url(#ah-out)" data-t="Government Hospital → Nazareth · 2 records|C.M.S. Hospital, Nazareth: 2"/>
-<text x="727.6" y="270.0" class="ia-n ia-n-out" text-anchor="middle">2</text>
-<line x1="776.5" y1="339.2" x2="476.2" y2="310.0" class="ia-in ia-press" marker-end="url(#ah-in)" data-t="Afula → Government Hospital · press / reports only|1947: plague patients transferred from Afula (Haaretz)"/>
-<line x1="475.3" y1="318.9" x2="775.6" y2="348.1" class="ia-out" stroke-width="3.7" marker-end="url(#ah-out)" data-t="Government Hospital → Afula · 6 records|Kupat Holim hospital, Afula: 6"/>
-<text x="759.0" y="356.7" class="ia-n ia-n-out" text-anchor="middle">6</text>
-<line x1="475.6" y1="317.3" x2="905.8" y2="343.6" class="ia-out" stroke-width="2.1" marker-end="url(#ah-out)" data-t="Government Hospital → Beisan · 1 records|Medical Officer&#x27;s clinic, Beisan: 1"/>
-<text x="889.3" y="352.8" class="ia-n ia-n-out" text-anchor="middle">1</text>
-<line x1="301.1" y1="530.4" x2="409.9" y2="351.6" class="ia-in" stroke-width="6.7" marker-end="url(#ah-in)" data-t="Atlit → Government Hospital · 66 records|Athlit clearance camp: 43|Athlit prison: 23"/>
-<text x="315.6" y="523.5" class="ia-n ia-n-in" text-anchor="middle">66</text>
-<line x1="402.2" y1="347.0" x2="293.4" y2="525.7" class="ia-out ia-press" marker-end="url(#ah-out)" data-t="Government Hospital → Atlit · press / reports only|1946–47: immigrants examined at the hospital, then sent on to the Atlit camp"/>
-<line x1="417.7" y1="354.6" x2="377.9" y2="585.4" class="ia-out" stroke-width="2.1" marker-end="url(#ah-out)" data-t="Government Hospital → Jaffa · 1 records|Government Hospital, Jaffa: 1"/>
-<text x="373.6" y="571.4" class="ia-n ia-n-out" text-anchor="middle">1</text>
-<line x1="437.9" y1="355.5" x2="501.9" y2="587.7" class="ia-out" stroke-width="2.6" marker-end="url(#ah-out)" data-t="Government Hospital → Sarafand · 2 records|Sarafand Military Hospital: 2"/>
-<text x="490.7" y="577.2" class="ia-n ia-n-out" text-anchor="middle">2</text>
-<line x1="456.6" y1="347.8" x2="667.5" y2="592.3" class="ia-out" stroke-width="4.6" marker-end="url(#ah-out)" data-t="Government Hospital → Jerusalem · 13 records|Government Hospital / St John Ophthalmic, Jerusalem: 13"/>
-<text x="651.6" y="587.9" class="ia-n ia-n-out" text-anchor="middle">13</text>
-<line x1="393.2" y1="282.1" x2="54.3" y2="73.5" class="ia-out" stroke-width="3.9" marker-end="url(#ah-out)" data-t="Government Hospital → Abroad · 7 records|England: 3|Alexandria, Egypt: 2|Lebanon: 2"/>
-<text x="71.7" y="78.8" class="ia-n ia-n-out" text-anchor="middle">7</text>
-<line x1="53.2" y1="256.6" x2="383.9" y2="307.5" class="ia-in" stroke-width="7.3" marker-end="url(#ah-in)" data-t="British forces (units) → Government Hospital · 105 records|British Army: 81|Royal Navy: 12|Royal Air Force: 7|Transjordan Frontier Force: 5"/>
-<text x="67.9" y="269.1" class="ia-n ia-n-in" text-anchor="middle">105</text>
-<line x1="54.4" y1="353.0" x2="384.7" y2="319.2" class="ia-in" stroke-width="7.7" marker-end="url(#ah-in)" data-t="Prison, not named → Government Hospital · 142 records|prison, not named: 142"/>
-<text x="71.0" y="361.6" class="ia-n ia-n-in" text-anchor="middle">142</text>
-<line x1="387.4" y1="327.8" x2="50.2" y2="509.4" class="ia-out" stroke-width="3.5" marker-end="url(#ah-out)" data-t="Government Hospital → Other, not placed · 5 records|specialist surgeon, not named: 1|nuns&#x27; institute: 1|another hospital, not named: 1|private hospital: 1|Public Health Department: 1"/>
-<text x="60.9" y="498.5" class="ia-n ia-n-out" text-anchor="middle">5</text>
+<path d="M301.2,248.9 Q327.7,293.6 379.3,288.0" class="ia-in" fill="none" stroke-width="3.5" marker-end="url(#ah-in)" data-t="Quarantine &amp; lazaret → Government Hospital · 5 records|quarantine / lazaret: 5|press also: immigrant ships 1939: the sick to the hospital, the rest to the quarantine station"/>
+<text x="308.8" y="275.8" class="ia-n ia-n-in" text-anchor="middle">5</text>
+<path d="M382.0,282.6 Q355.5,238.0 303.9,243.6" class="ia-out" fill="none" stroke-width="3.5" marker-end="url(#ah-out)" data-t="Government Hospital → Quarantine &amp; lazaret · 5 records|quarantine / lazaret: 5"/>
+<text x="327.5" y="238.3" class="ia-n ia-n-out" text-anchor="middle">5</text>
+<path d="M405.5,334.7 Q349.5,358.0 336.7,417.3" class="ia-out" fill="none" stroke-width="5.8" marker-end="url(#ah-out)" data-t="Government Hospital → Military hospitals, Haifa · 32 records|military hospital, not named: 25|42 General Hospital: 6|Military Reception Station: 1"/>
+<text x="336.6" y="392.3" class="ia-n ia-n-out" text-anchor="middle">32</text>
+<path d="M435.5,282.3 Q462.5,250.4 441.7,214.2" class="ia-out" fill="none" stroke-width="2.6" marker-end="url(#ah-out)" data-t="Government Hospital → German &amp; Italian hospitals · 2 records|German Hospital: 2|press also: 6 July 1938: 6 wounded to the German, 12 to the Italian hospital (Filastin)"/>
+<text x="457.1" y="232.3" class="ia-n ia-n-out" text-anchor="middle">2</text>
+<path d="M575.8,256.7 Q527.7,242.3 498.7,283.2" class="ia-in ia-press" fill="none" marker-end="url(#ah-in)" data-t="Hadassah · Rothschild → Government Hospital · press / reports only|from Hadassah 1930, 1935; from Rothschild with measles 1944 (press)"/>
+<path d="M500.6,288.9 Q548.7,303.3 577.7,262.4" class="ia-out" fill="none" stroke-width="3.9" marker-end="url(#ah-out)" data-t="Government Hospital → Hadassah · Rothschild · 7 records|Hadassah (town not written): 6|Rothschild Hospital: 1"/>
+<text x="568.3" y="288.0" class="ia-n ia-n-out" text-anchor="middle">7</text>
+<path d="M534.9,374.8 Q517.1,331.7 470.4,332.8" class="ia-in" fill="none" stroke-width="6.4" marker-end="url(#ah-in)" data-t="Haifa prison → Government Hospital · 54 records|Haifa prison: 54"/>
+<text x="531.5" y="354.8" class="ia-n ia-n-in" text-anchor="middle">54</text>
+<path d="M437.8,338.7 Q430.2,392.9 472.2,428.0" class="ia-out" fill="none" stroke-width="3.3" marker-end="url(#ah-out)" data-t="Government Hospital → Police · 4 records|arrested or deported: 4"/>
+<text x="449.0" y="419.4" class="ia-n ia-n-out" text-anchor="middle">4</text>
+<path d="M550.4,95.6 Q464.4,169.8 443.1,281.3" class="ia-in" fill="none" stroke-width="8.4" marker-end="url(#ah-in)" data-t="Acre → Government Hospital · 253 records|Acre Central Prison: 234|Reformatory School, Acre: 19|press also: Mandate report 1931; Acre Government Hospital closed 1933"/>
+<text x="510.8" y="125.3" class="ia-n ia-n-in" text-anchor="middle">253</text>
+<path d="M448.3,284.3 Q534.3,210.2 555.6,98.6" class="ia-out" fill="none" stroke-width="3.5" marker-end="url(#ah-out)" data-t="Government Hospital → Acre · 5 records|Acre prison hospital: 3|Government Hospital, Acre: 1|civil prison: 1"/>
+<text x="552.3" y="149.2" class="ia-n ia-n-out" text-anchor="middle">5</text>
+<path d="M470.6,287.3 Q659.5,228.7 789.9,80.1" class="ia-out" fill="none" stroke-width="3.0" marker-end="url(#ah-out)" data-t="Government Hospital → Safad · 3 records|Hadassah, Safad: 2|Safad (hospital not named): 1"/>
+<text x="740.3" y="146.5" class="ia-n ia-n-out" text-anchor="middle">3</text>
+<path d="M890.7,175.9 Q685.6,173.5 512.4,283.5" class="ia-in ia-press" fill="none" marker-end="url(#ah-in)" data-t="Tiberias → Government Hospital · press / reports only|Mandate report 1931: an ambulance service brings Tiberias and Acre cases to Haifa"/>
+<path d="M514.4,297.5 Q636.1,319.5 741.8,255.5" class="ia-out" fill="none" stroke-width="2.6" marker-end="url(#ah-out)" data-t="Government Hospital → Nazareth · 2 records|C.M.S. Hospital, Nazareth: 2"/>
+<text x="700.5" y="289.5" class="ia-n ia-n-out" text-anchor="middle">2</text>
+<path d="M776.4,340.7 Q649.8,281.6 514.3,315.2" class="ia-in ia-press" fill="none" marker-end="url(#ah-in)" data-t="Afula → Government Hospital · press / reports only|1947: plague patients transferred from Afula (Haaretz)"/>
+<path d="M513.7,321.1 Q640.2,380.2 775.8,346.6" class="ia-out" fill="none" stroke-width="3.7" marker-end="url(#ah-out)" data-t="Government Hospital → Afula · 6 records|Kupat Holim hospital, Afula: 6"/>
+<text x="721.0" y="368.3" class="ia-n ia-n-out" text-anchor="middle">6</text>
+<path d="M513.8,318.1 Q706.3,388.2 905.8,342.1" class="ia-out" fill="none" stroke-width="2.1" marker-end="url(#ah-out)" data-t="Government Hospital → Beisan · 1 records|Medical Officer&#x27;s clinic, Beisan: 1"/>
+<text x="825.7" y="367.9" class="ia-n ia-n-out" text-anchor="middle">1</text>
+<path d="M299.8,529.6 Q390.6,454.0 416.1,338.7" class="ia-in" fill="none" stroke-width="6.7" marker-end="url(#ah-in)" data-t="Atlit → Government Hospital · 66 records|Athlit clearance camp: 43|Athlit prison: 23"/>
+<text x="341.2" y="505.5" class="ia-n ia-n-in" text-anchor="middle">66</text>
+<path d="M410.9,335.6 Q320.2,411.1 294.7,526.5" class="ia-out ia-press" fill="none" marker-end="url(#ah-out)" data-t="Government Hospital → Atlit · press / reports only|1946–47: immigrants examined at the hospital, then sent on to the Atlit camp"/>
+<path d="M422.2,337.4 Q360.9,454.7 379.4,585.7" class="ia-out" fill="none" stroke-width="2.1" marker-end="url(#ah-out)" data-t="Government Hospital → Jaffa · 1 records|Government Hospital, Jaffa: 1"/>
+<text x="366.3" y="535.3" class="ia-n ia-n-out" text-anchor="middle">1</text>
+<path d="M434.8,338.6 Q429.5,473.9 503.4,587.3" class="ia-out" fill="none" stroke-width="2.6" marker-end="url(#ah-out)" data-t="Government Hospital → Sarafand · 2 records|Sarafand Military Hospital: 2"/>
+<text x="468.3" y="546.4" class="ia-n ia-n-out" text-anchor="middle">2</text>
+<path d="M450.6,338.5 Q522.9,496.6 668.6,591.4" class="ia-out" fill="none" stroke-width="4.6" marker-end="url(#ah-out)" data-t="Government Hospital → Jerusalem · 13 records|Government Hospital / St John Ophthalmic, Jerusalem: 13"/>
+<text x="606.4" y="559.8" class="ia-n ia-n-out" text-anchor="middle">13</text>
+<path d="M390.7,282.3 Q251.0,131.5 53.5,74.8" class="ia-out" fill="none" stroke-width="3.9" marker-end="url(#ah-out)" data-t="Government Hospital → Abroad · 7 records|England: 3|Alexandria, Egypt: 2|Lebanon: 2"/>
+<text x="134.9" y="96.6" class="ia-n ia-n-out" text-anchor="middle">7</text>
+<path d="M53.4,255.1 Q192.0,326.5 345.6,300.1" class="ia-in" fill="none" stroke-width="7.3" marker-end="url(#ah-in)" data-t="British forces (units) → Government Hospital · 105 records|British Army: 81|Royal Navy: 12|Royal Air Force: 7|Transjordan Frontier Force: 5"/>
+<text x="108.0" y="291.6" class="ia-n ia-n-in" text-anchor="middle">105</text>
+<path d="M54.2,351.6 Q205.3,385.6 346.3,321.6" class="ia-in" fill="none" stroke-width="7.7" marker-end="url(#ah-in)" data-t="Prison, not named → Government Hospital · 142 records|prison, not named: 142"/>
+<text x="115.2" y="373.2" class="ia-n ia-n-in" text-anchor="middle">142</text>
+<path d="M382.4,332.2 Q191.1,374.0 50.9,510.7" class="ia-out" fill="none" stroke-width="3.5" marker-end="url(#ah-out)" data-t="Government Hospital → Other, not placed · 5 records|specialist surgeon, not named: 1|nuns&#x27; institute: 1|another hospital, not named: 1|private hospital: 1|Public Health Department: 1"/>
+<text x="104.8" y="454.9" class="ia-n ia-n-out" text-anchor="middle">5</text>
+<path d="M422,288 C426,210 348,218 382,279" class="ia-int" fill="none" stroke-width="5.5" marker-end="url(#ah-int)" data-t="Within the Government Hospital · 27 records|referred to out-patient department: 13|referred to V.D. clinic: 4|referred to clinic, not named: 3|referred to Isolation: 2|referred to Surgical ward: 2|referred to a named doctor: 1|referred to dental department: 1|referred to psychiatrist: 1"/>
+<text x="402" y="224" class="ia-n ia-n-int" text-anchor="middle">27</text>
 <rect x="352" y="288" width="156" height="44" rx="4" class="ia-self"/><text x="430" y="307" class="ia-sl" text-anchor="middle">Government</text><text x="430" y="322" class="ia-sl" text-anchor="middle">Hospital</text>
 <g data-t="Quarantine &amp; lazaret|from quarantine / lazaret: 5|to quarantine / lazaret: 5"><circle cx="290" cy="240" r="7" class="ia-node"/>
 <text x="290" y="227" class="ia-l" text-anchor="middle">Quarantine &amp; lazaret</text></g>
@@ -1959,7 +1962,7 @@ dl.cat .where{font-family:var(--mono);font-size:11.5px;color:var(--ink3);display
 </svg>
 <!-- /fig:inst-map -->
       </div>
-      <figcaption><b>Who sent patients, and where they went, 1930–48 (schematic).</b> Places sit roughly where they were; distances are not to scale. <b>Dark arrows</b> run into the hospital, <b>red arrows</b> out of it. Width grows with the number of register records, which is printed by each arrow. Dashed arrows are relations known only from the press or the Mandate reports. Hover an arrow or a place for its institutions and counts. Down the left side are relations the register gives no place for: British forces units, prisons not named, and other destinations. Notebook 25, the Atlit camp's own register, is left out of the counts (see below).</figcaption>
+      <figcaption><b>Who sent patients, and where they went, 1930–48 (schematic).</b> Places sit roughly where they were; distances are not to scale. <b>Dark arrows</b> run into the hospital, <b>red arrows</b> out of it; the two directions bow to opposite sides. The <b>grey loop</b> on the hospital is referrals inside it: to the out-patient department, the V.D. (venereal diseases) clinic, the dental department, another ward. Width grows with the number of register records, which is printed by each arrow. Dashed arrows are relations known only from the press or the Mandate reports. Hover an arrow or a place for its institutions and counts. Down the left side are relations the register gives no place for: British forces units, prisons not named, and other destinations. Notebook 25, the Atlit camp's own register, is left out of the counts (see below).</figcaption>
     </figure>
 
     <figure>

@@ -70,6 +70,18 @@ OUT_RULES = [
     ("lazaret", "quarantine / lazaret", r"sent to quarantine|sufficiently to quarantine|quarantined|to lazar"),
 ]
 INTERNAL = re.compile(r"out ?pat|o\.p\.d|clinic|v\. ?d\b|dental|psychiatr|dr\b|\bm\.s\b|new hosp|surgical ward|isolation", re.I)
+# Referrals inside the hospital, drawn as the loop on the hospital node: (label, regex)
+INTERNAL_RULES = [
+    ("out-patient department", r"out ?pat|o\.p\.d"),
+    ("V.D. clinic", r"v\. ?d\b"),
+    ("dental department", r"dental"),
+    ("psychiatrist", r"psychiatr"),
+    ("Isolation", r"isolation"),
+    ("Surgical ward", r"surgical ward"),
+    ("clinic, not named", r"clinic"),
+    ("a named doctor", r"dr\b"),
+]
+NOT_INTERNAL = re.compile(r"i\.p\.c|kantara", re.I)   # the I.P.C. (Iraq Petroleum Company) dental dept., the Kantara clinic
 HOME = re.compile(r"(removed|transferred|sent|advised) (to )?(his|her|the)? ?(home|house)|removed home|sent home", re.I)
 NOTIFY = re.compile(r"case sent to|sent to .{0,15}police|sent to rural division", re.I)
 TRANSF = re.compile(r"\btransf|\bremov(e|')d (to|b\.o)|\breferr?e?d\b|\bsent\b|arrest|deport|quarant|left for|shipped|transported", re.I)
@@ -173,6 +185,7 @@ def compute() -> dict:
     raw = {r["Index"]: r for r in read_tsv(SOURCE)} if SOURCE.exists() else {}
     read68 = {r["Index"]: r for r in read_tsv(READ68)} if READ68.exists() else {}
     links = []          # dicts: dir, lane, node, label, year, nb, page, serial, evidence
+    internal = []       # referrals within the hospital, kept apart from the links
     unknown = []        # "Transferred" with no destination anywhere
     read_fixed = Counter()
     for r in rows:
@@ -193,6 +206,9 @@ def compute() -> dict:
             d = destination(s)
             if d:
                 got.add(("out", "out", *d))
+            elif INTERNAL.search(low) and not NOT_INTERNAL.search(low) and not (internal and internal[-1]["Index"] == r["Index"]):
+                lab = next(l for l, rx in INTERNAL_RULES if re.search(rx, low))
+                internal.append({**base, "label": lab, "evidence": s[:120]})
         if r["Index"] in read68:
             # the scan reading replaces the extraction's Result for this row
             rd = read68[r["Index"]]
@@ -214,7 +230,7 @@ def compute() -> dict:
         for d, lane, node, label in got:
             links.append({**base, "dir": d, "lane": lane, "node": node, "label": label,
                           "evidence": txt[:160]})
-    return {"links": links, "unknown": unknown, "read68": dict(read_fixed),
+    return {"links": links, "unknown": unknown, "internal": internal, "read68": dict(read_fixed),
             "pages": {(p["Notebook_Number"], p["Page_Number"]): p["image_service"] for p in read_tsv(PAGES)}}
 
 
@@ -266,6 +282,7 @@ def summarise(fig: dict) -> dict:
         if l["dir"] == "out":
             out_tab[l["label"]].append(l)
     return {"by_lane": by_lane, "edges": edges, "out_tab": out_tab,
+            "internal": Counter(i["label"] for i in fig["internal"]),
             "records": len({l["Index"] for l in links}),
             "unknown": len(fig["unknown"]),
             "n_out": sum(1 for l in links if l["dir"] == "out"),
@@ -288,12 +305,16 @@ def svg_map(s: dict) -> str:
     gx, gy = NODES["gh"][1], NODES["gh"][2]
     out = ['<svg viewBox="0 0 1000 650" role="img" aria-label="Schematic map of patient movements between the Government Hospital and other institutions, 1930 to 1948. Arrow width is the number of register records.">',
            '<defs><marker id="ah-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-out-h"/></marker>'
-           '<marker id="ah-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-in-h"/></marker></defs>',
+           '<marker id="ah-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-in-h"/></marker>'
+           '<marker id="ah-int" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="ia-int-h"/></marker></defs>',
            '<rect x="210" y="150" width="420" height="330" rx="18" class="ia-haifa"/>',
            '<text x="222" y="170" class="axis">HAIFA</text>',
            '<text x="20" y="24" class="axis">NOT PLACED</text>',
            '<line x1="20" y1="32" x2="20" y2="560" class="grid"/>']
     width = lambda n: 1.2 + 3 * math.log10(1 + n)
+    # Arcs: each pair bows apart, "in" to one side and "out" to the other,
+    # so the two directions and the converging spokes stay distinguishable.
+    bez = lambda a, c, b, t: (1 - t) ** 2 * a + 2 * (1 - t) * t * c + t ** 2 * b
     for node, (label, x, y, kind) in NODES.items():
         if node == "gh":
             continue
@@ -301,28 +322,41 @@ def svg_map(s: dict) -> str:
         L = math.hypot(dx, dy) or 1
         ux, uy = dx / L, dy / L
         px, py = -uy, ux
-        r0, r1 = 14, 46          # gap at the node, gap at the hospital
-        for d, off in (("in", 4.5), ("out", -4.5)):
+        # gap at the node; at the hospital, stop just short of its box (156 x 44)
+        r0, r1 = 14, min(78 / (abs(ux) or 1e-9), 22 / (abs(uy) or 1e-9)) + 6
+        for d, sign in (("in", 1), ("out", -1)):
             e = edges.get((node, d))
             press = PRESS_ONLY.get((node, d))
             if not e and not press:
                 continue
+            off, bend = 3 * sign, (14 + 0.09 * L) * sign
             ax, ay = x + ux * r0 + px * off, y + uy * r0 + py * off
             bx, by = gx - ux * r1 + px * off, gy - uy * r1 + py * off
+            cx, cy = (ax + bx) / 2 + px * bend, (ay + by) / 2 + py * bend
+            # the label sits on the arc near the outside place
+            lx, ly = bez(ax, cx, bx, .2) + px * 9 * sign, bez(ay, cy, by, .2) + py * 9 * sign
             if d == "out":
                 ax, ay, bx, by = bx, by, ax, ay
+            arc = f'M{ax:.1f},{ay:.1f} Q{cx:.1f},{cy:.1f} {bx:.1f},{by:.1f}'
+            head = (f"{label} → Government Hospital" if d == "in" else f"Government Hospital → {label}")
             if e:
                 parts = "|".join(f"{k}: {v}" for k, v in e["labels"].most_common())
-                head = (f"{label} → Government Hospital" if d == "in" else f"Government Hospital → {label}")
                 tip = f"{head} · {e['n']} records|{parts}" + (f"|press also: {press}" if press else "")
-                out.append(f'<line x1="{ax:.1f}" y1="{ay:.1f}" x2="{bx:.1f}" y2="{by:.1f}" class="ia-{d}" '
+                out.append(f'<path d="{arc}" class="ia-{d}" fill="none" '
                            f'stroke-width="{width(e["n"]):.1f}" marker-end="url(#ah-{d})" data-t="{esc(tip)}"/>')
-                lx, ly = (x + ux * 30 + px * off * 2.6, y + uy * 30 + py * off * 2.6)
                 out.append(f'<text x="{lx:.1f}" y="{ly + 3:.1f}" class="ia-n ia-n-{d}" text-anchor="middle">{e["n"]}</text>')
             else:
-                head = (f"{label} → Government Hospital" if d == "in" else f"Government Hospital → {label}")
-                out.append(f'<line x1="{ax:.1f}" y1="{ay:.1f}" x2="{bx:.1f}" y2="{by:.1f}" class="ia-{d} ia-press" '
+                out.append(f'<path d="{arc}" class="ia-{d} ia-press" fill="none" '
                            f'marker-end="url(#ah-{d})" data-t="{esc(head + " · press / reports only|" + press)}"/>')
+    # Referrals inside the hospital: a loop off the hospital's own box
+    if s["internal"]:
+        n = sum(s["internal"].values())
+        tip = (f"Within the Government Hospital · {n} records|"
+               + "|".join(f"referred to {k}: {v}" for k, v in s["internal"].most_common()))
+        x0, x1, top = gx - 8, gx - 48, gy - 22
+        out.append(f'<path d="M{x0},{top} C{x0 + 4},{top - 78} {x1 - 34},{top - 70} {x1},{top - 9}" '
+                   f'class="ia-int" fill="none" stroke-width="{width(n):.1f}" marker-end="url(#ah-int)" data-t="{esc(tip)}"/>')
+        out.append(f'<text x="{(x0 + x1) / 2:.0f}" y="{top - 64}" class="ia-n ia-n-int" text-anchor="middle">{n}</text>')
     for node, (label, x, y, kind) in NODES.items():
         if node == "gh":
             out.append(f'<rect x="{x - 78}" y="{y - 22}" width="156" height="44" rx="4" class="ia-self"/>'
