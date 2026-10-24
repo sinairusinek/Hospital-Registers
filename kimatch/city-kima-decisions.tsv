@@ -207,7 +207,7 @@ Bassah	Bassah	3	21539	Bassah (Israel)	Q2915875	furas		matched	furas		furas	Bassa
 Beersheba	Beersheba	3	699	Beersheba (Israel)	Q41843	human		matched	furas		agent	Beersheba	2026-10-18
 Beit Dajan	Beit Dajan	3	81597	Beit Dajan, Nablus (West Bank)	Q12200452	human		matched	furas		agent	Beit Dajan of Nablus: 'Beit Dajan, Nablus S/Dist.'. Kima 81597 carries the Nablus point; the QID's own coordinate is Jaffa's Bayt Dajan (fixed 2026-10-24)	2026-10-24
 Beit Galim	Beit Galim	3	21063	Bat Galim (Haifa, Israel)	Q810685	kima-dump		matched	C_review		agent	Bat Galim	2026-08-06
-Beit Gan	Beit Gan	3						unmatched-no-kima-entry	C_review		human	Beit Gan by Yavne'el; no Kima entry	2026-08-06
+Beit Gan	Beit Gan	3			Q2900552	human		matched	C_review		human	Beit Gan by Yavne'el, Q2900552 (Furas's identification, confirmed by Sinai 2026-10-24); no Kima entry, a donation candidate	2026-10-24
 Berkin	Berkin	3	87581	Birkin (West Bank)	Q286871	human		matched	furas		agent	Burqin (Jenin)	2026-10-18
 Beyrouth	Beyrouth	3	651	Beirut (Lebanon)	Q3820	human		matched	furas		agent	Beirut	2026-10-18
 Birkin	Birkin	3	87581	Birkin (West Bank)	Q286871	human		matched	furas		agent	Burqin (Jenin)	2026-10-18
@@ -931,3 +931,4 @@ Daliyat er Ruha (Haifa)	Daliyat er Ruha (Haifa)	0			Q2152853	human		matched	dist
 Seida (Tulkarm)	Seida (Tulkarm)	0			Q7446620	human		matched	district-link		agent	Village Statistics 1945 puts it in Tulkarm S/D, which the address names (kimatch/district_link.py)	2026-10-24
 Beit Jibrin (Hebron)	Beit Jibrin (Hebron)	0			Q556637	human		matched	district-link		agent	its enwiki infobox puts it in Hebron S/D, which the address names (kimatch/district_link.py)	2026-10-24
 Umm el Faraj (Acre)	Umm el Faraj (Acre)	0			Q7881655	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Kafr Yashan	Kafr Yashan	0						unmatched-ambiguous	outside-queue		human	NB17 p11 1708 reads 'Kafr yashan' (Polish Jew, 1937); not Kafr Yasif; held as a question for Y. Furas	2026-10-24

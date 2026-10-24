@@ -41,7 +41,7 @@ QUESTIONS = [
          reading="Held.", cities=["Jisr el Majami", "Jisr el Majamie", "Jisr el-Majami", "Gisr El Majami"]),
     dict(id="beit-gan", group=G1, title="Beit Gan — your Q2900552, marked 'check'",
          question="You identified Beit Gan (by Yavne'el, Q2900552) but marked it to check. Is that the settlement these patients came from?",
-         reading="Held; Beit Gan has no Kima entry (a donation candidate).", cities=["Beit Gan"]),
+         reading="On the map at your Q2900552 (Sinai confirmed it, 24 Oct 2026, and added two 'Bet Jan' records from 1937); Beit Gan has no Kima entry (a donation candidate).", cities=["Beit Gan"]),
     dict(id="jabata", group=G1, title="Jabata — which village?",
          question="You read 'Jabata' as Jebata and marked it to check. Is this Jibta, or another village?",
          reading="Held.", cities=["Jabata"]),
@@ -118,6 +118,9 @@ QUESTIONS = [
          question="You placed 'Transjordan' at Salt; we did the same for 'Transj', 'T. Jordan'. A country label on a town's point: keep, or leave off the map?",
          reading="Salt.", cities=["Trans-Jordan", "Transjordan", "Trans Jordan", "TransJordanian", "Transj", "T. Jordan"]),
     # --- unresolved
+    dict(id="kafr-yashan", group=G5, title="'Kafr Yashan' — which place?",
+         question="One Polish Jewish patient, August 1937 (NB17 p11, register no. 1708): the address reads 'Kafr yashan'. The extraction matched it to Kafr Yasif, which we doubt for a Polish Jew. Do you recognise it — a Jewish settlement (Kfar Yehoshua? Kfar Hasidim?) or something else?",
+         reading="Held: not on the map.", cities=["Kafr Yashan"]),
     dict(id="arrabeh", group=G5, title="Arrabeh with no district",
          question="Two Arrabas: Arraba of Jenin and Arrabat al-Battuf. Where the address or the page names a district we split them: 21 Jenin, 13 al-Battuf, and four that the scan shows are Ar'ara. These 24 name neither, on the record or the page — we read the scans. Those that name a district run Jenin in 1934–39 and al-Battuf in 1944–47. Is that a pattern you would trust, or is there another way to tell?",
          reading="Held.", cities=["Arrabeh"]),

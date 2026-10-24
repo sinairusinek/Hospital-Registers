@@ -222,3 +222,6 @@ notebook	serial	admission_date	target_city	evidence
 32	6853	1947-10-15	Athlit	address (district_link.py, ruled): "Athlit Haifa S/D." names Haifa S/D
 32	6902	1947-10-18	Zeita	address (district_link.py, ruled): "Zeitah, Tul Karem s.d." names Tulkarm S/D
 30	1490	1946-03-25	Abu Shusha (Haifa)	address (district_link.py, ruled): "Abu Shusheh / Haifa" names Haifa S/D
+16	921	1937-05-12	Beit Gan	scan NB16 p34: "Bet Jan" (Jewish, Palestinian), Beit Gan by Yavne'el, not the Druze Beit Jann (Sinai's ruling)
+16	1236	1937-06-15	Beit Gan	scan NB16 p44: "Beit Jan" (Jewish, Palestinian), Beit Gan by Yavne'el, not the Druze Beit Jann (Sinai's ruling)
+17	1708	1937-08-01	Kafr Yashan	scan NB17 p11: "Kafr yashan" (Jewish, Polish); unidentified, held (extracted as Kafr Yasin, linked to Kafr Yasif)

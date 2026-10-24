@@ -207,7 +207,7 @@ Bassah	33.076111	35.140833	wikidata	confirmed	21539	Bassah (Israel)	Q2915875	mat
 Beersheba	31.258889	34.797778	kima	confirmed	699	Beersheba (Israel)	Q41843	matched	agent	3	
 Beit Dajan	32.192139	35.371142	kima	confirmed	81597	Beit Dajan, Nablus (West Bank)	Q12200452	matched	agent	3	
 Beit Galim	32.833911	34.981714	kima	confirmed	21063	Bat Galim (Haifa, Israel)	Q810685	matched	agent	3	
-Beit Gan								unmatched-no-kima-entry	human	3	
+Beit Gan	32.713297	35.496097	wikidata	confirmed			Q2900552	matched	human	3	
 Berkin	32.455556	35.260278	kima	confirmed	87581	Birkin (West Bank)	Q286871	matched	agent	3	
 Beyrouth	33.886940	35.513060	kima	provisional	651	Beirut (Lebanon)	Q3820	matched	agent	3	
 Birkin	32.455556	35.260278	kima	confirmed	87581	Birkin (West Bank)	Q286871	matched	agent	3	
@@ -931,5 +931,6 @@ Daliyat er Ruha (Haifa)	32.591153	35.078056	wikidata	confirmed			Q2152853	matche
 Seida (Tulkarm)	32.385106	35.118500	wikidata	confirmed			Q7446620	matched	agent	0	
 Beit Jibrin (Hebron)	31.620770	34.887973	wikidata	confirmed			Q556637	matched	agent	0	
 Umm el Faraj (Acre)	33.004900	35.121100	wikidata	confirmed			Q7881655	matched	agent	0	
+Kafr Yashan								unmatched-ambiguous	human	0	
 Hawara	32.152500	35.256670	kima	provisional	21617	Hawara (Israel)			A_autolink	4	
 Samra	32.116670	35.266670	kima	provisional	22266	Khirbet Samara (Israel)			A_autolink	3	

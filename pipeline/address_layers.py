@@ -134,7 +134,9 @@ QUARTERS: dict[str, list[tuple[str, str]]] = {
         ("Neve Sha'anan", r"nev[eh]+\s*sha"),
         ("Herzliya quarter", r"\bherz?e?li?y?a\b|\bhezelia"),
         ("Halisa", r"\bk?h?al+[eiy]+s+[aeiy]?h?\b"),
-        ("Harat al-Kanais", r"kana[iy]+s|churches?\s*(qr|qu|q\b|st)"),
+        # "Kanayes" is the clerks' commonest spelling; "Kanayer" and "Kanayef"
+        # are the extraction's misreadings of it.
+        ("Harat al-Kanais", r"kana[iy]+e?s|kanaye[rf]s?\b|churches?\s*(qr|qu|q\b|st)"),
         ("Harat al-Kishleh", r"kishl|kashl|barracks\s*q"),
         # The Persian quarter and the Persian Colony are one place, around
         # today's HaParsim Street (user ruling 2026-10-22).
