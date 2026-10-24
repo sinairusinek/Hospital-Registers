@@ -159,7 +159,7 @@ Zikhron Yacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q
 Ajloun	32.333611	35.752222	kima	confirmed	16141	ʻAjlūn (Jordan)	Q1141858	matched	agent	4	
 Arah	32.505692	35.078122	wikidata	confirmed			Q2859313	matched	furas	4	
 Ard el Yahud	32.806090	35.006845	wikidata	confirmed			Q12404212	matched	furas	4	
-Baka	31.759170	35.220820	kima	provisional			Q2916599	matched	agent	4	
+Baka								unmatched-ambiguous	human	4	
 Balad al-Sheikh / Haifa	32.771606	35.042069	wikidata	confirmed	21670	Balad al-Shaykh (Israel)	Q2776471	matched	furas	4	Balad esh Sheikh
 Beirut	33.886944	35.513056	kima	confirmed	651	Beirut (Lebanon)	Q3820	matched	furas	4	
 Cairo	30.044444	31.235833	wikidata	confirmed			Q85	matched	agent	4	
@@ -887,5 +887,7 @@ Kafr al-Labad	32.297514	35.109383	kima	confirmed	82252	Kafr al-Labad (West Bank)
 Majdal near Nazareth	32.677858	35.241814	wikidata	confirmed			Q2892602	matched	agent	0	Mujeidil
 Majdal, Acre S/D								unmatched-ambiguous	agent	0	
 Majdal, Tiberias S/D	32.824347	35.516631	wikidata	confirmed			Q1444388	matched	agent	0	Majdal
+Jaba' (Jenin)	32.323889	35.222222	wikidata	confirmed			Q2267472	matched	agent	0	
+Yafa an-Naseriyye	32.686944	35.275278	wikidata	confirmed			Q2468131	matched	agent	0	
 Hawara	32.152500	35.256670	kima	provisional	21617	Hawara (Israel)			A_autolink	4	
 Samra	32.116670	35.266670	kima	provisional	22266	Khirbet Samara (Israel)			A_autolink	3	

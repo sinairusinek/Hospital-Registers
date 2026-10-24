@@ -14,3 +14,7 @@ city_regex	address_regex	target_city	note
 ^\W*m[ae]i?jdal\b	tiberias|tib\.	Majdal, Tiberias S/D	al-Majdal of the Tiberias sub-district
 ^\W*m[ae]i?jdal\b	nazareth	Majdal near Nazareth	al-Mujaydil: the address says near Nazareth
 ^\W*m[aei]i?[gj]dal\b	\bacre\b	Majdal, Acre S/D	a Majdal or Migdal 'near Acre': held
+# Found by kimatch/district_check.py (2026-10-24): the district in the address names a namesake of the linked place.
+^\W*jab+a['‘]?a?\b	jen[ie]n|jinin	Jaba' (Jenin)	Jaba' of the Jenin sub-district: the address names Jenin (the bare spelling is the Haifa one)
+^\W*jaffa\b	^\W*jaffa\W+naz(areth)?\.?\s+dist	Yafa an-Naseriyye	Yafa by Nazareth: 'Jaffa, Nazareth Dist.'
+^\W*(acre|akka|acca)\b	^\W*acre\s+st\s*/\s*dist\.?\s+el\s+zueb	Zeeb	al-Zib: 'Acre St/Dist. El Zueb' is the sub-district, not Haifa's Acre Street

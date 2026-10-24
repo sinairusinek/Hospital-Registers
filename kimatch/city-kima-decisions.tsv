@@ -159,7 +159,7 @@ Zikhron Yacov	Zikhron Yacov	5	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		m
 Ajloun	Ajloun	4	16141	ʻAjlūn (Jordan)	Q1141858	human		matched	furas		agent	Ajlun	2026-10-18
 Arah	Arah	4			Q2859313	furas		matched	furas		furas	Arah - per Y. Furas	2026-10-18
 Ard el Yahud	Ard el Yahud	4			Q12404212	furas		matched	furas		furas	Ard el-Yahud, Haifa - per Y. Furas	2026-10-18
-Baka	Baka	4			Q2916599	human		matched	furas		agent	Baqa al-Gharbiyya: 'Baka Village, Tul-Karm S/D'	2026-10-18
+Baka	Baka	4						unmatched-ambiguous	furas		human	two Baqas in Tulkarm S/D (al-Gharbiyya Q2916599, al-Sharqiyya) and the address names neither ('Baka Village, Tul-Karm S/D'): held for review; Kima 21216 point was Bak'a, Jerusalem	2026-10-24
 Balad al-Sheikh / Haifa	Balad al-Sheikh / Haifa	4	21670	Balad al-Shaykh (Israel)	Q2776471	furas		matched	furas		furas	Balad el-Sheikh - per Y. Furas	2026-10-18
 Beirut	Beirut	4	651	Beirut (Lebanon)	Q3820	furas		matched	furas		furas	Beirut - per Y. Furas	2026-10-18
 Cairo	Cairo	4			Q85	human		matched	furas		agent	Cairo	2026-10-18
@@ -887,3 +887,5 @@ Kafr al-Labad	Kafr al-Labad	0	82252	Kafr al-Labad (West Bank)	Q6346227	human	Q63
 Majdal near Nazareth	Majdal near Nazareth	0			Q2892602	human		matched	furas		agent	al-Mujaydil (Majdal), Nazareth sub-district: 'Majdal near Nazareth'; the only Majdal near Nazareth, but a lead, not a reading of the scan	2026-10-24
 Majdal, Acre S/D	Majdal, Acre S/D	0						unmatched-ambiguous	furas		agent	Held: 'Majdal Acre Dist.', 'Migdal, near Acre' (Muslim patients) - no Majdal in the Acre sub-district; perhaps Majd al-Kurum. Needs the scan	2026-10-24
 Majdal, Tiberias S/D	Majdal, Tiberias S/D	0			Q1444388	human		matched	furas		agent	al-Majdal of the Tiberias sub-district, the Arab village beside the moshava Migdal: 'Majdal, Tiberias S/Dist.'	2026-10-24
+Jaba' (Jenin)	Jaba' (Jenin)	0			Q2267472	human		matched	district-check		agent	Jaba' of the Jenin sub-district, not the Haifa one; set per record where the address names Jenin (kimatch/record-rules.tsv; found by kimatch/district_check.py)	2026-10-24
+Yafa an-Naseriyye	Yafa an-Naseriyye	0			Q2468131	human		matched	district-check		agent	Yafa by Nazareth, not Jaffa: 'Jaffa, Nazareth Dist.' (kimatch/record-rules.tsv; found by kimatch/district_check.py)	2026-10-24

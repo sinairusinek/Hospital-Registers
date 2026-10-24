@@ -10,7 +10,7 @@ Jalameh	Jalameh	0	matched		Q4704113			round3	agent	al-Jalama of the Haifa sub-di
 Rummaneh	Rummaneh	0	matched	75571	Q7379315			round3	agent	Rummana by Umm al-Fahm: 'Rummaneh - Jenin S/D'
 Mazra'a	Mazra'a	0	matched	26615	Q2890424			round3	agent	al-Mazra'a by Acre: 'Mazra'a, Acre S/Dist.'
 Bineh	Bineh	0	matched	21303	Q2890909			round3	agent	al-Bi'na: 'Bineh - Acre District'
-Baka	Baka	0	matched		Q2916599			round3	agent	Baqa al-Gharbiyya: 'Baka Village, Tul-Karm S/D'
+Baka	Baka	0	unmatched-ambiguous					round3	human	held 2026-10-24 (user): two Baqas in Tulkarm S/D, address names neither
 Baqa al-Gharbiyye	Baqa al-Gharbiyye	0	matched		Q2916599			round3	agent	Baqa al-Gharbiyya
 Beit Dajan	Beit Dajan	0	matched	81597	Q12200452			round3	agent	Beit Dajan of Nablus: 'Beit Dajan, Nablus S/Dist.'. Kima 81597 carries the Nablus point; the QID's own coordinate is Jaffa's Bayt Dajan (fixed 2026-10-24)
 Rihaniya	Rihaniya	0	matched	23436	Q2916856			round3	agent	Rihaniyya in the Safad sub-district: 'Rihanieh. Safad s/o'
