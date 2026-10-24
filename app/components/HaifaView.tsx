@@ -41,7 +41,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'The institutions',
-    body: <p>The square badges are the institutions the addresses name — the railway, the port, the hospital itself. An institution in the address means the patient was <em>reached through</em> it, not necessarily employed by it: the hospital as address is usually its own staff. Only an institution with one site in Haifa is placed. The police, the army, the I.P.C. and the rest are many places, or places nobody has located; they are listed under the map's legend and in the side panel, and open their records the same way. The Government Hospital is two sites: the old leased wards on Mountain Road until 31 October 1938, drawn at St Luke's Church on that road because the building itself is not known, and the seashore building at Bat Galim after it.</p>
+    body: <p>The square badges are the institutions the addresses name — the railway, the port, the hospital itself. An institution in the address means the patient was <em>reached through</em> it, not necessarily employed by it: the hospital as address is usually its own staff. Beside each badge is a pie of its records, cut like the quarters' and on the same scale, so an institution can be read against the quarter it sits in; a click on a slice opens those records. Only an institution with one site in Haifa is placed. The police, the army, the I.P.C. and the rest are many places, or places nobody has located; they are listed under the map's legend and in the side panel, and open their records the same way. The Government Hospital is two sites: the old leased wards on Mountain Road until 31 October 1938, drawn at St Luke's Church on that road because the building itself is not known, and the seashore building at Bat Galim after it.</p>
   }
 ];
 
@@ -88,7 +88,7 @@ type Mix = Record<string, number>;
 type Selection =
   // slice: the pie slice clicked, in whichever cut the pies show.
   | { kind: 'quarter'; name: string; slice: string | null }
-  | { kind: 'institution'; key: string };
+  | { kind: 'institution'; key: string; slice: string | null };
 
 const val = (row: RegistryRecord, key: string): string => {
   const raw = row[key];
@@ -150,17 +150,28 @@ const pieIcon = (scheme: PieScheme, mix: Mix, r: number, near: boolean, selected
                      iconSize: [size, size], iconAnchor: [size / 2, size / 2] });
 };
 
-const badgeIcon = (glyph: string, n: number, selected: boolean) => L.divIcon({
-  html: `<div style="display:flex;align-items:center;gap:3px;padding:2px 5px 2px 4px;border-radius:6px;`
-    + `background:${selected ? '#1f2937' : '#ffffff'};color:${selected ? '#fff' : '#1f2937'};`
-    + `border:1.5px solid #1f2937;font:600 11px/1.2 system-ui,sans-serif;white-space:nowrap;`
-    + `box-shadow:0 1px 3px rgba(0,0,0,.25);cursor:pointer">`
-    + `<span style="font-size:13px">${glyph || '■'}</span><span>${n.toLocaleString()}</span></div>`,
-  className: 'map-badge',
-  // Sized to the content: a zero-size icon squeezes the badge into a sliver.
-  iconSize: [26 + 7 * n.toLocaleString().length, 22],
-  iconAnchor: [13, 11]
-});
+/** An institution: its badge, and beside it a pie of its records on the
+ *  quarters' scale, so an institution reads against the quarter round it. The
+ *  badge's glyph stays on the point; the pie hangs off to its right. */
+const badgeIcon = (glyph: string, n: number, selected: boolean,
+                   scheme: PieScheme, mix: Mix, r: number, slice: string | null | undefined) => {
+  const badgeW = 26 + 7 * n.toLocaleString().length;
+  const pieSize = Math.ceil(2 * (r + (slice !== undefined ? 2.5 : 1.5) + 3));
+  const h = Math.max(22, pieSize);
+  return L.divIcon({
+    html: `<div style="display:flex;align-items:center;gap:2px;height:${h}px">`
+      + `<div style="display:flex;align-items:center;gap:3px;padding:2px 5px 2px 4px;border-radius:6px;`
+      + `background:${selected ? '#1f2937' : '#ffffff'};color:${selected ? '#fff' : '#1f2937'};`
+      + `border:1.5px solid #1f2937;font:600 11px/1.2 system-ui,sans-serif;white-space:nowrap;`
+      + `box-shadow:0 1px 3px rgba(0,0,0,.25);cursor:pointer">`
+      + `<span style="font-size:13px">${glyph || '■'}</span><span>${n.toLocaleString()}</span></div>`
+      + pieSvg(scheme, mix, r, false, slice) + `</div>`,
+    className: 'map-badge',
+    // Sized to the content: a zero-size icon squeezes the badge into a sliver.
+    iconSize: [badgeW + 2 + pieSize, h],
+    iconAnchor: [13, h / 2]
+  });
+};
 
 interface Props { data: RegistryRecord[]; }
 
@@ -171,10 +182,11 @@ const HaifaView: React.FC<Props> = ({ data }) => {
   const [pieMode, setPieModeState] = usePieMode();
   // data is the whole registry here, so the ranked cuts rank on it directly.
   const scheme = useMemo(() => schemeFor(pieMode, data), [pieMode, data]);
-  // A chosen slice belongs to the old cut; the quarter stays open, whole.
+  // A chosen slice belongs to the old cut; the quarter or institution stays
+  // open, whole.
   const setPieMode = (m: typeof pieMode) => {
     setPieModeState(m);
-    setSelection(s => (s?.kind === 'quarter' ? { ...s, slice: null } : s));
+    setSelection(s => (s ? { ...s, slice: null } : s));
   };
   const [basemap, setBasemap] = useState<BasemapKey>('historic');
   const [page, setPage] = useState(1);
@@ -405,16 +417,28 @@ const HaifaView: React.FC<Props> = ({ data }) => {
     placedSites.forEach(inst => {
       const key = siteKey(inst.site);
       const isSel = selection?.kind === 'institution' && selection.key === key;
+      const mix: Mix = {};
+      inst.rows.forEach(r => { const g = scheme.bucket(r); mix[g] = (mix[g] || 0) + 1; });
+      const r = radiusOf(inst.rows.length);
       const marker = L.marker([inst.site.lat!, inst.site.lon!], {
-        icon: badgeIcon(inst.site.icon, inst.rows.length, isSel),
+        icon: badgeIcon(inst.site.icon, inst.rows.length, isSel, scheme, mix, r, isSel ? selection.slice : undefined),
         zIndexOffset: 2000000, keyboard: false
       });
+      const breakdown = scheme.keys.filter(k => mix[k])
+        .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${scheme.color(k)}"></span>`
+          + `${scheme.label(k)} ${mix[k].toLocaleString()} (${Math.round(100 * mix[k] / inst.rows.length)}%)`).join('<br>');
       marker.bindTooltip(
         `<strong>${inst.site.name}</strong><br>${inst.rows.length.toLocaleString()} records name it`
-        + `<br><span style="font-size:11px">${inst.site.note}</span>`,
-        { direction: 'top', offset: [0, -12] }
+        + `<br><span style="font-size:11px">${inst.site.note}</span>`
+        + `<div style="margin-top:4px;font-size:11px;line-height:1.5">${breakdown}</div>`
+        + '<div style="margin-top:4px;font-size:10px;color:#64748b">Click a slice for its records</div>',
+        { direction: 'top', offset: [0, -Math.max(12, r)] }
       );
-      marker.on('click', () => { setSelection({ kind: 'institution', key }); setPage(1); });
+      marker.on('click', (e: L.LeafletMouseEvent) => {
+        const target = (e.originalEvent?.target as Element | null)?.closest?.('[data-k]');
+        setSelection({ kind: 'institution', key, slice: target?.getAttribute('data-k') || null });
+        setPage(1);
+      });
       marker.addTo(group);
     });
   }, [placedQuarters, placedSites, selection, radiusOf, mapReady, scheme]);
@@ -437,7 +461,11 @@ const HaifaView: React.FC<Props> = ({ data }) => {
     }
     const inst = institutions.find(i => siteKey(i.site) === selection.key);
     if (!inst) return null;
-    return { title: inst.site.name, subtitle: null, slice: null, rows: inst.rows, all: inst.rows.length, mix: null,
+    const mix: Mix = {};
+    inst.rows.forEach(r => { const g = scheme.bucket(r); mix[g] = (mix[g] || 0) + 1; });
+    const rows = selection.slice ? inst.rows.filter(r => scheme.bucket(r) === selection.slice) : inst.rows;
+    return { title: inst.site.name, subtitle: selection.slice && scheme.label(selection.slice),
+             slice: selection.slice, rows, all: inst.rows.length, mix,
              qid: inst.site.qid, note: inst.site.note, anchor: inst.site.relation === 'near' ? inst.site.anchor : '',
              kima: '', kimaNear: false, osm: inst.site.osm || '' };
   }, [selection, byQuarter, quarters, institutions, scheme]);
@@ -525,7 +553,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
             <PieLegend scheme={scheme} />
             <p className="text-[11px] text-slate-500 mt-2 leading-relaxed">
               Dashed rim: drawn at a landmark, the quarter has no point of its own.
-              Square badges: institutions the addresses name.
+              Square badges: institutions the addresses name, each with its own pie beside it.
             </p>
             <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
               Of {haifaRows.length.toLocaleString()}{scheme.subset ? ` ${scheme.subset}` : ''} Haifa records, {noQuarter.toLocaleString()} name
@@ -547,7 +575,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
                 </h2>
                 <p className="text-xs text-slate-400 mt-0.5">
                   {records.length.toLocaleString()} record{records.length === 1 ? '' : 's'}
-                  {selected.subtitle && <> of {selected.all.toLocaleString()} in the quarter</>}
+                  {selected.subtitle && <> of {selected.all.toLocaleString()} in {selection?.kind === 'institution' ? 'all' : 'the quarter'}</>}
                 </p>
                 <p className="text-[11px] text-slate-400 mt-1 flex flex-wrap gap-x-3">
                   {selected.qid && (
@@ -573,9 +601,9 @@ const HaifaView: React.FC<Props> = ({ data }) => {
                 <X size={16} />
               </button>
             </div>
-            {/* The quarter's slices as chips, so the reader can move between
-                slices, or back to the whole quarter, without the map. */}
-            {selection?.kind === 'quarter' && selected.mix && (
+            {/* The pie's slices as chips, so the reader can move between
+                slices, or back to the whole, without the map. */}
+            {selection && selected.mix && (
               <div className="flex flex-wrap gap-1.5 mt-3">
                 <button onClick={() => pick({ ...selection, slice: null })}
                         className={`px-2 py-1 rounded-md text-[11px] font-bold border ${
@@ -725,7 +753,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
             {placedSites.map(i => (
               <li key={siteKey(i.site)}>
                 <button onClick={() => {
-                          pick({ kind: 'institution', key: siteKey(i.site) });
+                          pick({ kind: 'institution', key: siteKey(i.site), slice: null });
                           mapRef.current?.setView([i.site.lat!, i.site.lon!], Math.max(mapRef.current.getZoom(), 14));
                         }}
                         className="w-full flex items-baseline justify-between gap-3 px-3 py-1.5 rounded-lg hover:bg-slate-50 text-left">
@@ -748,7 +776,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
           <ul className="p-2">
             {unplacedSites.map(i => (
               <li key={siteKey(i.site)}>
-                <button onClick={() => pick({ kind: 'institution', key: siteKey(i.site) })}
+                <button onClick={() => pick({ kind: 'institution', key: siteKey(i.site), slice: null })}
                         title={i.site.note || i.kind}
                         className="w-full flex items-baseline justify-between gap-3 px-3 py-1.5 rounded-lg hover:bg-slate-50 text-left">
                   <span className="text-xs text-slate-600 truncate">
