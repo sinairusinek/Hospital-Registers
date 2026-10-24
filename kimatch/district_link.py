@@ -75,7 +75,7 @@ REJECT = {
 }
 
 # First words that are a kind of place, not its name: "Kufr Rais" is not "Kufr".
-GENERIC = {"kufr", "kafr", "kfar", "kefar", "kufer", "kafer", "kfr", "deir", "beit", "bet", "bait", "ein", "ain", "um",
+GENERIC = {"kiryat", "kiriat", "qiryat", "kufr", "kafr", "kfar", "kefar", "kufer", "kafer", "kfr", "deir", "beit", "bet", "bait", "ein", "ain", "um",
            "khirbet", "khirbat", "tell", "tel", "arab", "jisr", "nahr", "wadi", "abu", "bir", "khan", "sheikh", "kh", "ard", "harat"}
 
 DROP = re.compile(r"\b(c\s*/\s*o|own\s+house|house|village|vill|near|of|the|beit|bet|dar)\b\.?", re.I)

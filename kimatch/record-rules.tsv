@@ -24,3 +24,4 @@ city_regex	address_regex	target_city	note
 ^	^\W*kwekat\s+village	Kwikat	Kwikat: 'Kwekat village, Acre Sub District' (district_link.py; row has no serial)
 ^	^\W*fassouta\s+village	Fassuta	Fassuta: 'Fassouta village, Acre S/Dist.' (district_link.py; row has no serial)
 ^\W*birweh\b	acre	Birweh	al-Birwa: the address names Acre S/D (district_link.py)
+^\W*haifa\b	^\W*(haifa\W+)?kiryat\s+kharoshet\b	Kiryat Kharoshet	Kiryat Kharoshet: the address names it, the City column only the district (Haifa / Haifa s/d)
