@@ -33,7 +33,7 @@ const COORDS_URL = `${import.meta.env.BASE_URL}data/place-coords.tsv`;
 const HELP: HelpSection[] = [
   {
     heading: 'What a pie is',
-    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The <em>Pies show</em> switch at the top right recuts every pie by <em>diagnosis</em> instead: the ICD-9 chapter, in the colours the Statistics page gives it. The eight commonest chapters in the whole registry keep their own slice; the other eleven share a pale <em>Other chapters</em> slice, and grey is records with no ICD-9 code — a diagnosis not yet coded, or none written. The pies follow the admission dates: narrow them in the box at the top of the map, or send a range from the Timeline, and every pie is recut for those admissions alone. The range is the same one the Browser's Admission Date slider sets, so the two always show the same admissions. No other filter reaches the map. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
+    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The <em>Pies show</em> switch at the top right recuts every pie by <em>diagnosis</em> instead: the ICD-9 chapter, in the colours the Statistics page gives it. The eight commonest chapters in the whole registry keep their own slice; the other eleven share a pale <em>Other chapters</em> slice, and grey is records with no ICD-9 code — a diagnosis not yet coded, or none written. The pies follow the admission dates: narrow them in the box at the top of the map, or send a range from the Timeline, and every pie is recut for those admissions alone. The range is the same one the Browser's Admission Date slider sets, so the two always show the same admissions. No other filter reaches the map. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. It is named by the registers' own commonest spelling of it, and in the lists beside and below the map the Mandate-era English name follows in brackets where it is a different word — Khalsa (Khalisa), Kufr Ata (Kfar Ata). The gazetteer's own name, given beside its link, is often the place's later one: Kima files al-Khalisa under Kiryat Shmona and Sa'sa' under the kibbutz Sasa, settlements built on their land after 1948. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
   },
   {
     heading: 'Solid pies and dashed ones',
@@ -49,17 +49,20 @@ const HELP: HelpSection[] = [
   }
 ];
 
-// Where the Kima entry is named for a later successor than the place the
-// register means, the circle carries the Mandate name. Kima 756 is "Tirat
-// Karmel"; the patients came from al-Tira, the village (Q4118776).
-const LABEL_OVERRIDE: Record<string, string> = { '756': 'al-Tira' };
-
 const MAP_BOUNDS = L.latLngBounds([28.9, 33.2], [34.4, 37.0]);
 
 interface Place {
-  // The label the circle carries: the gazetteer's own name where there is one,
-  // otherwise the commonest spelling in the registers.
+  // Stable identity: the Kima id, else the point.
+  key: string;
+  // The name the place goes by here: the registers' own commonest spelling of
+  // it. Not the gazetteer's, which is often the place's later name — Kima
+  // calls al-Khalisa Kiryat Shmona and al-Bassa Shelomi, towns built on their
+  // land after 1948, and a map of 1930–48 must not say so.
   label: string;
+  // The Mandate-era English name (kimatch/place-labels.tsv), added in brackets
+  // wherever a place is named in a list rather than on the map. Empty where
+  // none is recorded.
+  mandateLabel: string;
   // Every City spelling that resolved to this point. The registers spell
   // Zichron Yaakov eighteen ways; they are one place and must be one circle,
   // or the map shows eighteen stacked dots and each click hides seventeen
@@ -140,6 +143,19 @@ const val = (row: RegistryRecord, key: string): string => {
   if (raw === null || raw === undefined) return '';
   const s = String(raw).trim();
   return s === 'null' || s === 'undefined' ? '' : s;
+};
+
+// Letters only, so "Bassa, El" and "Bassah" or "Sa'sa'" and "Sasa" are not
+// told apart for want of a comma or an apostrophe.
+const bare = (name: string): string => name.toLowerCase().replace(/[^a-z]/g, '');
+
+/** A place as a list names it: the registers' spelling, and the Mandate-era
+ *  English name in brackets where that is a different word. One name that
+ *  only extends the other ("Bassa" and "Bassa, El", "Majdal, Tiberias S/D"
+ *  and "Majdal") is not a different word. */
+const listName = (p: { label: string; mandateLabel: string }): string => {
+  const a = bare(p.label), b = bare(p.mandateLabel);
+  return b && !a.startsWith(b) && !b.startsWith(a) ? `${p.label} (${p.mandateLabel})` : p.label;
 };
 
 const FIELDS = ['Admission Date', 'Age', 'Sex', 'Religion', 'Nationality',
@@ -304,15 +320,17 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
             const existing = grouped.get(key);
             if (existing) {
               if (!existing.cities.includes(at(c, 'city'))) existing.cities.push(at(c, 'city'));
+              existing.mandateLabel ||= at(c, 'mandate_label');
               // One confirmed spelling settles the whole point.
               if (at(c, 'standing') === 'confirmed') existing.standing = 'confirmed';
             } else {
               const kimaName = at(c, 'kima_name_rom');
               grouped.set(key, {
-                // Kima's romanized name carries a parenthetical country; the
-                // circle wants the bare settlement.
-                label: LABEL_OVERRIDE[kimaId]
-                  || (kimaName ? kimaName.replace(/\s*\([^)]*\)\s*$/, '') : at(c, 'city')),
+                key,
+                // Provisional: replaced by the commonest spelling once the
+                // records are counted.
+                label: at(c, 'city'),
+                mandateLabel: at(c, 'mandate_label'),
                 cities: [at(c, 'city')],
                 lat, lon,
                 source: at(c, 'source'),
@@ -345,6 +363,17 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
     return out;
   }, [data]);
 
+  // How often each City spelling occurs across the whole registry, so a place
+  // keeps the same name whatever the date range leaves of it.
+  const spellingCount = useMemo(() => {
+    const out = new Map<string, number>();
+    fullData.forEach(row => {
+      const city = val(row, 'City');
+      if (city) out.set(city, (out.get(city) || 0) + 1);
+    });
+    return out;
+  }, [fullData]);
+
   // Places past the map's edge — Cairo, London, El Qantara — are real
   // origins but cannot be drawn: Leaflet will not settle on a view that shows
   // anything past maxBounds, so one of them would hold the fit back for all
@@ -360,11 +389,16 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
           mix[g] = (mix[g] || 0) + 1;
           n++;
         }));
-        return { ...p, n, mix };
+        // A spelling with an alternation in it ("Tulkarm|Tul-Karm") is the
+        // transcriber's doubt, not the clerk's word: a plain one is preferred.
+        const label = [...p.cities].sort((a, b) =>
+          Number(a.includes('|')) - Number(b.includes('|'))
+          || (spellingCount.get(b) || 0) - (spellingCount.get(a) || 0))[0] || p.label;
+        return { ...p, label, n, mix };
       })
       .filter(p => p.n > 0)
       .sort((a, b) => b.n - a.n);
-  }, [places, byCity, scheme]);
+  }, [places, byCity, scheme, spellingCount]);
   const counted = useMemo(() => withCounts.filter(p => MAP_BOUNDS.contains([p.lat, p.lon])), [withCounts]);
   const abroad = useMemo(() => withCounts.filter(p => !MAP_BOUNDS.contains([p.lat, p.lon])), [withCounts]);
 
@@ -597,9 +631,9 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
         + `<div style="margin-top:4px;font-size:11px;line-height:1.5">${breakdown}</div>`,
         { direction: 'top', offset: [0, -radius] }
       );
-      marker.on('click', () => { setSelected(p.kimaId || p.label); setPage(1); });
+      marker.on('click', () => { setSelected(p.key); setPage(1); });
       marker.addTo(map);
-      markersRef.current.set(p.kimaId || p.label, marker);
+      markersRef.current.set(p.key, marker);
     });
 
     // The points may arrive after the container has settled, in which case no
@@ -613,7 +647,7 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
   // marker itself is kept, so the map does not flicker on every selection.
   useEffect(() => {
     counted.forEach((p, i) => {
-      const key = p.kimaId || p.label;
+      const key = p.key;
       const marker = markersRef.current.get(key);
       if (!marker) return;
       const on = key === selected;
@@ -624,7 +658,7 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
 
   // ------------------------------------------------------- the selection
 
-  const selectedPlace = counted.find(p => (p.kimaId || p.label) === selected) || null;
+  const selectedPlace = counted.find(p => p.key === selected) || null;
   // Every record from every spelling of the selected place, in the registers'
   // own order rather than grouped by spelling.
   const records = useMemo(
@@ -784,7 +818,7 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
           </p>
           {abroad.length > 0 && (
             <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
-              Beyond the map's edge: {abroad.map(p => `${p.label} ${p.n.toLocaleString()}`).join(', ')}.
+              Beyond the map's edge: {abroad.map(p => `${listName(p)} ${p.n.toLocaleString()}`).join(', ')}.
             </p>
           )}
           </>}
@@ -797,7 +831,7 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
           <div className="sticky top-0 bg-white border-b border-slate-200 px-6 py-4 z-10">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <h2 className="text-lg font-black text-slate-800">{selectedPlace.label}</h2>
+                <h2 className="text-lg font-black text-slate-800">{listName(selectedPlace)}</h2>
                 <p className="text-xs text-slate-400 mt-0.5">
                   {records.length.toLocaleString()} record{records.length === 1 ? '' : 's'}
                   {selectedPlace.cities.length > 1
@@ -814,6 +848,11 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
                        target="_blank" rel="noreferrer" className="text-indigo-600 underline">
                       Kima #{selectedPlace.kimaId}
                     </a>
+                  )}
+                  {selectedPlace.kimaName && (
+                    <span title="The gazetteer's name for the place, often its later one">
+                      gazetteer: {selectedPlace.kimaName.replace(/\s*\([^)]*\)\s*$/, '')}
+                    </span>
                   )}
                   {selectedPlace.qid && (
                     <a href={`https://www.wikidata.org/wiki/${selectedPlace.qid}`}
@@ -957,16 +996,16 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
           </div>
           <ul className="p-2">
             {counted.map(p => (
-              <li key={p.kimaId || p.label}>
+              <li key={p.key}>
                 <button
                   onClick={() => {
-                    setSelected(p.kimaId || p.label);
+                    setSelected(p.key);
                     setPage(1);
                     mapRef.current?.setView([p.lat, p.lon], Math.max(mapRef.current.getZoom(), 11));
                   }}
                   className="w-full flex items-baseline justify-between gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 text-left"
                 >
-                  <span className="text-xs font-medium text-slate-700 truncate">{p.label}</span>
+                  <span className="text-xs font-medium text-slate-700 truncate">{listName(p)}</span>
                   <span className="text-xs font-bold tabular-nums text-slate-400 shrink-0">
                     {p.n.toLocaleString()}
                   </span>

@@ -16,7 +16,11 @@ Each matched ruling updates the decision row for its normalized `city`, or
 appends one. Rerunning is idempotent.
 
 Also applies kimatch/round3-rulings.tsv, the same format: rulings on the
-long tail (decided_by `agent`), each note citing the record evidence.
+long tail (decided_by `agent`), each note citing the record evidence; and
+kimatch/anachronism-rulings.tsv, the values the review had sent to a place
+founded after 1948 (Kiryat Shmona for al-Khalisa, Shelomi for a camp at
+Bassa, Karmiel for a misread Yavniel) or to a namesake (every Majdal to the
+moshava Migdal).
 
 Usage: python3 kimatch/apply_furas.py [rulings.tsv ...]
 """
@@ -26,7 +30,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-RULINGS = [ROOT / "kimatch" / "furas-rulings.tsv", ROOT / "kimatch" / "round3-rulings.tsv"]
+RULINGS = [ROOT / "kimatch" / "furas-rulings.tsv", ROOT / "kimatch" / "round3-rulings.tsv",
+           ROOT / "kimatch" / "anachronism-rulings.tsv"]
 DATA = ROOT / "data" / "public" / "hospital-registers-normalized.tsv"
 DECISIONS = ROOT / "kimatch" / "city-kima-decisions.tsv"
 KIMA_DUMP = Path("/Users/sinairusinek/Documents/GitHub/Kimatch/20250126KimaPlacesCSVx.csv")

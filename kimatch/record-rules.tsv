@@ -10,3 +10,7 @@ city_regex	address_regex	target_city	note
 ^\W*k?h?al+[eiy]+s+[aeiy]?h?\b|^al-khalisa		Halisa	Halisa, the Haifa quarter: every such spelling with a context places it in Haifa
 # Acre Gate is a Haifa quarter, not the town of Acre: the extraction read the address's namesake as the city. 38 records already write it with Haifa in full.			
 ^\W*(acre|akka|acca)\b|^\W*bawab	\bac(re|ri)'?s?\W*gate|\bgate of acre\b|\bakka gate|\bbawab[\w\[\]]*\W+(st\.?\s+)?(el\s+)?(akka|acca|acre)\b	Haifa	Acre Gate, the Haifa quarter: the address names it
+# Majdal: the moshava Migdal's Kima entry had taken every Majdal. The district in the address decides; a bare Majdal stays held.			
+^\W*m[ae]i?jdal\b	tiberias|tib\.	Majdal, Tiberias S/D	al-Majdal of the Tiberias sub-district
+^\W*m[ae]i?jdal\b	nazareth	Majdal near Nazareth	al-Mujaydil: the address says near Nazareth
+^\W*m[aei]i?[gj]dal\b	\bacre\b	Majdal, Acre S/D	a Majdal or Migdal 'near Acre': held

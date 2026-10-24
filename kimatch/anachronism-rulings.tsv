@@ -1,0 +1,15 @@
+city	city_as_written	n_records	decision	kima_id	wikidata_qid	furas_reading	furas_type	match	decided_by	note
+Khalsa	Khalsa	3	matched		Q4702703			anachronism	agent	al-Khalisa, the Huleh village of the Safad sub-district (ruled 2026-10-19), not Kiryat Shmona, built on its land in 1949; Kima has no entry for the village
+Khalisa	Khalisa	2	matched		Q4702703			anachronism	agent	al-Khalisa, the Huleh village (see Khalsa), not Kiryat Shmona (1949)
+Beit Dagan	Beit Dagan	1	matched		Q2905719			anachronism	agent	Bayt Dajan of the Jaffa sub-district, which Jewish usage called Beit Dagon; not the moshav Bet Dagan, founded on its land in 1948. Kima has no entry for the village
+Beit Dagon	Beit Dagon	1	matched		Q2905719			anachronism	agent	Bayt Dajan of the Jaffa sub-district (see Beit Dagan); 1946
+Beit Dajan	Beit Dajan	3	matched	81597	Q12200452			anachronism	agent	Beit Dajan of Nablus: 'Beit Dajan, Nablus S/Dist.'. Kima 81597 carries the Nablus point; the QID's own coordinate is Jaffa's Bayt Dajan (fixed 2026-10-24)
+Bassa No 2|Al-Bassa	Bassa No 2|Al-Bassa	2	unmatched-ambiguous					anachronism	agent	Held 2026-10-24: 'Bassa No 2' with a Polish Jew and a British Christian (1939-40) reads as a camp at Bassa, not al-Bassa village and not Shelomi (1950). Was auto-linked to Shelomi
+Carmiel	Carmiel	0	unmatched-junk					anachronism	agent	Misread: the one record (NB13 serial 1504, 13.7.36) reads 'Yavniel' on the scan, and is set to Yavniel in record-readings.tsv. Karmiel was founded in 1964
+Maagan	Maagan	1	unmatched-ambiguous					anachronism	agent	Held 2026-10-24: the scan (NB28 p69, serial 5102, 19.10.44) reads 'Kibutz Maagan, Kinereth' - the Ma'agan group before it settled its site in 1949, then at Kinneret, which bare stays ambiguous (kvutza or moshava)
+Majdal	Majdal	2	unmatched-ambiguous					anachronism	agent	Held 2026-10-24: bare Majdal names several villages (al-Majdal of Tiberias, al-Mujaydil of Nazareth, Majd al-Kurum?); records whose address names the district are set per record in record-rules.tsv. Was auto-linked to the Jewish moshava Migdal
+Mejdal	Mejdal	1	unmatched-ambiguous					anachronism	agent	Held: bare spelling of Majdal (see Majdal)
+Majdal, Tiberias S/D	Majdal, Tiberias S/D	0	matched		Q1444388			anachronism	agent	al-Majdal of the Tiberias sub-district, the Arab village beside the moshava Migdal: 'Majdal, Tiberias S/Dist.'
+Majdal near Nazareth	Majdal near Nazareth	0	matched		Q2892602			anachronism	agent	al-Mujaydil (Majdal), Nazareth sub-district: 'Majdal near Nazareth'; the only Majdal near Nazareth, but a lead, not a reading of the scan
+Majdal, Acre S/D	Majdal, Acre S/D	0	unmatched-ambiguous					anachronism	agent	Held: 'Majdal Acre Dist.', 'Migdal, near Acre' (Muslim patients) - no Majdal in the Acre sub-district; perhaps Majd al-Kurum. Needs the scan
+Beit Dajan near Jaffa	Beit Dajan near Jaffa	1	matched		Q2905719			anachronism	agent	Bayt Dajan of the Jaffa sub-district: the City says 'near Jaffa' (see Beit Dagan)

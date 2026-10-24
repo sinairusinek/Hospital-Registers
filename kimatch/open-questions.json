@@ -576,7 +576,7 @@
   {
    "id": "qid-conflicts",
    "group": "6 · Technical (project team, not for Yoni)",
-   "title": "14 Wikidata conflicts",
+   "title": "12 Wikidata conflicts",
    "question": "Kima's QID and an independent Wikidata lookup disagree. The independent lookup has been wrong before (Tireh → a village in Iran). Housekeeping for us.",
    "reading": "Linked on Kima's QID.",
    "cities": [
@@ -588,8 +588,6 @@
     "Dejani",
     "Jokneam",
     "Kafata",
-    "Maagan",
-    "Majdal",
     "Merchavia",
     "Neve Sha'anan",
     "Ramleh",

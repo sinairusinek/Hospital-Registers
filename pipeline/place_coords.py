@@ -55,10 +55,24 @@ WDQS = "https://query.wikidata.org/sparql"
 UA = "HospitalRegisters/1.0 (https://github.com/sinaiRusinek; sinai.rusinek@gmail.com)"
 
 FIELDS = ["city", "lat", "lon", "source", "standing", "kima_id", "kima_name_rom",
-          "wikidata_qid", "decision", "decided_by", "n_records"]
+          "wikidata_qid", "decision", "decided_by", "n_records", "mandate_label"]
 
 # Round 2's audited candidates, for values no ruling covers yet.
 WORKBOOK = ROOT / "kimatch" / "round2-workbook.tsv"
+
+# The place's Mandate-era English name, where the gazetteer's is a later one
+# (Kiryat Shmona for al-Khalisa) or the register's spelling is far from it.
+# Keyed on the Kima id, or the QID for a place Kima lacks. The map labels a
+# place by the register's own commonest spelling and adds this in brackets.
+LABELS = ROOT / "kimatch" / "place-labels.tsv"
+
+
+def load_labels() -> dict[str, str]:
+    if not LABELS.exists():
+        return {}
+    with LABELS.open(encoding="utf-8") as fh:
+        return {(r["kima_id"] or r["wikidata_qid"]): r["mandate_label"]
+                for r in csv.DictReader(fh, delimiter="\t")}
 
 
 def get(url: str, timeout: int = 30) -> bytes:
@@ -164,6 +178,10 @@ def main() -> None:
         }
 
         cached = cache.get(city)
+        # A cached point is reused only while the value still points at the
+        # same place: a re-ruled value must be placed afresh.
+        if cached and (cached.get("kima_id"), cached.get("wikidata_qid")) != (row["kima_id"], row["wikidata_qid"]):
+            cached = None
         if cached and cached.get("lat"):
             row["lat"], row["lon"] = cached["lat"], cached["lon"]
             row["source"] = cached.get("source", "")
@@ -212,6 +230,10 @@ def main() -> None:
             row["standing"] = "confirmed"
 
     rows.extend(provisional_rows({r["city"] for r in rows}))
+
+    labels = load_labels()
+    for row in rows:
+        row["mandate_label"] = labels.get(row["kima_id"]) or labels.get(row["wikidata_qid"], "")
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     with OUTPUT.open("w", encoding="utf-8", newline="") as fh:
