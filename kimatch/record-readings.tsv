@@ -272,7 +272,7 @@ notebook	serial	admission_date	target_city	evidence
 20	1688	1938-07-18	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
 21	28	1939-01-05	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "" (sorted by community, user ruling 2026-10-24)
 21	387	1939-02-16	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
-22	1781	1939-06-19	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
+22	1781	1938-06-19	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24; date as written 19.6.38, the year later corrected to 1939)
 24	335	1940-01-31	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
 24	456	1940-02-10	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
 24	632	1940-02-26	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
@@ -281,3 +281,4 @@ notebook	serial	admission_date	target_city	evidence
 31	2772	1947-05-06	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
 31	2876	1947-05-12	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajour" (sorted by community, user ruling 2026-10-24)
 32	6926	1947-10-18	al-Yajur	the Arab village, not Kibbutz Yagur: Muslim, Palestinian; written "Yajur" (sorted by community, user ruling 2026-10-24)
+14	2319	1936-10-02	Yajour	Kibbutz Yagur, not the Arab village: Jewish, City blank, address "Yajur" (the bare spelling now resolves to al-Yajur; user ruling 2026-10-24)
