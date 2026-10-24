@@ -3,7 +3,7 @@ wikidata	Q180294	Jaffa	32	arab_or_mixed	Jaffa: 7,209 Jews in 1931 (census), but 
 city_text_regex	Bethania|Beit Anya|Bithania	Bethania	20	labour	Bitanya: 0/20 Palestinian, German/Latvian adults, all 1933-40: immigrant workers group	proposed	nationality	
 wikidata	Q1743479	Kiryat Haroshet	15	ambiguous	workers settlement or quarter, 1930s; rule; nationality mix in the 40-55% band cannot separate old from mixed	proposed	place	
 neighbourhood	Haifa: German Colony	Haifa	10	arab_or_mixed	Templer quarter, mixed by the 1930s; 42-50% Palestinian, no Middle-Eastern nationals: matches arab_or_mixed (45%)	proposed	nationality	
-city_text_regex	^Emek	Emek	10	ambiguous	"""the Valley"": region, not a place"	proposed	place	
+city_text_regex	^Emek	Emek	10	ambiguous	"""the Valley"" alone: all eight plain-Emek rows read on the scans 2026-10-24, nothing written after the word; stays unplaceable"	ruled	place	
 neighbourhood	Haifa: Khamra Square	Haifa	9	arab_or_mixed	downtown commercial centre, mixed; 42-50% Palestinian, no Middle-Eastern nationals: matches arab_or_mixed (45%)	proposed	nationality	
 wikidata	Q2413425	German Colony	6	arab_or_mixed	Templer quarter, mixed by the 1930s; 42-50% Palestinian, no Middle-Eastern nationals: matches arab_or_mixed (45%)	proposed	nationality	
 neighbourhood	Haifa: Carmel Station	Carmel Station	1	arab_or_mixed	Tahanat HaCarmel (Q12412037): 184 register residents, 128 Christian, 52 Muslim, 1 Jewish (ruled 2026-10-24)	ruled	place	
@@ -152,6 +152,8 @@ city_text_regex	Ardel|Ard al|Hart el Yahud|Hartel Yahud|Dantel Yahud|Adel Yahud|
 city_text_regex	Waldheim	Waldheim	6	other	Templer colony	proposed	place	
 wikidata	Q2906526	Vilhelma	1	other	Templer colony	proposed	place	
 page	26:91	NB26 p91	7	institutional	seven Jews from Jaffa on one page in 1946, ages 22-74, CID address, four flagged prisoner: a detainee group (ruled 2026-10-24)	ruled	page	Q180294
+address_regex	Emek Zevoul		1	new_urban	NB12 p3: Shkhunat ha-Tzrifim (later Kiryat Motzkin), user read 2026-10-24	ruled	address	
+address_regex	Emek Hayarden		1	labour	Jordan Valley: NB21 p48 reading confirmed by the user 2026-10-24	ruled	address	
 address_regex	Rehov Jaffa|Jaffa (St|Rd|Road|Street)			haifa_unplaced	Haifa's own Jaffa Road read as the city of Jaffa	proposed	address	Q180294
 address_regex	S/S |\bship\b			other	ship's address, not a residence	proposed	address	
 address_regex	Camp|Barracks|Frontier Force|Police|Prison|Jail|Detention|P\. ?& ?P\.|P\.\+P\.|D\. ?H\. ?Q			institutional	camp / police / prison address	proposed	address	

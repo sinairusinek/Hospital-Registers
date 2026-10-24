@@ -227,3 +227,6 @@ notebook	serial	admission_date	target_city	evidence
 17	1708	1937-08-01	Kafr Yashan	scan NB17 p11: "Kafr yashan" (Jewish, Polish); unidentified, held (extracted as Kafr Yasin, linked to Kafr Yasif)
 4	296	1933-04-07	Nahf	scan NB4 p20: "Nahef village, Acre Sub District" (extracted as Shaheib; had been linked to Sha'ab)
 4	308	1933-04-11	Tammun (Nablus)	scan NB4 p21: "Tammoun village, Nablus Sub Dist." (extracted as Zammoun)
+8	675	1934-03-31	Emek	scan NB8 p30 (user read 2026-10-24): plain "Emek", the K set a little to the right (extracted as "Emek R.")
+12	1488	1935-08-04	Emek	scan NB12 p54 (user read 2026-10-24): plain "Emek", the K set a little to the right (extracted as "Emek R.")
+12	1119	1935-06-26	Kiryat Motzkin	scan NB12 p3 (user read 2026-10-24): "Emek Zevouloun Shekunnat Hatsefain", probably a slip for Shkhunat ha-Tzrifim, which later became Kiryat Motzkin
