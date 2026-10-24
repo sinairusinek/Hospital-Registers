@@ -2249,11 +2249,11 @@
   "top": [
    [
     "typhoid",
-    67
+    68
    ],
    [
     "tuberculosis",
-    55
+    58
    ],
    [
     "malaria",
@@ -2273,7 +2273,7 @@
    ],
    [
     "pneumonia",
-    6
+    5
    ],
    [
     "dysentery",
@@ -2659,7 +2659,7 @@
       10
      ],
      [
-      "pneumonia",
+      "pyrexia",
       6
      ],
      [
@@ -2679,7 +2679,7 @@
      ],
      [
       "typhoid",
-      17
+      16
      ],
      [
       "pyrexia",
@@ -2831,7 +2831,7 @@
     "top": [
      [
       "tuberculosis",
-      38
+      39
      ],
      [
       "chickenpox",
@@ -2850,7 +2850,7 @@
     "top": [
      [
       "malaria",
-      31
+      32
      ],
      [
       "typhoid",
@@ -2873,7 +2873,7 @@
      ],
      [
       "pyrexia",
-      38
+      39
      ],
      [
       "typhus",
@@ -2907,7 +2907,7 @@
     "top": [
      [
       "lymphadenitis",
-      22
+      25
      ],
      [
       "plague",
@@ -2928,7 +2928,7 @@
     "top": [
      [
       "tuberculosis",
-      18
+      19
      ],
      [
       "pleurisy",
@@ -2947,14 +2947,14 @@
     "top": [
      [
       "pneumonia",
-      28
+      24
      ],
      [
       "typhoid",
-      21
+      20
      ],
      [
-      "pyrexia",
+      "measles",
       18
      ]
     ]
@@ -2966,15 +2966,15 @@
     "top": [
      [
       "relapsing fever",
-      36
+      38
      ],
      [
       "pyrexia",
-      28
+      27
      ],
      [
       "pneumonia",
-      25
+      24
      ]
     ]
    },
@@ -2984,15 +2984,15 @@
     "n": 53,
     "top": [
      [
+      "pyrexia",
+      5
+     ],
+     [
       "pneumonia",
       5
      ],
      [
       "dysentery",
-      4
-     ],
-     [
-      "typhoid",
       4
      ]
     ]
@@ -3025,7 +3025,7 @@
     "top": [
      [
       "tuberculosis",
-      28
+      29
      ]
     ]
    },
@@ -3036,15 +3036,15 @@
     "top": [
      [
       "diphtheria",
-      32
+      34
      ],
      [
       "pneumonia",
-      29
+      28
      ],
      [
       "pyrexia",
-      15
+      17
      ]
     ]
    },
@@ -3055,15 +3055,15 @@
     "top": [
      [
       "pyrexia",
-      31
+      34
      ],
      [
       "malaria",
-      19
+      22
      ],
      [
-      "tonsillitis",
-      10
+      "pneumonia",
+      11
      ]
     ]
    },
@@ -3073,16 +3073,16 @@
     "n": 83,
     "top": [
      [
-      "dysentery",
-      7
+      "typhoid",
+      6
      ],
      [
-      "typhoid",
-      7
+      "dysentery",
+      6
      ],
      [
       "pyrexia",
-      6
+      5
      ]
     ]
    },
@@ -3093,7 +3093,7 @@
     "top": [
      [
       "gunshot / wounds",
-      12
+      11
      ]
     ]
    }
