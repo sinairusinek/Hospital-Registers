@@ -1,0 +1,54 @@
+notebook	serial	scan_reads	finding	note
+4	128	Rei-neh Acre Sub Dist.	clerk-wrote	Reina lay in Nazareth S/D (VS 1945)
+4	241	Rummaneh - Jenin Sub District, Haifa	resident-elsewhere	from Rummaneh, living in Haifa; City Haifa stands
+4	409	c/o Abed Ali el Ghandour Karkur, Tulkarm S/D	clerk-wrote	Karkur is Haifa S/D in VS 1945; a 1931 boundary lead
+5	895	Majdel Krum Haifa S/Dist	clerk-wrote	row 894 says the same; 1933, Haifa as the Northern District seat?
+8	740	Sannaur, Jenin S/D	place-misread	Sanur; set in record-readings.tsv
+8	902	Me'ilya, Acre S/D.	place-misread	Mi'ilya; set in record-readings.tsv
+9	1056	Ararah, Hfa S/Dist.	place-misread	Ar'ara; set in record-readings.tsv
+9	1057	Ararah, Hfa S/Dist.	place-misread	Ar'ara; set in record-readings.tsv
+10	1701	Zib, Acre S/Dist.	place-misread	al-Zib; set in record-readings.tsv
+10	1729	Sileh - Nablus Sub District	clerk-wrote	two Silats, both Jenin S/D in VS 1945; linked to Silat al-Harithiya, which one is open
+10	2056	Igzim, Hfa S/Dist.	place-misread	Ijzim; set in record-readings.tsv (Address column still holds the misread)
+10	2386	Berkin, S/Dist. [next of kin: Nazareth]	district-misread	Nazareth is the next-of-kin column
+10	2387	Berkin, Nazareth S/Dist	clerk-wrote	#2388 the same; Birqin lay in Jenin S/D
+11	317	Ya'bad, Safad S/Dist.	clerk-wrote	no Ya'bad in Safad S/D
+11	358	Zeeb. Acre S/Dist.	place-misread	al-Zib; set in record-readings.tsv
+11	367	Acre St/Dist. El Zueb	place-misread	al-Zib; set in record-rules.tsv
+15	307	Jaffa, Nazareth Dist.	place-misread	Yafa an-Naseriyye; set in record-rules.tsv
+15	3088	Majdalle Village, Nazareth Dist.	place-misread	al-Mujaydil; set in record-readings.tsv
+16	1435	Arrabeh Nablus District	clerk-wrote	Nablus as the district seat (Arraba lay in Jenin S/D)
+16	1499	Birweh Safad Dist c/o P.W.D.	clerk-wrote	works for the P.W.D.; al-Birwa lay in Acre S/D
+16	1514	Khdera Dist.	clerk-wrote	Hadera named as a district
+17	2247	Reineh. Acre Dist	clerk-wrote	Reina lay in Nazareth S/D
+18	61	Shefa Amr Haifa S/D	clerk-right	VS 1945 lists Shafa 'Amr under Haifa; the enwiki infobox is wrong
+18	373	Sindyani Acre Dist	clerk-wrote	Sindiyana lay in Haifa S/D
+19	768	Arrabeh - Nablus S/D.	clerk-wrote	Nablus as the district seat
+19	1351	Bet Alpha, Affuleh S/D.	district-misread	extracted as Huleh
+20	1748	Jaba Garar Jenin s/D, Haifa. Wad Rushemya	resident-elsewhere	from Jaba', living in Haifa
+20	1841	Arrabeh Nablus S/D	clerk-wrote	Nablus as the district seat
+20	1915	Fakkoua Jenin S/D, Haifa - Jami El Haj Abdulla	resident-elsewhere	from Faqqu'a, living in Haifa
+20	2199	Nahalal Haifa S/D. Beit Shareem	clerk-wrote	Nahalal lay in Nazareth S/D
+20	2212	Saffouri - Jenin S/D	clerk-wrote	#854 NB22 the same; Saffuriya lay in Nazareth S/D
+20	2309	Im El Fahim - Haifa S/D	clerk-wrote	Umm al-Fahm lay in Jenin S/D
+21	191	Kofra - Beissan S/D	place-misread	Kafra village; set in record-readings.tsv
+21	338	Birweh. Acre S/D.	district-misread	extracted as "Jere s/o"
+22	854	Saffouri. Jenin S/D.	clerk-wrote	see NB20 #2212
+24	490	Kfar Yehezkiel - Haifa S/D	clerk-wrote	Kfar Yehezkel lay in Beisan S/D
+24	590	Arab El Nfia't. Khedera S/D.	clerk-wrote	'Arab al-Nufay'at by Hadera
+24	637	Arara. Jenin S/D.	clerk-wrote	Ar'ara is Haifa S/D in VS 1945; a 1940 boundary lead
+24	4191	Zurghanieh - Benjamina s/d	clerk-wrote	Binyamina named as a district
+26	2754	Beit Jan. Safad S/D.	clerk-wrote	Druze patient: Beit Jann (Acre S/D)
+27	4300	Tireh, Haifa S/D	district-misread	extracted as Nablus
+28	4435	Kifer Yasif Haifa S/D	clerk-wrote	the page shows serial 1435, not 4435
+29	1446		unreadable	NB29 p35 not digitized
+29	1468		unreadable	NB29 p37 not digitized
+29	1776	Arrabeh Nablus S/D own house	clerk-wrote	Nablus as the district seat
+30	1415	Tire - Haifa S/D	district-misread	extracted as Acre
+30	1420	Tire - Haifa S/D	district-misread	extracted as Acre
+30	1907	Kafar Manda, Naz. S/D	clerk-right	VS 1945 lists Kafr Manda under Nazareth
+31	2884	Arrabet El Battouf, Naz. S/D	clerk-wrote	Arraba lay in Acre S/D in VS 1945
+32	6051	Ibillin Village, Nazareth S/Dist	clerk-wrote	Ibillin lay in Haifa S/D
+32	6337	Tireh, Haifa S/D	district-misread	extracted as "Tireh or Lu, Safad S/D"
+32	6674	Lute Shwam Abu Sa'ud, Haifa	district-misread	no Tiberias on the page; a Haifa address
+33	718	trans. camps Haifa, Syrian, Metan village Salkhat sub-district	resident-elsewhere	Syrian, Salkhad (Jabal Druze)

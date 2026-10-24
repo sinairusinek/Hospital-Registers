@@ -47,3 +47,178 @@ notebook	serial	admission_date	target_city	evidence
 31	3082	1947-05-20	Haifa	scan NB31 p63: "Stanton St., Hse Affef Nabulsy" (extracted as Nablus; this clerk's Haifa read as Nablus)
 31	3239	1947-05-27	Nahf	scan NB31 p76: "Nahef - Acre S/D" (extracted as Nablus; this clerk's Haifa read as Nablus)
 31	3266	1947-05-28	Haifa	scan NB31 p78: "Haifa (B/C 2968)" (extracted as Nablus; this clerk's Haifa read as Nablus)
+11	358	1935-03-17	Zeeb	scan NB11 p34: "Zeeb. Acre S/Dist." (extracted as "Ijzim, Acre S/Dist.")
+8	740	1934-05-09	Sanur (Jenin)	scan NB8 p36: "Sannaur, Jenin S/D" (extracted as "Damoun, Jenin S/Dist.")
+8	902	1934-05-31	Mi'ilya	scan NB8 p51: "Me'ilya, Acre S/D." (extracted as "Tireh, Acre S/D.")
+9	1056	1934-06-19	Arara	scan NB9 p11: "Ararah, Hfa S/Dist." (extracted as "Arameh, Sfa S/Dist.")
+9	1057	1934-06-19	Arara	scan NB9 p11: "Ararah, Hfa S/Dist." (extracted as "Arameh, Sfa S/Dist.")
+10	1701	1934-08-30	Zeeb	scan NB10 p20: "Zib, Acre S/Dist." (extracted as "Tiberias, Acre S/Dist.")
+10	2056	1934-10-20	Igzim	scan NB10 p53: "Igzim, Hfa S/Dist." (extracted as "Lydda, Jaffa Dist.")
+15	3088	1936-12-26	Majdal near Nazareth	scan NB15 p47: "Majdalle Village, Nazareth Dist." (al-Mujaydil, not Majd al-Krum)
+21	191	1939-01-27	Kafra (Beisan)	scan NB21 p67: "Kofra - Beissan S/D" (the village, not Beisan town)
+11	56	1935-01-14	Zububa (Jenin)	address (district_link.py, vs1945): "Zbuba, Jenin S/Dist." names Jenin S/D
+11	74	1935-01-17	Bineh	address (district_link.py, ruled): "Binnie, Acre S/Dist." names Acre S/D
+11	179	1935-02-06	Rameh	address (district_link.py, ruled): "Acre District - Râmi village" names Acre S/D
+11	948	1935-06-07	Rummaneh	address (district_link.py, ruled): "Rumaneh Jenin S/Dist." names Jenin S/D
+1	475	1930-06-25	Ruweis (Acre)	address (district_link.py, enwiki): "Erweis village, Acre Sub Dist." names Acre S/D
+3	1280	1932-11-15	Julis	address (district_link.py, ruled): "Joules village Acre S/D." names Acre S/D
+3	20	1933-01-07	Tamra	address (district_link.py, ruled): "Damra village. Acre S/D.|Damra" names Acre S/D
+3	24	1933-01-09	Isfiya	address (district_link.py, ruled): "of Iksfia village Haifa s/o." names Haifa S/D
+4	197	1933-03-03	Zir'in (Jenin)	address (district_link.py, enwiki): "Zerein village, Jenin Sub Dist." names Jenin S/D
+4	296	1933-04-07	Shaab	address (district_link.py, ruled): "Shaheib village, Acre Sub District" names Acre S/D
+4	302	1933-04-08	Mazra'a	address (district_link.py, ruled): "Mazraa, Acre Sub District" names Acre S/D
+4	352	1933-04-24	Jahula (Safad)	address (district_link.py, enwiki): "Jahula, Safad Sub Dist." names Safad S/D
+4	369	1933-04-29	Al-Faluja (Gaza)	address (district_link.py, enwiki): "Faluji - Gaza S/district" names Gaza S/D
+4	639	1933-06-29	Zir'in (Jenin)	address (district_link.py, enwiki): "Zirin village, Jenin S/Dist." names Jenin S/D
+5	755	1933-07-19	Zir'in (Jenin)	address (district_link.py, enwiki): "Ziriin, Jenin S/Dist." names Jenin S/D
+5	759	1933-07-19	Lajjun	address (district_link.py, ruled): "Lajjon, Jenin S/Dist." names Jenin S/D
+5	834	1933-07-29	Zububa (Jenin)	address (district_link.py, vs1945): "Zubaba, Jenin S/Dist." names Jenin S/D
+6	1209	1933-09-15	al-Mujaydil	address (district_link.py, ruled): "El Mujeidil, Nazareth S/Dist." names Nazareth S/D
+6	1235	1933-09-19	Marda (Nablus)	address (district_link.py, vs1945): "Nablus Dist. Marda" names Nablus S/D
+6	1513	1933-10-28	Sanur (Jenin)	address (district_link.py, ruled): "Sannour, Jenin district" names Jenin S/D
+6	1697	1933-11-25	Yarka	address (district_link.py, ruled): "Yaska, Acre Sub Dist" names Acre S/D
+6	1743	1933-11-30	Rameh	address (district_link.py, ruled): "Rama, Acre S/Dist." names Acre S/D
+7	1844	1933-12-17	Qabalan (Nablus)	address (district_link.py, vs1945): "Kabalan, Nablus S/Dist." names Nablus S/D
+7	1898	1933-12-28	Rameh	address (district_link.py, ruled): "Rami, Acre S/Dist." names Acre S/D
+7	2	1934-01-01	Mi'ilya	address (district_link.py, ruled): "Milia, Acre Sub Dist." names Acre S/D
+7	159	1934-01-29	Kafr Rai	address (district_link.py, vs1945): "Kufr Rais, Jenin S/Dist" names Jenin S/D
+7	322	1934-03-02	Birweh	address (district_link.py, ruled): "El Biriwi, Acre S/Dist." names Acre S/D
+8	604	1934-04-19	Suhmata	address (district_link.py, ruled): "Sukhmata, Acre S/Dist." names Acre S/D
+8	642	1934-04-24	Yasid (Nablus)	address (district_link.py, vs1945): "Yasid, Nablus S/Dist." names Nablus S/D
+8	752	1934-05-11	Sarafand (Haifa)	address (district_link.py, enwiki): "Sarafand. Haifa S/Dist" names Haifa S/D
+8	844	1934-05-23	Ya'bad	address (district_link.py, vs1945): "Yacbad, Jenin S/dist." names Jenin S/D
+8	868	1934-05-27	Lubieh	address (district_link.py, ruled): "Lubeia, Tiberias S/Dist." names Tiberias S/D
+8	893	1934-05-30	Lubieh	address (district_link.py, ruled): "Lubyeh, Tiberias S/D." names Tiberias S/D
+9	1307	1934-07-17	Deir el Qasi and El Mansura (Acre)	address (district_link.py, enwiki): "Deir el Kasy, Acre S/Dist." names Acre S/D
+9	1452	1934-08-02	Rameh	address (district_link.py, ruled): "El Rameh|Acre S/Dist." names Acre S/D
+10	1758	1934-09-08	Yarka	address (district_link.py, ruled): "c/o P.W.D. Yaska village Acre S/Dist." names Acre S/D
+10	1781	1934-09-12	Tireh	address (district_link.py, ruled): "Tireh Hfa. S/Dist." names Haifa S/D
+10	1843	1934-09-22	Bineh	address (district_link.py, ruled): "Beineh, Acre S/Dist." names Acre S/D
+10	1975	1934-10-09	Buteimat (Haifa)	address (district_link.py, enwiki): "Buteimat, Haifa S/Dist." names Haifa S/D
+10	2058	1934-10-20	Nahalal	address (district_link.py, ruled): "Nahla Nazareth Dist." names Nazareth S/D
+12	1451	1935-07-13	Bineh	address (district_link.py, ruled): "El Bi'neh, Acre Dist." names Acre S/D
+12	1533	1935-08-08	Kisra	address (district_link.py, ruled): "Kisrah, Acre Dist." names Acre S/D
+12	1671	1935-08-21	Mi'ar (Acre)	address (district_link.py, enwiki): "Mi'ar, Acre S/Dist" names Acre S/D
+12	1709	1935-08-26	Kabri	address (district_link.py, ruled): "El Kabary, Acre S/dist" names Acre S/D
+15	2963	1936-12-10	Kabatia	address (district_link.py, ruled): "Kabatia Jenin S/D" names Jenin S/D
+15	4	1937-01-02	Nahf	address (district_link.py, ruled): "Nahief Acre District" names Acre S/D
+15	31	1937-01-06	Birweh	address (district_link.py, enwiki): "Birweta Acre Sub/Dist." names Acre S/D
+15	64	1937-01-12	Talluza (Nablus)	address (district_link.py, vs1945): "Talluza Nablus Dist." names Nablus S/D
+15	215	1937-02-02	Nahf	address (district_link.py, ruled): "Nahaf. Acre District" names Acre S/D
+15	260	1937-02-10	Damoun	address (district_link.py, ruled): "Dammoun Acre District|Dammoun" names Acre S/D
+15	325	1937-02-20	Abu Snan	address (district_link.py, ruled): "Abusnan Acre/District|Abu Snan" names Acre S/D
+16	1000	1937-06-10	Yavne'el	address (district_link.py, ruled): "Yavnial, Tiberias S/D" names Tiberias S/D
+16	1225	1937-06-14	Silet el Hartieh	address (district_link.py, ruled): "Sileh - Jenin s/d." names Jenin S/D
+16	1384	1937-06-12	Rummaneh	address (district_link.py, ruled): "Rumaneh Jenin Dist." names Jenin S/D
+16	1389	1937-07-01	Damoun	address (district_link.py, ruled): "Damoun" names Acre S/D
+16	1517	1937-07-14	Lajjun	address (district_link.py, ruled): "Lajjoune Jenin Dist." names Jenin S/D
+16	1524	1937-07-15	Hittin	address (district_link.py, ruled): "Hittin, Tiberias Dist." names Tiberias S/D
+17	1710	1937-08-01	Deir el Asad	address (district_link.py, ruled): "Ein el Asad Acre s/o" names Acre S/D
+17	2085	1937-09-06	Jalama (Jenin)	address (district_link.py, vs1945): "Jalma, Jenin Dist." names Jenin S/D
+17	2088	1937-09-07	Silet el Hartieh	address (district_link.py, ruled): "Silet el Hartiyeh. Jenin District" names Jenin S/D
+17	2328	1937-10-02	Mi'ilya	address (district_link.py, ruled): "Mielia - Acre Dist." names Acre S/D
+17	2466	1937-09-14	Sindianeh	address (district_link.py, ruled): "Sindianes Haifa Dist" names Haifa S/D
+17	2600	1937-10-02	Abu Shusha (Haifa)	address (district_link.py, enwiki): "Abou Shoushe Haifa District" names Haifa S/D
+18	125	1938-01-17	Kabul	address (district_link.py, ruled): "Kaboul Acre S/D." names Acre S/D
+18	339	1938-02-11	Mansi	address (district_link.py, ruled): "Mensy Haifa Dist" names Haifa S/D
+18	378	1938-02-16	Mi'ilya	address (district_link.py, ruled): "Mielia Acre Dist" names Acre S/D
+18	383	1938-02-17	Zalafa (Jenin)	address (district_link.py, vs1945): "Zalafeh Jenin Dist" names Jenin S/D
+18	401	1938-02-19	Bala'	address (district_link.py, ruled): "Bala, Toulkarem S/D." names Tulkarm S/D
+19	553	1938-03-12	Damoun	address (district_link.py, ruled): "Damoun Acre Dist|Damoun" names Acre S/D
+19	676	1938-03-29	Sanur (Jenin)	address (district_link.py, ruled): "Samour. Jenin Dist." names Jenin S/D
+19	694	1938-03-30	Mi'ilya	address (district_link.py, ruled): "Meilya - Acre Dist." names Acre S/D
+19	793	1938-04-02	Silet el Hartieh	address (district_link.py, ruled): "Sily - Jenin S/D" names Jenin S/D
+19	1110	1938-05-18	Birweh	address (district_link.py, ruled): "-|Birweh - Acre s/d." names Acre S/D
+19	1194	1938-05-28	Sakhnin	address (district_link.py, ruled): "Sakhnin|Acre S/D" names Acre S/D
+20	1740	1938-07-25	Kafr Qari'	address (district_link.py, ruled): "Haifa S/o. Haifa. Wad el Salib Beit Husein el Dib." names Haifa S/D
+20	2145	1938-09-05	Ya'bad	address (district_link.py, vs1945): "Ya'bad Jenin S/D." names Jenin S/D
+20	2241	1938-09-14	Zib	address (district_link.py, ruled): "Al-Zeeb" names Acre S/D
+20	2274	1938-09-16	Tabigha (Tiberias)	address (district_link.py, enwiki): "Tabgha - Tiberias S/D" names Tiberias S/D
+20	2276	1938-09-16	Tabigha (Tiberias)	address (district_link.py, enwiki): "Tabgha - Tiberias S/D" names Tiberias S/D
+20	2280	1938-09-16	Iksal (Nazareth)	address (district_link.py, vs1945): "Ikssal - Nazareth S/D." names Nazareth S/D
+20	2311	1938-09-19	Zububa (Jenin)	address (district_link.py, vs1945): "Zibuba - Jenin S/D" names Jenin S/D
+20	2427	1938-10-03	Sabastiya (Nablus)	address (district_link.py, vs1945): "Sebastieh. Nablus S/D" names Nablus S/D
+20	2483	1938-10-08	Kafr Bir'im (Safad)	address (district_link.py, enwiki): "Kafer Bireim Safad Dist." names Safad S/D
+21	2748	1938-11-07	Kwikat	address (district_link.py, ruled): "Kwekat. Acre s/d" names Acre S/D
+21	2901	1938-11-27	Yanouh	address (district_link.py, ruled): "Yanouh-Acre S/D" names Acre S/D
+21	2959	1938-12-03	Kafr Qari'	address (district_link.py, ruled): "Kufer kari" names Haifa S/D
+21	161	1939-01-23	Birkin	address (district_link.py, ruled): "Birkeen - Jenin S/d" names Jenin S/D
+21	179	1939-01-25	Iqrith (Acre)	address (district_link.py, enwiki): "Akrit. Acre s/d." names Acre S/D
+21	566	1939-03-08	Meithalun (Jenin)	address (district_link.py, vs1945): "Maythaloun - Jenin S/D" names Jenin S/D
+22	654	1939-03-17	Bineh	address (district_link.py, ruled): "Binneh - Acre s/o" names Acre S/D
+22	714	1939-03-25	Rummaneh	address (district_link.py, ruled): "Rummaneh Jenin S/D" names Jenin S/D
+22	760	1939-03-29	Jalama (Jenin)	address (district_link.py, vs1945): "Jallameh. Jenin S/D." names Jenin S/D
+22	1079	1939-04-29	Kisra	address (district_link.py, ruled): "Kissra - Acre s/d" names Acre S/D
+22	1084	1939-04-30	Rummaneh	address (district_link.py, ruled): "Rumaneh. Jenin s/d" names Jenin S/D
+22	1199	1939-05-09	Iqrith (Acre)	address (district_link.py, enwiki): "Ikrit. Acre S/D" names Acre S/D
+22	1214	1939-05-10	Jabbul (Beisan)	address (district_link.py, vs1945): "Jabbul. Beisan S/D c/o Mukhtar" names Beisan S/D
+22	1216	1939-05-11	Rameh	address (district_link.py, ruled): "Rami Acre S/D" names Acre S/D
+22	1228	1939-05-12	Rameh	address (district_link.py, ruled): "Rami - Acre S/D" names Acre S/D
+22	1509	1939-05-27	Daliyat al-Karmel	address (district_link.py, ruled): "Daliet el Carmel" names Haifa S/D
+22	1535	1939-05-29	Umm az-Zinat	address (district_link.py, ruled): "Im el Zinat. Haifa - S/D." names Haifa S/D
+23	2914	1939-09-16	Hanita	address (district_link.py, ruled): "Hanita|Acre S/D" names Acre S/D
+23	3297	1939-10-13	Deir Sharaf (Nablus)	address (district_link.py, vs1945): "Deir Sharaf Nablus s/d." names Nablus S/D
+23	3473	1939-10-26	Majd el Krum	address (district_link.py, ruled): "Majdel Kroum|Majd al-Krum|Acre S/D" names Acre S/D
+23	3475	1939-10-26	Jabāliya (Gaza)	address (district_link.py, vs1945): "Jabalya - Gaza s/D" names Gaza S/D
+23	3565	1939-11-02	Tarshiha	address (district_link.py, ruled): "Tarshiha|Acre S/D" names Acre S/D
+23	3566	1939-11-02	Birkin	address (district_link.py, ruled): "Birkin - Jenin S/D." names Jenin S/D
+23	3569	1939-11-02	Zib	address (district_link.py, ruled): "Zeeb. Acre S/D." names Acre S/D
+23	3740	1939-11-15	Qaluniya (Jerusalem)	address (district_link.py, enwiki): "Calonia Jerusalem Dist." names Jerusalem S/D
+23	3930	1939-11-29	Silet el Hartieh	address (district_link.py, ruled): "Silet el Harthiyeh, Jenin S/D" names Jenin S/D
+24	3965	1939-12-02	Kafr Bir'im (Safad)	address (district_link.py, enwiki): "Kufer Birem Safad S/D" names Safad S/D
+24	4251	1939-12-25	Ruweis (Acre)	address (district_link.py, enwiki): "Irwis village Acre s/D" names Acre S/D
+24	56	1940-01-07	Tarbikha	address (district_link.py, ruled): "Tarbicha - Acre S/D" names Acre S/D
+24	88	1940-01-09	Tarbikha	address (district_link.py, ruled): "Tarbicha - Acre S/D" names Acre S/D
+24	299	1940-01-27	Ramin (Tulkarm)	address (district_link.py, vs1945): "Ramin - TulKarem s/d Beni Sa'b. s/d" names Tulkarm S/D
+24	317	1940-01-29	Mansi	address (district_link.py, ruled): "Manssy village Haifa S/D." names Haifa S/D
+24	353	1940-02-02	Hunin (Safad)	address (district_link.py, enwiki): "Hunin. Safad S/D." names Safad S/D
+24	408	1940-02-06	Deir Abu Da'if (Jenin)	address (district_link.py, vs1945): "Deir Abu Deif Jenin S/D." names Jenin S/D
+24	411	1940-02-03	Ghabisiya (Acre)	address (district_link.py, enwiki): "Ghabssich. Acre S/D" names Acre S/D
+24	475	1940-02-12	Nuris (Jenin)	address (district_link.py, enwiki): "Nuris. Jenin S/D." names Jenin S/D
+27	4004	1944-08-19	Damoun	address (district_link.py, ruled): "Damoon - Acre S/D" names Acre S/D
+28	4436	1944-09-09	Igzim	address (district_link.py, ruled): "Reggim - Haifa S/D. own house" names Haifa S/D
+28	4675	1944-09-23	Damoun	address (district_link.py, ruled): "Damoun. Acre S/D.|Damun|Acre S/D" names Acre S/D
+28	4912	1944-10-08	Kafr Yasif	address (district_link.py, ruled): "Kufr Yasif Acre S/D." names Acre S/D
+29	1306	1944-03-27	Tireh	address (district_link.py, ruled): "Tera Haifa s/d" names Haifa S/D
+29	1311	1944-03-27	Bala'	address (district_link.py, ruled): "Balaa Tul-Karm S/D" names Tulkarm S/D
+29	1389	1944-04-01	Zib	address (district_link.py, ruled): "Zeeb - Acre S/D|Zeeb" names Acre S/D
+29	1390	1944-04-01	Zib	address (district_link.py, ruled): "Zeeb - Acre S/D|Zeeb" names Acre S/D
+29	1443	1944-05-05	Kabatia	address (district_link.py, ruled): "Kaba'ya Jenin S/D" names Jenin S/D
+29	1667	1944-04-17	Kafr Qari'	address (district_link.py, ruled): "Kufr Kare Haifa S/D." names Haifa S/D
+29	1998	1944-05-07	Kafr Qari'	address (district_link.py, ruled): "Kufer Kari. Haifa S.D. own House." names Haifa S/D
+29	2057	1944-05-11	Daliyat er Ruha (Haifa)	address (district_link.py, enwiki): "Daliet el Rauha Haifa s/d" names Haifa S/D
+30	1483	1946-03-25	Majd el Krum	address (district_link.py, ruled): "Acre S/D|Majdel Kroum|Majd al-Krum" names Acre S/D
+30	1674	1946-04-04	Jaba'	address (district_link.py, ruled): "Jabaa - Haifa S/D" names Haifa S/D
+30	1710	1946-04-06	Yarka	address (district_link.py, ruled): "Yerka. Acre S/D" names Acre S/D
+30	1817	1946-04-12	Ein Ghazal	address (district_link.py, ruled): "Ein Ghazal -" names Haifa S/D
+30	1842	1946-04-13	Julis	address (district_link.py, ruled): "Julis Acre s/d" names Acre S/D
+30	1873	1946-04-15	Seida (Tulkarm)	address (district_link.py, vs1945): "Saida Tulkarem S/D." names Tulkarm S/D
+30	1972	1946-04-20	Mazra'a	address (district_link.py, ruled): "Mizraa Acre S/D" names Acre S/D
+30	2137	1946-04-28	Kabatia	address (district_link.py, ruled): "Kabaseh Jenin Dist." names Jenin S/D
+30	2227	1946-05-03	al-Mujaydil	address (district_link.py, enwiki): "Mijeidel Naz S/D" names Nazareth S/D
+30	2252	1946-05-04	Beit Jibrin (Hebron)	address (district_link.py, enwiki): "Beit Jibrin - Hebron Dist." names Hebron S/D
+31	2481	1947-04-25	Kabri	address (district_link.py, ruled): "Kabreh|Acre S/D" names Acre S/D
+31	2490	1947-04-24	Bassah	address (district_link.py, ruled): "Bassa|Acre S/D" names Acre S/D
+31	2511	1947-04-19	Tarshiha	address (district_link.py, ruled): "Tarshiha|Acre S/D" names Acre S/D
+31	2527	1947-04-27	Sedjerah	address (district_link.py, ruled): "Shejerah Tiberias S/D" names Tiberias S/D
+31	2681	1947-05-03	Zib	address (district_link.py, ruled): "Zeeb / Acre|Zeeb - Acre S/D" names Acre S/D
+31	2848	1947-05-10	Deir el Asad	address (district_link.py, ruled): "Deir El Asad" names Acre S/D
+31	3116	1947-05-21	Arraba	address (district_link.py, ruled): "Arrabet el Battouf|Acre S/D" names Acre S/D
+31	3123	1947-05-22	Bassah	address (district_link.py, ruled): "Bassa" names Acre S/D
+31	3408	1947-06-04	Tarshiha	address (district_link.py, ruled): "Tarshiha" names Acre S/D
+31	3410	1947-06-04	Deir el Qasi and El Mansura (Acre)	address (district_link.py, enwiki): "Deir al-Qasi|Acre S/D" names Acre S/D
+31	3515	1947-06-07	Ein Ghazal	address (district_link.py, ruled): "Em Ghazal" names Haifa S/D
+31	3516	1947-06-07	Tarshiha	address (district_link.py, ruled): "Tarshiha" names Acre S/D
+31	3535	1947-06-08	Umm el Faraj (Acre)	address (district_link.py, enwiki): "Um El Faraj Acre S/D." names Acre S/D
+31	3536	1947-06-09	Sanur (Jenin)	address (district_link.py, ruled): "Samur - Jennin S/D." names Jenin S/D
+32	5993	1947-09-12	Rameh	address (district_link.py, ruled): "Rameh Acre s/d." names Acre S/D
+32	5994	1947-09-12	Kafr Yasif	address (district_link.py, ruled): "Kafr Yassif Acre Dist" names Acre S/D
+32	5996	1947-09-12	Ghabisiya (Acre)	address (district_link.py, enwiki): "Ghabsiyeh Acre s/d" names Acre S/D
+32	6319	1947-09-24	Safsaf	address (district_link.py, ruled): "Safsaf Safad s/d" names Safad S/D
+32	6320	1947-09-24	Umm az-Zinat	address (district_link.py, ruled): "Um Zenat Haifa s/d" names Haifa S/D
+32	6327	1947-09-24	Umm al-Fahm	address (district_link.py, ruled): "Um El Faham Jenin s/d" names Jenin S/D
+32	6329	1947-09-24	Zeita	address (district_link.py, ruled): "Zeitah Tulkarm s/d." names Tulkarm S/D
+32	6335	1947-09-24	Saffuriya	address (district_link.py, ruled): "Saffurich or Lu, Naz S/D." names Nazareth S/D
+32	6853	1947-10-15	Athlit	address (district_link.py, ruled): "Athlit Haifa S/D." names Haifa S/D
+32	6902	1947-10-18	Zeita	address (district_link.py, ruled): "Zeitah, Tul Karem s.d." names Tulkarm S/D
+30	1490	1946-03-25	Abu Shusha (Haifa)	address (district_link.py, ruled): "Abu Shusheh / Haifa" names Haifa S/D

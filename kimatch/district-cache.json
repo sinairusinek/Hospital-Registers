@@ -3024,6 +3024,2637 @@
     35.275277777778
    ],
    "enwiki": "Yafa an-Naseriyye"
+  },
+  "Q2892602": {
+   "label": "Al-Mujaydil",
+   "p131": [
+    "Q5283459"
+   ],
+   "coord": [
+    32.67785833,
+    35.24181389
+   ],
+   "enwiki": "Al-Mujaydil"
+  },
+  "Q1000893": {
+   "label": "HaZore'a",
+   "p131": [
+    "Q2359581"
+   ],
+   "coord": [
+    32.644722222222,
+    35.120833333333
+   ],
+   "enwiki": "HaZore'a"
+  },
+  "Q1000997": {
+   "label": "Dalia",
+   "p131": [
+    "Q2359581"
+   ],
+   "coord": [
+    32.590277777778,
+    35.0775
+   ],
+   "enwiki": "Dalia, Israel"
+  },
+  "Q1022506": {
+   "label": "Degania Bet",
+   "p131": [
+    "Q1967925"
+   ],
+   "coord": [
+    32.708083333333,
+    35.574888888889
+   ],
+   "enwiki": "Degania Bet"
+  },
+  "Q1026840": {
+   "label": "Na'an",
+   "p131": [
+    "Q2693373"
+   ],
+   "coord": [
+    31.885,
+    34.858611111111
+   ],
+   "enwiki": "Na'an"
+  },
+  "Q1141858": {
+   "label": "Ajloun",
+   "p131": [
+    "Q506658"
+   ],
+   "coord": [
+    32.3325,
+    35.751666666666665
+   ],
+   "enwiki": "Ajloun"
+  },
+  "Q1186956": {
+   "label": "Kfar Tavor",
+   "p131": [
+    "Q65073769"
+   ],
+   "coord": [
+    32.687138888889,
+    35.420222222222
+   ],
+   "enwiki": "Kfar Tavor"
+  },
+  "Q11878352": {
+   "label": "Alroy (neighborhood)",
+   "p131": [],
+   "coord": [
+    32.71066666666667,
+    35.10472222222222
+   ],
+   "enwiki": null
+  },
+  "Q12404212": {
+   "label": "Ard el-Yahud",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.80608957484602,
+    35.00684498979936
+   ],
+   "enwiki": null
+  },
+  "Q1246960": {
+   "label": "Hittin",
+   "p131": [],
+   "coord": [
+    32.80758,
+    35.45382
+   ],
+   "enwiki": "Hittin"
+  },
+  "Q1269256": {
+   "label": "Beit She'arim",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.696197222222,
+    35.1773
+   ],
+   "enwiki": "Beit She'arim (moshav)"
+  },
+  "Q1324574": {
+   "label": "El-Qantarah al-Sharqiya",
+   "p131": [
+    "Q22928683"
+   ],
+   "coord": [
+    30.85,
+    32.31
+   ],
+   "enwiki": "Qantara Sharq"
+  },
+  "Q13358574": {
+   "label": "Wadi al-Hawarith",
+   "p131": [
+    "Q5283479"
+   ],
+   "coord": [
+    32.39,
+    34.9
+   ],
+   "enwiki": "Wadi al-Hawarith"
+  },
+  "Q1339887": {
+   "label": "Ein Harod",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    32.5603,
+    35.3908
+   ],
+   "enwiki": "Ein Harod"
+  },
+  "Q135425": {
+   "label": "Kfar Hasidim",
+   "p131": [
+    "Q2914961"
+   ],
+   "coord": [
+    32.7432,
+    35.093497222222
+   ],
+   "enwiki": "Kfar Hasidim"
+  },
+  "Q135432": {
+   "label": "Nesher",
+   "p131": [
+    "Q5423411",
+    "Q41621"
+   ],
+   "coord": [
+    32.77111111111111,
+    35.03944444444444
+   ],
+   "enwiki": "Nesher"
+  },
+  "Q135484": {
+   "label": "Sha'ar HaAmakim",
+   "p131": [
+    "Q2914961"
+   ],
+   "coord": [
+    32.721944444444446,
+    35.111666666666665
+   ],
+   "enwiki": "Sha'ar HaAmakim"
+  },
+  "Q152374": {
+   "label": "Kiryat Bialik",
+   "p131": [
+    "Q185845"
+   ],
+   "coord": [
+    32.833055555556,
+    35.066388888889
+   ],
+   "enwiki": "Kiryat Bialik"
+  },
+  "Q152387": {
+   "label": "Kiryat Yam",
+   "p131": [
+    "Q5423411",
+    "Q41621"
+   ],
+   "coord": [
+    32.833055555556,
+    35.066388888889
+   ],
+   "enwiki": "Kiryat Yam"
+  },
+  "Q152436": {
+   "label": "Kfar Saba",
+   "p131": [
+    "Q5422648",
+    "Q138027176"
+   ],
+   "coord": [
+    32.185783333333,
+    34.907683333333
+   ],
+   "enwiki": "Kfar Saba"
+  },
+  "Q152467": {
+   "label": "Bnei Brak",
+   "p131": [
+    "Q192811"
+   ],
+   "coord": [
+    32.08074,
+    34.8338
+   ],
+   "enwiki": "Bnei Brak"
+  },
+  "Q152567": {
+   "label": "Kiryat Motzkin",
+   "p131": [
+    "Q5423411",
+    "Q185845",
+    "Q41621"
+   ],
+   "coord": [
+    32.836944444444,
+    35.0775
+   ],
+   "enwiki": "Kiryat Motzkin"
+  },
+  "Q152602": {
+   "label": "Kiryat Ata",
+   "p131": [
+    "Q5423411"
+   ],
+   "coord": [
+    32.8,
+    35.1
+   ],
+   "enwiki": "Kiryat Ata"
+  },
+  "Q158119": {
+   "label": "Ramallah",
+   "p131": [
+    "Q1093166"
+   ],
+   "coord": [
+    31.896944444444,
+    35.201666666667
+   ],
+   "enwiki": "Ramallah"
+  },
+  "Q166857": {
+   "label": "Gan Samuel",
+   "p131": [
+    "Q731661"
+   ],
+   "coord": [
+    32.45,
+    34.95
+   ],
+   "enwiki": "Gan Shmuel"
+  },
+  "Q166865": {
+   "label": "Ein Shemer",
+   "p131": [
+    "Q731661"
+   ],
+   "coord": [
+    32.4613,
+    35.0067
+   ],
+   "enwiki": "Ein Shemer"
+  },
+  "Q168162": {
+   "label": "Ness Ziona",
+   "p131": [
+    "Q801"
+   ],
+   "coord": [
+    31.933333333333,
+    34.8
+   ],
+   "enwiki": "Ness Ziona"
+  },
+  "Q168225": {
+   "label": "Hebron",
+   "p131": [
+    "Q264180"
+   ],
+   "coord": [
+    31.535,
+    35.098611111111
+   ],
+   "enwiki": "Hebron"
+  },
+  "Q1743479": {
+   "label": "Kiryat Tiv'on",
+   "p131": [
+    "Q5423411"
+   ],
+   "coord": [
+    32.723888888889,
+    35.127222222222
+   ],
+   "enwiki": "Kiryat Tiv'on"
+  },
+  "Q190828": {
+   "label": "Petah Tikva",
+   "p131": [
+    "Q5422648",
+    "Q5283469",
+    "Q138027176",
+    "Q319233"
+   ],
+   "coord": [
+    32.083333333333,
+    34.883333333333
+   ],
+   "enwiki": "Petah Tikva"
+  },
+  "Q1914736": {
+   "label": "Mazkeret Batya",
+   "p131": [],
+   "coord": [
+    31.854541666667,
+    34.84195
+   ],
+   "enwiki": "Mazkeret Batya"
+  },
+  "Q192225": {
+   "label": "Netanya",
+   "p131": [
+    "Q5422629"
+   ],
+   "coord": [
+    32.32861111111111,
+    34.85666666666667
+   ],
+   "enwiki": "Netanya"
+  },
+  "Q192807": {
+   "label": "Ramat Gan",
+   "p131": [
+    "Q192811"
+   ],
+   "coord": [
+    32.070007,
+    34.823541
+   ],
+   "enwiki": "Ramat Gan"
+  },
+  "Q1938721": {
+   "label": "Mishmar HaEmek",
+   "p131": [
+    "Q2359581"
+   ],
+   "coord": [
+    32.609722222222,
+    35.141666666667
+   ],
+   "enwiki": "Mishmar HaEmek"
+  },
+  "Q201051": {
+   "label": "Rishon LeZion",
+   "p131": [
+    "Q5422653"
+   ],
+   "coord": [
+    31.95,
+    34.8
+   ],
+   "enwiki": "Rishon LeZion"
+  },
+  "Q207350": {
+   "label": "Rehovot",
+   "p131": [
+    "Q5422653",
+    "Q138027176"
+   ],
+   "coord": [
+    31.891388888889,
+    34.807777777778
+   ],
+   "enwiki": "Rehovot"
+  },
+  "Q2094886": {
+   "label": "Tel Hai",
+   "p131": [
+    "Q1487392"
+   ],
+   "coord": [
+    33.235,
+    35.578333333333
+   ],
+   "enwiki": "Tel Hai"
+  },
+  "Q2152846": {
+   "label": "Al-Rihaniyya",
+   "p131": [
+    "Q5283446"
+   ],
+   "coord": [
+    32.6199,
+    35.0868
+   ],
+   "enwiki": "Al-Rihaniyya"
+  },
+  "Q221447": {
+   "label": "Ramla",
+   "p131": [
+    "Q5419070"
+   ],
+   "coord": [
+    31.9275,
+    34.8625
+   ],
+   "enwiki": "Ramla"
+  },
+  "Q2255513": {
+   "label": "Umm az-Zinat",
+   "p131": [
+    "Q5283446"
+   ],
+   "coord": [
+    32.6472,
+    35.0633
+   ],
+   "enwiki": "Umm az-Zinat"
+  },
+  "Q2296107": {
+   "label": "Kvutzat Kinneret",
+   "p131": [
+    "Q1967925"
+   ],
+   "coord": [
+    32.7134,
+    35.5625
+   ],
+   "enwiki": "Kvutzat Kinneret"
+  },
+  "Q2304754": {
+   "label": "Tel Mond",
+   "p131": [
+    "Q188785"
+   ],
+   "coord": [
+    32.254444444444,
+    34.918611111111
+   ],
+   "enwiki": "Tel Mond"
+  },
+  "Q2384654": {
+   "label": "Sanur, Jenin",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.356388888889,
+    35.246944444444
+   ],
+   "enwiki": "Sanur, Jenin"
+  },
+  "Q2390257": {
+   "label": "Nahef",
+   "p131": [
+    "Q5423103"
+   ],
+   "coord": [
+    32.931944444444,
+    35.3175
+   ],
+   "enwiki": "Nahf"
+  },
+  "Q2413425": {
+   "label": "German Colony",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.82,
+    34.99055555555555
+   ],
+   "enwiki": "German Colony, Haifa"
+  },
+  "Q246431": {
+   "label": "Attil",
+   "p131": [
+    "Q1093157"
+   ],
+   "coord": [
+    32.369383333333,
+    35.071802777778
+   ],
+   "enwiki": "Attil"
+  },
+  "Q2479614": {
+   "label": "Balfouria",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.6302,
+    35.2963
+   ],
+   "enwiki": "Balfouria"
+  },
+  "Q2495402": {
+   "label": "Kfar Vitkin",
+   "p131": [
+    "Q2678908"
+   ],
+   "coord": [
+    32.381797222222,
+    34.876897222222
+   ],
+   "enwiki": "Kfar Vitkin"
+  },
+  "Q2573500": {
+   "label": "Beit Zera",
+   "p131": [
+    "Q1967925",
+    "Q189942"
+   ],
+   "coord": [
+    32.688897222222,
+    35.573397222222
+   ],
+   "enwiki": "Beit Zera"
+  },
+  "Q25910": {
+   "label": "Jezzine",
+   "p131": [
+    "Q2210780"
+   ],
+   "coord": [
+    33.54,
+    35.583611111111
+   ],
+   "enwiki": "Jezzine"
+  },
+  "Q2630079": {
+   "label": "Hadar HaCarmel",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.80776389,
+    34.99815
+   ],
+   "enwiki": "Hadar HaCarmel"
+  },
+  "Q2776808": {
+   "label": "Mitzpa",
+   "p131": [
+    "Q2344202"
+   ],
+   "coord": [
+    32.790555555556,
+    35.509444444444
+   ],
+   "enwiki": "Mitzpa"
+  },
+  "Q2776845": {
+   "label": "Ginegar Archive",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.663897222222,
+    35.258297222222
+   ],
+   "enwiki": "Ginegar"
+  },
+  "Q2776886": {
+   "label": "Kfar Gidon",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.643397222222,
+    35.290997222222
+   ],
+   "enwiki": "Kfar Gidon"
+  },
+  "Q2776930": {
+   "label": "Givat Haim",
+   "p131": [
+    "Q2678908"
+   ],
+   "coord": [
+    32.396284150373425,
+    34.93059289344848
+   ],
+   "enwiki": "Givat Haim"
+  },
+  "Q2777455": {
+   "label": "Kfar HaḤoresh",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.7021,
+    35.274297222222
+   ],
+   "enwiki": "Kfar HaHoresh"
+  },
+  "Q2777518": {
+   "label": "Kfar Baruch",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.6465,
+    35.1895
+   ],
+   "enwiki": "Kfar Baruch"
+  },
+  "Q2888546": {
+   "label": "Masada",
+   "p131": [
+    "Q1967925"
+   ],
+   "coord": [
+    32.68339722,
+    35.5985
+   ],
+   "enwiki": "Masada (kibbutz)"
+  },
+  "Q2889218": {
+   "label": "Bat Shlomo",
+   "p131": [
+    "Q1915911"
+   ],
+   "coord": [
+    32.596897222222,
+    35.003197222222
+   ],
+   "enwiki": "Bat Shlomo"
+  },
+  "Q2889536": {
+   "label": "shuaffat",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.6507,
+    35.287797222222
+   ],
+   "enwiki": "Mizra"
+  },
+  "Q2890213": {
+   "label": "Ein HaShofet",
+   "p131": [
+    "Q2359581"
+   ],
+   "coord": [
+    32.5959,
+    35.1011
+   ],
+   "enwiki": "Ein HaShofet"
+  },
+  "Q2890402": {
+   "label": "Hanita",
+   "p131": [
+    "Q194689"
+   ],
+   "coord": [
+    33.0876,
+    35.173497222222
+   ],
+   "enwiki": "Hanita"
+  },
+  "Q2890709": {
+   "label": "Yokneam Moshava",
+   "p131": [
+    "Q2359581"
+   ],
+   "coord": [
+    32.6539,
+    35.100297222222
+   ],
+   "enwiki": "Yokneam Moshava"
+  },
+  "Q2891543": {
+   "label": "Ashdot Ya'akov",
+   "p131": [],
+   "coord": [
+    32.65805556,
+    35.58194444
+   ],
+   "enwiki": "Ashdot Ya'akov"
+  },
+  "Q2897020": {
+   "label": "Burayka",
+   "p131": [
+    "Q5283446",
+    "Q198399"
+   ],
+   "coord": [
+    32.55806944,
+    34.97761111
+   ],
+   "enwiki": "Burayka"
+  },
+  "Q2897547": {
+   "label": "Kababir",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.804201805,
+    34.97314585
+   ],
+   "enwiki": "Kababir"
+  },
+  "Q2903275": {
+   "label": "Kfar Brandeis",
+   "p131": [
+    "Q471886"
+   ],
+   "coord": [
+    32.42387778,
+    34.92214722
+   ],
+   "enwiki": "Kfar Brandeis"
+  },
+  "Q2905719": {
+   "label": "Bayt Dajan, Jaffa",
+   "p131": [
+    "Q5283448"
+   ],
+   "coord": [
+    32.00350833,
+    34.82926111
+   ],
+   "enwiki": "Bayt Dajan"
+  },
+  "Q2906526": {
+   "label": "Wilhelma",
+   "p131": [
+    "Q2640094"
+   ],
+   "coord": [
+    32.0233,
+    34.9135
+   ],
+   "enwiki": "Wilhelma, Palestine"
+  },
+  "Q2908710": {
+   "label": "Samakh",
+   "p131": [
+    "Q12270324"
+   ],
+   "coord": [
+    32.70486389,
+    35.58756944
+   ],
+   "enwiki": "Samakh, Tiberias"
+  },
+  "Q2910153": {
+   "label": "Wadi Salib",
+   "p131": [],
+   "coord": [
+    32.8111,
+    35
+   ],
+   "enwiki": "Wadi Salib"
+  },
+  "Q2916182": {
+   "label": "Migdal",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    32.839077777778,
+    35.499294444444
+   ],
+   "enwiki": "Migdal, Israel"
+  },
+  "Q2916589": {
+   "label": "Ilaniya",
+   "p131": [
+    "Q2344202"
+   ],
+   "coord": [
+    32.758333333333,
+    35.401944444444
+   ],
+   "enwiki": "Ilaniya"
+  },
+  "Q2916599": {
+   "label": "Baqa al-Gharbiyye",
+   "p131": [
+    "Q185845"
+   ],
+   "coord": [
+    32.420327777778,
+    35.042180555556
+   ],
+   "enwiki": "Baqa al-Gharbiyye"
+  },
+  "Q2916642": {
+   "label": "Kfar Hittim",
+   "p131": [
+    "Q2344202"
+   ],
+   "coord": [
+    32.800277777778,
+    35.5025
+   ],
+   "enwiki": "Kfar Hittim"
+  },
+  "Q2916646": {
+   "label": "Ein Dor",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.656197222222,
+    35.417097222222
+   ],
+   "enwiki": "Ein Dor"
+  },
+  "Q2916649": {
+   "label": "Tel Adashim",
+   "p131": [
+    "Q795067"
+   ],
+   "coord": [
+    32.6552,
+    35.301097222222
+   ],
+   "enwiki": "Tel Adashim"
+  },
+  "Q2917281": {
+   "label": "Menahemia",
+   "p131": [
+    "Q65073769"
+   ],
+   "coord": [
+    32.6677,
+    35.554
+   ],
+   "enwiki": "Menahemia"
+  },
+  "Q2917286": {
+   "label": "Tel Yosef",
+   "p131": [
+    "Q2915451"
+   ],
+   "coord": [
+    32.556497222222,
+    35.401
+   ],
+   "enwiki": "Tel Yosef"
+  },
+  "Q2917297": {
+   "label": "Mi'ilya",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    33.025158333333,
+    35.259558333333
+   ],
+   "enwiki": "Mi'ilya"
+  },
+  "Q2919842": {
+   "label": "Nave Sha'anan",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.79027778,
+    35.01583333
+   ],
+   "enwiki": "Nave Sha'anan, Haifa"
+  },
+  "Q2920134": {
+   "label": "Kfar Yedidia",
+   "p131": [
+    "Q2678908"
+   ],
+   "coord": [
+    32.3457,
+    34.8995
+   ],
+   "enwiki": "Kfar Yedidia"
+  },
+  "Q2920415": {
+   "label": "Wadi Nisnas",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.8163,
+    34.9963
+   ],
+   "enwiki": "Wadi Nisnas"
+  },
+  "Q33935": {
+   "label": "Tel Aviv",
+   "p131": [
+    "Q192811"
+   ],
+   "coord": [
+    32.08,
+    34.78
+   ],
+   "enwiki": "Tel Aviv"
+  },
+  "Q3766": {
+   "label": "Damascus",
+   "p131": [
+    "Q2007044",
+    "Q207118",
+    "Q11950672",
+    "Q1372503",
+    "Q3934822"
+   ],
+   "coord": [
+    33.513055555556,
+    36.291944444444
+   ],
+   "enwiki": "Damascus"
+  },
+  "Q3805": {
+   "label": "Amman",
+   "p131": [
+    "Q472788"
+   ],
+   "coord": [
+    31.95,
+    35.933333333333
+   ],
+   "enwiki": "Amman"
+  },
+  "Q3820": {
+   "label": "Beirut",
+   "p131": [
+    "Q651688"
+   ],
+   "coord": [
+    33.886944444444,
+    35.513055555556
+   ],
+   "enwiki": "Beirut"
+  },
+  "Q383280": {
+   "label": "Afikim",
+   "p131": [
+    "Q1967925"
+   ],
+   "coord": [
+    32.6796,
+    35.5778
+   ],
+   "enwiki": "Afikim"
+  },
+  "Q4159159": {
+   "label": "Achuza",
+   "p131": [
+    "Q41621",
+    "Q12048871"
+   ],
+   "coord": [
+    32.77414167,
+    34.991325
+   ],
+   "enwiki": null
+  },
+  "Q41843": {
+   "label": "Beersheba",
+   "p131": [
+    "Q5423629"
+   ],
+   "coord": [
+    31.252222222222223,
+    34.78666666666667
+   ],
+   "enwiki": "Beersheba"
+  },
+  "Q4702703": {
+   "label": "Al-Khalisa",
+   "p131": [
+    "Q5283473"
+   ],
+   "coord": [
+    33.214444444444446,
+    35.56722222222222
+   ],
+   "enwiki": "Al-Khalisa"
+  },
+  "Q476835": {
+   "label": "Givat Brenner",
+   "p131": [
+    "Q111740"
+   ],
+   "coord": [
+    31.864444444444,
+    34.800277777778
+   ],
+   "enwiki": "Givat Brenner"
+  },
+  "Q545232": {
+   "label": "Dafna",
+   "p131": [
+    "Q2915660",
+    "Q188336"
+   ],
+   "coord": [
+    33.23,
+    35.638611111111
+   ],
+   "enwiki": "Dafna"
+  },
+  "Q550025": {
+   "label": "Tirat Zvi",
+   "p131": [
+    "Q1335377"
+   ],
+   "coord": [
+    32.421944444444,
+    35.528333333333
+   ],
+   "enwiki": "Tirat Zvi"
+  },
+  "Q68171023": {
+   "label": "Kafra, Baysan",
+   "p131": [],
+   "coord": [
+    32.59305555555556,
+    35.490833333333335
+   ],
+   "enwiki": "Kafra, Baysan"
+  },
+  "Q7069998": {
+   "label": "Nur Shams Camp",
+   "p131": [
+    "Q985531"
+   ],
+   "coord": [
+    32.318711111111,
+    35.058786111111
+   ],
+   "enwiki": "Nur Shams"
+  },
+  "Q7189221": {
+   "label": "Givat Ada",
+   "p131": [
+    "Q185845"
+   ],
+   "coord": [
+    32.51805556,
+    35.04444444
+   ],
+   "enwiki": null
+  },
+  "Q7212307": {
+   "label": "Halisa",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.8015083,
+    35.0067639
+   ],
+   "enwiki": "Halisa"
+  },
+  "Q732433": {
+   "label": "Sajur",
+   "p131": [
+    "Q5423103"
+   ],
+   "coord": [
+    32.94472783333333,
+    35.341841
+   ],
+   "enwiki": "Sajur"
+  },
+  "Q7403531": {
+   "label": "Salama, Jaffa",
+   "p131": [],
+   "coord": [
+    32.04915,
+    34.80500833
+   ],
+   "enwiki": "Salama, Jaffa"
+  },
+  "Q748504": {
+   "label": "Naqoura",
+   "p131": [
+    "Q2250353"
+   ],
+   "coord": [
+    33.12,
+    35.134166666667
+   ],
+   "enwiki": "An-Naqoura"
+  },
+  "Q757398": {
+   "label": "Atlit",
+   "p131": [
+    "Q1915911",
+    "Q185845"
+   ],
+   "coord": [
+    32.687222222222,
+    34.938333333333
+   ],
+   "enwiki": "Atlit (modern town)"
+  },
+  "Q764601": {
+   "label": "Jisr az-Zarqa",
+   "p131": [
+    "Q185845"
+   ],
+   "coord": [
+    32.537919444444,
+    34.912227777778
+   ],
+   "enwiki": "Jisr az-Zarqa"
+  },
+  "Q810685": {
+   "label": "Bat Galim",
+   "p131": [
+    "Q41621"
+   ],
+   "coord": [
+    32.83391111,
+    34.98171389
+   ],
+   "enwiki": "Bat Galim"
+  },
+  "Q84": {
+   "label": "London",
+   "p131": [
+    "Q105313",
+    "Q179876",
+    "Q21",
+    "Q1137312",
+    "Q23306"
+   ],
+   "coord": [
+    51.507222222222,
+    -0.1275
+   ],
+   "enwiki": "London"
+  },
+  "Q85": {
+   "label": "Cairo",
+   "p131": [
+    "Q30805",
+    "Q127861",
+    "Q370173",
+    "Q491507"
+   ],
+   "coord": [
+    30.044444444444444,
+    31.235833333333332
+   ],
+   "enwiki": "Cairo"
+  },
+  "Q943058": {
+   "label": "Nir David",
+   "p131": [
+    "Q1335377"
+   ],
+   "coord": [
+    32.503611111111,
+    35.457222222222
+   ],
+   "enwiki": "Nir David"
+  },
+  "Q1133558": {
+   "label": "makruh",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Makruh"
+  },
+  "Q125807125": {
+   "label": "makr",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q704606": {
+   "label": "Makro",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Makro"
+  },
+  "Q113840879": {
+   "label": "Sarta",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q20498462": {
+   "label": "Sarta",
+   "p131": [],
+   "coord": [
+    41.506666666667,
+    25.925833333333
+   ],
+   "enwiki": null
+  },
+  "Q28745949": {
+   "label": "Sarta",
+   "p131": [],
+   "coord": [
+    66.85102,
+    17.06358
+   ],
+   "enwiki": null
+  },
+  "Q5731180": {
+   "label": "Sarta",
+   "p131": [
+    "Q17069854"
+   ],
+   "coord": [
+    36.448611,
+    53.323333
+   ],
+   "enwiki": "Sarta, Iran"
+  },
+  "Q7424625": {
+   "label": "Sarta",
+   "p131": [
+    "Q926530"
+   ],
+   "coord": [
+    32.104166666667,
+    35.090277777778
+   ],
+   "enwiki": "Sarta"
+  },
+  "Q2899965": {
+   "label": "Zir'in",
+   "p131": [],
+   "coord": [
+    32.5575,
+    35.3278
+   ],
+   "enwiki": "Zir'in"
+  },
+  "Q8072764": {
+   "label": "Zirin",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Zirin"
+  },
+  "Q6758606": {
+   "label": "Marda",
+   "p131": [
+    "Q926530"
+   ],
+   "coord": [
+    32.113030555556,
+    35.195686111111
+   ],
+   "enwiki": "Marda, Salfit"
+  },
+  "Q11214868": {
+   "label": "Kabalan",
+   "p131": [
+    "Q7402756"
+   ],
+   "coord": [
+    -7.1294444444444,
+    111.99694444444
+   ],
+   "enwiki": null
+  },
+  "Q20582929": {
+   "label": "Qabalan",
+   "p131": [
+    "Q23896725"
+   ],
+   "coord": [
+    55.14,
+    48.22861
+   ],
+   "enwiki": null
+  },
+  "Q7265686": {
+   "label": "Qabalan",
+   "p131": [
+    "Q1074138"
+   ],
+   "coord": [
+    32.478611111111114,
+    35.25416666666667
+   ],
+   "enwiki": "Qabalan"
+  },
+  "Q3473299": {
+   "label": "Sarafand",
+   "p131": [
+    "Q1931173"
+   ],
+   "coord": [
+    33.45166666666667,
+    35.29083333333333
+   ],
+   "enwiki": "Sarafand, Lebanon"
+  },
+  "Q7421981": {
+   "label": "Sarafand",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Sarafand"
+  },
+  "Q106455728": {
+   "label": "Sulam",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q125370513": {
+   "label": "Saulamaa",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q125382612": {
+   "label": "Saulamo",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q4193555": {
+   "label": "Sulamu",
+   "p131": [
+    "Q14141"
+   ],
+   "coord": [
+    -10.01563189693965,
+    123.6057808357299
+   ],
+   "enwiki": null
+  },
+  "Q109506556": {
+   "label": "Kabri",
+   "p131": [
+    "Q1504034"
+   ],
+   "coord": [
+    7.92061,
+    -2.75052
+   ],
+   "enwiki": null
+  },
+  "Q120377798": {
+   "label": "",
+   "p131": [
+    "Q6427380"
+   ],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q123866998": {
+   "label": "Kabri",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q2339223": {
+   "label": "Kabri",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    33.020897222222,
+    35.149
+   ],
+   "enwiki": "Kabri, Israel"
+  },
+  "Q6344351": {
+   "label": "Kabri",
+   "p131": [
+    "Q1361816"
+   ],
+   "coord": null,
+   "enwiki": "Kabri, Burkina Faso"
+  },
+  "Q6344355": {
+   "label": "Kabri",
+   "p131": [
+    "Q1174"
+   ],
+   "coord": null,
+   "enwiki": "Kabri, Panipat"
+  },
+  "Q6811409": {
+   "label": "Talluza",
+   "p131": [
+    "Q1074138"
+   ],
+   "coord": [
+    32.271111111111,
+    35.293888888889
+   ],
+   "enwiki": "Talluza"
+  },
+  "Q5705190": {
+   "label": "Mughar",
+   "p131": [
+    "Q15618583"
+   ],
+   "coord": [
+    33.5694,
+    52.195
+   ],
+   "enwiki": "Mughar, Iran"
+  },
+  "Q2777320": {
+   "label": "Ein al-Asad",
+   "p131": [
+    "Q680095"
+   ],
+   "coord": [
+    32.941169444444,
+    35.396388888889
+   ],
+   "enwiki": "Ein al-Asad"
+  },
+  "Q2896936": {
+   "label": "Kafr Qaddum",
+   "p131": [
+    "Q1074443"
+   ],
+   "coord": [
+    32.221666666667,
+    35.142777777778
+   ],
+   "enwiki": "Kafr Qaddum"
+  },
+  "Q113856636": {
+   "label": "Nasraoui",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Nasraoui"
+  },
+  "Q21743301": {
+   "label": "Nasra",
+   "p131": [
+    "Q12247014"
+   ],
+   "coord": [
+    35.960556,
+    36.259167
+   ],
+   "enwiki": "Nasra, Idlib"
+  },
+  "Q2673428": {
+   "label": "Nasra",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Nasra of Tao-Klarjeti"
+  },
+  "Q3870507": {
+   "label": "Nasra",
+   "p131": [
+    "Q7290696"
+   ],
+   "coord": [
+    23.18,
+    88.58
+   ],
+   "enwiki": "Nasra, Ranaghat"
+  },
+  "Q60783319": {
+   "label": "Nasra",
+   "p131": [
+    "Q7395888"
+   ],
+   "coord": [
+    23.1632,
+    88.57202
+   ],
+   "enwiki": null
+  },
+  "Q115504317": {
+   "label": "Jálama",
+   "p131": [
+    "Q1626846"
+   ],
+   "coord": [
+    40.238689,
+    -6.755545
+   ],
+   "enwiki": null
+  },
+  "Q138718137": {
+   "label": "Jalama",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q24557248": {
+   "label": "Jalama",
+   "p131": [
+    "Q5697"
+   ],
+   "coord": [
+    62.95237,
+    25.97301
+   ],
+   "enwiki": null
+  },
+  "Q2777877": {
+   "label": "Jalamah",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.508669444444,
+    35.313380555556
+   ],
+   "enwiki": "Jalamah"
+  },
+  "Q5957272": {
+   "label": "Jálama",
+   "p131": [
+    "Q5777",
+    "Q5739",
+    "Q5739",
+    "Q5777"
+   ],
+   "coord": [
+    40.23861111,
+    -6.75583333
+   ],
+   "enwiki": "Jálama"
+  },
+  "Q377111": {
+   "label": "Eilabun",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    32.8384,
+    35.400761111111
+   ],
+   "enwiki": "Eilabun"
+  },
+  "Q26933302": {
+   "label": "Mansi",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q3286536": {
+   "label": "Mansi",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q33759": {
+   "label": "Mansi",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Mansi languages"
+  },
+  "Q12214541": {
+   "label": "Zalafa",
+   "p131": [
+    "Q2917278"
+   ],
+   "coord": [
+    32.54888889,
+    35.18805556
+   ],
+   "enwiki": "Zalafa"
+  },
+  "Q127542680": {
+   "label": "Deir el-Balah",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q13571749": {
+   "label": "Deir el-Balah",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q557383": {
+   "label": "Deir al-Balah",
+   "p131": [
+    "Q592249"
+   ],
+   "coord": [
+    31.416666666666668,
+    34.35
+   ],
+   "enwiki": "Deir al-Balah"
+  },
+  "Q1026813": {
+   "label": "Tabgha",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    32.873658333333,
+    35.548975
+   ],
+   "enwiki": "Tabgha"
+  },
+  "Q118214712": {
+   "label": "",
+   "p131": [
+    "Q239"
+   ],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q131218394": {
+   "label": "",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q2915526": {
+   "label": "Iksal",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    32.6825,
+    35.324444444444
+   ],
+   "enwiki": "Iksal"
+  },
+  "Q2918480": {
+   "label": "Sebastia",
+   "p131": [
+    "Q1074138"
+   ],
+   "coord": [
+    32.266666666667,
+    35.183333333333
+   ],
+   "enwiki": "Sebastia, Nablus"
+  },
+  "Q2904390": {
+   "label": "Kafr Bir'im",
+   "p131": [],
+   "coord": [
+    33.04348056,
+    35.41404444
+   ],
+   "enwiki": "Kafr Bir'im"
+  },
+  "Q2915531": {
+   "label": "Daburiyya",
+   "p131": [
+    "Q189942",
+    "Q128843"
+   ],
+   "coord": [
+    32.691388888889,
+    35.370277777778
+   ],
+   "enwiki": "Daburiyya"
+  },
+  "Q2898712": {
+   "label": "Meithalun",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.349166666667,
+    35.273333333333
+   ],
+   "enwiki": "Meithalun"
+  },
+  "Q1141392": {
+   "label": "Nesher",
+   "p131": [],
+   "coord": null,
+   "enwiki": "IAI Nesher"
+  },
+  "Q133083781": {
+   "label": "Nesher",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q30100610": {
+   "label": "Nassari",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q6967367": {
+   "label": "Nassaria",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Nassaria"
+  },
+  "Q1061753": {
+   "label": "Ikrit",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q2915678": {
+   "label": "Iqrit",
+   "p131": [
+    "Q13575762"
+   ],
+   "coord": [
+    33.07555556,
+    35.27527778
+   ],
+   "enwiki": "Iqrit"
+  },
+  "Q4119377": {
+   "label": "Jabbul",
+   "p131": [
+    "Q5283392"
+   ],
+   "coord": [
+    32.5668,
+    35.50962778
+   ],
+   "enwiki": "Jabbul"
+  },
+  "Q2903582": {
+   "label": "Deir Sharaf",
+   "p131": [
+    "Q1074138"
+   ],
+   "coord": [
+    32.254194444444,
+    35.188180555556
+   ],
+   "enwiki": "Deir Sharaf"
+  },
+  "Q1015472": {
+   "label": "Jabalia",
+   "p131": [
+    "Q39760"
+   ],
+   "coord": [
+    31.528055555556,
+    34.483055555556
+   ],
+   "enwiki": "Jabalia"
+  },
+  "Q123291292": {
+   "label": "Jabaliya",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Jabaliya (disambiguation)"
+  },
+  "Q3157011": {
+   "label": "Jabaliya",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q2130144": {
+   "label": "Ramin",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Ramin"
+  },
+  "Q2130151": {
+   "label": "Ramin",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q24027786": {
+   "label": "Ramin",
+   "p131": [
+    "Q9195484",
+    "Q9195545"
+   ],
+   "coord": [
+    -1.5321159,
+    103.8281547
+   ],
+   "enwiki": null
+  },
+  "Q2903608": {
+   "label": "Ramin",
+   "p131": [
+    "Q1093157"
+   ],
+   "coord": [
+    32.284208333333,
+    35.149244444444
+   ],
+   "enwiki": "Ramin, Tulkarm"
+  },
+  "Q37127087": {
+   "label": "Ramin",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q675611": {
+   "label": "Ramin",
+   "p131": [
+    "Q453780"
+   ],
+   "coord": [
+    53.4138889,
+    14.2916667
+   ],
+   "enwiki": "Ramin, Germany"
+  },
+  "Q3380916": {
+   "label": "Deir Abu Da'if",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.455916666667,
+    35.365736111111
+   ],
+   "enwiki": "Deir Abu Da'if"
+  },
+  "Q4328109": {
+   "label": "Nuris",
+   "p131": [
+    "Q1914"
+   ],
+   "coord": [
+    66.17361,
+    30.255801
+   ],
+   "enwiki": null
+  },
+  "Q7070130": {
+   "label": "Nuris",
+   "p131": [
+    "Q5283447"
+   ],
+   "coord": [
+    32.53511111,
+    35.36358333
+   ],
+   "enwiki": "Nuris"
+  },
+  "Q104072960": {
+   "label": "Fatoure, Pierre",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q28750593": {
+   "label": "Fatur",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q577401": {
+   "label": "iftar",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Iftar"
+  },
+  "Q5856696": {
+   "label": "Fatur",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q2915766": {
+   "label": "Tur'an",
+   "p131": [
+    "Q189942"
+   ],
+   "coord": [
+    32.776936111111,
+    35.375675
+   ],
+   "enwiki": "Tur'an"
+  },
+  "Q102111250": {
+   "label": "Damin Wu",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q104622062": {
+   "label": "Damina",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q139906631": {
+   "label": "Damin",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q35321": {
+   "label": "Damin",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Damin"
+  },
+  "Q37250546": {
+   "label": "Damin",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q556637": {
+   "label": "Bayt Jibrin",
+   "p131": [
+    "Q5283444"
+   ],
+   "coord": [
+    31.60530833,
+    34.89827222
+   ],
+   "enwiki": "Bayt Jibrin"
+  },
+  "Q7881655": {
+   "label": "Umm al-Faraj",
+   "p131": [
+    "Q13575762"
+   ],
+   "coord": [
+    33.0049,
+    35.1211
+   ],
+   "enwiki": "Umm al-Faraj"
+  },
+  "Q108746897": {
+   "label": "",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q109890989": {
+   "label": "Kfeir",
+   "p131": [
+    "Q233218"
+   ],
+   "coord": [
+    36.187088,
+    36.567677
+   ],
+   "enwiki": null
+  },
+  "Q14710546": {
+   "label": "KAFR",
+   "p131": [
+    "Q1439"
+   ],
+   "coord": [
+    30.4644,
+    -95.5056
+   ],
+   "enwiki": "KAFR"
+  },
+  "Q30976376": {
+   "label": "Kafra",
+   "p131": [
+    "Q389944"
+   ],
+   "coord": [
+    19.059444444444,
+    12.340277777778
+   ],
+   "enwiki": null
+  },
+  "Q3136423": {
+   "label": "Misilyah",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.386791666667,
+    35.287938888889
+   ],
+   "enwiki": "Misilyah"
+  },
+  "Q1254474": {
+   "label": "",
+   "p131": [],
+   "coord": [
+    32.796012,
+    35.374855
+   ],
+   "enwiki": null
+  },
+  "Q28747853": {
+   "label": "Kufeir",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.37166667,
+    35.34111111
+   ],
+   "enwiki": "Kufeir"
+  },
+  "Q2911499": {
+   "label": "Zububa",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.545477777778,
+    35.223555555556
+   ],
+   "enwiki": "Zububa"
+  },
+  "Q1324576": {
+   "label": "El Rama",
+   "p131": [
+    "Q291279"
+   ],
+   "coord": [
+    12.15896388888889,
+    -84.21970277777778
+   ],
+   "enwiki": "El Rama"
+  },
+  "Q160213": {
+   "label": "Rama",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Rama"
+  },
+  "Q18609644": {
+   "label": "Rama",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Rama (fish)"
+  },
+  "Q27230184": {
+   "label": "Rama",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q27943470": {
+   "label": "Rama",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q36934726": {
+   "label": "Rama",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q3928155": {
+   "label": "Rama",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Rama (video game)"
+  },
+  "Q67149086": {
+   "label": "Rama",
+   "p131": [
+    "Q12335"
+   ],
+   "coord": [
+    42.2216825962892,
+    2.22709131052436
+   ],
+   "enwiki": null
+  },
+  "Q1023786": {
+   "label": "Ruwais",
+   "p131": [
+    "Q187712"
+   ],
+   "coord": [
+    24.11685491,
+    52.73301956
+   ],
+   "enwiki": "Al Dhannah"
+  },
+  "Q6123321": {
+   "label": "Jahula",
+   "p131": [],
+   "coord": [
+    33.12453611,
+    35.567375
+   ],
+   "enwiki": "Jahula"
+  },
+  "Q29376016": {
+   "label": "Judeida",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q6302406": {
+   "label": "Judeida",
+   "p131": [
+    "Q519311"
+   ],
+   "coord": [
+    32.33466944,
+    35.30187778
+   ],
+   "enwiki": "Al-Judeida (Jenin)"
+  },
+  "Q114288699": {
+   "label": "Yasid",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q6897577": {
+   "label": "Yasid",
+   "p131": [
+    "Q1074138"
+   ],
+   "coord": [
+    32.296569444444,
+    35.277669444444
+   ],
+   "enwiki": "Yasid"
+  },
+  "Q2920974": {
+   "label": "Lubya",
+   "p131": [
+    "Q12270324"
+   ],
+   "coord": [
+    32.77588889,
+    35.42935
+   ],
+   "enwiki": "Lubya"
+  },
+  "Q35388409": {
+   "label": "Lubiya",
+   "p131": [],
+   "coord": [
+    52.602222222222,
+    120.25138888889
+   ],
+   "enwiki": null
+  },
+  "Q35388422": {
+   "label": "Lubiya",
+   "p131": [],
+   "coord": [
+    53.206388888889,
+    120.73305555556
+   ],
+   "enwiki": null
+  },
+  "Q35388434": {
+   "label": "Lubiya",
+   "p131": [],
+   "coord": [
+    -2.4936111111111,
+    29.343055555556
+   ],
+   "enwiki": null
+  },
+  "Q546580": {
+   "label": "Mu Arae e",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Mu Arae e"
+  },
+  "Q667504": {
+   "label": "Mu Arae",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Mu Arae"
+  },
+  "Q6826893": {
+   "label": "Mi'ar",
+   "p131": [
+    "Q13575762"
+   ],
+   "coord": [
+    32.87423889,
+    35.246275
+   ],
+   "enwiki": "Mi'ar"
+  },
+  "Q134546576": {
+   "label": "Abu Shusha",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q2256435": {
+   "label": "Abu Shusha",
+   "p131": [
+    "Q5283446"
+   ],
+   "coord": [
+    32.61415278,
+    35.13790278
+   ],
+   "enwiki": "Abu Shusha, Haifa"
+  },
+  "Q30343786": {
+   "label": "Abū Shūshah",
+   "p131": [
+    "Q1249255"
+   ],
+   "coord": [
+    22.3695,
+    44.7087
+   ],
+   "enwiki": null
+  },
+  "Q4670360": {
+   "label": "Abu Shusha",
+   "p131": [
+    "Q5283469"
+   ],
+   "coord": [
+    31.856944444444444,
+    34.91555555555556
+   ],
+   "enwiki": "Abu Shusha"
+  },
+  "Q18760777": {
+   "label": "Jatta",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q21509245": {
+   "label": "Jatta",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Jatta"
+  },
+  "Q2911762": {
+   "label": "Jatt",
+   "p131": [],
+   "coord": [
+    32.4306,
+    35.0361
+   ],
+   "enwiki": "Jatt, Israel"
+  },
+  "Q6164712": {
+   "label": "Jattaea",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Jattaea"
+  },
+  "Q147240": {
+   "label": "2061 Anza",
+   "p131": [],
+   "coord": null,
+   "enwiki": "2061 Anza"
+  },
+  "Q1577307": {
+   "label": "Anzá",
+   "p131": [
+    "Q1631618",
+    "Q123304"
+   ],
+   "coord": [
+    6.3036111111111,
+    -75.854166666667
+   ],
+   "enwiki": "Anzá"
+  },
+  "Q3290395": {
+   "label": "Anza",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Anza (singer)"
+  },
+  "Q3458204": {
+   "label": "Anza",
+   "p131": [
+    "Q108111"
+   ],
+   "coord": [
+    33.555,
+    -116.67361111111
+   ],
+   "enwiki": "Anza, California"
+  },
+  "Q37536952": {
+   "label": "Anza",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q99196746": {
+   "label": "Anza",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q107306234": {
+   "label": "Seida",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q26230489": {
+   "label": "Seida",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q27321399": {
+   "label": "Seida",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q65235644": {
+   "label": "Seida",
+   "p131": [
+    "Q483964"
+   ],
+   "coord": [
+    70.2325,
+    28.1825
+   ],
+   "enwiki": null
+  },
+  "Q7446619": {
+   "label": "Seida",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Seida"
+  },
+  "Q7446620": {
+   "label": "Seida, Tulkarm",
+   "p131": [
+    "Q1093157"
+   ],
+   "coord": [
+    32.385105555556,
+    35.1185
+   ],
+   "enwiki": "Seida, Tulkarm"
+  },
+  "Q275722": {
+   "label": "Tammun",
+   "p131": [
+    "Q948228"
+   ],
+   "coord": [
+    32.2842,
+    35.3858
+   ],
+   "enwiki": "Tammun"
+  },
+  "Q3454292": {
+   "label": "Tammuna",
+   "p131": [
+    "Q624873",
+    "Q31273165"
+   ],
+   "coord": [
+    57.9525,
+    22
+   ],
+   "enwiki": "Tammuna"
+  },
+  "Q11908129": {
+   "label": "Baqà",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q1748624": {
+   "label": "Baqa'",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Baqaa"
+  },
+  "Q37238000": {
+   "label": "Baqai",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q6684618": {
+   "label": "Baqa",
+   "p131": [
+    "Q6683278"
+   ],
+   "coord": [
+    -0.5112413849062922,
+    117.1429053290636
+   ],
+   "enwiki": null
+  },
+  "Q14641020": {
+   "label": "Mardame",
+   "p131": [
+    "Q4190285"
+   ],
+   "coord": [
+    1.8,
+    98.843
+   ],
+   "enwiki": null
+  },
+  "Q1944269": {
+   "label": "Mardara",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q32800038": {
+   "label": "Mardal",
+   "p131": [],
+   "coord": null,
+   "enwiki": null
+  },
+  "Q593872": {
+   "label": "Qabala District",
+   "p131": [
+    "Q227",
+    "Q131337"
+   ],
+   "coord": [
+    40.981388888889,
+    47.845833333333
+   ],
+   "enwiki": "Qabala District"
+  },
+  "Q2448062": {
+   "label": "Silwan",
+   "p131": [
+    "Q212938",
+    "Q36678"
+   ],
+   "coord": [
+    31.77,
+    35.237
+   ],
+   "enwiki": "Silwan"
+  },
+  "Q32020408": {
+   "label": "Silwana",
+   "p131": [
+    "Q748486"
+   ],
+   "coord": [
+    -15.8,
+    22.433333333333
+   ],
+   "enwiki": null
+  },
+  "Q9337013": {
+   "label": "Silwana",
+   "p131": [],
+   "coord": [
+    52.7585,
+    15.2765
+   ],
+   "enwiki": null
+  },
+  "Q24949862": {
+   "label": "Jalamadul",
+   "p131": [
+    "Q5071110"
+   ],
+   "coord": [
+    22.6695281,
+    88.20519
+   ],
+   "enwiki": "Jalamadul"
+  },
+  "Q72433": {
+   "label": "Jalamanta",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Jalamanta"
+  },
+  "Q132726": {
+   "label": "Yamuna",
+   "p131": [
+    "Q668"
+   ],
+   "coord": [
+    31.0225,
+    78.455
+   ],
+   "enwiki": "Yamuna"
+  },
+  "Q2348057": {
+   "label": "Yamunā",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Yamuna in Hinduism"
+  },
+  "Q742537": {
+   "label": "Raminta",
+   "p131": [],
+   "coord": null,
+   "enwiki": "Raminta"
+  },
+  "Q24283641": {
+   "label": "Fatural",
+   "p131": [
+    "Q4195273"
+   ],
+   "coord": [
+    -6.6863611111111,
+    134.11258333333
+   ],
+   "enwiki": null
+  },
+  "Q12406488": {
+   "label": "Hunin",
+   "p131": [],
+   "coord": [
+    33.21444444,
+    35.54472222
+   ],
+   "enwiki": "Hunin"
+  },
+  "Q2152827": {
+   "label": "Al-Butaymat",
+   "p131": [
+    "Q5283446"
+   ],
+   "coord": [
+    32.55316389,
+    35.09375833
+   ],
+   "enwiki": "Al-Butaymat"
+  },
+  "Q2152853": {
+   "label": "Daliyat al-Rawha'",
+   "p131": [
+    "Q5283446"
+   ],
+   "coord": [
+    32.59115278,
+    35.07805556
+   ],
+   "enwiki": "Daliyat al-Rawha'"
+  },
+  "Q2777849": {
+   "label": "Al-Faluja",
+   "p131": [
+    "Q5283445"
+   ],
+   "coord": [
+    31.62461111,
+    34.74765556
+   ],
+   "enwiki": "Al-Faluja"
+  },
+  "Q2898847": {
+   "label": "Qalunya",
+   "p131": [
+    "Q5283449"
+   ],
+   "coord": [
+    31.793916666667,
+    35.163888888889
+   ],
+   "enwiki": "Qalunya"
+  },
+  "Q4702414": {
+   "label": "Al-Ghabisiyya",
+   "p131": [
+    "Q13575762"
+   ],
+   "coord": [
+    33.000525,
+    35.14996389
+   ],
+   "enwiki": "Al-Ghabisiyya"
+  },
+  "Q4703147": {
+   "label": "Al-Ruways",
+   "p131": [
+    "Q13575762"
+   ],
+   "coord": [
+    32.86389167,
+    35.17790556
+   ],
+   "enwiki": "Al-Ruways"
+  },
+  "Q4703193": {
+   "label": "Al-Sarafand",
+   "p131": [
+    "Q5283446"
+   ],
+   "coord": [
+    32.64674722,
+    34.93559722
+   ],
+   "enwiki": "Al-Sarafand"
+  },
+  "Q5243305": {
+   "label": "Dayr al-Qassi",
+   "p131": [
+    "Q13575762"
+   ],
+   "coord": [
+    33.03516667,
+    35.32503056
+   ],
+   "enwiki": "Dayr al-Qasi"
   }
  },
  "infobox": {
@@ -3143,7 +5774,206 @@
   "Zeita, Tulkarm": null,
   "Zikhron Ya'akov": null,
   "Jaba', Jenin": null,
-  "Yafa an-Naseriyye": null
+  "Yafa an-Naseriyye": null,
+  "Al-Mujaydil": "Nazareth",
+  "Afikim": null,
+  "Ajloun": null,
+  "Al-Khalisa": "Safad",
+  "Al-Rihaniyya": "Haifa",
+  "Amman": null,
+  "An-Naqoura": null,
+  "Ashdot Ya'akov": null,
+  "Atlit (modern town)": null,
+  "Attil": null,
+  "Balfouria": null,
+  "Baqa al-Gharbiyye": null,
+  "Bat Galim": null,
+  "Bat Shlomo": null,
+  "Bayt Dajan": "Jaffa",
+  "Beersheba": null,
+  "Beirut": null,
+  "Beit She'arim (moshav)": null,
+  "Beit Zera": null,
+  "Bnei Brak": null,
+  "Burayka": "Haifa",
+  "Cairo": null,
+  "Dafna": null,
+  "Dalia, Israel": null,
+  "Damascus": null,
+  "Degania Bet": null,
+  "Ein Dor": null,
+  "Ein HaShofet": null,
+  "Ein Harod": null,
+  "Ein Shemer": null,
+  "Gan Shmuel": null,
+  "German Colony, Haifa": null,
+  "Ginegar": null,
+  "Givat Brenner": null,
+  "Givat Haim": null,
+  "HaZore'a": null,
+  "Hadar HaCarmel": null,
+  "Halisa": null,
+  "Hanita": null,
+  "Hebron": null,
+  "Hittin": "Tiberias",
+  "Ilaniya": null,
+  "Jezzine": null,
+  "Jisr az-Zarqa": null,
+  "Kababir": null,
+  "Kafra, Baysan": null,
+  "Kfar Baruch": null,
+  "Kfar Brandeis": null,
+  "Kfar Gidon": null,
+  "Kfar HaHoresh": null,
+  "Kfar Hasidim": null,
+  "Kfar Hittim": null,
+  "Kfar Saba": null,
+  "Kfar Tavor": null,
+  "Kfar Vitkin": null,
+  "Kfar Yedidia": null,
+  "Kiryat Ata": "Haifa",
+  "Kiryat Bialik": "Haifa",
+  "Kiryat Motzkin": "Haifa",
+  "Kiryat Tiv'on": "Haifa",
+  "Kiryat Yam": "Haifa",
+  "Kvutzat Kinneret": null,
+  "London": null,
+  "Masada (kibbutz)": null,
+  "Mazkeret Batya": null,
+  "Menahemia": null,
+  "Mi'ilya": "Acre",
+  "Migdal, Israel": null,
+  "Mishmar HaEmek": null,
+  "Mitzpa": null,
+  "Mizra": null,
+  "Na'an": null,
+  "Nahf": "Acre",
+  "Nave Sha'anan, Haifa": null,
+  "Nesher": "Haifa",
+  "Ness Ziona": null,
+  "Netanya": null,
+  "Nir David": null,
+  "Nur Shams": null,
+  "Petah Tikva": null,
+  "Qantara Sharq": null,
+  "Ramallah": null,
+  "Ramat Gan": null,
+  "Ramla": "Ramle",
+  "Rehovot": null,
+  "Rishon LeZion": null,
+  "Sajur": "Acre",
+  "Salama, Jaffa": "Jaffa",
+  "Samakh, Tiberias": "Tiberias",
+  "Sanur, Jenin": null,
+  "Sha'ar HaAmakim": null,
+  "Tel Adashim": null,
+  "Tel Aviv": null,
+  "Tel Hai": null,
+  "Tel Mond": null,
+  "Tel Yosef": null,
+  "Tirat Zvi": null,
+  "Umm az-Zinat": "Haifa",
+  "Wadi Nisnas": null,
+  "Wadi Salib": null,
+  "Wadi al-Hawarith": "Tulkarm",
+  "Wilhelma, Palestine": null,
+  "Yokneam Moshava": null,
+  "Makro": null,
+  "Makruh": null,
+  "Sarta": null,
+  "Sarta, Iran": null,
+  "Zir'in": "Jenin",
+  "Zirin": null,
+  "Marda, Salfit": null,
+  "Qabalan": null,
+  "Sarafand": null,
+  "Sarafand, Lebanon": null,
+  "Kabri, Burkina Faso": null,
+  "Kabri, Israel": null,
+  "Kabri, Panipat": null,
+  "Talluza": null,
+  "Mughar, Iran": null,
+  "Ein al-Asad": null,
+  "Kafr Qaddum": null,
+  "Nasra, Idlib": null,
+  "Nasra, Ranaghat": null,
+  "Nasra of Tao-Klarjeti": null,
+  "Nasraoui": null,
+  "Jalamah": null,
+  "Jálama": null,
+  "Eilabun": null,
+  "Mansi languages": null,
+  "Zalafa": null,
+  "Deir al-Balah": null,
+  "Tabgha": "Tiberias",
+  "Iksal": null,
+  "Sebastia, Nablus": null,
+  "Kafr Bir'im": "Safad",
+  "Daburiyya": null,
+  "Meithalun": null,
+  "IAI Nesher": null,
+  "Nassaria": null,
+  "Iqrit": "Acre",
+  "Jabbul": null,
+  "Deir Sharaf": null,
+  "Jabalia": null,
+  "Jabaliya (disambiguation)": null,
+  "Ramin": null,
+  "Ramin, Germany": null,
+  "Ramin, Tulkarm": null,
+  "Deir Abu Da'if": null,
+  "Nuris": "Jenin",
+  "Iftar": null,
+  "Tur'an": null,
+  "Damin": null,
+  "Bayt Jibrin": "Hebron",
+  "Umm al-Faraj": "Acre",
+  "KAFR": null,
+  "Misilyah": null,
+  "Kufeir": null,
+  "Zububa": null,
+  "El Rama": null,
+  "Rama": null,
+  "Rama (fish)": null,
+  "Rama (video game)": null,
+  "Al Dhannah": null,
+  "Jahula": "Safad",
+  "Al-Judeida (Jenin)": null,
+  "Yasid": null,
+  "Lubya": "Tiberias",
+  "Mi'ar": "Acre",
+  "Mu Arae": null,
+  "Mu Arae e": null,
+  "Abu Shusha": "Ramle",
+  "Abu Shusha, Haifa": "Haifa",
+  "Jatt, Israel": null,
+  "Jatta": null,
+  "Jattaea": null,
+  "2061 Anza": null,
+  "Anza, California": null,
+  "Anza (singer)": null,
+  "Anzá": null,
+  "Seida": null,
+  "Seida, Tulkarm": null,
+  "Tammun": null,
+  "Tammuna": null,
+  "Baqaa": null,
+  "Qabala District": null,
+  "Silwan": null,
+  "Jalamadul": null,
+  "Jalamanta": null,
+  "Yamuna": null,
+  "Yamuna in Hinduism": null,
+  "Raminta": null,
+  "Al-Butaymat": "Haifa",
+  "Al-Faluja": "Gaza",
+  "Al-Ghabisiyya": "Acre",
+  "Al-Ruways": "Acre",
+  "Al-Sarafand": "Haifa",
+  "Daliyat al-Rawha'": "Haifa",
+  "Dayr al-Qasi": "Acre",
+  "Hunin": "Safad",
+  "Qalunya": "Jerusalem"
  },
  "wiki_reference": [
   [

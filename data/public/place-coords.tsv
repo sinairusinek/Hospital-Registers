@@ -868,7 +868,7 @@ Yavniel Colony	32.709497	35.499400	kima	confirmed	18477	Yavne'el (Israel)	Q16768
 Zamarin	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	auto	1	
 Zammarrin	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	1	
 Zammarrine	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	variant	1	
-Zeeb								unmatched-no-kima-entry	agent	1	
+Zeeb	33.048081	35.101672	wikidata	confirmed			Q4831969	matched	agent	1	
 Zekra Yacov	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1	
 Zichron	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	auto	1	
 Zichron Yaacob	32.570833	34.951667	kima	confirmed	8254	Zikhron Ya'akov (Israel)	Q198399	matched	agent	1	
@@ -893,5 +893,43 @@ Ashdot Ya'akov	32.658056	35.581944	kima	confirmed	26521	Ashdot Yaakov (Israel)		
 Kfar Gideon	32.643397	35.290997	kima	confirmed	816	Kefar Gide'on (Israel)	Q2776886	matched	agent	0	
 al-Mujaydil	32.677858	35.241814	wikidata	confirmed			Q2892602	matched	agent	0	Mujeidil
 Kibbutz Hashomer Hatzair								unmatched-ambiguous	agent	0	
+Sanur (Jenin)	32.356389	35.246944	wikidata	confirmed			Q2384654	matched	agent	0	
+Mi'ilya	33.025158	35.259558	wikidata	confirmed			Q2917297	matched	agent	1	
+Kafra (Beisan)	32.593056	35.490833	wikidata	confirmed			Q68171023	matched	agent	0	
+Zububa (Jenin)	32.545478	35.223556	wikidata	confirmed			Q2911499	matched	agent	0	
+Ruweis (Acre)	32.863892	35.177906	wikidata	confirmed			Q4703147	matched	agent	0	
+Zir'in (Jenin)	32.557500	35.327800	wikidata	confirmed			Q2899965	matched	agent	0	
+Jahula (Safad)	33.124536	35.567375	wikidata	confirmed			Q6123321	matched	agent	0	
+Al-Faluja (Gaza)	31.624611	34.747656	wikidata	confirmed			Q2777849	matched	agent	0	
+Marda (Nablus)	32.113031	35.195686	wikidata	confirmed			Q6758606	matched	agent	0	
+Qabalan (Nablus)	32.478611	35.254167	wikidata	confirmed			Q7265686	matched	agent	0	
+Yasid (Nablus)	32.296569	35.277669	wikidata	confirmed			Q6897577	matched	agent	0	
+Sarafand (Haifa)	32.646747	34.935597	wikidata	confirmed			Q4703193	matched	agent	0	
+Deir el Qasi and El Mansura (Acre)	33.035167	35.325031	wikidata	confirmed			Q5243305	matched	agent	0	
+Buteimat (Haifa)	32.553164	35.093758	wikidata	confirmed			Q2152827	matched	agent	0	
+Mi'ar (Acre)	32.874239	35.246275	wikidata	confirmed			Q6826893	matched	agent	0	
+Talluza (Nablus)	32.271111	35.293889	wikidata	confirmed			Q6811409	matched	agent	0	
+Jalama (Jenin)	32.508669	35.313381	wikidata	confirmed			Q2777877	matched	agent	0	
+Abu Shusha (Haifa)	32.614153	35.137903	wikidata	confirmed			Q2256435	matched	agent	0	
+Zalafa (Jenin)	32.548889	35.188056	wikidata	confirmed			Q12214541	matched	agent	0	
+Tabigha (Tiberias)	32.873658	35.548975	wikidata	confirmed			Q1026813	matched	agent	0	
+Iksal (Nazareth)	32.682500	35.324444	wikidata	confirmed			Q2915526	matched	agent	0	
+Sabastiya (Nablus)	32.266667	35.183333	wikidata	confirmed			Q2918480	matched	agent	0	
+Kafr Bir'im (Safad)	33.043481	35.414044	wikidata	confirmed			Q2904390	matched	agent	0	
+Iqrith (Acre)	33.075556	35.275278	wikidata	confirmed			Q2915678	matched	agent	0	
+Meithalun (Jenin)	32.349167	35.273333	wikidata	confirmed			Q2898712	matched	agent	0	
+Jabbul (Beisan)	32.566800	35.509628	wikidata	confirmed			Q4119377	matched	agent	0	
+Deir Sharaf (Nablus)	32.254194	35.188181	wikidata	confirmed			Q2903582	matched	agent	0	
+Jabāliya (Gaza)	31.528056	34.483056	wikidata	confirmed			Q1015472	matched	agent	0	
+Qaluniya (Jerusalem)	31.793917	35.163889	wikidata	confirmed			Q2898847	matched	agent	0	
+Ramin (Tulkarm)	32.285200	35.149510	wikidata	confirmed			Q2903608	matched	agent	0	
+Hunin (Safad)	33.214444	35.544722	wikidata	confirmed			Q12406488	matched	agent	0	
+Deir Abu Da'if (Jenin)	32.455917	35.365736	wikidata	confirmed			Q3380916	matched	agent	0	
+Ghabisiya (Acre)	33.000525	35.149964	wikidata	confirmed			Q4702414	matched	agent	0	
+Nuris (Jenin)	32.535111	35.363583	wikidata	confirmed			Q7070130	matched	agent	0	
+Daliyat er Ruha (Haifa)	32.591153	35.078056	wikidata	confirmed			Q2152853	matched	agent	0	
+Seida (Tulkarm)	32.385106	35.118500	wikidata	confirmed			Q7446620	matched	agent	0	
+Beit Jibrin (Hebron)	31.620770	34.887973	wikidata	confirmed			Q556637	matched	agent	0	
+Umm el Faraj (Acre)	33.004900	35.121100	wikidata	confirmed			Q7881655	matched	agent	0	
 Hawara	32.152500	35.256670	kima	provisional	21617	Hawara (Israel)			A_autolink	4	
 Samra	32.116670	35.266670	kima	provisional	22266	Khirbet Samara (Israel)			A_autolink	3	

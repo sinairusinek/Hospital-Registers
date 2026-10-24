@@ -868,7 +868,7 @@ Yavniel Colony	Yavniel Colony	1	18477	Yavne'el (Israel)	Q1676894	kima-dump		matc
 Zamarin	Zamarin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	Q108785495	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q198399 vs direct Wikidata Q108785495	2026-08-06
 Zammarrin	Zammarrin	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zamarin' (skeleton: same consonant skeleton as 'Zamarin')	2026-10-19
 Zammarrine	Zammarrine	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	variant-skeleton		variant	spelling of 'Zamarin' (skeleton: same consonant skeleton as 'Zamarin')	2026-10-19
-Zeeb	Zeeb	1						unmatched-no-kima-entry	C_review		agent	al-Zib; only Tel Akhziv site in Kima	2026-08-06
+Zeeb	Zeeb	1			Q4831969	human		matched	C_review		agent	al-Zib (Az-Zeeb), Acre S/D, the depopulated village (Q4831969), linked on Wikidata alone: Kima has only the Tel Akhziv site	2026-10-24
 Zekra Yacov	Zekra Yacov	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent	garbled Zichron Yaakov	2026-08-06
 Zichron	Zichron	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump	Q198399	matched	A_autolink	0.95	auto		2026-08-06
 Zichron Yaacob	Zichron Yaacob	1	8254	Zikhron Ya'akov (Israel)	Q198399	kima-dump		matched	C_review		agent		2026-08-06
@@ -893,3 +893,41 @@ Ashdot Ya'akov	Ashdot Ya'akov	0	26521	Ashdot Yaakov (Israel)				matched	outside-
 Kfar Gideon	Kfar Gideon	0	816	Kefar Gide'on (Israel)	Q2776886			matched	outside-queue		agent	Moshav near Afula; set per record from the scan: NB28 p5 4414 'Kfar Gideon - near Affula, Nazareth D.'	2026-10-24
 al-Mujaydil	al-Mujaydil	0			Q2892602	human		matched	outside-queue		agent	Village of the Nazareth sub-district, not in Kima; set per record from the scan: NB10 p7 1557 'Mjeidil, Nazareth S/Dist.'	2026-10-24
 Kibbutz Hashomer Hatzair	Kibbutz Hashomer Hatzair	0						unmatched-ambiguous	outside-queue		agent	The movement, not a place: NB2 p10 622 'Kibbutz Hashomer Hatzair'; the extraction gave it the next row's Nazareth	2026-10-24
+Sanur (Jenin)	Sanur (Jenin)	0			Q2384654	human		matched	district-check		agent	Sanur, Jenin sub-district; set per record from the scan (record-readings.tsv)	2026-10-24
+Mi'ilya	Mi'ilya	1			Q2917297	human		matched	district-check		agent	Mi'ilya, Acre sub-district: scan NB8 p51 'Me'ilya, Acre S/D.'	2026-10-24
+Kafra (Beisan)	Kafra (Beisan)	0			Q68171023	human		matched	district-check		agent	Kafra, Beisan sub-district village; set per record from the scan (record-readings.tsv)	2026-10-24
+Zububa (Jenin)	Zububa (Jenin)	0			Q2911499	human		matched	district-link		agent	Village Statistics 1945 puts it in Jenin S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Ruweis (Acre)	Ruweis (Acre)	0			Q4703147	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Zir'in (Jenin)	Zir'in (Jenin)	0			Q2899965	human		matched	district-link		agent	its enwiki infobox puts it in Jenin S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Jahula (Safad)	Jahula (Safad)	0			Q6123321	human		matched	district-link		agent	its enwiki infobox puts it in Safad S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Al-Faluja (Gaza)	Al-Faluja (Gaza)	0			Q2777849	human		matched	district-link		agent	its enwiki infobox puts it in Gaza S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Marda (Nablus)	Marda (Nablus)	0			Q6758606	human		matched	district-link		agent	Village Statistics 1945 puts it in Nablus S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Qabalan (Nablus)	Qabalan (Nablus)	0			Q7265686	human		matched	district-link		agent	Village Statistics 1945 puts it in Nablus S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Yasid (Nablus)	Yasid (Nablus)	0			Q6897577	human		matched	district-link		agent	Village Statistics 1945 puts it in Nablus S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Sarafand (Haifa)	Sarafand (Haifa)	0			Q4703193	human		matched	district-link		agent	its enwiki infobox puts it in Haifa S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Deir el Qasi and El Mansura (Acre)	Deir el Qasi and El Mansura (Acre)	0			Q5243305	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Buteimat (Haifa)	Buteimat (Haifa)	0			Q2152827	human		matched	district-link		agent	its enwiki infobox puts it in Haifa S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Mi'ar (Acre)	Mi'ar (Acre)	0			Q6826893	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Talluza (Nablus)	Talluza (Nablus)	0			Q6811409	human		matched	district-link		agent	Village Statistics 1945 puts it in Nablus S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Jalama (Jenin)	Jalama (Jenin)	0			Q2777877	human		matched	district-link		agent	Village Statistics 1945 puts it in Jenin S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Abu Shusha (Haifa)	Abu Shusha (Haifa)	0			Q2256435	human		matched	district-link		agent	its enwiki infobox puts it in Haifa S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Zalafa (Jenin)	Zalafa (Jenin)	0			Q12214541	human		matched	district-link		agent	Village Statistics 1945 puts it in Jenin S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Tabigha (Tiberias)	Tabigha (Tiberias)	0			Q1026813	human		matched	district-link		agent	its enwiki infobox puts it in Tiberias S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Iksal (Nazareth)	Iksal (Nazareth)	0			Q2915526	human		matched	district-link		agent	Village Statistics 1945 puts it in Nazareth S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Sabastiya (Nablus)	Sabastiya (Nablus)	0			Q2918480	human		matched	district-link		agent	Village Statistics 1945 puts it in Nablus S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Kafr Bir'im (Safad)	Kafr Bir'im (Safad)	0			Q2904390	human		matched	district-link		agent	its enwiki infobox puts it in Safad S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Iqrith (Acre)	Iqrith (Acre)	0			Q2915678	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Meithalun (Jenin)	Meithalun (Jenin)	0			Q2898712	human		matched	district-link		agent	Village Statistics 1945 puts it in Jenin S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Jabbul (Beisan)	Jabbul (Beisan)	0			Q4119377	human		matched	district-link		agent	Village Statistics 1945 puts it in Beisan S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Deir Sharaf (Nablus)	Deir Sharaf (Nablus)	0			Q2903582	human		matched	district-link		agent	Village Statistics 1945 puts it in Nablus S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Jabāliya (Gaza)	Jabāliya (Gaza)	0			Q1015472	human		matched	district-link		agent	Village Statistics 1945 puts it in Gaza S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Qaluniya (Jerusalem)	Qaluniya (Jerusalem)	0			Q2898847	human		matched	district-link		agent	its enwiki infobox puts it in Jerusalem S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Ramin (Tulkarm)	Ramin (Tulkarm)	0			Q2903608	human		matched	district-link		agent	Village Statistics 1945 puts it in Tulkarm S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Hunin (Safad)	Hunin (Safad)	0			Q12406488	human		matched	district-link		agent	its enwiki infobox puts it in Safad S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Deir Abu Da'if (Jenin)	Deir Abu Da'if (Jenin)	0			Q3380916	human		matched	district-link		agent	Village Statistics 1945 puts it in Jenin S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Ghabisiya (Acre)	Ghabisiya (Acre)	0			Q4702414	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Nuris (Jenin)	Nuris (Jenin)	0			Q7070130	human		matched	district-link		agent	its enwiki infobox puts it in Jenin S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Daliyat er Ruha (Haifa)	Daliyat er Ruha (Haifa)	0			Q2152853	human		matched	district-link		agent	its enwiki infobox puts it in Haifa S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Seida (Tulkarm)	Seida (Tulkarm)	0			Q7446620	human		matched	district-link		agent	Village Statistics 1945 puts it in Tulkarm S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Beit Jibrin (Hebron)	Beit Jibrin (Hebron)	0			Q556637	human		matched	district-link		agent	its enwiki infobox puts it in Hebron S/D, which the address names (kimatch/district_link.py)	2026-10-24
+Umm el Faraj (Acre)	Umm el Faraj (Acre)	0			Q7881655	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24

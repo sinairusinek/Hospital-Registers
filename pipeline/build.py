@@ -223,6 +223,8 @@ def load_record_places() -> tuple[list[tuple[re.Pattern, re.Pattern, str]], dict
     if RECORD_READINGS.exists():
         with RECORD_READINGS.open(newline="", encoding="utf-8") as handle:
             for row in csv.DictReader(handle, delimiter="\t"):
+                if not (row["serial"] or "").strip():
+                    continue  # keyed by serial: a blank one would match every serial-less row
                 readings[(row["notebook"], row["serial"])] = (row["admission_date"][:4], row["target_city"])
     return rules, readings
 

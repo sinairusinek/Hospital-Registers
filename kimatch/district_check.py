@@ -49,6 +49,7 @@ DATA = ROOT.parent / "data" / "public" / "hospital-registers-normalized.tsv"
 COORDS = ROOT.parent / "data" / "public" / "place-coords.tsv"
 CACHE = ROOT / "district-cache.json"
 OUT = ROOT / "district-check.tsv"
+READINGS = ROOT / "district-check-readings.tsv"
 UA = "HospitalRegisters/1.0 (https://github.com/sinaiRusinek; sinai.rusinek@gmail.com)"
 
 MANDATE_SD_CLASS = "Q15665395"
@@ -268,8 +269,82 @@ def dist(a, b) -> float:
     return math.hypot(a[0] - b[0], (a[1] - b[1]) * math.cos(math.radians(a[0])))
 
 
+class Gazetteer:
+    """A linked place's Mandate sub-district, from the cached sources."""
+
+    def __init__(self, cache: dict):
+        self.cache = cache
+        self.sds = cache["subdistricts"]
+        self.coords = {}
+        for c in csv.DictReader(COORDS.open(), delimiter="\t"):
+            if c["lat"]:
+                self.coords[c["city"]] = (float(c["lat"]), float(c["lon"]))
+        self.ref = []
+        for _q, sd, c in cache["reference"]:
+            m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", c)
+            if m:
+                self.ref.append(((float(m.group(2)), float(m.group(1))), self.sds[sd]))
+        for _title, sd, lat, lon in cache["wiki_reference"]:
+            self.ref.append(((lat, lon), sd))
+        for q, it in cache["items"].items():
+            sd, how = self.own_sd(q)
+            if how == "infobox" and it.get("coord"):
+                self.ref.append((tuple(it["coord"]), sd))
+        self.vs_index: dict[str, set[str]] = defaultdict(set)
+        for vsd, vrows in cache["vs1945"].items():
+            for vrow in vrows:
+                for n in vs_names(vrow):
+                    sk = skeleton(n)
+                    if len(sk) >= 2:
+                        self.vs_index[sk].add(vsd)
+
+    def own_sd(self, q: str) -> tuple[str, str]:
+        it = self.cache["items"].get(q, {})
+        for p in it.get("p131", []):
+            if p in self.sds:
+                return self.sds[p], "p131"
+        ib = self.cache["infobox"].get(it.get("enwiki") or "")
+        if ib:
+            return ib, "infobox"
+        return "", ""
+
+    def vs_sds(self, city: str, place: str) -> set[str]:
+        it = self.cache["items"].get(place, {})
+        labels = {*city.split("|"), it.get("label", ""), (it.get("enwiki") or "").split(",")[0]}
+        labels |= {re.sub(r"\s*\(.*\)", "", x) for x in labels}
+        found: set[str] = set()
+        for lab in labels:
+            sk = skeleton(lab)
+            if len(sk) >= 2:
+                found |= self.vs_index.get(sk, set())
+        return found
+
+    def nearest(self, pt) -> tuple[str, str, str]:
+        nn = sorted(self.ref, key=lambda x: dist(pt, x[0]))[:5]
+        if dist(pt, nn[0][0]) * 111 > 20:      # a point outside Palestine has no neighbours to vote
+            return "", "", f"{dist(pt, nn[0][0]) * 111:.0f} km"
+        sd, n = Counter(s for _, s in nn).most_common(1)[0]
+        return sd, f"nearest {n}/5", f"{dist(pt, nn[0][0]) * 111:.1f} km"
+
+    def subdistrict(self, city: str, place: str) -> tuple[str, str, set[str], str]:
+        """-> (sub-district, how it was found, VS 1945 lists holding the name, nearest-ref distance)"""
+        sd, how = self.own_sd(place) if place.startswith("Q") else ("", "")
+        in_vs = self.vs_sds(city, place)
+        if not sd and len(in_vs) == 1:
+            sd, how = next(iter(in_vs)), "vs1945-name"
+        pt = self.coords.get(city) or tuple(self.cache["items"].get(place, {}).get("coord") or ()) or None
+        near = ""
+        if not sd and pt:
+            sd, how, near = self.nearest(pt)
+        return sd, how, in_vs, near
+
+
 def main() -> int:
     rows = list(csv.DictReader(DATA.open(), delimiter="\t", quoting=csv.QUOTE_NONE))
+    # Leads already read off the scans (kimatch/district-check-readings.tsv) are
+    # set aside, so a rerun only shows what nobody has looked at.
+    read = {(r["notebook"], r["serial"]) for r in csv.DictReader(READINGS.open(), delimiter="\t")} if READINGS.exists() else set()
+    already_read = 0
     pairs: dict[tuple[str, str, str], list[dict]] = defaultdict(list)
     unlinked: Counter = Counter()
     for r in rows:
@@ -279,75 +354,20 @@ def main() -> int:
         if not wd:
             continue
         place = r["City Wikidata"] or (("kima:" + r["City Kima ID"]) if r["City Kima ID"] else "")
+        if (r["Notebook_Number"], r["Notebook Record ID"]) in read:
+            already_read += 1
+            continue
         if not place:
             unlinked[(r["City"], wd)] += 1
             continue
         pairs[(r["City"], place, wd)].append(r)
 
-    coords = {}
-    for c in csv.DictReader(COORDS.open(), delimiter="\t"):
-        if c["lat"]:
-            coords[c["city"]] = (float(c["lat"]), float(c["lon"]))
-
     qids = {p for _, p, _ in pairs if p.startswith("Q")}
-    cache = load_cache("--refresh" in sys.argv, qids)
-    sds = cache["subdistricts"]
-
-    def own_sd(q: str) -> tuple[str, str]:
-        it = cache["items"].get(q, {})
-        for p in it.get("p131", []):
-            if p in sds:
-                return sds[p], "p131"
-        ib = cache["infobox"].get(it.get("enwiki") or "")
-        if ib:
-            return ib, "infobox"
-        return "", ""
-
-    ref = []
-    for q, sd, c in cache["reference"]:
-        m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", c)
-        if m:
-            ref.append(((float(m.group(2)), float(m.group(1))), sds[sd]))
-    for _title, sd, lat, lon in cache["wiki_reference"]:
-        ref.append(((lat, lon), sd))
-    for q, it in cache["items"].items():
-        sd, how = own_sd(q)
-        if how == "infobox" and it.get("coord"):
-            ref.append((tuple(it["coord"]), sd))
-
-    vs_index: dict[str, set[str]] = defaultdict(set)
-    for vsd, vrows in cache["vs1945"].items():
-        for vrow in vrows:
-            for n in vs_names(vrow):
-                sk = skeleton(n)
-                if len(sk) >= 2:
-                    vs_index[sk].add(vsd)
-
-    def vs_sds(city: str, place: str) -> set[str]:
-        it = cache["items"].get(place, {})
-        labels = {*city.split("|"), it.get("label", ""), (it.get("enwiki") or "").split(",")[0]}
-        labels |= {re.sub(r"\s*\(.*\)", "", x) for x in labels}
-        found: set[str] = set()
-        for lab in labels:
-            sk = skeleton(lab)
-            if len(sk) >= 2:
-                found |= vs_index.get(sk, set())
-        return found
+    gaz = Gazetteer(load_cache("--refresh" in sys.argv, qids))
 
     out = []
     for (city, place, wd), recs in sorted(pairs.items()):
-        sd, how = own_sd(place) if place.startswith("Q") else ("", "")
-        in_vs = vs_sds(city, place)
-        if not sd and len(in_vs) == 1:
-            sd, how = next(iter(in_vs)), "vs1945-name"
-        pt = coords.get(city) or tuple(cache["items"].get(place, {}).get("coord") or ()) or None
-        near = ""
-        if not sd and pt:
-            nn = sorted(ref, key=lambda x: dist(pt, x[0]))[:5]
-            votes = Counter(s for _, s in nn)
-            sd, n = votes.most_common(1)[0]
-            how = f"nearest {n}/5"
-            near = f"{dist(pt, nn[0][0]) * 111:.1f} km"
+        sd, how, in_vs, near = gaz.subdistrict(city, place)
         if wd.startswith("~"):
             verdict = "not-a-subdistrict"
         elif not sd and wd not in in_vs:
@@ -381,6 +401,7 @@ def main() -> int:
     print(f"Wrote {OUT}: {len(out)} place x district pairs")
     for k in order:
         print(f"  {k:22} {sum(1 for o in out if o['verdict'] == k):4} pairs  {tally[k]:5} records")
+    print(f"  already read off the scans (district-check-readings.tsv): {already_read} records")
     print(f"  unlinked City with a written district: {sum(unlinked.values())} records")
     return 0
 

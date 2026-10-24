@@ -1,0 +1,169 @@
+notebook	serial	admission_date	city	address	written_district	words	tier	target_city	qid	candidates
+11	446	1935-04-01	Malawa	Malawa, Beisan S/dist.	Beisan	Malawa				
+11	466	1935-04-05	Halawa	Halawa, Acre S/Dist.	Acre	Halawa				
+11	608	1935-05-02	Makr	Makr, Acre S/Dist	Acre	Makr				 | VS 1945: Makr (El) | wikidata: Q125807125 makr, Q704606 Makro, Q1133558 makruh
+1	350	1930-05-22	Sheikh Daud	Sheikh Daud village Acre Sub Dist.	Acre	Sheikh Daud				 | VS 1945: Sheikh Dawud (incl. Sheikh Dannun) | wikidata: 
+1	533	1930-07-11	Sarta	Sarta. Nablus Sub District. H. Saleh.	Nablus	Sarta | Saleh				Sileh (Jenin); Salameh (Jaffa) | VS 1945: Sarra; Sarta
+2	593	1931-07-24	Endoul	Endoul village. Nazareth Sub Dist.	Nazareth	Endoul				
+2	882	1931-09-26	Jalth	Jalth village, Acre Sub. District.	Acre	Jalth				
+3	1171	1932-10-25		c/o Maher village Acre S/D	Acre	o Maher | o				
+3	1244	1932-11-09	Kafr Alam	c/o Farah Said Mohd. Kafr Alam Jenin S/D.	Jenin	Kafr Alam | o Farah Said Mohd | o				Kafr Lam (Haifa)
+3	1293	1932-11-17		Jabeel village. Jenin S/D.	Jenin	Jabeel				
+3	84	1933-01-28	Jiren	Jiren village Jenin S/D.	Jenin	Jiren				
+4	123	1933-02-10	Lidd	Lidd village, near Affule, Haifa District.	Haifa	Lidd | Affule				Affula (Afula) (Nazareth); Ludd (Ramle)
+4	308	1933-04-11	Zammoun village	Zammoun village Nablus Sub Dist.	Nablus	Zammoun village | Zammoun				Dammoun Village (Acre) | VS 1945: Tammun | wikidata: Q275722 Tammun, Q3454292 Tammuna | refused Tammun (Nablus): Zammoun: unread, needs the scan
+5	660	1933-07-03	Berwi	Berwi, Acre Sub Dist.	Acre	Berwi				
+5	697	1933-07-11	Jisr al-Majami'	Jisiel Majami' Beisan S/Dist.	Beisan	Jisr al-Majami' | Jisiel Majami' | Jisiel				 | VS 1945: Jisr el Majami‘ | wikidata: 
+5	812	1933-07-26	Ziricen	Ziricen, Nablus S/Dist.	Nablus	Ziricen				Zir'in (Jenin) (Jenin)
+5	837	1933-07-30	Baika	Baika, Nablus Dist	Nablus	Baika				 | VS 1945: Baqa | wikidata: Q6684618 Baqa, Q11908129 Baqà, Q1748624 Baqa', Q37238000 Baqai
+5	907	1933-08-08		Shweiki. Jul-Karem S/District.	Tulkarm	Shweiki | Jul				Shuweika (?) | VS 1945: Shuweika | wikidata: 
+7	1786	1933-12-08	Jdeida	Jdeida, Acre Sub Dist.	Acre	Jdeida				 | VS 1945: Judeida | wikidata: Q6302406 Judeida, Q29376016 Judeida
+7	55	1934-01-10	Jadeida	Jadeida, Acre S/district	Acre	Jadeida				 | VS 1945: Judeida | wikidata: Q6302406 Judeida, Q29376016 Judeida
+8		1934-03-22	Lile	El Lile, Acca S/Dist.	Acre	Lile | El Lile | El				
+8	627	1934-04-23	Jaidi	Jaidi, Acre S/Dist.	Acre	Jaidi				
+8	741	1934-05-09	Ahillin	Ahillin, Haifa S/Dist.	Haifa	Ahillin				
+8	875	1934-05-28	Smasia	Smasia, Acre S/Dist.	Acre	Smasia				
+9	1054	1934-06-19	Tabaraah	Tabaraah, Nazareth S/Dist.	Nazareth	Tabaraah				
+9	1309	1934-07-17	Asira	Asira, Nablus S/Dist.	Nablus	Asira				Asfia (Haifa)
+9	1451	1934-08-02	Makr|Acre S/Dist	Makr village|Acre S/Dist.	Acre	Makr				 | VS 1945: Makr (El) | wikidata: Q125807125 makr, Q704606 Makro, Q1133558 makruh
+9	1472	1934-08-04	Nebi Rubin	Nebi Rubin, Nazareth S/Dist.	Nazareth	Nebi Rubin | Nebi				
+10	1588	1934-08-16	Sajarah	Sajarah, Tiberias District.	Tiberias	Sajarah				Sajour (Acre) | VS 1945: Sejera (Ilaniya); Shajara (Esh) | enwiki: Al-Shajara, Palestine
+10	1594	1934-08-17	Silwad	Silwad, J'lem. District.	Jerusalem	Silwad				 | VS 1945: Silwan | wikidata: Q2448062 Silwan, Q32020408 Silwana, Q9337013 Silwana | refused Silwan (Jerusalem): Silwad was a Ramallah village; Silwan is another place
+10	1794	1934-09-14	Jabatah	Jabatah. Nablus S/Dist.	Nablus	Jabatah				
+10	1944	1934-10-05	Saulam	Saulam, Nazareth S/Dist.	Nazareth	Saulam				Salameh (Jaffa); Solam (Jenin) | VS 1945: Sulam | wikidata: Q106455728 Sulam, Q2777713 Sulam, Q4193555 Sulamu
+10	1952	1934-10-06	Lor'am	Lor'am, Nazareth S/Dist.	Nazareth	Lor'am				
+10		1934-10-30	Kufr Assad	Kufr assad Tiberias S/District	Tiberias	Kufr Assad | Kufr assad				
+10	2134	1934-10-30		Washareh Village Haifa District	Haifa	Washareh				
+10	2212	1934-11-12		Suska village Acre S/D.	Acre	Suska				
+12	1412	1935-07-27	Birury	Birury Village, Acre Sub District	Acre	Birury				
+15	2733	1936-11-16	Aanabeh	Aanabeh, Jenin S/Dist|Aanabeh	Jenin	Aanabeh				
+15	2799	1936-11-23	Acre|Dare ll Kasy Acre/Dist	Dare ll Kasy Acre/Dist.	Acre	Dare ll Kasy | Dare				Had Stae (Haifa)
+15	2834	1936-11-27	Shaih	Acre Dist. Shaih.	Acre	Shaih				
+15	193	1937-01-31	Kiryat El Naber	Kiriat El Naber Acre Dist.	Acre	Kiryat El Naber | Kiriat El Naber | Kiriat				Ata village (Haifa) | VS 1945: Iqrith | enwiki: Iqrit | refused Iqrith (Acre): not Iqrith
+15	359	1937-02-25	Kababich	Kababich Nablus District	Nablus	Kababich				Kabatia (Jenin); Kababir (Haifa)
+15	421	1937-03-07	Sasah	Sasah, Safad District	Safad	Sasah				
+15	437	1937-03-09	Azara	Azara Haifa District.	Haifa	Azara				 | enwiki: Al-Mazar, Haifa | refused Al-Mazar (Haifa): Azara is not al-Mazar
+15	480	1937-03-15	Bouwarah Safad District|Bouwarah	Bouwarah Safad District|Bouwarah	Safad	Bouwarah				
+16	794	1937-04-26	Assira	Nablus District Assira village	Nablus	Assira				
+16	812	1937-04-28	Jal'a	Jal'a. Nablus Dist.	Nablus	Jal'a				
+16	832	1937-05-01	Yauseh Village	Yauseh Village Acre Dist.	Acre	Yauseh Village | Yauseh				
+16	1003	1937-06-10	Ramallah / Acre	Ramala Acre Dist.	Acre	Ramallah / Acre | Ramala				Ramleh (Ramle); Ramallah (Jerusalem); Allenby (Haifa)
+16	1339	1937-06-26	Lajjam	Lajjam Haifa Dist.	Haifa	Lajjam				
+16	1351	1937-06-27	Majdal, Acre S/D	Majdal Acre Dist.	Acre	Majdal				
+16	1525	1937-07-15	Iksal / Nazareth	Exal Nazareth Dist	Nazareth	Iksal / Nazareth | Exal				
+16	1569	1937-07-19	Mughar / Nablus	Mughar Nablus s/D	Nablus	Mughar / Nablus | Mughar				Maghar Village (Acre) | VS 1945: Mughayyir (El) (includes Khirbat Jib‘it) | wikidata: Q5705190 Mughar
+17	1674	1937-07-30	Jaffa / Nazareth	Jaffa Nazareth Sub. Dist.	Nazareth	Jaffa / Nazareth | Jaffa				Dept of Survey Jaffa|Jaffa (Jaffa)
+17	1676	1937-07-30	Tamra / Nablus	Tamra Nablus S/D.	Nablus	Tamra / Nablus | Tamra				Tamra (Acre)
+17	1714	1937-08-02	Elor Village	Elor Village Tulkarem s/o	Tulkarm	Elor Village | Elor				
+17	2017	1937-08-29	Kfar Kaddoum	Kfar Kaddoum. Nablus Sub Dist.	Nablus	Kfar Kaddoum				 | VS 1945: Kafr Qaddum | wikidata: Q2896936 Kafr Qaddum
+17	2066	1937-09-03	Nasra	Nasra ff. Acre Dist.	Acre	Nasra | Nasra ff				Nasareth (Nazareth) | VS 1945: Ein Sara | wikidata: Q3870507 Nasra, Q2673428 Nasra, Q60783319 Nasra, Q21743301 Nasra
+17	2101	1937-09-07	Ailaboune	Ailaboune, Tiberias Dist	Tiberias	Ailaboune				 | VS 1945: ‘Eilabun | wikidata: 
+17	2205	1937-09-18	Yammah	Yammah, Jinin District	Jenin	Yammah				
+17	2249	1937-09-23		Assway village Acre Dist.	Acre	Assway				
+17	2403	1937-10-09	Shuweikat	Shuweikat. Nablus S/D	Nablus	Shuweikat				Shuweika (?)
+17	2462	1937-10-13	Bala	Bala Jenin Dist	Jenin	Bala				Bala' (Tulkarm)
+17	2473	1937-10-14	Akil	Akil - Nazareth Dist.	Nazareth	Akil				
+17	2656	1937-11-01	Im Keis	Im Keis Tiberias District	Tiberias	Im Keis				
+18	2880	1937-11-23		Shwaiky Tulkarem S/D	Tulkarm	Shwaiky				Shuweika (?) | VS 1945: Shuweika | wikidata: 
+18	3184	1937-12-22	Acre s/o	Nahr	Acre	Nahr				Nahr (Acre); Naharia (Acre) | VS 1945: Nahariya; Nahr (En) | enwiki: Al-Nahr
+18	129	1938-01-18	Kinch / Acre	Kinch Acre S/D.	Acre	Kinch / Acre | Kinch				
+18	342	1938-02-13	Bika'	El Bika' Acre Dist.	Acre	Bika' | El Bika' | El				
+18	346	1938-02-14	Mishmar Jeh	Mishmar Jeh Safad S/D.	Safad	Mishmar Jeh | Mishmar				
+18	357	1938-02-14	Mealia	Mealia Acre Dist	Acre	Mealia				
+18	454	1938-02-27	Yammouny	Yammouny Jenin District	Jenin	Yammouny				Yamoun (Jenin); Amman (Jenin) | VS 1945: Yamun (El) | wikidata: Q132726 Yamuna, Q2348057 Yamunā
+18	474	1938-03-02	Misliha	Misliha Acre Dist	Acre	Misliha				
+19	684	1938-03-30	Buka' Acre Dist	"-', ""Buka' Acre Dist"	Acre	"""Buka'"				 | VS 1945: Buqeia (El) | wikidata: 
+19	791	1938-04-11	Bika'a	Bika'a Acre S/D.	Acre	Bika'a				
+19	1310	1938-06-10	Zajjun	Zajjun Acre Dist.	Acre	Zajjun				Lajjoun (Jenin)
+19	1418	1938-06-20	Acre|Assira El Shamalieh Acre	Nablus S/D. own house|Assira El Shamalieh Acre.	Nablus	Acre|Assira El Shamalieh Acre | Assira El Shamalieh Acre | Assira				
+19	1591	1938-07-06	Affja - Jenin S/D. Case sent to Cent Police St.|Affja/Jenin	Affja - Jenin S/D. Case sent to Cent Police St.|Affja/Jenin	Jenin	Affja | Jenin				Jenin (Jenin); Dept of Survey Jaffa|Jaffa (Jaffa) | VS 1945: Jenin (Rural); Jenin (Urban)
+20	1802	1938-07-29	Nablus|Assira Nablus S/D	Assira Nablus S/D	Nablus	Assira				
+20	1988	1938-08-13		Ard - Haifa District	Haifa	Ard				
+20	2143	1938-09-05	Deir el Balah / Gaza	Deir el Balah Gaza S/D	Gaza	Deir el Balah / Gaza | Deir el Balah				 | VS 1945: Deir el Balaḥ | wikidata: Q127542680 Deir el-Balah, Q557383 Deir al-Balah, Q13571749 Deir el-Balah
+20	2364	1938-09-25	Subich/Tiberias	Subich - Tiberias S/O	Tiberias	Subich/Tiberias | Subich				
+20	2637	1938-10-25	Daburiyya	Dabourieh. Nazareth S/D	Nazareth	Daburiyya | Dabourieh				 | VS 1945: Daburiyya | wikidata: Q2915531 Daburiyya
+21	2932	1938-11-30	Dabburi - Nazareth S/D|Dabburi / Nazareth	Dabburi - Nazareth S/D|Dabburi / Nazareth	Nazareth	Dabburi | Nazareth				Nasareth (Nazareth) | VS 1945: Daburiyya; Nazareth (Rural); Nazareth (Urban)
+21	115	1939-01-16	Jillia	Jillia - Acre S/D.	Acre	Jillia				
+21	192	1939-01-27		Maker. Jere S/D.	Jerusalem	Maker				
+21	379	1939-02-15	Acre S/D	Acre S/D	Acre					
+21	3334	1939-02-18	Deir Shteija	Deir Shteija. Nablus S/D.	Nablus	Deir Shteija				
+21	548	1939-03-06	Deir El Goussoun / Tulkarem	Deir El Goussoun / Tulkarem S/D	Tulkarm	Deir El Goussoun / Tulkarem | Deir El Goussoun				 | VS 1945: Deir el Ghusun (includes Khirbat el Masqifa, El Marja, Khirbat Jarishiya, Khirbat Bir es Sikka, Khirbat Yamma and Khirbat Ibthan) | wikidata: 
+22	616	1939-03-14	Deir El Ghusun	Deir El Ghoussouny Tulkarem S/D.	Tulkarm	Deir El Ghusun | Deir El Ghoussouny				 | VS 1945: Deir el Ghusun (includes Khirbat el Masqifa, El Marja, Khirbat Jarishiya, Khirbat Bir es Sikka, Khirbat Yamma and Khirbat Ibthan) | wikidata: 
+22	741	1939-03-27	Nassari	Nassari. Haifa s/d	Haifa	Nassari				
+22	744	1939-03-27		Aditha - Safad s/d	Safad	Aditha				
+22	767	1939-03-29	Kufer Kaddoum / Nablus	Kufer Kaddoum Nablus S/D.	Nablus	Kufer Kaddoum / Nablus | Kufer Kaddoum				 | VS 1945: Kafr Qaddum | wikidata: Q2896936 Kafr Qaddum
+22	1436	1939-05-22	Adytha	Adytha - Safad S/D	Safad	Adytha				
+22	1600	1939-06-03	Shuwaikeh	Shuwaikeh. Tulkarem S/D	Tulkarm	Shuwaikeh				Shuweika (?) | VS 1945: Shuweika | wikidata: 
+22	1675	1939-06-10	Shuwaikeh	Shuwaikeh - Tulkarem s/d	Tulkarm	Shuwaikeh				Shuweika (?) | VS 1945: Shuweika | wikidata: 
+22	1688	1939-06-12	Haifa s/d	Kiryat Kharoshet	Haifa	Kiryat Kharoshet | Kiryat				Kfar Kharoshet (Haifa); Kiryat Yam (Haifa); Ata village (Haifa) | VS 1945: Qiryat Haroshet | enwiki: Kiryat Ata | refused Kiryat Ata: Kfar Kharoshet is Kiryat Kharoshet, not Kiryat Ata (standing ruling)
+23	3030	1939-09-24	Jatt / Acre	Jath. Acre s/d	Acre	Jatt / Acre | Jath				 | VS 1945: Jatt | wikidata: Q21509245 Jatta, Q6164712 Jattaea, Q2911762 Jatt, Q18760777 Jatta
+23	3233	1939-10-08	Gdeideh	Gdeideh. Acre S/D.	Acre	Gdeideh				
+23	3235	1939-10-08	Gdeideh|Acre S/D	Gdeideh. Acre S/D.|Acre S/D	Acre	Gdeideh				
+23	3237	1939-10-08	Gdeideh	Gdeideh. Acre S/D.	Acre	Gdeideh				
+23	3239	1939-10-08	Gdeideh	Gdeideh. Acre S/D.	Acre	Gdeideh				
+23	3394	1939-10-20	Tiberias (Kibbutz Afikim?)	Kibutz Akva Tiberias S/D	Tiberias	Tiberias (Kibbutz Afikim?) | Kibutz Akva | Kibutz				Allenby (Haifa); Tiberias (Tiberias) | VS 1945: Tiberias (Rural); Tiberias (Urban)
+23	3570		Faqqua, Jenin	Fakkoua' Jenin S/D	Jenin	Faqqua, Jenin | Fakkoua'				 | VS 1945: Faqu‘a | wikidata: 
+23	3622	1939-11-06		Ghoaya Village Haifa SD.	Haifa	Ghoaya				
+23	3904	1939-11-27	Maney Village	Maney Village. Acre S/D	Acre	Maney Village | Maney				
+23	3925	1939-11-29	Baka	Baka Village, Tul-Karm S/D	Tulkarm	Baka				
+23	3940	1939-11-30	Yammoun / Jenin	Yammoun. Jenin s/d c/o Kassem Hussein Abdulla	Jenin	Yammoun / Jenin | Yammoun | o Kassem Hussein Abdulla | o				Yamoun (Jenin); Dammoun Village (Acre); Amman (Jenin) | VS 1945: Yamun (El) | wikidata: Q132726 Yamuna, Q2348057 Yamunā
+24	3945	1939-12-01	Bikeia	Bikeia - Acre S/D	Acre	Bikeia				 | VS 1945: Buqeia (El) | wikidata: 
+24	3963	1939-12-02	Samma	Samma - Safad S/D	Safad	Samma				Amman (Jenin) | VS 1945: Sammu‘i (Es) | enwiki: Al-Sammu'i | refused Sammu'i (Safad): Samma: unread, needs the scan
+24	4287	1939-12-28	Assirah	Assirah. Nablus S/D	Nablus	Assirah				
+24	32	1940-01-03	Kufer Bireing	Kufer Bireing Safad S/D	Safad	Kufer Bireing				
+24	296	1940-01-27	Nazli El Sharhieh	El Nazli El Sharhieh Tulkarem s/d	Tulkarm	Nazli El Sharhieh | El Nazli El Sharhieh | El				
+24	438	1940-02-08	Anza	Anza. Jenin S/D.	Jenin	Anza				 | VS 1945: Anza | wikidata: Q3290395 Anza, Q37536952 Anza, Q99196746 Anza, Q1577307 Anzá, Q3458204 Anza, Q147240 2061 Anza
+24	480	1940-02-12	Deir El Assi	Deir El Assi Acre S/D	Acre	Deir El Assi				 | VS 1945: Deir el Qasi and El Mansura | wikidata: 
+24	492	1940-02-13	Tiberias S/D	Tiberias S/D	Tiberias					
+26	2644	1946-05-20	Fatour	Fatour village. Baisan / S.D.	Beisan	Fatour				 | VS 1945: Fatur (El) | wikidata: Q28750593 Fatur, Q5856696 Fatur, Q577401 iftar, Q24283641 Fatural
+27	3408	1944-07-21	Shbaya Foka	Shbaya Foka Arab Naghnaghyeh Haifa S/D	Haifa	Shbaya Foka | Shbaya Foka Arab Naghnaghyeh | Shbaya				
+27	3424	1944-07-22	Kufr Menda	Kufr Menda. Nazareth S/D.	Nazareth	Kufr Menda				Kafr Manda (Acre) | VS 1945: Kafr Manda | wikidata: Q2915534 Kafr Manda
+27	3564	1944-07-29	Abbethin	Abbethin - Haifa S/D.	Haifa	Abbethin				Beit Anya (Tiberias)
+27	3566	1944-07-29		Ileglar Tiberias S/D.	Tiberias	Ileglar				
+27	3793	1944-08-09	Falluja	Falluja Nablus S/D.	Nablus	Falluja				Al-Faluja (Gaza) (Gaza)
+27	3798	1944-08-09	Aghbariyie	Aghbariyie Haifa S/D.	Haifa	Aghbariyie				
+27	3868	1944-08-12	Tour'an	Tour'an Village Nazareth S/D	Nazareth	Tour'an				 | VS 1945: 'Afula (Urban); Nazareth (Urban); Tur‘an
+27	3951	1944-08-16	Ajjah	Ajja - Jenin s/d	Jenin	Ajjah | Ajja				
+27	4301	1944-09-02	Beni Suheila	Beni Suheila. Acre S/D.	Acre	Beni Suheila | Beni				
+28	4547	1944-09-15		Turaan - Nazareth S/D.	Nazareth	Turaan				 | VS 1945: Tur‘an | wikidata: Q2915766 Tur'an, Q1254474 Tur'an
+28	4684	1944-09-23	Deir el Ghessoun	Deir el Ghessoun, Acre S/D	Acre	Deir el Ghessoun				
+28	5021	1944-10-14	Deir el Ghosoun	Deir el Ghosoun Tulkarem S/D.	Tulkarm	Deir el Ghosoun				 | VS 1945: Deir el Ghusun (includes Khirbat el Masqifa, El Marja, Khirbat Jarishiya, Khirbat Bir es Sikka, Khirbat Yamma and Khirbat Ibthan) | wikidata: 
+28	5053	1944-10-17	Deir El Ghusun	Deir El Ghusun. Tul-Karm S/D	Tulkarm	Deir El Ghusun				 | VS 1945: Deir el Ghusun (includes Khirbat el Masqifa, El Marja, Khirbat Jarishiya, Khirbat Bir es Sikka, Khirbat Yamma and Khirbat Ibthan) | wikidata: 
+28	5072	1944-10-18	Jath	Jath Acre s/o.	Acre	Jath				 | VS 1945: Jatt | wikidata: Q21509245 Jatta, Q6164712 Jattaea, Q2911762 Jatt, Q18760777 Jatta
+29	1393	1944-04-01	Salmeshia	Salmeshia / Acre s/d	Acre	Salmeshia				
+29	1395	1944-04-01	Kufir Rai	Kufir Rai village / Jenin s/d.	Jenin	Kufir Rai | Kufir				Kafr Rai (Tulkarm) | VS 1945: Kafr Ra‘i; Kufeir
+29	1656	1944-04-17	Beit el Gheour	Beit el Gheour Tulkarem s/d	Tulkarm	Beit el Gheour | el Gheour | el				
+29	1712	1944-04-20	Sfed Khabia	Sfed Khabia Acre S/D.	Acre	Sfed Khabia | Sfed				Safad (Safad)
+29	1864	1944-04-29	Jenin / Khabadeh	Khabadeh Jenin S/D, own house	Jenin	Jenin / Khabadeh | Khabadeh				
+29	1925	1944-05-03	Kefr Rai'	Kefr Rai' Jenin S/D	Jenin	Kefr Rai' | Kefr				Kafr Rai (Tulkarm) | VS 1945: Kafr Ra‘i; Kufeir
+29	2085	1944-05-12	Jatt	Jatt Acre S/D.	Acre	Jatt				 | VS 1945: Jatt | wikidata: Q21509245 Jatta, Q6164712 Jattaea, Q2911762 Jatt, Q18760777 Jatta
+29	2101	1944-05-13		Kafr Semé Acre s/d.	Acre	Kafr Seme				 | VS 1945: Kafr Sumei' | wikidata: 
+29	2153	1944-05-17	Rishneh	Rishneh Acre s/d	Acre	Rishneh				Rihanieh (Haifa)
+30	1794	1946-04-11		Massara Nablus S/D.	Nablus	Massara				Massada (Tiberias)
+30	1871	1946-04-15	Deir el ghour	Deir el ghour. Tulkarem S/D T	Tulkarm	Deir el ghour				
+30	2008	1946-04-22		Kafr Addah Jenin S/D	Jenin	Kafr Addah				Kfar Yadidia (Tulkarm)
+30	2180	1946-05-01		Der Ghassoun Tul Karm S/D	Tulkarm	Der Ghassoun | Der				En Dor (Beisan); Gedera (Haifa) | VS 1945: Deir el Ghusun (includes Khirbat el Masqifa, El Marja, Khirbat Jarishiya, Khirbat Bir es Sikka, Khirbat Yamma and Khirbat Ibthan) | wikidata: 
+30	2239	1946-05-03		Em El Shoff. Haifa S/D	Haifa	Em El Shoff | Em				
+31		1947-04-25		Haifa S/D	Haifa					
+31	2551	1947-04-28		Meghar Hazzour Tiberias D.	Tiberias	Meghar Hazzour | Meghar				Maghar Village (Acre) | VS 1945: Maghar and El Mansura | wikidata: 
+31	2591	1947-04-29	Mashmar Hyam	Mashmar Hyam Acre S/D	Acre	Mashmar Hyam | Mashmar				
+31	2763	1947-05-06		Haifa S/D	Haifa					
+31		1947-05-10	Acre S/D	Acre S/D	Acre					
+31	2870	1947-05-11	Haifa S/D		Haifa					
+31	2976	1947-05-15		Tul Karm S.D.	Tulkarm					
+31	3125	1947-05-21		Haifa S/D	Haifa					
+31	3126	1947-05-21		Haifa S/D	Haifa					
+31	3145	1947-05-22	Lebban	Lebban Nablus S/D.	Nablus	Lebban				
+31	3272	1947-05-29	Ajja|Jenin S/D	Ajja|Jenin S/D.	Jenin	Ajja				
+31	3278	1947-05-29		Jenin S/D. Ras hosn.	Jenin	Ras hosn | Ras				
+32	5995	1947-09-12		Khirbet Mikdawi Tulkarm s/d	Tulkarm	Khirbet Mikdawi				
+32	6027	1947-09-13	Kafr Abn Zeid	Tulkarm District, Kafr Abn Zeid	Tulkarm	Kafr Abn Zeid				
+32	6119	1947-09-16	Sa'sa'a	Sa'sa'a Safad s/d	Safad	Sa'sa'a				
+32	6191	1947-09-19	Gidaisly	Gidaisly Acre S/D	Acre	Gidaisly				
+32	6193	1947-09-19	Seelf	Seelf. Jenin S/D	Jenin	Seelf				
+32	6333	1947-09-24	Alma	Alma Safad S/D.	Safad	Alma				 | VS 1945: 'Alma | wikidata: 
+32	6336	1947-09-24	Nazleh Gharbich	Nazleh Gharbich, Tul Karem S/D.	Tulkarm	Nazleh Gharbich | Nazleh | Tul				
+32	6415	1947-09-27		Khirbet Mashed Own house Haifa / S.D	Haifa	Khirbet Mashed				
+32	6580	1947-10-04	Ajja	Ajja Jenin s/d	Jenin	Ajja				
+32	6636	1947-10-07	Buqei'a	Bukei'a, Acre s/d	Acre	Buqei'a | Bukei'a				 | VS 1945: Buqeia (El) | wikidata: 
+32	6927	1947-10-18	Meselieh	Meselieh Jenin s/d	Jenin	Meselieh				

@@ -18,3 +18,9 @@ city_regex	address_regex	target_city	note
 ^\W*jab+a['‘]?a?\b	jen[ie]n|jinin	Jaba' (Jenin)	Jaba' of the Jenin sub-district: the address names Jenin (the bare spelling is the Haifa one)
 ^\W*jaffa\b	^\W*jaffa\W+naz(areth)?\.?\s+dist	Yafa an-Naseriyye	Yafa by Nazareth: 'Jaffa, Nazareth Dist.'
 ^\W*(acre|akka|acca)\b	^\W*acre\s+st\s*/\s*dist\.?\s+el\s+zueb	Zeeb	al-Zib: 'Acre St/Dist. El Zueb' is the sub-district, not Haifa's Acre Street
+^\W*tarbicha\b	acre	Tarbikha	Tarbikha: 'Tarbicha - Acre S/D' (district_link.py; the serial-keyed reading did not take)
+^\W*majdel kroum\|majd al-krum	acre	Majd el Krum	Majd al-Krum: the address names Acre S/D (district_link.py)
+^\W*jabalya\b	gaza	Jabāliya (Gaza)	Jabaliya: 'Jabalya - Gaza s/D' (district_link.py)
+^	^\W*kwekat\s+village	Kwikat	Kwikat: 'Kwekat village, Acre Sub District' (district_link.py; row has no serial)
+^	^\W*fassouta\s+village	Fassuta	Fassuta: 'Fassouta village, Acre S/Dist.' (district_link.py; row has no serial)
+^\W*birweh\b	acre	Birweh	al-Birwa: the address names Acre S/D (district_link.py)
