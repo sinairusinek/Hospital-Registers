@@ -104,7 +104,7 @@ Sindianeh	32.556750	35.002264	wikidata	confirmed			Q4703260	matched	variant	8
 Stanton Street	32.819167	34.999167	kima	confirmed	791	Haifa (Israel)	Q41621	matched	furas	8	
 Tantourah	32.609400	34.917675	kima	confirmed	21005	Tantura (Israel)	Q2100836	matched	furas	8	
 Amka	32.979440	35.163330	kima	provisional	23142	Amka (Israel)	Q2914984	matched	agent	7	
-Kineret								unmatched-ambiguous	human	7	
+Kineret	32.722500	35.564200	wikidata	confirmed			Q2891213	matched	human	7	
 Lajjoun	32.574722	35.177778	wikidata	confirmed	16127	Lajjūn (Jordan)	Q3775368	matched	furas	7	
 Nahariya	33.003611	35.092500	kima	confirmed	39	Nahariyya (Israel)	Q167749	matched	auto	7	
 Neveh Shaanan	32.790278	35.015833	kima	confirmed	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	matched	agent	7	
@@ -122,8 +122,8 @@ Haifa|Hadar Hacarmel	32.807764	34.998150	kima	confirmed	21150	Hadar Hakarmel (Ha
 Kabatich	32.409553	35.280881	kima	confirmed	73993	Kabatiya (West Bank)	Q1899332	matched	furas	6	
 Kabatieh	32.409553	35.280881	kima	confirmed	73993	Kabatiya (West Bank)	Q1899332	matched	furas	6	
 Kfar Atta	32.800000	35.100000	kima	confirmed	477	Kiryat Ata (Israel)	Q152602	matched	agent	6	Kfar Ata
-Kinereth								unmatched-ambiguous	human	6	
-Kinneret								unmatched-ambiguous	human	6	
+Kinereth	32.722500	35.564200	wikidata	confirmed			Q2891213	matched	human	6	
+Kinneret	32.722500	35.564200	wikidata	confirmed			Q2891213	matched	human	6	
 Kiryat Haroshet	32.723889	35.127222	kima	confirmed	21920	Kiryat Haroshet (Israel)	Q1743479	matched	auto	6	
 Mazra'a	32.983100	35.097620	kima	provisional	26615	Mazra'a (Israel)	Q2890424	matched	agent	6	
 Netanya	32.328611	34.856667	kima	confirmed	24	Netanya (Israel)	Q192225	matched	agent	6	
@@ -341,7 +341,7 @@ Kfar Yehezkiel	32.567197	35.359000	kima	confirmed	832	Kefar Yehezkel (Israel)	Q2
 Khalisa	33.214444	35.567222	wikidata	confirmed			Q4702703	matched	agent	2	Khalisa
 Kibbutz Hashomer								unmatched-ambiguous	agent	2	
 Kibutz Affiking|Kibutz Affikim	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	2	
-Kineret|Kinneret								unmatched-ambiguous	human	2	
+Kineret|Kinneret	32.722500	35.564200	wikidata	confirmed			Q2891213	matched	human	2	
 Kiryat Gesher								unmatched-ambiguous	agent	2	
 Kufr Kani	32.750000	35.350000	kima	confirmed	20496	Kafr Kanna (Israel)	Q2633158	matched	variant	2	
 Kurdaneh								unmatched-no-kima-entry	agent	2	
@@ -683,7 +683,7 @@ Kibbutz Kinneret	32.713400	35.562500	kima	confirmed	1669	Kinneret (Kevutsa) (Isr
 Kibutz Affiking	32.679600	35.577800	kima	confirmed	554	Afikim (Israel)	Q383280	matched	agent	1	
 Kibutz Dalia	32.590278	35.077500	kima	confirmed	886	Daliyya (Israel)	Q1000997	matched	agent	1	
 Kinneret (Kibbutz)	32.713400	35.562500	kima	confirmed	1669	Kinneret (Kevutsa) (Israel)	Q2296107	matched	agent	1	
-Kinnereth								unmatched-ambiguous	human	1	
+Kinnereth	32.722500	35.564200	wikidata	confirmed			Q2891213	matched	human	1	
 Kiriat Haroshet	32.723889	35.127222	kima	confirmed	21920	Kiryat Haroshet (Israel)	Q1743479	matched	agent	1	
 Kiriat Kinzet								unmatched-junk	agent	1	
 Kiriyat Shmuel	32.834019	35.067842	kima	confirmed	22901	Kiryat Shemuel (Haifa, Israel)		matched	variant	1	
@@ -936,5 +936,6 @@ Halise?								unmatched-ambiguous	human	0
 Silwad	31.986111	35.259167	wikidata	confirmed			Q684632	matched	human	2	
 Tammun (Nablus)	32.284200	35.385800	wikidata	confirmed			Q275722	matched	agent	0	
 al-Yajur	32.758500	35.057306	wikidata	confirmed			Q2896909	matched	agent	0	
+Keneret	32.722500	35.564200	wikidata	confirmed			Q2891213	matched	human	1	
 Hawara	32.152500	35.256670	kima	provisional	21617	Hawara (Israel)			A_autolink	4	
 Samra	32.116670	35.266670	kima	provisional	22266	Khirbet Samara (Israel)			A_autolink	3	

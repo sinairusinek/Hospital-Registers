@@ -66,7 +66,7 @@ wikidata	Q383280	Affikim	51	labour	kibbutz / kvutza / moshav ovdim	proposed	plac
 wikidata	Q2495402	Kfar Vitkin	29	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 wikidata	Q943058	Tel Amal	29	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 wikidata	Q1724338	Nahalal	27	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
-city_text_regex	Kin+e?re?th?|Kenereth|Keneret|Kvutzat Kin	Kineret	26	labour	Kinneret kvutza or moshava: 7% Palestinian 1933-40, European adults: immigrant either way	proposed	nationality	
+city_text_regex	Kin+e?re?th?|Kenereth|Keneret|Kvutzat Kin	Kineret	26	early_moshava	bare Kinneret = Moshava Kinneret (user ruling 2026-10-24)	ruled	place	
 wikidata	Q1339887	Ein Harod	21	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 wikidata	Q2371396	Dejania	18	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 wikidata	Q2917286	Tel Yosef	11	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
@@ -78,7 +78,7 @@ wikidata	Q2777455	Kfar Hahoresh	6	labour	kibbutz / kvutza / moshav ovdim	propose
 neighbourhood	Haifa: Kibutz	Kibutz	5	labour		proposed	place	
 wikidata	Q166857	Gan Shmuel	4	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 wikidata	Q2889536	Kefutz Mizra	4	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
-wikidata	Q2296107	Kibbutz Kinneret	3	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
+wikidata	Q2296107	Kibbutz Kinneret	3	labour	Kvutzat Kinneret: set per record where the address says kibbutz / kvutza (2026-10-24)	ruled	place	
 wikidata	Q2776930	Givat Haim	3	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
 city_text_regex	Kibbutz Hashomer	Kibbutz Hashomer	3	labour		proposed	place	
 wikidata	Q2776845	Ginjar	2	labour	kibbutz / kvutza / moshav ovdim	proposed	place	
@@ -159,9 +159,11 @@ address_regex	S/S |\bship\b			other	ship's address, not a residence	proposed	add
 address_regex	Camp|Barracks|Frontier Force|Police|Prison|Jail|Detention|P\. ?& ?P\.|P\.\+P\.|D\. ?H\. ?Q			institutional	camp / police / prison address	proposed	address	
 address_regex	Hadar			new_urban	Hadar HaCarmel street address, overrides the city	proposed	address	
 address_regex	Kiri?a?t Sh?a?muel|Kiryat Shmuel			new_urban	new Jewish quarter of Tiberias (1920s)	proposed	address	
-address_regex	Kin+e?re?th?|K[ov]u?t?zat|Koutzat|Gesher|Degani|Afikim|Affikim			labour	sub-district kibbutz written under its town	proposed	address	
+address_regex	K[ov]u?t?zat|Koutzat|Gesher|Degani|Afikim|Affikim			labour	sub-district kibbutz written under its town	proposed	address	
+address_regex	^\W*\(?K[eiy]n+e?re?th?\b(?!.*(?i:kib|kvu|kou|montzat|sashamer))			early_moshava	bare Kinneret = Moshava Kinneret (user ruling 2026-10-24); the kvutza where the address says so	ruled	address	
 address_regex	[YJ]avn[ie]e?l|Beit Gan|Bet Gan|Melchemia|Menahemia|Sajara|Sejera|Rosh Pin|Metou?l|Kfar Dayagin|Mlabbas			early_moshava	sub-district moshava written under its town; Mlabbas = Petah Tikva	proposed	address	
 address_regex	Kfar Hasidim			later_moshava		proposed	address	
 address_regex	Nahar[iy]+a|Kiri?a?t Motzkin			new_urban	sub-district town written under Acre	proposed	address	
 address_regex	S/ ?Dist|S/D\b|Sub-?dist|\bDist\.|Stud Farm|Stead Farm|Experimental Station|[Nn]ear (?!The\b)[A-Z]			ambiguous	sub-district or rural address: not the town itself	proposed	address	
 wikidata	Q2900552	Beit Gan	2	early_moshava	Yavneel-area moshava (1904)	proposed	place	
+wikidata	Q2891213	Kinneret (moshava)		early_moshava	Moshava Kinneret, 1909 (user ruling 2026-10-24)	ruled	place	

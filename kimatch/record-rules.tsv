@@ -26,3 +26,6 @@ city_regex	address_regex	target_city	note
 ^\W*birweh\b	acre	Birweh	al-Birwa: the address names Acre S/D (district_link.py)
 ^\W*haifa\b	^\W*(haifa\W+)?kiryat\s+kharoshet\b	Kiryat Kharoshet	Kiryat Kharoshet: the address names it, the City column only the district (Haifa / Haifa s/d)
 ^\W*jerusalem\b	^\W*silwad\b	Silwad	Silwad (Ramallah S/D): 'Silwad, Jerusalem' names the district, not the city
+# Kinneret: the kvutza where the address says kibbutz/kvutza; a bare Kinneret is the moshava (user ruling 2026-10-24)			
+^\W*(k[eiy]n+e?re?th?|kvutzat|kibbutz|tiberias)	(?=.*(kib+u+tz|k[ov]u?t?zat|koutzat|montzat|sashamer))(?=.*k[eiy]n+e?re?th?)	Kibbutz Kinneret	Kvutzat Kinneret: the address says kibbutz / kvutza (or Hashomer Hatzair)
+^\W*tiberias	^\W*\(?k[eiy]n+e?re?th?\b	Kinneret	Moshava Kinneret: written under Tiberias, the address a bare Kinneret

@@ -104,7 +104,7 @@ Sindianeh	Sindianeh	8			Q4703260	furas		matched	variant-skeleton		variant	spelli
 Stanton Street	Stanton Street	8	791	Haifa (Israel)	Q41621	furas		matched	furas		furas	Station Street: Haifa street per Y. Furas; no own gazetteer entry, drawn at Haifa	2026-10-18
 Tantourah	Tantourah	8	21005	Tantura (Israel)	Q2100836	furas		matched	furas		furas	Tanturah - per Y. Furas	2026-10-18
 Amka	Amka	7	23142	Amka (Israel)	Q2914984	human		matched	furas		agent	Amqa (Acre)	2026-10-18
-Kineret	Kineret	7						unmatched-ambiguous	C_review		human		2026-08-06
+Kineret	Kineret	7			Q2891213	human		matched	user-ruling		human	Moshava Kinneret (1909, Q2891213): a bare Kinneret is the moshava (user ruling 2026-10-24, overriding the 08-06 hold); the kvutza is set per record where the address says so (record-rules.tsv). Linked on Wikidata alone	2026-10-24
 Lajjoun	Lajjoun	7	16127	Lajjūn (Jordan)	Q3775368	furas		matched	furas		furas	Lajoun - per Y. Furas	2026-10-18
 Nahariya	Nahariya	7	39	Nahariyya (Israel)	Q167749	kima-dump	Q167749	matched	A_autolink	0.95	auto		2026-08-06
 Neveh Shaanan	Neveh Shaanan	7	21497	Neve Sha'anan (Haifa, Israel)	Q2919842	kima-dump		matched	C_review		agent	Haifa's Neve Sha'anan (catchment)	2026-08-06
@@ -122,8 +122,8 @@ Haifa|Hadar Hacarmel	Haifa|Hadar Hacarmel	6	21150	Hadar Hakarmel (Haifa, Israel)
 Kabatich	Kabatich	6	73993	Kabatiya (West Bank)	Q1899332	furas		matched	furas		furas	Kabatieh - per Y. Furas	2026-10-18
 Kabatieh	Kabatieh	6	73993	Kabatiya (West Bank)	Q1899332	furas		matched	furas		furas	Kabatieh - per Y. Furas	2026-10-18
 Kfar Atta	Kfar Atta	6	477	Kiryat Ata (Israel)	Q152602	kima-dump		matched	C_review		agent		2026-08-06
-Kinereth	Kinereth	6						unmatched-ambiguous	C_review		human		2026-08-06
-Kinneret	Kinneret	6					Q5533392	unmatched-ambiguous	C_review		human	Kevutsa vs Moshava undecidable	2026-08-06
+Kinereth	Kinereth	6			Q2891213	human		matched	user-ruling		human	Moshava Kinneret (1909, Q2891213): a bare Kinneret is the moshava (user ruling 2026-10-24, overriding the 08-06 hold); the kvutza is set per record where the address says so (record-rules.tsv). Linked on Wikidata alone	2026-10-24
+Kinneret	Kinneret	6			Q2891213	human	Q5533392	matched	user-ruling		human	Moshava Kinneret (1909, Q2891213): a bare Kinneret is the moshava (user ruling 2026-10-24, overriding the 08-06 hold); the kvutza is set per record where the address says so (record-rules.tsv). Linked on Wikidata alone	2026-10-24
 Kiryat Haroshet	Kiryat Haroshet	6	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump	Q139304838	matched	A_autolink	0.95	auto	held for human review: QID conflict - kima-dump Q1743479 vs direct Wikidata Q139304838	2026-08-06
 Mazra'a	Mazra'a	6	26615	Mazra'a (Israel)	Q2890424	human		matched	furas		agent	al-Mazra'a by Acre: 'Mazra'a, Acre S/Dist.'	2026-10-18
 Netanya	Netanya	6	24	Netanya (Israel)	Q192225	kima-dump	Q192225	matched	C_review		agent		2026-08-06
@@ -341,7 +341,7 @@ Kfar Yehezkiel	Kfar Yehezkiel	2	832	Kefar Yehezkel (Israel)	Q2890846	kima-dump		
 Khalisa	Khalisa	2			Q4702703	human		matched	A_autolink	0.95	agent	al-Khalisa, the Huleh village (see Khalsa), not Kiryat Shmona (1949)	2026-10-24
 Kibbutz Hashomer	Kibbutz Hashomer	2						unmatched-ambiguous	C_review		agent		2026-08-06
 Kibutz Affiking|Kibutz Affikim	Kibutz Affiking|Kibutz Affikim	2	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
-Kineret|Kinneret	Kineret|Kinneret	2						unmatched-ambiguous	C_review		human		2026-08-06
+Kineret|Kinneret	Kineret|Kinneret	2			Q2891213	human		matched	user-ruling		human	Moshava Kinneret (1909, Q2891213): a bare Kinneret is the moshava (user ruling 2026-10-24, overriding the 08-06 hold); the kvutza is set per record where the address says so (record-rules.tsv). Linked on Wikidata alone	2026-10-24
 Kiryat Gesher	Kiryat Gesher	2						unmatched-ambiguous	C_review		agent		2026-08-06
 Kufr Kani	Kufr Kani	2	20496	Kafr Kanna (Israel)	Q2633158	furas		matched	variant-skeleton		variant	spelling of 'Kefr Kanna' (skeleton: same consonant skeleton as 'Kefr Kanna')	2026-10-19
 Kurdaneh	Kurdaneh	2						unmatched-no-kima-entry	C_review		agent	Kurdani, by the Na'aman springs	2026-08-06
@@ -683,7 +683,7 @@ Kibbutz Kinneret	Kibbutz Kinneret	1	1669	Kinneret (Kevutsa) (Israel)	Q2296107	ki
 Kibutz Affiking	Kibutz Affiking	1	554	Afikim (Israel)	Q383280	kima-dump		matched	C_review		agent		2026-08-06
 Kibutz Dalia	Kibutz Dalia	1	886	Daliyya (Israel)	Q1000997	kima-dump		matched	C_review		agent		2026-08-06
 Kinneret (Kibbutz)	Kinneret (Kibbutz)	1	1669	Kinneret (Kevutsa) (Israel)	Q2296107	kima-dump		matched	C_review		agent	explicit kibbutz	2026-08-06
-Kinnereth	Kinnereth	1						unmatched-ambiguous	C_review		human		2026-08-06
+Kinnereth	Kinnereth	1			Q2891213	human		matched	user-ruling		human	Moshava Kinneret (1909, Q2891213): a bare Kinneret is the moshava (user ruling 2026-10-24, overriding the 08-06 hold); the kvutza is set per record where the address says so (record-rules.tsv). Linked on Wikidata alone	2026-10-24
 Kiriat Haroshet	Kiriat Haroshet	1	21920	Kiryat Haroshet (Israel)	Q1743479	kima-dump		matched	C_review		agent		2026-08-06
 Kiriat Kinzet	Kiriat Kinzet	1						unmatched-junk	C_review		agent		2026-08-06
 Kiriyat Shmuel	Kiriyat Shmuel	1	22901	Kiryat Shemuel (Haifa, Israel)		human		matched	variant-skeleton		variant	spelling of 'Kiryat Shmuel' (skeleton: same consonant skeleton as 'Kiryat Shmuel')	2026-10-19
@@ -936,3 +936,4 @@ Halise?	Halise?	0						unmatched-ambiguous	outside-queue		human	NB31 p29 2673 'H
 Silwad	Silwad	2			Q684632	human		matched	district-check		human	Silwad, Ramallah S/D (VS 1945), in the Mandate's Jerusalem District: 'Silwad, J'lem. District.' (user ruling 2026-10-24)	2026-10-24
 Tammun (Nablus)	Tammun (Nablus)	0			Q275722	human		matched	district-check		agent	Tammun, Nablus S/D (VS 1945): scan NB4 p21 'Tammoun village, Nablus Sub Dist.'	2026-10-24
 al-Yajur	al-Yajur	0			Q2896909	human		matched	record-reading		agent	al-Yajur, the Arab village of the Haifa S/D (Q2896909), depopulated 1948; shares the spelling Yajour with Kibbutz Yagur (Q586687) and is set per record by community (kimatch/record-readings.tsv). Linked on Wikidata alone	2026-10-24
+Keneret	Keneret	1			Q2891213	human		matched	user-ruling		human	Moshava Kinneret (1909, Q2891213): a bare Kinneret is the moshava (user ruling 2026-10-24, overriding the 08-06 hold); the kvutza is set per record where the address says so (record-rules.tsv). Linked on Wikidata alone	2026-10-24
