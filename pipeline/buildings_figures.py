@@ -54,6 +54,8 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import institutions_figures as institutions
+
 ROOT = Path(__file__).resolve().parent.parent
 REGISTER = ROOT / "data/public/hospital-registers-normalized.tsv"
 SOURCE = ROOT / "data/public/hospital-registers-2025-08-10.tsv"
@@ -62,6 +64,7 @@ DOSSIER = ROOT / "paper/buildings-dossier.html"
 JSON_OUT = ROOT / "data/public/buildings-figures.json"
 REGISTRY = ROOT / "data/public/sources-registry.json"
 ARCHIVAL = ROOT / "sources/archival-sources.json"
+HISTORY = ROOT / "paper/hospital-history.html"
 
 ATLIT = "25"
 MOVE = dt.date(1938, 10, 31)        # the NB20 -> NB21 seam
@@ -1137,9 +1140,19 @@ LOCAL_SOURCES = {
 }
 
 
+def history_sources() -> dict:
+    """The history document's own source entries, for items both cite."""
+    if not HISTORY.exists():
+        return {}
+    m = re.search(r'<script id="src-data" type="application/json">(.*?)</script>',
+                  HISTORY.read_text(encoding="utf-8"), re.S)
+    return json.loads(m.group(1).replace("<\\/", "</")) if m else {}
+
+
 def build_sources(page: str) -> dict:
     ids = sorted(set(re.findall(r'data-src="([^"]+)"', page)))
     reg = json.loads(REGISTRY.read_text(encoding="utf-8")) if REGISTRY.exists() else {}
+    reg = {**history_sources(), **reg, **institutions.SOURCES}
     arc = json.loads(ARCHIVAL.read_text(encoding="utf-8")) if ARCHIVAL.exists() else {}
     out, missing = {}, []
     for k in ids:
@@ -1160,6 +1173,7 @@ def build_sources(page: str) -> dict:
 
 def inject(fig: dict) -> None:
     page = DOSSIER.read_text(encoding="utf-8")
+    inst_parts, inst_nums = institutions.figures()
     parts = {
         "census": svg_census(fig),
         "census-check": table_census_check(fig),
@@ -1172,6 +1186,7 @@ def inject(fig: dict) -> None:
         "qlaz": table_qlaz(fig),
         "nobed": table_nobed(fig),
         "scans": scans_html(),
+        **inst_parts,
     }
     for name, body in parts.items():
         rx = re.compile(rf"(<!-- fig:{re.escape(name)} -->).*?(<!-- /fig:{re.escape(name)} -->)", re.S)
@@ -1180,7 +1195,7 @@ def inject(fig: dict) -> None:
             continue
         page = rx.sub(lambda m: m.group(1) + "\n" + body + "\n" + m.group(2), page)
     # numbers quoted in prose: <span data-n="key">…</span>
-    nums = numbers(fig)
+    nums = {**numbers(fig), **inst_nums}
     page = re.sub(r'(<span data-n="([a-z0-9_-]+)">)(.*?)(</span>)',
                   lambda m: m.group(1) + nums.get(m.group(2), m.group(3)) + m.group(4), page)
     for k in set(re.findall(r'data-n="([a-z0-9_-]+)"', page)) - set(nums):
