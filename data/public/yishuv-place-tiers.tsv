@@ -152,6 +152,7 @@ city_text_regex	Ardel|Ard al|Hart el Yahud|Hartel Yahud|Dantel Yahud|Adel Yahud|
 city_text_regex	Waldheim	Waldheim	6	other	Templer colony	proposed	place	
 wikidata	Q2906526	Vilhelma	1	other	Templer colony	proposed	place	
 page	26:91	NB26 p91	7	institutional	seven Jews from Jaffa on one page in 1946, ages 22-74, CID address, four flagged prisoner: a detainee group (ruled 2026-10-24)	ruled	page	Q180294
+address_regex	Kinereth, Benyamina	NB23 #3855	1	ambiguous	"""Kinereth, Benyamina"": two places in one address, City blank (user ruling 2026-10-24)"	ruled	address	
 address_regex	Emek Zevoul		1	new_urban	NB12 p3: Shkhunat ha-Tzrifim (later Kiryat Motzkin), user read 2026-10-24	ruled	address	
 address_regex	Emek Hayarden		1	labour	Jordan Valley: NB21 p48 reading confirmed by the user 2026-10-24	ruled	address	
 address_regex	Rehov Jaffa|Jaffa (St|Rd|Road|Street)			haifa_unplaced	Haifa's own Jaffa Road read as the city of Jaffa	proposed	address	Q180294
