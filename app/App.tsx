@@ -53,18 +53,35 @@ const cleanSex = (rows: RegistryRecord[], keys: string[]) => {
   });
 };
 
+const VIEWS: ViewType[] = ['about', 'history', 'buildings', 'shared-space', 'browse', 'statistics',
+  'review', 'places', 'timeline', 'map', 'haifa'];
+// Only the framed documents take a section after the slash.
+const DOCUMENT_VIEWS: ViewType[] = ['history', 'buildings'];
+
+const viewFromHash = (): { view: ViewType; section: string } => {
+  const hash = window.location.hash.replace(/^#/, '');
+  if (hash.startsWith('yoni')) return { view: 'review', section: '' };
+  const [name, ...rest] = hash.split('/');
+  const view = (VIEWS as string[]).includes(name) ? (name as ViewType) : 'about';
+  return { view, section: DOCUMENT_VIEWS.includes(view) ? rest.join('/') : '' };
+};
+
+const hashFor = (view: ViewType, section: string) =>
+  `#${view}${section && DOCUMENT_VIEWS.includes(view) ? `/${section}` : ''}`;
+
 const App: React.FC = () => {
   const [data, setData] = useState<RegistryRecord[]>([]);
   // Every record, non-admissions included: the Review view's queues need them.
   const [allData, setAllData] = useState<RegistryRecord[]>([]);
   // About is the landing view: a visitor meets the project before the table.
-  // "#yoni" lands on the place questions in the Review view, so the link can be sent.
-  const [activeView, setActiveView] = useState<ViewType>(
-    () => (window.location.hash.startsWith('#yoni') ? 'review' : 'about'));
+  // The tab lives in the address so a tab can be shared: "#buildings", or
+  // "#buildings/d10" to open a framed document at a section. "#yoni" lands on
+  // the place questions in the Review view, so that link can be sent.
+  const [activeView, setActiveView] = useState<ViewType>(() => viewFromHash().view);
   // Which section the framed documents (History, Buildings) open at. The
   // documents link to each other and to the other tabs by posting a message
   // to this window, since a link inside an iframe cannot change the tab.
-  const [docHash, setDocHash] = useState('');
+  const [docHash, setDocHash] = useState(() => viewFromHash().section);
   const openDocument = useCallback((view: ViewType, hash = '') => {
     setDocHash(hash);
     setActiveView(view);
@@ -80,6 +97,21 @@ const App: React.FC = () => {
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
   }, [openDocument]);
+  // Keep the address in step with the tab, and follow it on Back/Forward.
+  useEffect(() => {
+    if (window.location.hash.startsWith('#yoni') && activeView === 'review') return;
+    const want = hashFor(activeView, docHash);
+    if (window.location.hash !== want) window.history.pushState(null, '', want);
+  }, [activeView, docHash]);
+  useEffect(() => {
+    const onPop = () => {
+      const { view, section } = viewFromHash();
+      setDocHash(section);
+      setActiveView(view);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
