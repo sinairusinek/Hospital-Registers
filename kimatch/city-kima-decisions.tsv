@@ -932,3 +932,4 @@ Seida (Tulkarm)	Seida (Tulkarm)	0			Q7446620	human		matched	district-link		agent
 Beit Jibrin (Hebron)	Beit Jibrin (Hebron)	0			Q556637	human		matched	district-link		agent	its enwiki infobox puts it in Hebron S/D, which the address names (kimatch/district_link.py)	2026-10-24
 Umm el Faraj (Acre)	Umm el Faraj (Acre)	0			Q7881655	human		matched	district-link		agent	its enwiki infobox puts it in Acre S/D, which the address names (kimatch/district_link.py)	2026-10-24
 Kafr Yashan	Kafr Yashan	0						unmatched-ambiguous	outside-queue		human	NB17 p11 1708 reads 'Kafr yashan' (Polish Jew, 1937); not Kafr Yasif; held as a question for Y. Furas	2026-10-24
+Halise?	Halise?	0						unmatched-ambiguous	outside-queue		human	NB31 p29 2673 'Halise(?) Hse Salem Aly': unrecognised (Sinai's ruling); not Nablus	2026-10-24
