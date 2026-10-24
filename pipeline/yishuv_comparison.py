@@ -37,7 +37,7 @@ from history_figures import load  # noqa: E402  QUOTE_NONE + Atlit + non-admissi
 TIERS = Path(__file__).resolve().parent.parent / "data/public/yishuv-place-tiers.tsv"
 
 JEWISH_TIERS = ("old_core", "old_local", "early_moshava", "later_moshava",
-                "labour", "new_urban", "arab_place", "haifa_unplaced")
+                "labour", "new_urban", "arab_or_mixed", "haifa_unplaced")
 MIDEAST_BALKAN = {"Turkish", "Persian", "Yemeni", "Syrian", "Greek", "Bulgarian",
                   "Egyptian", "Iraqi", "Lebanese", "Yugoslavian", "Moroccan",
                   "Tunisian", "Algerian", "Kurdish", "Bukharan", "Afghan", "Indian"}
@@ -48,37 +48,42 @@ POLICE = re.compile(r"police|constable|\bB/C\b|gendarm", re.I)
 
 
 def load_tiers():
+    """Each ruling is (tier, basis). basis "nationality" marks a place tiered
+    by its patients' nationality mix; those rows must stay out of the test of
+    whether nationality follows place, or the test is circular."""
     by_qid, by_quarter, by_regex, by_address = {}, {}, [], []
     with TIERS.open(encoding="utf-8", newline="") as fh:
         for t in csv.DictReader(fh, delimiter="\t"):
+            ruling = (t["tier"], t["basis"])
             if t["key_type"] == "wikidata":
-                by_qid[t["key"]] = t["tier"]
+                by_qid[t["key"]] = ruling
             elif t["key_type"] == "neighbourhood":
-                by_quarter[t["key"]] = t["tier"]
+                by_quarter[t["key"]] = ruling
             elif t["key_type"] == "address_regex":
-                by_address.append((re.compile(t["key"]), t["tier"]))
+                by_address.append((re.compile(t["key"]), t["scope"], ruling))
             else:
-                by_regex.append((re.compile(t["key"]), t["tier"]))
+                by_regex.append((re.compile(t["key"]), ruling))
     return by_qid, by_quarter, by_regex, by_address
 
 
 def place_tier(r, tiers):
     """Address rules first (in file order): clerks wrote a town for its whole
-    sub-district, so "Kinereth. Tiberias" is a kibbutz, not the old city."""
+    sub-district, so "Kinereth. Tiberias" is a kibbutz, not the old city. A
+    rule with a scope applies only under that City Wikidata ID."""
     by_qid, by_quarter, by_regex, by_address = tiers
     q, n, c = (r["City Wikidata"] or "").strip(), (r["Neighbourhood"] or "").strip(), (r["City"] or "").strip()
     a = r["Address"] or ""
-    for rx, tier in by_address:
-        if rx.search(a):
-            return tier
+    for rx, scope, ruling in by_address:
+        if (not scope or scope == q) and rx.search(a):
+            return ruling
     if q == "Q41621" and n in by_quarter:
         return by_quarter[n]
     if q:
-        return by_qid.get(q, "unruled")
-    for rx, tier in by_regex:
+        return by_qid.get(q, ("unruled", ""))
+    for rx, ruling in by_regex:
         if c and rx.search(c):
-            return tier
-    return "no_place" if not c else "unruled"
+            return ruling
+    return ("no_place", "") if not c else ("unruled", "")
 
 
 def nat_group(r):
@@ -141,7 +146,7 @@ def annotate(rows):
         r["_age"] = age_years(r)
         r["_route"] = route(r)
         if r["Religion"] == "Jewish":
-            r["_tier"] = place_tier(r, tiers)
+            r["_tier"], r["_basis"] = place_tier(r, tiers)
             r["_nat"] = nat_group(r)
         else:
             r["_comm"] = community(r)
@@ -245,12 +250,13 @@ def main():
 
     # --- validity: does nationality follow place? ---
     print("\n## Validity test: nationality group by place tier\n")
+    print(f"(places tiered by nationality left out: {sum(1 for r in jews if r['_basis'] == 'nationality')} records)\n")
     tiers = [t for t in JEWISH_TIERS] + ["ambiguous", "institutional", "no_place"]
     nats = ("Palestinian", "foreign_europe", "foreign_mideast", "blank")
     print("| tier | n | " + " | ".join(nats) + " | Palestinian % 1930-32 | 1933-40 | 1944-48 |")
     print("|---|---|" + "---|" * (len(nats) + 3))
     for t in tiers:
-        rs = [r for r in jews if r["_tier"] == t]
+        rs = [r for r in jews if r["_tier"] == t and r["_basis"] != "nationality"]
         c = Counter(r["_nat"] for r in rs)
         per = []
         for p in PERIODS:
