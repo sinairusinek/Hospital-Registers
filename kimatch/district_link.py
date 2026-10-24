@@ -65,13 +65,9 @@ REJECT = {
     ("Azara", "Al-Mazar (Haifa)"): "Azara is not al-Mazar",
     ("Kiryat Kharoshet", "Kiryat Ata"): "Kfar Kharoshet is Kiryat Kharoshet, not Kiryat Ata (standing ruling)",
     ("Kiriat El Naber", "Iqrith (Acre)"): "not Iqrith",
-    ("Samma", "Sammu'i (Safad)"): "Samma: unread, needs the scan",
+    ("Samma", "Sammu'i (Safad)"): "scan NB24 p2 reads 'Samma - Safad s/D' plainly; which village is open",
     ("Ein el Asad", "Deir el Asad"): "Ein al-Asad is its own village",
-    ("Shaheib", "Shaab"): "Shaheib: unread, needs the scan",
-    ("Damra", "Tamra"): "Damra: unread, needs the scan",
-    ("Yaska", "Yarka"): "Yaska: unread, needs the scan",
     ("Silwad", "Silwan (Jerusalem)"): "Silwad was a Ramallah village; Silwan is another place",
-    ("Zammoun", "Tammun (Nablus)"): "Zammoun: unread, needs the scan",
 }
 
 # First words that are a kind of place, not its name: "Kufr Rais" is not "Kufr".
