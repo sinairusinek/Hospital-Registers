@@ -8,7 +8,7 @@ import { Building2, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp
 import { RegistryRecord } from '../types';
 import { UNKNOWN } from '../facets';
 import { SERIES } from '../colors';
-import { PieScheme, communityScheme, chapterScheme, usePieMode } from '../pieSchemes';
+import { PieScheme, schemeFor, usePieMode } from '../pieSchemes';
 import { PieModeSwitch, PieLegend } from './PieControls';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
@@ -33,7 +33,7 @@ const PLACES_URL = `${import.meta.env.BASE_URL}data/haifa-places.json`;
 const HELP: HelpSection[] = [
   {
     heading: 'What a pie is',
-    body: <p>One quarter of Haifa, sized by how many admissions give it as the address, and cut by <em>Community</em> in the colours the other charts use. <strong>Click a slice</strong> for that community's records from that quarter; the panel can then be widened to the whole quarter. The <em>Pies show</em> switch at the top right recuts the pies by <em>diagnosis</em> — the ICD-9 chapter, as on the Statistics page, with the eight commonest chapters in the registry kept apart and the rest pooled as <em>Other chapters</em> — and a slice then opens that chapter's records from the quarter. The choice is shared with the Map tab. The quarter is read from the address the clerk wrote, so a record counts here only where the address names a quarter — most Haifa records give a street or nothing at all, and the box at the bottom left says how many.</p>
+    body: <p>One quarter of Haifa, sized by how many admissions give it as the address, and cut by <em>Community</em> in the colours the other charts use. <strong>Click a slice</strong> for that community's records from that quarter; the panel can then be widened to the whole quarter. The <em>Pies show</em> switch at the top right recuts the pies by <em>diagnosis</em> — the ICD-9 chapter, as on the Statistics page, with the eight commonest chapters in the registry kept apart and the rest pooled as <em>Other chapters</em> — and a slice then opens that chapter's records from the quarter. Two more cuts look at one part of the registry only, and the pies shrink to it: <em>Infectious diseases only</em> keeps the admissions coded to ICD-9 chapter 001–139 and cuts them by disease, and <em>Jewish patients by nationality</em> keeps the Jewish admissions and cuts them by the nationality the clerk wrote — a citizenship, so <em>Palestinian</em> means naturalised under the Mandate. The choice is shared with the Map tab. The quarter is read from the address the clerk wrote, so a record counts here only where the address names a quarter — most Haifa records give a street or nothing at all, and the box at the bottom left says how many.</p>
   },
   {
     heading: 'Where a point comes from',
@@ -169,10 +169,8 @@ const HaifaView: React.FC<Props> = ({ data }) => {
   const [sites, setSites] = useState<Site[]>([]);
   const [selection, setSelection] = useState<Selection | null>(null);
   const [pieMode, setPieModeState] = usePieMode();
-  // data is the whole registry here, so the chapters rank on it directly.
-  const scheme = useMemo(
-    () => (pieMode === 'chapter' ? chapterScheme(data) : communityScheme),
-    [pieMode, data]);
+  // data is the whole registry here, so the ranked cuts rank on it directly.
+  const scheme = useMemo(() => schemeFor(pieMode, data), [pieMode, data]);
   // A chosen slice belongs to the old cut; the quarter stays open, whole.
   const setPieMode = (m: typeof pieMode) => {
     setPieModeState(m);
@@ -208,9 +206,12 @@ const HaifaView: React.FC<Props> = ({ data }) => {
   // Haifa's records: those the City puts in Haifa, and those whose address
   // names a Haifa quarter (Hawassa lay outside the municipality, and some
   // records carry no City at all).
+  // A cut of one part of the registry (Jewish patients, infectious diseases)
+  // narrows everything here to that part, badges and the side panel included.
   const haifaRows = useMemo(
-    () => data.filter(r => val(r, 'City') === 'Haifa' || val(r, 'Neighbourhood').startsWith(HAIFA_PREFIX)),
-    [data]);
+    () => data.filter(r => (val(r, 'City') === 'Haifa' || val(r, 'Neighbourhood').startsWith(HAIFA_PREFIX))
+                           && (!scheme.include || scheme.include(r))),
+    [data, scheme]);
 
   const byQuarter = useMemo(() => {
     const out = new Map<string, RegistryRecord[]>();
@@ -515,7 +516,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
           <button onClick={toggleInfo} aria-expanded={infoOpen}
                   className="w-full flex items-center justify-between gap-3 text-left">
             <span className="text-xs font-bold text-slate-700">
-              {placedQuarters.length} quarters · {mappedRecords.toLocaleString()} records
+              {placedQuarters.length} quarters · {mappedRecords.toLocaleString()}{scheme.subset ? ` ${scheme.subset}` : ''} records
             </span>
             {infoOpen ? <ChevronDown size={14} className="text-slate-400 shrink-0" />
                       : <ChevronUp size={14} className="text-slate-400 shrink-0" />}
@@ -527,7 +528,7 @@ const HaifaView: React.FC<Props> = ({ data }) => {
               Square badges: institutions the addresses name.
             </p>
             <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
-              Of {haifaRows.length.toLocaleString()} Haifa records, {noQuarter.toLocaleString()} name
+              Of {haifaRows.length.toLocaleString()}{scheme.subset ? ` ${scheme.subset}` : ''} Haifa records, {noQuarter.toLocaleString()} name
               no quarter, and {unplacedQuarters.reduce((s, q) => s + q.n, 0).toLocaleString()} name
               one the map cannot place — listed in the side panel.
             </p>

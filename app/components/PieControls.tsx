@@ -28,10 +28,10 @@ export const PieModeSwitch: React.FC<{ mode: PieMode; onChange: (m: PieMode) => 
   </>
 );
 
-/** The slice colours, in the order they go round the pie. Chapter names are
- *  long, so that cut gets a single column. */
+/** The slice colours, in the order they go round the pie. Chapter and
+ *  disease names are long, so those cuts get a single column. */
 export const PieLegend: React.FC<{ scheme: PieScheme }> = ({ scheme }) => (
-  <ul className={`mt-2 grid gap-x-3 gap-y-1 ${scheme.mode === 'chapter' ? 'grid-cols-1' : 'grid-cols-2'}`}>
+  <ul className={`mt-2 grid gap-x-3 gap-y-1 ${scheme.wideLegend ? 'grid-cols-1' : 'grid-cols-2'}`}>
     {scheme.keys.map(k => (
       <li key={k} className="flex items-center gap-1.5 text-[11px] text-slate-600">
         <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: scheme.color(k) }} />

@@ -8,7 +8,7 @@ import { MapPin, X, Layers, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, D
 import { RegistryRecord, RangeFilter } from '../types';
 import { UNKNOWN } from '../facets';
 import { SERIES } from '../colors';
-import { PieScheme, communityScheme, chapterScheme, usePieMode } from '../pieSchemes';
+import { PieScheme, schemeFor, usePieMode } from '../pieSchemes';
 import { PieModeSwitch, PieLegend } from './PieControls';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
@@ -33,7 +33,7 @@ const COORDS_URL = `${import.meta.env.BASE_URL}data/place-coords.tsv`;
 const HELP: HelpSection[] = [
   {
     heading: 'What a pie is',
-    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The <em>Pies show</em> switch at the top right recuts every pie by <em>diagnosis</em> instead: the ICD-9 chapter, in the colours the Statistics page gives it. The eight commonest chapters in the whole registry keep their own slice; the other eleven share a pale <em>Other chapters</em> slice, and grey is records with no ICD-9 code — a diagnosis not yet coded, or none written. The pies follow the admission dates: narrow them in the box at the top of the map, or send a range from the Timeline, and every pie is recut for those admissions alone. The range is the same one the Browser's Admission Date slider sets, so the two always show the same admissions. No other filter reaches the map. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. It is named by the registers' own commonest spelling of it, and in the lists beside and below the map the Mandate-era English name follows in brackets where it is a different word — Khalsa (Khalisa), Kufr Ata (Kfar Ata). The gazetteer's own name, given beside its link, is often the place's later one: Kima files al-Khalisa under Kiryat Shmona and Sa'sa' under the kibbutz Sasa, settlements built on their land after 1948. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
+    body: <p>One place, sized by how many admissions name it, and cut like a pie by <em>Community</em> — religion crossed with nationality, as on the Statistics page — so each slice is that community's share of the admissions from there, in the same colours the charts use. Grey is records whose community cannot be told. The <em>Pies show</em> switch at the top right recuts every pie by <em>diagnosis</em> instead: the ICD-9 chapter, in the colours the Statistics page gives it. The eight commonest chapters in the whole registry keep their own slice; the other eleven share a pale <em>Other chapters</em> slice, and grey is records with no ICD-9 code — a diagnosis not yet coded, or none written. Two more cuts look at one part of the registry only, and every pie is resized to that part, so a place with none of it leaves the map. <em>Infectious diseases only</em> keeps the admissions coded to ICD-9 chapter 001–139 and cuts them by disease: the eight largest — typhoid, malaria, the other intestinal infections, tuberculosis, sandfly fever, typhus, diphtheria and erysipelas — keep a slice, using ICD-9's own groupings where it has one (tuberculosis 010–018, the rickettsioses 080–083), and the rest pool. <em>Jewish patients by nationality</em> keeps the Jewish admissions and cuts them by the Nationality column. That column records citizenship, so a <em>Palestinian</em> Jew is one naturalised under the Mandate, not necessarily one born in the country. The Atlit camp register (notebook 25) wrote no nationality, so Atlit's pie is grey. The pies follow the admission dates: narrow them in the box at the top of the map, or send a range from the Timeline, and every pie is recut for those admissions alone. The range is the same one the Browser's Admission Date slider sets, so the two always show the same admissions. No other filter reaches the map. A pie is one place, not one spelling: the registers write Zichron Yaakov eighteen ways and Hadar Hacarmel sixteen, and every spelling that resolves to the same gazetteer entry is gathered into a single pie. It is named by the registers' own commonest spelling of it, and in the lists beside and below the map the Mandate-era English name follows in brackets where it is a different word — Khalsa (Khalisa), Kufr Ata (Kfar Ata). The gazetteer's own name, given beside its link, is often the place's later one: Kima files al-Khalisa under Kiryat Shmona and Sa'sa' under the kibbutz Sasa, settlements built on their land after 1948. The point is the settlement's own location, not the patient's address, which the registers record too coarsely to place. Haifa dominates by design: it is the hospital's own town.</p>
   },
   {
     heading: 'Solid pies and dashed ones',
@@ -264,8 +264,12 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
   const [places, setPlaces] = useState<Place[] | null>(null);
   const [pieMode, setPieMode] = usePieMode();
   const scheme = useMemo(
-    () => (pieMode === 'chapter' ? chapterScheme(fullData) : communityScheme),
+    () => schemeFor(pieMode, fullData),
     [pieMode, fullData]);
+  // A cut of one part of the registry draws, counts and lists that part only.
+  const rows = useMemo(
+    () => (scheme.include ? data.filter(scheme.include) : data),
+    [data, scheme]);
   // City value -> the review's decision, for values with no point to draw.
   const [decisionOf, setDecisionOf] = useState<Map<string, string>>(new Map());
   const [selected, setSelected] = useState<string | null>(null);
@@ -354,14 +358,14 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
   // exactly the rows that produced it.
   const byCity = useMemo(() => {
     const out = new Map<string, RegistryRecord[]>();
-    data.forEach(row => {
+    rows.forEach(row => {
       const city = val(row, 'City');
       if (!city) return;
       const bucket = out.get(city);
       if (bucket) bucket.push(row); else out.set(city, [row]);
     });
     return out;
-  }, [data]);
+  }, [rows]);
 
   // How often each City spelling occurs across the whole registry, so a place
   // keeps the same name whatever the date range leaves of it.
@@ -415,7 +419,7 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
     const placed = new Set(places.flatMap(p => p.cities));
     let noCity = 0, unmatched = 0;
     const why = new Map<string, number>();
-    data.forEach(row => {
+    rows.forEach(row => {
       const city = val(row, 'City');
       if (!city) { noCity++; return; }
       if (placed.has(city)) return;
@@ -427,7 +431,7 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
       noCity, unmatched,
       why: Array.from(why.entries()).map(([decision, records]) => ({ decision, records })).sort((a, b) => b.records - a.records)
     };
-  }, [data, places, decisionOf]);
+  }, [rows, places, decisionOf]);
 
   // ------------------------------------------------------------ the map
 
@@ -696,7 +700,8 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
   const exportPlace = () => {
     if (!records.length) return;
     const cols = ['Notebook_Number', 'Page_Number', 'Notebook Record ID',
-                  ...FIELDS, 'City', 'City Kima ID', 'City Wikidata', 'tempLink'];
+                  ...FIELDS, 'City', 'City Kima ID', 'City Wikidata',
+                  ...scheme.exportColumns.filter(c => !FIELDS.includes(c)), 'tempLink'];
     const csv = Papa.unparse(records.map(r => {
       const out: Record<string, string> = {};
       cols.forEach(c => { out[c] = val(r, c); });
@@ -796,7 +801,7 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
             className="w-full flex items-center justify-between gap-3 text-left"
           >
             <span className="text-xs font-bold text-slate-700">
-              {counted.length} places · {mappedRecords.toLocaleString()} records
+              {counted.length} places · {mappedRecords.toLocaleString()}{scheme.subset ? ` ${scheme.subset}` : ''} records
             </span>
             {infoOpen
               ? <ChevronDown size={14} className="text-slate-400 shrink-0" />
