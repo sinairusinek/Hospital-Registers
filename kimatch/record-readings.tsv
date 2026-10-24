@@ -9,3 +9,14 @@ notebook	serial	admission_date	target_city	evidence
 31	3090	1947-05-20	Haifa	scan NB31 p63: "Yehuda Levy. 46" = Yehuda HaLevi St. 46, Haifa (extracted as "Kfar Saba Hosp."); no city written
 31	2945	1947-05-14	Kafr al-Labad	scan NB31 p51: "Kufr Labad / Tulkarm S/D" (extracted as "Kafr Saba")
 13	1504	1936-07-13	Yavniel	scan NB13 p100: "Yavniel" (the Y open, like an x); extracted as "Carmiel"
+31	2441	1947-04-23	Haifa	scan NB31 p9: "C/Nurse, Govt. Hospital, Haifa" (extracted as Jenin, the row above)
+30	1612	1946-03-24	Haifa	scan NB30 p46: "Haifa" (this clerk's Haifa extracted as Nablus)
+28	4615	1944-09-19	Athlit	scan NB28 p24: "T.A. Cpl. 5155, Athlit Coastal Stn." (extracted as Nablus)
+31	3076	1947-05-20	Acre	scan NB31 p62: "Prisoner, Central Prison, Acre" (extracted as Bessan); medium confidence
+2	622	1931-08-01	Kibbutz Hashomer Hatzair	scan NB2 p10: "Kibbutz Hashomer Hatzair" (extracted as Nazareth, the row below)
+27	3671	1944-08-02	Ashdot Ya'akov	scan NB27 p37: "Ashdoth Ya'acov, Nazareth S/D"
+27	3763	1944-08-08	Hadera	scan NB27 p45: "Hadera" (extracted as Natsera)
+27	3863	1944-08-12	Hadera	scan NB27 p54: "Hadera, Bilu St." (extracted as Natseria)
+28	4414	1944-09-08	Kfar Gideon	scan NB28 p5: "Kfar Gideon - near Affula, Nazareth D."
+10	1557	1934-08-12	al-Mujaydil	scan NB10 p7: "Mjeidil, Nazareth S/Dist." (labourer)
+16	861	1937-05-04	Massada	scan NB16 p28: "Kiputz Masady, S/D Beisan"
