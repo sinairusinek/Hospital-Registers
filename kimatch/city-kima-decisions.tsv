@@ -935,3 +935,4 @@ Kafr Yashan	Kafr Yashan	0						unmatched-ambiguous	outside-queue		human	NB17 p11
 Halise?	Halise?	0						unmatched-ambiguous	outside-queue		human	NB31 p29 2673 'Halise(?) Hse Salem Aly': unrecognised (Sinai's ruling); not Nablus	2026-10-24
 Silwad	Silwad	2			Q684632	human		matched	district-check		human	Silwad, Ramallah S/D (VS 1945), in the Mandate's Jerusalem District: 'Silwad, J'lem. District.' (user ruling 2026-10-24)	2026-10-24
 Tammun (Nablus)	Tammun (Nablus)	0			Q275722	human		matched	district-check		agent	Tammun, Nablus S/D (VS 1945): scan NB4 p21 'Tammoun village, Nablus Sub Dist.'	2026-10-24
+al-Yajur	al-Yajur	0			Q2896909	human		matched	record-reading		agent	al-Yajur, the Arab village of the Haifa S/D (Q2896909), depopulated 1948; shares the spelling Yajour with Kibbutz Yagur (Q586687) and is set per record by community (kimatch/record-readings.tsv). Linked on Wikidata alone	2026-10-24
