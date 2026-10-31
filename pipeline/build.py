@@ -119,6 +119,12 @@ PAGE_READINGS = ROOT / "data" / "public" / "page-readings.tsv"
 # where the cell is blank, a neighbouring row's, or misread. A blank
 # `corrected` clears the diagnosis. Each row says which class it is.
 DIAGNOSIS_CORRECTIONS = ROOT / "data" / "public" / "diagnosis-corrections.tsv"
+# The full re-read of the register (31 October 2026), adjudicated by a second
+# blind reader: one line per cell the scans correct or fill, keyed by Index.
+# Cells the vote could not settle keep the extraction's value and are listed
+# in the held file, so the record can be found and checked.
+FIELD_READINGS = ROOT / "data" / "public" / "field-readings.tsv"
+FIELD_READINGS_HELD = ROOT / "data" / "public" / "field-readings-held.tsv"
 # Pages where the right-hand block (ward to result) sits one row up against
 # the left: the record numbered S carries ledger row S+1's ward, dates,
 # diagnosis and result. Read off the scans; see the pre-pass in main().
@@ -1198,6 +1204,9 @@ CLASSIFIER_DEBRIS = re.compile(r"validation error|error code:|^diagnosis$|^[-?.\
 #
 # Order is the order they are worth working through: the smallest and most
 # clearly wrong first, the large diffuse ones last.
+REREAD_FIELDS = ("serial", "age", "sex", "religion", "nationality", "ward", "class", "rate",
+                 "admission", "discharge", "days", "diagnosis", "result")
+
 REVIEW_FLAGS = [
     ("procedure-not-diagnosis", "An operation recorded where a diagnosis belongs"),
     ("impossible-stay", "Discharged before admitted; the stay has been cleared"),
@@ -1241,6 +1250,12 @@ REVIEW_FLAGS = [
     ("diagnosis-read-from-scan", "Diagnosis was blank; read off the page image"),
     ("diagnosis-not-on-page", "The page's diagnosis cell is blank; the diagnosis the extraction supplied is cleared"),
     ("diagnosis-corrected-from-scan", "Written diagnosis replaced by the page's (misread, or a neighbouring row's)"),
+] + [
+    (f"{field}-reread", f"{field.capitalize()} corrected or filled by the full re-read of the scans (field-readings.tsv)")
+    for field in REREAD_FIELDS
+] + [
+    ("reread-held", "The full re-read disagreed with a cell and a second reading could not settle it; the extraction's value stands"),
+    ("age-not-verifiable", "The age is under the library's redaction band and no other image exists; the extraction's value stands"),
 ]
 
 
@@ -1309,6 +1324,42 @@ def parse_written_date(value: str) -> str:
         return date(year, month, day).isoformat()
     except ValueError:
         return ""
+
+
+ROMAN_MONTHS = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8,
+                "ix": 9, "x": 10, "xi": 11, "xii": 12}
+
+
+def reread_date(value: str) -> str:
+    """A date as a re-reader transcribed it ("28-VIII-40", "5.4.46.") -> d.m.yy, or "" if unreadable."""
+    parts = re.findall(r"[0-9]+|[IVXivx]+", value or "")
+    if len(parts) < 3:
+        return ""
+    day, month, year = parts[:3]
+    month = str(ROMAN_MONTHS.get(month.lower(), month)) if not month.isdigit() else month
+    if not (day.isdigit() and month.isdigit() and year.isdigit()):
+        return ""
+    return f"{int(day)}.{int(month)}.{year[-2:]}"
+
+
+def reread_age(value: str) -> tuple[str, str]:
+    """An age as the clerk wrote it ("1½ y.", "6 m.", "10 d.", "45.") -> (number, unit)."""
+    text = (value or "").replace("½", ".5").strip()
+    number = re.search(r"\d+(\.\d+)?", text)
+    if not number:
+        return "", ""
+    unit = re.search(r"[a-z]+", text[number.end():].lower())
+    units = {"m": "Months", "mo": "Months", "mos": "Months", "mon": "Months", "months": "Months",
+             "d": "Days", "days": "Days", "w": "Weeks", "wk": "Weeks", "wks": "Weeks", "weeks": "Weeks"}
+    figure = number.group()
+    if figure.startswith("."):
+        figure = "0" + figure
+    return figure, units.get(unit.group() if unit else "", "Years")
+
+
+def reread_class(value: str) -> str:
+    digits = re.findall(r"[123]", value or "")
+    return digits[0] if len(set(digits)) == 1 else ""
 
 
 def year_runs(values: list[date]) -> list[tuple[int, int, int]]:
@@ -1794,8 +1845,16 @@ def main() -> int:
                     new[target] = (reading.get(source) or "").strip()
                 for written, cleaned in DROPPED_CLEANED:
                     new[cleaned] = as_cleaned(lookup, cleaned, new[written])
+                # A spelling the register never used elsewhere is read by shape.
+                if new["Ward"] and new["Ward"] not in lookup["standardized ward"]:
+                    new["standardized ward"] = ward_from_scan(new["Ward"])
+                if new["Class"] and new["Class"] not in lookup["Class standard"]:
+                    new["Class standard"] = reread_class(new["Class"])
                 added += 1
-                new["Index"] = str(MISSING_INDEX_BASE + added)
+                # Each row carries its own Index: numbered by placement, every
+                # row added above another would renumber all that follow it,
+                # and the files keyed by Index would point at a neighbour.
+                new["Index"] = (reading.get("Index") or "").strip() or str(MISSING_INDEX_BASE + added)
                 new["File"] = "missing-rows-read.tsv"
                 new["tempLink"] = row.get("tempLink") or ""
                 new["Notebook-page"] = f"{new['Notebook_Number']}_{new['Page_Number']}"
@@ -1834,6 +1893,147 @@ def main() -> int:
             chain[0]["Admission Date [ISO]"] = parse_written_date(run["first_admission"])
             right_shifted.update(id(r) for r in chain)
 
+    # The full re-read (field-readings.tsv): every cell a second blind reading
+    # upheld against the extraction, and every cell the extraction left blank
+    # where the page is written. The written column takes the page's value and
+    # the cleaned one is derived from it, so normalization below treats it like
+    # any other row. A re-read cell is final: the readings files applied later
+    # in the loop fill or replace religion, nationality, ward and diagnosis,
+    # and none of them may undo it.
+    reread: dict[str, set[str]] = {}
+    # The readings files keyed by notebook and serial found their records by
+    # the serial the extraction gave them, so they are still looked up by it.
+    serial_before_reread: dict[str, str] = {}
+    # record-readings.tsv also checks a record's year against its admission
+    # as the extraction had it.
+    admission_before_reread: dict[str, str] = {}
+    # Dates the re-read settles otherwise than its written value says; they
+    # stand over the rebuild of each date from its written column.
+    iso_after_reread: dict[str, dict[str, str]] = {}
+
+    def keyed_serial(row: dict[str, str]) -> str:
+        return serial_before_reread.get(row.get("Index") or "", row.get("Notebook Record ID") or "")
+
+    reread_counts: Counter[str] = Counter()
+    reread_held: dict[str, set[str]] = {}
+    if FIELD_READINGS_HELD.exists():
+        with FIELD_READINGS_HELD.open(newline="", encoding="utf-8") as handle:
+            for held in csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE):
+                reread_held.setdefault(held["Index"], set()).add(held["reason"])
+    if FIELD_READINGS.exists():
+        with FIELD_READINGS.open(newline="", encoding="utf-8") as handle:
+            cells: dict[str, list[dict[str, str]]] = {}
+            for cell in csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE):
+                cells.setdefault(cell["Index"], []).append(cell)
+        lookup = cleaned_lookup()
+        for row in rows:
+            index = row.get("Index") or ""
+            if index not in cells:
+                continue
+            # The dates as the build would otherwise hold them: rebuilt from the
+            # written columns, the upstream ISO only where those cannot be read.
+            before = (parse_written_date(row.get("Admission Date (Orig)") or "") or row.get("Admission Date [ISO]") or "",
+                      parse_written_date(row.get("Discharge Date (Orig)") or "") or row.get("Discharge Date (ISO)") or "")
+            for cell in cells.pop(index, []):
+                field, value = cell["field"], cell["corrected"].strip()
+                if field == "serial":
+                    value = re.sub(r"[.\s]+$", "", value)
+                    if not value:
+                        continue
+                    if value != (row.get("Notebook Record ID") or "").strip():
+                        serial_before_reread[index] = (row.get("Notebook Record ID") or "").strip()
+                    row["Notebook Record ID"] = value
+                elif field == "age":
+                    figure, unit = reread_age(value)
+                    if not figure:
+                        continue
+                    row["Age"], row["Age Unit"] = figure, unit
+                elif field == "sex":
+                    sex = {"m": "Male", "f": "Female"}.get(value[:1].lower(), "")
+                    if not sex:
+                        continue
+                    row["Sex"] = sex
+                elif field == "religion":
+                    row["Religion"] = value
+                    row["standardized Religion"] = (RELIGION.get(value.lower()) or religion_from_written(value)
+                                                    or as_cleaned(lookup, "standardized Religion", value))
+                elif field == "nationality":
+                    read_nat = scan_nationality(value)
+                    row["Nationality"] = value
+                    row["StandardNationality"] = {"T. J": "Transjordanian", "T.J": "Transjordanian",
+                                                  "T/Jord": "Transjordanian"}.get(read_nat, read_nat)
+                elif field == "ward":
+                    row["Ward"] = value
+                    row["standardized ward"] = ward_from_scan(value)
+                elif field == "class":
+                    row["Class"] = value
+                    row["Class standard"] = reread_class(value) or as_cleaned(lookup, "Class standard", value)
+                elif field == "rate":
+                    # The page's Rate cell holds the tariff, the word Gratis, or
+                    # both (the tariff with its remission written beneath).
+                    gratis = re.search(r"grat|free", value, re.I)
+                    figure = re.search(r"\d{2,4}", value)
+                    row["Payment Status"] = "Gratis" if gratis else ""
+                    if figure:
+                        row["Rate"], row["rateStandard"] = value, str(int(figure.group()))
+                    elif gratis:
+                        row["Rate"], row["rateStandard"] = "", ""
+                    else:
+                        row["Rate"], row["rateStandard"] = value, as_cleaned(lookup, "rateStandard", value)
+                elif field in ("admission", "discharge"):
+                    written = reread_date(value)
+                    if not written:
+                        continue
+                    orig, iso = (("Admission Date (Orig)", "Admission Date [ISO]") if field == "admission"
+                                 else ("Discharge Date (Orig)", "Discharge Date (ISO)"))
+                    if field == "admission":
+                        admission_before_reread[index] = row.get(orig) or ""
+                    row[orig], row[iso] = written, parse_written_date(written)
+                elif field == "days":
+                    days = "1" if re.fullmatch(r"one\.?", value, re.I) else re.sub(r"\.$", "", value)
+                    if not re.fullmatch(r"\d+", days):
+                        continue
+                    row["Days in Hospital (Rep)"] = days
+                elif field == "diagnosis":
+                    # Through the corrections table, so the old codes go with
+                    # the old words and the page's words are coded afresh.
+                    diagnosis_corrections[index] = {"corrected": value, "class": "reread"}
+                elif field == "result":
+                    row["Original Result"] = value
+                    row["Standardized Result"] = as_cleaned(lookup, "Standardized Result", value)
+                reread.setdefault(index, set()).add(field)
+                reread_counts[field] += 1
+            # The year is read once per page, so a page read a year out puts
+            # both dates out together. Where the re-read moves only the
+            # admission's year and the discharge was not re-read, the
+            # discharge moves with it.
+            fields = reread.get(index, set())
+            admitted, discharged = to_date(row.get("Admission Date [ISO]") or ""), to_date(before[1])
+            was = to_date(before[0])
+            if "admission" in fields and "discharge" not in fields and admitted and was and discharged \
+                    and (admitted.month, admitted.day) == (was.month, was.day) and admitted.year != was.year \
+                    and discharged < admitted:
+                moved = shift_years(discharged, admitted.year - was.year)
+                if moved and admitted <= moved < admitted + timedelta(days=366):
+                    row["Discharge Date (ISO)"] = moved.isoformat()
+                    iso_after_reread.setdefault(index, {})["Discharge Date (ISO)"] = moved.isoformat()
+                    reread_counts["discharge-year-follows-admission"] += 1
+            # The page's ink can be the clerk's own slip: "11.1.34" for a
+            # January 1935 discharge, a day or month a stroke out. Where what
+            # the page says would discharge the patient before admission, and
+            # the dates stood in order before, the written columns keep the ink
+            # and the dates keep their meaning.
+            admitted = to_date(row.get("Admission Date [ISO]") or "")
+            discharged = to_date(row.get("Discharge Date (ISO)") or "")
+            was_in, was_out = to_date(before[0]), to_date(before[1])
+            if fields & {"admission", "discharge"} and admitted and discharged and discharged < admitted \
+                    and was_in and was_out and was_out >= was_in:
+                row["Admission Date [ISO]"], row["Discharge Date (ISO)"] = before
+                iso_after_reread[index] = {"Admission Date [ISO]": before[0], "Discharge Date (ISO)": before[1]}
+                reread_counts["date-slip-kept-in-writing"] += 1
+        for index in cells:
+            print(f"field-readings: no record with Index {index}", file=sys.stderr)
+
     for row in rows:
         if is_repeated_header(row):
             dropped += 1
@@ -1850,6 +2050,13 @@ def main() -> int:
             flags.append("row-completed-from-scan")
         if (row.get("Index") or "") in non_admissions:
             flags.append("not-an-admission")
+        locked = reread.get(row.get("Index") or "", set())
+        flags.extend(f"{field}-reread" for field in sorted(locked))
+        held_reasons = reread_held.get(row.get("Index") or "", set())
+        if held_reasons - {"not-verifiable"}:
+            flags.append("reread-held")
+        if "not-verifiable" in held_reasons:
+            flags.append("age-not-verifiable")
         if ((row.get("Notebook_Number") or ""), (row.get("Page_Number") or "").strip()) in half_scanned:
             flags.append("half-page-scanned")
         # Notebooks 13, 14, 24, 26 and 30 carry almost no page numbers; the
@@ -1881,7 +2088,7 @@ def main() -> int:
                 flags.append("religion-from-written")
 
         if "StandardNationality" in row and not (row["StandardNationality"] or "").strip() \
-                and not (row.get("Nationality") or "").strip():
+                and not (row.get("Nationality") or "").strip() and "nationality" not in locked:
             for value in (row.get("splitDiscValues") or "").split(" | "):
                 first = re.split(r"[\s,;/]+", value.strip())[0].lower().rstrip(".?")
                 found = nationality_words.get(first) or nationality_words.get(first + ".")
@@ -1892,7 +2099,7 @@ def main() -> int:
                     break
             else:
                 options = nationality_readings.get((row.get("Notebook_Number") or "",
-                                                     row.get("Notebook Record ID") or ""), [])
+                                                     keyed_serial(row)), [])
                 when = (row.get("Admission Date [ISO]") or "")[:10]
                 dated = [v for d, v in options if d == when]
                 written_nat = dated[0] if dated else (options[0][1] if len(options) == 1 else "")
@@ -1919,7 +2126,7 @@ def main() -> int:
             written_rel = reading["religion_as_written"].strip()
             read_rel = RELIGION.get(written_rel.lower()) or religion_from_written(written_rel)
             current_rel = (row.get("standardized Religion") or "").strip()
-            if read_rel and (not current_rel or (notebook31 and read_rel != current_rel)):
+            if read_rel and "religion" not in locked and (not current_rel or (notebook31 and read_rel != current_rel)):
                 row["Religion"] = written_rel
                 row["standardized Religion"] = read_rel
                 religion_read[read_rel] += 1
@@ -1932,6 +2139,7 @@ def main() -> int:
             # Only a nationality the register itself uses (three or more
             # times) is taken; an odd spelling read off a scan is not.
             if read_nat and known_nationality[read_nat] >= 3 and "nationality-read-from-scan" not in flags \
+                    and "nationality" not in locked \
                     and (not current_nat or (notebook31 and read_nat != current_nat)):
                 row["Nationality"] = written_nat
                 row["StandardNationality"] = read_nat
@@ -1980,9 +2188,9 @@ def main() -> int:
         # A hand correction first, so the pass below finds the ward in place.
         key = (
             (row.get("Notebook_Number") or "").strip(),
-            (row.get("Notebook Record ID") or "").strip(),
+            keyed_serial(row).strip(),
         )
-        corrected = WARD_CORRECTIONS.get(key)
+        corrected = WARD_CORRECTIONS.get(key) if "ward" not in locked else None
         if corrected:
             previous = (row.get("standardized ward") or "").strip()
             if previous != corrected:
@@ -2016,7 +2224,7 @@ def main() -> int:
                 # on General like every other one.
                 target, source = WARD_WRITTEN.get(misfiled.lower(), misfiled), column.lower()
             row[column] = ""
-            if target != current:
+            if target != current and "ward" not in locked:
                 row["standardized ward"] = target
                 if current:
                     final_values["standardized ward"][current] -= 1
@@ -2027,7 +2235,7 @@ def main() -> int:
         # mark replaces the extraction's expansion of it, and resolves as the
         # readings file says ("B." after the October 1938 move is a pavilion,
         # not the British Section; "Is." is Isolation).
-        options = ward_readings.get(key, [])
+        options = ward_readings.get(key, []) if "ward" not in locked else []
         if options and (row.get("standardized ward") or "").strip() == "British Section":
             when = (row.get("Admission Date [ISO]") or "")[:10]
             dated = [o for o in options if o[0] == when]
@@ -2062,6 +2270,8 @@ def main() -> int:
             flags.append("diagnosis-corrected-from-scan" if corrected else "diagnosis-not-on-page")
 
         scan = ward_diag_readings.get(row.get("Index") or "")
+        if scan and "ward" in locked:
+            scan = dict(scan, ward_as_written="", confidence="")
         if scan:
             current = (row.get("standardized ward") or "").strip()
             written_ward = scan["ward_as_written"].strip()
@@ -2244,6 +2454,7 @@ def main() -> int:
             if rebuilt != (row[iso_col] or "").strip()[:10]:
                 dates_rebuilt[f"{iso_col}: replaced"] += 1
             row[iso_col] = rebuilt
+        row.update(iso_after_reread.get(row.get("Index") or "", {}))
 
         # A year outside the register's span, repaired from the other date on
         # the same record where that one is in span.
@@ -2418,8 +2629,9 @@ def main() -> int:
                     flags.append("city-read-from-address")
                     order = [name for name, _ in REVIEW_FLAGS]
                     row["Review Flags"] = "|".join(sorted(set(flags), key=order.index))
-            reading = record_readings.get((row.get("Notebook_Number") or "", row.get("Notebook Record ID") or ""))
-            dates = " ".join(v or "" for k, v in row.items() if k and "Admission" in k)
+            reading = record_readings.get((row.get("Notebook_Number") or "", keyed_serial(row)))
+            dates = " ".join(v or "" for k, v in row.items() if k and "Admission" in k) \
+                + " " + admission_before_reread.get(row.get("Index") or "", "")
             settled = reading[1] if reading and (reading[0] in dates or reading[0][2:] in dates) else ""
             if not settled and cleaned:
                 for city_rx, address_rx, target in record_rules:
@@ -2809,7 +3021,9 @@ def main() -> int:
                 if prefix_slip or (None not in slips and len(slips) == 1):
                     workable.append(offset)
             label = f"notebook {notebook}: {block[0][1]}-{block[-1][1]} between {value} and {seq[resume][1]}"
-            if len(block) >= 2 and len(workable) == 1:
+            # A serial read off the page by the full re-read is not moved.
+            if len(block) >= 2 and len(workable) == 1 \
+                    and not any("serial-reread" in (r.get("Review Flags") or "") for r, _ in block):
                 offset = workable[0]
                 for row, raw in block:
                     row["Notebook Record ID"] = str(raw - offset)

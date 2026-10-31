@@ -89,3 +89,5 @@ Index	notebook	page	serial	admission_date	kind	see	evidence	source
 28715	32	70	6735	11.10.47	duplicate	6738	scan: "See 6738" across the row	scan-read
 29344	33	22	267	3.2.48	refused		scan: "Refused admission"; register text: "Refused admission 4.2.48"	scan-read
 29826	33	63	748		cancelled		scan: ward struck; no admission date	scan-read
+41186	10	76	2259	18.11.34	cancelled		full re-read 2026-10-31:  entry struck	scan-read
+41321	28	95	3454	24.6.46	refused		full re-read 2026-10-31: Refus	scan-read

@@ -1,72 +1,407 @@
-Notebook_Number	Page_Number	Notebook Record ID	Age	Age Unit	Sex	Religion as written	Nationality as written	Occupation	Address	Ward as written	Class as written	Rate as written	Payment Status	Admission Date as written	Discharge Date as written	Days in Hospital as written	Diagnosis as written	Result as written	Remarks	recovered_by	after_index
-11	14	144	40	Years	M	Muslim	Palestinian	Nil	Saffuria, Nazareth S/Dist.	Is.	3rd		Gratis	30.1.35	5.2.35	6	Erysipelas of Face	Recovered.	Bill: -; remark: Infectious	scan-read-missing	135
-1	4	110	28	Years	M	Moslem	Palestinian	Shunter No. 180	Harbour Works Haifa		3rd cl			19.2.30	22.2.30	3	Contusion	cured	bill no. 44; class cell second line unclear	scan-read-missing	1022
-1	8	154			F	Jewess	Palestinian	-	Tiberias		3rd cl		Gratis	11.3.30	14.3.30	3	Under observation cured	cured	Isolation H. [age cell under the redaction]	scan-read-missing	1062
-1	26	351		Years	M	Jew	Palestinian	Immigration Office	Immigration Office Kantara		2nd	120		23.5.30	26.5.30	3	Peritonsillar abscess	Much Improved	Bill 156; remark: One week off duty. [age digits under redaction; no ward column on this page]	scan-read-missing	1244
-2	5	567	46	Years	M	Moslem	Palestinian	Labourer	Subbarin village	Gen.	3rd		Gratis	17.7.31	1.8.31	15	Injuries face & skull	Improved	Gratis - Certified unable to pay anything [Died ?.?.31 added in blue under the result]	scan-read-missing	1545
-3	46	34	27	Years	F	Jewess	Palestine	-	Haifa c/o [name]	Gen.	3rd		Gratis	13.1.33	16.1.33	3	Abdominal Colic	Recovered.	Bill: free; remark: Gratis certified unable to pay anything	scan-read-missing	2498
-5	16	815	7	Years	F	Jew	Palestinian	Nil	c/o [name], Haifa	Is.	3rd		Gratis	26.7.33	5.9.33	41	Typhoid Fever	Recovered.	Bill: -; remark: Gratis - Infectious	scan-read-missing	3237
-5	43	1097	27	Years	M	Moslem	Palestinian	Labourer No. 14567	Palestine Railways, Haifa	Is.	3rd		P.R.	31.8.33	3.9.33	3	Enterocolitis haemorrhagia	Recovered.	Bill: -; remark: P.R. employee	scan-read-missing	3504
-10	58	2064	24	Years	F	Jewess	Polish		Hadar Hacarmel Nachla	Is.	3rd		Gratis	21.10.34	31.10.34	10	Entero colitis Haemorrhagica (Clinical Dysentery)		Infectious	scan-read-missing	6274
-10	63	2119	25	Years	M	Muslim	Palest.		c/o [name], Acre	Isol.	3rd cl.		Gratis	29.10.34	6.11.34	8	Pneumonia Cruposa	Recovered	Bill: -; remark: Infection	scan-read-missing	6327
-13	40	890	30	Years	M	Moslem	Palestinian	-	Nazareth Street Haifa	Surg.	3rd		Gratis	1.5.36	6.6.36	36	Fracture of Lt. Femur	Improved	Certified unable to pay anything	scan-read-missing	8193
-13	40	891	12	Years	M	Moslem	Palestinian		Barahiat el Abed Haifa	Gen.	3rd		Gratis	1.5.36	4.5.36	3	Contused wound of head	Improved	Bill: -; remark: Certified unable to pay anything [struck: occupation Lab. 3459; address I.P.C. Haifa]	scan-read-missing	8193
-13	40	892	40	Years	M	Moslem	Palestinian	Lab. 3459	I.P.C. Haifa	Gen.	3rd	175		1.5.36	15.5.36	14	Broncho Pneumonia	Cured	Bill 2149; Rec. 19007 of 5.6.36	scan-read-missing	8193
-13	40	893	28	Years	M	Moslem	Palestinian	-	Yajour	Gen.	3rd		Gratis	1.5.36	5.5.36	4	Contused wounds of Head	Cured	Bill: -; remark: casualty. Certified unable to pay anything	scan-read-missing	8193
-13	40	894	30	Years	M	Moslem	Palestinian	Nil	Haifa	Surg.	3rd		Gratis	1.5.36	4.5.36	3	Cont. wound of Rt. Eyebrow	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
-13	40	895	35	Years	M	Moslem	Palestinian	-	Ard el Raml	Surg.	3rd		Gratis	1.5.36	2.5.36	one	Contused wound of scalp	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
-13	40	896	30	Years	M	Moslem	Palestinian	-	Customs House c/o [name]	Surg.	3rd		Gratis	1.5.36	2.5.36	one	Contused wound of legs	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
-13	40	897	25	Years	F	Christian	Palestinian	-	Wadi Nasnas Haifa	Mat.	3rd		Gratis	2.5.36	9.5.36	7	Delivery Normal Labor	Cured	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
-13	40	898	80	Years	F	Christian	Palestinian	-	Mount Carmel Haifa	Mat.	3rd		Gratis	1.5.36	9.5.36	8	Fracture of neck of left Femur	I.S.Q.	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
-13	40	899	21	Years	M	Moslem	Palestinian	-	Kafr Kadum	Is.	3rd		Gratis	1.5.36	2.5.36	one	General Weakness	Recovered	Bill: -; remark: Certified unable to pay anything [Certified struck and rewritten]	scan-read-missing	8193
-13	40	900	2	Years	M	Christian	Palestinian	-	Wadi Nasnas	Is.	3rd		Gratis	1.5.36	24.5.36	23	Scarlatina	Cured	Bill: -; remark: Infectious [age digit partly under redaction; read with hint]	scan-read-missing	8193
-15	68	155	27	Years	F	Christ	Palest.	/	Haifa Hart el Shawamni	Mat	3rd		Gratis	25.1.37	28.1.37	3	False labor	I.S.Q.	Certified unable to pay anything [quarter name partly legible]	scan-read-missing	10558
-19	51	1058	28	Years	F	Muslim	Palestinian	-	Haifa	Gen	3rd		Gratis	12.5.38	18.5.38	6	Incomplete Abortion	Operated cured	Certified unable to pay anything	scan-read-missing	14544
-24	102	667				Christian	Palestinian	-	Shefa'amr										[right half not scanned] [not on worklist: top row, serial/age/sex torn away; serial inferred from 666 on p101 and 670 below] [address reads Shefa-amr]	scan-read-missing	20454
-24	102	670	65	Years	M	Muslim	Palestinian	-	Ara										[right half not scanned] Dataset serials on this page are shifted: its unlabelled 60y M Hawassa row is scan 668 and its "671" (25 M, T.A.P. 9915, Athlit Clearance Camp) is scan 669; hint for 669 (25 M) matches that existing row	scan-read-missing	20456
-24	102	671	27	Years	M	Muslim	Palestinian	-	Haifa. Beit [name]										[right half not scanned] [not on worklist: dataset 671 is actually scan 669, so the real 671 is missing]	scan-read-missing	20456
-27	6	3319	8	Years	M	Muslem	Palestinian		Haifa - Kanayes St.	Surg.	3rd		Gratis	16.7.44	29.7.44	13	Comp. Depressed Fracture of Skull	Operation Recovery	Certified unable to pay anything	scan-read-missing	22660
-27	23	3502	32	Years	F	Muslem	Palestinian		Zeeb - Acre S/D	Mat.	3rd		Gratis	26.7.44	2.8.44	7	Foot Presentation Dead Baby	Recovery	Bill: -; remark (stamp): Certified unable to pay anything; pencil "M." under occupation	scan-read-missing	22846
-27	32	3601	17	Years	F	Muslem	Palestinian		Prophets Stairs, house of [name]	B	3rd		Gratis	31.7.44	19.8.44	19	Typhus	Died	Infectious	scan-read-missing	22941
-27	47	3777	55	Years	M	Christian	Palestinian		Haifa ?a?er? Bakery - Tel 2130	C	3rd		Gratis	8.8.44	10.8.44	2	Transferred to C.M.S. Hospital Nazareth	Chart in C.M.S. Hosp.	Bill: -; remark: Infectious [diagnosis cell holds the transfer note]	scan-read-missing	23095
-27	86	4227	12	Years	F	Moslem	Palestinian		Stanton Street No 42 Haifa	B	3rd		Gratis	30.8.44	12.9.44	13	Brucellosis	much Improved	Infectious	scan-read-missing	23488
-28	96	3466	25	Years	F	Moslem	Palest.		Acre [name] Garden										[right half not scanned] (right page of spread is blank in this image)	scan-read-missing	24595
-29	78	1907	30		M	Christian	Greek	A.B.	65405 Greek Navy	8	3rd	175		2.5.44	8.5.44	6	Chicken Pox	Cured	Bill 162/44 [ward glyph looks like "8"; probably B]	scan-read-missing	25367
-29	98	2103	55	Years	M	Moslem	Palestinian		?ahoud Qt. Beit [name] Haifa	"C"	3rd		Gratis	13.5.44	18.5.44	5	Scrotal Cellulitis	Died	Bill: -; remark (stamp): Certified unable to pay anything [address first word probably Yahoud]	scan-read-missing	25552
-30	5	1099	32	Years	M	Muslim	Palestinian	W.S.B. 4331	?.P.Co. Hfa.	C	3rd	175		4.3.46	11.3.46	7	Pneumonia Rt. upper lobe	Recovery	Bill 633/45?; remark: £P1.225 m	scan-read-missing	25658
-30	6	1111	57	Years	M	Christian	British	P.R.	Haifa	B/S.	2nd		P.R.	4.3.46	14.3.46	10	Septic Ingrowing Toe Nail & Toes	Improved	Bill: -; remark: P.R.	scan-read-missing	25669
-30	8	1135	20	Years	F	Christian	Palestinian		Wady St. Hse [name]	Med.	2nd	350		6.3.46	16.3.46	10	Acute Appendicitis	operation Recovery	Bill: -; remark: Rec. A896851 16.3.46 £P3.500	scan-read-missing	25692
-30	50	1650	48	Years	F	Christian	Palestinian		Acre - Ras?a?yeh	Med.	2nd	350		3.4.46	11.4.46	8	Advanced Cancer of Uterus	I.S.Q.	Bill: -; remark: Rec. A90527? 11.4.46 £P2.800; "O" under nationality	scan-read-missing	26194
-30	52	1674	28	Years	M	Muslim	Palestinian		Jabaa - Haifa S/D	Med.	3rd		Gratis	4.4.46	15.5.46	41	Banti's Disease	I.S.Q.	Bill: -; [serial digits 3rd place overwritten (6/9?), reads 1674]	scan-read-missing	26217
-30	54	1698	57	Years	M	Jew	British	P.R.	Haifa	B/S.	1st		P.R.	5.4.46	15.5.46	40	Hypertrophied Prostate (Prostatectomy)	Rec	Bill: -; remark: P.R.	scan-read-missing	26239
-30	59	1758	50	Years	M	Muslim	Syrian		Naz. Rd. Hse [name]	Surg.	3rd		Gratis	9.4.46	10.4.46	one	Contusion of Back	Imp.	Bill: -; [nationality: "Palestinian" written, "Syrian" added beneath - which is final unclear]	scan-read-missing	26294
-30	63	1806	36	Years	M	Christian	British		M/V Empire Cross c/o ?.P.Co.	B/S.	1st	500		11.4.46	22.4.46	11	B.T. Malaria	Rec.	Bill 37/46; ["Prot."? written under nationality]	scan-read-missing	26340
-30	71	1900	32	Years	M	Moslem	palestinian		Kanayes Dur. Haifa	Surg.	3rd		Gratis	15.4.46	22.4.46	5	Fracture of Base of Skull + Forearm Lt.	Imp.	[struck in occupation cell: Moslem]	scan-read-missing	26432
-30	72	1912	23.	Years	F	Christian	Palestinian		Sefam?	Med.	2nd	350		12.3.46	6.4.46	25	Rectal Cancer	per Rec.	Rec. A897328 6.4.46. £8.750	scan-read-missing	26443
-30	73	1924	19	Years	F	Jew.	Palestinian	S/Nurse	Govt. Hospital.	B/S.	2nd		Gratis	15.4.46	18.4.46	3	Dental Sepsis c Ruptured Ear Drum.	Imp.	P/N.	scan-read-missing	26454
-30	77	1972	31	Years	M	Moslem	Palestinian		Mizraa Acre S/D	A/S.	3rd		Gratis	20.4.46	1.5.46	11	Sub Acute Appendicitis	oper. Rec.		scan-read-missing	26501
-30	78	1984	16	Years	M	Moslem	Palestinian		German Colony	C.	3rd		Gratis	20.4.46	23.4.46	3	Relapsing fever.	Rec.	Inf.	scan-read-missing	26512
-30	79	1996	7.	Years	F	Moslem	Palestinian		Haifa Nazareth str. house of [name]	Med.	3rd		Gratis	21.4.46	18.5.46	27	Lac. Wd. of Lt. Leg	Greatly Imp.		scan-read-missing	26523
-30	82	2032	14	Years	M	Moslem	Palestinian		Kufer Lam?	C.	3rd		Gratis	23.4.46	23.4.46	-	Tetanus	Died	Inf. [address: "Lam?" added in different ink]	scan-read-missing	26556
-30	83	2044	19	Years	M	Moslem	Palestinian	M/A. Lives In.	Govt. Hospital Haifa	Med.	3rd		Gratis	22.4.46	2.5.46	10	Acute Appendicitis	oper Rec	M/A [occupation: "Lives In." added in blue ink]	scan-read-missing	26567
-30	85	2068	19.	Years	M	Christian	Egyptian	P.R. R4/7048	Haifa	C	3rd		P.R.	25.4.46	3.5.46	8	Ing. Adenitis.	Rec	P.R. [small mark "R." under nationality]	scan-read-missing	26589
-30	90	2128	17.	Years	F	Moslem	Palestinian		Tireh. Haifa S/D	Mat.	3rd		Gratis	28.4.46	1.5.46	3	Abortion	Rec		scan-read-missing	26645
-30	91	2140	22	Years	M	Muslim	Palestinian	T.A.C. 4886.	P.C.R.D. Haifa	C	3rd	050		28.4.46	9.5.46	11	Pyrexia	Rec.	Rec A905457 9.5.46. £P.-.550 [rate written "@ 050 mils"]	scan-read-missing	26656
-30	92	2152	30	Years	F	Muslim	Palestinian		Wady Saleh Own House Haifa	Mat.	3rd		Gratis	29.4.46	3.5.46	4	Incomplete Abortion	oper. Rec.		scan-read-missing	26667
-30	93	2164	2 6/12	Years	F	Muslim	Palestinian		Sindyaneh - Haifa S/D	B.	3rd		Gratis	30.4.46	5.5.46	5	Measles.	Rec	Inf.	scan-read-missing	26678
-30	95	2180	30	Years	F	Muslem	Palestinian		Der Ghassoun Tul Karm S/D	Mat.	3rd		Gratis	1.5.46	17.6.46	47	Caesarian Section	oper Rec.		scan-read-missing	26702
-30	97	2203	19.	Years	F	Christian	Palestinian		Bisan.	Med.	2nd	350		2.5.46	5.5.46	3	Adnexitis	Imp.	Rec 905394. 2.5.46. £4.- [religion cell reads "Christian L."]	scan-read-missing	26724
-30	98	2215	48	Years	F	Muslem	Egyptian		c/o Egyptian Consolate Haifa	Mat.	1st	500 mils		2.5.46	8.5.46	6	Rt. Maxillary Sinusitis	oper Rec	Rec. 905443 8.5.46. £P3	scan-read-missing	26735
-30	99	2227	60	Years	F	Christian	Palestinian		Mijeidel Naz S/D	Med.				3.5.46					[incomplete ledger row: only ward and admission date filled on right half]	scan-read-missing	26746
-30	100	2239	3	Years	M	Moslem	Palestinian		Em El Shoff. Haifa S/D	Med.	3rd		Gratis	3.5.46	4.5.46	2	Septicaemia due to Tonsillar Abscess.	Died	Inf.	scan-read-missing	26757
-30	101	2251	23	Years	M	Muslem	Palestinian		Tul Karm	Surg.	1st	500 mils		4.5.46	9.5.46	5	Chr. Volvulus of Stomach	I.S.Q.	Rec. A905419 ?/4.5.46 £P5 Ref.	scan-read-missing	26768
-31	15	2503	45	Years	M	Muslim	Palest.		Naz. Rd. house of [name]	Surg.	3rd		Gratis	26.4.47	10.5.47	14	Recurrent Scrotal Hernia	oper Rec		scan-read-missing	26929
-31	17	2527	23	Years	M	Jew	Palest.		Shejerah Tiberias S/D	Surg	3rd		Gratis	27.4.47	28.4.47	one	Lac. Wd. of Lt. leg	Transferred to Hadassah(?)	[result second word unclear]	scan-read-missing	26952
-31	21	2575	5	Years	M	Muslim	Palest.		B. Sheikh house of [name]	Surg.	3rd		Gratis	29.4.47	29.4.47		Fract. of Skull + Intra Cranial Haemorrhage	Died.	[days cell: "One" struck through]	scan-read-missing	26997
-31	36	2755	32	Years	M	Christ	British C/E	B/C 834	P.M. Haifa	P.M.F.	2nd		Gratis	5.5.47	7.5.47	2	Acute Mastitis	Rec.	B/C [ward cell overwritten]	scan-read-missing	27164
-31	37	2767	1 3/12	Years	F	Muslim	Palest.		see No. 2766	Med.	3rd		Gratis	6.5.47					[incomplete ledger row: discharge, days, diagnosis, result blank]	scan-read-missing	27175
-31	40	2803	2 2/12	Years	M	Christ.	Palest.		Acre	D	1st	350		8.5.47	11.5.47	3	Pyrexia	Imp.	R.N. 188769. 12.5.47 £1.050	scan-read-missing	27208
-30	87	2092	20	Years	M	Christian	British	B/C 2011	P.M.F. Kufr S..	B/S	2nd		Gratis	26.4.46	3.5.46	7	Sprain of Knee Lt.	Rec	B/C [nationality: Palestinian struck, British written above; ward: earlier entry struck]	scan-read-missing	26611
-30	89	2116	22	Years	M	Muslem	Palestinian		Baqa Gharbiyeh Tulkarm	Surg.	3rd	£2 all period		27.4.46	4.5.46	7	Infected Haematoma of Abd. Wall	oper Rec	Rec. A905343 of 27.4.46 £2	scan-read-missing	26634
-1	20	286			F	Moslem	Palestinian	Housewife	c/o Daud Abdalla Husband. P.R. Haifa.		3rd.		Gratis	30.4.30	30.5.30	30	Necrosis Rt. Os Calcis	Improved.	Free. Certified unable to pay anything. [age under the library redaction band]	scan-read-missing	1183
-7	49	363				Moslem	Palestinian	P.C. No. 16	Police & Prisons, Haifa.	Is.	3rd	@ 050 mils		9.3.34	17.3.34	8	Bacillary Dysentery "Shiga"	Recovered	Bill: 1424; remark: Letter No. 160/HP/of 9.5.34 from D.S.P. refers [age and sex not read: the columns sit beside the unredacted name]	scan-read-missing	4651
+Index	Notebook_Number	Page_Number	Notebook Record ID	Age	Age Unit	Sex	Religion as written	Nationality as written	Occupation	Address	Ward as written	Class as written	Rate as written	Payment Status	Admission Date as written	Discharge Date as written	Days in Hospital as written	Diagnosis as written	Result as written	Remarks	recovered_by	after_index
+41001	11	14	144	40	Years	M	Muslim	Palestinian	Nil	Saffuria, Nazareth S/Dist.	Is.	3rd		Gratis	30.1.35	5.2.35	6	Erysipelas of Face	Recovered.	Bill: -; remark: Infectious	scan-read-missing	135
+41002	1	4	110	28	Years	M	Moslem	Palestinian	Shunter No. 180	Harbour Works Haifa		3rd cl			19.2.30	22.2.30	3	Contusion	cured	bill no. 44; class cell second line unclear	scan-read-missing	1022
+41003	1	8	154			F	Jewess	Palestinian	-	Tiberias		3rd cl		Gratis	11.3.30	14.3.30	3	Under observation cured	cured	Isolation H. [age cell under the redaction]	scan-read-missing	1062
+41005	1	26	351		Years	M	Jew	Palestinian	Immigration Office	Immigration Office Kantara		2nd	120		23.5.30	26.5.30	3	Peritonsillar abscess	Much Improved	Bill 156; remark: One week off duty. [age digits under redaction; no ward column on this page]	scan-read-missing	1244
+41006	2	5	567	46	Years	M	Moslem	Palestinian	Labourer	Subbarin village	Gen.	3rd		Gratis	17.7.31	1.8.31	15	Injuries face & skull	Improved	Gratis - Certified unable to pay anything [Died ?.?.31 added in blue under the result]	scan-read-missing	1545
+41007	3	46	34	27	Years	F	Jewess	Palestine	-	Haifa c/o [name]	Gen.	3rd		Gratis	13.1.33	16.1.33	3	Abdominal Colic	Recovered.	Bill: free; remark: Gratis certified unable to pay anything	scan-read-missing	2498
+41008	5	16	815	7	Years	F	Jew	Palestinian	Nil	c/o [name], Haifa	Is.	3rd		Gratis	26.7.33	5.9.33	41	Typhoid Fever	Recovered.	Bill: -; remark: Gratis - Infectious	scan-read-missing	3237
+41009	5	43	1097	27	Years	M	Moslem	Palestinian	Labourer No. 14567	Palestine Railways, Haifa	Is.	3rd		P.R.	31.8.33	3.9.33	3	Enterocolitis haemorrhagia	Recovered.	Bill: -; remark: P.R. employee	scan-read-missing	3504
+41011	10	58	2064	24	Years	F	Jewess	Polish		Hadar Hacarmel Nachla	Is.	3rd		Gratis	21.10.34	31.10.34	10	Entero colitis Haemorrhagica (Clinical Dysentery)		Infectious	scan-read-missing	6274
+41012	10	63	2119	25	Years	M	Muslim	Palest.		c/o [name], Acre	Isol.	3rd cl.		Gratis	29.10.34	6.11.34	8	Pneumonia Cruposa	Recovered	Bill: -; remark: Infection	scan-read-missing	6327
+41013	13	40	890	30	Years	M	Moslem	Palestinian	-	Nazareth Street Haifa	Surg.	3rd		Gratis	1.5.36	6.6.36	36	Fracture of Lt. Femur	Improved	Certified unable to pay anything	scan-read-missing	8193
+41014	13	40	891	12	Years	M	Moslem	Palestinian		Barahiat el Abed Haifa	Gen.	3rd		Gratis	1.5.36	4.5.36	3	Contused wound of head	Improved	Bill: -; remark: Certified unable to pay anything [struck: occupation Lab. 3459; address I.P.C. Haifa]	scan-read-missing	8193
+41015	13	40	892	40	Years	M	Moslem	Palestinian	Lab. 3459	I.P.C. Haifa	Gen.	3rd	175		1.5.36	15.5.36	14	Broncho Pneumonia	Cured	Bill 2149; Rec. 19007 of 5.6.36	scan-read-missing	8193
+41016	13	40	893	28	Years	M	Moslem	Palestinian	-	Yajour	Gen.	3rd		Gratis	1.5.36	5.5.36	4	Contused wounds of Head	Cured	Bill: -; remark: casualty. Certified unable to pay anything	scan-read-missing	8193
+41017	13	40	894	30	Years	M	Moslem	Palestinian	Nil	Haifa	Surg.	3rd		Gratis	1.5.36	4.5.36	3	Cont. wound of Rt. Eyebrow	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+41018	13	40	895	35	Years	M	Moslem	Palestinian	-	Ard el Raml	Surg.	3rd		Gratis	1.5.36	2.5.36	one	Contused wound of scalp	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+41019	13	40	896	30	Years	M	Moslem	Palestinian	-	Customs House c/o [name]	Surg.	3rd		Gratis	1.5.36	2.5.36	one	Contused wound of legs	Improved	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+41020	13	40	897	25	Years	F	Christian	Palestinian	-	Wadi Nasnas Haifa	Mat.	3rd		Gratis	2.5.36	9.5.36	7	Delivery Normal Labor	Cured	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+41021	13	40	898	80	Years	F	Christian	Palestinian	-	Mount Carmel Haifa	Mat.	3rd		Gratis	1.5.36	9.5.36	8	Fracture of neck of left Femur	I.S.Q.	Bill: -; remark: Certified unable to pay anything	scan-read-missing	8193
+41022	13	40	899	21	Years	M	Moslem	Palestinian	-	Kafr Kadum	Is.	3rd		Gratis	1.5.36	2.5.36	one	General Weakness	Recovered	Bill: -; remark: Certified unable to pay anything [Certified struck and rewritten]	scan-read-missing	8193
+41023	13	40	900	2	Years	M	Christian	Palestinian	-	Wadi Nasnas	Is.	3rd		Gratis	1.5.36	24.5.36	23	Scarlatina	Cured	Bill: -; remark: Infectious [age digit partly under redaction; read with hint]	scan-read-missing	8193
+41024	15	68	155	27	Years	F	Christ	Palest.	/	Haifa Hart el Shawamni	Mat	3rd		Gratis	25.1.37	28.1.37	3	False labor	I.S.Q.	Certified unable to pay anything [quarter name partly legible]	scan-read-missing	10558
+41025	19	51	1058	28	Years	F	Muslim	Palestinian	-	Haifa	Gen	3rd		Gratis	12.5.38	18.5.38	6	Incomplete Abortion	Operated cured	Certified unable to pay anything	scan-read-missing	14544
+41026	24	102	667				Christian	Palestinian	-	Shefa'amr										[right half not scanned] [not on worklist: top row, serial/age/sex torn away; serial inferred from 666 on p101 and 670 below] [address reads Shefa-amr]	scan-read-missing	20454
+41027	24	102	670	65	Years	M	Muslim	Palestinian	-	Ara										[right half not scanned] Dataset serials on this page are shifted: its unlabelled 60y M Hawassa row is scan 668 and its "671" (25 M, T.A.P. 9915, Athlit Clearance Camp) is scan 669; hint for 669 (25 M) matches that existing row	scan-read-missing	20456
+41028	24	102	671	27	Years	M	Muslim	Palestinian	-	Haifa. Beit [name]										[right half not scanned] [not on worklist: dataset 671 is actually scan 669, so the real 671 is missing]	scan-read-missing	20456
+41029	27	6	3319	8	Years	M	Muslem	Palestinian		Haifa - Kanayes St.	Surg.	3rd		Gratis	16.7.44	29.7.44	13	Comp. Depressed Fracture of Skull	Operation Recovery	Certified unable to pay anything	scan-read-missing	22660
+41030	27	23	3502	32	Years	F	Muslem	Palestinian		Zeeb - Acre S/D	Mat.	3rd		Gratis	26.7.44	2.8.44	7	Foot Presentation Dead Baby	Recovery	Bill: -; remark (stamp): Certified unable to pay anything; pencil "M." under occupation	scan-read-missing	22846
+41031	27	32	3601	17	Years	F	Muslem	Palestinian		Prophets Stairs, house of [name]	B	3rd		Gratis	31.7.44	19.8.44	19	Typhus	Died	Infectious	scan-read-missing	22941
+41032	27	47	3777	55	Years	M	Christian	Palestinian		Haifa ?a?er? Bakery - Tel 2130	C	3rd		Gratis	8.8.44	10.8.44	2	Transferred to C.M.S. Hospital Nazareth	Chart in C.M.S. Hosp.	Bill: -; remark: Infectious [diagnosis cell holds the transfer note]	scan-read-missing	23095
+41033	27	86	4227	12	Years	F	Moslem	Palestinian		Stanton Street No 42 Haifa	B	3rd		Gratis	30.8.44	12.9.44	13	Brucellosis	much Improved	Infectious	scan-read-missing	23488
+41034	28	96	3466	25	Years	F	Moslem	Palest.		Acre [name] Garden										[right half not scanned] (right page of spread is blank in this image)	scan-read-missing	24595
+41035	29	78	1907	30		M	Christian	Greek	A.B.	65405 Greek Navy	8	3rd	175		2.5.44	8.5.44	6	Chicken Pox	Cured	Bill 162/44 [ward glyph looks like "8"; probably B]	scan-read-missing	25367
+41036	29	98	2103	55	Years	M	Moslem	Palestinian		?ahoud Qt. Beit [name] Haifa	"C"	3rd		Gratis	13.5.44	18.5.44	5	Scrotal Cellulitis	Died	Bill: -; remark (stamp): Certified unable to pay anything [address first word probably Yahoud]	scan-read-missing	25552
+41037	30	5	1099	32	Years	M	Muslim	Palestinian	W.S.B. 4331	?.P.Co. Hfa.	C	3rd	175		4.3.46	11.3.46	7	Pneumonia Rt. upper lobe	Recovery	Bill 633/45?; remark: £P1.225 m	scan-read-missing	25658
+41038	30	6	1111	57	Years	M	Christian	British	P.R.	Haifa	B/S.	2nd		P.R.	4.3.46	14.3.46	10	Septic Ingrowing Toe Nail & Toes	Improved	Bill: -; remark: P.R.	scan-read-missing	25669
+41039	30	8	1135	20	Years	F	Christian	Palestinian		Wady St. Hse [name]	Med.	2nd	350		6.3.46	16.3.46	10	Acute Appendicitis	operation Recovery	Bill: -; remark: Rec. A896851 16.3.46 £P3.500	scan-read-missing	25692
+41040	30	50	1650	48	Years	F	Christian	Palestinian		Acre - Ras?a?yeh	Med.	2nd	350		3.4.46	11.4.46	8	Advanced Cancer of Uterus	I.S.Q.	Bill: -; remark: Rec. A90527? 11.4.46 £P2.800; "O" under nationality	scan-read-missing	26194
+41041	30	52	1674	28	Years	M	Muslim	Palestinian		Jabaa - Haifa S/D	Med.	3rd		Gratis	4.4.46	15.5.46	41	Banti's Disease	I.S.Q.	Bill: -; [serial digits 3rd place overwritten (6/9?), reads 1674]	scan-read-missing	26217
+41042	30	54	1698	57	Years	M	Jew	British	P.R.	Haifa	B/S.	1st		P.R.	5.4.46	15.5.46	40	Hypertrophied Prostate (Prostatectomy)	Rec	Bill: -; remark: P.R.	scan-read-missing	26239
+41043	30	59	1758	50	Years	M	Muslim	Syrian		Naz. Rd. Hse [name]	Surg.	3rd		Gratis	9.4.46	10.4.46	one	Contusion of Back	Imp.	Bill: -; [nationality: "Palestinian" written, "Syrian" added beneath - which is final unclear]	scan-read-missing	26294
+41044	30	63	1806	36	Years	M	Christian	British		M/V Empire Cross c/o ?.P.Co.	B/S.	1st	500		11.4.46	22.4.46	11	B.T. Malaria	Rec.	Bill 37/46; ["Prot."? written under nationality]	scan-read-missing	26340
+41045	30	71	1900	32	Years	M	Moslem	palestinian		Kanayes Dur. Haifa	Surg.	3rd		Gratis	15.4.46	22.4.46	5	Fracture of Base of Skull + Forearm Lt.	Imp.	[struck in occupation cell: Moslem]	scan-read-missing	26432
+41046	30	72	1912	23.	Years	F	Christian	Palestinian		Sefam?	Med.	2nd	350		12.3.46	6.4.46	25	Rectal Cancer	per Rec.	Rec. A897328 6.4.46. £8.750	scan-read-missing	26443
+41047	30	73	1924	19	Years	F	Jew.	Palestinian	S/Nurse	Govt. Hospital.	B/S.	2nd		Gratis	15.4.46	18.4.46	3	Dental Sepsis c Ruptured Ear Drum.	Imp.	P/N.	scan-read-missing	26454
+41048	30	77	1972	31	Years	M	Moslem	Palestinian		Mizraa Acre S/D	A/S.	3rd		Gratis	20.4.46	1.5.46	11	Sub Acute Appendicitis	oper. Rec.		scan-read-missing	26501
+41049	30	78	1984	16	Years	M	Moslem	Palestinian		German Colony	C.	3rd		Gratis	20.4.46	23.4.46	3	Relapsing fever.	Rec.	Inf.	scan-read-missing	26512
+41050	30	79	1996	7.	Years	F	Moslem	Palestinian		Haifa Nazareth str. house of [name]	Med.	3rd		Gratis	21.4.46	18.5.46	27	Lac. Wd. of Lt. Leg	Greatly Imp.		scan-read-missing	26523
+41051	30	82	2032	14	Years	M	Moslem	Palestinian		Kufer Lam?	C.	3rd		Gratis	23.4.46	23.4.46	-	Tetanus	Died	Inf. [address: "Lam?" added in different ink]	scan-read-missing	26556
+41052	30	83	2044	19	Years	M	Moslem	Palestinian	M/A. Lives In.	Govt. Hospital Haifa	Med.	3rd		Gratis	22.4.46	2.5.46	10	Acute Appendicitis	oper Rec	M/A [occupation: "Lives In." added in blue ink]	scan-read-missing	26567
+41053	30	85	2068	19.	Years	M	Christian	Egyptian	P.R. R4/7048	Haifa	C	3rd		P.R.	25.4.46	3.5.46	8	Ing. Adenitis.	Rec	P.R. [small mark "R." under nationality]	scan-read-missing	26589
+41056	30	90	2128	17.	Years	F	Moslem	Palestinian		Tireh. Haifa S/D	Mat.	3rd		Gratis	28.4.46	1.5.46	3	Abortion	Rec		scan-read-missing	26645
+41057	30	91	2140	22	Years	M	Muslim	Palestinian	T.A.C. 4886.	P.C.R.D. Haifa	C	3rd	050		28.4.46	9.5.46	11	Pyrexia	Rec.	Rec A905457 9.5.46. £P.-.550 [rate written "@ 050 mils"]	scan-read-missing	26656
+41058	30	92	2152	30	Years	F	Muslim	Palestinian		Wady Saleh Own House Haifa	Mat.	3rd		Gratis	29.4.46	3.5.46	4	Incomplete Abortion	oper. Rec.		scan-read-missing	26667
+41059	30	93	2164	2 6/12	Years	F	Muslim	Palestinian		Sindyaneh - Haifa S/D	B.	3rd		Gratis	30.4.46	5.5.46	5	Measles.	Rec	Inf.	scan-read-missing	26678
+41060	30	95	2180	30	Years	F	Muslem	Palestinian		Der Ghassoun Tul Karm S/D	Mat.	3rd		Gratis	1.5.46	17.6.46	47	Caesarian Section	oper Rec.		scan-read-missing	26702
+41061	30	97	2203	19.	Years	F	Christian	Palestinian		Bisan.	Med.	2nd	350		2.5.46	5.5.46	3	Adnexitis	Imp.	Rec 905394. 2.5.46. £4.- [religion cell reads "Christian L."]	scan-read-missing	26724
+41062	30	98	2215	48	Years	F	Muslem	Egyptian		c/o Egyptian Consolate Haifa	Mat.	1st	500 mils		2.5.46	8.5.46	6	Rt. Maxillary Sinusitis	oper Rec	Rec. 905443 8.5.46. £P3	scan-read-missing	26735
+41063	30	99	2227	60	Years	F	Christian	Palestinian		Mijeidel Naz S/D	Med.				3.5.46					[incomplete ledger row: only ward and admission date filled on right half]	scan-read-missing	26746
+41064	30	100	2239	3	Years	M	Moslem	Palestinian		Em El Shoff. Haifa S/D	Med.	3rd		Gratis	3.5.46	4.5.46	2	Septicaemia due to Tonsillar Abscess.	Died	Inf.	scan-read-missing	26757
+41065	30	101	2251	23	Years	M	Muslem	Palestinian		Tul Karm	Surg.	1st	500 mils		4.5.46	9.5.46	5	Chr. Volvulus of Stomach	I.S.Q.	Rec. A905419 ?/4.5.46 £P5 Ref.	scan-read-missing	26768
+41066	31	15	2503	45	Years	M	Muslim	Palest.		Naz. Rd. house of [name]	Surg.	3rd		Gratis	26.4.47	10.5.47	14	Recurrent Scrotal Hernia	oper Rec		scan-read-missing	26929
+41067	31	17	2527	23	Years	M	Jew	Palest.		Shejerah Tiberias S/D	Surg	3rd		Gratis	27.4.47	28.4.47	one	Lac. Wd. of Lt. leg	Transferred to Hadassah(?)	[result second word unclear]	scan-read-missing	26952
+41068	31	21	2575	5	Years	M	Muslim	Palest.		B. Sheikh house of [name]	Surg.	3rd		Gratis	29.4.47	29.4.47		Fract. of Skull + Intra Cranial Haemorrhage	Died.	[days cell: "One" struck through]	scan-read-missing	26997
+41069	31	36	2755	32	Years	M	Christ	British C/E	B/C 834	P.M. Haifa	P.M.F.	2nd		Gratis	5.5.47	7.5.47	2	Acute Mastitis	Rec.	B/C [ward cell overwritten]	scan-read-missing	27164
+41070	31	37	2767	1 3/12	Years	F	Muslim	Palest.		see No. 2766	Med.	3rd		Gratis	6.5.47					[incomplete ledger row: discharge, days, diagnosis, result blank]	scan-read-missing	27175
+41071	31	40	2803	2 2/12	Years	M	Christ.	Palest.		Acre	D	1st	350		8.5.47	11.5.47	3	Pyrexia	Imp.	R.N. 188769. 12.5.47 £1.050	scan-read-missing	27208
+41054	30	87	2092	20	Years	M	Christian	British	B/C 2011	P.M.F. Kufr S..	B/S	2nd		Gratis	26.4.46	3.5.46	7	Sprain of Knee Lt.	Rec	B/C [nationality: Palestinian struck, British written above; ward: earlier entry struck]	scan-read-missing	26611
+41055	30	89	2116	22	Years	M	Muslem	Palestinian		Baqa Gharbiyeh Tulkarm	Surg.	3rd	£2 all period		27.4.46	4.5.46	7	Infected Haematoma of Abd. Wall	oper Rec	Rec. A905343 of 27.4.46 £2	scan-read-missing	26634
+41004	1	20	286			F	Moslem	Palestinian	Housewife	c/o Daud Abdalla Husband. P.R. Haifa.		3rd.		Gratis	30.4.30	30.5.30	30	Necrosis Rt. Os Calcis	Improved.	Free. Certified unable to pay anything. [age under the library redaction band]	scan-read-missing	1183
+41010	7	49	363				Moslem	Palestinian	P.C. No. 16	Police & Prisons, Haifa.	Is.	3rd	@ 050 mils		9.3.34	17.3.34	8	Bacillary Dysentery "Shiga"	Recovered	Bill: 1424; remark: Letter No. 160/HP/of 9.5.34 from D.S.P. refers [age and sex not read: the columns sit beside the unredacted name]	scan-read-missing	4651
+41072	1	5	121	25	Years	M	Moslem	Palestinian	Fellah	Wadi Arah Haifa S/D		3rd cl.		Gratis	25.2.30	6.3.30	9	Lacerated wound forehead	Much improved		full-reread-2026-10-31	1032
+41073	1	6	132	19	Years	M	Moslem	Palestinian	Labourer	Haifa		3rd cl.		Gratis	3.3.30	7.4.30	25	Typhoid fever	cured		full-reread-2026-10-31	1042
+41074	1	7	143	12	Years	F	Moslem	Palestinian	-	Zib Village		3rd cl.	@ 100 mils		6.3.30	13.3.30	7	Heart Disease	cured		full-reread-2026-10-31	1052
+41075	1	10	176			M	Moslem	Palestinian	No. 1844 Fireman	P&T Haifa		3rd cl.	@ 50 mils		18.3.30	20.3.30	2	Colic	Cured		full-reread-2026-10-31	1082
+41076	1	15	231			M	Moslem	Palestinian	Wdr. No. 163.	Jail Labour Co. No. 4 Haifa		3rd cl.	@ 50 mils		7.4.30	9.4.30	2	Urethral Stricture	To attend for treatment as an outpatient		full-reread-2026-10-31	1133
+41077	1	16	242			M	Moslem	Palestinian	No. 611 Cpl.	Palestine Police Haifa		3rd cl.	@ 50 mils		10.4.30	11.4.30	1	Pyrexia	Cured		full-reread-2026-10-31	1143
+41078	1	17	253			M	Moslem	Palestinian	No. 699 P.C.	Palestine Police Haifa		3rd cl.	50 mils		16.4.30	21.5.30	35	Tubercular Peritonitis	Improved.		full-reread-2026-10-31	1153
+41079	1	18	264			M	Moslem	Palestinian	-	Haifa		3rd		Gratis	21.4.30	25.4.30		Colitis	Cured		full-reread-2026-10-31	1163
+41080	1	19	275			M	Jew	Polish	Labourer	Benzamini		3rd		Gratis	24.4.30	30.4.30	6	Trichiniosis Intestinalis	Improved.		full-reread-2026-10-31	1173
+41081	1	22	307			M	Christian	British	Private.	'A' Company British Army		2nd.	@ 350 p.d.		4.5.30	6.5.30	2	Pyrexia.	Transferred to Sarafand		full-reread-2026-10-31	1192
+41082	1	24	329			M	Moslem	Palestinian.	Shepherd	Arab Shafa Amr, Hajeira		3rd.	@ 175 mils p.d.		14.5.30	21.5.30	7	Contused Wound forehead.	Cured		full-reread-2026-10-31	1223
+41083	1	27	362			M	Moslem.	Palestinian.	Trooper No. 1423	Semakh T.J.F.F		3rd.	@ 175 mils		26.5.30	31.5.30	5	Colitis	Cured.		full-reread-2026-10-31	1254
+41084	1	29	384			M	Moslem.	Palestinian.		Hartel Basasbi Haifa		3rd.		Gratis	31.5.30	18.6.30	18	Typhoid fever.	Cured.		full-reread-2026-10-31	1275
+41085	1	34	439			M	Jew	Palestinian	NIL.	Hadar Hacarmel		3rd.		Gratis	13.6.30	17.6.30	4	General Paralysis	Died.		full-reread-2026-10-31	1319
+41086	1	45	560			M	Jew.	Palestinian.	NIL.	Haifa		3rd.		Gratis	19.7.30	21.7.30	2	Bruise	Improved.		full-reread-2026-10-31	1450
+41087	1	47	582			F	Jewess	Palestinian	NIL.	German Colony		3rd.		Gratis	25.7.30	22.8.30	28	Typhoid fever.	Cured.		full-reread-2026-10-31	1471
+41088	1	49	605			M	Jew	Palestinian.	Lineman	Posts & Telegraph		3rd.	@ 050 mils.		31.7.30	2.8.30	2	Pyrexia after Typhoid Inoculation	Recovered.		full-reread-2026-10-31	1492
+41089	2	15	675	25	Years	M	Moslem	Palestinian	Labourer	Municipality Haifa	Is.	3rd.	@ 050 mils.		17.8.31	21.8.31	4	Cold	Cured.		full-reread-2026-10-31	1651
+41090	2	24	765	24	Years	M	Moslem	Palestinian.	Sailor.	Haifa Quay	Gen.	3rd.	@ 175 mils.		3.9.31	4.9.31	1	Scalp wound.	Improved.		full-reread-2026-10-31	1743
+41091	2	27	798	30	Years	M	Moslem	Palestinian	Nil.	Kafr Abed. Trans Jordania	Gen.	3rd.		Gratis	10.9.31	25.1.32	137	Comp. Fracture Rt. femur Bullet wound.	Recovered.		full-reread-2026-10-31	1775
+41092	2	29	820	30	Years	M	Moslem	Palestinian.	Nil.	Arab el Haib Safad	Gen.	3rd.		Gratis	14.9.31	18.9.31	4	Tuberculosis of the lungs.	Statoquo		full-reread-2026-10-31	1796
+41093	2	33	864	30	Years	M	Moslem	Palestinian	Nil.	Gaza	Is.	3rd.		Gratis	23.9.31	27.9.31	4	Malaria Clinical.	Cured.		full-reread-2026-10-31	1837
+41094	2	34	875	24	Years	F	Jewess.	Palestinian.	Nil.	Haifa	Is.	3rd.		Gratis	25.9.31	20.10.31	25	Typhoid Fever.	Cured.		full-reread-2026-10-31	1847
+41095	2	41	949	55	Years	M	Jew.	Palestinian.	Nil.	Acre	Is.	3rd.		Gratis	13.10.31	23.10.31	10	Chronic colitis Asthma- Dysentery	Improved.		full-reread-2026-10-31	1921
+41096	2	46	1004	9	Years	M	Ch.	Palestinian	Nil.	Jish village	Is.	3rd.		Gratis	28.10.31	8.12.31	41	Typhoid Fever.	Cured.		full-reread-2026-10-31	1973
+41097	2	47	1015	12	Years	M	Druze.	Palest.	Nil.	Isfia village	Gen.	3rd.		Gratis	30.10.31	14.11.31	15	Fracture Rt. Tibia & Febula	Much improved.		full-reread-2026-10-31	1983
+41098	2	52	1064	36	Years	F	J.	Palest.	Labourer	Harbour Works Dept. Athlit	Gen.	3rd			16.11.31	29.11.31	13	Mastoiditis.	Cured.		full-reread-2026-10-31	2031
+41099	3	3	1011	5	Years	F	Muslim	Palestine.	Child.		Gen.	3rd.			20.9.32	22.10.32	32	Compound fracture left leg.	Recovered.		full-reread-2026-10-31	2055
+41100	3	4	1022	6	Years	F	Jewess	Palestine	Child.		Is.	3rd.			21.9.32	30.9.32	9	M. Melitensis	Recovered		full-reread-2026-10-31	2065
+41101	3	5	1033	18	Years	F	Jewess	Palestine.	Lady.	near Haifa	Is.	3rd.			22.9.32	27.9.32	5	Entero colitis.	Recovered.		full-reread-2026-10-31	2075
+41102	3	6	1044	23	Years	F	Jewess	Palestine	-	Hadera	Is.	3rd.			25.9.32	3.10.32	8	Lambliasis	Recovered.		full-reread-2026-10-31	2085
+41103	3	11	1099	20	Years	M	Muslim	Palestinian	-	Haifa	Is.	3rd.			6.10.32	11.10.32	5	Entero-colitis	Improved.		full-reread-2026-10-31	2137
+41104	3	14	1143	20	Years	M	Jew.	Palestine.	-	Hadera	Is.	3rd.			18.10.32	22.10.32	4	Entero colitis	Recovered.		full-reread-2026-10-31	2169
+41105	3	17	1176	39	Years	F	Christian.	Palestine.	Lady	Acre	Is.	3rd.			26.10.32	24.11.32	29	Enteric Fever.	Recovered.		full-reread-2026-10-31	2189
+41106	3	18	1187	40	Years	M	Christian.	Palestine	-	Haifa	Is.	3rd.			27.10.32	28.10.32	1	Observed for Diphtheria "Neg."	Improved.		full-reread-2026-10-31	2210
+41107	3	19	1198	35	Years	M	Muslim	Palestine.	Plate Layer No. 2897.		Is.	3rd.			29.10.32	30.10.32	1	Double Pneumonia.	Died.		full-reread-2026-10-31	2220
+41108	3	20	1209	20	Years	M	Muslim	Palestine.	-	Tamra village	Gen.	3rd.			31.10.32	14.5.33	195	Foecal Fistula	Same condition		full-reread-2026-10-31	2230
+41109	3	24	1247	35	Years	M	Muslim	Palestine.	Labourer. No. 17076		Isol.	3rd.			9.11.32	19.11.32	10	Enterocolitis.	Recovered		full-reread-2026-10-31	2268
+41110	3	25	1258	32	Years	M	Muslim	Iraqian.	Driver No. 1820.	C/o I.P.C. Haifa	Gen.	3rd.	@ 175		10.11.32	14.11.32	4	Contusion Pelvis.	Recovered		full-reread-2026-10-31	2278
+41111	3	28	1291	19	Years	F	Muslim	Palestine.	-		Gen.	3rd.			17.11.32	18.11.32	1	Extensive Burns. Tetanus.	Died.		full-reread-2026-10-31	2309
+41112	3	29	1302			F	Christian	British.	Lady	C/o I.P.C. Haifa	Gen.	1st	@ 750 mils.		18.11.32	8.12.32	20	Confinement.	Satisfactory		full-reread-2026-10-31	2319
+41113	3	30	1313	23	Years	M	Christian	British	Const. No. 932.	British Police. Safad	Gen.	2nd.			23.11.32	28.11.32	5	Catarrhal Jaundice.	Cured.		full-reread-2026-10-31	2329
+41114	3	34	1356	2	Years	F	Muslim	Palestine	Child.	Wadi Roshmia Haifa	Gen.	3rd.			4.12.32	5.12.32	1	Extensive Burns.	Died.		full-reread-2026-10-31	2373
+41115	3	39	1411	40	Years	M	Muslim	Palestine.	-	Gazazwi Ard. Haifa	Is.	3rd.			18.12.32	2.1.33	14	Clinical Malaria.	Recovered		full-reread-2026-10-31	2426
+41116	3	42	1444	13	Years	M	Muslim	Palestine	-	Haifa	Is.	3rd.			29.12.32	14.1.33	16	Para Typhoid 'B'.	Recovered.		full-reread-2026-10-31	2458
+41117	3	43	1	25	Years	M	Christian	British	2816244	2/ Seaforth Highlanders Haifa	Gen.	2nd	350		1.1.33	1.1.33	1	Wound of Wrist	I.S.Q.		full-reread-2026-10-31	2467
+41118	3	47	45	40	Years	M	Muslim	Palestine.	No. E.1444 P.R.	District Engineer. P. Railways Haifa	Gen.	3rd.	P.R.		16.1.33	22.2.33	37	Phlebitis c Abscess Rt. thigh.	Recovered.		full-reread-2026-10-31	2508
+41119	3	48	56	12	Years	F	Jewess	Palestine	-		Gen	3rd.		Gratis	20.1.33	5.3.33	44	Cellulitis groins.	Recovered.		full-reread-2026-10-31	2518
+41120	4	13	217	25	Years	F	Moslem	Palestinian	Nil.	Shatta village -	Is.	3rd.		Gratis	10.3.33	19.3.33	9	Clinical Malaria	Recovered.		full-reread-2026-10-31	2674
+41121	4	14	228	28	Years	M	Christian	British	Br. Police no. 262	Dept. of Police, Haifa	Gen.	2nd.		Gratis	13.3.33	16.3.33	3	Influenzal Cold.	Recovered.		full-reread-2026-10-31	2684
+41122	4	15	239	37	Years	M	Moslem	Palestinian	Fellah	Ijzim village	Is.	3rd.		Gratis	17.3.33	27.5.33	71	Myocarditis	Improved.		full-reread-2026-10-31	2694
+41123	4	17	261	19	Years	M	Moslem	Palestinian	Labourer	Carmel Station, Haifa	Gen.	3rd.	@ 175 mils		25.3.33	5.5.33	41	(1) Fracture Tibia & Fibula Rt. (2) Dislocation Lt. Femur (head)	Recovered.		full-reread-2026-10-31	2715
+41124	4	18	272	25	Years	M	Jew	Polish	Labourer	Kibutz Mifratz, Haifa	Is.	3rd.		Gratis	28.3.33	31.3.33	3	Gastroenteritis Acuta	Recovered		full-reread-2026-10-31	2725
+41125	4	26	360	65	Years	M	Moslem	T. Jordanian	Fellah	Irbid. T. Jordan	Gen.	3rd.		Gratis	27.4.33	28.4.33	1	Bullet wound Lt. leg causing compound fracture of Tibia	Died.		full-reread-2026-10-31	2807
+41126	4	27	371	38	Years	M	Christian	American	I.P.C. official.		Is.	1st.	@ 500 mils p.d.		30.4.33	5.5.33	5	Grippe	Recovered.		full-reread-2026-10-31	2817
+41127	4	30	403	27	Years	F	Jewish	Palestinian	Nil.	Hadar Hacarmel, Haifa	Is.	3rd		Gratis	5.5.33	19.5.33	6	Enteric Fever.	Recovered.		full-reread-2026-10-31	2847
+41128	4	34	447	23	Years	F	Moslem	Palestinian	Nil.	Tireh village	Gen.	3rd			16.5.33	29.5.33	13	Explosion wounds eyes + face.	Recovered.		full-reread-2026-10-31	2890
+41129	4	35	458	9	Years	M	Jew	Palestinian	Nil.	Shkhunat Ovdim	Is.	3rd		Gratis	22.5.33	4.6.33	13	Diarrhoea	Cured.		full-reread-2026-10-31	2900
+41130	4	37	480	26	Years	M	Moslem	Palestinian	Labourer No. 5667	Mechanical Dept. P.R. Haifa	Gen.	3rd	P.R.		26.5.33	7.6.33	12	Cellulitis thigh	Recovered.		full-reread-2026-10-31	2920
+41131	4	38	491	23	Years	M	Jew.	Palestinian	Labourer	Bath Galim, Kibutz Gimel	Is.	3rd		Gratis	29.5.33	12.6.33	14	Suspected Enteric Fever	Cured.		full-reread-2026-10-31	2930
+41132	4	45	565	20	Years	M	Moslem	Palestinian	Fellah	Hedera	Med.	3rd		Gratis	16.6.33	29.6.33	13	Septic ulcer Rt. leg	Recovering		full-reread-2026-10-31	3003
+41133	4	46	576	45	Years	F	Jew.	Polish	Nil.	Yavniel Colony	Is.	3rd		Gratis	18.6.33	23.6.33	5	Erysipelas of leg.	Cured.		full-reread-2026-10-31	3013
+41134	4	47	587	24	Years	M	Moslem	Palestinian	Driver	Nazareth	Gen.	3rd		Gratis	20.6.33	23.6.33	3	Fracture of Ribs causing laceration of Rt. lung and Internal Haemorrhage.	Died.		full-reread-2026-10-31	3023
+41135	4	48	598	26	Years	M	Christian	British	Br. Police No. 824	Dept. of Police, Haifa	Med.	2nd		Gratis	22.6.33	24.6.33	2	Entero Colitis	Recovered.		full-reread-2026-10-31	3033
+41136	4	50	620	23	Years	M	Christian	Palestinian	Lineman No. 1917	Posts + Telegraph Dept	Gen.	3rd	@ 050 mils		26.6.33	28.6.33	2	Colic Intestinal	Recovered.		full-reread-2026-10-31	3054
+41137	5	5	694	27	Years	M	Christian	British	P. Const. 907	Department of Police, Haifa	Med.	2nd		Gratis	10.7.33	30.7.33	20	Pyrexia	Cured.		full-reread-2026-10-31	3123
+41138	5	6	705	4	Years	M	Jew	Palestinian	Nil.	Affuleh	Is.	3rd		Gratis	11.7.33	10.8.33	30	Typhoid Fever	Recovered.		full-reread-2026-10-31	3133
+41139	5	10	749	20	Years	M	Moslem	Palestinian	Fellah	Kharjeh, Trans Jordan	Surg.	3rd		Gratis	18.7.33	10.10.33	84	Closed fracture of Tibia	Recovering		full-reread-2026-10-31	3175
+41140	5	11	760	25	Years	M	Jew	Polish	Labourer	Hedera	Is.	3rd		Gratis	19.7.33	23.7.33	4	Entamoeba Coli	Cured.		full-reread-2026-10-31	3185
+41141	5	12	771	23	Years	F	Jewess	Palestinian	-	Bat Galim, Kibutz	Is.	3rd		Gratis	20.7.33	26.7.33	6	Pyrexia	Cured.		full-reread-2026-10-31	3195
+41142	5	17	826	27	Years	M	Christian	British	P.C. 1037	Dept. of Police, Haifa	Med.	2nd		Gratis	28.7.33	4.8.33	7	Sand fly fever	Cured.		full-reread-2026-10-31	3247
+41143	5	19	848	45	Years	M	Christian	Chechoslovakian	Nil.	Prague, Chechoslovakia Prisoner, Dept. of Police	Med.	3rd		Gratis	31.7.33	2.8.33	2	Colic Intestinal	Recovered.		full-reread-2026-10-31	3268
+41144	5	22	877	45	Years	M	Moslem	Palestinian	Fellah	Beisan	Is.	3rd		Gratis	3.8.33	14.8.33	11	Observed for Typhoid & Typhus	Recovered.		full-reread-2026-10-31	3297
+41145	5	23	888	30	Years	M	Moslem	Palestinian	Fellah	Tarshiha, Acre	Med.	3rd		Gratis	5.8.33	14.8.33	9	Contusion Wound of Scalp.	Recovering		full-reread-2026-10-31	3307
+41146	5	25	910	27	Years	F	Moslem	Palestinian	Fellah	Zeeb village, Acre S/Dist	Med.	3rd		Gratis	9.8.33	17.8.33	8	Debility	Recovered.		full-reread-2026-10-31	3328
+41147	5	26	921	22	Years	M	Christian	British	P. Const.	Metulleh, Safad S/Dist. Police & Prisons	Surg.	2nd		Gratis	10.8.33	18.8.33	8	Phimosis	Operation		full-reread-2026-10-31	3338
+41148	5	31	976	20	Years	M	Moslem	Palestinian	Nil.	Arrabi Village	Is.	3rd		Gratis	18.8.33	22.8.33	4	Septic Wound of upper lip	Recovered.		full-reread-2026-10-31	3389
+41149	5	39	1053			M	Moslem	Palestinian	Fellah	Freidis Haifa S/Dist	Is.	3rd		Gratis	28.8.33	29.8.33	1	Rabies	Died.		full-reread-2026-10-31	3452
+41150	5	46	1128	11	Years	M	Moslem	Palestinian		Irbid, Trans Jordania	Is.	3rd		Gratis	5.9.33	8.10.33	33	Anthrax (Septicaemia)	Recovered.		full-reread-2026-10-31	3534
+41151	5	49	1161	54	Years	M	Moslem	Turkish	Labourer	Dar , H'a	Med.	3rd		Gratis	10.9.33	12.9.33	2	Contused wound Scalp	Recovered		full-reread-2026-10-31	3565
+41152	5	50	1172	20	Years	M	Muslim	Palestinian	P.C. No. 1540	Police & Prisons. Haifa	Is.	3rd	@ 050 mils		11.9.33	14.9.33	3	Sand fly Fever	Recovered		full-reread-2026-10-31	3575
+41153	5	51	1183	23	Years	F	Jewess	Palestinian	Nil.	Hadar Hacarmel, Yechiel St	Is.	3rd		Gratis	12.9.33	16.9.33	4	Sand fly Fever	Recovered		full-reread-2026-10-31	3585
+41154	5	52	1194	28	Years	M	Christian	British	P.C. No. 262	Police & Prisons, Haifa	Med.	2nd		Gratis	14.9.33	16.9.33	2	Injury to back	Cured.		full-reread-2026-10-31	3595
+41155	10	2	1498	5	Years	M	Christian	Palestinian		Haret Shawafni	Med.	3rd		Gratis	7.7.34	31.7.34	24	Typhoid Fever	Recovered		full-reread-2026-10-31	5737
+41156	10	3	1509	30	Years	M	Christian	British	P.C. No. 92	Police & Prisons, Hfa	Med.	2nd		Gratis	7.8.34	11.8.34	4	Sand fly Fever	Recovered.		full-reread-2026-10-31	5747
+41157	10	7	1553	25	Years	M	Muslim	Palestinian		Jenini	Med.	3rd		Gratis	12.8.34	13.8.34	1	Intestinal Colic	Recovered.		full-reread-2026-10-31	5789
+41158	10	8	1564	22	Years	M	Muslim	Palestinian		Rumeis village	Surg.	3rd		Gratis	13.8.34	17.8.34	4		Recovered.		full-reread-2026-10-31	5799
+41159	10	9	1575	17	Years	F	Jewish	Polish		Herzlia Qrt	Is.	3rd		Gratis	14.8.34	26.8.34	12	Typhoid Fever	Recovered.		full-reread-2026-10-31	5809
+41160	10	12	1608	7	Years	F	Muslim	Palestinian		Burj Qrt. Hfa	Med.	3rd		Gratis	18.8.34	29.8.34	11	Clinical Typhoid.	Recovered.		full-reread-2026-10-31	5840
+41161	10	13	1619	40	Years	F	Jewish	Palestinian		Allenby St. Haifa	Is.	3rd		Gratis	19.8.34	29.8.34	10	Typhus exanthematicus	Recovered.		full-reread-2026-10-31	5850
+41162	10	15	1641	10	Years	M	Jew	Palestinian		Hfa	Is.	3rd		Gratis	21.8.34	3.10.34	43	Typhoid Fever	Recovered.		full-reread-2026-10-31	5872
+41163	10	18	1674	10	Years	M	Muslim	Palestinian		Wadi Salib. Hfa	Is.	3rd		Gratis	27.8.34	4.9.34	8	M.T. Malaria	Recovered.		full-reread-2026-10-31	5904
+41164	10	23	1726	25	Years	M	Muslim	Palestinian		Ararat	Med.	3rd		Gratis	3.9.34	8.9.34	5	Sprain back (Lumbar Region)	Recovering		full-reread-2026-10-31	5954
+41165	10	29	1792	6	Years	M	Christian	Palestinian		Sharkiya Qrt. Hfa	Med.	3rd		Gratis	13.9.34	1.11.34	49	1) Compound fracture Rt. femur 2) Wounds Scalp	Recovering		full-reread-2026-10-31	6017
+41166	10	32	1825	13	Years	M	Muslim	Palestinian		El Burj Qrt. Hfa	Med.	3rd		Gratis	20.9.34	27.9.34	7	Clinical Malaria	Recovered		full-reread-2026-10-31	6048
+41167	10	34	1847	48	Years	M	Muslim	Palestinian		Arrabi, Nablus Sub-Dist	Med.	3rd		Gratis	22.9.34	28.9.34	6	Entero Colitis	Died.		full-reread-2026-10-31	6069
+41168	10	36	1869	21	Years	F	Jewess	Polish		Kfar Chaarot	Is.	3rd		Gratis	26.9.34	8.10.34	12	Clinical Malaria	Recovered.		full-reread-2026-10-31	6089
+41169	10	38	1891	50	Years	F	Muslim	Palestinian		Nahif, Acre S/Dist		3rd		Gratis	15.9.34	6.10.34	21	Wound Scalp Ep. of Frontal & Rt. Parietal bone	Recovered.		full-reread-2026-10-31	6110
+41170	10	39	1902	13	Years	F	Christian	Palestinian		Haret Sharkia	Is.	3rd		Gratis	30.9.34	6.10.34	6	Observation for Typhoid	Negative Healthy		full-reread-2026-10-31	6120
+41171	10	39	1910																		full-reread-2026-10-31	6127
+41172	10	39	1911																		full-reread-2026-10-31	6127
+41173	10	40	1910	23	Years	M	Christian	British	P.C. no. 1248	Police & Prisons Hfa	Med.	2nd		Gratis	1.10.34	5.10.34	4	Entero Colitis	Recovered.		full-reread-2026-10-31	6127
+41174	10	42	1932	10	Years	F	Muslim	Palestinian	-	Um el Zeinat	Is.	3rd		Gratis	4.10.34	10.10.34	6	M.T. Malaria	Recovered.		full-reread-2026-10-31	6148
+41175	10	48	1998	22	Years	M	Jew	Polish		Bat Galim	Is.	3rd		Gratis	12.10.34	20.10.34	8	Typhus exanthematicus	Recovered.		full-reread-2026-10-31	6212
+41176	10	51	2031	35	Years	M	Muslim	Palestinian		Shafa Amr	Med.	3rd		Gratis	17.10.34	19.10.34	2	Simple fracture Rt. Clavicle	Recovering		full-reread-2026-10-31	6243
+41177	10	60	2086	25	Years	M	Muslim	Palestinian		( ) from Ijzim Kirch Village	Med.	3rd		Gratis	24.10.34	2.11.34	9	Double basal Pneumonia Lobar	Recovered		full-reread-2026-10-31	6297
+41178	10	61	2097	67	Years	M	Christian	Greek.		Allenby St	Med.	3rd	@ 100 mils		26.10.34	30.11.34	35	Car accident Comp. Fracture Lt. Fibula	Recovering		full-reread-2026-10-31	6307
+41179	10	64	2130	58	Years	M	Bahai	Palest.	.	Acre	Surg.	2nd cl.	@ 350 mils		30.10.34	5.11.34	6	Retension of urine	Recovered		full-reread-2026-10-31	6337
+41180	10	65	2138	35	Years	M	Muslim	Palest.			Med.	3rd cl.	@ 175 mils		1.11.34	2.11.34	1	Contusions body & extremities	Improved		full-reread-2026-10-31	6344
+41181	10	66	2149	15	Years	F	Muslim	Palest.		Jaba' village	Med.	3rd cl.		Gratis	3.11.34	12.11.34	9	Contusion Rt. ankle & foot	Recovering		full-reread-2026-10-31	6354
+41182	10	67	2160	13	Years	M	Christian	Palest.	-	Nazareth c/o	Isol.	3rd.		Gratis	5.11.34	20.11.34	15	Typhoid fever	Recovered		full-reread-2026-10-31	6364
+41183	10	68	2171	25	Years	F	Christian	Palest.	.	Wad el-Nisnas, Haifa	Med.	3rd.		Gratis	4.11.34	12.11.34	8	Confinement Primapara	Recovered		full-reread-2026-10-31	6374
+41184	10	72	2215	30	Years	M	Muslim	Palest.		c/o	Med.	3rd.		Gratis	13.11.34	19.11.34	6	Simple Fracture Lt. Scapula	Recovering		full-reread-2026-10-31	6416
+41185	10	73	2226	24	Years	M	Muslim	Palest.	Teacher	Tarshiha Govt. Boys School	Med.	2nd	@ 120 mils pd.		14.11.34	25.11.34	11	Cholelithiasis & Cholecystitis	Improved		full-reread-2026-10-31	6426
+41186	10	76	2259	18	Years	F	Muslim	Palestinian		Acre	Is.	3rd.		Gratis	18.11.34	5.12.34	17	Enteric Fever	Recovered		full-reread-2026-10-31	6458
+41187	10	85	2314	22	Years	M	Muslim	Palestinian	Male attendant	Govt. Hospital	Med.	3rd		Gratis	29.11.34	12.12.34	13	Acute Polyarthritis	Recovering.		full-reread-2026-10-31	6501
+41188	10	89	2354	50	Years	M	Muslim	Palestinian	Porter	Haun	Surg.	3rd		Gratis	7.12.34	11.12.34	4	Cellulitis Lt. Gt. Toe.	Recovering		full-reread-2026-10-31	6550
+41189	10	90	2365	32	Years	M	Jew	Palestinian			Is.	2nd			8.12.34	18.12.34	10	Enteric Fever.	Recovered.		full-reread-2026-10-31	6560
+41190	10	91	2376	26	Years	M	Jew	Russian	Prisoner	Unknown. Central Prison	Med.	3rd		Gratis	11.12.34	15.12.34	4	Abrasion knees & back.	Recovered.		full-reread-2026-10-31	6570
+41191	10	95	2420	25	Years	M	Muslim	Palestinian		Shajara - T. Jordan	Med.	3rd		Gratis	19.12.34	22.12.34	3	Contused wound scalp.	Recovered.		full-reread-2026-10-31	6612
+41192	10	97	2441	33	Years	M	Muslim	Palestinian	Labourer 5913	Palestine Railways	Med.	3rd	P.R.		26.12.34	9.1.35	14	Rt. Inguinal Hernia	Recovered.		full-reread-2026-10-31	6633
+41193	11	5	45	7	Years	M	Jew	Palestinian		Shchunat Ziffrin	Surg.	3rd.		Gratis	11.1.35	13.1.35	2	Simple Fracture Rt. thigh	Transferred to Hadassah Hosp. at his people's request		full-reread-2026-10-31	42
+41194	11	10	100	33	Years	F	Jewess	Roumanian	-	Hadar Hacarmel H'fa	Is.	3rd.		Gratis	23.1.35	29.1.35	6	Erysipelas of face	Recovered.		full-reread-2026-10-31	93
+41195	11	15	154	24	Years	M	Muslim	Palestinian		Wadi Rushmia	Is.	3rd.		Gratis	1.2.35	5.2.34	4	B.T. Malaria	Recovered.		full-reread-2026-10-31	144
+41196	11	18	187	20	Years	M	Muslim	Palestinian	Porter	Haifa	Gen.	3rd.		Gratis	8.2.35	19.2.35	11	Pneumonia Lobar both sides	Recovered		full-reread-2026-10-31	174
+41197	11	19	198	35	Years	F	Christian	British			Br.	1st.	@ 500		9.2.35	14.2.35	5	Renal Calculus	I.S.Q. Investigated.		full-reread-2026-10-31	184
+41198	11	23	241	75	Years	F	Christian	Palestinian	Nil.	c/o	Surg.	3rd.		Gratis	19.2.35	11.3.35	20	Fracture neck of Lt. Femur	Same condition		full-reread-2026-10-31	227
+41199	11	24	252	43	Years	M	Muslim	Palestinian	-	Acre Sub Dist	Gen.	3rd.		Gratis	22.2.35	25.2.35	3	Wounds Head + nose.	Recovering		full-reread-2026-10-31	237
+41200	11	29	299	25	Years	F	Muslim	Palestinian	Nil.	Churches Qrt	Gen.	3rd.		Gratis	4.3.35	20.3.35	16	Mastitis Breast abscess	Recovering.		full-reread-2026-10-31	281
+41201	11	32	332	10	Years	M	Muslim	Palestinian	-	Tarshiha	Is.	3rd		Gratis	11.3.35	24.3.35	13	Observed for Tuberculosis	Healthy		full-reread-2026-10-31	311
+41202	11	35	365	36	Years	M	Muslim	Palestinian	Fellah	Tireh	Surg.	3rd		Gratis	18.3.35	24.3.35	6	Simple Fracture 8th & 9th Lt. ribs	Recovering		full-reread-2026-10-31	341
+41203	11	39	409	7	Years	F	Muslim	Palestinian	Nil	Shafa-Amr	Is.	3rd		Gratis	24.3.35	7.4.35	15	Operated for Lagophthalmus after Anthrax	Cured		full-reread-2026-10-31	382
+41204	11	44	463	2	Years	F	Jew	German	Nil	Hadar Hacarmel Hfa	Is.	3rd		Gratis	4.4.35	12.4.35	8	Poliomyelitis anterior	Improved		full-reread-2026-10-31	433
+41205	11	47	495	20	Years	F	Christian	Palestinian		Dar el Wakf	Is.	3rd		Gratis	11.4.35	25.4.35	14	C.S. Meningitis	Recovered		full-reread-2026-10-31	464
+41206	11	48	506	23	Years	M	Muslim	Palestinian	Surveyor		Surg.	3rd	@ 050 mils		13.4.35	16.4.35	3	Wounds scalp & hand	Recovered		full-reread-2026-10-31	474
+41207	11	49	517	15	Years	M	Jew	German	Nil	Kinereth	Is.	3rd		Gratis	15.4.35	28.4.35	13	Bacillary Dysentery "Y"	Recovered		full-reread-2026-10-31	484
+41208	11	50	528	60	Years	F	Druze	Palestinian	Nil	Yirka, Acre S/Dist	Gen.	3rd		Gratis	17.4.35	4.5.35	17	Icterus Hepatitis (Carcinoma of the Liver)	I.S.Q.		full-reread-2026-10-31	494
+41209	11	52	550	22	Years	F	Christian	Palestinian	Nil	Carmel Station	Gen.	3rd		Gratis	23.4.35	4.5.35	11	Gall-stone Colic	Improved		full-reread-2026-10-31	515
+41210	11	54	572	28	Years	M	Muslim	Palestinian	Nil	Acre Rd	Surg.	3rd		Gratis	27.4.35	8.5.35	11	Infected Calculus in Urethra	Cured		full-reread-2026-10-31	536
+41211	11	55	583	38	Years	M	Muslim	Palestinian	Nil.	Naz. Rd	Gen.	3rd		Gratis	29.4.35	8.5.35	9	Abscess of the abdominal wall.	Greatly Improved.		full-reread-2026-10-31	546
+41212	11	57	600	35	Years	M	Jew	Palestinian	Labourer	Hadar Hacarmel	Is.	3rd		Gratis	1.5.35	3.5.35	2	Relapsing Fever	Recovered.		full-reread-2026-10-31	562
+41213	11	59	622	23	Years	F	Muslim	Palestinian	Nil.	Ardel Raml	Mat.	3rd		Gratis	4.5.35	11.5.35	7	Confinement	Cured		full-reread-2026-10-31	583
+41214	11	61	644			F	Jewess	German		S.S. Jerusalem	Is.	3rd		Gratis	6.5.35	9.5.35	3	Measles	Improved		full-reread-2026-10-31	604
+41215	11	63	666	60	Years	M	Muslim	Palestinian	Nil.	Hfa	Is.	3rd		Gratis	8.5.35	11.5.35	3	Broncho-Pneumonia Senility	Died.		full-reread-2026-10-31	625
+41216	11	67	710	30	Years	M	Muslim	Palestinian	Nil.	Hfa	Surg.	3rd		Gratis	13.5.35	24.5.35	11	Chronic Appendicitis	Cured.		full-reread-2026-10-31	655
+41217	11	68	721	45	Years	F	Jewish	Polish	Nil.	Hadar Hacarmel	Gen.	3rd		Gratis	14.5.35	29.5.35	15	Phlegmone of Lt. leg.	Recovered.		full-reread-2026-10-31	676
+41218	11	70	743	20	Years	M	Muslim	Palestinian		P.P. Haifa	Surg.	3rd		Gratis	16.5.35	17.5.35	1	Bruise of the body	Improved.		full-reread-2026-10-31	696
+41219	11	71	754	55	Years	F	Muslim	Palestinian		Tiri	Surg.	3rd		Gratis	17.5.35	15.6.35	29	Fract. Head Lt. Humerus c Dislocation	Cured.		full-reread-2026-10-31	706
+41220	11	72	765	35	Years	F	Jew	Polish	-	Kibutz Kenereth	Is.	3rd		Gratis	19.5.35	9.6.35	21	Enteric Fever	Recovered.		full-reread-2026-10-31	716
+41221	11	76	809	25	Years	F	Muslim	Palestinian	-	Naz. Rd. Ard el Mutran	Surg.	3rd		Gratis	24.5.35	4.6.35	11	T.B. Ostitis Rt. wrist	Improved.		full-reread-2026-10-31	759
+41222	11	81	864	42	Years	M	Christian	Palestinian	Foreman	P.P	Gen.	2nd	@ 120 mils		29.5.35	4.6.35	6	Severe Bruise Back	Improved.		full-reread-2026-10-31	810
+41223	11	81	865	16	Years	M	Christian	Palestinian	Nil.	W. Nisnas	Gen.	3rd		Gratis	29.5.35	31.5.35	2	Appendicular Colic	Cured.		full-reread-2026-10-31	810
+41224	11	81	866	32	Years	F	Muslim	Palestinian	Nil.	Naz. Rd	Is.	3rd		Gratis	30.5.35	19.6.35	20	Typhoid Fever	Cured.		full-reread-2026-10-31	810
+41225	11	81	867	21	Years	M	Christian	British	No. 3444898	Lancashire Fusiliers	Br.	2nd	@ 350 mils		30.5.35	1.6.35	2	Concussion Cerebri	Recovered.		full-reread-2026-10-31	810
+41226	11	81	868	26	Years	M	Christian	British	No. 811	P.P	Br.	2nd		Gratis	30.5.35	2.6.35	3	Furunculosis	Improved.		full-reread-2026-10-31	810
+41227	11	81	869	21	Years	M	Christian	British	No. 792	P.P	Br.	2nd		Gratis	30.5.35	2.6.35	3	Sand fly Fever	Recovered.		full-reread-2026-10-31	810
+41228	11	81	870	25	Years	M	Christian	British	Private No. 3446142	Lancashire Fusiliers 2nd. Bn	Br.	2nd	@ 350 mils		30.5.35	7.6.35	8	Bronchitis	Improved.		full-reread-2026-10-31	810
+41229	11	81	871	24	Years	M	Christian	British		P.P	Br.	2nd		Gratis	30.5.35	2.6.35	3	Sand fly Fever	Recovered.		full-reread-2026-10-31	810
+41230	11	81	872	30	Years	M	Jew	Polish	Nil.	Herzl St	Gen.	3rd		Gratis	30.5.35	1.6.35	2	Cold.	Cured.		full-reread-2026-10-31	810
+41231	11	81	873	60	Years	M	Muslim	Palestinian	Nil.	Nazareth St	Gen.	3rd		Gratis	30.5.35	1.6.35	2	Broncho-Pneumonia	Died.		full-reread-2026-10-31	810
+41232	11	81	874	5	Years	M	Muslim	Palestinian	Nil.	Nazareth St	Gen.	3rd		Gratis	30.5.35	8.6.35	9	Rt. Lobar Pneumonia	Cured.		full-reread-2026-10-31	810
+41233	11	84	893	16	Years	M	Muslim	Palestinian	nil.	Hfa	Surg.	3rd		Gratis	1.6.35	5.6.35	4	Septic wound Lt. leg	Cured.		full-reread-2026-10-31	816
+41234	11	85	904	25	Years	F	Muslim	Palestinian		Nablus	Is.	3rd		Gratis	3.6.35	29.6.35	26	Anaemia	Improved.		full-reread-2026-10-31	826
+41235	11	86	915	3.5	Years	F	Jewess	Polish	-	Hadar Hacarmel	Is.	3rd		Gratis	4.6.35	29.6.35	25	Typhoid Fever	Recovered.		full-reread-2026-10-31	836
+41236	11	90	959	15	Years	F	Muslim	Palestinian	nil.	Suhmata	Is.	3rd		Gratis	9.6.35	17.7.35	38	Typhoid Fever	Recovered.		full-reread-2026-10-31	877
+41237	11	91	970	42	Years	F	Muslim	Palestinian	-	Shafa Amr	Surg.	3rd		Gratis	10.6.35	7.7.35	27	Confinement (Forceps) Puerperal Fever	Recovered.		full-reread-2026-10-31	887
+41238	11	92	981	25	Years	F	Jewess	Polish	nil.	Ain Haood	Is.	3rd		Gratis	11.6.35	30.6.35	19	Typhoid Fever	Cured.		full-reread-2026-10-31	897
+41239	11	94	1003	22	Years	M	Muslim	Palestinian		Arab Turkman	Gen.	3rd		Gratis	13.6.35	18.6.35	5	Fissured Fracture of Skull	Improved.		full-reread-2026-10-31	917
+41240	11	96	1025	39	Years	M	Jew	Palestinian		Kiryat Hayim	Gen.	2nd	@ 120		15.6.35	19.6.35	4	Renal Colic	Improved.		full-reread-2026-10-31	938
+41241	11	97	1036	35	Years	M	Muslim	Palestinian	Labourer 292	Jisr el Majami	Surg.	3rd	@ 175 mils		18.6.35	28.6.35	10	Right Inguinal Hernia	Cured. operation		full-reread-2026-10-31	948
+41242	11	98	1047	26	Years	M	Muslim	Palestinian	Labourer 5951	P. Railways	Surg.	3rd	P.R.		19.6.35	21.6.35	2	Chronic Malaria	Improved.		full-reread-2026-10-31	958
+41243	11	100	1069	32	Years	F	Muslim	Palestinian	nil.	Hedera											full-reread-2026-10-31	979
+41244	27	11	3374	7	Years	M	Christian	Palestinian		Fassouta	B	3rd		Gratis	19.7.44	2.8.44	14	Typhoid Fever	cured		full-reread-2026-10-31	22723
+41245	27	13	3392	55	Years	M	Muslim	T. Jordanian			Surg.	3rd		Gratis	20.7.44	2.8.44	13	Mastoiditis Rt.	operation Recovery		full-reread-2026-10-31	22733
+41246	27	14	3403	30	Years	M	Christian	Palestinian O.		Haifa Wady St. Beit	D.	2nd	@ 350 mils		21.7.44	22.7.44	1	Malignant Tumour of Sigmoid & Intestinal Obstruction	Died		full-reread-2026-10-31	22753
+41247	27	15	3414	22	Years	M	Muslim	Palestinian	P.R. L/7904	P.R. Haifa	Med.	3rd	P.R.		21.7.44	22.7.44	1	Renal Colic	cured		full-reread-2026-10-31	22763
+41248	27	16	3425	16	Years	F	Moslem	Palestinian		Acre Rashidieh Quart. house	Med.	3rd	@ 175 mils		22.7.44	1.8.44	10	Sub-Acute Appendicitis	operation Recovery		full-reread-2026-10-31	22773
+41249	27	19	3458	13	Years	M	Muslem	Palestinian.		Farradeh Safad S/D	Surg.	3rd.		Gratis	24.7.44	3.8.44	10	Downward Dislocation Lt. Hip.	In Plaster		full-reread-2026-10-31	22804
+41250	27	25	3524	32	Years	M	Christian.	British.	B/P/C. 1335.	Bassa Acre S/D	B/S.	2nd.		Gratis	27.7.44	31.7.44	4	Entero Colitis	Recovery		full-reread-2026-10-31	22867
+41251	27	29	3568	30	Years	M	Christian	British	B/P 233	Police Station Tulkarem	Br	2nd		Gratis	29.7.44	16.8.44	18	Septic Ingrowing toe nail.	greatly Improved		full-reread-2026-10-31	22910
+41252	27	30	3579	30	Years	M	Moslem	Palestinian			Surg W9	3rd.		Gratis	30.7.44	30.7.44		Bruise of Lt Loin.	Improved		full-reread-2026-10-31	22920
+41253	27	34	3624	17	Years	F	Christian	Palestinian.		Bineh. Acre S/D	Med.	2nd.	@ 350 mils		1.8.44	18.8.44	17	Amoebiasis. Anemia. Ulcer of Stomach.	-		full-reread-2026-10-31	22962
+41254	27	35	3635	1	Years	F	Muslem	Palestinian.		Haifa Naz. Rd. 's Bldg	B.	3rd.		Gratis	1.8.44	5.8.44	4	Diphtheria	cured		full-reread-2026-10-31	22972
+41255	27	36	3656	20	Years	M	Muslem	Palestinian.	T.A.C. A/4494.		C	3rd.	@ 050 mils		2.8.44	8.8.44	6	Pleurisy	cured		full-reread-2026-10-31	22982
+41256	27	39	3689	31	Years	M	Christian	Palestinian	T.A.C 499.	CC. Camp Athlit	Med.	3rd	@ 050 mils.		3.8.44	28.8.44	25	Luetic Periostitis Rt.	Improved		full-reread-2026-10-31	23012
+41257	27	43	3733	18	Years	M	Moslem	Palestinian		Deir El Asad. Acre S/D. own House	Surg.	3rd		Gratis	6.8.44	2.12.44	118	Comp. Fracture Rt. Leg	Recovery		full-reread-2026-10-31	23055
+41258	27	44	3744	25	Years	F	Christian	Palestinian			Mat.	2nd	@ 350 mils		6.8.44	16.8.44	10	Sub-Acute Appendicitis	operation Recovery		full-reread-2026-10-31	23065
+41259	27	45	3755	23	Years	F	Jewess	Palestinian		Haifa Michael Str. 36	E.	3rd		Gratis	6.8.44	20.8.44	14	Typhoid fever	cured		full-reread-2026-10-31	23075
+41260	27	46	3766	18	Years	F	Christian	Palestinian		Haifa Kanayes St	B.	3rd		Gratis	7.8.44	3.10.44	58	Typhoid fever	cured		full-reread-2026-10-31	23085
+41261	27	48	3788	22	Years	M	Moslem	Palestinian	P.P. No W.50	J.L.C. No 2	C.	3rd	@ 050 mils		8.8.44	10.8.44	2	B.T. Malaria.	cured		full-reread-2026-10-31	23105
+41262	27	50	3810	6	Years	M	Muslem	Palestinian		Haifa Naz. Rd. Bldg. of L.C.S	C	3rd		Gratis	10.8.44	12.8.44	2	Tonsillitis	cured		full-reread-2026-10-31	23126
+41263	27	51	3821	20	Years	F	Christian	Palestinian		Haifa Jaffa Road Beit	Med	3rd		Gratis	10.8.44	24.8.44	14	Gastritis + Amoebiasis	Improved		full-reread-2026-10-31	23136
+41264	27	52	3832	1	Years	M	Jew	Palestinian		Karkur, Haifa S/D opp. Cafe	B	3rd		Gratis	11.8.44	14.8.44	3	Lymphadenitis	cured		full-reread-2026-10-31	23146
+41265	27	56	3876	45	Years	F	Moslem	Palestinian		Halisa Haifa	Mat	3rd		Gratis	13.8.44	8.9.44	16	Gastroptosis	Improved		full-reread-2026-10-31	23177
+41266	27	60	3865	35	Years	F	Muslem	Palestinian		Haifa Abbas Str. 36	Mat. 6.	2nd			12.8.44	8.9.44	27	Amoebic Colitis Mitral Stenosis + Failure.	Recovery		full-reread-2026-10-31	23219
+41267	27	63	3952	45	Years	M	Jew.	Polish.	Contractor	Haifa Naveh Shaanan - Hagalil Str	D.	2nd	@ 350 mils		16.8.44	25.8.44	9	Amoeb. Hepatitis.	cured.		full-reread-2026-10-31	23250
+41268	27	64	3963	35	Years	M	Muslem.	Palestinian		Suk - Shwam. Own Prop. Haifa	E.	3rd		Gratis	16.8.44	10.9.44	25	Plague	Recovery		full-reread-2026-10-31	23260
+41269	27	65	3974	26	Years	M	Christian	Palestinian		Ibillin, Haifa S/D	Med.	3rd		Gratis	17.8.44	26.8.44	9	Penetrating Stab Wd. of Abdomen.	operation Recovery		full-reread-2026-10-31	23270
+41270	27	67	3996	18	Years	M	Jew.	Rumanian.	Refugee.	Cl. Camp. Athlit	C.	3rd		Gratis	18.8.44	21.8.44	3	Convalescence after Scarlatina	cured		full-reread-2026-10-31	23291
+41271	27	69	4018	26	Years	M	Moslem	Palestinian	Cook.	Tireh Camp No 153	C	3rd		Gratis	19.8.44	23.8.44	4	Pyrexia	cured		full-reread-2026-10-31	23312
+41272	27	70	4029	22	Years	M	Muslem	Palestinian		Umm el Fahm Jenin S/D	Surg.	3rd		Gratis	20.8.44	21.8.44	1	Abscess of Lt. Knee.	Improved		full-reread-2026-10-31	23322
+41273	27	72	4051	27	Years	M	Jew	Hungarian	Fitter.	Shipwrights Engineer Haifa	E.	3rd	@ 175 mils		21.8.44	22.8.44	1	In Observation.	cured.		full-reread-2026-10-31	23343
+41274	27	73	4073	30	Years	M	Muslem	Palestinian		Haifa - Wady Salib. Hse	Surg.	3rd		Gratis	23.8.44	23.8.44		Rupture of Lt. Eye by Bullet			full-reread-2026-10-31	23353
+41275	27	75	4095	23	Years	F	Christian L.	Palestinian		Haifa - Fields Str	Med.	2nd	@ 350 mils		23.8.44	12.9.44	20	Anemia - Loss of Weight - Amoebiasis - Periostitis of Ulna.	same		full-reread-2026-10-31	23374
+41276	27	76	4106	18	Years	F	Muslem	Palestinian		Birweh - Acre S/D	Med.	3rd		Gratis	24.8.44	2.9.44	9	Mitral Stenosis c Congestive Heart failure.	much Improved		full-reread-2026-10-31	23384
+41277	27	78	4128			M	Moslem	Palestinian	Labourer P.R. No. L. 8042	Workshops P.R. Haifa	Surg.	3rd	P.R.		25.8.44	26.8.44	1	Superficial Burn of Rt. foot.	Improved		full-reread-2026-10-31	23405
+41278	27	81	4161	33	Years	F	Christian	Palestinian		Jaffa Street Haifa	Mat	2nd	@ 350 mils.		26.8.44	31.8.44	5	Dead birth Breech c Prolapse of Cord.	Recovery		full-reread-2026-10-31	23437
+41279	27	82	4172	1	Years	M	Jew.	British		Zikhron Jacov	B.	2nd		Gratis	27.8.44	10.9.44	14	Lymphadenitis	Recovery		full-reread-2026-10-31	23447
+41280	27	83	4194	31	Years	M	Christian C of E.	British	B/B/Sgt. 327.	Tiberias	B/S.	2nd		Gratis	28.8.44	1.9.44	4	Tonsillitis	Recovery		full-reread-2026-10-31	23457
+41281	27	84	4205	30	Years	M	Muslem	Palestinian	Lab. No. 1.	Survey Dept. Field Party Acre, Haifa S/D	C.	3rd	@ 050 mils.		29.8.44	31.8.44	2	Pyrexia	cured		full-reread-2026-10-31	23467
+41282	27	87	4238	16	Years	F	Muslem	Palestinian		Deir Ghsoon. Tul-Karm S/D	Med.	3rd	@ £P1.- all period.		30.8.44	13.9.44	14	Rheumatoid Arthritis	Improved		full-reread-2026-10-31	23498
+41283	27	88	4249	2.5	Years	M	Muslem.	Palestinian		Haifa Ghazawi Qrs. Hse	B.	3rd		Gratis	31.8.44	1.9.44	2	Pulm. T.B.	Left on Parents Request		full-reread-2026-10-31	23508
+41284	27	91	4276	22	Years	F	Muslem	Palestinian		Balad Sheikh, Haifa S/D. own Prop	Mat.	2nd	@ 350 mils		1.9.44	9.9.44	8	Normal Childbirth	Recovery		full-reread-2026-10-31	23535
+41285	27	94	4309	43	Years	M	Jew.	Polland.	Painter	Bat Galim Aliya street No. 22	Med.	3rd		Gratis	3.9.44	4.10.44	31	Gastritis Severe	I.S.Q.		full-reread-2026-10-31	23566
+41286	27	98	4353	27	Years	M	Muslem	Palestinian	Fitter 3310.	I.P.C. Co Ltd. Haifa	Surg.	2nd-3rd	@ 350 & 175 mils		5.9.44	26.9.44	21	Typhoid fever c Rheumatic fever	Recovery		full-reread-2026-10-31	23597
+41287	27	99	4364			F	Jewess	Palestinian			Med.	3rd		Gratis	6.9.44	6.9.44	1	Fracture of Base of Skull	Transferred to Hadassah		full-reread-2026-10-31	23618
+41288	28	7	4429	28	Years	M	Muslem	Palestinian	Warder No. 217.	T.L.C. No 2. Athlit	Surg.	3rd	@ 050 mils		9.9.44	12.9.44	3	Cellulitis of Rt. Forearm.	Improved		full-reread-2026-10-31	23683
+41289	28	8	4440	45	Years	F	Christian	Lebanese	W	Appinger Hotel Haifa	Med W10	3rd		Gratis	9.9.44	11.9.44	2	Hysteria	Recovery		full-reread-2026-10-31	23693
+41290	28	9	4451	1.5	Years	M	Jew.	Palestinian		Jaffa Road. House	B.	3rd		Gratis	10.9.44	13.9.44	3	Diphtheria of the nose	Recovery		full-reread-2026-10-31	23703
+41291	28	17	4537	1	Years	M	Christian	Palestinian M.		Haifa Carmel Str. 's Hse	Surg	3rd		Gratis	15.9.44	23.9.44	8	Pneumonia & Pleurisy	Improved		full-reread-2026-10-31	23790
+41292	28	24	4613	34	Years	M	Muslem	Palestinian	P. & T. Lineman No 34.	P. & T. Haifa	Surg.	3rd	@ 050 mils		19.9.44	25.9.44	6	Fracture of Rt Radius + Ulna	Plaster		full-reread-2026-10-31	23860
+41293	28	25	4624	5	Years	F	Muslem	Palestinian		Ara - Haifa	Med.	3rd		Gratis	20.9.44	27.9.44	7	Contused Wd. of Head - Cracked Bone -	Improved		full-reread-2026-10-31	23870
+41294	28	29	4666	35	Years	M	Muslem	Lebanese	M³.	Haifa	C	3rd		Gratis	23.9.44	13.10.44	20	Staphylococcic Cellulitis of Face	Recovery		full-reread-2026-10-31	23913
+41295	28	30	4677	22	Years	M	Christian	British	B/C No 3206	P.M.F. Jenin	B/S.	2nd		Gratis	23.9.44	2.10.44	9	Peritonsillar Abscess.	Recovery		full-reread-2026-10-31	23923
+41296	28	32	4699	4	Years	M	Muslem	Palestinian		Jdeydeh - Acre S/D	Surg.	3rd		Gratis	24.9.44	25.10.44	31	Depressed Fracture of Skull + Malaria.	operation Recovery		full-reread-2026-10-31	23944
+41297	28	34	4721	20	Years	M	Muslem	Palestinian		Talpiot Str. Hse Jerusalem	C	3rd		Gratis	25.9.44	27.9.44	2	Bacillary Dysentery.	Recovery		full-reread-2026-10-31	23964
+41298	28	40	4786	11	Years	F	Muslem	Palestinian		Acre, Hse	B.	3rd		Gratis	29.9.44	1.11.44	33	Typhoid Fever.	Recovery		full-reread-2026-10-31	24026
+41299	28	41	4797	21	Years	M	Moslem	Palestinian	Farmer.	Tireh Village	C.	3rd class		Gratis	30.9.44	4.10.44	4	Clinical Malaria	Recovery		full-reread-2026-10-31	24036
+41300	28	42	4804	40	Years	F	Moslem	Palestinian		Mejdel Krum. Acre S/D	Mat.	3rd		Gratis	1.10.44	14.10.44	13	Umbilical Hernia	operation Recovery		full-reread-2026-10-31	24044
+41301	28	50	4891	50	Years	F	Jew	Syrian.		Haifa Nazareth Rd. Hse	B	3rd		Gratis	6.10.44	11.10.44	5	Dysentery	Recovery		full-reread-2026-10-31	24128
+41302	28	51	4902	38	Years	M	Christian	Palestinian		Saint John St. Land Settlement Haifa	Med	2nd	@ 120 mils		7.10.44	13.10.44	6	Amoebic Colitis.	Recovery		full-reread-2026-10-31	24138
+41303	28	53	4923	40	Years	M	Muslem	Palestinian.		Balad Sheikh - Haifa s/d Own Hse	C	3rd		Gratis	9.10.44	19.10.44	10	Ulceration of Leg.	Recovery		full-reread-2026-10-31	24158
+41304	28	54	4935			M	Muslem	Palestinian.		- Do -	E.				9.10.44						full-reread-2026-10-31	24168
+41305	28	55	4945	40	Years	M	Muslem	Palestinian.	T.A.C. 6533.	Kiryat Haim Police Haifa s/d	A.	3rd	@ 050 mils		10.10.44	16.10.44	6	Pyrexia	Recovery		full-reread-2026-10-31	24178
+41306	28	56	4956	28	Years	M	Muslem	Palestinian	P.R. 4/6304	P.R. Haifa	Surg	3rd	P.R.		11.10.44	18.10.44	7	Old Fracture of Sacrum.	I.S.Q.		full-reread-2026-10-31	24188
+41307	28	62	5022	26	Years	F	Christian	Egyptian			Mat	1st	@ 500 mils.		14.10.44	25.10.44	11	Incarcerated Rt. Ing. Hernia	operation Recovery		full-reread-2026-10-31	24253
+41308	28	63	5033	30	Years	M	Muslem	Palestinian.		Haifa - French Cut	C	3rd		Gratis	15.10.44	23.10.44	8	Pyelitis	Recovery		full-reread-2026-10-31	24263
+41309	28	64	5044	80	Years	M	Moslem	Palestinian		Kafr Kood Jenin s/d	Surg	3rd		Gratis	16.10.44	22.10.44	6	Fracture of Lt. Humerus.	In Plaster		full-reread-2026-10-31	24273
+41310	28	66	5066	56	Years	F	Moslem	Palestinian		Tireh	Med	3rd		Gratis	18.10.44	25.10.44	7	Cancer of Rectum.	I.S.Q.		full-reread-2026-10-31	24294
+41311	28	68	5088	35	Years	M	Muslem	Lebanese.		Haifa - Nazareth Rd. Iraq St. 98 Hse:	E	3rd		Gratis	18.10.44	28.10.44	10	Encephalitis	Recovery		full-reread-2026-10-31	24315
+41312	28	69	5098	8	Years	F	Moslem	Palestinian		Haifa - Nazareth Street. Beit	Med.	3rd		Gratis	19.10.44	20.10.44	1	Wds. & Bruises of Body.	I.S.Q.		full-reread-2026-10-31	24325
+41313	28	70	5109	40	Years	F	Druze	Palestinian.		Jules - Acre s/d	Mat.	3rd		Gratis	20.10.44	9.11.44	20	Myocarditis - Fibrillation - Hemiplegia	same		full-reread-2026-10-31	24335
+41314	28	75	5163	19	Years	F	Christian	Palestinian		Haifa - Carmel Str. Hse	Mat.	2nd	@ 350 mils		24.10.44	29.10.44	5	Normal Childbirth	Recovery		full-reread-2026-10-31	24388
+41315	28	76	5174	35	Years	F	Muslem	Palestinian		Hallisa - Haifa - Own House	Med.	3rd		Gratis	24.10.44	16.12.44	53	Extensive 2nd Degree burns of Body.	Improved		full-reread-2026-10-31	24398
+41316	28	80	5218	14	Years	M	Muslem	Palestinian		Balad Sheikh - Haifa S/D. Own Hse	E.	3rd		Gratis	26.10.44	6.12.44	40	Plague - Bubonic. Clinical	Recovery		full-reread-2026-10-31	24440
+41317	28	83	5251	13	Years	M	Muslem	Palestinian		Haifa - French Qrs. Latin Prop	Surg.	3rd		Gratis	28.10.44	6.11.44	9	Infantile Paralysis Rt. Leg	operation		full-reread-2026-10-31	24472
+41318	28	84	5262	21	Years	M	Muslem	Palestinian	P.R. 6707 B/smith.	P.R. Haifa	C	3rd	P.R.		28.10.44	11.11.44	14	Typhoid Fever	Recovery		full-reread-2026-10-31	24482
+41319	28	85	5273	26	Years	M	Muslem	Palestinian	T.A.C. 724.	Khayat Beach Haifa	Surg.	3rd	@ 050		29.10.44	31.10.44	2	Fracture of Rt Ulna.	Plaster		full-reread-2026-10-31	24492
+41320	28	87	5295			M	Christian	British			B/S.	1st	@ 500 mils		30.10.44	10.11.44	11	Sciatica.	Improved		full-reread-2026-10-31	24513
+41321	28	95	3454	6	Years	F	Christ.	Palest.		Shefa Amr Haifa S/D	B	3rd		Gratis	24.6.46	25.6.46	1	Pyrexia	Refused treatment		full-reread-2026-10-31	24584
+41322	29	8	1155	25	Years	F	Muslem	Palestinian		Khalsa - Safad s/D	Mat.	3rd	@ (L.P.2.-)		16.3.44	31.3.44	15	Amoebiasis	Improved		full-reread-2026-10-31	24661
+41323	29	11	1188	60	Years	M	Muslem	Palestinian		Ara Haifa	Med.	3rd		Gratis	19.3.44	21.3.44	2	Congestive Heart failure	Died		full-reread-2026-10-31	24692
+41324	29	15	1231	45	Years	M	Muslem	Palestinian		Simaryeh Acre s/D	Surg.	3rd		Gratis	22.3.44	2.4.44	11	Hernia Lt.	operation Recovery		full-reread-2026-10-31	24724
+41325	29	16	1242	27	Years	F	Muslem	Palestinian		Haifa, JAFFA Road. house	Med	3rd		Gratis	22.3.44	1.4.44	10	Nervous Dyspepsia	Improved		full-reread-2026-10-31	24734
+41326	29	17	1253	18	Years	F	Muslem	Palestinian		Haifa Kanayes Qrt. Beit	B.	3rd		Gratis	23.3.44	5.4.44	13	Miliary T.B. of Lungs	I.S.Q.		full-reread-2026-10-31	24744
+41327	29	20	1286	55	Years	M	Muslem	Palestinian		Haifa Kanayes Qrt	Surg	3rd		Gratis	25.3.44	10.4.44	16	Fistula in Ano.	operation Recovery		full-reread-2026-10-31	24775
+41328	29	21	1297	33	Years	M	Moslem	Palestinian		Nablus Habali Quarter	Surg.	3rd		Gratis	26.3.44	7.4.44	12	Chronic Amoebiasis	Improved		full-reread-2026-10-31	24785
+41329	29	23	1319	25	Years	F	Christian	Palestinian		Kings Way Latin Property	Mat.	1st	@ 500 mils		27.3.44	2.4.44	6	Normal Childbirth	Recovery		full-reread-2026-10-31	24795
+41330	29	64	1756	27	Years	M	Jew	Palestinian	Driver	Haifa Customs St. comp. Tel. No. 2983	Med	2nd	@ 350 mils		23.4.44	22.5.44	29	Blastomycosis of Lungs	Much Improved		full-reread-2026-10-31	24848
+41331	29	67	1789	18	Years	M	Moslem	Palestinian		Wadi Rushmia	C	3rd		Gratis	25.4.44	29.4.44	4	Pyrexia	Cured		full-reread-2026-10-31	25251
+41332	29	68	1800	45	Years	M	Moslem	Palestinian	Prisoner	Central Prison Acre	P.W.	3rd		Gratis	25.4.44	21.5.44	27	Haemorrhoids	Operation Recovery		full-reread-2026-10-31	25261
+41333	29	71	1833	24	Years	M	Christian	British	B/P 1753	P. & P. Haifa	Br.	2nd		Gratis	28.4.44	8.5.44	10	Concussion Cerebri	Recovered		full-reread-2026-10-31	25293
+41334	29	77	1896	21	Years	M	Moslem	Lebanese		Abu Ja'oor Stairs House	C	3rd		Gratis	1.5.44	12.5.44	11	Malta Fever	Cured		full-reread-2026-10-31	25336
+41335	29	79	1918			M	Christian	British	B/P 322	Police Station Jenin	Br.	2nd		Gratis	2.5.44	22.6.44	51	Fractured Head of Tibia	Recovered		full-reread-2026-10-31	25377
+41336	29	80	1929	40	Years	F	Moslem	Palestinian		Kafr Ra'i Jenin S/D	Mat.	3rd		Gratis	3.5.44	3.6.44	31	Caesarian Section	Operation Recovery		full-reread-2026-10-31	25387
+41337	29	81	1940	10	Years	M	Moslem	Egyptian		Haifa Wady Salib Beit	C	3rd		Gratis	4.5.44	13.5.44	9	Typhus	Cured		full-reread-2026-10-31	25397
+41338	29	89	2026	20	Years	M	Moslem	Palestinian	Barber	Hassan Shukry Stairs Beit	Surg.	2nd	@ 350 mils		9.5.44	20.5.44	11	Rt. Ing. Hernia	Operation Recovery		full-reread-2026-10-31	25481
+41339	29	90	2037	25	Years	M	Moslem	Palestinian	T.A.C. A/6256	Western Police St. Haifa	C	3rd	@ 050 mils		10.5.44	20.5.44	10	Mumps	Cured		full-reread-2026-10-31	25491
+41340	29	91	2048	2	Years	F	Moslem	Palestinian		Souk Shwam	A				10.5.44	11.5.44					full-reread-2026-10-31	25501
+41341	29	93	2070	28	Years	M	Christian	British	B/P 961	P. & P. Acre	Br.	2nd		Gratis	11.5.44	5.6.44	25	Fractured Rt. Tibia	Improved		full-reread-2026-10-31	25522
+41342	29	95	2092	21	Years	F	Moslem	Palestinian		Wadi Saleeb House	Mat.	3rd		Gratis	13.5.44	19.5.44	6	Normal Childbirth	Recovery		full-reread-2026-10-31	25542
+41343	29	99	2114	10	Years	M	Jew	Palestinian		Jewish Agency Haifa	B.	3rd		Gratis	14.5.44	29.5.44	15	Measles	Cured		full-reread-2026-10-31	25562
+41344	29	102	2147	13	Years	F	Christian	Palestinian		Haifa	Med	3rd		Gratis	25.4.44	29.4.44	4	Fract. of Rt. Humerus + Rt. Forearm	In Plaster		full-reread-2026-10-31	25592
+41345	29	103	2157	15	Years	F	Christian	Palestinian		St. John Street	Med	2nd	@ 350 mils as from 18.5.44		17.5.44	30.5.44	13	Chronic Retro Caecal Appendix	Operation Recovery		full-reread-2026-10-31	25602
+41346	31	3	2359	40	Years	M	Musl.	Palest.		Dammoun Acre S/D	S/S.	3rd		Gratis	20.4.47	3.5.47	13	Laceration of Lt Kidney by G.S.W.	oper. Rec.		full-reread-2026-10-31	26793
+41347	31	6	2395	24	Years	F	Musl.	Palest.		Balad el Sheikh	Mt.	3rd		Gratis	22.4.47	28.4.47	6	Childbirth N.	Rec.		full-reread-2026-10-31	26827
+41348	31	8	2419	3	Years	M	Muslim	Palest.		Arab Nefe'at Hfa Dt	Surg.	3rd		Gratis	23.4.47	26.4.47	3	Omphalitis	Rec.		full-reread-2026-10-31	26850
+41349	31	9	2431	25	Years	M	Muslim	Palest.			Surg.	3rd		Gratis	23.4.47	3.5.47	10	Chr. Rheumatism of Body	Imp.		full-reread-2026-10-31	26861
+41350	31	10	2444	20	Years	M	Jew	Polish	Ill. Immgt.		Surg.	3rd		Gratis	23.4.47	29.4.47	6	Cerebral Concussion	Rec.		full-reread-2026-10-31	26873
+41351	31	13	2479	40	Years	M	Muslem	Palest.		Naz. Rd. Wady Hse. Haifa	Med.	3rd		Gratis	25.4.47	6.5.47	11	Cholecystitis	Imp.		full-reread-2026-10-31	26906
+41352	31	24	2612	3	Years	M	Muslem	Palest.		Tarshiha Acre S/D	B	3rd		Gratis	30.4.47	16.5.47	16	Chr. Bronchitis	Imp.		full-reread-2026-10-31	27031
+41353	31	27	2647	30	Years	M	Muslem	Egyptian.			Surg	3rd		Gratis	2.5.47	8.5.47	6	Comp. # of Tibia & Fibula Lt.	In plaster		full-reread-2026-10-31	27065
+41354	31	28	2659	35	Years	M	Muslem	Pelest.		Ijzim Hfa S/D	C	3rd		Gratis	3.5.47	10.5.47	7	Pneumonia	Rec.		full-reread-2026-10-31	27076
+41355	31	29	2671	50	Years	M	Muslem	T.J.			Surg	3rd		Gratis	3.5.47	17.5.47	14	Hernia Rt	Oper. Rec.		full-reread-2026-10-31	27087
+41356	31	30	2683	9	Years	F	Muslim	Pelest.		Tire - Haifa	B.	3rd		Gratis	3.5.47	31.5.47	28	Amoebiasis	Rec.		full-reread-2026-10-31	27098
+41357	31	31	2695	26	Years	F	Musl.	Palest.		Kanayess Qt. own house Haifa	D.	2nd	350 mils		4.5.47	11.5.47	7	Taenia	I.S.Q.		full-reread-2026-10-31	27109
+41358	31	32	2707	17	Years	F	Muslim	Pelest.			Med.	3rd		Gratis	4.5.47	31.5.47	27	Child Birth	Rec.		full-reread-2026-10-31	27120
+41359	31	39	2791	27	Years	F	Christ	Palest.		Vine St. No. 9 Haifa	Mat	1st	500 mils		7.5.47	15.5.47	8	Child Birth	Rec.		full-reread-2026-10-31	27197
+41360	31	41	2815	13	Years	M	Christ	Palest.		Naz. Hse	Surg	3rd		Gratis	7.5.47	14.5.47	7	S. Ac. Appendicitis	Oper. Rec.		full-reread-2026-10-31	27219
+41361	31	42	2827	42	Years	F	Muslem	Palest.		Nablus. Habalah Qr. own house	Med	3rd		Gratis	9.5.47	17.5.47	8	Infective Hepatitis Amoebiasis & Ascariasis	Rec.		full-reread-2026-10-31	27230
+41362	31	44	2851	55	Years	M	Muslem	Palest.		Saileh El Hartieh Jenin S/D	Surg	3rd		Gratis	10.5.47	21.5.47	11	Haemorrhoids	Oper. Rec.		full-reread-2026-10-31	27252
+41363	31	47	2887	12	Years	M	Moslem	Palest.		Hallisa Hfa	D R XII	3rd		Gratis	12.5.47	18.5.47	6	Chorea	Rec.		full-reread-2026-10-31	27287
+41364	31	48	2899	30	Years	M	Christ.	British	B/Sgt. 463		B/S	2nd		Gratis	12.5.47	26.5.47	14	Entero Colitis	Rec.		full-reread-2026-10-31	27298
+41365	31	50	2923	22	Years	M	Christ.	British	B/C 1781	Rural District Haifa	B/S	2nd		Gratis	13.5.47	23.5.47	10	Stiffness of Shoulder following Bomb Injury	Imp.		full-reread-2026-10-31	27320
+41366	31	51	2935	24	Years	F	Moslem	Palest.			Med.	3rd		Gratis	14.5.47	29.5.47	15	Chr. Colitis	Imp.		full-reread-2026-10-31	27331
+41367	31	53	2959	15	Years	M	Moslem	Palest.			C	3rd		Gratis	15.5.47	19.5.47	4	Relapsing Fever	Cured		full-reread-2026-10-31	27354
+41368	31	54	2971	50	Years	M	Jew	Palest.		Kiriat Haim 'K' St. 53	D	2nd	350 S		15.5.47	29.5.47	14	Typhus fever	Rec.		full-reread-2026-10-31	27365
+41369	31	56	2995	22	Years	M	Christ.	British C/S	Ex B/C W 70.	Central Prison Acre	B/S	2nd		Gratis	16.5.47	18.5.47	2	Acute Entero Colitis	Rec.		full-reread-2026-10-31	27388
+41370	31	57	3007	45	Years	F	Moslem	Palest.		Barzelai 3	Med.	3rd		Gratis	17.5.47	24.5.47	7	Menopause Symptoms	Imp.		full-reread-2026-10-31	27399
+41371	31	58	3019	21	Years	M	Moslem	Palest.		Sabastieh Nablus S/D	Surg.	3rd		Gratis	17.5.47						full-reread-2026-10-31	27410
+41372	31	59	3031	16	Years	M	Druze	Palest.	P+T 4571	W/Rushmiah Haifa	C	3rd	050 Mils		18.5.47	23.5.47	5	Clinical Malaria	Rec.		full-reread-2026-10-31	27421
+41373	31	60	3043	25	Years	M	Moslem	Leban.		Hellisse Haifa	A.	3rd		Gratis	19.5.47	23.5.47	4	Pulm. T.B. Haemoptysis	Imp.		full-reread-2026-10-31	27432
+41374	31	62	3067	25	Years	F	Moslem	Palest.			Mat	3rd		Gratis	19.5.47	21.5.47	2	False Labor	I.S.Q.		full-reread-2026-10-31	27454
+41375	31	64	3091	76	Years	M	Christ. O.	Palest.		Naz. Rd. Hse	Med.	3rd		Gratis	20.5.47	6.6.47	17	Carcinoma of the Oesophagus	Died		full-reread-2026-10-31	27477
+41376	31	65	3103	2	Years	M	Christ.	Palest.		Mar Elias Gate Hse	Surg.	3rd		Gratis	21.5.47	23.5.47	2	Cerebral Concussion	Imp.		full-reread-2026-10-31	27488
+41377	31	70	3163	23	Years	M	Muslim	Palestinian	F.P.C. 1298	Haifa	S/S.	3rd	500 mils		22.5.47	23.5.47	1	Intestinal Colic	Rec.		full-reread-2026-10-31	27544
+41378	31	71	3175	35	Years	F	Muslim	Palest.			Med. 4.	2nd	500 mils		24.5.47	11.6.47	18	Cholelithiasis oper.	Rec.		full-reread-2026-10-31	27555
+41379	31	74	3211	8	Years	F	Musl.	Palest.		Taba' Haifa S/D	B.	3rd		Gratis	25.5.47	1.6.47	7	Pneumococcal Meningitis	Rec.		full-reread-2026-10-31	27589
+41380	31	77	3247	10	Years	F	Muslim	Palest.		Majdel Kurum Acre S/D	B	3rd		Gratis	26.5.47	30.5.47	4	Marasmus	Cured		full-reread-2026-10-31	27624
+41381	31	78	3259	32	Years	M	Muslim	Palest.	P.R. 26621	Ghazazwi Qr. Haifa	Surg	3rd	P.R.		28.5.47	30.5.47	2	Bruising Lt. Leg	Imp.		full-reread-2026-10-31	27635
+41382	31	79	3271	37	Years	F	Christ.	Palest.		Allenby Rd. Hse	Mt.	3rd		Gratis	29.5.47	7.6.47	9	Amoebiasis	Imp.		full-reread-2026-10-31	27646
+41383	31	84	3331	15	Years	M	Muslim	Palest.		Ajja Jenin S/D	Med.	3rd		Gratis	31.5.47						full-reread-2026-10-31	27704
+41384	31	90	3393	3	Years	M	Muslim	Palest.		Hawwasah upper Hse. Haifa	Mt	3rd		Gratis	3.6.47	4.6.47	1	Gastro Intest. Disturbance	Imp.		full-reread-2026-10-31	27768
+41385	31	91	3406	24	Years	M	Mosl.	Palest.			D.	1st	750 mils		3.6.47	6.6.47	3	Tonsillitis	Rec.		full-reread-2026-10-31	27779
+41386	31	92	3418	25	Years	M	Muslim	Syrian		Kawkab El Sabah Caffee Haifa	C	3rd		Gratis	4.6.47	8.6.47	4	Relapsing Fever	Rec.		full-reread-2026-10-31	27790
+41387	31	97	3478	26	Years	M	Moslem	Pelest.		Tira - Haifa D	Surg.	3rd		Gratis	6.6.47	8.6.47	2	Stab Wds. of Back	Imp.		full-reread-2026-10-31	27847
+41388	31	98	3490	25	Years	M	Moslem	Pelest.			Med.	3rd		Gratis	7.6.47	7.6.47		Food Poisoning	Rel.		full-reread-2026-10-31	27858
+41389	31	99	3502	17	Years	M	Moslem	Pelest.		Stanton St	A.	3rd		Gratis	7.6.47	26.6.47	19	Pulm. T.B. Haemoptysis.			full-reread-2026-10-31	27869
+41390	32	39	6366	25	Years	M	Moslem	Palest.		Attil Tulkarm S/D	Surg.	3rd		Gratis	25.9.47	8.10.47	13	Chr. Appendix	Oper. Rec.		full-reread-2026-10-31	28335
+41391	32	39	6367	35	Years	F	Moslem	Palest.		Sindianeh Haifa S/D	Mat.	3rd		Gratis	25.9.47	4.10.47	9	Chr. Endometritis	Oper. Rec.		full-reread-2026-10-31	28335
+41392	32	39	6368	25	Years	F	Moslem	Pal.		Haj Abdalla square house	Medical	3rd		Gratis	25.9.47	1.10.47	6	Cellulitis of Cheek	Imp.		full-reread-2026-10-31	28335
+41393	32	39	6369	24	Years	M	mosl.	Pal.		Athlit P.W.D	Surgical	3rd	@ 125 nil		25.9.47	11.10.47	16	Fract. of base of Skull	Great Imp.		full-reread-2026-10-31	28335
+41394	32	39	6370	38	Years	M	Moslem	Syria			Surg.	3rd		Gratis	25.9.47	29.9.47	4	Septic Wounds of Head	Died		full-reread-2026-10-31	28335
+41395	32	39	6371	6	Years	M	Christ.	Palest.		Stella Maris Road Haifa	Surg.	3rd		Gratis	25.9.47	27.9.47	2	Bruise of Leg	Imp.		full-reread-2026-10-31	28335
+41396	32	39	6372			F	Christ.	Palest.		1 Mountain Road Haifa	Mat.	3rd		Gratis	25.9.47	30.9.47	5	Childbirth	Rec.		full-reread-2026-10-31	28335
+41397	32	39	6373	19	Years	F	Moslem	Palest.		12 Herzlia Street	Mat.	3rd		Gratis	25.9.47	28.9.47	3	False Labour	—		full-reread-2026-10-31	28335
+41398	32	39	6374	23	Years	F	Christ.	Palest.		Carmel Station House	Mat.	2nd	500 mils		25.9.47	6.10.47	11	Childbirth	Rec.		full-reread-2026-10-31	28335
+41399	32	39	6375	38	Years	F	Christ.	Palest.		7 Yubna Street	Mat.	2nd	@ 500 nil		25.9.47	4.10.47	9	Incarcerated Rt. Ing. Hernia	Oper. Rec.		full-reread-2026-10-31	28335
+41400	32	39	6376	39	Years	M	Christ.	British	B/Sgt. 1017	P. & P. Acre	P.M.F.	2nd		Gratis	25.9.47	5.10.47	10	Ingrowing toe Nail	Oper. Cured		full-reread-2026-10-31	28335
+41401	32	39	6377	20	Years	M	Christ.	British	B/P 184	P. & P. Jenin	P.M.F.	2nd		Gratis	25.9.47	20.10.47	25	Typhoid Fever	Cured		full-reread-2026-10-31	28335
+41402	1	33	430			M	Moslem.	Palestinian.	Labourer	of Iqzim Harbour Works Dept		3rd.	/		11.6.30	11.6.30		Injury to Abdomen.	Died.		full-reread-2026-10-31	1321
+41403	5	38	1042	10	Years	F	Moslem	Palestinian	NIL.	Saffuria	Is.	3rd.		Gratis	25.8.33	30.8.33	5	Observed for Typhoid - Negative	Recovered.		full-reread-2026-10-31	3452
+41404	28	46	4847	23	Years	M	Muslim	Palestinian.		Haifa - Wady Rushmya Own Prop	E.				4.10.44						full-reread-2026-10-31	23768
+41405	4	41	521	24	Years	M	Moslem	Palestinian	Fellah		Is.	3rd.		Gratis	6.6.33	20.6.33	14	Measles	Cured.		full-reread-2026-10-31	2961
+41406	10	84	2303	21	Years	M	Muslim	Palestinian		Souk el Abyad	Is.	3rd.		Gratis	26.11.34	16.12.34	20	Typhoid Fever	Recovered.		full-reread-2026-10-31	6501

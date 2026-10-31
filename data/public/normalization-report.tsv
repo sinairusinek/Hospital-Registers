@@ -1,18 +1,18 @@
 kind	column	from	to	records
-merged	standardized ward	Gynecology	General	1862
-merged	standardized Religion	Moslem	Muslim	1194
-merged	Class standard	3rd	3	1194
-merged	Class standard	2nd	2	504
+merged	standardized ward	Gynecology	General	1810
+merged	standardized Religion	Moslem	Muslim	1192
+merged	Class standard	3rd	3	1183
+merged	Sex	M	Male	411
+merged	Class standard	2nd	2	405
 merged	City	Hedera	Hadera	204
-merged	Sex	M	Male	186
-merged	standardized ward	Infectious Diseases	Isolation	149
-merged	standardized ward	Infectious	Isolation	111
-cleared	standardized ward	Venereal Diseases		90
+merged	Sex	F	Female	181
+merged	standardized ward	Infectious Diseases	Isolation	148
+merged	standardized ward	Infectious	Isolation	103
+cleared	standardized ward	Venereal Diseases		89
 merged	City	Nazareth (the address is Haifa's Nazareth-named street)	Haifa	85
 merged	City	Atlit	Athlit	83
 merged	City	Shefa Amr	Shafa Amr	81
 merged	City	Tulkarm	Tulkarem	77
-merged	Sex	F	Female	72
 merged	StandardNationality	Poland	Polish	57
 merged	standardized ward	Isolation|Infectious Section	Isolation	52
 merged	standardized ward	Infectious Diseases Section	Isolation	51
@@ -54,13 +54,12 @@ merged	City	Yagur	Yajour	10
 merged	City	Yerka	Yarka	10
 merged	City	Ar'ara	Arara	10
 merged	City	Shefa'amr	Shafa Amr	10
+merged	StandardNationality	Syria	Syrian	10
 merged	StandardNationality	Palst.	Palestinian	10
-merged	standardized Religion	Muh.	Muslim	10
 merged	City	Isfia	Isfiya	9
 merged	City	Safed	Safad	9
 merged	City	Zikhron Ya'akov	Zichron Yaakov	9
 merged	City	Tul Karm	Tulkarem	9
-merged	StandardNationality	Syria	Syrian	9
 merged	City	Shafa'amr	Shafa Amr	8
 merged	Sex	male	Male	8
 merged	City	Jaba'a	Jaba'	7
@@ -85,6 +84,7 @@ merged	City	Shefa'amer	Shafa Amr	5
 merged	City	Arrara	Arara	5
 merged	City	Nazareth?	Nazareth	5
 merged	City	Balad el-Sheikh	Balad al-Sheikh	5
+merged	Class standard	3rd class	3	5
 merged	standardized ward	Medical/British Section	Medical | British Section	5
 merged	StandardNationality	Pales.	Palestinian	5
 merged	City	Wadi Salub	Wadi Salib	5
@@ -101,9 +101,9 @@ merged	City	Shefa'mer	Shafa Amr	4
 merged	City	Afikim	Affikim	4
 merged	City	Transj.	Transj	4
 merged	City	Erbed	Irbed	4
+merged	StandardNationality	T.J.	Transjordanian	4
 merged	StandardNationality	Palent.	Palestinian	4
 merged	City	Wadi Saleeb	Wadi Salib	4
-merged	Class standard	3rd class	3	4
 merged	City	El Zib	Zib	3
 merged	City	Wadi es Salib	Wadi Salib	3
 merged	standardized ward	Medical|Infectious	Medical | Isolation	3
@@ -120,8 +120,6 @@ merged	City	Al-Zeeb	Zeeb	3
 merged	City	Kefar Vitkin	Kfar Vitkin	3
 merged	City	Shifa Amr	Shafa Amr	3
 merged	City	Iggzim	Igzim	3
-merged	StandardNationality	T.J.	Transjordanian	3
-merged	StandardNationality	Palestinian-Syrian	Palestinian Syrian	3
 merged	StandardNationality	Pale.	Palestinian	3
 merged	StandardNationality	"Palest. ""R"""	Palestinian	3
 merged	City	El Zeeb	Zeeb	2
@@ -163,19 +161,17 @@ merged	City	Kufer Yasif	Kafr Yasif	2
 merged	City	Bissan	Beisan	2
 merged	City	Sid el Arab.	Sid el Arab	2
 merged	City	Kufer Yassif	Kafr Yasif	2
-merged	standardized ward	Surgical/British Section	Surgical | British Section	2
 merged	City	Jabaa	Jaba'	2
 merged	standardized ward	Mat	Maternity	2
 merged	City	Igzem	Igzim	2
 merged	City	Jeni	Jenin	2
 merged	City	Meghar	Mughar	2
 merged	standardized ward	Maternity/British Section	Maternity | British Section	2
-merged	StandardNationality	Palestinian T.J.	Palestinian Transjordanian	2
 merged	City	Baisan	Beisan	2
 merged	City	Shefa Amr Haifa F.	Shefa Amr Haifa F	2
 merged	City	Jenin F.	Jenin F	2
 merged	City	Irbed S/D.	Irbed S/D	2
-merged	StandardNationality	Palest. Transj.	Palestinian Transjordanian	2
+merged	StandardNationality	Leban.	Lebanese	2
 merged	StandardNationality	Lebanon	Lebanese	2
 merged	StandardNationality	Czech	Czechoslovakian	2
 merged	StandardNationality	Transjordan	Transjordanian	2
@@ -260,7 +256,6 @@ merged	City	Arabeh	Arrabeh	1
 merged	City	A'ara	Arara	1
 merged	City	Drachla Tabor St.	Drachla Tabor St	1
 merged	StandardNationality	Greece	Greek	1
-merged	StandardNationality	Palestinian | Transjordanian	Palestinian Transjordanian	1
 merged	City	Acre|Dare ll Kasy Acre/Dist.	Acre|Dare ll Kasy Acre/Dist	1
 merged	City	Afula|Affuleh Carea st.	Afula|Affuleh Carea st	1
 merged	City	Um al-Fahm?	Um al-Fahm	1
@@ -399,6 +394,7 @@ merged	City	Sefad	Safad	1
 merged	City	Jenin G.	Jenin G	1
 merged	City	Acre D.C.	Acre D.C	1
 merged	City	P.T.	P.T	1
+merged	standardized ward	Surgical/British Section	Surgical | British Section	1
 merged	City	DaiJa Kingsway Khan Abu Deeb Jussy.	DaiJa Kingsway Khan Abu Deeb Jussy	1
 merged	City	Balad El Shaikh	Balad al-Sheikh	1
 cleared	Sex	B		1
@@ -430,7 +426,6 @@ merged	City	Tul Kerim	Tulkarem	1
 merged	City	Banks St.	Banks St	1
 merged	City	Haifa Dist.	Haifa Dist	1
 merged	City	Kiryat Hayem	Kiryat Haim	1
-merged	standardized ward	A/S.	A | S.	1
 merged	City	Deir Delah Art.	Deir Delah Art	1
 merged	City	Hart El B.D.	Hart El B.D	1
 merged	City	bourg.|Hart El B.D.	bourg.|Hart El B.D	1
@@ -447,6 +442,7 @@ merged	City	Shafe Amr	Shafa Amr	1
 merged	City	Atlith	Athlit	1
 merged	City	Arab Caesaria.	Arab Caesaria	1
 merged	City	Abbassie St. M. of S.|Abbassie St.	Abbassie St. M. of S.|Abbassie St	1
+merged	StandardNationality	Palestinian T.J.	Palestinian Transjordanian	1
 merged	City	Jenin D.	Jenin D	1
 merged	City	Tulkarem S/D.	Tulkarem S/D	1
 merged	City	Jerusalm	Jerusalem	1
@@ -469,7 +465,6 @@ merged	Class standard	2nd class	2	1
 merged	City	El-Maghar Village	Maghar Village	1
 merged	City	El Maghar Village	Maghar Village	1
 merged	City	Samekh	Samakh	1
-merged	StandardNationality	Leban.	Lebanese	1
 merged	Class standard	II	2	1
 merged	StandardNationality	T.J. Muslem	Transjordanian	1
 merged	City	Church Str.	Church Str	1
@@ -489,22 +484,18 @@ merged	StandardNationality	Palest. P	Palestinian	1
 merged	City	Upper Hawassa	Hawassa	1
 merged	StandardNationality	British 2234	British	1
 merged	StandardNationality	British 3332	British	1
-cleared	Sex	C		1
 merged	StandardNationality	Libanian	Lebanese	1
 merged	City	Toul-Karem	Tulkarem	1
 merged	StandardNationality	"Pal. ""R"""	Palestinian	1
-merged	standardized Religion	Byzage	Druze	1
 merged	StandardNationality	Pal (L)	Palestinian	1
 merged	City	Sakhnien	Sakhnin	1
 merged	City	Jaffa Road (the address is Haifa's Jaffa Road-named street)	Haifa	1
-merged	StandardNationality	Palest. Egyptian	Palestinian Egyptian	1
 merged	StandardNationality	Palest. C.R.L.	Palestinian	1
 merged	StandardNationality	Palest. R.C.	Palestinian	1
 merged	City	Isifia - Haifa	Isfiya	1
 merged	City	Wadi Nisnass	Wadi Nisnas	1
 merged	City	C.P. St.	C.P. St	1
 merged	City	Carmel station	Carmel Station	1
-merged	standardized ward	Childrens	Children's	1
 merged	City	Haifa P.O.	Haifa P.O	1
 merged	Class standard	1st class	1	1
 merged	Class standard	3rd Class	3	1
@@ -518,10 +509,10 @@ moved	Occupation	Gen	Ward: General	1
 moved	Occupation	Gen.	cleared; the ward column already carries General	5
 moved	Occupation	General	cleared; the ward column already carries General	1
 moved	Occupation	General Ward	cleared; the ward column already carries General	1
-moved	Occupation	Gynaecology	Ward: General	1
+moved	Occupation	Gynaecology	cleared; the ward column already carries Isolation	1
 moved	Address	Gynecology	cleared; the ward column already carries General	1
 moved	Occupation	Gynecology	cleared; the ward column already carries General	26
-moved	Occupation	Gynecology	Ward: General	1
+moved	Occupation	Gynecology	cleared; the ward column already carries Isolation	1
 moved	Occupation	Isolation	cleared; the ward column already carries Isolation	1
 moved	Occupation	Mat	cleared; the ward column already carries Maternity	1
 moved	Occupation	Maternity	cleared; the ward column already carries Maternity	4
@@ -536,47 +527,46 @@ moved	Occupation	Surgical	Ward: Surgical	1
 recovered	Ward	Br	Ward: British Section, read from the clerk's written ward	6
 recovered	Ward	Br.	Ward: British Section, read from the clerk's written ward	11
 recovered	Ward	British Section	Ward: British Section, read from the clerk's written ward	25
-recovered	Ward	Children's Ward	Ward: Children's, read from the clerk's written ward	18
-recovered	Ward	Gen	Ward: General, read from the clerk's written ward	60
-recovered	Ward	Gen.	Ward: General, read from the clerk's written ward	69
-recovered	Ward	General	Ward: General, read from the clerk's written ward	243
-recovered	Ward	General Ward	Ward: General, read from the clerk's written ward	26
+recovered	Ward	Children's Ward	Ward: Children's, read from the clerk's written ward	2
+recovered	Ward	Gen	Ward: General, read from the clerk's written ward	61
+recovered	Ward	Gen.	Ward: General, read from the clerk's written ward	104
+recovered	Ward	General	Ward: General, read from the clerk's written ward	208
+recovered	Ward	General Ward	Ward: General, read from the clerk's written ward	18
 recovered	Ward	I.D.	Ward: Isolation, read from the clerk's written ward	14
 recovered	Ward	I.D.S.	Ward: Isolation, read from the clerk's written ward	6
 recovered	Ward	I.S.	Ward: Isolation, read from the clerk's written ward	28
 recovered	Ward	I.s.	Ward: Isolation, read from the clerk's written ward	1
-recovered	Ward	Infectious Diseases	Ward: Isolation, read from the clerk's written ward	108
+recovered	Ward	Infectious Diseases	Ward: Isolation, read from the clerk's written ward	105
 recovered	Ward	Infectious Diseases Section	Ward: Isolation, read from the clerk's written ward	15
-recovered	Ward	Infectious Diseases Ward	Ward: Isolation, read from the clerk's written ward	11
+recovered	Ward	Infectious Diseases Ward	Ward: Isolation, read from the clerk's written ward	10
 recovered	Ward	Infectious Section	Ward: Isolation, read from the clerk's written ward	14
-recovered	Ward	Is.	Ward: Isolation, read from the clerk's written ward	523
+recovered	Ward	Is.	Ward: Isolation, read from the clerk's written ward	584
 recovered	Ward	Isol	Ward: Isolation, read from the clerk's written ward	372
-recovered	Ward	Isol.	Ward: Isolation, read from the clerk's written ward	47
-recovered	Ward	Isolation	Ward: Isolation, read from the clerk's written ward	1958
-recovered	Ward	Isolation / British Section	Ward: Isolation | British Section, read from the clerk's written ward	1
+recovered	Ward	Isol.	Ward: Isolation, read from the clerk's written ward	49
+recovered	Ward	Isolation	Ward: Isolation, read from the clerk's written ward	1950
 recovered	Ward	Isolation Section	Ward: Isolation, read from the clerk's written ward	17
-recovered	Ward	Isolation Ward	Ward: Isolation, read from the clerk's written ward	73
+recovered	Ward	Isolation Ward	Ward: Isolation, read from the clerk's written ward	71
 recovered	Ward	Isolation/Infectious Diseases	Ward: Isolation, read from the clerk's written ward	5
 recovered	Ward	MAT.	Ward: Maternity, read from the clerk's written ward	1
 recovered	Ward	MED.	Ward: Medical, read from the clerk's written ward	1
-recovered	Ward	Mat	Ward: Maternity, read from the clerk's written ward	13
-recovered	Ward	Mat.	Ward: Maternity, read from the clerk's written ward	38
-recovered	Ward	Maternity	Ward: Maternity, read from the clerk's written ward	486
-recovered	Ward	Maternity Ward	Ward: Maternity, read from the clerk's written ward	4
-recovered	Ward	Med	Ward: Medical, read from the clerk's written ward	177
-recovered	Ward	Med.	Ward: Medical, read from the clerk's written ward	107
-recovered	Ward	Medical	Ward: Medical, read from the clerk's written ward	28
-recovered	Ward	Medical Ward	Ward: Medical, read from the clerk's written ward	11
-recovered	Ward	Medical/Surgical	Ward: Medical | Surgical, read from the clerk's written ward	2
-recovered	Ward	Surg	Ward: Surgical, read from the clerk's written ward	715
+recovered	Ward	Mat	Ward: Maternity, read from the clerk's written ward	11
+recovered	Ward	Mat.	Ward: Maternity, read from the clerk's written ward	36
+recovered	Ward	Maternity	Ward: Maternity, read from the clerk's written ward	443
+recovered	Ward	Maternity Ward	Ward: Maternity, read from the clerk's written ward	3
+recovered	Ward	Med	Ward: Medical, read from the clerk's written ward	181
+recovered	Ward	Med.	Ward: Medical, read from the clerk's written ward	157
+recovered	Ward	Medical	Ward: Medical, read from the clerk's written ward	19
+recovered	Ward	Medical Ward	Ward: Medical, read from the clerk's written ward	10
+recovered	Ward	Medical/Surgical	Ward: Medical | Surgical, read from the clerk's written ward	1
+recovered	Ward	Surg	Ward: Surgical, read from the clerk's written ward	711
 recovered	Ward	Surg | Gen | Surgical | General	Ward: Surgical | General, read from the clerk's written ward	1
 recovered	Ward	Surg.	Ward: Surgical, read from the clerk's written ward	261
 recovered	Ward	Surg. | Surgical Ward	Ward: Surgical, read from the clerk's written ward	1
-recovered	Ward	Surgical	Ward: Surgical, read from the clerk's written ward	208
-recovered	Ward	Surgical Section	Ward: Surgical, read from the clerk's written ward	38
+recovered	Ward	Surgical	Ward: Surgical, read from the clerk's written ward	164
+recovered	Ward	Surgical Section	Ward: Surgical, read from the clerk's written ward	26
 recovered	Ward	Surgical Ward	Ward: Surgical, read from the clerk's written ward	19
 recovered	Ward	Surgical/General	Ward: Surgical | General, read from the clerk's written ward	1
-recovered	Ward	maternity	Ward: Maternity, read from the clerk's written ward	2
+recovered	Ward	maternity	Ward: Maternity, read from the clerk's written ward	1
 recovered	Ward	med	Ward: Medical, read from the clerk's written ward	2
 recovered	Ward	surg.	Ward: Surgical, read from the clerk's written ward	1
 corrected	Ward as written	-|Gynecology	- | General — the register writes Gen., not Gyn.	85
@@ -587,15 +577,13 @@ corrected	Ward as written	Assira|Gynecology	Assira | General — the register wr
 corrected	Ward as written	Gen.|Gynecology	Gen. | General — the register writes Gen., not Gyn.	1
 corrected	Ward as written	Gen|Gynecology	Gen | General — the register writes Gen., not Gyn.	4
 corrected	Ward as written	Gey|Gynecology	Gey | General — the register writes Gen., not Gyn.	1
-corrected	Ward as written	Gyn	General — the register writes Gen., not Gyn.	33
-corrected	Ward as written	Gyn.	General — the register writes Gen., not Gyn.	10
+corrected	Ward as written	Gyn	General — the register writes Gen., not Gyn.	28
+corrected	Ward as written	Gyn.	General — the register writes Gen., not Gyn.	6
 corrected	Ward as written	Gyn.|Gynecology	General — the register writes Gen., not Gyn.	3
 corrected	Ward as written	Gyn/Surg? | General Surgery/Medical	General | Surg? | General Surgery | Medical — the register writes Gen., not Gyn.	1
-corrected	Ward as written	Gynaecology	General — the register writes Gen., not Gyn.	44
+corrected	Ward as written	Gynaecology	General — the register writes Gen., not Gyn.	43
 corrected	Ward as written	Gynae|Gynecology	General — the register writes Gen., not Gyn.	1
-corrected	Ward as written	Gynecological	General — the register writes Gen., not Gyn.	1
-corrected	Ward as written	Gynecology	General — the register writes Gen., not Gyn.	2224
-corrected	Ward as written	Gynecology VII	General VII — the register writes Gen., not Gyn.	1
+corrected	Ward as written	Gynecology	General — the register writes Gen., not Gyn.	2165
 corrected	Ward as written	Gynecology Ward	General Ward — the register writes Gen., not Gyn.	5
 corrected	Ward as written	Gynecology, British Section	General, British Section — the register writes Gen., not Gyn.	1
 corrected	Ward as written	Gyn|Gynecology	General — the register writes Gen., not Gyn.	14
@@ -609,205 +597,199 @@ corrected	Ward as written	Nablus|Gynecology	Nablus | General — the register wr
 corrected	Ward as written	R.A.S.C.|Gynecology	R.A.S.C. | General — the register writes Gen., not Gyn.	1
 corrected	Ward as written	Surg / Gen | Surgical / Gynaecology	Surg | Gen | Surgical | General — the register writes Gen., not Gyn.	1
 corrected	Ward as written	Wadi Nisnas|Gynecology	Wadi Nisnas | General — the register writes Gen., not Gyn.	1
-derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	645
+derived	Procedure	operation named in the diagnosis column	Procedure and diagnosis	646
 derived	Procedure	operation named in the diagnosis column	Procedure only	49
 review	Review Flags	procedure-not-diagnosis	An operation recorded where a diagnosis belongs	47
-review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	41
+review	Review Flags	impossible-stay	Discharged before admitted; the stay has been cleared	29
 review	Review Flags	stay-over-by-a-year	Discharge year corrected: the stay ran a year over the clerk's own count	1
-review	Review Flags	sex-cleared	A single stray letter where a sex belongs	3
-review	Review Flags	sex-contradicts-diagnosis	Sex reads Male on a record whose diagnosis is a birth	27
-review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	697
-review	Review Flags	date-year-off-catalogue	Year corrected: the admission fell outside the year the library gave the notebook	268
-review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	25
-review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	10
-review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	5
-review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	903
-review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1309
+review	Review Flags	sex-cleared	A single stray letter where a sex belongs	2
+review	Review Flags	sex-contradicts-diagnosis	Sex reads Male on a record whose diagnosis is a birth	26
+review	Review Flags	date-out-of-span	A date outside 1930-48 with nothing on the record to repair it from	2
+review	Review Flags	date-year-out-of-sequence	Year corrected: the admission ran backwards against the register's order	20
+review	Review Flags	date-year-off-catalogue	Year corrected: the admission fell outside the year the library gave the notebook	3
+review	Review Flags	date-month-out-of-sequence	Month corrected: the admission ran backwards against the register's order	19
+review	Review Flags	date-day-out-of-sequence	Day corrected: one digit from what was read, and back in the register's order	7
+review	Review Flags	date-year-repaired	A year outside 1930-48, taken from the other date on the record	1
+review	Review Flags	date-unreadable	A date the clerk's own writing could not be parsed from	790
+review	Review Flags	stay-disagrees	Computed stay differs from the count written beside it	1109
 review	Review Flags	serial-repaired	Record number repaired: a digit slip against the register's own run	21
-review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	55
-review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	11
-review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	1707
-review	Review Flags	typhus-recoded-from-register	Typhus code set from the register's own wording, not the classifier's guess at the insect	485
-review	Review Flags	result-in-diagnosis	A Result value standing in a diagnosis or code field	37
-review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	4
+review	Review Flags	serial-out-of-sequence	Record number breaks the register's run and no safe repair exists	57
+review	Review Flags	icd9-low-confidence	A second-pass code the classifier itself called speculative	9
+review	Review Flags	icd9-second-pass	Coded by the second classification pass, not the first	3574
+review	Review Flags	typhus-recoded-from-register	Typhus code set from the register's own wording, not the classifier's guess at the insect	494
+review	Review Flags	malaria-recoded-from-register	Malaria code set from the species the clerk wrote (B.T. vivax, M.T. falciparum), or unspecified	732
+review	Review Flags	observation-not-diagnosis	The entry records observation for a condition, or its absence; coded V71.89/V71.9, not the disease	293
+review	Review Flags	classifier-debris	Classifier error text where a diagnosis belongs	3
 review	Review Flags	procedure-only	An operation named with no diagnosis behind it	49
-review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	875
-review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	275
-review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1110
-review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	6524
-review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	2538
+review	Review Flags	no-icd9-chapter	No ICD-9 code the classification could place	795
+review	Review Flags	nationality-from-discarded	Nationality was blank; recovered from a value the extraction set aside	266
+review	Review Flags	nationality-read-from-scan	Nationality was blank; read off the page image	1102
+review	Review Flags	ward-read-from-scan	Ward re-read off the page image (the extraction had British Section)	5747
+review	Review Flags	ward-pavilion-isolation	Lettered pavilion after the Oct 1938 move, ruled part of the Isolation section	2732
 review	Review Flags	serial-shift-relabelled	Record number was the dropped row above's; relabelled to the number the extraction set aside	195
-review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	226
-review	Review Flags	row-completed-from-scan	A record the extraction left nearly empty; its blank cells read off the page image	45
-review	Review Flags	not-an-admission	Registered but not admitted: cancelled, a second entry, refused, or no bed; left out of counts	90
-review	Review Flags	half-page-scanned	Only one half of this spread is in the library's scan; the other half's fields cannot be checked	84
+review	Review Flags	row-read-from-scan	A ledger row the extraction dropped, read off the page image	563
+review	Review Flags	row-completed-from-scan	A record the extraction left nearly empty; its blank cells read off the page image	47
+review	Review Flags	not-an-admission	Registered but not admitted: cancelled, a second entry, refused, or no bed; left out of counts	92
+review	Review Flags	half-page-scanned	Only one half of this spread is in the library's scan; the other half's fields cannot be checked	85
 review	Review Flags	right-block-shifted	Ward-to-result had slid one row up against the left block; moved back from the scan	28
-review	Review Flags	religion-from-written	Religion was blank in the cleaned column; read from the spelling the clerk wrote	435
-review	Review Flags	religion-read-from-scan	Religion blank or misread (NB31); read off the page image	397
-review	Review Flags	diagnosis-read-from-scan	Diagnosis was blank; read off the page image	2735
+review	Review Flags	religion-from-written	Religion was blank in the cleaned column; read from the spelling the clerk wrote	433
+review	Review Flags	religion-read-from-scan	Religion blank or misread (NB31); read off the page image	394
+review	Review Flags	diagnosis-read-from-scan	Diagnosis was blank; read off the page image	2726
 review	Review Flags	diagnosis-not-on-page	The page's diagnosis cell is blank; the diagnosis the extraction supplied is cleared	53
-review	Review Flags	diagnosis-corrected-from-scan	Written diagnosis replaced by the page's (misread, or a neighbouring row's)	1046
-withheld	Next of Kin			30034
-withheld	discarded_values			30034
-withheld	splitDiscValues			30034
+review	Review Flags	diagnosis-corrected-from-scan	Written diagnosis replaced by the page's (misread, or a neighbouring row's)	2712
+review	Review Flags	serial-reread	Serial corrected or filled by the full re-read of the scans (field-readings.tsv)	544
+review	Review Flags	age-reread	Age corrected or filled by the full re-read of the scans (field-readings.tsv)	1238
+review	Review Flags	sex-reread	Sex corrected or filled by the full re-read of the scans (field-readings.tsv)	316
+review	Review Flags	religion-reread	Religion corrected or filled by the full re-read of the scans (field-readings.tsv)	155
+review	Review Flags	nationality-reread	Nationality corrected or filled by the full re-read of the scans (field-readings.tsv)	174
+review	Review Flags	ward-reread	Ward corrected or filled by the full re-read of the scans (field-readings.tsv)	1518
+review	Review Flags	class-reread	Class corrected or filled by the full re-read of the scans (field-readings.tsv)	1210
+review	Review Flags	rate-reread	Rate corrected or filled by the full re-read of the scans (field-readings.tsv)	3142
+review	Review Flags	admission-reread	Admission corrected or filled by the full re-read of the scans (field-readings.tsv)	947
+review	Review Flags	discharge-reread	Discharge corrected or filled by the full re-read of the scans (field-readings.tsv)	973
+review	Review Flags	days-reread	Days corrected or filled by the full re-read of the scans (field-readings.tsv)	1296
+review	Review Flags	diagnosis-reread	Diagnosis corrected or filled by the full re-read of the scans (field-readings.tsv)	1163
+review	Review Flags	result-reread	Result corrected or filled by the full re-read of the scans (field-readings.tsv)	2017
+review	Review Flags	reread-held	The full re-read disagreed with a cell and a second reading could not settle it; the extraction's value stands	911
+review	Review Flags	age-not-verifiable	The age is under the library's redaction band and no other image exists; the extraction's value stands	21
+withheld	Next of Kin			30371
+withheld	discarded_values			30371
+withheld	splitDiscValues			30371
 withheld	Address	value repeated the next of kin		235
 withheld	City	value repeated the next of kin		3
 withheld	Occupation	value repeated the next of kin		36
-withheld	Original Diagnosis	value repeated the next of kin		1
 withheld	Original Result	value repeated the next of kin		1
 withheld	Payment Status	value repeated the next of kin		1
 withheld	Standardized Diagnosis	value repeated the next of kin		1
-withheld	Ward	value repeated the next of kin		2
+withheld	Ward	value repeated the next of kin		3
 withheld	splitDiscValues	value repeated the next of kin		4
-withheld	Address	value is a name known from the kin column		249
+withheld	Address	value is a name known from the kin column		256
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23035
-derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	171
-derived	Page_Number	blank, read off the page images (page-readings.tsv)		5275
-derived	Original Diagnosis	blank, read off the page image (ward-diagnosis-readings.tsv)	flagged diagnosis-read-from-scan	2735
-derived	Original Diagnosis	contradicted by the page image, class misread (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	966
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23168
+derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	478
+derived	Page_Number	blank, read off the page images (page-readings.tsv)		5410
+derived	Original Diagnosis	blank, read off the page image (ward-diagnosis-readings.tsv)	flagged diagnosis-read-from-scan	2726
+derived	Original Diagnosis	contradicted by the page image, class reread (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	1163
+derived	Original Diagnosis	contradicted by the page image, class misread (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	988
+derived	Original Diagnosis	contradicted by the page image, class wording (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	476
 derived	Original Diagnosis	contradicted by the page image, class lr-swap (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	59
 derived	Original Diagnosis	contradicted by the page image, class debris (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	38
-derived	Original Diagnosis	contradicted by the page image, class shifted (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	20
+derived	Original Diagnosis	contradicted by the page image, class shifted (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	17
 derived	Original Diagnosis	contradicted by the page image, class invented (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	10
+derived	Original Diagnosis	contradicted by the page image, class blank-filled (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	9
 derived	Original Diagnosis	contradicted by the page image, class ward-or-header-in-diagnosis (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	4
-derived	Original Diagnosis	contradicted by the page image, class blank-filled (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	1
 derived	Original Diagnosis	contradicted by the page image, class result-in-diagnosis (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	1
-derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Muslim	243
+derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Muslim	241
 derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Christian	78
-derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Jewish	42
+derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Jewish	41
 derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Druze	24
 derived	Religion	blank or misread, read off the page image (religion-readings.tsv)	Bahai	10
-derived	Religion	blank cleaned value, read from the written spelling	Druze	396
-derived	Religion	blank cleaned value, read from the written spelling	Christian	29
-derived	Religion	blank cleaned value, read from the written spelling	Muslim	11
-derived	Religion	blank cleaned value, read from the written spelling	Jewish	2
+derived	Religion	blank cleaned value, read from the written spelling	Druze	399
+derived	Religion	blank cleaned value, read from the written spelling	Christian	30
+derived	Religion	blank cleaned value, read from the written spelling	Muslim	4
+derived	Religion	blank cleaned value, read from the written spelling	Jewish	3
 derived	(row)	dropped by the extraction, read off the page image (dropped-rows-read.tsv)	flagged row-read-from-scan	157
-derived	(row)	never created by the extraction, read off the page image (missing-rows-read.tsv)	flagged row-read-from-scan	69
-derived	(row)	left nearly empty by the extraction, blank cells read off the page image (row-completions.tsv)	flagged row-completed-from-scan	45
+derived	(row)	never created by the extraction, read off the page image (missing-rows-read.tsv)	flagged row-read-from-scan	406
+derived	(row)	left nearly empty by the extraction, blank cells read off the page image (row-completions.tsv)	flagged row-completed-from-scan	47
 derived	(row)	not a ledger row: header debris, template, placeholder or a page scanned twice (phantom-rows.tsv)	dropped	47
 derived	Notebook Record ID	dropped row above: number relabelled to the one set aside	flagged serial-shift-relabelled	195
 derived	Ward	British Section re-read off the page as 'Br.'	British Section	712
-derived	Ward	British Section re-read off the page as 'C'	(as written)	694
-derived	Ward	British Section re-read off the page as 'Is.'	Isolation	672
+derived	Ward	British Section re-read off the page as 'C'	(as written)	682
+derived	Ward	British Section re-read off the page as 'Is.'	Isolation	671
 derived	Ward	British Section re-read off the page as 'B/S'	British Section	559
 derived	Ward	British Section re-read off the page as 'B/S.'	British Section	339
-derived	Ward	British Section re-read off the page as 'Hut'	(as written)	335
-derived	Ward	British Section re-read off the page as 'B.'	(as written)	313
-derived	Ward	British Section re-read off the page as 'B.'	(pavilion letter)	254
-derived	Ward	British Section re-read off the page as 'B'	(as written)	251
+derived	Ward	British Section re-read off the page as 'B.'	(as written)	306
+derived	Ward	British Section re-read off the page as 'B.'	(pavilion letter)	253
+derived	Ward	British Section re-read off the page as 'B'	(as written)	246
 derived	Ward	British Section re-read off the page as 'Br'	British Section	212
-derived	Ward	British Section re-read off the page as 'C.'	(as written)	184
-derived	Ward	British Section re-read off the page as 'D'	(as written)	160
-derived	Ward	British Section re-read off the page as 'B'	(pavilion letter)	139
-derived	Ward	British Section re-read off the page as 'P.M.F.'	(as written)	132
-derived	Ward	British Section re-read off the page as 'Med.'	Medical	120
-derived	Ward	British Section re-read off the page as 'B/s.'	British Section	119
+derived	Ward	British Section re-read off the page as 'C.'	(as written)	179
+derived	Ward	British Section re-read off the page as 'D'	(as written)	158
+derived	Ward	British Section re-read off the page as 'B'	(pavilion letter)	138
+derived	Ward	British Section re-read off the page as 'Med.'	Medical	119
+derived	Ward	British Section re-read off the page as 'B/s.'	British Section	115
 derived	Ward	British Section re-read off the page as 'Isol C'	Isolation	89
-derived	Ward	British Section re-read off the page as 'A'	(as written)	77
-derived	Ward	British Section re-read off the page as 'D.'	(as written)	74
+derived	Ward	British Section re-read off the page as 'A'	(as written)	76
+derived	Ward	British Section re-read off the page as 'D.'	(as written)	70
 derived	Ward	British Section re-read off the page as 'A.'	(as written)	70
-derived	Ward	British Section re-read off the page as 'E.'	(as written)	65
+derived	Ward	British Section re-read off the page as 'E.'	(as written)	63
 derived	Ward	British Section re-read off the page as 'Surg'	Surgical	55
-derived	Ward	British Section re-read off the page as 'PMF'	(as written)	52
-derived	Ward	British Section re-read off the page as 'E'	(as written)	52
+derived	Ward	British Section re-read off the page as 'E'	(as written)	51
 derived	Ward	British Section re-read off the page as 'P.W.'	Prison Ward	50
 derived	Ward	British Section re-read off the page as 'Isol B'	Isolation	49
 derived	Ward	British Section re-read off the page as 'Isol A'	Isolation	44
-derived	Ward	British Section re-read off the page as 'S/S.'	Surgical	38
-derived	Ward	British Section re-read off the page as 'Hut.'	(as written)	35
 derived	Ward	British Section re-read off the page as 'I.'	Isolation	31
-derived	Ward	British Section re-read off the page as 'B.'	British Section	29
+derived	Ward	British Section re-read off the page as 'S/S.'	Surgical	31
+derived	Ward	British Section re-read off the page as 'B.'	British Section	27
 derived	Ward	British Section re-read off the page as 'Gen'	General	25
 derived	Ward	British Section re-read off the page as 'Surg.'	Surgical	23
 derived	Ward	British Section re-read off the page as 'Med'	Medical	23
-derived	Ward	British Section re-read off the page as 'P.M.G.'	(as written)	22
-derived	Ward	British Section re-read off the page as 'G'	General	22
 derived	Ward	British Section re-read off the page as 'Isol E'	Isolation	21
 derived	Ward	British Section re-read off the page as 'Gen.'	General	20
 derived	Ward	British Section re-read off the page as 'P/W'	Prison Ward	20
 derived	Ward	British Section re-read off the page as 'Isol C.'	Isolation	18
 derived	Ward	British Section re-read off the page as 'B/s'	British Section	16
-derived	Ward	British Section re-read off the page as 'Mat.'	Maternity	16
 derived	Ward	British Section re-read off the page as 'Isol D'	Isolation	15
 derived	Ward	British Section re-read off the page as 'P/W.'	Prison Ward	15
-derived	Ward	British Section re-read off the page as 'G/S.'	(as written)	15
 derived	Ward	British Section re-read off the page as 'Isol B.'	Isolation	14
+derived	Ward	British Section re-read off the page as 'Mat.'	Maternity	14
 derived	Ward	British Section re-read off the page as 'Isol E.'	Isolation	13
-derived	Ward	"British Section re-read off the page as '""C""'"	(as written)	13
-derived	Ward	British Section re-read off the page as 'G.M.W.'	(as written)	13
+derived	Ward	British Section re-read off the page as 'G'	General	12
 derived	Ward	British Section re-read off the page as 'Is. C.'	Isolation	11
-derived	Ward	British Section re-read off the page as 'G.M.F.'	(as written)	11
 derived	Ward	British Section re-read off the page as 'Isol D.'	Isolation	10
-derived	Ward	British Section re-read off the page as 'S/S'	Surgical	10
-derived	Ward	British Section re-read off the page as 'Isol'	Isolation	9
+derived	Ward	British Section re-read off the page as 'G.M.W.'	(as written)	10
 derived	Ward	British Section re-read off the page as 'P.W'	Prison Ward	9
+derived	Ward	British Section re-read off the page as 'S/S'	Surgical	9
+derived	Ward	British Section re-read off the page as 'Isol'	Isolation	8
 derived	Ward	British Section re-read off the page as 'Isol A.'	Isolation	8
 derived	Ward	British Section re-read off the page as 'D.'	(pavilion letter)	8
-derived	Ward	British Section re-read off the page as 'MeS'	(as written)	8
 derived	Ward	British Section re-read off the page as 'D'	(pavilion letter)	7
 derived	Ward	British Section re-read off the page as 'D XII'	(as written)	5
 derived	Ward	British Section re-read off the page as 'C'	(pavilion letter)	4
-derived	Ward	British Section re-read off the page as 'Mt.'	Maternity	4
 derived	Ward	British Section re-read off the page as 'c'	(as written)	4
-derived	Ward	British Section re-read off the page as 'C.M.H.'	(as written)	4
-derived	Ward	British Section re-read off the page as 'P.M.F'	(as written)	4
+derived	Ward	British Section re-read off the page as 'P.M.F.'	(as written)	4
+derived	Ward	British Section re-read off the page as 'Hut.'	(as written)	3
 derived	Ward	British Section re-read off the page as 'Isol.'	Isolation	3
 derived	Ward	"British Section re-read off the page as 'Isol ""C""'"	Isolation	3
 derived	Ward	British Section re-read off the page as 'Is. D.'	Isolation	3
 derived	Ward	British Section re-read off the page as 'Mat. W1'	Maternity	3
-derived	Ward	British Section re-read off the page as 'D.R.12'	(as written)	3
-derived	Ward	"British Section re-read off the page as '""B""'"	(as written)	3
 derived	Ward	British Section re-read off the page as 'Med W10'	Medical	3
-derived	Ward	British Section re-read off the page as 'C/W.'	(as written)	3
 derived	Ward	British Section re-read off the page as 'D 3'	(as written)	3
 derived	Ward	British Section re-read off the page as 'C ?'	(as written)	3
 derived	Ward	British Section re-read off the page as 'C 2.1'	(as written)	3
 derived	Ward	"British Section re-read off the page as ""(none on NB1's form)"""		2
-derived	Ward	British Section re-read off the page as 'Q. Laz.'	(as written)	2
-derived	Ward	British Section re-read off the page as 'Laz.'	(as written)	2
-derived	Ward	British Section re-read off the page as 'do.'	(as written)	2
 derived	Ward	British Section re-read off the page as 'Isol / Gen'	Isolation | General	2
 derived	Ward	British Section re-read off the page as 'Is'	Isolation	2
 derived	Ward	"British Section re-read off the page as 'Isol ""A""'"	Isolation	2
 derived	Ward	British Section re-read off the page as 'Surg. Cot.'	Surgical	2
-derived	Ward	British Section re-read off the page as 'I.S.'	(as written)	2
-derived	Ward	"British Section re-read off the page as '""A""'"	(as written)	2
+derived	Ward	British Section re-read off the page as 'Mt.'	Maternity	2
 derived	Ward	British Section re-read off the page as 'A.'	(pavilion letter)	2
 derived	Ward	British Section re-read off the page as 'Surg W3'	Surgical	2
 derived	Ward	British Section re-read off the page as 'D. 1'	(as written)	2
-derived	Ward	British Section re-read off the page as 'B. / D'	(as written)	2
 derived	Ward	British Section re-read off the page as 'S/S -'	Surgical	2
 derived	Ward	British Section re-read off the page as 'D 12'	(as written)	2
 derived	Ward	British Section re-read off the page as 'S/s.'	Surgical	2
 derived	Ward	British Section re-read off the page as 'c.'	(as written)	2
-derived	Ward	British Section re-read off the page as 'S B/S'	(as written)	2
 derived	Ward	British Section re-read off the page as 'Md'	Medical	2
 derived	Ward	British Section re-read off the page as 'Med X1'	Medical	2
 derived	Ward	British Section re-read off the page as 'Sg'	Surgical	2
-derived	Ward	British Section re-read off the page as 'Bar. B'	(as written)	2
+derived	Ward	British Section re-read off the page as 'G/S.'	(as written)	2
 derived	Ward	British Section re-read off the page as 'C 6.'	(as written)	2
-derived	Ward	British Section re-read off the page as 'Pav. C.'	(as written)	2
 derived	Ward	British Section re-read off the page as 'Surg 2.2'	Surgical	2
 derived	Ward	British Section re-read off the page as 'C 5.1'	(as written)	2
 derived	Ward	British Section re-read off the page as 'C 6.8'	(as written)	2
 derived	Ward	British Section re-read off the page as 'C 3.4'	(as written)	2
 derived	Ward	British Section re-read off the page as 'C 6.5'	(as written)	2
-derived	Ward	British Section re-read off the page as 'Gr.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Gen. / Is.'	General | Isolation	1
 derived	Ward	British Section re-read off the page as 'Is. / Med.'	Isolation | Medical	1
 derived	Ward	British Section re-read off the page as 'Bs.'	British Section	1
-derived	Ward	British Section re-read off the page as 'Lab.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Is. / Gen.'	Isolation | General	1
-derived	Ward	British Section re-read off the page as 'Hut / Gen.'	General	1
 derived	Ward	British Section re-read off the page as 'Mat'	Maternity	1
 derived	Ward	British Section re-read off the page as 'Surg. / Is.'	Surgical | Isolation	1
 derived	Ward	British Section re-read off the page as 'Gen. / Hut'	General	1
 derived	Ward	British Section re-read off the page as 'Gen. / Isol'	General | Isolation	1
 derived	Ward	British Section re-read off the page as 'Isol / Hut.'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Isol / Hut'	Isolation	1
-derived	Ward	British Section re-read off the page as 'Br. / Isol'	British Section | Isolation	1
 derived	Ward	British Section re-read off the page as 'Isol / Med'	Isolation | Medical	1
 derived	Ward	British Section re-read off the page as 'Isol / P.W.'	Isolation | Prison Ward	1
 derived	Ward	British Section re-read off the page as 'Isol / B/S'	Isolation | British Section	1
@@ -816,40 +798,25 @@ derived	Ward	British Section re-read off the page as 'Isol. E'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Med / Isol A'	Medical | Isolation	1
 derived	Ward	British Section re-read off the page as 'Is. B.'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Isol P.W'	Isolation	1
-derived	Ward	British Section re-read off the page as 'Isl D.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Isol. C'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Isd B'	Isolation	1
-derived	Ward	British Section re-read off the page as 'H B'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Isol. E.'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Surg. Cot'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg Cot.'	Surgical	1
-derived	Ward	British Section re-read off the page as 'D R12'	(as written)	1
-derived	Ward	British Section re-read off the page as 'C. / D.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'D R.12'	(as written)	1
 derived	Ward	British Section re-read off the page as 'D 12.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg. W5'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. W9'	Surgical	1
-derived	Ward	British Section re-read off the page as 'Br. / P.M.F.'	British Section	1
-derived	Ward	British Section re-read off the page as 'B. / P.M.F.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg. W1 B7'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. W11 B5'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. W10 B3'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Med. W1 B3'	Medical	1
-derived	Ward	British Section re-read off the page as 'B W2 B1'	(as written)	1
-derived	Ward	British Section re-read off the page as 'B W1 B2'	(as written)	1
-derived	Ward	British Section re-read off the page as 'C W2B5'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg. W10B1'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. W9B2'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. W2B1'	Surgical	1
-derived	Ward	"British Section re-read off the page as '""E.""'"	(as written)	1
 derived	Ward	British Section re-read off the page as 'D. 12.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Mat. / S/S.'	Maternity | Surgical	1
-derived	Ward	British Section re-read off the page as 'A / W.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med W5'	Medical	1
 derived	Ward	British Section re-read off the page as 'Mat. W7'	Maternity	1
-derived	Ward	British Section re-read off the page as 'D / 12.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med. W.11.'	Medical	1
-derived	Ward	British Section re-read off the page as 'C / D'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg. / Col.'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. 2.'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Mat W4'	Maternity	1
@@ -857,68 +824,41 @@ derived	Ward	British Section re-read off the page as 'Surg W9'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg W1 B6'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Mat. W. 6.'	Maternity	1
 derived	Ward	British Section re-read off the page as 'D 7'	(as written)	1
-derived	Ward	British Section re-read off the page as 'D W1'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Mat W8'	Maternity	1
 derived	Ward	British Section re-read off the page as 'Med W1'	Medical	1
 derived	Ward	British Section re-read off the page as 'Med. A.'	Medical	1
 derived	Ward	British Section re-read off the page as 'B. 2'	(as written)	1
-derived	Ward	British Section re-read off the page as 'P/C.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Ward'	(as written)	1
-derived	Ward	British Section re-read off the page as 'C / x D.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Mat. 8.'	Maternity	1
 derived	Ward	British Section re-read off the page as 'Prison Ward.'	Prison Ward	1
 derived	Ward	British Section re-read off the page as 'E.'	(pavilion letter)	1
 derived	Ward	British Section re-read off the page as 'Med. 9.'	Medical	1
-derived	Ward	British Section re-read off the page as 'D.E'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Plague Buildg.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Pr.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'B. D'	(as written)	1
-derived	Ward	British Section re-read off the page as 'H. C'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med 4.'	Medical	1
 derived	Ward	British Section re-read off the page as 'Mat W9'	Maternity	1
-derived	Ward	British Section re-read off the page as 'M.'	(as written)	1
 derived	Ward	British Section re-read off the page as 's/s.'	Surgical	1
-derived	Ward	British Section re-read off the page as 'D A2'	(as written)	1
-derived	Ward	British Section re-read off the page as 'P.C.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg W8'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Med. W11'	Medical	1
 derived	Ward	British Section re-read off the page as 'G.M.P.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Md.'	Medical	1
-derived	Ward	British Section re-read off the page as 'M.S.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'B/S / P.M.F.'	British Section	1
 derived	Ward	British Section re-read off the page as 'Med. / C.'	Medical	1
 derived	Ward	British Section re-read off the page as 'D. R.I.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'B / C'	(as written)	1
-derived	Ward	British Section re-read off the page as 'D R.XII'	(as written)	1
-derived	Ward	"British Section re-read off the page as ""'C'"""	(as written)	1
 derived	Ward	British Section re-read off the page as 'B.S'	British Section	1
-derived	Ward	British Section re-read off the page as 'C/S'	(as written)	1
 derived	Ward	British Section re-read off the page as 'D. XII'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med. XI'	Medical	1
 derived	Ward	British Section re-read off the page as 'Med. I'	Medical	1
-derived	Ward	British Section re-read off the page as 'M/S.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'D. RS1'	(as written)	1
-derived	Ward	British Section re-read off the page as 'G/S'	(as written)	1
-derived	Ward	British Section re-read off the page as 'D RXII'	(as written)	1
+derived	Ward	British Section re-read off the page as 'MeS'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med / G/S.'	Medical	1
 derived	Ward	British Section re-read off the page as 'Surg ENT'	Surgical	1
-derived	Ward	British Section re-read off the page as 'MeS VII'	(as written)	1
 derived	Ward	British Section re-read off the page as 'MeS WR.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'D/s.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med W4'	Medical	1
 derived	Ward	British Section re-read off the page as 'C.'	(pavilion letter)	1
 derived	Ward	British Section re-read off the page as 'Med W5BY'	Medical	1
-derived	Ward	British Section re-read off the page as 'D W15'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med W11 B7'	Medical	1
-derived	Ward	British Section re-read off the page as 'W4 B3 Medical'	(as written)	1
-derived	Ward	British Section re-read off the page as 'W1 B3 Surg.'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg W1 B4'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Med. W11 B3'	Medical	1
 derived	Ward	British Section re-read off the page as 'Med W F'	Medical	1
 derived	Ward	British Section re-read off the page as 'British Section'	British Section	1
-derived	Ward	British Section re-read off the page as 'S'	(as written)	1
-derived	Ward	British Section re-read off the page as 'It'	(as written)	1
-derived	Ward	British Section re-read off the page as 'P'	(as written)	1
 derived	Ward	British Section re-read off the page as 'G.'	General	1
 derived	Ward	British Section re-read off the page as 'S 10.2'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg 10.5'	Surgical	1
@@ -934,8 +874,6 @@ derived	Ward	British Section re-read off the page as 'Med. 1.7'	Medical	1
 derived	Ward	British Section re-read off the page as 'Med. 7.1'	Medical	1
 derived	Ward	British Section re-read off the page as 'C 5.2'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg. #7'	Surgical	1
-derived	Ward	British Section re-read off the page as 'Ped'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Pav. B'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg 7.1'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Isol A 2.1'	Isolation	1
 derived	Ward	British Section re-read off the page as 'Isol A 2.2'	Isolation	1
@@ -951,9 +889,7 @@ derived	Ward	British Section re-read off the page as 'A 5.3'	(as written)	1
 derived	Ward	British Section re-read off the page as 'A 5.1'	(as written)	1
 derived	Ward	British Section re-read off the page as 'C 6.1'	(as written)	1
 derived	Ward	British Section re-read off the page as 'A 1.4'	(as written)	1
-derived	Ward	British Section re-read off the page as 'C DR. 1'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med DR 2.2'	Medical	1
-derived	Ward	British Section re-read off the page as 'C 6.2c'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Med 10.1'	Medical	1
 derived	Ward	British Section re-read off the page as 'D 4.1'	(as written)	1
 derived	Ward	British Section re-read off the page as 'D 12.2'	(as written)	1
@@ -964,7 +900,6 @@ derived	Ward	British Section re-read off the page as 'Surg. 1.2'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. 8.1'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg. 5.4'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Med. 7.2'	Medical	1
-derived	Ward	British Section re-read off the page as 'C 2.2'	(as written)	1
 derived	Ward	British Section re-read off the page as 'C 6.7'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Surg. 1.6'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Mat. 7.1'	Maternity	1
@@ -978,7 +913,6 @@ derived	Ward	British Section re-read off the page as 'Med 6.1'	Medical	1
 derived	Ward	British Section re-read off the page as 'Surg. 1.09'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Surg 9.2'	Surgical	1
 derived	Ward	British Section re-read off the page as 'Pav. C P.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Pav D 6'	(as written)	1
 derived	Ward	British Section re-read off the page as 'Mat 6.1'	Maternity	1
 derived	Ward	British Section re-read off the page as 'Med 7.8'	Medical	1
 derived	Ward	British Section re-read off the page as 'Surg. 11.9'	Surgical	1
@@ -995,31 +929,28 @@ derived	Ward	British Section re-read off the page as 'Med. X.'	Medical	1
 derived	Ward	British Section re-read off the page as 'Med. R.9.'	Medical	1
 derived	Ward	British Section re-read off the page as 'S/S. 10,3.'	Surgical	1
 derived	Ward	British Section re-read off the page as 'S/S. 1.'	Surgical	1
-derived	Ward	British Section re-read off the page as 'P/B.'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Pav. C'	(as written)	1
-derived	Ward	British Section re-read off the page as 'Pav C'	(as written)	1
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-A	210
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-B	817
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-C	1048
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-D	301
-derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-E	162
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-A	223
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-B	855
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-C	1152
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-D	324
+derived	Ward	lettered pavilion after the Oct 1938 move: Isolation section	Isolation-pavilion-E	178
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Palestinian	586
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	German	115
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Roumanian	71
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Transjordanian	44
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Roumanian	70
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Transjordanian	42
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	British	34
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Czechoslovakian	30
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lebanese	28
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Czechoslovakian	29
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lebanese	26
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Lithuanian	19
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Latvian	17
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Egyptian	14
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yugoslavian	11
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Turkish	11
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Polish	11
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yugoslavian	10
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Armenian	10
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	American	9
-derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Syrian	8
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Greek	7
+derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Syrian	7
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Persian	6
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Austrian	6
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Yemeni	6
@@ -1058,13 +989,13 @@ derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Pa
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	Russian	1
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	B	1
 derived	Nationality	blank, read off the page image (nationality-readings.tsv)	T.Jordanian	1
-derived	Nationality	blank, recovered from a set-aside value	British	133
-derived	Nationality	blank, recovered from a set-aside value	Austrian	16
+derived	Nationality	blank, recovered from a set-aside value	British	132
+derived	Nationality	blank, recovered from a set-aside value	Austrian	15
 derived	Nationality	blank, recovered from a set-aside value	Armenian	14
 derived	Nationality	blank, recovered from a set-aside value	Greek	14
-derived	Nationality	blank, recovered from a set-aside value	Lebanese	12
-derived	Nationality	blank, recovered from a set-aside value	Czechoslovakian	12
-derived	Nationality	blank, recovered from a set-aside value	Polish	11
+derived	Nationality	blank, recovered from a set-aside value	Czechoslovakian	11
+derived	Nationality	blank, recovered from a set-aside value	Lebanese	11
+derived	Nationality	blank, recovered from a set-aside value	Polish	10
 derived	Nationality	blank, recovered from a set-aside value	Hungarian	9
 derived	Nationality	blank, recovered from a set-aside value	Transjordanian	9
 derived	Nationality	blank, recovered from a set-aside value	Roumanian	8
@@ -1072,120 +1003,207 @@ derived	Nationality	blank, recovered from a set-aside value	Latvian	7
 derived	Nationality	blank, recovered from a set-aside value	Bulgarian	6
 derived	Nationality	blank, recovered from a set-aside value	Turkish	6
 derived	Nationality	blank, recovered from a set-aside value	Norwegian	4
-derived	Nationality	blank, recovered from a set-aside value	Italian	4
-derived	Nationality	blank, recovered from a set-aside value	Syrian	4
-derived	Nationality	blank, recovered from a set-aside value	Persian	3
 derived	Nationality	blank, recovered from a set-aside value	American	3
 derived	Nationality	blank, recovered from a set-aside value	French	3
+derived	Nationality	blank, recovered from a set-aside value	Italian	3
+derived	Nationality	blank, recovered from a set-aside value	Syrian	3
 derived	Nationality	blank, recovered from a set-aside value	German	2
 derived	Nationality	blank, recovered from a set-aside value	Indian	2
 derived	Nationality	blank, recovered from a set-aside value	Egyptian	2
 derived	Nationality	blank, recovered from a set-aside value	Dutch	1
+derived	Nationality	blank, recovered from a set-aside value	Persian	1
 derived	Nationality	blank, recovered from a set-aside value	Sudan	1
 derived	Nationality	blank, recovered from a set-aside value	Russian	1
-derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	1007
-derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3055
-derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2019
-derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	8942
-derived	ICD-9 Chapter		800-999 Injury and poisoning	4792
-derived	ICD-9 Chapter		520-579 Digestive system	3301
-derived	ICD-9 Chapter		460-519 Respiratory system	2619
-derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1733
-derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1352
-derived	ICD-9 Chapter		580-629 Genitourinary system	1312
-derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1125
-derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	891
-derived	ICD-9 Chapter		390-459 Circulatory system	807
+derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	1132
+derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3208
+derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2069
+derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	9066
+derived	ICD-9 Chapter		800-999 Injury and poisoning	4918
+derived	ICD-9 Chapter		520-579 Digestive system	3330
+derived	ICD-9 Chapter		460-519 Respiratory system	2629
+derived	ICD-9 Chapter		630-679 Pregnancy, childbirth and the puerperium	1779
+derived	ICD-9 Chapter		780-799 Symptoms, signs and ill-defined conditions	1363
+derived	ICD-9 Chapter		580-629 Genitourinary system	1323
+derived	ICD-9 Chapter		680-709 Skin and subcutaneous tissue	1118
+derived	ICD-9 Chapter		V01-V82 Supplementary: factors influencing health status	924
+derived	ICD-9 Chapter		390-459 Circulatory system	833
 derived	ICD-9 Chapter		710-739 Musculoskeletal system and connective tissue	708
-derived	ICD-9 Chapter		320-389 Nervous system and sense organs	550
-derived	ICD-9 Chapter		140-239 Neoplasms	377
-derived	ICD-9 Chapter		280-289 Diseases of the blood	170
-derived	ICD-9 Chapter		240-279 Endocrine, nutritional and metabolic diseases	168
-derived	ICD-9 Chapter		290-319 Mental disorders	160
+derived	ICD-9 Chapter		320-389 Nervous system and sense organs	549
+derived	ICD-9 Chapter		140-239 Neoplasms	382
+derived	ICD-9 Chapter		240-279 Endocrine, nutritional and metabolic diseases	172
+derived	ICD-9 Chapter		280-289 Diseases of the blood	165
+derived	ICD-9 Chapter		290-319 Mental disorders	164
 derived	ICD-9 Chapter		740-759 Congenital anomalies	112
-derived	ICD-9 Chapter		E800-E999 External causes of injury	24
+derived	ICD-9 Chapter		E800-E999 External causes of injury	25
 derived	ICD-9 Chapter		760-779 Conditions originating in the perinatal period	16
-derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	204
+derived	ICD-9 Chapter	code missing a leading zero	padded to three digits	202
 derived	ICD-9 Chapter	procedure code, not a diagnosis	left without a chapter	47
-derived	ICD-9 Chapter		no readable code	875
+derived	ICD-9 Chapter		no readable code	795
+rule	ICD-9 Code	typhus (none)	recoded to 080 from the register's own wording	6
+rule	ICD-9 Code	typhus (none)	recoded to 081.9 from the register's own wording	2
 rule	ICD-9 Code	typhus 002.0	recoded to 081.9 from the register's own wording	1
 rule	ICD-9 Code	typhus 080	recoded to 081.9 from the register's own wording	12
 rule	ICD-9 Code	typhus 080|038.0	recoded to 080 from the register's own wording	1
-rule	ICD-9 Code	typhus 080|081.0	recoded to 080 from the register's own wording	16
-rule	ICD-9 Code	typhus 081.0|080	recoded to 080 from the register's own wording	143
-rule	ICD-9 Code	typhus 081.9|080	recoded to 081.9 from the register's own wording	282
+rule	ICD-9 Code	typhus 080|081.0	recoded to 080 from the register's own wording	14
+rule	ICD-9 Code	typhus 081.0|080	recoded to 080 from the register's own wording	141
+rule	ICD-9 Code	typhus 081.9|080	recoded to 081.9 from the register's own wording	277
 rule	ICD-9 Code	typhus 081.9|081.0|080	recoded to 080 from the register's own wording	1
-rule	ICD-9 Code	typhus 083.9	recoded to 081.9 from the register's own wording	24
+rule	ICD-9 Code	typhus 083.9	recoded to 081.9 from the register's own wording	34
 rule	ICD-9 Code	typhus 81.9	recoded to 081.9 from the register's own wording	5
-derived	Diagnosis Recording		Classified	29159
-derived	Diagnosis Recording		Not recorded	570
-derived	Diagnosis Recording		Recorded, not classified	305
-date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	10
-date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	25
-date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	21
-date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -1	212
-date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +1	452
-date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +5	12
-serial	Notebook Record ID	notebook 11: 1146-1150 between 144 and 151	repaired to 146-150	5
-serial	Notebook Record ID	notebook 11: 6445-6449 between 643 and 651	repaired to 645-649	5
+rule	ICD-9 Code	malaria 084.0	recoded to 084.1 from the species written	203
+rule	ICD-9 Code	malaria 084.0	recoded to 084.5 from the species written	5
+rule	ICD-9 Code	malaria 084.0|084.1	recoded to 084.1 from the species written	5
+rule	ICD-9 Code	malaria 084.0|084.6	recoded to 084.1 from the species written	10
+rule	ICD-9 Code	malaria 084.0|084.9	recoded to 084.0 from the species written	1
+rule	ICD-9 Code	malaria 084.1	recoded to 084.0 from the species written	6
+rule	ICD-9 Code	malaria 084.1|084.0	recoded to 084.0 from the species written	14
+rule	ICD-9 Code	malaria 084.1|084.0	recoded to 084.1 from the species written	113
+rule	ICD-9 Code	malaria 084.1|084.6	recoded to 084.1 from the species written	2
+rule	ICD-9 Code	malaria 084.1|084.9	recoded to 084.1 from the species written	3
+rule	ICD-9 Code	malaria 084.6	recoded to 084.1 from the species written	14
+rule	ICD-9 Code	malaria 084.6|084.0	recoded to 084.0 from the species written	1
+rule	ICD-9 Code	malaria 084.6|084.0	recoded to 084.1 from the species written	3
+rule	ICD-9 Code	malaria 084.6|084.1	recoded to 084.0 from the species written	1
+rule	ICD-9 Code	malaria 084.6|084.1	recoded to 084.1 from the species written	2
+rule	ICD-9 Code	malaria 084.6|084.9	recoded to 084.6 from the species written	1
+rule	ICD-9 Code	malaria 084.8	recoded to 084.5 from the species written	1
+rule	ICD-9 Code	malaria 084.9	recoded to 084.0 from the species written	2
+rule	ICD-9 Code	malaria 084.9	recoded to 084.1 from the species written	5
+rule	ICD-9 Code	malaria 084.9	recoded to 084.5 from the species written	2
+rule	ICD-9 Code	malaria 084.9	recoded to 084.6 from the species written	334
+rule	ICD-9 Code	malaria 084.9|084.0	recoded to 084.0 from the species written	2
+rule	ICD-9 Code	malaria 084.9|084.0	recoded to 084.1 from the species written	1
+rule	ICD-9 Code	malaria 084.9|084.2	recoded to 084.0 from the species written	1
+rule	ICD-9 Code	observation entry coded (none)	recoded to V71.89: observation, not the disease	36
+rule	ICD-9 Code	observation entry coded (none)	recoded to V71.9: observation, not the disease	9
+rule	ICD-9 Code	observation entry coded 002	recoded to V71.89: observation, not the disease	5
+rule	ICD-9 Code	observation entry coded 022	recoded to V71.89: observation, not the disease	1
+rule	ICD-9 Code	observation entry coded 032	recoded to V71.89: observation, not the disease	2
+rule	ICD-9 Code	observation entry coded 036	recoded to V71.89: observation, not the disease	1
+rule	ICD-9 Code	observation entry coded V70	recoded to V71.89: observation, not the disease	1
+rule	ICD-9 Code	observation entry coded V70	recoded to V71.9: observation, not the disease	4
+rule	ICD-9 Code	observation entry coded V71	recoded to V71.89: observation, not the disease	228
+rule	ICD-9 Code	observation entry coded V71	recoded to V71.9: observation, not the disease	6
+derived	Diagnosis Recording		Classified	29576
+derived	Diagnosis Recording		Not recorded	553
+derived	Diagnosis Recording		Recorded, not classified	242
+date	Admission Date [ISO]	ran backwards against the register's order	day taken from the neighbouring records	7
+date	Admission Date [ISO]	ran backwards against the register's order	month taken from the neighbouring records	19
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -5	1
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -2	10
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by -1	1
+date	Admission Date [ISO]	ran backwards against the register's order	year shifted by +1	8
+serial	Notebook Record ID	notebook 11: 1146-1150 between 145 and 151	repaired to 146-150	5
+serial	Notebook Record ID	notebook 11: 6445-6449 between 644 and 650	repaired to 645-649	5
+serial	Notebook Record ID	notebook 11: 710-710 between 698 and 699	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 1: 307-307 between 295 and 297	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 1: 439-439 between 427 and 428	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 3: 1176-1176 between 1164 and 1165	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 5: 1053-1053 between 1041 and 1042	no safe repair; flagged for review	1
 serial	Notebook Record ID	notebook 7: 13-1772 between 1772 and 1773	no safe repair; flagged for review	2
-serial	Notebook Record ID	notebook 10: 2010-2010 between 2108 and 2111	no safe repair; flagged for review	1
-serial	Notebook Record ID	notebook 12: 1969-1969 between 1368 and 1370	no safe repair; flagged for review	1
-serial	Notebook Record ID	notebook 15: 261-261 between 210 and 212	no safe repair; flagged for review	1
-serial	Notebook Record ID	notebook 21: 3325-3335 between 423 and 436	no safe repair; flagged for review	11
-serial	Notebook Record ID	notebook 21: 5511-5601 between 550 and 563	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 10: 2314-2314 between 2302 and 2303	no safe repair; flagged for review	1
 serial	Notebook Record ID	notebook 24: 179-189 between 78 and 90	repaired to 79-89	11
 serial	Notebook Record ID	notebook 25: 2-5 between 5 and 6	no safe repair; flagged for review	4
-serial	Notebook Record ID	notebook 25: 731-740 between 740 and 741	no safe repair; flagged for review	10
+serial	Notebook Record ID	notebook 25: 730-739 between 739 and 740	no safe repair; flagged for review	10
 serial	Notebook Record ID	notebook 27: 3308-3308 between 3319 and 3320	no safe repair; flagged for review	1
-serial	Notebook Record ID	notebook 27: 3867-3875 between 3920 and 3922	no safe repair; flagged for review	9
-serial	Notebook Record ID	notebook 32: 6245-6249 between 6249 and 6250	no safe repair; flagged for review	5
-date	Admission Date [ISO]	upstream ISO	replaced	2827
-date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	827
-date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	405
-date	Discharge Date (ISO)	upstream ISO	replaced	322
-date	Admission Date [ISO]	upstream ISO	year outside 1930-48, taken from the other date	4
+serial	Notebook Record ID	notebook 27: 3392-3392 between 3380 and 3381	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 27: 3865-3875 between 3919 and 3921	no safe repair; flagged for review	11
+serial	Notebook Record ID	notebook 27: 4353-4353 between 4341 and 4342	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 28: 4847-4847 between 4513 and 4514	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 29: 1319-1319 between 1307 and 1308	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 29: 1756-1756 between 1362 and 1365	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 29: 1896-1896 between 1873 and 1875	no safe repair; flagged for review	1
+serial	Notebook Record ID	notebook 32: 6237-6241 between 6241 and 6242	no safe repair; flagged for review	5
+serial	Notebook Record ID	notebook 32: 6366-6377 between 6353 and 6354	no safe repair; flagged for review	12
+date	Admission Date [ISO]	upstream ISO	replaced	2987
+date	Discharge Date (ISO)	upstream ISO	verbatim unreadable, upstream kept	757
+date	Discharge Date (ISO)	upstream ISO	replaced	696
+date	Admission Date [ISO]	upstream ISO	verbatim unreadable, upstream kept	300
+date	Admission Date [ISO]	upstream ISO	year outside 1930-48, nothing to repair it from	2
+date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, nothing to repair it from	2
 date	Discharge Date (ISO)	upstream ISO	year outside 1930-48, taken from the other date	1
-date	Days in Hospital (Calc)	discharge before admission	cleared	41
+date	Days in Hospital (Calc)	discharge before admission	cleared	29
+date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by -40 year, the smallest shift that seats it in the notebook	1
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by -1 year, the smallest shift that seats it in the notebook	1
-date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +1 year, the smallest shift that seats it in the notebook	267
+date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +1 year, the smallest shift that seats it in the notebook	1
 unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	1
-tail	standardized Religion	Arab		8
-tail	standardized Religion	Christian/Jewish?		2
+tail	standardized Religion	Armenian		2
+tail	standardized Religion	Persian		2
+tail	standardized Religion	armenian		2
+tail	standardized Religion	""""		1
+tail	standardized Religion	Christian/Jewish?		1
+tail	standardized Religion	Others		1
+tail	standardized Religion	Chpal.		1
+tail	standardized Religion	Charkass		1
+tail	standardized Religion	Christian L.		1
+tail	standardized Religion	Indian		1
+tail	standardized Religion	Italian		1
+tail	standardized Religion	Mos		1
 tail	standardized Religion	Christ. R/C		1
 tail	standardized Religion	Ch. Moslem		1
 tail	standardized Religion	S.		1
-tail	standardized Religion	Teh		1
 tail	standardized Religion	Arm.		1
+tail	standardized Religion	mosl.		1
 tail	standardized Religion	[illegible]		1
 tail	StandardNationality	French		18
-tail	StandardNationality	Palestinian Syrian		17
 tail	StandardNationality	Italian		15
-tail	StandardNationality	Dutch		10
-tail	StandardNationality	Persian		10
-tail	StandardNationality	Norwegian		7
-tail	StandardNationality	Palestinian Egyptian		7
-tail	StandardNationality	Palestinian Transjordanian		6
-tail	StandardNationality	Indian		4
+tail	StandardNationality	Palestinian British		14
+tail	StandardNationality	Persian		11
+tail	StandardNationality	Dutch		9
+tail	StandardNationality	Norwegian		8
+tail	StandardNationality	Palestinian Syrian		8
+tail	StandardNationality	Yemeni		5
+tail	StandardNationality	Indian		5
+tail	StandardNationality	Palestinian Egyptian		4
+tail	StandardNationality	Lithuanian		3
 tail	StandardNationality	Sudan		3
 tail	StandardNationality	Belgian		2
 tail	StandardNationality	Iraqi		2
+tail	StandardNationality	Christian		2
 tail	StandardNationality	Canadian		2
-tail	StandardNationality	Lithuanian		2
-tail	StandardNationality	Yemeni		2
 tail	StandardNationality	Palestinian German		2
+tail	StandardNationality	Palestinian Transjordanian		2
 tail	StandardNationality	Esthonian		1
+tail	StandardNationality	Yugoslavian		1
+tail	StandardNationality	Iraqian.		1
+tail	StandardNationality	Chechoslovakian		1
 tail	StandardNationality	Burmese		1
 tail	StandardNationality	Palestinian Latvian		1
 tail	StandardNationality	Chinese		1
+tail	StandardNationality	Trans. Jordan		1
+tail	StandardNationality	Siria		1
+tail	StandardNationality	Hauran		1
+tail	StandardNationality	Moroccan		1
+tail	StandardNationality	Bahaii		1
+tail	StandardNationality	Swiss		1
 tail	StandardNationality	Syrian Egyptian		1
+tail	StandardNationality	Schekoslovakian		1
+tail	StandardNationality	Siryan		1
+tail	StandardNationality	Yaman		1
 tail	StandardNationality	Kurd Palestinian		1
+tail	StandardNationality	Yemen		1
+tail	StandardNationality	(British) American		1
+tail	StandardNationality	Pol		1
+tail	StandardNationality	Checko		1
+tail	StandardNationality	Ostrich		1
+tail	StandardNationality	T-Jordan		1
+tail	StandardNationality	T. Jordinian		1
 tail	StandardNationality	Undefined		1
-tail	StandardNationality	Lybian		1
+tail	StandardNationality	P/Catholic		1
+tail	StandardNationality	B/		1
 tail	StandardNationality	Palestinian/Bedu		1
-tail	StandardNationality	Tripolitanian		1
+tail	StandardNationality	Moslem		1
+tail	StandardNationality	Polland.		1
+tail	StandardNationality	Palestinian M.		1
+tail	StandardNationality	Br		1
+tail	StandardNationality	Checkian		1
 tail	StandardNationality	Palestinian Austrian		1
+tail	StandardNationality	P. Transjordan		1
+tail	StandardNationality	Shark El Ardun		1
 tail	StandardNationality	Palestion		1
+tail	StandardNationality	Trans J		1
+tail	StandardNationality	Gipsy		1
+tail	StandardNationality	Adanite		1
 tail	StandardNationality	Palestinian Druze		1
 tail	StandardNationality	Palestinian Lebanese		1
 tail	StandardNationality	Hijazy		1
@@ -1193,62 +1211,70 @@ tail	StandardNationality	Palestinian Cypriot		1
 tail	StandardNationality	British Polish		1
 tail	StandardNationality	Palestinian Polish		1
 tail	StandardNationality	Albanian		1
+tail	StandardNationality	(Pelest.) T.J		1
 tail	StandardNationality	Gruzinian		1
 tail	StandardNationality	Cypriot		1
-tail	StandardNationality	Police 12291		1
-tail	StandardNationality	P.J.		1
+tail	StandardNationality	Nor		1
+tail	StandardNationality	British C/S		1
+tail	StandardNationality	(Palest.) T.J		1
+tail	StandardNationality	Czechosl		1
+tail	StandardNationality	P.J		1
+tail	StandardNationality	Labanonian		1
 tail	StandardNationality	T.O.		1
-tail	StandardNationality	Yujazi		1
 tail	StandardNationality	Iranian		1
+tail	StandardNationality	Eg		1
 tail	StandardNationality	Lincoln		1
 tail	StandardNationality	Soudian		1
 tail	StandardNationality	Syr.		1
-tail	StandardNationality	Non.		1
+tail	StandardNationality	Norw		1
 tail	StandardNationality	Swedish		1
 tail	StandardNationality	P.		1
 tail	StandardNationality	Danish		1
 tail	StandardNationality	T/Jord.		1
 tail	standardized ward	Isolation | General		3
-tail	standardized ward	Palestine Police Force		3
 tail	standardized ward	Medical | Isolation		2
 tail	standardized ward	General | Isolation		2
 tail	standardized ward	Isolation | Medical		2
-tail	standardized ward	British Section | Isolation		2
 tail	standardized ward	Isolation | British Section		2
+tail	standardized ward	Children's		2
 tail	standardized ward	"""C"""		2
 tail	standardized ward	Gen. (Surg. added)		1
 tail	standardized ward	Is & Med.		1
+tail	standardized ward	British Section | Isolation		1
 tail	standardized ward	Surgical | Isolation		1
 tail	standardized ward	Isolation | Prison Ward		1
-tail	standardized ward	Maternity | Surgical		1
-tail	standardized ward	8		1
 tail	standardized ward	Surg Room 11		1
-tail	standardized ward	A | S.		1
-tail	standardized ward	?.M.T.		1
-tail	standardized ward	Obstetrics		1
 tail	standardized ward	Maternity Surgical		1
-tail	standardized ward	Private		1
 tail	standardized ward	Surgical British Section		1
-tail	standardized ward	French Carmelite		1
 tail	standardized ward	B. or C.		1
 tail	standardized ward			0
 tail	standardized ward	Surgical | General		0
-tail	standardized ward	Surgical | British Section		0
 tail	standardized ward	Medical | British Section		0
+tail	standardized ward	Surgical | British Section		0
 tail	standardized ward	Maternity | British Section		0
 tail	standardized ward	Medical | Maternity		0
 tail	standardized ward	Medical | Surgical		0
+tail	Class standard	3rd & 2nd		17
 tail	Class standard	3rd?		12
-tail	Class standard	3rd & 2nd		11
 tail	Class standard	2P		8
-tail	Class standard	BR.		3
+tail	Class standard	3rd + 2nd		7
+tail	Class standard	3rd/2nd		3
 tail	Class standard	2S		3
+tail	Class standard	/		2
+tail	Class standard	2nd -> 1st		2
+tail	Class standard	3rd -> 2nd		2
+tail	Class standard	2nd & 3rd cl.		1
+tail	Class standard	Free.		1
+tail	Class standard	2nd + 1st		1
 tail	Class standard	6/9/33 3rd.		1
+tail	Class standard	1st 500 mils / 2nd 350 mils		1
+tail	Class standard	from 27.9.36 to 1.10.36 2nd cl.; from 2.10.36 to 15.10.36 @ 1st class		1
+tail	Class standard	3rd + 2nd Class		1
+tail	Class standard	7 days 2nd class, the rest 3rd		1
+tail	Class standard	2nd; 3rd		1
 tail	Class standard	3rd. @ 050 mils		1
 tail	Class standard	3rd. @ 050 mils.		1
-tail	Class standard	1/2		1
 tail	Class standard	1st @ 500 ms.		1
-tail	Class standard	B.R.		1
 tail	Class standard	B.S.		1
 tail	Class standard	3S?		1
 tail	Class standard	2nd?		1
@@ -1256,7 +1282,5 @@ tail	Class standard	2 C		1
 tail	Class standard	2 S		1
 tail	Class standard	2S.		1
 tail	Class standard	6.8		1
-tail	Class standard	do		1
 tail	Class standard	P.R.		1
-tail	Class standard	?		1
 tail	Class standard	3rd gratis		1
