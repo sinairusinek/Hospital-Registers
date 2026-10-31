@@ -127,6 +127,18 @@ const QUEUES: { flag: string; title: string; question: string; fields: string[] 
     fields: ['Notebook Record ID', 'Admission Date', 'Discharge Date', 'Ward', 'Diagnosis as written', 'Result as written']
   },
   {
+    flag: 'reread-held',
+    title: 'The re-read could not settle a cell',
+    question: 'The full re-read of the scans (October 2026) disagreed with one of this record\'s cells, and a second blind reading did not settle which is right; the extraction\'s value stands. Which cell it is, and why it was held, is listed in data/public/field-readings-held.tsv. What does the page say?',
+    fields: ['Notebook Record ID', 'Age', 'Admission Date', 'Ward', 'Rate as written', 'Diagnosis as written', 'Result as written']
+  },
+  {
+    flag: 'age-not-verifiable',
+    title: 'An age under the redaction band',
+    question: 'The library\'s scan covers this age with its redaction band, and no other image of the page exists (notebooks 27 to 33). The age stands as the extraction read it. Can another copy of the page be found?',
+    fields: ['Notebook Record ID', 'Age', 'Sex', 'Admission Date']
+  },
+  {
     flag: 'half-page-scanned',
     title: 'Only half the spread was scanned',
     question: 'The library imaged one page of the opening, not both. Whatever the record holds for the other half cannot be checked against this scan. Does a better image of the page exist?',
