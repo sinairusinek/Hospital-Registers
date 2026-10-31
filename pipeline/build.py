@@ -125,6 +125,10 @@ DIAGNOSIS_CORRECTIONS = ROOT / "data" / "public" / "diagnosis-corrections.tsv"
 # in the held file, so the record can be found and checked.
 FIELD_READINGS = ROOT / "data" / "public" / "field-readings.tsv"
 FIELD_READINGS_HELD = ROOT / "data" / "public" / "field-readings-held.tsv"
+# The ledger's Remarks column, which the extraction never transcribed, as the
+# full re-read wrote it ("Certified unable to pay anything", "Infectious",
+# receipts, transfers). Published as written, by the user's ruling of 31 Oct.
+REMARKS_READ = ROOT / "data" / "public" / "remarks-read.tsv"
 # Pages where the right-hand block (ward to result) sits one row up against
 # the left: the record numbered S carries ledger row S+1's ward, dates,
 # diagnosis and result. Read off the scans; see the pre-pass in main().
@@ -3076,6 +3080,14 @@ def main() -> int:
     if "Diagnosis Recording" not in fieldnames:
         at = fieldnames.index("ICD-9 Chapter") + 1
         fieldnames.insert(at, "Diagnosis Recording")
+    if REMARKS_READ.exists() and "Remarks" not in fieldnames:
+        with REMARKS_READ.open(newline="", encoding="utf-8") as handle:
+            remarks = {r["Index"]: r["remarks"] for r in
+                       csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+        for row in out_rows:
+            row["Remarks"] = remarks.get(row.get("Index") or "", "")
+        at = fieldnames.index("Standardized Result") + 1 if "Standardized Result" in fieldnames else len(fieldnames)
+        fieldnames.insert(at, "Remarks")
 
     fieldnames = [name for name in fieldnames if name not in DROP_COLUMNS]
 
