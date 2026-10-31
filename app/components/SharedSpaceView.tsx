@@ -197,12 +197,15 @@ const HELP: HelpSection[] = [
     body: (
       <p>
         It is not a "recorded / not recorded" field, and reading it as one inverts the finding. The
-        clerk wrote <em>Gratis</em> when treatment was free and left the cell <strong>empty</strong>{' '}
-        when a fee was charged, entering the fee in the Rate column instead. Rate is filled for 56%
-        of the blank rows and 0.6% of the Gratis ones; the blank covers 99% of first class and 20%
-        of third; and 89% of pages mix blank with filled rows, so it is not a clerk skipping a
-        column. A blank is therefore evidence of payment. The 13% of admissions that are blank{' '}
-        <em>and</em> carry no rate are the genuinely unknown ones.
+        clerk wrote <em>Gratis</em> when treatment was free and usually left the cell{' '}
+        <strong>empty</strong> when a fee was charged, entering the fee in the Rate column instead.
+        Rate is filled for 85% of the blank rows and 0.4% of the Gratis ones; the blank covers 99%
+        of first class and 16% of third; and 90% of pages mix blank with filled rows, so it is not
+        a clerk skipping a column. A blank is therefore evidence of payment. The 4% of admissions
+        that are blank <em>and</em> carry no rate are the genuinely unknown ones. In 89 rows both
+        appear together — the class tariff written first (3rd cl. @ 50 or 175 mils, 2nd cl. @ 350),
+        with <em>Gratis</em> entered beneath it. There the rate is the scale the patient would have
+        been charged on and <em>Gratis</em> is its remission, so those rows count as free.
       </p>
     )
   },
@@ -1042,8 +1045,10 @@ python3 pipeline/shared_space_figures.py</pre>
             <p>
               The payment column had to be read before it could be counted. It is a{' '}
               <strong>gratis marker</strong>, not a completeness field: the clerk wrote{' '}
-              <em>Gratis</em> when treatment was free and left the cell empty when a fee was
-              charged, entering the fee in the Rate column instead. So a blank is evidence of
+              <em>Gratis</em> when treatment was free and usually left the cell empty when a fee
+              was charged, entering the fee in the Rate column instead. The two are not strictly
+              exclusive — in 89 rows the class tariff is written first and <em>Gratis</em> beneath
+              it, the rate naming the scale and the word cancelling it. So a blank is evidence of
               payment, and the hospital treated{' '}
               <Num v={100 * payment.evidence.split.gratis / data.meta.records} suffix="%" /> of its
               admissions free. The interesting part is who the exceptions were — and once class is
@@ -1060,7 +1065,8 @@ python3 pipeline/shared_space_figures.py</pre>
                 <div className="font-semibold text-slate-700 mb-1">The Rate column is complementary</div>
                 Rate is filled for <strong><Num v={payment.evidence.blankWithRatePct} suffix="%" /></strong>{' '}
                 of blank rows against <strong><Num v={payment.evidence.gratisWithRatePct} suffix="%" /></strong>{' '}
-                of <em>Gratis</em> rows. The blanks carry money.
+                of <em>Gratis</em> rows. The blanks carry money; where a <em>Gratis</em> row does
+                carry one, the figure is the tariff being waived, not a sum collected.
               </div>
               <div>
                 <div className="font-semibold text-slate-700 mb-1">It tracks class like a fee</div>

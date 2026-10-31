@@ -492,17 +492,27 @@ def fig_payment(rows):
 
     The Payment Status column is not a "recorded / not recorded" field, and
     reading it as one inverts the finding. It is a **gratis marker**: the clerk
-    wrote Gratis when treatment was free and left it EMPTY when a fee was
+    wrote Gratis when treatment was free and usually left it EMPTY when a fee was
     charged, entering the fee in the Rate column instead. Three things establish
-    this and none of them is subtle. Rate is filled for 56.0% of the blank rows
-    and 0.6% of the "Gratis" ones — the two columns are near-complementary. The
-    blank tracks class the way a fee would: 99.0% of first class, 55.4% of
-    second, 19.6% of third. And it is not a clerical era or a skipped page —
-    88.6% of pages mix blank and filled rows, only 1.9% are wholly blank.
+    this and none of them is subtle. Rate is filled for 84.7% of the blank rows
+    and 0.4% of the "Gratis" ones — the two columns are near-complementary. The
+    blank tracks class the way a fee would: 98.8% of first class, 54.1% of
+    second, 16.0% of third. And it is not a clerical era or a skipped page —
+    90.3% of pages mix blank and filled rows, only 0.8% are wholly blank.
+    (Figures after the full re-read of 31 October 2026, which found Gratis or a
+    rate written in some 3,000 cells the extraction had left blank.)
+
+    The two columns are near-complementary, not strictly exclusive. In 89 rows
+    both are filled, and the page shows why: the cell holds the class tariff on
+    one line (3rd cl. @ 50 or 175 mils, 2nd cl. @ 350 — the standard scale) with
+    GRATIS written beneath it. There the rate states the scale the patient would
+    have been charged on and the word cancels it, so those rows are free and are
+    counted as gratis. Cf. NB1 p9 serial 175, where 3rd cl. / @50 mils / GRATIS
+    stand as three lines in a single cell.
 
     So a blank here is evidence of payment, not of silence, and "gratis rate"
     below means marked-gratis over all admissions of that group. The residue
-    matters and is reported: 13.2% of admissions are blank with no rate either,
+    matters and is reported: 3.9% of admissions are blank with no rate either,
     and those are the genuinely unknown ones.
     """
     def marked_gratis(row):

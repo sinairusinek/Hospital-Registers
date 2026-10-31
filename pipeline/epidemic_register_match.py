@@ -108,6 +108,9 @@ def load_register():
             if r["Notebook_Number"] == "25":     # Atlit camp register
                 skipped += 1
                 continue
+            if "not-an-admission" in (r.get("Review Flags") or ""):  # refused, duplicate, cancelled
+                skipped += 1
+                continue
             try:
                 d = dt.date.fromisoformat(r["Admission Date"])
             except (ValueError, TypeError):

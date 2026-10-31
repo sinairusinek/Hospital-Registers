@@ -82,7 +82,10 @@ def read_tsv(path: Path) -> list[dict]:
 
 
 def load() -> list[dict]:
-    return [r for r in read_tsv(REGISTER) if (r["Notebook_Number"] or "").strip() != ATLIT]
+    # Neither the Atlit camp register nor the ledger's refused, duplicate and
+    # cancelled entries (not-an-admission) count as admissions here.
+    return [r for r in read_tsv(REGISTER) if (r["Notebook_Number"] or "").strip() != ATLIT
+            and "not-an-admission" not in (r.get("Review Flags") or "")]
 
 
 def day(s: str) -> dt.date | None:
