@@ -129,6 +129,10 @@ FIELD_READINGS_HELD = ROOT / "data" / "public" / "field-readings-held.tsv"
 # full re-read wrote it ("Certified unable to pay anything", "Infectious",
 # receipts, transfers). Published as written, by the user's ruling of 31 Oct.
 REMARKS_READ = ROOT / "data" / "public" / "remarks-read.tsv"
+# The same re-read's Bill numbers, and the Occupation and Address cells it
+# found written where the extraction left them blank. Published as written
+# (user ruling of 3 Nov); a fill never replaces a cell the extraction holds.
+REREAD_FILLS = ROOT / "data" / "public" / "reread-fills.tsv"
 # Pages where the right-hand block (ward to result) sits one row up against
 # the left: the record numbered S carries ledger row S+1's ward, dates,
 # diagnosis and result. Read off the scans; see the pre-pass in main().
@@ -1274,6 +1278,8 @@ REVIEW_FLAGS = [
     (f"{field}-reread", f"{field.capitalize()} corrected or filled by the full re-read of the scans (field-readings.tsv)")
     for field in REREAD_FIELDS
 ] + [
+    ("occupation-reread", "Occupation was blank; filled from the full re-read of the scans (reread-fills.tsv)"),
+    ("address-reread", "Address was blank; filled from the full re-read of the scans (reread-fills.tsv)"),
     ("reread-held", "The full re-read disagreed with a cell and a second reading could not settle it; the extraction's value stands"),
     ("age-not-verifiable", "The age is under the library's redaction band and no other image exists; the extraction's value stands"),
 ]
@@ -2065,6 +2071,21 @@ def main() -> int:
                 reread_counts["date-slip-kept-in-writing"] += 1
         for index in cells:
             print(f"field-readings: no record with Index {index}", file=sys.stderr)
+    bills: dict[str, str] = {}
+    if REREAD_FILLS.exists():
+        with REREAD_FILLS.open(newline="", encoding="utf-8") as handle:
+            fills = {f["Index"]: f for f in csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE)}
+        for row in rows:
+            fill = fills.get(row.get("Index") or "")
+            if not fill:
+                continue
+            if fill["bill"]:
+                bills[row["Index"]] = fill["bill"]
+            for column, field in (("Occupation", "occupation"), ("Address", "address")):
+                if fill[field] and not (row.get(column) or "").strip():
+                    row[column] = fill[field]
+                    reread.setdefault(row["Index"], set()).add(field)
+                    reread_counts[f"{field}-fill"] += 1
 
     for row in rows:
         if is_repeated_header(row):
@@ -3121,6 +3142,11 @@ def main() -> int:
             row["Remarks"] = remarks.get(row.get("Index") or "", "")
         at = fieldnames.index("Standardized Result") + 1 if "Standardized Result" in fieldnames else len(fieldnames)
         fieldnames.insert(at, "Remarks")
+    if bills and "Bill No." not in fieldnames:
+        for row in out_rows:
+            row["Bill No."] = bills.get(row.get("Index") or "", "")
+        at = fieldnames.index("Remarks") + 1 if "Remarks" in fieldnames else len(fieldnames)
+        fieldnames.insert(at, "Bill No.")
 
     fieldnames = [name for name in fieldnames if name not in DROP_COLUMNS]
 

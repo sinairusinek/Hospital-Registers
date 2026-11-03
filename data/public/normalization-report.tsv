@@ -654,12 +654,14 @@ review	Review Flags	discharge-reread	Discharge corrected or filled by the full r
 review	Review Flags	days-reread	Days corrected or filled by the full re-read of the scans (field-readings.tsv)	1297
 review	Review Flags	diagnosis-reread	Diagnosis corrected or filled by the full re-read of the scans (field-readings.tsv)	1163
 review	Review Flags	result-reread	Result corrected or filled by the full re-read of the scans (field-readings.tsv)	2017
+review	Review Flags	occupation-reread	Occupation was blank; filled from the full re-read of the scans (reread-fills.tsv)	4922
+review	Review Flags	address-reread	Address was blank; filled from the full re-read of the scans (reread-fills.tsv)	1698
 review	Review Flags	reread-held	The full re-read disagreed with a cell and a second reading could not settle it; the extraction's value stands	911
 review	Review Flags	age-not-verifiable	The age is under the library's redaction band and no other image exists; the extraction's value stands	21
 withheld	Next of Kin			30371
 withheld	discarded_values			30371
 withheld	splitDiscValues			30371
-withheld	Address	value repeated the next of kin		235
+withheld	Address	value repeated the next of kin		243
 withheld	City	value repeated the next of kin		3
 withheld	Occupation	value repeated the next of kin		36
 withheld	Original Result	value repeated the next of kin		1
@@ -667,11 +669,11 @@ withheld	Payment Status	value repeated the next of kin		1
 withheld	Standardized Diagnosis	value repeated the next of kin		1
 withheld	Ward	value repeated the next of kin		3
 withheld	splitDiscValues	value repeated the next of kin		4
-withheld	Address	value is a name known from the kin column		256
+withheld	Address	value is a name known from the kin column		265
 withheld	City	value is a name known from the kin column		17
 withheld	Occupation	value is a name known from the kin column		10
-derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23168
-derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	478
+derived	City Kima ID	reviewed match in kimatch/city-kima-decisions.tsv	Kima place id and Wikidata QID attached	23367
+derived	City	one spelling, two places: set per record (kimatch/record-rules.tsv, record-readings.tsv)	flagged city-set-by-record	481
 derived	Page_Number	blank, read off the page images (page-readings.tsv)		5410
 derived	Original Diagnosis	blank, read off the page image (ward-diagnosis-readings.tsv)	flagged diagnosis-read-from-scan	2726
 derived	Original Diagnosis	contradicted by the page image, class reread (diagnosis-corrections.tsv)	flagged diagnosis-corrected-from-scan / diagnosis-not-on-page	1163
@@ -1018,9 +1020,9 @@ derived	Nationality	blank, recovered from a set-aside value	Dutch	1
 derived	Nationality	blank, recovered from a set-aside value	Persian	1
 derived	Nationality	blank, recovered from a set-aside value	Sudan	1
 derived	Nationality	blank, recovered from a set-aside value	Russian	1
-derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	1132
-derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3208
-derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2069
+derived	City	blank City, place read from Address (kimatch/place_resolver.py)	flagged city-read-from-address	1368
+derived	Neighbourhood	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	3292
+derived	Address institution	read from Address (pipeline/address_layers.py)	Furas's label, or a pattern drawn from his labels	2578
 derived	ICD-9 Chapter		001-139 Infectious and parasitic diseases	9066
 derived	ICD-9 Chapter		800-999 Injury and poisoning	4918
 derived	ICD-9 Chapter		520-579 Digestive system	3330
