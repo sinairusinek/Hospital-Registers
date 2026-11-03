@@ -12,6 +12,7 @@ import { PieScheme, schemeFor, usePieMode } from '../pieSchemes';
 import { PieModeSwitch, PieLegend } from './PieControls';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
+import { bindFittedTooltip } from '../mapTooltip';
 
 declare const Papa: any;
 
@@ -279,6 +280,15 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
   // southern coast; the reader's choice is remembered between visits.
   const [infoOpen, setInfoOpen] = useState<boolean>(() => {
     try { return localStorage.getItem('map.infoOpen') !== '0'; } catch { return true; }
+  });
+  // The place list folds to a strip at the map's edge, giving the map the
+  // width; like the info box, the choice is remembered between visits.
+  const [listOpen, setListOpen] = useState<boolean>(() => {
+    try { return localStorage.getItem('map.listOpen') !== '0'; } catch { return true; }
+  });
+  const toggleList = () => setListOpen(v => {
+    try { localStorage.setItem('map.listOpen', v ? '0' : '1'); } catch { /* private window */ }
+    return !v;
   });
   const toggleInfo = () => setInfoOpen(v => {
     try { localStorage.setItem('map.infoOpen', v ? '0' : '1'); } catch { /* private window */ }
@@ -629,11 +639,11 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
         .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${scheme.color(k)}"></span>`
           + `${scheme.label(k)} ${p.mix[k].toLocaleString()} (${Math.round(100 * p.mix[k] / p.n)}%)`)
         .join('<br>');
-      marker.bindTooltip(
+      bindFittedTooltip(marker,
         `<strong>${p.label}</strong><br>${p.n.toLocaleString()} record${p.n === 1 ? '' : 's'}`
         + (provisional ? '<br><em>candidate, not yet reviewed</em>' : '')
         + `<div style="margin-top:4px;font-size:11px;line-height:1.5">${breakdown}</div>`,
-        { direction: 'top', offset: [0, -radius] }
+        radius
       );
       marker.on('click', () => { setSelected(p.key); setPage(1); });
       marker.addTo(map);
@@ -989,12 +999,34 @@ const MapView: React.FC<Props> = ({ data, fullData, dateRange, onDateRange }) =>
         </div>
       )}
 
-      {!selectedPlace && (
+      {!selectedPlace && !listOpen && (
+        <button
+          onClick={toggleList}
+          aria-expanded={false}
+          title="Show the list of places on the map"
+          className="w-9 shrink-0 bg-white border-l border-slate-200 flex flex-col items-center gap-3 pt-4 text-slate-500 hover:bg-slate-50 hover:text-slate-700"
+        >
+          <ChevronLeft size={16} />
+          <span className="text-[11px] font-bold tracking-wide [writing-mode:vertical-rl] rotate-180">Places on the map</span>
+        </button>
+      )}
+
+      {!selectedPlace && listOpen && (
         <div className="w-[22rem] shrink-0 bg-white border-l border-slate-200 overflow-y-auto custom-scrollbar">
           <div className="px-5 py-4 border-b border-slate-200">
-            <h3 className="font-bold text-slate-800 flex items-center gap-2">
-              <MapPin size={18} className="text-slate-600" /> Places on the map
-            </h3>
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                <MapPin size={18} className="text-slate-600" /> Places on the map
+              </h3>
+              <button
+                onClick={toggleList}
+                aria-expanded={true}
+                title="Fold the list away"
+                className="p-1.5 -mr-1.5 rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 shrink-0"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
             <p className="text-xs text-slate-500 mt-1">
               Click a pie, or a row here, for that place's records over time.
             </p>

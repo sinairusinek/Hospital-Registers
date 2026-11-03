@@ -15,6 +15,10 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        /* Map tooltips wrap instead of growing to their longest line (mapTooltip.ts). */
+        .leaflet-tooltip.map-tip { white-space: normal; width: max-content; max-width: min(17rem, calc(100vw - 2rem)); }
+        /* Slid sideways to stay on the map, the arrow would point at nothing. */
+        .leaflet-tooltip.map-tip-shifted::before { display: none; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">

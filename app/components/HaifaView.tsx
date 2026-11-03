@@ -12,6 +12,7 @@ import { PieScheme, schemeFor, usePieMode } from '../pieSchemes';
 import { PieModeSwitch, PieLegend } from './PieControls';
 import HelpPanel, { HelpSection } from './HelpPanel';
 import ScanLink, { usePageScans } from './ScanLink';
+import { bindFittedTooltip } from '../mapTooltip';
 
 declare const Papa: any;
 
@@ -192,6 +193,15 @@ const HaifaView: React.FC<Props> = ({ data }) => {
   const [page, setPage] = useState(1);
   const [infoOpen, setInfoOpen] = useState<boolean>(() => {
     try { return localStorage.getItem('haifa.infoOpen') !== '0'; } catch { return true; }
+  });
+  // The place list folds to a strip at the map's edge, giving the map the
+  // width; like the info box, the choice is remembered between visits.
+  const [listOpen, setListOpen] = useState<boolean>(() => {
+    try { return localStorage.getItem('haifa.listOpen') !== '0'; } catch { return true; }
+  });
+  const toggleList = () => setListOpen(v => {
+    try { localStorage.setItem('haifa.listOpen', v ? '0' : '1'); } catch { /* private window */ }
+    return !v;
   });
   const toggleInfo = () => setInfoOpen(v => {
     try { localStorage.setItem('haifa.infoOpen', v ? '0' : '1'); } catch { /* private window */ }
@@ -398,13 +408,13 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       const breakdown = scheme.keys.filter(k => q.mix[k])
         .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${scheme.color(k)}"></span>`
           + `${scheme.label(k)} ${q.mix[k].toLocaleString()} (${Math.round(100 * q.mix[k] / q.n)}%)`).join('<br>');
-      marker.bindTooltip(
+      bindFittedTooltip(marker,
         `<strong>${q.name}</strong><br>${q.n.toLocaleString()} record${q.n === 1 ? '' : 's'}`
         + (q.relation === 'near' ? `<br><em>drawn at ${q.anchor}</em>` : '')
         + (q.shifted ? '<br><em>set slightly apart from a quarter drawn at the same point</em>' : '')
         + `<div style="margin-top:4px;font-size:11px;line-height:1.5">${breakdown}</div>`
         + '<div style="margin-top:4px;font-size:10px;color:#64748b">Click a slice for its records</div>',
-        { direction: 'top', offset: [0, -r] }
+        r
       );
       marker.on('click', (e: L.LeafletMouseEvent) => {
         const target = (e.originalEvent?.target as Element | null)?.closest?.('[data-k]');
@@ -427,12 +437,12 @@ const HaifaView: React.FC<Props> = ({ data }) => {
       const breakdown = scheme.keys.filter(k => mix[k])
         .map(k => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;background:${scheme.color(k)}"></span>`
           + `${scheme.label(k)} ${mix[k].toLocaleString()} (${Math.round(100 * mix[k] / inst.rows.length)}%)`).join('<br>');
-      marker.bindTooltip(
+      bindFittedTooltip(marker,
         `<strong>${inst.site.name}</strong><br>${inst.rows.length.toLocaleString()} records name it`
         + `<br><span style="font-size:11px">${inst.site.note}</span>`
         + `<div style="margin-top:4px;font-size:11px;line-height:1.5">${breakdown}</div>`
         + '<div style="margin-top:4px;font-size:10px;color:#64748b">Click a slice for its records</div>',
-        { direction: 'top', offset: [0, -Math.max(12, r)] }
+        Math.max(12, r)
       );
       marker.on('click', (e: L.LeafletMouseEvent) => {
         const target = (e.originalEvent?.target as Element | null)?.closest?.('[data-k]');
@@ -702,12 +712,32 @@ const HaifaView: React.FC<Props> = ({ data }) => {
             </div>
           </div>
         </div>
+      ) : !listOpen ? (
+        <button
+          onClick={toggleList}
+          aria-expanded={false}
+          title="Show the list of quarters and institutions"
+          className="w-9 shrink-0 bg-white border-l border-slate-200 flex flex-col items-center gap-3 pt-4 text-slate-500 hover:bg-slate-50 hover:text-slate-700"
+        >
+          <ChevronLeft size={16} />
+          <span className="text-[11px] font-bold tracking-wide [writing-mode:vertical-rl] rotate-180">Quarters and institutions</span>
+        </button>
       ) : (
         <div className="w-[22rem] shrink-0 bg-white border-l border-slate-200 overflow-y-auto custom-scrollbar">
           <div className="px-5 py-4 border-b border-slate-200">
-            <h3 className="font-bold text-slate-800 flex items-center gap-2">
-              <Building2 size={18} className="text-slate-600" /> Haifa
-            </h3>
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                <Building2 size={18} className="text-slate-600" /> Haifa
+              </h3>
+              <button
+                onClick={toggleList}
+                aria-expanded={true}
+                title="Fold the list away"
+                className="p-1.5 -mr-1.5 rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 shrink-0"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
             <p className="text-xs text-slate-500 mt-1">
               Click a pie slice, a badge, or a row here, for the records.
             </p>
