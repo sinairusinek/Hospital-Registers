@@ -15,6 +15,7 @@ import RepresentationPanel from './RepresentationPanel';
 import CompositionOverTime from './CompositionOverTime';
 import { GROUP_COLUMN } from '../groups';
 import HeatmapPanel from './HeatmapPanel';
+import StayPanel from './StayPanel';
 
 const HELP: HelpSection[] = [
   {
@@ -699,6 +700,10 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
           actualKeys={actualKeys}
           filterState={filterState}
         />
+
+        {/* Length of stay is the one numeric question the panels above cannot
+            ask: they compare who is in a selection, this how long they stayed. */}
+        <StayPanel data={data} actualKeys={actualKeys} colorScales={colorScales} />
 
         {/* Charts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

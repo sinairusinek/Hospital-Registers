@@ -10,7 +10,7 @@
 // single definition and a single confidence interval cover both the crude and
 // the standardized figure.
 import { RegistryRecord } from './types';
-import { facetValue } from './facets';
+import { facetValue, UNKNOWN as UNKNOWN_VALUE } from './facets';
 
 export interface LiftRow {
   name: string;
@@ -365,4 +365,132 @@ export const crossTabulate = (
   });
 
   return { rows, cols, cells, rowTotals, colTotals, total, skipped };
+};
+
+// ------------------------------------------------------- length of stay
+
+// Stays are compared on log(1 + days): the distribution is long-tailed (a
+// handful of year-long stays would otherwise outweigh hundreds of short ones),
+// and a difference of logs reads back as a ratio of typical stays.
+const logStay = (days: number) => Math.log1p(days);
+
+export type StayStandard = 'crude' | 'chapter' | 'chapterYear';
+
+export interface StayRow {
+  name: string;
+  n: number;
+  median: number;
+  q1: number;
+  q3: number;
+  p10: number;
+  p90: number;
+  /** Stays over a year, drawn at the axis's end. */
+  overYear: number;
+  /** Typical stay against the comparison, as a ratio; null if nothing to compare. */
+  ratio: number | null;
+  lo: number | null;
+  hi: number | null;
+  /** Records that entered the ratio (fewer than n when a chapter is missing). */
+  compared: number;
+}
+
+export interface StayResult {
+  rows: StayRow[];
+  /** Records with a usable stay that the comparison covered. */
+  total: number;
+  /** Records left out of the standardized ratio: no chapter, or alone in their stratum. */
+  unstratified: number;
+}
+
+const quantile = (sorted: number[], q: number): number => {
+  if (!sorted.length) return 0;
+  const pos = (sorted.length - 1) * q;
+  const lo = Math.floor(pos), hi = Math.ceil(pos);
+  return sorted[lo] + (sorted[hi] - sorted[lo]) * (pos - lo);
+};
+
+/**
+ * Length of stay by group. The crude ratio sets each group's typical stay
+ * (geometric mean of 1 + days) against the whole comparison's. The
+ * standardized ratios set it against what the group's own diagnoses — and,
+ * with chapterYear, their years — would predict: every record is measured
+ * against the mean of its stratum, and a group's ratio is the average of those
+ * departures. A group that stays longer only because it brought longer
+ * illnesses then sits at ×1.
+ */
+export const compareStays = (
+  rows: RegistryRecord[],
+  groupKey: string,
+  stayKey: string,
+  chapterKey: string | undefined,
+  dateKey: string | undefined,
+  standard: StayStandard
+): StayResult => {
+  type Item = { group: string; days: number; y: number; stratum: string | null };
+  const items: Item[] = [];
+  rows.forEach(row => {
+    const raw = row[stayKey];
+    const days = typeof raw === 'number' ? raw : parseFloat(String(raw ?? ''));
+    if (!Number.isFinite(days) || days < 0) return;
+    let stratum: string | null = null;
+    if (standard !== 'crude') {
+      const chapter = facetValue(chapterKey ? row[chapterKey] : null);
+      const year = String((dateKey && row[dateKey]) || '').slice(0, 4);
+      if (chapter !== UNKNOWN_VALUE && (standard === 'chapter' || /^\d{4}$/.test(year))) {
+        stratum = standard === 'chapter' ? chapter : `${chapter}|${year}`;
+      }
+    }
+    items.push({ group: facetValue(row[groupKey]), days, y: logStay(days), stratum });
+  });
+
+  const strata = new Map<string, { sum: number; n: number }>();
+  items.forEach(it => {
+    if (it.stratum === null) return;
+    const s = strata.get(it.stratum) || { sum: 0, n: 0 };
+    s.sum += it.y; s.n += 1;
+    strata.set(it.stratum, s);
+  });
+  const overall = items.reduce((a, it) => a + it.y, 0) / (items.length || 1);
+  // A record alone in its stratum is its own expectation and says nothing.
+  const residual = (it: Item): number | null => {
+    if (standard === 'crude') return it.y - overall;
+    if (it.stratum === null) return null;
+    const s = strata.get(it.stratum)!;
+    return s.n < 2 ? null : it.y - s.sum / s.n;
+  };
+
+  const byGroup = new Map<string, Item[]>();
+  items.forEach(it => {
+    const list = byGroup.get(it.group) || [];
+    list.push(it);
+    byGroup.set(it.group, list);
+  });
+
+  let unstratified = 0;
+  const out: StayRow[] = [...byGroup.entries()].map(([name, list]) => {
+    const days = list.map(it => it.days).sort((a, b) => a - b);
+    const res = list.map(residual).filter((r): r is number => r !== null);
+    unstratified += list.length - res.length;
+    let ratio: number | null = null, lo: number | null = null, hi: number | null = null;
+    if (res.length >= 2) {
+      const mean = res.reduce((a, r) => a + r, 0) / res.length;
+      const sd = Math.sqrt(res.reduce((a, r) => a + (r - mean) ** 2, 0) / (res.length - 1));
+      const half = 1.96 * sd / Math.sqrt(res.length);
+      ratio = Math.exp(mean); lo = Math.exp(mean - half); hi = Math.exp(mean + half);
+    }
+    return {
+      name,
+      n: list.length,
+      median: quantile(days, 0.5),
+      q1: quantile(days, 0.25),
+      q3: quantile(days, 0.75),
+      p10: quantile(days, 0.1),
+      p90: quantile(days, 0.9),
+      overYear: days.filter(d => d > 365).length,
+      ratio, lo, hi,
+      compared: res.length
+    };
+  }).sort((a, b) => b.n - a.n);
+
+  return { rows: out, total: items.length, unstratified };
 };
