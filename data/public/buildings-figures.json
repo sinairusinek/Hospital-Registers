@@ -2394,7 +2394,106 @@
   "1948-04": 114
  },
  "nobed": {
-  "data": [],
+  "data": [
+   {
+    "adm": "",
+    "nb": "28",
+    "note": "NO BEDS AVAILABLE. No Beds Available",
+    "serial": "4468",
+    "ward": "Maternity"
+   },
+   {
+    "adm": "1944-08-21",
+    "nb": "27",
+    "note": "No Bed Available sent to French Hosp. Nazareth",
+    "serial": "4032",
+    "ward": "C"
+   },
+   {
+    "adm": "1944-08-22",
+    "nb": "27",
+    "note": "Abscess ? No bed available",
+    "serial": "4058",
+    "ward": "C"
+   },
+   {
+    "adm": "1944-09-07",
+    "nb": "28",
+    "note": "No Bed is available",
+    "serial": "4392",
+    "ward": "Medical"
+   },
+   {
+    "adm": "1944-09-11",
+    "nb": "28",
+    "note": "NO BEDS AVAILABLE.",
+    "serial": "4469",
+    "ward": "Maternity"
+   },
+   {
+    "adm": "1944-09-17",
+    "nb": "28",
+    "note": "No bed available",
+    "serial": "4572",
+    "ward": "B."
+   },
+   {
+    "adm": "1944-09-21",
+    "nb": "28",
+    "note": "No beds available",
+    "serial": "4641",
+    "ward": "Surg."
+   },
+   {
+    "adm": "1944-10-19",
+    "nb": "28",
+    "note": "Cancelled. No Bed Available.",
+    "serial": "5093",
+    "ward": "Maternity"
+   },
+   {
+    "adm": "1946-06-03",
+    "nb": "26",
+    "note": "No beds available",
+    "serial": "2966",
+    "ward": "C"
+   },
+   {
+    "adm": "1946-06-03",
+    "nb": "26",
+    "note": "No beds available",
+    "serial": "2970",
+    "ward": "Medical"
+   },
+   {
+    "adm": "1946-06-20",
+    "nb": "26",
+    "note": "No beds available",
+    "serial": "3342",
+    "ward": "C"
+   },
+   {
+    "adm": "1947-05-06",
+    "nb": "31",
+    "note": "No bed Available",
+    "serial": "2757",
+    "ward": "Medical"
+   },
+   {
+    "adm": "1947-05-10",
+    "nb": "31",
+    "note": "No Bed",
+    "serial": "2846",
+    "ward": "Surg.|Surgical"
+   },
+   {
+    "adm": "1947-09-27",
+    "nb": "32",
+    "note": "No beds available",
+    "serial": "6414",
+    "ward": "Surg"
+   }
+  ],
   "scan_1944": [
    {
     "adm": "21.8.44",
@@ -3234,6 +3333,315 @@
   "pw_max": 8,
   "pw_median_when_occupied": 2,
   "pw_nights_occupied": 1064
+ },
+ "women_surgery": {
+  "share": {
+   "General|Female": {
+    "1931": 42,
+    "1932": 38,
+    "1933": 69,
+    "1934": 1,
+    "1935": 151,
+    "1936": 286,
+    "1937": 399,
+    "1938": 284,
+    "1944": 6,
+    "1946": 2,
+    "1947": 2,
+    "1948": 3
+   },
+   "General|Male": {
+    "1931": 197,
+    "1932": 171,
+    "1933": 316,
+    "1935": 401,
+    "1936": 508,
+    "1937": 559,
+    "1938": 421,
+    "1944": 2,
+    "1946": 14,
+    "1947": 5,
+    "1948": 9
+   },
+   "Maternity|Female": {
+    "1934": 2,
+    "1935": 4,
+    "1936": 231,
+    "1937": 238,
+    "1938": 261,
+    "1939": 283,
+    "1940": 105,
+    "1944": 323,
+    "1946": 212,
+    "1947": 224,
+    "1948": 83
+   },
+   "Maternity|Male": {
+    "1936": 5,
+    "1937": 2,
+    "1938": 41,
+    "1939": 1,
+    "1940": 2,
+    "1944": 6,
+    "1946": 6,
+    "1947": 7,
+    "1948": 5
+   },
+   "Medical|Female": {
+    "1933": 114,
+    "1934": 297,
+    "1935": 1,
+    "1938": 106,
+    "1939": 336,
+    "1940": 75,
+    "1944": 265,
+    "1946": 281,
+    "1947": 301,
+    "1948": 46
+   },
+   "Medical|Male": {
+    "1933": 378,
+    "1934": 769,
+    "1935": 1,
+    "1938": 84,
+    "1939": 299,
+    "1940": 47,
+    "1944": 301,
+    "1946": 227,
+    "1947": 164,
+    "1948": 88
+   },
+   "Surgical|Female": {
+    "1933": 33,
+    "1934": 82,
+    "1935": 174,
+    "1936": 31,
+    "1937": 6,
+    "1938": 13,
+    "1939": 21,
+    "1940": 7,
+    "1944": 21,
+    "1946": 31,
+    "1947": 15,
+    "1948": 2
+   },
+   "Surgical|Male": {
+    "1930": 5,
+    "1933": 172,
+    "1934": 291,
+    "1935": 345,
+    "1936": 467,
+    "1937": 446,
+    "1938": 464,
+    "1939": 618,
+    "1940": 117,
+    "1944": 677,
+    "1946": 541,
+    "1947": 639,
+    "1948": 217
+   }
+  },
+  "where": {
+   "1930–35|appendicitis|Female": {
+    "General": 6,
+    "Isolation": 3,
+    "Medical": 3,
+    "Surgical": 5
+   },
+   "1930–35|appendicitis|Male": {
+    "British Section": 4,
+    "General": 48,
+    "Isolation": 1,
+    "Medical": 27,
+    "No ward": 9,
+    "Other": 1,
+    "Surgical": 31
+   },
+   "1930–35|gynaecological|Female": {
+    "General": 16,
+    "Isolation": 3,
+    "Maternity": 1,
+    "Medical": 14,
+    "No ward": 4,
+    "Surgical": 17
+   },
+   "1930–35|gynaecological|Male": {
+    "General": 1,
+    "No ward": 1,
+    "Surgical": 2
+   },
+   "1930–35|hernia|Female": {
+    "General": 2,
+    "Surgical": 3
+   },
+   "1930–35|hernia|Male": {
+    "British Section": 3,
+    "General": 52,
+    "Medical": 13,
+    "No ward": 10,
+    "Surgical": 76
+   },
+   "1930–35|injury|Female": {
+    "British Section": 3,
+    "General": 64,
+    "Isolation": 8,
+    "Medical": 61,
+    "No ward": 12,
+    "Surgical": 62
+   },
+   "1930–35|injury|Male": {
+    "British Section": 26,
+    "General": 412,
+    "Isolation": 16,
+    "Medical": 350,
+    "No ward": 92,
+    "Prisoners' ward (P.W.)": 1,
+    "Surgical": 342
+   },
+   "1936–38, old building|appendicitis|Female": {
+    "British Section": 6,
+    "General": 72,
+    "Hut": 1,
+    "Isolation": 1,
+    "Maternity": 3,
+    "Medical": 4,
+    "Surgical": 5
+   },
+   "1936–38, old building|appendicitis|Male": {
+    "British Section": 33,
+    "General": 84,
+    "Hut": 1,
+    "Isolation": 3,
+    "Maternity": 1,
+    "Medical": 3,
+    "Surgical": 49
+   },
+   "1936–38, old building|gynaecological|Female": {
+    "British Section": 7,
+    "General": 98,
+    "Hut": 1,
+    "Isolation": 3,
+    "Maternity": 31,
+    "Medical": 12,
+    "Surgical": 4
+   },
+   "1936–38, old building|hernia|Female": {
+    "British Section": 1,
+    "General": 9,
+    "Isolation": 1,
+    "Medical": 2
+   },
+   "1936–38, old building|hernia|Male": {
+    "British Section": 3,
+    "General": 122,
+    "Maternity": 1,
+    "Medical": 1,
+    "Surgical": 100
+   },
+   "1936–38, old building|injury|Female": {
+    "British Section": 8,
+    "General": 146,
+    "Hut": 2,
+    "Isolation": 1,
+    "Maternity": 13,
+    "Medical": 12,
+    "Surgical": 10,
+    "Two wards written": 1
+   },
+   "1936–38, old building|injury|Male": {
+    "British Section": 132,
+    "General": 339,
+    "Hut": 5,
+    "Isolation": 14,
+    "Maternity": 39,
+    "Medical": 10,
+    "No ward": 4,
+    "Surgical": 710,
+    "Two wards written": 1
+   },
+   "1939–48, Bat Galim|appendicitis|Female": {
+    "British Section": 17,
+    "Maternity": 76,
+    "Medical": 78,
+    "No ward": 1,
+    "Pavilion B": 1,
+    "Surgical": 2
+   },
+   "1939–48, Bat Galim|appendicitis|Male": {
+    "British Section": 26,
+    "G.M.W. / G.M.F.": 1,
+    "Isolation": 2,
+    "Maternity": 1,
+    "Medical": 18,
+    "No ward": 3,
+    "P.M.F.": 1,
+    "Pavilion C": 1,
+    "Prisoners' ward (P.W.)": 5,
+    "Surgical": 156
+   },
+   "1939–48, Bat Galim|gynaecological|Female": {
+    "British Section": 13,
+    "Isolation": 2,
+    "Maternity": 65,
+    "Medical": 118,
+    "No ward": 2,
+    "Pavilion B": 8
+   },
+   "1939–48, Bat Galim|gynaecological|Male": {
+    "British Section": 1,
+    "Isolation": 1,
+    "Maternity": 1,
+    "Medical": 1
+   },
+   "1939–48, Bat Galim|hernia|Female": {
+    "Maternity": 17,
+    "Medical": 22,
+    "Surgical": 3
+   },
+   "1939–48, Bat Galim|hernia|Male": {
+    "British Section": 9,
+    "Isolation": 4,
+    "Maternity": 3,
+    "Medical": 20,
+    "No ward": 4,
+    "P.M.F.": 1,
+    "Pavilion B": 1,
+    "Prisoners' ward (P.W.)": 8,
+    "Surgical": 318
+   },
+   "1939–48, Bat Galim|injury|Female": {
+    "British Section": 12,
+    "Isolation": 1,
+    "Maternity": 11,
+    "Medical": 230,
+    "No ward": 2,
+    "Pavilion A": 1,
+    "Pavilion B": 13,
+    "Pavilion C": 1,
+    "Pavilion D": 1,
+    "Surgical": 31
+   },
+   "1939–48, Bat Galim|injury|Male": {
+    "British Section": 199,
+    "Children's": 1,
+    "G.M.W. / G.M.F.": 1,
+    "General": 3,
+    "Isolation": 12,
+    "Maternity": 1,
+    "Medical": 120,
+    "No ward": 25,
+    "Other": 1,
+    "P.M.F.": 16,
+    "Pavilion A": 1,
+    "Pavilion B": 5,
+    "Pavilion C": 14,
+    "Pavilion D": 1,
+    "Pavilion E": 11,
+    "Prisoners' ward (P.W.)": 20,
+    "Surgical": 1241,
+    "Two wards written": 1
+   }
+  }
  },
  "written": {
   "(blank)": {

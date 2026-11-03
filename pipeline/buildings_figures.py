@@ -426,6 +426,7 @@ def compute(rows: list[dict]) -> dict:
     out["pavilions"] = pavilions(rows)
     out["hut"] = hut(rows, occ, ok)
     out["special"] = special(rows, occ)
+    out["women_surgery"] = women_surgery(rows)
     out["qlaz"] = qlaz(rows)
     out["nobed"] = nobed(rows)
     out["isol_letters"] = isol_letters(rows)
@@ -589,6 +590,40 @@ def special(rows: list[dict], _occ) -> dict:
             "pw_max": max(nights) if nights else None}
 
 
+# Conditions an operation treats, by ICD-9 code: the test of where women with
+# surgical complaints were entered once Surgical stops holding them.
+SURGICAL_GROUPS = [("appendicitis", 540, 544), ("hernia", 550, 554),
+                   ("injury", 800, 1000), ("gynaecological", 614, 630)]
+WOMEN_PERIODS = [("1930–35", 1930, 1935), ("1936–38, old building", 1936, 1938),
+                 ("1939–48, Bat Galim", 1939, 1948)]
+WOMEN_WARDS = ["Surgical", "General", "Medical", "Maternity"]
+
+
+def women_surgery(rows: list[dict]) -> dict:
+    """Women's share of each main ward by year, and the wards in which women
+    and men with surgical conditions were entered, by period."""
+    share: dict = defaultdict(Counter)
+    where: dict = defaultdict(Counter)
+    for r in rows:
+        d = day(r["Admission Date"])
+        sex = (r.get("Sex") or "").strip()
+        if not d or sex not in ("Male", "Female"):
+            continue
+        ward = heat_row(r)
+        if ward in WOMEN_WARDS:
+            share[f"{ward}|{sex}"][d.year] += 1
+        m = re.match(r"\d+(?:\.\d+)?", (r.get("ICD-9 Code") or "").strip())
+        if not m:
+            continue
+        code = float(m.group())
+        group = next((g for g, lo, hi in SURGICAL_GROUPS if lo <= code < hi), None)
+        period = next((p for p, lo, hi in WOMEN_PERIODS if lo <= d.year <= hi), None)
+        if group and period:
+            where[f"{period}|{group}|{sex}"][ward] += 1
+    return {"share": {k: dict(v) for k, v in share.items()},
+            "where": {k: dict(v) for k, v in where.items()}}
+
+
 def qlaz(rows: list[dict]) -> list[dict]:
     out = []
     for r in rows:
@@ -611,8 +646,12 @@ def nobed(rows: list[dict]) -> dict:
                 scan.append({"nb": r["notebook"], "page": r["page"], "row": r["row"],
                              "adm": r["adm"], "ward": r["ward"],
                              "note": re.sub(r"\s+", " ", blob).strip()})
+    # These rows are flagged not-an-admission, so load() has dropped them;
+    # they are read from the register itself.
     data = []
-    for r in rows:
+    for r in read_tsv(REGISTER):
+        if (r["Notebook_Number"] or "").strip() == ATLIT:
+            continue
         blob = " ".join([r["Diagnosis as written"] or "", r["Result as written"] or ""])
         if re.search(r"no\s+beds?\b", blob, re.I):
             data.append({"adm": r["Admission Date"][:10], "ward": r["Ward as written"],
@@ -944,6 +983,41 @@ def table_special(fig: dict) -> str:
     return "".join(h)
 
 
+def table_women_surgery(fig: dict) -> str:
+    w = fig["women_surgery"]
+    years = [y for y in YEARS if y not in MISSING_YEARS]
+
+    def n(ward, sex, y):
+        c = w["share"].get(f"{ward}|{sex}", {})
+        return c.get(str(y), c.get(y, 0))
+
+    h = ['<div class="tw"><table class="wtab"><caption>Women as a share of each ward\'s admissions, by year · per cent (admissions)</caption>'
+         '<thead><tr><th>ward</th>']
+    h += [f'<th class="n">{y}</th>' for y in years] + ['</tr></thead><tbody>']
+    for ward in WOMEN_WARDS:
+        h.append(f'<tr><td class="wf">{esc(ward)}</td>')
+        for y in years:
+            f, m = n(ward, "Female", y), n(ward, "Male", y)
+            h.append(f'<td class="n">{round(100 * f / (f + m)) if f + m >= 20 else ""}'
+                     f'<span class="fn">{f"<br>{f + m:,}" if f + m >= 20 else ""}</span></td>')
+        h.append('</tr>')
+    h.append('</tbody></table></div>')
+    h.append('<div class="tw"><table><caption>Where women and men with surgical conditions were entered · admissions, by ICD-9 code</caption>'
+             '<thead><tr><th>condition</th><th></th>' + "".join(f'<th>{esc(p)}</th>' for p, _, _ in WOMEN_PERIODS)
+             + '</tr></thead><tbody>')
+    for g, _, _ in SURGICAL_GROUPS:
+        for sex, label in (("Female", "women"), ("Male", "men")):
+            h.append(f'<tr><td class="wf">{esc(g) if sex == "Female" else ""}</td><td>{label}</td>')
+            for p, _, _ in WOMEN_PERIODS:
+                c = w["where"].get(f"{p}|{g}|{sex}", {})
+                tot = sum(c.values())
+                top = ", ".join(f"{esc(k)} {v}" for k, v in sorted(c.items(), key=lambda t: -t[1])[:3])
+                h.append(f'<td><b>{tot:,}</b><br><span class="fn">{top}</span></td>' if tot else '<td class="fn">—</td>')
+            h.append('</tr>')
+    h.append('</tbody></table></div>')
+    return "".join(h)
+
+
 def table_nobed(fig: dict) -> str:
     rows = fig["nobed"]["data"]
     h = ['<div class="tw"><table><caption>“No bed”: patients registered and turned away · in the data since 22 Oct 2026</caption>'
@@ -1186,6 +1260,7 @@ def inject(fig: dict) -> None:
         "pavilions": table_pavilions(fig),
         "hut": svg_hut(fig["hut"]),
         "special": table_special(fig),
+        "women-surgery": table_women_surgery(fig),
         "qlaz": table_qlaz(fig),
         "nobed": table_nobed(fig),
         "scans": scans_html(),
@@ -1252,6 +1327,7 @@ def numbers(fig: dict) -> dict:
         "pmf-all": str(sum(s["by_year"].get("P.M.F.", {}).values())),
         "gmw-all": str(sum(s["by_year"].get("G.M.W. / G.M.F.", {}).values())),
         "nobed-scan": str(len(fig["nobed"]["scan_1944"])),
+        **women_numbers(fig["women_surgery"]),
         "gen-last": dt.date.fromisoformat(fig["gen_med_switch"]["last_general"]).strftime("%-d %B %Y"),
         "med-first": dt.date.fromisoformat(fig["gen_med_switch"]["first_medical"]).strftime("%-d %B %Y"),
         "nobed-data": str(len(fig["nobed"]["data"])),
@@ -1263,6 +1339,29 @@ def numbers(fig: dict) -> dict:
             if d:
                 n[f"pv-{p}-{L.lower()}"] = str(d["n"])
     return n
+
+
+def women_numbers(w: dict) -> dict:
+    def pct(ward, lo, hi):
+        f = sum(v for y, v in w["share"].get(f"{ward}|Female", {}).items() if lo <= int(y) <= hi)
+        m = sum(v for y, v in w["share"].get(f"{ward}|Male", {}).items() if lo <= int(y) <= hi)
+        return f"{round(100 * f / (f + m))}" if f + m else "—"
+
+    def cell(period, group, sex, ward=None):
+        c = w["where"].get(f"{period}|{group}|{sex}", {})
+        return f"{(c.get(ward, 0) if ward else sum(c.values())):,}"
+
+    old, new = WOMEN_PERIODS[1][0], WOMEN_PERIODS[2][0]
+    return {
+        "ws-surg-early": pct("Surgical", 1933, 1935), "ws-surg-late": pct("Surgical", 1937, 1948),
+        "ws-gen-old": pct("General", 1936, 1938), "ws-med-new": pct("Medical", 1939, 1948),
+        "ws-inj-old-gen": cell(old, "injury", "Female", "General"), "ws-inj-old": cell(old, "injury", "Female"),
+        "ws-app-new-med": cell(new, "appendicitis", "Female", "Medical"),
+        "ws-app-new-mat": cell(new, "appendicitis", "Female", "Maternity"),
+        "ws-app-new": cell(new, "appendicitis", "Female"),
+        "ws-inj-new-med": cell(new, "injury", "Female", "Medical"), "ws-inj-new": cell(new, "injury", "Female"),
+        "ws-her-new-m-surg": cell(new, "hernia", "Male", "Surgical"), "ws-her-new-m": cell(new, "hernia", "Male"),
+    }
 
 
 # -------------------------------------------------------------------------- main
