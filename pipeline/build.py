@@ -368,6 +368,21 @@ RELIGION = {
     "moslem": "Muslim",
     "muh.": "Muslim",  # Muhammadan, the register's own usage
     "byzage": "Druze",  # a transcription failure, read against the page
+    "mos": "Muslim",
+    "mosl.": "Muslim",
+    "christian l.": "Christian",  # Latin
+    # A church, not a nationality: the clerk named the denomination. The
+    # written column keeps "Armenian" for anyone who needs it.
+    "armenian": "Christian",
+    "arm.": "Christian",
+}
+
+# Records where the clerk wrote religion and nationality on each other's lines
+# (the cell holds both, one above the other). Keyed by Index, with the reading
+# that settles it; the written columns keep the clerk's order.
+RELIGION_NATIONALITY_SWAPPED = {
+    "11108": ("Bahai", "Persian"),  # NB16 #700, 1937: "Persian" / "Bahaii"
+    "23562": ("Muslim", "Indian"),  # NB27 #4304, 1944: "Indian" / "Moslem"
 }
 
 # The upstream cleaning left the cleaned religion blank for every spelling it
@@ -1251,6 +1266,7 @@ REVIEW_FLAGS = [
     ("right-block-shifted", "Ward-to-result had slid one row up against the left block; moved back from the scan"),
     ("religion-from-written", "Religion was blank in the cleaned column; read from the spelling the clerk wrote"),
     ("religion-read-from-scan", "Religion blank or misread (NB31); read off the page image"),
+    ("religion-nationality-swapped", "Religion and nationality written on each other's lines of the cell; put back"),
     ("diagnosis-read-from-scan", "Diagnosis was blank; read off the page image"),
     ("diagnosis-not-on-page", "The page's diagnosis cell is blank; the diagnosis the extraction supplied is cleared"),
     ("diagnosis-corrected-from-scan", "Written diagnosis replaced by the page's (misread, or a neighbouring row's)"),
@@ -1930,8 +1946,14 @@ def main() -> int:
             for cell in csv.DictReader(handle, delimiter="\t", quoting=csv.QUOTE_NONE):
                 cells.setdefault(cell["Index"], []).append(cell)
         lookup = cleaned_lookup()
+        # The re-read kept the clerk's ditto marks as written; a ditto repeats
+        # the line above, so it is resolved to that row's written value.
+        ditto_source = {"religion": "Religion", "nationality": "Nationality",
+                        "days": "Days in Hospital (Rep)"}
+        previous: dict[str, str] = {}
         for row in rows:
             index = row.get("Index") or ""
+            above, previous = previous, row
             if index not in cells:
                 continue
             # The dates as the build would otherwise hold them: rebuilt from the
@@ -1940,6 +1962,12 @@ def main() -> int:
                       parse_written_date(row.get("Discharge Date (Orig)") or "") or row.get("Discharge Date (ISO)") or "")
             for cell in cells.pop(index, []):
                 field, value = cell["field"], cell["corrected"].strip()
+                if value in ('"', "\u201d", "\u3003") and field in ditto_source:
+                    if above.get("Notebook_Number") != row.get("Notebook_Number"):
+                        continue
+                    value = (above.get(ditto_source[field]) or "").strip()
+                    if not value:
+                        continue
                 if field == "serial":
                     value = re.sub(r"[.\s]+$", "", value)
                     if not value:
@@ -2070,6 +2098,11 @@ def main() -> int:
             row["Page_Number"] = page
             row["Notebook-page"] = f"{row.get('Notebook_Number') or ''}_{page}"
             pages_read += 1
+
+        swapped = RELIGION_NATIONALITY_SWAPPED.get(row.get("Index") or "")
+        if swapped:
+            row["standardized Religion"], row["StandardNationality"] = swapped
+            flags.append("religion-nationality-swapped")
 
         for column in RULES:
             if column not in row:

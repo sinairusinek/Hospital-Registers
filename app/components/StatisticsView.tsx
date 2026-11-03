@@ -35,7 +35,7 @@ const HELP: HelpSection[] = [
   },
   {
     heading: 'Only eight at a time',
-    body: <p>Each pie shows the eight most frequent values and gathers the rest into <em>Others</em>. A long tail of rare values is therefore invisible here by design; the facet list on the left, under <strong>View all</strong>, is where to look for it.</p>
+    body: <p>Each pie shows at most the eight most frequent values and gathers the rest into <em>Others</em>, together with any value under half a percent, which would be too thin to see; the legend names the largest of the values Others holds. A long tail of rare values is therefore invisible here by design; the facet list on the left, under <strong>View all</strong>, is where to look for it.</p>
   },
   {
     heading: 'A colour belongs to a value',
@@ -71,6 +71,9 @@ interface StatisticsViewProps {
 }
 
 const TOP_N = 8;
+const MIN_SHARE = 0.005;
+// How many of the values folded into Others the legend names before "+N more".
+const OTHERS_NAMED = 4;
 
 // The fewest admissions a month must hold to anchor the *end* of the timeline's
 // axis. Two records carry an admission date of May 1963 — misread years the
@@ -483,13 +486,18 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
     if (chartData.length === 0) return <div className="h-full flex items-center justify-center text-slate-400 text-sm italic">No data</div>;
     const color = colorScales[displayName];
     const base = baselines[displayName] || {};
-    const top = chartData.slice(0, TOP_N);
-    const othersValue = chartData.slice(TOP_N).reduce((acc, curr) => acc + curr.value, 0);
-    const finalData = othersValue > 0 ? [...top, { name: OTHERS, value: othersValue }] : top;
     // The share is of this chart's own total: the diagnosis chart drops the
     // unrecorded rows, so measuring against the whole selection would quietly
     // shrink every diagnosis.
-    const total = finalData.reduce((acc, curr) => acc + curr.value, 0) || 1;
+    const total = chartData.reduce((acc, curr) => acc + curr.value, 0) || 1;
+    // A slice under MIN_SHARE is narrower than the gap between slices, so it
+    // would sit in the legend with nothing to point at; it joins Others, which
+    // names what it holds. The unrecorded slice always stands alone, because
+    // the size of that gap is part of reading every other share.
+    const top = chartData.slice(0, TOP_N).filter(d => d.name === UNKNOWN || d.value / total >= MIN_SHARE);
+    const rest = chartData.filter(d => !top.includes(d));
+    const othersValue = rest.reduce((acc, curr) => acc + curr.value, 0);
+    const finalData = othersValue > 0 ? [...top, { name: OTHERS, value: othersValue }] : top;
     // recharts 3 ignores a custom Legend `payload`, so the legend is rendered
     // here: in count order, with the share each slice carries, which is what
     // makes the pies readable at this size.
@@ -498,7 +506,7 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
         <div className="flex-1 min-h-0">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
-          <Pie data={finalData} innerRadius={50} outerRadius={75} paddingAngle={3} dataKey="value" animationDuration={800} onClick={(entry) => handlePieClick(displayName, entry)} className="cursor-pointer outline-none">
+          <Pie data={finalData} innerRadius={50} outerRadius={75} paddingAngle={3} minAngle={3} dataKey="value" animationDuration={800} onClick={(entry) => handlePieClick(displayName, entry)} className="cursor-pointer outline-none">
             {finalData.map((entry) => (
               <Cell key={`cell-${displayName}-${entry.name}`} fill={color ? color(entry.name) : RESIDUE} className="hover:opacity-80 transition-opacity" />
             ))}
@@ -542,7 +550,9 @@ const StatisticsView: React.FC<StatisticsViewProps> = ({ fullData, data, filterS
               <li key={`legend-${displayName}-${entry.name}`} className="flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: color ? color(entry.name) : RESIDUE }} />
                 <span className={entry.name === OTHERS ? 'italic text-slate-400' : ''}>
-                  {entry.name} ({(share * 100).toFixed(1)}%)
+                  {entry.name} ({(share * 100).toFixed(1)}%{entry.name === OTHERS && `: ${
+                    rest.slice(0, OTHERS_NAMED).map(d => `${d.name} ${d.value.toLocaleString()}`).join(', ')
+                  }${rest.length > OTHERS_NAMED ? `, +${(rest.length - OTHERS_NAMED).toLocaleString()} more` : ''}`})
                   {baseShare !== undefined && entry.name !== OTHERS && (
                     <span className="text-slate-400"> of {(baseShare * 100).toFixed(1)}%</span>
                   )}

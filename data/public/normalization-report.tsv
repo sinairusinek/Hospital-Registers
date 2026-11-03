@@ -377,6 +377,7 @@ merged	City	Coastal Watch Bath-Jalim.	Coastal Watch Bath-Jalim	1
 merged	City	Janin	Jenin	1
 merged	City	Deir El Qasi?	Deir El Qasi	1
 merged	City	Deir Jheoon.	Deir Jheoon	1
+merged	standardized Religion	Christian L.	Christian	1
 merged	City	Acre|Bassa. Acre. own Father Bwgr.	Acre|Bassa. Acre. own Father Bwgr	1
 merged	City	Kar Kur	Karkur	1
 merged	City	Jaffa|Bassa str?	Jaffa|Bassa str	1
@@ -469,7 +470,9 @@ merged	Class standard	II	2	1
 merged	StandardNationality	T.J. Muslem	Transjordanian	1
 merged	City	Church Str.	Church Str	1
 merged	City	al-Sandil	Sandil	1
+merged	standardized Religion	Arm.	Christian	1
 merged	City	Akstan Div.	Akstan Div	1
+merged	standardized Religion	mosl.	Muslim	1
 merged	City	Wadi Salab	Wadi Salib	1
 merged	StandardNationality	Palest'n	Palestinian	1
 merged	City	Shafaamer	Shafa Amr	1
@@ -634,6 +637,7 @@ review	Review Flags	half-page-scanned	Only one half of this spread is in the lib
 review	Review Flags	right-block-shifted	Ward-to-result had slid one row up against the left block; moved back from the scan	28
 review	Review Flags	religion-from-written	Religion was blank in the cleaned column; read from the spelling the clerk wrote	433
 review	Review Flags	religion-read-from-scan	Religion blank or misread (NB31); read off the page image	394
+review	Review Flags	religion-nationality-swapped	Religion and nationality written on each other's lines of the cell; put back	2
 review	Review Flags	diagnosis-read-from-scan	Diagnosis was blank; read off the page image	2726
 review	Review Flags	diagnosis-not-on-page	The page's diagnosis cell is blank; the diagnosis the extraction supplied is cleared	53
 review	Review Flags	diagnosis-corrected-from-scan	Written diagnosis replaced by the page's (misread, or a neighbouring row's)	2712
@@ -641,13 +645,13 @@ review	Review Flags	serial-reread	Serial corrected or filled by the full re-read
 review	Review Flags	age-reread	Age corrected or filled by the full re-read of the scans (field-readings.tsv)	1238
 review	Review Flags	sex-reread	Sex corrected or filled by the full re-read of the scans (field-readings.tsv)	316
 review	Review Flags	religion-reread	Religion corrected or filled by the full re-read of the scans (field-readings.tsv)	155
-review	Review Flags	nationality-reread	Nationality corrected or filled by the full re-read of the scans (field-readings.tsv)	174
+review	Review Flags	nationality-reread	Nationality corrected or filled by the full re-read of the scans (field-readings.tsv)	172
 review	Review Flags	ward-reread	Ward corrected or filled by the full re-read of the scans (field-readings.tsv)	1518
 review	Review Flags	class-reread	Class corrected or filled by the full re-read of the scans (field-readings.tsv)	1210
 review	Review Flags	rate-reread	Rate corrected or filled by the full re-read of the scans (field-readings.tsv)	3142
 review	Review Flags	admission-reread	Admission corrected or filled by the full re-read of the scans (field-readings.tsv)	947
 review	Review Flags	discharge-reread	Discharge corrected or filled by the full re-read of the scans (field-readings.tsv)	973
-review	Review Flags	days-reread	Days corrected or filled by the full re-read of the scans (field-readings.tsv)	1296
+review	Review Flags	days-reread	Days corrected or filled by the full re-read of the scans (field-readings.tsv)	1297
 review	Review Flags	diagnosis-reread	Diagnosis corrected or filled by the full re-read of the scans (field-readings.tsv)	1163
 review	Review Flags	result-reread	Result corrected or filled by the full re-read of the scans (field-readings.tsv)	2017
 review	Review Flags	reread-held	The full re-read disagreed with a cell and a second reading could not settle it; the extraction's value stands	911
@@ -1127,33 +1131,25 @@ date	Admission Date [ISO]	year outside the one the library catalogued the notebo
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by -1 year, the smallest shift that seats it in the notebook	1
 date	Admission Date [ISO]	year outside the one the library catalogued the notebook under	corrected by +1 year, the smallest shift that seats it in the notebook	1
 unresolved	Discharge Date (ISO)	stay exceeds the clerk's own count by a year	discharge year taken down one, to the clerk's own count	1
-tail	standardized Religion	Armenian		2
-tail	standardized Religion	Persian		2
-tail	standardized Religion	armenian		2
-tail	standardized Religion	""""		1
 tail	standardized Religion	Christian/Jewish?		1
 tail	standardized Religion	Others		1
+tail	standardized Religion	Persian		1
 tail	standardized Religion	Chpal.		1
 tail	standardized Religion	Charkass		1
-tail	standardized Religion	Christian L.		1
-tail	standardized Religion	Indian		1
 tail	standardized Religion	Italian		1
-tail	standardized Religion	Mos		1
 tail	standardized Religion	Christ. R/C		1
 tail	standardized Religion	Ch. Moslem		1
 tail	standardized Religion	S.		1
-tail	standardized Religion	Arm.		1
-tail	standardized Religion	mosl.		1
 tail	standardized Religion	[illegible]		1
 tail	StandardNationality	French		18
 tail	StandardNationality	Italian		15
 tail	StandardNationality	Palestinian British		14
-tail	StandardNationality	Persian		11
+tail	StandardNationality	Persian		12
 tail	StandardNationality	Dutch		9
 tail	StandardNationality	Norwegian		8
 tail	StandardNationality	Palestinian Syrian		8
+tail	StandardNationality	Indian		6
 tail	StandardNationality	Yemeni		5
-tail	StandardNationality	Indian		5
 tail	StandardNationality	Palestinian Egyptian		4
 tail	StandardNationality	Lithuanian		3
 tail	StandardNationality	Sudan		3
@@ -1174,7 +1170,6 @@ tail	StandardNationality	Trans. Jordan		1
 tail	StandardNationality	Siria		1
 tail	StandardNationality	Hauran		1
 tail	StandardNationality	Moroccan		1
-tail	StandardNationality	Bahaii		1
 tail	StandardNationality	Swiss		1
 tail	StandardNationality	Syrian Egyptian		1
 tail	StandardNationality	Schekoslovakian		1
@@ -1192,7 +1187,6 @@ tail	StandardNationality	Undefined		1
 tail	StandardNationality	P/Catholic		1
 tail	StandardNationality	B/		1
 tail	StandardNationality	Palestinian/Bedu		1
-tail	StandardNationality	Moslem		1
 tail	StandardNationality	Polland.		1
 tail	StandardNationality	Palestinian M.		1
 tail	StandardNationality	Br		1
